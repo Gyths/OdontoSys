@@ -3,10 +3,21 @@ package com.mycompany.odontosys.backend;
 /*
  * @author Grupo04_0682
  */
-public class Recepcionista extends Empleado {
-
-    private boolean activo;
+public class Recepcionista extends Persona {
 
     public Recepcionista() {
     }
+
+    public void registrarComprobante() {
+        // TODO: Implementar lógica para registrar un comprobante
+    }
+
+    public void agregarCita() {
+        // TODO: Implementar lógica para registrar/agendar una cita
+    }
+
+    public void consultarPaciente() {
+        // TODO: Implementar lógica para consultar información del paciente
+    }
 }
+

@@ -3,16 +3,40 @@ package com.mycompany.odontosys.backend;
 /*
  * @author Grupo04_0682
  */
+
 import java.time.LocalTime;
-import java.util.List;
 
 public class Turno {
 
-    private LocalTime horarioInicio;
-    private LocalTime horarioFin;
-    private List<DiaSemana> diasLaboral;
+    private LocalTime horaInicio;
+    private LocalTime horaFin;
+    private DiaSemana diaLaboral;
 
     public Turno() {
+    }
+
+    public LocalTime getHoraInicio() {
+        return horaInicio;
+    }
+
+    public void setHoraInicio(LocalTime horaInicio) {
+        this.horaInicio = horaInicio;
+    }
+
+    public LocalTime getHoraFin() {
+        return horaFin;
+    }
+
+    public void setHoraFin(LocalTime horaFin) {
+        this.horaFin = horaFin;
+    }
+
+    public DiaSemana getDiaLaboral() {
+        return diaLaboral;
+    }
+
+    public void setDiaLaboral(DiaSemana diaLaboral) {
+        this.diaLaboral = diaLaboral;
     }
 }
 
