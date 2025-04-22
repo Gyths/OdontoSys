@@ -3,7 +3,7 @@ package com.odontosys.services.model;
 /*
  * @author Grupo04_0682
  */
-
+import com.odontosys.infraestructure.model.MetodoPago;
 import java.time.LocalDate;
 
 public class Comprobante {
