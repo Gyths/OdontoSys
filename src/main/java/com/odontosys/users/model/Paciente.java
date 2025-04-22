@@ -1,9 +1,11 @@
-package com.mycompany.odontosys.backend;
+package com.odontosys.users.model;
 
 /*
  * @author Grupo04_0682
  */
 
+import com.odontosys.services.model.Cita;
+import com.odontosys.users.model.Persona;
 import java.util.List;
 
 public class Paciente extends Persona {

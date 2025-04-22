@@ -1,4 +1,4 @@
-package com.mycompany.odontosys.backend;
+package com.odontosys.users.model;
 
 /*
  * @author Grupo04_0682

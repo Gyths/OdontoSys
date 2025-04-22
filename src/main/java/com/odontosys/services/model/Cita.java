@@ -1,9 +1,10 @@
-package com.mycompany.odontosys.backend;
+package com.odontosys.services.model;
 
 /*
  * @author Grupo04_0682
  */
 
+import com.odontosys.users.model.Odontologo;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;

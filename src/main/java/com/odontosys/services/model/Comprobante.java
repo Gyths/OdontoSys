@@ -1,4 +1,4 @@
-package com.mycompany.odontosys.backend;
+package com.odontosys.services.model;
 
 /*
  * @author Grupo04_0682
@@ -12,7 +12,7 @@ public class Comprobante {
     private LocalDate fechaEmision;
     private double total;
     private double importeCancelado;
-    private String metodoPago;
+    private MetodoPago metodoDePago;
 
     public Comprobante() {
     }
@@ -49,11 +49,11 @@ public class Comprobante {
         this.importeCancelado = importeCancelado;
     }
 
-    public String getMetodoPago() {
-        return metodoPago;
+    public MetodoPago getMetodoPago() {
+        return metodoDePago;
     }
 
-    public void setMetodoPago(String metodoPago) {
-        this.metodoPago = metodoPago;
+    public void setMetodoPago(MetodoPago metodoDePago) {
+        this.metodoDePago = metodoDePago;
     }
 }
