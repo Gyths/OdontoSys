@@ -5,12 +5,12 @@ package com.odontosys.users.model;
  */
 public abstract class Usuario {
 
-    private int idUsuario;
-    private String contraseña;
-    private String nombreUsuario;
-    private boolean activo;
-    private String correo;
-    private TipoUsuario tipoUsuario;
+    protected int idUsuario;
+    protected String contraseña;
+    protected String nombreUsuario;
+    protected boolean activo;
+    protected String correo;
+    protected TipoUsuario tipoUsuario;
 
     public Usuario() {
     }

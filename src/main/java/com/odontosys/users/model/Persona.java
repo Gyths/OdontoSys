@@ -5,10 +5,10 @@ package com.odontosys.users.model;
  */
 public abstract class Persona extends Usuario {
 
-    private String nombre;
-    private String apellido;
-    private String DNI;
-    private String telefono;
+    protected String nombre;
+    protected String apellido;
+    protected String DNI;
+    protected String telefono;
 
     public Persona() {
     }
