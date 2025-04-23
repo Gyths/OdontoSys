@@ -5,11 +5,11 @@ package com.odontosys.infraestructure.model;
  */
 
 import java.time.LocalTime;
-
+import java.sql.Time;
 public class Turno {
     private int idTurno;
-    private LocalTime horaInicio;
-    private LocalTime horaFin;
+    private Time horaInicio;
+    private Time horaFin;
     private DiaSemana diaLaboral;
 
     public Turno() {
@@ -24,19 +24,19 @@ public class Turno {
     }
     
     
-    public LocalTime getHoraInicio() {
+    public Time getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
+    public void setHoraInicio(Time horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public LocalTime getHoraFin() {
+    public Time getHoraFin() {
         return horaFin;
     }
 
-    public void setHoraFin(LocalTime horaFin) {
+    public void setHoraFin(Time horaFin) {
         this.horaFin = horaFin;
     }
 

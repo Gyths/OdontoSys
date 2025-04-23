@@ -1,3 +1,4 @@
+
 package com.odontosys.daoImp;
 
 import com.odontosys.config.model.DBManager;
@@ -260,5 +261,8 @@ public abstract class DAOImplBase {
         sql = sql.concat(this.nombre_tabla);
         return sql;
     }
+    
+
+
 
 }

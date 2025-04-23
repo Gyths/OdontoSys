@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author andres
+ * @author Grupo04_0682
  */
 public class DBManagerTest {
     

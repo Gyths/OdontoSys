@@ -1,16 +1,11 @@
 package com.odontosys.dao;
 
 import com.odontosys.infraestructure.model.Sala;
-import java.util.List;
+import java.util.ArrayList;
 
 public interface SalaDAO {
-    public Integer insertar(Sala sala);
-    
-    public Sala obtenerPorId(Integer salaId);
-    
-//    public List<Turno> listarTodos();
-    
-    public Integer modificar(Sala sala);
-    
-    public Integer eliminar(Sala sala);
+    Integer insertar(Sala sala);
+    ArrayList<Sala> listarTodos();
+    Integer modificar(Sala sala);
+    Integer eliminar(Sala sala);
 }

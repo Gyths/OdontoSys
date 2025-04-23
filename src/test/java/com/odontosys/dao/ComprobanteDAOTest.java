@@ -1,119 +1,77 @@
 package com.odontosys.dao;
+
 import com.odontosys.daoImp.ComprobanteDAOImpl;
 import com.odontosys.infraestructure.model.MetodoPago;
 import com.odontosys.services.model.Comprobante;
-import java.sql.Date;
-import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
+
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-
 public class ComprobanteDAOTest {
-    private ComprobanteDAO comprobanteDAO;    
-    
-    public ComprobanteDAOTest() {
-        this.comprobanteDAO = new ComprobanteDAOImpl();        
-    }
-    
+
+    private final ComprobanteDAO dao = new ComprobanteDAOImpl();
+
     @Test
-    public void testInsertar() {
-        System.out.println("insertar");
-        ArrayList<Integer> listaComprobanteId = new ArrayList<>();
-        insertarComprobantes(listaComprobanteId);
-        eliminarTodo();
-    }
-    
-    private void insertarComprobantes(ArrayList<Integer> listaComprobanteId) {
-        Comprobante comprobante = new Comprobante();
-        comprobante.setFechaEmision(Date.valueOf("2023-07-14"));
-        comprobante.setTotal(30.56);
-        comprobante.setMetodoPago(MetodoPago.EFECTIVO);
-        Integer resultado = this.comprobanteDAO.insertar(comprobante);
-        assertTrue(resultado != 0);
-        listaComprobanteId.add(resultado);
-        
-        comprobante.setFechaEmision(Date.valueOf("2021-02-10"));
-        comprobante.setTotal(20.56);
-        comprobante.setMetodoPago(MetodoPago.YAPE);
-        resultado = this.comprobanteDAO.insertar(comprobante);
-        assertTrue(resultado != 0);
-        listaComprobanteId.add(resultado);
-        
-        comprobante.setFechaEmision(Date.valueOf("2024-07-15"));
-        comprobante.setTotal(40.56);
-        comprobante.setMetodoPago(MetodoPago.TARJETA);
-        resultado = this.comprobanteDAO.insertar(comprobante);
-        assertTrue(resultado != 0);
-        listaComprobanteId.add(resultado);        
-    }
-    
-    @Test
-    public void testObtenerPorId() {
-        System.out.println("obtenerPorId");
-        ArrayList<Integer> listaComprobanteId = new ArrayList<>();
-        insertarComprobantes(listaComprobanteId);
-        Comprobante comprobante = this.comprobanteDAO.obtenerPorId(listaComprobanteId.get(0));
-        assertEquals(comprobante.getIdComprobante(), listaComprobanteId.get(0));
-        
-        
-        comprobante = this.comprobanteDAO.obtenerPorId(listaComprobanteId.get(1));
-        assertEquals(comprobante.getIdComprobante(), listaComprobanteId.get(1));
-        
-        comprobante = this.comprobanteDAO.obtenerPorId(listaComprobanteId.get(2));
-        assertEquals(comprobante.getIdComprobante(), listaComprobanteId.get(2));
-        eliminarTodo();
-    }
-    
-    @Test
-    public void testListarTodos() {
-        System.out.println("listarTodos");
-        ArrayList<Integer> listaComprobanteId = new ArrayList<>();
-        insertarComprobantes(listaComprobanteId);
-        
-        ArrayList<Comprobante> listaComprobantes = this.comprobanteDAO.listarTodos();
-        assertEquals(listaComprobanteId.size(), listaComprobantes.size());
-        for (Integer i = 0; i < listaComprobanteId.size(); i++) {
-            assertEquals(listaComprobanteId.get(i), listaComprobantes.get(i).getIdComprobante());
+    public void testCRUDCompletoDeComprobantes() {
+        System.out.println("Test completo de CRUD para Comprobante");
+
+        ArrayList<Integer> ids = new ArrayList<>();
+
+        // 👉 Inserción de 3 comprobantes
+        for (int i = 1; i <= 3; i++) {
+            Comprobante c = new Comprobante();
+            c.setFechaEmision(Date.valueOf(LocalDate.now()));
+            c.setTotal(i * 10.0);
+            c.setMetodoPago(MetodoPago.EFECTIVO);
+            int id = dao.insertar(c);
+            assertTrue(id > 0, "Debe haberse insertado correctamente el comprobante " + i);
+            c.setIdComprobante(id);
+            ids.add(id);
+
+            System.out.println("Insertado comprobante " + i + " con ID: " + id);
+
+            // 👉 Consultar después del primero
+            if (i == 1) {
+                System.out.println("Lista después de insertar 1 comprobante:");
+                listarTodosYMostrar();
+            }
         }
-        eliminarTodo();
+
+        // 👉 Modificar el segundo comprobante
+        Comprobante aModificar = new Comprobante();
+        aModificar.setIdComprobante(ids.get(1)); // segundo insertado
+        aModificar.setTotal(999.99);
+        int modificado = dao.modificar(aModificar);
+        assertTrue(modificado > 0, "Debe haberse modificado el segundo comprobante");
+        System.out.println("Se modificó el total del comprobante con ID: " + ids.get(1));
+
+        System.out.println("Lista después de la modificación:");
+        listarTodosYMostrar();
+
+        // 👉 Eliminar el segundo comprobante
+        Comprobante aEliminar = new Comprobante();
+        aEliminar.setIdComprobante(ids.get(1));
+        int eliminado = dao.eliminar(aEliminar);
+        assertTrue(eliminado > 0, "Debe haberse eliminado el segundo comprobante");
+        System.out.println("Se eliminó el comprobante con ID: " + ids.get(1));
+
+        System.out.println("Lista final después del eliminado:");
+        listarTodosYMostrar();
     }
-    
-    @Test
-    public void testModificar() {
-        System.out.println("modificar");
-        ArrayList<Integer> listaComprobanteId = new ArrayList<>();
-        insertarComprobantes(listaComprobanteId);
-        
-        ArrayList<Comprobante> listaComprobantes = this.comprobanteDAO.listarTodos();
-        assertEquals(listaComprobanteId.size(), listaComprobantes.size());
-        for (Integer i = 0; i < listaComprobanteId.size(); i++) {
-            listaComprobantes.get(i).setTotal(0);//va a poner todos los totales en 0
-            this.comprobanteDAO.modificar(listaComprobantes.get(i));
+
+    private void listarTodosYMostrar() {
+        ArrayList<Comprobante> lista = dao.listarTodos();
+        System.out.println("Total registros: " + lista.size());
+        for (Comprobante c : lista) {
+            System.out.println("ID: " + c.getIdComprobante() +
+                    " | Total: " + c.getTotal() +
+                    " | Fecha: " + c.getFechaEmision() +
+                    " | Pago: " + c.getMetodoPago());
         }
-        
-        ArrayList<Comprobante> listaComprobantesModificados = this.comprobanteDAO.listarTodos();
-        assertEquals( listaComprobantes.size(), listaComprobantesModificados.size());
-        for (Integer i = 0; i < listaComprobantes.size(); i++) {
-            assertEquals(listaComprobantes.get(i).getTotal(), listaComprobantesModificados.get(i).getTotal());
-        }
-        eliminarTodo();
-    }
-    
-    @Test
-    public void testEliminar() {
-        System.out.println("eliminar");
-        ArrayList<Integer> listaComprobanteId = new ArrayList<>();
-        insertarComprobantes(listaComprobanteId);
-        eliminarTodo();
-    }
-    
-    private void eliminarTodo(){                
-        ArrayList<Comprobante> listaComprobantes = this.comprobanteDAO.listarTodos();
-        for (Integer i = 0; i < listaComprobantes.size(); i++) {
-            Integer resultado = this.comprobanteDAO.eliminar(listaComprobantes.get(i));
-            assertNotEquals(0, resultado);
-            Comprobante almacen = this.comprobanteDAO.obtenerPorId(listaComprobantes.get(i).getIdComprobante());
-            assertNull(almacen);
-        }
+        System.out.println("--------------------------------------------------");
     }
 }

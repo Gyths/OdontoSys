@@ -6,16 +6,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author andres
+ * @author Grupo04_0682
  */
 public class CifradoTest {
     
     public CifradoTest() {
     }
 
-    /**
-     * Test of cifrarMD5 method, of class Cifrado.
-     */
     @Test
     public void testCifrarMD5() {
         System.out.println("cifrarMD5");
@@ -25,9 +22,6 @@ public class CifradoTest {
         assertEquals(resultado_esperado, resultado);        
     }
 
-    /**
-     * Test of descifrarMD5 method, of class Cifrado.
-     */
     @Test
     public void testDescifrarMD5() {
         System.out.println("descifrarMD5");
@@ -36,10 +30,6 @@ public class CifradoTest {
         String resultado = Cifrado.descifrarMD5(textoEncriptado);
         System.out.println(resultado);
         assertEquals(resultado_esperado, resultado);
-    }
-
-    private void assertEquals(String resultado_esperado, String resultado) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

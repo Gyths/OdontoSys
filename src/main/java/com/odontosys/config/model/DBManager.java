@@ -1,15 +1,14 @@
 package com.odontosys.config.model;
-import java.io.FileNotFoundException;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
-//import com.odontosys.config.model.Cifrado;
 
 public class DBManager {
 
-    private static final String ARCHIVO_CONFIGURACION = "config.properties";
+    private static final String ARCHIVO_CONFIGURACION = "/com/odontosys/config/model/config.properties";
 
     private Connection conexion;
     private String driver;
@@ -18,72 +17,59 @@ public class DBManager {
     private String nombre_de_host;
     private String puerto;
     private String usuario;
-    private String contraseña;
-    private static DBManager dbManager = null;
-    
-    private DBManager(){
-        //constructor privado para evitar que se creen instancias.
-        //Solo se podrá crear una instancia y esta debe hacerse usando el 
-        //método getInstance()
-    }
+    private String contrasenha;
 
+    private static DBManager dbManager = null;
+
+    // Constructor privado
+    private DBManager() {}
+
+    // Método Singleton
     public static DBManager getInstance() {
-        if (DBManager.dbManager == null) {
-            DBManager.createInstance();
+        if (dbManager == null) {
+            createInstance();
         }
-        return DBManager.dbManager;
+        return dbManager;
     }
 
     private static void createInstance() {
-        if (DBManager.dbManager == null) {            
-            DBManager.dbManager = new DBManager();
-            DBManager.dbManager.leer_archivo_de_propiedades();
+        if (dbManager == null) {
+            dbManager = new DBManager();
+            dbManager.leerArchivoDePropiedades();
         }
     }
 
     public Connection getConnection() {
-        try {            
-            Class.forName(this.driver);
-            //System.out.println(this.usuario);
-            //System.out.println(this.contraseña);
-            //System.out.println(Cifrado.descifrarMD5(this.contraseña));
-            this.conexion = DriverManager.getConnection(getURL(), this.usuario, Cifrado.descifrarMD5(this.contraseña));
+        try {
+            Class.forName(driver);
+            conexion = DriverManager.getConnection(getURL(), usuario, Cifrado.descifrarMD5(contrasenha));
+            System.out.println("Conexión establecida con éxito.");
         } catch (ClassNotFoundException | SQLException ex) {
-            System.err.println("Error al generar la conexión - " + ex);
+            System.err.println("Error al conectar a la base de datos: " + ex.getMessage());
         }
         return conexion;
     }
 
     private String getURL() {
-        String url = this.tipo_de_driver.concat("://");
-        url = url.concat(this.nombre_de_host);
-        url = url.concat(":");
-        url = url.concat(this.puerto);
-        url = url.concat("/");
-        url = url.concat(this.base_de_datos);
-        //System.out.println(url);
-        return url;
+        return tipo_de_driver + "://" + nombre_de_host + ":" + puerto + "/" + base_de_datos;
     }
 
-    private void leer_archivo_de_propiedades() {
+    private void leerArchivoDePropiedades() {
         Properties properties = new Properties();
         try {
-            //el siguiente código ha sido probado en MAC
-            //el archivo de configuración se encuentra en la carpeta src/main/resources/jdbc.properties            
-            String nmArchivoConf = "/" + ARCHIVO_CONFIGURACION;
+            properties.load(DBManager.class.getResourceAsStream(ARCHIVO_CONFIGURACION));
 
-            properties.load(this.getClass().getResourceAsStream(nmArchivoConf));
             this.driver = properties.getProperty("driver");
             this.tipo_de_driver = properties.getProperty("tipo_de_driver");
             this.base_de_datos = properties.getProperty("base_de_datos");
             this.nombre_de_host = properties.getProperty("nombre_de_host");
             this.puerto = properties.getProperty("puerto");
             this.usuario = properties.getProperty("usuario");
-            this.contraseña = properties.getProperty("contrasenha");
-        } catch (FileNotFoundException ex) {
-            System.err.println("Error al leer el archivo de propiedades - " + ex);
+            this.contrasenha = properties.getProperty("contrasenha");
+
         } catch (IOException ex) {
-            System.err.println("Error al leer el archivo de propiedades - " + ex);
+            System.err.println("❌ Error al leer el archivo de propiedades: " + ex.getMessage());
         }
     }
 }
+
