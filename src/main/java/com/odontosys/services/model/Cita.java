@@ -7,12 +7,14 @@ package com.odontosys.services.model;
 import com.odontosys.users.model.Odontologo;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
+
 
 public class Cita {
 
     private int idCita;
-    private LocalDate fecha;
+    private Date fecha;
     private LocalTime horaInicio;
     private int puntuacion;
     private EstadoCita estado;
@@ -31,11 +33,11 @@ public class Cita {
         this.idCita = idCita;
     }
 
-    public LocalDate getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 

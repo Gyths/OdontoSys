@@ -7,7 +7,7 @@ package com.odontosys.infraestructure.model;
 import java.time.LocalTime;
 
 public class Turno {
-
+    private int idTurno;
     private LocalTime horaInicio;
     private LocalTime horaFin;
     private DiaSemana diaLaboral;
@@ -15,6 +15,15 @@ public class Turno {
     public Turno() {
     }
 
+    public int getIdTurno() {
+        return idTurno;
+    }
+
+    public void setIdTurno(int idTurno) {
+        this.idTurno = idTurno;
+    }
+    
+    
     public LocalTime getHoraInicio() {
         return horaInicio;
     }

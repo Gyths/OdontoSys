@@ -20,7 +20,7 @@ public class Odontologo extends Persona {
 
     public Odontologo() {
     }
-
+    
     public Especialidad getEspecialidad() {
         return especialidad;
     }

@@ -4,14 +4,14 @@ package com.odontosys.services.model;
  * @author Grupo04_0682
  */
 import com.odontosys.infraestructure.model.MetodoPago;
-import java.time.LocalDate;
+import java.util.Date;
+
 
 public class Comprobante {
 
     private int idComprobante;
-    private LocalDate fechaEmision;
+    private Date fechaEmision;
     private double total;
-    private double importeCancelado;
     private MetodoPago metodoDePago;
 
     public Comprobante() {
@@ -25,11 +25,11 @@ public class Comprobante {
         this.idComprobante = idComprobante;
     }
 
-    public LocalDate getFechaEmision() {
+    public Date getFechaEmision() {
         return fechaEmision;
     }
 
-    public void setFechaEmision(LocalDate fechaEmision) {
+    public void setFechaEmision(Date fechaEmision) {
         this.fechaEmision = fechaEmision;
     }
 
@@ -39,14 +39,6 @@ public class Comprobante {
 
     public void setTotal(double total) {
         this.total = total;
-    }
-
-    public double getImporteCancelado() {
-        return importeCancelado;
-    }
-
-    public void setImporteCancelado(double importeCancelado) {
-        this.importeCancelado = importeCancelado;
     }
 
     public MetodoPago getMetodoPago() {
