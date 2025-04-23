@@ -74,6 +74,7 @@ public abstract class DAOImplBase {
     }
 
     protected void colocarSQLEnStatement(String sql) throws SQLException {
+        System.out.println(sql);
         this.statement = this.conexion.prepareCall(sql);
     }
 
@@ -86,16 +87,18 @@ public abstract class DAOImplBase {
         try {
             this.iniciarTransaccion();
             String sql = null;
+            System.out.println(tipo_Operacion.name());
             switch (tipo_Operacion) {
-                case INSERTAR: sql = this.generarSQLParaInsercion();
-                case MODIFICAR: sql = this.generarSQLParaModificacion();
-                case ELIMINAR: sql = this.generarSQLParaEliminacion();
+                case INSERTAR -> sql = this.generarSQLParaInsercion();
+                case MODIFICAR -> sql = this.generarSQLParaModificacion();
+                case ELIMINAR -> sql = this.generarSQLParaEliminacion();
             }
+            System.out.println(sql);
             this.colocarSQLEnStatement(sql);
             switch (tipo_Operacion) {
-                case INSERTAR: this.incluirValorDeParametrosParaInsercion();
-                case MODIFICAR: this.incluirValorDeParametrosParaModificacion();
-                case ELIMINAR: this.incluirValorDeParametrosParaEliminacion();
+                case INSERTAR -> this.incluirValorDeParametrosParaInsercion();
+                case MODIFICAR -> this.incluirValorDeParametrosParaModificacion();
+                case ELIMINAR -> this.incluirValorDeParametrosParaEliminacion();
             }
             resultado = this.ejecutarModificacionesEnBD();
             if (this.retornarLlavePrimaria && tipo_Operacion == Tipo_Operacion.INSERTAR) {
@@ -166,6 +169,7 @@ public abstract class DAOImplBase {
         sql = sql.concat(") VALUES (");
         sql = sql.concat(sql_parametros);
         sql = sql.concat(")");
+        System.out.println("INSIDE INSERT");
         return sql;
     }
 
@@ -215,6 +219,7 @@ public abstract class DAOImplBase {
             }
         }
         sql = sql.concat(sql_predicado);
+        System.out.println("INSIDE DELETE");
         return sql;
     }
 

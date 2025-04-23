@@ -4,46 +4,50 @@ import com.odontosys.config.model.DBManager;
 import com.odontosys.dao.ComprobanteDAO;
 import com.odontosys.services.model.Comprobante;
 import com.odontosys.infraestructure.model.MetodoPago;
+import com.odontosys.daoImp.util.Columna;
+
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class ComprobanteDAOImpl implements ComprobanteDAO {
-
-    @Override
-    public Integer insertar(Comprobante comprobante) {
-        Integer idGenerado = 0;
-        Connection conn = DBManager.getInstance().getConnection();
-
-        try {
-            String sql = "INSERT INTO comprobante (fechaEmision, total, metodoPago) VALUES (?, ?, ?)";
-            PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-            ps.setDate(1, comprobante.getFechaEmision());
-            ps.setDouble(2, comprobante.getTotal());
-            ps.setString(3, comprobante.getMetodoPago().name());
-
-            int resultado = ps.executeUpdate();
-
-            if (resultado != 0) {
-                ResultSet rs = ps.getGeneratedKeys();
-                if (rs.next()) {
-                    idGenerado = rs.getInt(1);
-                }
-                rs.close();
-            }
-
-            ps.close();
-        } catch (SQLException ex) {
-            System.err.println("Error al insertar comprobante: " + ex.getMessage());
-        }
-
-        return idGenerado;
+public class ComprobanteDAOImpl extends DAOImplBase implements ComprobanteDAO {
+    private Comprobante comprobante;
+    
+    public ComprobanteDAOImpl(){
+        super("comprobante");
+        this.retornarLlavePrimaria=true;
+        this.comprobante=null;
     }
     
+    @Override
+    protected void configurarListaDeColumna(){
+        this.listaColumnas.add(new Columna("idComprobante",true,true));
+        this.listaColumnas.add(new Columna("fechaEmision",false,false));
+        this.listaColumnas.add(new Columna("total",false,false));
+        this.listaColumnas.add(new Columna("metodoPago",false,false));
+    }
+    @Override
+    public Integer insertar(Comprobante comprobante) {
+        this.comprobante=comprobante;
+        return super.insertar();
+    }
     
+    @Override
+    protected void incluirValorDeParametrosParaInsercion(){
+        try {
+            this.statement.setDate(1,this.comprobante.getFechaEmision());
+            this.statement.setDouble(2,this.comprobante.getTotal());
+            this.statement.setString(3, this.comprobante.getMetodoPago().name());
+        } catch (SQLException ex) {
+            Logger.getLogger(ComprobanteDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     @Override
     public Comprobante obtenerPorId(Integer comprobanteId) {
