@@ -51,79 +51,93 @@ public class ComprobanteDAOImpl extends DAOImplBase implements ComprobanteDAO {
     
     @Override
     public Comprobante obtenerPorId(Integer comprobanteId) {
-        throw new UnsupportedOperationException("No implementado aún.");
+        try {
+            Comprobante comprobante = null;
+            String sql = this.generarSQLParaObtenerPorId();
+            this.statement = this.conexion.prepareCall(sql);
+            this.statement.setInt(1,comprobanteId);
+            this.resultSet = this.statement.executeQuery();
+            if(this.resultSet.next()){
+                comprobante = new Comprobante();
+                comprobante.setIdComprobante(this.resultSet.getInt("idComprobante"));
+                comprobante.setFechaEmision(this.resultSet.getDate("fechaEmision"));
+                comprobante.setTotal(this.resultSet.getDouble("total"));
+                comprobante.setMetodoPago(MetodoPago.valueOf(this.resultSet.getString("metodoPago")));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ComprobanteDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try{
+                if(this.conexion!=null){
+                    this.conexion.close();
+                }
+            } catch (SQLException ex){
+                System.err.println("Error al cerrar la conexion - "+ ex);
+            }
+        }
+        return comprobante;
     }
 
 
     @Override
     public ArrayList<Comprobante> listarTodos() {
         ArrayList<Comprobante> lista = new ArrayList<>();
-        Connection conn = DBManager.getInstance().getConnection();
-
         try {
-            String sql = "SELECT * FROM comprobante";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
+            this.conexion = DBManager.getInstance().getConnection();
+            String sql = this.generarSQLParaListarTodos();
+            this.statement = this.conexion.prepareCall(sql);
+            this.resultSet = this.statement.executeQuery();
+            while(this.resultSet.next()){
                 Comprobante comprobante = new Comprobante();
-                comprobante.setIdComprobante(rs.getInt("idComprobante"));
-                comprobante.setFechaEmision(rs.getDate("fechaEmision"));
-                comprobante.setTotal(rs.getDouble("total"));
-                comprobante.setMetodoPago(MetodoPago.valueOf(rs.getString("metodoPago")));
+                comprobante.setIdComprobante(this.resultSet.getInt("idComprobante"));
+                comprobante.setFechaEmision(this.resultSet.getDate("fechaEmision"));
+                comprobante.setTotal(this.resultSet.getDouble("total"));
+                comprobante.setMetodoPago(MetodoPago.valueOf(this.resultSet.getString("metodoPago")));
                 lista.add(comprobante);
             }
-
-            rs.close();
-            ps.close();
         } catch (SQLException ex) {
-            System.err.println("Error al listar comprobantes: " + ex.getMessage());
+             System.err.println("Error al intentar listarTodos - " + ex);
+        } finally {
+            try {
+                if (this.conexion != null) {
+                    this.conexion.close();
+                }
+            } catch (SQLException ex) {
+                System.err.println("Error al cerrar la conexión - " + ex);
+            }
         }
-
         return lista;
     }
-
-
-    @Override
+        @Override
     public Integer modificar(Comprobante comprobante) {
-        int resultado = 0;
-        Connection conn = DBManager.getInstance().getConnection();
-
-        try {
-            String sql = "UPDATE comprobante SET total = ? WHERE idComprobante = ?";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setDouble(1, comprobante.getTotal());
-            ps.setInt(2, comprobante.getIdComprobante());
-
-            resultado = ps.executeUpdate();
-
-            ps.close();
-        } catch (SQLException ex) {
-            System.err.println("Error al modificar comprobante: " + ex.getMessage());
-        }
-
-        return resultado;
+        this.comprobante=comprobante;
+        return super.modificar();
     }
-
+    
+    @Override
+    protected void incluirValorDeParametrosParaModificacion(){
+        try {
+            this.statement.setDate(1,this.comprobante.getFechaEmision());
+            this.statement.setDouble(2,this.comprobante.getTotal());
+            this.statement.setString(3, this.comprobante.getMetodoPago().name());
+            this.statement.setInt(4,this.comprobante.getIdComprobante());
+        } catch (SQLException ex) {
+            Logger.getLogger(ComprobanteDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     @Override
     public Integer eliminar(Comprobante comprobante) {
-        int resultado = 0;
-        Connection conn = DBManager.getInstance().getConnection();
-
-        try {
-            String sql = "DELETE FROM comprobante WHERE idComprobante = ?";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, comprobante.getIdComprobante());
-
-            resultado = ps.executeUpdate();
-
-            ps.close();
-        } catch (SQLException ex) {
-            System.err.println("Error al eliminar comprobante: " + ex.getMessage());
-        }
-
-        return resultado;
+       this.comprobante=comprobante;
+       return super.eliminar();
     }
-
+    
+    @Override
+    protected void incluirValorDeParametrosParaEliminacion(){
+        try {
+            this.statement.setInt(1, comprobante.getIdComprobante());
+        } catch (SQLException ex) {
+            Logger.getLogger(ComprobanteDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

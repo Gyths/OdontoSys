@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ComprobanteDAOTest {
 
     private final ComprobanteDAO dao = new ComprobanteDAOImpl();
-    @Test
+    /*@Test
     public void instertTest(){
         Comprobante c = new Comprobante();
         c.setFechaEmision(Date.valueOf(LocalDate.now()));
@@ -23,7 +23,18 @@ public class ComprobanteDAOTest {
         Integer resultado = this.dao.insertar(c);
         assertTrue(resultado!=0);
     }
-    /*@Test
+    @Test
+    public void modificarTest(){
+        Comprobante c = new Comprobante();
+        c.setIdComprobante(1);
+        c.setFechaEmision(Date.valueOf(LocalDate.now()));
+        c.setTotal(400);
+        c.setMetodoPago(MetodoPago.TARJETA);
+        c.setTotal(999);
+        Integer resultado = this.dao.modificar(c);
+        assertTrue(resultado!=0);
+    }*/
+    @Test
     public void testCRUDCompletoDeComprobantes() {
         System.out.println("Test completo de CRUD para Comprobante");
 
@@ -42,20 +53,21 @@ public class ComprobanteDAOTest {
 
             System.out.println("Insertado comprobante " + i + " con ID: " + id);
 
-            // 👉 Consultar después del primero
-            if (i == 1) {
-                System.out.println("Lista después de insertar 1 comprobante:");
+            // 👉 Consultar al final
+            if (i == 3) {
+                System.out.println("Lista después de insertar comprobantes: ");
                 listarTodosYMostrar();
             }
         }
-
         // 👉 Modificar el segundo comprobante
         Comprobante aModificar = new Comprobante();
         aModificar.setIdComprobante(ids.get(1)); // segundo insertado
+        aModificar.setFechaEmision(Date.valueOf(LocalDate.now()));
+        aModificar.setMetodoPago(MetodoPago.TARJETA);
         aModificar.setTotal(999.99);
         int modificado = dao.modificar(aModificar);
         assertTrue(modificado > 0, "Debe haberse modificado el segundo comprobante");
-        System.out.println("Se modificó el total del comprobante con ID: " + ids.get(1));
+        System.out.println("Se modificó el comprobante con ID: " + ids.get(1));
 
         System.out.println("Lista después de la modificación:");
         listarTodosYMostrar();
@@ -81,5 +93,5 @@ public class ComprobanteDAOTest {
                     " | Pago: " + c.getMetodoPago());
         }
         System.out.println("--------------------------------------------------");
-    }*/
+    }
 }
