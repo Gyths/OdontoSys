@@ -2,42 +2,58 @@ package com.odontosys.daoImp;
 
 import com.odontosys.config.model.DBManager;
 import com.odontosys.dao.SalaDAO;
+import com.odontosys.daoImp.util.Columna;
 import com.odontosys.infraestructure.model.Sala;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class SalaDAOImpl implements SalaDAO {
-
+public class SalaDAOImpl extends DAOImplBase implements SalaDAO {
+    private Sala sala;
+    
+    public SalaDAOImpl(){
+        super("sala");
+        this.retornarLlavePrimaria=true;
+        this.sala=null;
+    }
+    @Override
+    protected void configurarListaDeColumna(){
+        this.listaColumnas.add(new Columna("idSala",true,true));
+        this.listaColumnas.add(new Columna("numeroSala",false,false));
+        this.listaColumnas.add(new Columna("piso",false,false));
+    }
+    //Metodos Base
     @Override
     public Integer insertar(Sala sala) {
-        Integer idGenerado = 0;
-        Connection conn = DBManager.getInstance().getConnection();
-
-        try {
-            String sql = "INSERT INTO sala (numeroSala, piso) VALUES (?, ?)";
-            PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-            ps.setString(1, sala.getNumero());
-            ps.setInt(2, sala.getPiso());
-
-            int resultado = ps.executeUpdate();
-
-            if (resultado != 0) {
-                ResultSet rs = ps.getGeneratedKeys();
-                if (rs.next()) {
-                    idGenerado = rs.getInt(1);
-                }
-                rs.close();
-            }
-
-            ps.close();
-        } catch (SQLException ex) {
-            System.err.println("Error al insertar sala: " + ex.getMessage());
-        }
-
-        return idGenerado;
+        this.sala=sala;
+        return super.insertar();
     }
-
+    @Override
+    public Integer eliminar(Sala sala) {
+        this.sala=sala;
+        return super.eliminar();
+    }
+    @Override
+    protected void incluirValorDeParametrosParaEliminacion(){
+        try {
+            this.statement.setInt(1, sala.getIdSala());
+        } catch (SQLException ex) {
+            Logger.getLogger(ComprobanteDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    @Override
+    protected void incluirValorDeParametrosParaInsercion(){
+        try {
+            this.statement.setString(1,this.sala.getNumero());
+            this.statement.setInt(2,this.sala.getPiso());
+        } catch (SQLException ex) {
+            Logger.getLogger(ComprobanteDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    //Personalizados
     @Override
     public ArrayList<Sala> listarTodos() {
         ArrayList<Sala> lista = new ArrayList<>();
@@ -81,25 +97,6 @@ public class SalaDAOImpl implements SalaDAO {
             ps.close();
         } catch (SQLException ex) {
             System.err.println("Error al modificar sala: " + ex.getMessage());
-        }
-
-        return resultado;
-    }
-
-    @Override
-    public Integer eliminar(Sala sala) {
-        int resultado = 0;
-        Connection conn = DBManager.getInstance().getConnection();
-
-        try {
-            String sql = "DELETE FROM sala WHERE idSala = ?";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, sala.getIdSala());
-
-            resultado = ps.executeUpdate();
-            ps.close();
-        } catch (SQLException ex) {
-            System.err.println("Error al eliminar sala: " + ex.getMessage());
         }
 
         return resultado;

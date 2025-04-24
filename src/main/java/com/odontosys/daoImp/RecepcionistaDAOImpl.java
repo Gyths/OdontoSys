@@ -2,74 +2,34 @@ package com.odontosys.daoImp;
 
 import com.odontosys.config.model.DBManager;
 import com.odontosys.dao.RecepcionistaDAO;
-
+import com.odontosys.daoImp.util.Columna;
 import com.odontosys.users.model.Recepcionista;
 import com.odontosys.users.model.TipoUsuario;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class RecepcionistaDAOImpl implements RecepcionistaDAO {
-
+public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDAO {
+    private Recepcionista recepcionista;
+    
+    public RecepcionistaDAOImpl(){
+        super("recepcionista");
+        this.retornarLlavePrimaria=true;
+        this.recepcionista = null;
+    }
+    
+    @Override
+    protected void configurarListaDeColumna(){
+        this.listaColumnas.add(new Columna("idComprobante",true,true));
+        this.listaColumnas.add(new Columna("fechaEmision",false,false));
+        this.listaColumnas.add(new Columna("total",false,false));
+        this.listaColumnas.add(new Columna("metodoPago",false,false));
+    }
+    
     @Override
     public Integer insertar(Recepcionista recepcionista) {
-        Connection conn = DBManager.getInstance().getConnection();
-        Integer idGenerado = 0;
-
-        try {
-            conn.setAutoCommit(false);
-
-            // Insertar en usuario
-            String sqlUsuario = "INSERT INTO usuario (nombreUsuario, contraseña, correo, tipoUsuario) VALUES (?, ?, ?, ?)";
-            PreparedStatement psUsuario = conn.prepareStatement(sqlUsuario, PreparedStatement.RETURN_GENERATED_KEYS);
-            psUsuario.setString(1, recepcionista.getNombreUsuario());
-            psUsuario.setString(2, recepcionista.getContraseña());
-            psUsuario.setString(3, recepcionista.getCorreo());
-            psUsuario.setString(4, TipoUsuario.RECEPCIONISTA.name());
-            psUsuario.executeUpdate();
-
-            ResultSet rs = psUsuario.getGeneratedKeys();
-            if (rs.next()) {
-                idGenerado = rs.getInt(1);
-            }
-            psUsuario.close();
-            rs.close();
-
-            // Insertar en persona
-            String sqlPersona = "INSERT INTO persona (idUsuario, nombre, apellido, DNI, telefono) VALUES (?, ?, ?, ?, ?)";
-            PreparedStatement psPersona = conn.prepareStatement(sqlPersona);
-            psPersona.setInt(1, idGenerado);
-            psPersona.setString(2, recepcionista.getNombre());
-            psPersona.setString(3, recepcionista.getApellido());
-            psPersona.setString(4, recepcionista.getDNI());
-            psPersona.setString(5, recepcionista.getTelefono());
-            psPersona.executeUpdate();
-            psPersona.close();
-
-            // Insertar en recepcionista
-            String sqlRecepcionista = "INSERT INTO recepcionista (idUsuario) VALUES (?)";
-            PreparedStatement psRecep = conn.prepareStatement(sqlRecepcionista);
-            psRecep.setInt(1, idGenerado);
-            psRecep.executeUpdate();
-            psRecep.close();
-
-            conn.commit();
-        } catch (SQLException ex) {
-            System.err.println("Error en inserción en cascada: " + ex.getMessage());
-            try {
-                conn.rollback();
-            } catch (SQLException rollbackEx) {
-                System.err.println("Rollback falló: " + rollbackEx.getMessage());
-            }
-        } finally {
-            try {
-                conn.setAutoCommit(true);
-            } catch (SQLException ex) {
-                System.err.println("Error al restaurar autoCommit: " + ex.getMessage());
-            }
-        }
-
-        return idGenerado;
+       this.recepcionista=recepcionista;
+       return super.insertar();
     }
 
     @Override

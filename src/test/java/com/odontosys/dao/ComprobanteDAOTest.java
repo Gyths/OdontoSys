@@ -14,26 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ComprobanteDAOTest {
 
     private final ComprobanteDAO dao = new ComprobanteDAOImpl();
-    /*@Test
-    public void instertTest(){
-        Comprobante c = new Comprobante();
-        c.setFechaEmision(Date.valueOf(LocalDate.now()));
-        c.setTotal(400.00);
-        c.setMetodoPago(MetodoPago.EFECTIVO);
-        Integer resultado = this.dao.insertar(c);
-        assertTrue(resultado!=0);
-    }
-    @Test
-    public void modificarTest(){
-        Comprobante c = new Comprobante();
-        c.setIdComprobante(1);
-        c.setFechaEmision(Date.valueOf(LocalDate.now()));
-        c.setTotal(400);
-        c.setMetodoPago(MetodoPago.TARJETA);
-        c.setTotal(999);
-        Integer resultado = this.dao.modificar(c);
-        assertTrue(resultado!=0);
-    }*/
+    
     @Test
     public void testCRUDCompletoDeComprobantes() {
         System.out.println("Test completo de CRUD para Comprobante");

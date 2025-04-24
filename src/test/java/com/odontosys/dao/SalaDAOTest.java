@@ -16,18 +16,18 @@ public class SalaDAOTest {
     public void testCRUDSalaConLog() {
         // Insertar
         Sala sala = new Sala();
-        sala.setNumero("B101");
+        sala.setNumero("B120");
         sala.setPiso(2);
 
         int id = dao.insertar(sala);
         assertTrue(id > 0);
         sala.setIdSala(id);
 
-        System.out.println("Después de insertar:");
+        System.out.println("Después de insertar: " + id);
         mostrarSalas();
 
         // Modificar
-        sala.setNumero("B102");
+        sala.setNumero("B1202");
         sala.setPiso(3);
         int mod = dao.modificar(sala);
         assertTrue(mod > 0);

@@ -6,11 +6,6 @@ import com.odontosys.services.model.Comprobante;
 import com.odontosys.infraestructure.model.MetodoPago;
 import com.odontosys.daoImp.util.Columna;
 
-
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;

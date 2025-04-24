@@ -2,44 +2,61 @@ package com.odontosys.daoImp;
 
 import com.odontosys.config.model.DBManager;
 import com.odontosys.dao.TurnoDAO;
+import com.odontosys.daoImp.util.Columna;
 import com.odontosys.infraestructure.model.Turno;
 import com.odontosys.infraestructure.model.DiaSemana;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class TurnoDAOImpl implements TurnoDAO {
-
+public class TurnoDAOImpl extends DAOImplBase implements TurnoDAO {
+    private Turno turno;
+    
+    public TurnoDAOImpl(){
+        super("turno");
+        this.retornarLlavePrimaria=true;
+        this.turno=null;
+    }
+    @Override
+    protected void configurarListaDeColumna(){
+        this.listaColumnas.add(new Columna("idTurno",true,true));
+        this.listaColumnas.add(new Columna("horaInicio",false,false));
+        this.listaColumnas.add(new Columna("horaFin",false,false));
+        this.listaColumnas.add(new Columna("diaSemana",false,false));
+    }
+    //Metodos base
     @Override
     public Integer insertar(Turno turno) {
-        Integer idGenerado = 0;
-        Connection conn = DBManager.getInstance().getConnection();
-
-        try {
-            String sql = "INSERT INTO turno (horaInicio, horaFin, diaSemana) VALUES (?, ?, ?)";
-            PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-            ps.setTime(1, turno.getHoraInicio());
-            ps.setTime(2, turno.getHoraFin());
-            ps.setString(3, turno.getDiaLaboral().name());
-
-            int resultado = ps.executeUpdate();
-
-            if (resultado != 0) {
-                ResultSet rs = ps.getGeneratedKeys();
-                if (rs.next()) {
-                    idGenerado = rs.getInt(1);
-                }
-                rs.close();
-            }
-
-            ps.close();
-        } catch (SQLException ex) {
-            System.err.println("Error al insertar turno: " + ex.getMessage());
-        }
-
-        return idGenerado;
+        this.turno=turno;
+        return super.insertar();
     }
-
+    @Override
+    public Integer eliminar(Turno turno) {
+       this.turno=turno;
+       return super.eliminar();
+    }
+    @Override
+    protected void incluirValorDeParametrosParaInsercion(){
+        try {
+            this.statement.setTime(1,this.turno.getHoraInicio());
+            this.statement.setTime(2,this.turno.getHoraFin());
+            this.statement.setString(3,this.turno.getDiaLaboral().name());
+        } catch (SQLException ex) {
+            Logger.getLogger(ComprobanteDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    @Override
+    protected void incluirValorDeParametrosParaEliminacion(){
+        try {
+            this.statement.setInt(1, turno.getIdTurno());
+        } catch (SQLException ex) {
+            Logger.getLogger(ComprobanteDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    //Personalizados
     @Override
     public Integer modificar(Turno turno) {
         int resultado = 0;
@@ -57,25 +74,6 @@ public class TurnoDAOImpl implements TurnoDAO {
             ps.close();
         } catch (SQLException ex) {
             System.err.println("Error al modificar turno: " + ex.getMessage());
-        }
-
-        return resultado;
-    }
-
-    @Override
-    public Integer eliminar(Turno turno) {
-        int resultado = 0;
-        Connection conn = DBManager.getInstance().getConnection();
-
-        try {
-            String sql = "DELETE FROM turno WHERE idTurno = ?";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, turno.getIdTurno());
-
-            resultado = ps.executeUpdate();
-            ps.close();
-        } catch (SQLException ex) {
-            System.err.println("Error al eliminar turno: " + ex.getMessage());
         }
 
         return resultado;
