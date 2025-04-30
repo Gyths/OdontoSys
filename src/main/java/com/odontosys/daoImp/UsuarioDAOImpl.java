@@ -12,8 +12,8 @@ import java.util.ArrayList;
 public class UsuarioDAOImpl extends DAOImplBase implements UsuarioDAO{
     private Usuario usuario;
     
-    public UsuarioDAOImpl(){
-        super("usuario");
+    public UsuarioDAOImpl(String tipo){
+        super(tipo);
         this.retornarLlavePrimaria=true;
         this.usuario = null;
     }
