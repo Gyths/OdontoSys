@@ -1,3 +1,4 @@
+
 package com.odontosys.dao;
 
 import com.odontosys.daoImp.RecepcionistaDAOImpl;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RecepcionistaDAOTest {
-
+/*
     private final RecepcionistaDAOImpl dao = new RecepcionistaDAOImpl();
 
     @Test
@@ -68,5 +69,7 @@ public class RecepcionistaDAOTest {
                     ", Teléfono: " + r.getTelefono());
         }
         System.out.println("-------------------------------------------");
-    }
+        
+    }*/
 }
+

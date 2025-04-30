@@ -8,7 +8,7 @@ import org.apache.commons.codec.binary.Base64;
 
 public class Cifrado {
     
-    private static final String llave = "programacion3grupo4";
+    private static final String llave = "inkachips";
 
     public static String cifrarMD5(String texto) {
         String base64EncryptedString = "";
