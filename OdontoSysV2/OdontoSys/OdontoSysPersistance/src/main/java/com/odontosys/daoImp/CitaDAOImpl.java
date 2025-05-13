@@ -7,6 +7,9 @@ import java.util.List;
 import com.odontosys.dao.CitaDAO;
 import com.odontosys.daoImp.util.Columna;
 import com.odontosys.services.model.Cita;
+import com.odontosys.services.model.EstadoCita;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     
@@ -32,39 +35,47 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     
     @Override
     protected void incluirValorDeParametrosParaInsercion() throws SQLException{
-        this.statement.setString(1, this.cita.);
-        this.statement.setString(2, this.cita.getDescripcion());
-        this.statement.setDouble(3, this.cita.getCosto());
-        this.statement.setString(4, this.cita.getEspecialidad().name());
+        this.statement.setInt(1, this.cita.getPaciente().getIdPaciente());
+        this.statement.setInt(2, this.cita.getOdontologo().getIdOdontologo());
+        this.statement.setInt(3, this.cita.getComprobante().getIdComprobante());
+        this.statement.setObject(4, this.cita.getFecha());
+        this.statement.setObject(5,this.cita.getHoraInicio());
+        this.statement.setDouble(6,this.cita.getPuntuacion());
+        this.statement.setString(7, this.cita.getEstado().name());
     }
     
     @Override
     protected void incluirValorDeParametrosParaModificacion() throws SQLException{ 
-        this.statement.setString(1, this.cita.getNombre());
-        this.statement.setString(2, this.cita.getDescripcion());
-        this.statement.setDouble(3, this.cita.getCosto());
-        this.statement.setString(4, this.cita.getEspecialidad().name());
-        this.statement.setInt(5, this.cita.getIdTratamiento());
+        this.statement.setInt(1, this.cita.getPaciente().getIdPaciente());
+        this.statement.setInt(2, this.cita.getOdontologo().getIdOdontologo());
+        this.statement.setInt(3, this.cita.getComprobante().getIdComprobante());
+        this.statement.setObject(4, this.cita.getFecha());
+        this.statement.setObject(5,this.cita.getHoraInicio());
+        this.statement.setDouble(6,this.cita.getPuntuacion());
+        this.statement.setString(7, this.cita.getEstado().name());
     }
     
     @Override
     protected void incluirValorDeParametrosParaEliminacion() throws SQLException{
-        this.statement.setInt(5, this.cita.getIdTratamiento()); 
+        this.statement.setInt(1, this.cita.getIdCita()); 
     }
     
     @Override
     protected void incluirValorDeParametrosParaObtenerPorId() throws SQLException {
-        this.statement.setInt(5, this.cita.getIdTratamiento());
+        this.statement.setInt(1, this.cita.getIdCita());
     }
     
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.cita = new Cita();
-        this.cita.setIdTratamiento(this.resultSet.getInt("idTratamiento"));
-        this.cita.setNombre(this.resultSet.getString("nombre"));
-        this.cita.setDescripcion(this.resultSet.getString("descripcion"));
-        this.cita.setCosto(this.resultSet.getDouble("costo"));
-        this.cita.setEspecialidad(Especialidad.valueOf(this.resultSet.getString("especialidad")));
+        this.cita.setIdCita(this.resultSet.getInt("idCita"));
+        this.cita.getPaciente().setIdPaciente(this.resultSet.getInt("idPaciente"));
+        this.cita.getOdontologo().setIdOdontologo(this.resultSet.getInt("idOdontologo"));
+        this.cita.getComprobante().setIdComprobante(this.resultSet.getInt("idComprobante"));
+        this.cita.setFecha(this.resultSet.getObject("fecha",LocalDate.class));
+        this.cita.setHoraInicio(this.resultSet.getObject("horaInicio",LocalTime.class));
+        this.cita.setPuntuacion(this.resultSet.getDouble("puntuacion"));
+        this.cita.setEstado(EstadoCita.valueOf(this.resultSet.getString("estado")));
     }
     
     @Override
@@ -86,20 +97,20 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     
     @Override
     public Integer modificar(Cita cita){
-        this.tratamiento = tratamiento;
+        this.cita = cita;
         return super.modificar();
     }
     
     @Override
     public Integer eliminar(Cita cita) {
-       this.tratamiento=tratamiento;
+       this.cita=cita;
        return super.eliminar();
     }
     
     @Override
     public Cita obtenerPorId(Integer Id){
         this.cita = new Cita();
-        this.cita.setIdTratamiento(Id);
+        this.cita.setIdCita(Id);
         super.obtenerPorId();
         return this.cita;
     }

@@ -7,5 +7,6 @@ public interface CitaDAO{
     Integer insertar(Cita cita);
     Integer modificar(Cita cita);
     Integer eliminar(Cita cita);
+    Cita obtenerPorId(Integer Id);
     ArrayList<Cita> listarTodos();
 }

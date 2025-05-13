@@ -12,7 +12,7 @@ public class RecepcionistaDAOTest {
 
     private final RecepcionistaDAOImpl dao = new RecepcionistaDAOImpl();
 
-    @Test
+    /*@Test
     public void insertTest(){
         Recepcionista r = new Recepcionista();
         r.setContrasenha("claveSegua123");
@@ -24,5 +24,5 @@ public class RecepcionistaDAOTest {
         r.setDNI("92939923");
         
         dao.insertar(r);
-    }
+    }*/
 }

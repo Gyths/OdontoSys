@@ -8,25 +8,11 @@ import com.odontosys.users.model.Odontologo;
 import com.odontosys.users.model.Paciente;
 
 public class Cita {
-
-    /**
-     * @return the paciente
-     */
-    public Paciente getPaciente() {
-        return paciente;
-    }
-
-    /**
-     * @param paciente the paciente to set
-     */
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
-    }
     
     private int idCita;
     private LocalDate fecha;
     private LocalTime horaInicio;
-    private int puntuacion;
+    private double puntuacion;
     private EstadoCita estado;
     private Odontologo odontologo;
     private Paciente paciente;
@@ -60,11 +46,11 @@ public class Cita {
         this.horaInicio = horaInicio;
     }
 
-    public int getPuntuacion() {
+    public double getPuntuacion() {
         return puntuacion;
     }
 
-    public void setPuntuacion(int puntuacion) {
+    public void setPuntuacion(double puntuacion) {
         this.puntuacion = puntuacion;
     }
 
@@ -83,7 +69,15 @@ public class Cita {
     public void setOdontologo(Odontologo odontologo) {
         this.odontologo = odontologo;
     }
-
+    
+    public Paciente getPaciente() {
+        return paciente;
+    }
+    
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+    
     public Comprobante getComprobante() {
         return comprobante;
     }
