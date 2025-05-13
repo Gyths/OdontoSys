@@ -1,7 +1,5 @@
 package com.odontosys.bo;
 
-import java.util.ArrayList;
-
 import com.odontosys.users.model.Recepcionista;
 import com.odontosys.users.model.Persona;
 import com.odontosys.dao.PersonaDAO;
@@ -41,13 +39,49 @@ public class RecepcionistaBO {
         
     }
     
-    public Integer modificarRecepcionista(String nombreUsuario, PersonaEnum tipoDato){
-       ArrayList<Recepcionista> lista = this.recepcionistaDAO;
+    public Integer modificarRecepcionista(String nombreUsuario, PersonaEnum tipoDato, String cambio){
+       ArrayList<Recepcionista> lista = this.recepcionistaDAO.listarTodos();
+       Persona p = new Persona();
+       for(Recepcionista r : lista){
+            p = this.personaDAO.obtenerPorId(r.getIdPersona());
+            if(p.getNombreUsuario().equals(nombreUsuario))
+                break;
+       }
+       
+       if(tipoDato == PersonaEnum.CONTRASENHA)
+           p.setContrasenha(cambio);
+       if(tipoDato == PersonaEnum.CORREO)
+           p.setCorreo(cambio);
+       if(tipoDato == PersonaEnum.NOMBREUSUARIO)
+           p.setNombreUsuario(cambio);
+       if(tipoDato == PersonaEnum.TELEFONO)
+           p.setTelefono(cambio);
+
+       return this.personaDAO.modificar(p);
     }
     
-    public Recepcionista obtenerRecepcionistaPorID(Integer id){
-        Recepcionista recepcionista = new Recepcionista();
-        recepcionista = this.recepcionistaDAO.ob
+    public Integer eliminarRecepcionista(String nombreUsuario){
+       ArrayList<Recepcionista> lista = this.recepcionistaDAO.listarTodos();
+       Persona p = new Persona();
+       for(Recepcionista r : lista){
+            p = this.personaDAO.obtenerPorId(r.getIdPersona());
+            if(p.getNombreUsuario().equals(nombreUsuario)){
+                this.recepcionistaDAO.eliminar(r);
+                return this.personaDAO.eliminar(p);
+            }
+       } 
+       return -1;
+    }
+    
+    public Persona obtenerIdPersona(String nombreUsuario){
+       ArrayList<Recepcionista> lista = this.recepcionistaDAO.listarTodos();
+       Persona p = new Persona();
+       for(Recepcionista r : lista){
+            p = this.personaDAO.obtenerPorId(r.getIdPersona());
+            if(p.getNombreUsuario().equals(nombreUsuario))
+                return p;
+       }
+       return null;
     }
     
 }
