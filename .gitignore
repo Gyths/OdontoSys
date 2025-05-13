@@ -1,1 +1,7 @@
 /target/
+/OdontoSysV2/OdontoSys/OdontoSysDBManager/target/
+/OdontoSysV2/OdontoSys/OdontoSysModel/target/
+/OdontoSysV2/OdontoSys/OdontoSysPersistance/target/
+
+config.properties
+
