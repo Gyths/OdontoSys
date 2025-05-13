@@ -1,6 +1,5 @@
 package com.odontosys.services.model;
 
-import java.util.List;
 
 public class Tratamiento {
     
@@ -8,7 +7,7 @@ public class Tratamiento {
     private String nombre;
     private String descripcion;
     private double costo;
-    private List<Especialidad> especialidades;
+    private Especialidad especialidad;
 
     public Tratamiento() {
     }
@@ -45,17 +44,17 @@ public class Tratamiento {
         this.costo = costo;
     }
 
-    public List<Especialidad> getEspecialidades() {
-        return especialidades;
+    public Especialidad getEspecialidad() {
+        return especialidad;
     }
 
-    public void setEspecialidades(List<Especialidad> especialidades) {
-        this.especialidades = especialidades;
+    public void setEspecialidad(Especialidad especialidad) {
+        this.especialidad = especialidad;
     }
 
     @Override
     public String toString() {
-        return "Tratamiento{" + "idTratamiento=" + idTratamiento + ", nombre=" + nombre + ", descripcion=" + descripcion + ", costo=" + costo + ", especialidades=" + especialidades + '}';
+        return "Tratamiento{" + "idTratamiento=" + idTratamiento + ", nombre=" + nombre + ", descripcion=" + descripcion + ", costo=" + costo + ", especialidades=" + especialidad + '}';
     }
             
 }

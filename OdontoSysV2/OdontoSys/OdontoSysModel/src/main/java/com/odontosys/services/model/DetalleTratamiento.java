@@ -3,7 +3,7 @@ package com.odontosys.services.model;
 
 public class DetalleTratamiento {
     
-    private int idDetalle;
+    private int idCita;
     private Tratamiento tratamiento;
     private int cantidad;
     private double subtotal;
@@ -11,12 +11,12 @@ public class DetalleTratamiento {
     public DetalleTratamiento() {
     }
 
-    public int getIdDetalle() {
-        return idDetalle;
+    public int getIdCita() {
+        return idCita;
     }
 
-    public void setIdDetalle(int idDetalle) {
-        this.idDetalle = idDetalle;
+    public void setIdCita(int idCita) {
+        this.idCita = idCita;
     }
 
     public Tratamiento getTratamiento() {
@@ -45,7 +45,7 @@ public class DetalleTratamiento {
 
     @Override
     public String toString() {
-        return "DetalleTratamiento{" + "idDetalle=" + idDetalle + ", tratamiento=" + tratamiento + ", cantidad=" + cantidad + ", subtotal=" + subtotal + '}';
+        return "DetalleTratamiento{" + "idDetalle=" + idCita + ", tratamiento=" + tratamiento + ", cantidad=" + cantidad + ", subtotal=" + subtotal + '}';
     }
   
 }
