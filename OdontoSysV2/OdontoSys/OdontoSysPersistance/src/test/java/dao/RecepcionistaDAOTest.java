@@ -25,3 +25,4 @@ public class RecepcionistaDAOTest {
         
         dao.insertar(r);
     }
+}

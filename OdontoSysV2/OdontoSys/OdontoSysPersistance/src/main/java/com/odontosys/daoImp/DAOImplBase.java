@@ -116,6 +116,7 @@ public abstract class DAOImplBase {
                 case Tipo_Operacion.ELIMINAR ->
                     this.incluirValorDeParametrosParaEliminacion();
             }
+            System.out.println(sql);
             resultado = this.ejecutarModificacionEnBD();
             if (this.retornarLlavePrimaria && tipo_Operacion == Tipo_Operacion.INSERTAR) {
                 resultado = this.retornarUltimoAutoGenerado();

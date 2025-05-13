@@ -4,6 +4,7 @@ public class Recepcionista extends Persona{
     
     public Recepcionista(){
         super();
+        this.tipoUsuario = TipoUsuario.RECEPCIONISTA;
     }
 
     @Override

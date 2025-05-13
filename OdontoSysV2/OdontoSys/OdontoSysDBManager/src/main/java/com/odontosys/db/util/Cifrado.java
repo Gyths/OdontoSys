@@ -9,7 +9,8 @@ import org.apache.commons.codec.binary.Base64;
 
 public class Cifrado {
     
-    private static final String llave = "Programacion3PUCP";
+    //cambiar por pwd de la instancia
+    private static final String llave = "inkachips";
 
     public static String cifrarMD5(String texto) {
         String base64EncryptedString = "";
