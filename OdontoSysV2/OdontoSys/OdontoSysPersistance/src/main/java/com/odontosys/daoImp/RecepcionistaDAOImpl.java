@@ -22,7 +22,8 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idUsuario",false,false));
+        this.listaColumnas.add(new Columna("idRecepcionista",true,true));
+        this.listaColumnas.add(new Columna("idPersona",false,false));
     }
     
     @Override
