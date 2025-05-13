@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="OdontoSys.master.cs"  %>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>OdontoSys</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fuentes y estilos adicionales -->
+    <link href="Content/site.css" rel="stylesheet" />
+    <link href="Content/fonts/css/all.css" rel="stylesheet" />
+    <!-- JS de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid d-flex p-0 h-100">
+        <!-- Contenido Derecha -->
+        <div class="bg-light flex-fill overflow-auto">
+            <!-- Barra superior con el menú -->
+            <header>
+                <nav class="navbar navbar-expand navbar-dark">
+                    <div class="container-fluid">
+                        <!-- Logo de la empresa -->
+                        <a class="navbar-brand">
+                            <img src="Content/Images/logo.jpg" alt="OdontoSys Logo" height="40" class="d-inline-block align-middle">
+                        </a>
+                        
+                        <div class="d-flex w-100 justify-content-between">
+                            <!-- Menú de navegación principal -->
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fa-solid fa-warehouse"></i> Reservar cita</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fa-solid fa-arrows-spin"></i> Ver pagos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fa-solid fa-gift"></i> Ver doctores</a>
+                                </li>
+                            </ul>
+                            <!-- Barra de Usuario-->
+                            <div class="navbar-nav">
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-light dropdown-toggle" id="btnUsuario" data-toggle="dropdown" type="button">
+                                        <i class="fas fa-user me-2"></i> Usuario
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="btnUsuario">
+                                        <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                        <li><a class="dropdown-item" href="#">Cambiar Contraseña</a></li>
+                                        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <!-- Contenido Principal -->
+            <div class="container-fluid p-4">
+                <!-- ContentPlaceHolder-->
+                <asp:ContentPlaceHolder ID="cphContenido" runat="server" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
