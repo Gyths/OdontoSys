@@ -5,8 +5,23 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.odontosys.users.model.Odontologo;
+import com.odontosys.users.model.Paciente;
 
 public class Cita {
+
+    /**
+     * @return the paciente
+     */
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    /**
+     * @param paciente the paciente to set
+     */
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
     
     private int idCita;
     private LocalDate fecha;
@@ -14,6 +29,7 @@ public class Cita {
     private int puntuacion;
     private EstadoCita estado;
     private Odontologo odontologo;
+    private Paciente paciente;
     private Comprobante comprobante;
     private List<DetalleTratamiento> tratamientos;
 
