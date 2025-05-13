@@ -8,7 +8,8 @@ import com.odontosys.infrastructure.model.Sala;
 import com.odontosys.infrastructure.model.Turno;
 
 public class Odontologo extends Persona{
-    
+
+    private int idOdontologo;
     private Especialidad especialidad;
     private double puntuacionPromedio;
     private Sala consultorio;
@@ -25,7 +26,15 @@ public class Odontologo extends Persona{
     public void setEspecialidad(Especialidad especialidad) {
         this.especialidad = especialidad;
     }
+    
+    public int getIdOdontologo() {
+        return idOdontologo;
+    }
 
+    public void setIdOdontologo(int idOdontologo) {
+        this.idOdontologo = idOdontologo;
+    }
+    
     public double getPuntuacionPromedio() {
         return puntuacionPromedio;
     }

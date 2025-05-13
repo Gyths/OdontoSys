@@ -40,7 +40,7 @@ public class PersonaDAOImpl extends DAOImplBase implements PersonaDAO{
         this.statement.setString(5,this.persona.getNombre());
         this.statement.setString(6,this.persona.getApellidos());
         this.statement.setString(7,this.persona.getDNI());
-        this.statement.setString(8,this.persona.getTipoUsuario().name());
+        this.statement.setInt(8,this.persona.getTipoUsuario().ordinal());
     }
     
     @Override
@@ -52,7 +52,7 @@ public class PersonaDAOImpl extends DAOImplBase implements PersonaDAO{
         this.statement.setString(5,this.persona.getNombre());
         this.statement.setString(6,this.persona.getApellidos());
         this.statement.setString(7,this.persona.getDNI());
-        this.statement.setString(8,this.persona.getTipoUsuario().name());
+        this.statement.setInt(8,this.persona.getTipoUsuario().ordinal());
         this.statement.setInt(9,this.persona.getIdPersona());
         
     }

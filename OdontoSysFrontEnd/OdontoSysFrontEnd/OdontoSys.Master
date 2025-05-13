@@ -9,7 +9,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Fuentes y estilos adicionales -->
     <link href="Content/site.css" rel="stylesheet" />
-    <link href="Content/fonts/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-o+Q...xXQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- JS de Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
@@ -31,15 +31,15 @@
                         <div class="d-flex w-100 justify-content-between">
                             <!-- Menú de navegación principal -->
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa-solid fa-warehouse"></i> Reservar cita</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa-solid fa-arrows-spin"></i> Ver pagos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa-solid fa-gift"></i> Ver doctores</a>
-                                </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-calendar-check"></i> Reservar cita</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-credit-card"></i> Ver pagos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-user-doctor"></i> Ver doctores</a>
+                            </li>
                             </ul>
                             <!-- Barra de Usuario-->
                             <div class="navbar-nav">

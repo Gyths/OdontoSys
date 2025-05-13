@@ -1,6 +1,6 @@
 package com.odontosys.daoImp;
 
-import com.odontosys.dao.RecepcionistaDAO;
+import com.odontosys.dao.PacienteDAO;
 import com.odontosys.daoImp.util.Columna;
 
 import com.odontosys.users.model.*;
@@ -11,64 +11,63 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDAO {
-    private Recepcionista recepcionista;
+public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
+    private Paciente paciente;
     
-    public RecepcionistaDAOImpl(){
+    public PacienteDAOImpl(){
         super("recepcionista");
         this.retornarLlavePrimaria=true;
-        this.recepcionista = null;
+        this.paciente = null;
     }
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idRecepcionista",true,true));
+        this.listaColumnas.add(new Columna("idPaciente",true,true));
         this.listaColumnas.add(new Columna("idPersona",false,false));
     }
     
     @Override
-    public Integer insertar(Recepcionista recepcionista) {
-       this.recepcionista=recepcionista;
-       //this.personaDAO.insertar((Persona)recepcionista);
+    public Integer insertar(Paciente paciente) {
+       this.paciente=paciente;
        return super.insertar();
     }
     
     @Override
-    public Integer eliminar(Recepcionista recepcionista) {
-       this.recepcionista=recepcionista;
+    public Integer eliminar(Paciente paciente) {
+       this.paciente=paciente;
        return super.eliminar();
     }
     
     @Override
-    public ArrayList<Recepcionista> listarTodos(){
-        return (ArrayList<Recepcionista>) super.listarTodos();
+    public ArrayList<Paciente> listarTodos(){
+        return (ArrayList<Paciente>) super.listarTodos();
     }
     
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException { 
-        this.recepcionista = new Recepcionista();
-        this.recepcionista.setIdRecepcionista(this.resultSet.getInt("idRecepcionista"));
-        this.recepcionista.setIdPersona(this.resultSet.getInt("idPersona"));
+        this.paciente = new Paciente();
+        this.paciente.setIdPaciente(this.resultSet.getInt("idPaciente"));
+        this.paciente.setIdPersona(this.resultSet.getInt("idPersona"));
     }
     
     @Override
     protected void limpiarObjetoDelResultSet() {
-        this.recepcionista = null;
+        this.paciente = null;
     }
     
     @Override
     protected void agregarObjetoALaLista(List lista) throws SQLException {
         this.instanciarObjetoDelResultSet();
-        lista.add(this.recepcionista);
+        lista.add(this.paciente);
     }
     
     @Override
     protected void incluirValorDeParametrosParaInsercion() throws SQLException{
-        this.statement.setInt(1,this.recepcionista.getIdPersona());
+        this.statement.setInt(1,this.paciente.getIdPersona());
     }
     
     @Override
     protected void incluirValorDeParametrosParaEliminacion() throws SQLException{
-        this.statement.setInt(1, this.recepcionista.getIdRecepcionista()); 
+        this.statement.setInt(1, this.paciente.getIdPaciente()); 
     }
 }
