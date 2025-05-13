@@ -88,6 +88,8 @@
     <Content Include="Content\Images\pucp.png" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="index.aspx" />
+    <Content Include="listar_citas_paciente.aspx" />
+    <Content Include="reservar_cita.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -115,11 +117,25 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="listar_citas_paciente.aspx.cs">
+      <DependentUpon>listar_citas_paciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listar_citas_paciente.aspx.designer.cs">
+      <DependentUpon>listar_citas_paciente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="OdontoSys.master.cs">
       <DependentUpon>OdontoSys.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reservar_cita.aspx.cs">
+      <DependentUpon>reservar_cita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reservar_cita.aspx.designer.cs">
+      <DependentUpon>reservar_cita.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="OdontoSys.Master" />
