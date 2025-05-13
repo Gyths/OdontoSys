@@ -7,12 +7,12 @@ import com.odontosys.users.model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDAO {
     private Recepcionista recepcionista;
-    private PersonaDAOImpl personaDAO = new PersonaDAOImpl();
     
     public RecepcionistaDAOImpl(){
         super("recepcionista");
@@ -29,17 +29,46 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
     @Override
     public Integer insertar(Recepcionista recepcionista) {
        this.recepcionista=recepcionista;
-       this.personaDAO.insertar((Persona)recepcionista);
+       //this.personaDAO.insertar((Persona)recepcionista);
        return super.insertar();
     }
     
     @Override
-       protected void incluirValorDeParametrosParaInsercion(){
-           try {
-               //Obtener el id del usuario ingresado asi no funciona, cambiar la tabla
-               this.statement.setInt(1,this.recepcionista.getIdPersona());
-           } catch (SQLException ex) {
-               Logger.getLogger(RecepcionistaDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
-           }
-       }
+    public Integer eliminar(Recepcionista recepcionista) {
+       this.recepcionista=recepcionista;
+       return super.eliminar();
+    }
+    
+    @Override
+    public ArrayList<Recepcionista> listarTodos(){
+        return (ArrayList<Recepcionista>) super.listarTodos();
+    }
+    
+    @Override
+    protected void instanciarObjetoDelResultSet() throws SQLException { 
+        this.recepcionista = new Recepcionista();
+        this.recepcionista.setIdRecepcionista(this.resultSet.getInt("idRecepcionista"));
+        this.recepcionista.setIdPersona(this.resultSet.getInt("idPersona"));
+    }
+    
+    @Override
+    protected void limpiarObjetoDelResultSet() {
+        this.recepcionista = null;
+    }
+    
+    @Override
+    protected void agregarObjetoALaLista(List lista) throws SQLException {
+        this.instanciarObjetoDelResultSet();
+        lista.add(this.recepcionista);
+    }
+    
+    @Override
+    protected void incluirValorDeParametrosParaInsercion() throws SQLException{
+        this.statement.setInt(1,this.recepcionista.getIdPersona());
+    }
+    
+    @Override
+    protected void incluirValorDeParametrosParaEliminacion() throws SQLException{
+        this.statement.setInt(1, this.recepcionista.getIdRecepcionista()); 
+    }
 }
