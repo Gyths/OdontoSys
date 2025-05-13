@@ -85,7 +85,6 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\Images\muela.png" />
     <Content Include="Content\Images\pucp.png" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="index.aspx" />
