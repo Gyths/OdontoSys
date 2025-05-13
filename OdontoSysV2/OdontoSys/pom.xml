@@ -13,6 +13,7 @@
         <module>OdontoSysModel</module>
         <module>OdontoSysDBManager</module>
         <module>OdontoSysPersistance</module>
+        <module>OdontoSysBussiness</module>
     </modules>
 
     <properties>

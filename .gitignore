@@ -7,3 +7,4 @@ config.properties
 .vs/
 /OdontoSysFrontEnd/packages
 
+/OdontoSysV2/OdontoSys/OdontoSysBussiness/target/
