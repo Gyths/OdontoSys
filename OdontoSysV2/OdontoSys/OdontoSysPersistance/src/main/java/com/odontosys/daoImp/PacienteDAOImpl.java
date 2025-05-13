@@ -15,7 +15,7 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
     private Paciente paciente;
     
     public PacienteDAOImpl(){
-        super("recepcionista");
+        super("paciente");
         this.retornarLlavePrimaria=true;
         this.paciente = null;
     }
