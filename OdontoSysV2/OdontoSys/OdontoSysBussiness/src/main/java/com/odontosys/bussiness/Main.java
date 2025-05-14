@@ -1,11 +1,15 @@
 package com.odontosys.bussiness;
 
+import com.odontosys.bo.CitaBO;
 import com.odontosys.bo.OdontologoBO;
 import com.odontosys.bo.PacienteBO;
 import com.odontosys.bo.PersonaEnum;
 import com.odontosys.bo.RecepcionistaBO;
 import com.odontosys.services.model.Especialidad;
+import com.odontosys.services.model.EstadoCita;
 import com.odontosys.users.model.TipoUsuario;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Main {
 
@@ -46,7 +50,8 @@ public class Main {
         //DEL
         //int delP = pbo.eliminarPaciente("Pikchu");
         
-        */
-       
+        CitaBO c = new CitaBO();
+        int cTest = c.insertCita(1, 1, 1 , LocalDate.now(), LocalTime.now(), 2, EstadoCita.RESERVADA);
+       */
     }
 }

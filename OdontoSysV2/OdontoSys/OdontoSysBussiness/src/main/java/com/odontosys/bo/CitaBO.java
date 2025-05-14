@@ -32,6 +32,8 @@ public class CitaBO {
         return this.citaDAO.insertar(cita);
     }
     
+    
+    //PENDIENTE
     public Integer modificarCita(String nombrePaciente, LocalDate fecha, LocalTime horaInicio){
         ArrayList<Cita>lista = this.citaDAO.listarTodos();
         Cita cita = new Cita();

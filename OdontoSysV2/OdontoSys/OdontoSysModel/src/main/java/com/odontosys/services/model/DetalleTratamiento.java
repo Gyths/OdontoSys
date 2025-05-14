@@ -9,6 +9,7 @@ public class DetalleTratamiento {
     private double subtotal;
 
     public DetalleTratamiento() {
+        this.tratamiento = new Tratamiento();
     }
 
     public int getIdCita() {
