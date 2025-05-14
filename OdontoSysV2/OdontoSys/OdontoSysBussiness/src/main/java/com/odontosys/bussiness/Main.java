@@ -3,7 +3,7 @@ package com.odontosys.bussiness;
 import com.odontosys.bo.CitaBO;
 import com.odontosys.bo.OdontologoBO;
 import com.odontosys.bo.PacienteBO;
-import com.odontosys.bo.PersonaEnum;
+import com.odontosys.bo.utils.PersonaEnum;
 import com.odontosys.bo.RecepcionistaBO;
 import com.odontosys.services.model.Especialidad;
 import com.odontosys.services.model.EstadoCita;
