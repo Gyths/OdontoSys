@@ -20,13 +20,11 @@ public class DetalleTratamientoBO {
         return this.detalleTratamientoDAO.insertar(detalle);
     }
     
-    //Pendiente
-    public Integer ModificarDetalle(){
-        return -1;
+    public Integer ModificarDetalle(DetalleTratamiento detalleTratamiento){
+        return this.detalleTratamientoDAO.modificar(detalleTratamiento);
     }
     
-    //Pendiente
-    public Integer EliminarDetalle(){
-        return -1;
+    public Integer EliminarDetalle(DetalleTratamiento detalleTratamiento){
+        return this.detalleTratamientoDAO.eliminar(detalleTratamiento);
     }
 }
