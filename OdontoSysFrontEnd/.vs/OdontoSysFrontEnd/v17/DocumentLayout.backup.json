@@ -1,57 +1,57 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\",
+  "WorkspaceRootPath": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\github\\odontosys\\odontosysfrontend\\odontosysfrontend\\listar_pacientes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\listar_pacientes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\github\\odontosys\\odontosysfrontend\\odontosysfrontend\\listar_pacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\listar_pacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\listar_citas_paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\listar_citas_paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\listar_citas_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\listar_citas_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\github\\odontosys\\odontosysfrontend\\odontosysfrontend\\reservar_cita.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\reservar_cita.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\github\\odontosys\\odontosysfrontend\\odontosysfrontend\\registrar_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\registrar_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\github\\odontosys\\odontosysfrontend\\odontosysfrontend\\listar_pacientes.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\listar_pacientes.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\odontosys.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\odontosys.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
       "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\odontosys.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\reservar_cita.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|c:\\users\\gabri\\documents\\git odontosys\\odontosysfrontend\\odontosysfrontend\\listar_pacientes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\listar_pacientes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\listar_pacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\listar_pacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\listar_citas_paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\listar_citas_paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\listar_citas_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\listar_citas_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\reservar_cita.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\reservar_cita.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\registrar_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\registrar_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\listar_pacientes.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\listar_pacientes.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\reservar_cita.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\reservar_cita.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\github\\odontosys\\odontosysfrontend\\odontosysfrontend\\registrar_paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\registrar_paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\registrar_paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\odontosys.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\odontosys.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\odontosys.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
@@ -62,111 +62,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "listar_pacientes.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_pacientes.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_pacientes.aspx.cs",
               "RelativeDocumentMoniker": "OdontoSysFrontEnd\\listar_pacientes.aspx.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_pacientes.aspx.cs",
+              "ToolTip": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_pacientes.aspx.cs",
               "RelativeToolTip": "OdontoSysFrontEnd\\listar_pacientes.aspx.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwBwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T03:30:17.126Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "listar_pacientes.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_pacientes.aspx",
-              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\listar_pacientes.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_pacientes.aspx",
-              "RelativeToolTip": "OdontoSysFrontEnd\\listar_pacientes.aspx",
+              "DocumentIndex": 7,
+              "Title": "registrar_paciente.aspx",
+              "DocumentMoniker": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx",
+              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\registrar_paciente.aspx",
+              "ToolTip": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx",
+              "RelativeToolTip": "OdontoSysFrontEnd\\registrar_paciente.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-14T03:26:33.205Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-14T02:59:50.634Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "registrar_paciente.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx",
-              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\registrar_paciente.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx",
-              "RelativeToolTip": "OdontoSysFrontEnd\\registrar_paciente.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-14T02:59:50.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "reservar_cita.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\reservar_cita.aspx",
+              "DocumentMoniker": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\reservar_cita.aspx",
               "RelativeDocumentMoniker": "OdontoSysFrontEnd\\reservar_cita.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\reservar_cita.aspx",
+              "ToolTip": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\reservar_cita.aspx",
               "RelativeToolTip": "OdontoSysFrontEnd\\reservar_cita.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-13T22:46:52.455Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-13T22:46:52.455Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "reservar_cita.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\reservar_cita.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\reservar_cita.aspx.cs",
               "RelativeDocumentMoniker": "OdontoSysFrontEnd\\reservar_cita.aspx.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\reservar_cita.aspx.cs",
+              "ToolTip": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\reservar_cita.aspx.cs",
               "RelativeToolTip": "OdontoSysFrontEnd\\reservar_cita.aspx.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T22:53:13.562Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "listar_citas_paciente.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_citas_paciente.aspx.cs",
-              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\listar_citas_paciente.aspx.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_citas_paciente.aspx.cs",
-              "RelativeToolTip": "OdontoSysFrontEnd\\listar_citas_paciente.aspx.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAkwCIAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T20:25:01.468Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-13T22:53:13.562Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "listar_citas_paciente.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_citas_paciente.aspx",
-              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\listar_citas_paciente.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_citas_paciente.aspx",
-              "RelativeToolTip": "OdontoSysFrontEnd\\listar_citas_paciente.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-13T20:20:08.276Z",
-              "EditorCaption": ""
+              "Title": "listar_citas_paciente.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_citas_paciente.aspx.cs",
+              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\listar_citas_paciente.aspx.cs",
+              "ToolTip": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_citas_paciente.aspx.cs",
+              "RelativeToolTip": "OdontoSysFrontEnd\\listar_citas_paciente.aspx.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwCIAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T20:25:01.468Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
+              "Title": "listar_citas_paciente.aspx",
+              "DocumentMoniker": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_citas_paciente.aspx",
+              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\listar_citas_paciente.aspx",
+              "ToolTip": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_citas_paciente.aspx",
+              "RelativeToolTip": "OdontoSysFrontEnd\\listar_citas_paciente.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-05-13T20:20:08.276Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "OdontoSys.Master",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\OdontoSys.Master",
+              "DocumentMoniker": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\OdontoSys.Master",
               "RelativeDocumentMoniker": "OdontoSysFrontEnd\\OdontoSys.Master",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\OdontoSys.Master",
-              "RelativeToolTip": "OdontoSysFrontEnd\\OdontoSys.Master",
+              "ToolTip": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\OdontoSys.Master*",
+              "RelativeToolTip": "OdontoSysFrontEnd\\OdontoSys.Master*",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2025-05-12T21:05:28.573Z",
@@ -174,50 +152,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "index.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\index.aspx",
-              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\index.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\index.aspx",
-              "RelativeToolTip": "OdontoSysFrontEnd\\index.aspx",
+              "DocumentIndex": 2,
+              "Title": "listar_pacientes.aspx",
+              "DocumentMoniker": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_pacientes.aspx",
+              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\listar_pacientes.aspx",
+              "ToolTip": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_pacientes.aspx",
+              "RelativeToolTip": "OdontoSysFrontEnd\\listar_pacientes.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-12T21:11:42.235Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-14T03:26:33.205Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
+              "Title": "index.aspx",
+              "DocumentMoniker": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\index.aspx",
+              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\index.aspx",
+              "ToolTip": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\index.aspx",
+              "RelativeToolTip": "OdontoSysFrontEnd\\index.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-05-12T21:11:42.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "listar_pacientes.aspx.designer.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_pacientes.aspx.designer.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_pacientes.aspx.designer.cs",
               "RelativeDocumentMoniker": "OdontoSysFrontEnd\\listar_pacientes.aspx.designer.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_pacientes.aspx.designer.cs",
+              "ToolTip": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\listar_pacientes.aspx.designer.cs",
               "RelativeToolTip": "OdontoSysFrontEnd\\listar_pacientes.aspx.designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADgvyMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T03:40:28.86Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-14T03:40:28.86Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "registrar_paciente.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
               "RelativeDocumentMoniker": "OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
+              "ToolTip": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
               "RelativeToolTip": "OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T03:12:36.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-14T03:12:36.034Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\Content\\site.css",
+              "DocumentMoniker": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\Content\\site.css",
               "RelativeDocumentMoniker": "OdontoSysFrontEnd\\Content\\site.css",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\Content\\site.css",
+              "ToolTip": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\Content\\site.css",
               "RelativeToolTip": "OdontoSysFrontEnd\\Content\\site.css",
               "ViewState": "AgIAAFQAAAAAAAAAAAAAAGEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -227,14 +214,13 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "OdontoSys.master.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\OdontoSys.master.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\OdontoSys.master.cs",
               "RelativeDocumentMoniker": "OdontoSysFrontEnd\\OdontoSys.master.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\OdontoSys.master.cs",
+              "ToolTip": "C:\\Users\\gabri\\Documents\\Git OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\OdontoSys.master.cs",
               "RelativeToolTip": "OdontoSysFrontEnd\\OdontoSys.master.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T21:00:56.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T21:00:56.742Z"
             }
           ]
         }
