@@ -11,39 +11,29 @@ import java.util.ArrayList;
 
 public class RecepcionistaBO {
     
-    private PersonaDAO personaDAO;
+    private PersonaBO personaBO;
     private RecepcionistaDAO recepcionistaDAO;
     
     public RecepcionistaBO(){
-        this.personaDAO = new PersonaDAOImpl();
+        this.personaBO = new PersonaBO();
         this.recepcionistaDAO = new RecepcionistaDAOImpl();
     }
     
     public Integer insertarRecepcionista(String contraseña,  String nombreUsuario,
             String correo, String telefono, String nombre, String apellidos,
-            String DNI, TipoUsuario tipoUsuario){
+            String DNI){
         
-        Persona persona = new Recepcionista();
-        persona.setContrasenha(contraseña);
-        persona.setNombreUsuario(nombreUsuario);
-        persona.setCorreo(correo);
-        persona.setTelefono(telefono);
-        persona.setNombre(nombre);
-        persona.setApellidos(apellidos);
-        persona.setDNI(DNI);
-        persona.setTipoUsuario(tipoUsuario);
-        
-        persona.setIdPersona(this.personaDAO.insertar((Persona)persona));
-        this.recepcionistaDAO.insertar((Recepcionista) persona);
-        return persona.getIdPersona();
-        
+        Recepcionista r = new Recepcionista();
+        r.setIdPersona(this.personaBO.insertarPersona(contraseña, nombreUsuario, correo, telefono, nombre,
+                apellidos, DNI, TipoUsuario.RECEPCIONISTA));
+        return this.recepcionistaDAO.insertar(r);
     }
     
     public Integer modificarRecepcionista(String nombreUsuario, PersonaEnum tipoDato, String cambio){
        ArrayList<Recepcionista> lista = this.recepcionistaDAO.listarTodos();
        Persona p = new Persona();
        for(Recepcionista r : lista){
-            p = this.personaDAO.obtenerPorId(r.getIdPersona());
+            p = this.personaBO.obtenerPorId(r.getIdPersona());
             if(p.getNombreUsuario().equals(nombreUsuario))
                 break;
        }
@@ -57,17 +47,17 @@ public class RecepcionistaBO {
        if(tipoDato == PersonaEnum.TELEFONO)
            p.setTelefono(cambio);
 
-       return this.personaDAO.modificar(p);
+       return this.personaBO.modificarPersona(p);
     }
     
     public Integer eliminarRecepcionista(String nombreUsuario){
        ArrayList<Recepcionista> lista = this.recepcionistaDAO.listarTodos();
-       Persona p = new Persona();
+       Persona p;
        for(Recepcionista r : lista){
-            p = this.personaDAO.obtenerPorId(r.getIdPersona());
+            p = this.personaBO.obtenerPorId(r.getIdPersona());
             if(p.getNombreUsuario().equals(nombreUsuario)){
                 this.recepcionistaDAO.eliminar(r);
-                return this.personaDAO.eliminar(p);
+                return this.personaBO.eliminarPersona(p);
             }
        } 
        return -1;
@@ -75,9 +65,9 @@ public class RecepcionistaBO {
     
     public Persona obtenerIdPersona(String nombreUsuario){
        ArrayList<Recepcionista> lista = this.recepcionistaDAO.listarTodos();
-       Persona p = new Persona();
+       Persona p;
        for(Recepcionista r : lista){
-            p = this.personaDAO.obtenerPorId(r.getIdPersona());
+            p = this.personaBO.obtenerPorId(r.getIdPersona());
             if(p.getNombreUsuario().equals(nombreUsuario))
                 return p;
        }

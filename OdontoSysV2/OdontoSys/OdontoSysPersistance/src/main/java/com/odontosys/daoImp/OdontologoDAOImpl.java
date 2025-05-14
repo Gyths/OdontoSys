@@ -50,7 +50,7 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException { 
         this.odontologo = new Odontologo();
-        this.odontologo.setIdOdontologo(this.resultSet.getInt("idOdontogo"));
+        this.odontologo.setIdOdontologo(this.resultSet.getInt("idOdontologo"));
         this.odontologo.setIdPersona(this.resultSet.getInt("idPersona"));
         this.odontologo.setPuntuacionPromedio(this.resultSet.getDouble("puntuacionPromedio"));
         this.odontologo.setEspecialidad(Especialidad.valueOf(this.resultSet.getString("especialidad")));
@@ -71,6 +71,9 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     @Override
     protected void incluirValorDeParametrosParaInsercion() throws SQLException{
         this.statement.setInt(1,this.odontologo.getIdPersona());
+        this.statement.setDouble(2,this.odontologo.getPuntuacionPromedio());
+        this.statement.setString(3,this.odontologo.getEspecialidad().name());
+        this.statement.setInt(4,this.odontologo.getConsultorio().getIdSala());
     }
     
     @Override

@@ -78,7 +78,7 @@ public class PersonaDAOImpl extends DAOImplBase implements PersonaDAO{
         this.persona.setNombre(this.resultSet.getString("nombre"));
         this.persona.setApellidos(this.resultSet.getString("apellidos"));
         this.persona.setDNI(this.resultSet.getString("DNI"));
-        this.persona.setTipoUsuario(TipoUsuario.valueOf(this.resultSet.getString("tipoUsuario")));
+        this.persona.setTipoUsuario(TipoUsuario.values()[this.resultSet.getInt("tipoUsuario")]);
     }
     
     @Override
