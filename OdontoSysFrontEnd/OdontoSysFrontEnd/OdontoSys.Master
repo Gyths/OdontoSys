@@ -41,6 +41,9 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="listar_citas_paciente.aspx"><i class="fas fa-user-doctor"></i> Ver historial de citas </a>
                                     </li>
+                                     <li class="nav-item">
+                                         <a class="nav-link" href="listar_pacientes.aspx"><i class="fas fa-users"></i> Ver pacientes (para odontólogos) </a>
+                                     </li>
                                 </ul>
                                 <!-- Barra de Usuario-->
                                 <div class="navbar-nav">

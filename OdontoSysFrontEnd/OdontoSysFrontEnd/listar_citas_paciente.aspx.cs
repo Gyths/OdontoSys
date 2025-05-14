@@ -22,7 +22,6 @@ namespace OdontoSysFrontEnd
         {
             //para crear datos de ejemplo
             DataTable dt = CrearTablaCitasEjemplo();
-
             dgvCitas.DataSource = dt;
             dgvCitas.DataBind();
         }
@@ -59,5 +58,6 @@ namespace OdontoSysFrontEnd
             // página principal
             Response.Redirect("index.aspx");
         }
+
     }
 }
