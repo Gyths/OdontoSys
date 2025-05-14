@@ -81,4 +81,7 @@ public class OdontologoBO {
         ArrayList<Odontologo> lista = this.odontologoDAO.listarTodos();
         return lista;
     }
+    
+    
+    
 }
