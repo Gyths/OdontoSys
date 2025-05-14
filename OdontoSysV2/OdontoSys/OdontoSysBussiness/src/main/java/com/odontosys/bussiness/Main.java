@@ -78,8 +78,8 @@ public class Main {
         
         */
         
+        
         /*
-        //ERROR
         DetalleTratamientoBO detalle = new DetalleTratamientoBO();
         //int detInsert = detalle.InsertarDetalle(1, 1, 3, 300);
         DetalleTratamiento det = new DetalleTratamiento();
@@ -87,7 +87,8 @@ public class Main {
         det.getTratamiento().setIdTratamiento(1);
         det.setCantidad(20);
         det.setSubtotal(400);
-        int detMod = detalle.EliminarDetalle(det);
+        int detMod = detalle.ModificarDetalle(det);
+        int detDel = detalle.EliminarDetalle(det);
         */
         
         /*
@@ -105,8 +106,8 @@ public class Main {
         int salaDel = sala.EliminarSala("23", 2);
         */
         
-        //TurnoXOdontologoBO turnoOd = new TurnoXOdontologoBO();
+        TurnoXOdontologoBO turnoOd = new TurnoXOdontologoBO();
         //int turOdInsert = turnoOd.InsertarTurnoXOdontologo(1, 1);
-        //int turOdElim = turnoOd.EliminarTurnoXOdontologo(1, 1);
+        int turOdElim = turnoOd.EliminarTurnoXOdontologo(1, 1);
     }
 }

@@ -79,7 +79,7 @@ public class TurnoXOdontologoDAOImpl extends DAOImplBase implements TurnoXOdonto
     @Override
     public Integer eliminar(TurnoXOdontologo TurnoXOdontologo) {
        this.turnoXOdontologo=TurnoXOdontologo;
-       return super.eliminar();
+       return this.Eliminar();
     }
     
     @Override
@@ -93,6 +93,32 @@ public class TurnoXOdontologoDAOImpl extends DAOImplBase implements TurnoXOdonto
     @Override
     public ArrayList<TurnoXOdontologo> listarTodos(){
         return (ArrayList<TurnoXOdontologo>) super.listarTodos();
+    }
+    
+    public Integer Eliminar() {
+        int resultado = 0;
+        try {
+            this.iniciarTransaccion();
+             String sql = "DELETE FROM odontologo_turno WHERE idOdontologo = ? AND idTurno = ?";
+             this.colocarSQLenStatement(sql);
+             this.incluirValorDeParametrosParaEliminacion();
+             resultado = this.ejecutarModificacionEnBD();
+             this.comitarTransaccion();
+        } catch (SQLException ex) {
+            System.err.println("Error al intentar ejecutar eliminacio");
+            try{
+                this.rollbackTransaccion();
+            } catch (SQLException ex1){
+                System.err.println("Error al hacer rollback - " + ex);
+            }
+        } finally{
+            try {
+                this.cerrarConexion();
+            } catch (SQLException ex) {
+                System.err.println("Error al cerrar la conexión - " + ex);
+            }
+        }
+        return resultado;
     }
     
 }
