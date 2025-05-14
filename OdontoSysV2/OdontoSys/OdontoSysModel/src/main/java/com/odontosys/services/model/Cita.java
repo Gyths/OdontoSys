@@ -20,6 +20,9 @@ public class Cita {
     private List<DetalleTratamiento> tratamientos;
 
     public Cita() {
+        this.odontologo = new Odontologo();
+        this.paciente = new Paciente();
+        this.comprobante = new Comprobante();
     }
 
     public int getIdCita() {

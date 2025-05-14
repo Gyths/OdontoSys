@@ -72,4 +72,9 @@ public class PacienteBO {
        return null;
     }
     
+    public ArrayList<Paciente> listarOdontologos(){
+        ArrayList<Paciente> lista = this.pacienteDAO.listarTodos();
+        return lista;
+    }
+    
 }

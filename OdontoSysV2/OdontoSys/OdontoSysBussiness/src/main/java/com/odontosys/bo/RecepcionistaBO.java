@@ -74,4 +74,9 @@ public class RecepcionistaBO {
        return null;
     }
     
+    public ArrayList<Recepcionista> listarOdontologos(){
+        ArrayList<Recepcionista> lista = this.recepcionistaDAO.listarTodos();
+        return lista;
+    }
+    
 }

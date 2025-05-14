@@ -39,11 +39,14 @@ public class Main {
         
         //PACIENTE TEST
         PacienteBO pbo = new PacienteBO();
+        //INSERT
         int paTest = pbo.insertarPaciente("psd111", "Pikchu", "pkmn@yahoo.com", "987654321", "Carlos", "Santana", "1233567");
+        //MOD
         int modP = pbo.modificarPaciente("Pikchu", PersonaEnum.CORREO, "pikmin@pucp.edu.pe");
+        //DEL
+        //int delP = pbo.eliminarPaciente("Pikchu");
         
         */
-        PacienteBO pbo = new PacienteBO();
-        int delP = pbo.eliminarPaciente("Pikchu");
+       
     }
 }
