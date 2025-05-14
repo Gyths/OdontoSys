@@ -89,8 +89,13 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="index.aspx" />
     <Content Include="listar_citas_paciente.aspx" />
+
     <Content Include="pacientes_odontologo.aspx" />
     <Content Include="recepcionista_cita.aspx" />
+
+    <Content Include="listar_doctores.aspx" />
+    <Content Include="listar_pacientes.aspx" />
+    <Content Include="puntuar_doctor.aspx" />
     <Content Include="registrar_paciente.aspx" />
     <Content Include="reservar_cita.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -127,8 +132,19 @@
     <Compile Include="listar_citas_paciente.aspx.designer.cs">
       <DependentUpon>listar_citas_paciente.aspx</DependentUpon>
     </Compile>
+
     <Compile Include="pacientes_odontologo.aspx.cs">
       <DependentUpon>pacientes_odontologo.aspx</DependentUpon>
+
+    <Compile Include="listar_doctores.aspx.cs">
+      <DependentUpon>listar_doctores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listar_doctores.aspx.designer.cs">
+      <DependentUpon>listar_doctores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listar_pacientes.aspx.cs">
+      <DependentUpon>listar_pacientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pacientes_odontologo.aspx.designer.cs">
@@ -139,12 +155,19 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+
     <Compile Include="recepcionista_cita.aspx.cs">
       <DependentUpon>recepcionista_cita.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="recepcionista_cita.aspx.designer.cs">
       <DependentUpon>recepcionista_cita.aspx</DependentUpon>
+
+    <Compile Include="puntuar_doctor.aspx.cs">
+      <DependentUpon>puntuar_doctor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="puntuar_doctor.aspx.designer.cs">
+      <DependentUpon>puntuar_doctor.aspx</DependentUpon>
     </Compile>
     <Compile Include="registrar_paciente.aspx.cs">
       <DependentUpon>registrar_paciente.aspx</DependentUpon>
