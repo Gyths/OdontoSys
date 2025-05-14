@@ -89,6 +89,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="index.aspx" />
     <Content Include="listar_citas_paciente.aspx" />
+    <Content Include="registrar_paciente.aspx" />
     <Content Include="reservar_cita.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -129,6 +130,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="registrar_paciente.aspx.cs">
+      <DependentUpon>registrar_paciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registrar_paciente.aspx.designer.cs">
+      <DependentUpon>registrar_paciente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="reservar_cita.aspx.cs">
       <DependentUpon>reservar_cita.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
