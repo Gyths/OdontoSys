@@ -23,8 +23,7 @@ public class TratamientoBO {
         
         return this.tratamientoDAO.insertar(tratamiento);
     }
-    
-    //Pendiente
+   
     public Integer ModificarTratamiento(String nombre, Especialidad especialidad, Double costo){
         ArrayList<Tratamiento> list = this.tratamientoDAO.listarTodos();
         for(Tratamiento t : list){
