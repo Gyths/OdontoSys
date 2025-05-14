@@ -21,7 +21,7 @@ public class SalaDAOImpl extends DAOImplBase implements SalaDAO{
     @Override
     protected void configurarListaDeColumnas(){
         this.listaColumnas.add(new Columna("idSala",true,true));
-        this.listaColumnas.add(new Columna("numero",false,false));
+        this.listaColumnas.add(new Columna("numeroSala",false,false));
         this.listaColumnas.add(new Columna("piso",false,false));
     }
     
@@ -52,7 +52,7 @@ public class SalaDAOImpl extends DAOImplBase implements SalaDAO{
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.sala = new Sala();
         this.sala.setIdSala(this.resultSet.getInt("idsala"));
-        this.sala.setNumero(this.resultSet.getString("numero"));
+        this.sala.setNumero(this.resultSet.getString("numeroSala"));
         this.sala.setPiso(this.resultSet.getInt("piso"));
     }
     

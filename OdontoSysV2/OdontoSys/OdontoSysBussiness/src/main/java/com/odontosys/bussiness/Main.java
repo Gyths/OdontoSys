@@ -7,8 +7,13 @@ import com.odontosys.bo.OdontologoBO;
 import com.odontosys.bo.PacienteBO;
 import com.odontosys.bo.utils.PersonaEnum;
 import com.odontosys.bo.RecepcionistaBO;
+import com.odontosys.bo.SalaBO;
 import com.odontosys.bo.TratamientoBO;
+import com.odontosys.bo.TurnoBO;
+import com.odontosys.bo.TurnoXOdontologoBO;
+import com.odontosys.infrastructure.model.DiaSemana;
 import com.odontosys.infrastructure.model.MetodoPago;
+import com.odontosys.infrastructure.model.Turno;
 import com.odontosys.services.model.Comprobante;
 import com.odontosys.services.model.DetalleTratamiento;
 import com.odontosys.services.model.Especialidad;
@@ -72,6 +77,9 @@ public class Main {
         int traElim = tratamiento.EliminarTratamiento("Endodoncia", Especialidad.PEDIATRIA);
         
         */
+        
+        /*
+        //ERROR
         DetalleTratamientoBO detalle = new DetalleTratamientoBO();
         //int detInsert = detalle.InsertarDetalle(1, 1, 3, 300);
         DetalleTratamiento det = new DetalleTratamiento();
@@ -80,5 +88,25 @@ public class Main {
         det.setCantidad(20);
         det.setSubtotal(400);
         int detMod = detalle.ModificarDetalle(det);
+        */
+        
+        /*
+        TurnoBO turno = new TurnoBO();
+        int turInsert = turno.InsertarTurno(LocalTime.now(), LocalTime.now(), DiaSemana.VIERNES);
+        Turno t = new Turno();
+        t.setIdTurno(1);
+        t.setHoraInicio(LocalTime.now());
+        t.setHoraFin(LocalTime.now());
+        t.setDiaSemana(DiaSemana.JUEVES);
+        int turMod = turno.ModificarTurno(t);
+        
+        SalaBO sala = new SalaBO();
+        int salaInsert = sala.InsertarSala("23", 2);
+        int salaDel = sala.EliminarSala("23", 2);
+        */
+        
+        TurnoXOdontologoBO turnoOd = new TurnoXOdontologoBO();
+        //int turOdInsert = turnoOd.InsertarTurnoXOdontologo(1, 1);
+        //int turOdElim = turnoOd.EliminarTurnoXOdontologo(1, 1);
     }
 }

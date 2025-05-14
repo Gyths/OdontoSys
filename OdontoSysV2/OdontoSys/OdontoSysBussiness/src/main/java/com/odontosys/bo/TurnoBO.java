@@ -23,20 +23,11 @@ public class TurnoBO {
     }
     
 
-    public Integer ModificarTurno(LocalTime horaInicio, LocalTime horaFin, DiaSemana diaSemana){
-        Turno turno = new Turno();
-        turno.setHoraInicio(horaInicio);
-        turno.setHoraFin(horaFin);
-        turno.setDiaSemana(diaSemana);
+    public Integer ModificarTurno(Turno turno){
         return this.turnoDAO.modificar(turno);
     }
     
-    public Integer EliminarTurno(LocalTime horaInicio, LocalTime horaFin, DiaSemana diaSemana){
-        ArrayList<Turno> list = this.turnoDAO.listarTodos();
-        for(Turno t : list){
-            if((t.getHoraInicio()==horaInicio && t.getHoraFin()==horaFin) && (t.getDiaSemana() == diaSemana))
-                return this.turnoDAO.eliminar(t);
-        }
-        return -1;
+    public Integer EliminarTurno(Turno turno){
+        return this.turnoDAO.eliminar(turno);
     }
 }
