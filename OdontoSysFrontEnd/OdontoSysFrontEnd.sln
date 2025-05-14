@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.13.35919.96 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdontoSysFrontEnd", "OdontoSysFrontEnd\OdontoSysFrontEnd.csproj", "{030AC3FC-FA29-4379-B5FE-F8139B24F573}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdontoSysFrontEnd", "OdontoSysFrontEnd.csproj", "{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{030AC3FC-FA29-4379-B5FE-F8139B24F573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{030AC3FC-FA29-4379-B5FE-F8139B24F573}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{030AC3FC-FA29-4379-B5FE-F8139B24F573}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{030AC3FC-FA29-4379-B5FE-F8139B24F573}.Release|Any CPU.Build.0 = Release|Any CPU
+		{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D3B5F049-BB0B-4F89-8970-B3D68B10DDD0}
+		SolutionGuid = {4DB6652C-DD2B-46A5-80A9-0A2DCEFD1F8D}
 	EndGlobalSection
 EndGlobal
