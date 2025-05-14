@@ -22,9 +22,13 @@ public class TurnoBO {
         return this.turnoDAO.insertar(turno);
     }
     
-    //Pendiente
+
     public Integer ModificarTurno(LocalTime horaInicio, LocalTime horaFin, DiaSemana diaSemana){
-        return -1;
+        Turno turno = new Turno();
+        turno.setHoraInicio(horaInicio);
+        turno.setHoraFin(horaFin);
+        turno.setDiaSemana(diaSemana);
+        return this.turnoDAO.modificar(turno);
     }
     
     public Integer EliminarTurno(LocalTime horaInicio, LocalTime horaFin, DiaSemana diaSemana){

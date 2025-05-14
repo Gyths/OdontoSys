@@ -25,14 +25,21 @@ public class TratamientoBO {
     }
     
     //Pendiente
-    public Integer ModificarTratamiento(String nombre){
+    public Integer ModificarTratamiento(String nombre, Especialidad especialidad, Double costo){
+        ArrayList<Tratamiento> list = this.tratamientoDAO.listarTodos();
+        for(Tratamiento t : list){
+            if(t.getNombre().matches(nombre) && t.getEspecialidad().equals(especialidad)){
+                t.setCosto(costo);
+                return this.tratamientoDAO.modificar(t);
+            }
+        }
         return -1;
     }
     
-    public Integer EliminarTratamiento(String nombre){
+    public Integer EliminarTratamiento(String nombre, Especialidad especialidad){
         ArrayList<Tratamiento> list = this.tratamientoDAO.listarTodos();
         for(Tratamiento t : list){
-            if(t.getNombre().matches(nombre))
+            if(t.getNombre().matches(nombre) && t.getEspecialidad().equals(especialidad))
                 return this.tratamientoDAO.eliminar(t);
         }
         return -1;

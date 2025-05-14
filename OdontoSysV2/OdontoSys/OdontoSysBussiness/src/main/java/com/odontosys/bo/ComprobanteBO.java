@@ -22,13 +22,8 @@ public class ComprobanteBO {
         return this.comprobanteDAO.insertar(comprobante);
     }
     
-    //Pendiente
-    public Integer ModificarComprobante(){
-        return -1;
+    public Integer EliminarComprobante(Comprobante comprobante){
+        return this.comprobanteDAO.eliminar(comprobante);
     }
     
-    //Pendiente
-    public Integer EliminarComprobante(){
-        return -1;
-    }
 }
