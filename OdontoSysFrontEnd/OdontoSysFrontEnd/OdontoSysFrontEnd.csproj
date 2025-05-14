@@ -130,6 +130,7 @@
     </Compile>
     <Compile Include="listar_doctores.aspx.cs">
       <DependentUpon>listar_doctores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="listar_doctores.aspx.designer.cs">
       <DependentUpon>listar_doctores.aspx</DependentUpon>
