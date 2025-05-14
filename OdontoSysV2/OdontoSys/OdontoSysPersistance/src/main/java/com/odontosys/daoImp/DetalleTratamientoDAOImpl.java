@@ -22,7 +22,7 @@ public class DetalleTratamientoDAOImpl extends DAOImplBase implements DetalleTra
     @Override
     protected void configurarListaDeColumnas(){
         this.listaColumnas.add(new Columna("idCita",true,false));
-        this.listaColumnas.add(new Columna("tratamiento",true,false));
+        this.listaColumnas.add(new Columna("idTratamiento",true,false));
         this.listaColumnas.add(new Columna("cantidad",false,false));
         this.listaColumnas.add(new Columna("subtotal",false,false));
     }

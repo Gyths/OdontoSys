@@ -166,6 +166,7 @@ CREATE TABLE IF NOT EXISTS `odonto_sys`.`tratamiento` (
   `nombre` VARCHAR(100) NOT NULL,
   `descripcion` TEXT NULL DEFAULT NULL,
   `costo` DOUBLE NOT NULL,
+  `especialidad` ENUM('ODONTOLOGIA_GENERAL', 'ORTODONCIA', 'ENDODONCIA', 'CIRUGIA', 'PEDIATRIA') NOT NULL,
   PRIMARY KEY (`idTratamiento`),
   UNIQUE INDEX `nombre` (`nombre` ASC) VISIBLE)
 ENGINE = InnoDB

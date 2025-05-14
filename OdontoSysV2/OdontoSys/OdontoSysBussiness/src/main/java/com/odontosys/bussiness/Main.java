@@ -1,10 +1,16 @@
 package com.odontosys.bussiness;
 
 import com.odontosys.bo.CitaBO;
+import com.odontosys.bo.ComprobanteBO;
+import com.odontosys.bo.DetalleTratamientoBO;
 import com.odontosys.bo.OdontologoBO;
 import com.odontosys.bo.PacienteBO;
 import com.odontosys.bo.utils.PersonaEnum;
 import com.odontosys.bo.RecepcionistaBO;
+import com.odontosys.bo.TratamientoBO;
+import com.odontosys.infrastructure.model.MetodoPago;
+import com.odontosys.services.model.Comprobante;
+import com.odontosys.services.model.DetalleTratamiento;
 import com.odontosys.services.model.Especialidad;
 import com.odontosys.services.model.EstadoCita;
 import com.odontosys.users.model.TipoUsuario;
@@ -52,6 +58,27 @@ public class Main {
         
         CitaBO c = new CitaBO();
         int cTest = c.insertCita(1, 1, 1 , LocalDate.now(), LocalTime.now(), 2, EstadoCita.RESERVADA);
-       */
+
+        ComprobanteBO comprobante = new ComprobanteBO();
+        int comInsert = comprobante.InsertComprobante(LocalDate.now(), LocalTime.now(),250, MetodoPago.EFECTIVO);
+        Comprobante comp = new Comprobante();
+        comp.setIdComprobante(2);
+        int comElim = comprobante.EliminarComprobante(comp);
+        
+        
+        TratamientoBO tratamiento = new TratamientoBO();
+        int traInsert = tratamiento.InsertarTratamiento("Endodoncia", "Taladro en tu diente", 250, Especialidad.PEDIATRIA);
+        int traMod = tratamiento.ModificarTratamiento("Endodoncia", Especialidad.PEDIATRIA, 5000.0);
+        int traElim = tratamiento.EliminarTratamiento("Endodoncia", Especialidad.PEDIATRIA);
+        
+        */
+        DetalleTratamientoBO detalle = new DetalleTratamientoBO();
+        //int detInsert = detalle.InsertarDetalle(1, 1, 3, 300);
+        DetalleTratamiento det = new DetalleTratamiento();
+        det.setIdCita(1);
+        det.getTratamiento().setIdTratamiento(1);
+        det.setCantidad(20);
+        det.setSubtotal(400);
+        int detMod = detalle.ModificarDetalle(det);
     }
 }
