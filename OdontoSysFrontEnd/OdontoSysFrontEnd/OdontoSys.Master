@@ -36,13 +36,16 @@
                                         <a class="nav-link" href="reservar_cita.aspx"><i class="fas fa-calendar-check"></i> Reservar cita</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-credit-card"></i> Ver doctores</a>
+                                        <a class="nav-link" href="#"><i class="fas fa-user-doctor"></i> Ver doctores</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="listar_citas_paciente.aspx"><i class="fas fa-user-doctor"></i> Ver historial de citas </a>
+                                        <a class="nav-link" href="listar_citas_paciente.aspx"><i class="fas fa-file-lines"></i> Ver historial de citas </a>
                                     </li>
                                      <li class="nav-item">
-                                         <a class="nav-link" href="listar_pacientes.aspx"><i class="fas fa-users"></i> Ver pacientes (para odontólogos) </a>
+                                         <a class="nav-link" href="pacientes_odontologo.aspx"><i class="fas fa-users"></i> Ver pacientes (para odontólogos) </a>
+                                     </li>
+                                     <li class="nav-item">
+                                         <a class="nav-link" href="recepcionista_cita.aspx"><i class="fas fa-calendar"></i> Registrar cita (para recepcionistas) </a>
                                      </li>
                                 </ul>
                                 <!-- Barra de Usuario-->

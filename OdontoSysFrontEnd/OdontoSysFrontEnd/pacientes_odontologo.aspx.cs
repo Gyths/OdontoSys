@@ -57,5 +57,9 @@ namespace OdontoSysFrontEnd
             //Session["PacienteDNI"] = dni;
             Response.Redirect("index.aspx");
         }
+        protected void lbVerPagos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
     }
 }
