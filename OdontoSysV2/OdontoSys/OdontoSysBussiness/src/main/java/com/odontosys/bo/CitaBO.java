@@ -1,5 +1,6 @@
 package com.odontosys.bo;
 
+import com.odontosys.bo.utils.CitaEnum;
 import com.odontosys.dao.CitaDAO;
 import com.odontosys.daoImp.CitaDAOImpl;
 import com.odontosys.services.model.Cita;
@@ -33,8 +34,7 @@ public class CitaBO {
     }
     
     
-    //PENDIENTE
-    public Integer modificarCita(String nombrePaciente, LocalDate fecha, LocalTime horaInicio){
+    public Integer modificarCita(String nombrePaciente, LocalDate fecha, LocalTime horaInicio,EstadoCita estado, CitaEnum tipoDato){
         ArrayList<Cita>lista = this.citaDAO.listarTodos();
         Cita cita = new Cita();
         Persona p;
@@ -46,8 +46,16 @@ public class CitaBO {
            }
         }
         //Modificar
-        
-        return -1;
+        if(tipoDato == CitaEnum.ESTADO){
+            cita.setEstado(estado);
+        }
+        if(tipoDato == CitaEnum.FECHA){
+            cita.setFecha(fecha);
+        }
+        if(tipoDato == CitaEnum.HORA){
+            cita.setHoraInicio(horaInicio);
+        }
+        return this.citaDAO.modificar(cita);
     }
     
     public Integer eliminarCita(String nombrePaciente, LocalDate fecha, LocalTime horaInicio){

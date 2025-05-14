@@ -1,5 +1,6 @@
 package com.odontosys.bo;
 
+import com.odontosys.bo.utils.PersonaEnum;
 import com.odontosys.users.model.Paciente;
 import com.odontosys.users.model.Persona;
 import com.odontosys.dao.PersonaDAO;
