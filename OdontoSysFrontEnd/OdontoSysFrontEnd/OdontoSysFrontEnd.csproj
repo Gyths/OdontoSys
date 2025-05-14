@@ -89,6 +89,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="index.aspx" />
     <Content Include="listar_citas_paciente.aspx" />
+    <Content Include="listar_pacientes.aspx" />
     <Content Include="registrar_paciente.aspx" />
     <Content Include="reservar_cita.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -124,6 +125,13 @@
     </Compile>
     <Compile Include="listar_citas_paciente.aspx.designer.cs">
       <DependentUpon>listar_citas_paciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listar_pacientes.aspx.cs">
+      <DependentUpon>listar_pacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listar_pacientes.aspx.designer.cs">
+      <DependentUpon>listar_pacientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="OdontoSys.master.cs">
       <DependentUpon>OdontoSys.Master</DependentUpon>
