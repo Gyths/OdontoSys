@@ -1,13 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.odontosys.bo;
 
-/**
- *
- * @author Gyts
- */
+import com.odontosys.dao.SalaDAO;
+import com.odontosys.daoImp.SalaDAOImpl;
+import com.odontosys.infrastructure.model.Sala;
+import java.util.ArrayList;
+
 public class SalaBO {
+    private SalaDAO salaDAO;
+    
+    public SalaBO(){
+        this.salaDAO = new SalaDAOImpl();
+    }
+    
+    public Integer InsertarSala(String numeroSala, Integer piso){
+        Sala sala = new Sala();
+        sala.setNumero(numeroSala);
+        sala.setPiso(piso);
+        return this.salaDAO.insertar(sala);
+    }
+    
+    public Integer EliminarSala(String numeroSala, Integer piso){
+        ArrayList<Sala> list = this.salaDAO.listarTodos();
+        for(Sala s: list){
+            if(s.getNumero().matches(numeroSala) && s.getPiso() == piso)
+                return this.salaDAO.eliminar(s);
+        }
+        return -1;
+    }
     
 }
