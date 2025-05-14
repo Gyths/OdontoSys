@@ -87,7 +87,7 @@ public class Main {
         det.getTratamiento().setIdTratamiento(1);
         det.setCantidad(20);
         det.setSubtotal(400);
-        int detMod = detalle.ModificarDetalle(det);
+        int detMod = detalle.EliminarDetalle(det);
         */
         
         /*
@@ -105,7 +105,7 @@ public class Main {
         int salaDel = sala.EliminarSala("23", 2);
         */
         
-        TurnoXOdontologoBO turnoOd = new TurnoXOdontologoBO();
+        //TurnoXOdontologoBO turnoOd = new TurnoXOdontologoBO();
         //int turOdInsert = turnoOd.InsertarTurnoXOdontologo(1, 1);
         //int turOdElim = turnoOd.EliminarTurnoXOdontologo(1, 1);
     }

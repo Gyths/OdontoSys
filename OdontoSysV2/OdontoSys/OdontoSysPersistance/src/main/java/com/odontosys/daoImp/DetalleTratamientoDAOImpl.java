@@ -45,14 +45,14 @@ public class DetalleTratamientoDAOImpl extends DAOImplBase implements DetalleTra
     
     @Override
     protected void incluirValorDeParametrosParaEliminacion() throws SQLException{
-        this.statement.setInt(3, this.detalleTratamiento.getIdCita());
-        this.statement.setInt(4, this.detalleTratamiento.getTratamiento().getIdTratamiento());
+        this.statement.setInt(1, this.detalleTratamiento.getIdCita());
+        this.statement.setInt(2, this.detalleTratamiento.getTratamiento().getIdTratamiento());
     }
     
     @Override
     protected void incluirValorDeParametrosParaObtenerPorId() throws SQLException {
-        this.statement.setInt(3, this.detalleTratamiento.getIdCita());
-        this.statement.setInt(4, this.detalleTratamiento.getTratamiento().getIdTratamiento());
+        this.statement.setInt(1, this.detalleTratamiento.getIdCita());
+        this.statement.setInt(2, this.detalleTratamiento.getTratamiento().getIdTratamiento());
     }
     
     @Override
