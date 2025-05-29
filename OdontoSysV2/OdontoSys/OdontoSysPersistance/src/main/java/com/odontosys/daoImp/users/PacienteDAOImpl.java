@@ -68,6 +68,11 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
     }
     
     @Override
+    protected void incluirValorDeParametrosParaObtenerPorNombreUsuario() throws SQLException {
+        this.statement.setString(1,this.paciente.getNombreUsuario());
+    }
+    
+    @Override
     protected void instanciarObjetoDelResultSet() throws SQLException { 
         this.paciente = new Paciente();
         this.paciente.setIdPaciente(this.resultSet.getInt("idPaciente"));
@@ -123,11 +128,12 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         return (ArrayList<Paciente>) super.listarTodos();
     }
     
-    //to-do
     @Override
     public Paciente buscarPorUsuario(String nombreUsuario){
-        Paciente p = new Paciente();
-        return p;
+        this.paciente = new Paciente();
+        this.paciente.setNombreUsuario(nombreUsuario);
+        super.obtenerPorNombreUsuario();
+        return this.paciente;
     }
     
 }

@@ -69,6 +69,11 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
     }
     
     @Override
+    protected void incluirValorDeParametrosParaObtenerPorNombreUsuario() throws SQLException {
+        this.statement.setString(1,this.recepcionista.getNombreUsuario());
+    }
+    
+    @Override
     protected void instanciarObjetoDelResultSet() throws SQLException { 
         this.recepcionista = new Recepcionista();
         this.recepcionista.setIdRecepcionista(this.resultSet.getInt("idRecepcionista"));
@@ -124,10 +129,11 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         return (ArrayList<Recepcionista>) super.listarTodos();
     }
     
-    //to-do
     @Override
     public Recepcionista buscarPorUsuario(String nombreUsuario){
-        Recepcionista r = new Recepcionista();
-        return r;
+        this.recepcionista = new Recepcionista();
+        this.recepcionista.setNombreUsuario(nombreUsuario);
+        super.obtenerPorNombreUsuario();
+        return this.recepcionista;
     }
 }

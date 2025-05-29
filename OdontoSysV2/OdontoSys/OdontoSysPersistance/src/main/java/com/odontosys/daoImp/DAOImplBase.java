@@ -220,6 +220,30 @@ public abstract class DAOImplBase {
         return sql;
     }
 
+    protected String generarSQLParaObtenerPorNombreUsuario() {
+        //sentencia SQL a generar es similar a 
+        //SELECT ALMACEN_ID, NOMBRE, ALMACEN_CENTRAL FROM INV_ALMACENES WHERE ALMACEN_ID = ?
+        String sql = "SELECT ";
+        String sql_columnas = "";
+        String sql_predicado = "";
+        for (Columna columna : this.listaColumnas) {
+            if (columna.getNombre().matches("nombreUsuario")) {
+                sql_predicado = sql_predicado.concat(columna.getNombre());
+                sql_predicado = sql_predicado.concat("=?");
+            }
+            if (!sql_columnas.isBlank()) {
+                sql_columnas = sql_columnas.concat(", ");
+            }
+            sql_columnas = sql_columnas.concat(columna.getNombre());
+        }
+        sql = sql.concat(sql_columnas);
+        sql = sql.concat(" FROM ");
+        sql = sql.concat(this.nombre_tabla);
+        sql = sql.concat(" WHERE ");
+        sql = sql.concat(sql_predicado);
+        return sql;
+    }
+    
     protected String generarSQLParaObtenerPorId() {
         //sentencia SQL a generar es similar a 
         //SELECT ALMACEN_ID, NOMBRE, ALMACEN_CENTRAL FROM INV_ALMACENES WHERE ALMACEN_ID = ?
@@ -246,7 +270,7 @@ public abstract class DAOImplBase {
         sql = sql.concat(sql_predicado);
         return sql;
     }
-
+    
     protected String generarSQLParaListarTodos() {
         //sentencia SQL a generar es similar a 
         //SELECT ALMACEN_ID, NOMBRE, ALMACEN_CENTRAL FROM INV_ALMACENES
@@ -315,6 +339,29 @@ public abstract class DAOImplBase {
             }
         }
     }
+    
+    public void obtenerPorNombreUsuario() {
+        try {
+            this.abrirConexion();
+            String sql = this.generarSQLParaObtenerPorNombreUsuario();
+            this.colocarSQLenStatement(sql);
+            this.incluirValorDeParametrosParaObtenerPorNombreUsuario();
+            this.ejecutarConsultaEnBD();
+            if (this.resultSet.next()) {
+                instanciarObjetoDelResultSet();
+            } else {
+                limpiarObjetoDelResultSet();
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al intentar obtenerPorNombreUsuario - " + ex);
+        } finally {
+            try {
+                this.cerrarConexion();
+            } catch (SQLException ex) {
+                System.err.println("Error al cerrar la conexión - " + ex);
+            }
+        }
+    }
 
     public List listarTodos() {
         String sql = null;
@@ -353,7 +400,11 @@ public abstract class DAOImplBase {
     protected void incluirValorDeParametrosParaObtenerPorId() throws SQLException {
         throw new UnsupportedOperationException("Método no sobreescrito.");
     }
-
+    
+    protected void incluirValorDeParametrosParaObtenerPorNombreUsuario() throws SQLException {
+        throw new UnsupportedOperationException("Método no sobreescrito.");
+    }
+    
     protected void instanciarObjetoDelResultSet() throws SQLException {
         throw new UnsupportedOperationException("Método no sobreescrito.");
     }

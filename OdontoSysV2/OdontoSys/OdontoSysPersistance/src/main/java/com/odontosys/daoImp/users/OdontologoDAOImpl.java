@@ -78,6 +78,11 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     }
     
     @Override
+    protected void incluirValorDeParametrosParaObtenerPorNombreUsuario() throws SQLException {
+        this.statement.setString(1,this.odontologo.getNombreUsuario());
+    }
+    
+    @Override
     protected void instanciarObjetoDelResultSet() throws SQLException { 
         this.odontologo = new Odontologo();
         this.odontologo.setIdOdontologo(this.resultSet.getInt("idOdontologo"));
@@ -138,11 +143,33 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     
     @Override
     public Odontologo buscarPorUsuario(String nombreUsuario){
-        return null;
+        this.odontologo = new Odontologo();
+        this.odontologo.setNombreUsuario(nombreUsuario);
+        super.obtenerPorNombreUsuario();
+        return this.odontologo;
     }
     @Override
     public ArrayList<Odontologo> listarPorEspecialidad(Especialidad especialidad){
-        return null;
+        String sql = "SELECT * FROM odontologo WHERE especialidad = ";
+        sql+=especialidad.ordinal();
+        List lista = new ArrayList<>();
+        try {
+            this.abrirConexion();
+            this.colocarSQLenStatement(sql);
+            this.ejecutarConsultaEnBD();
+            while (this.resultSet.next()) {
+                agregarObjetoALaLista(lista);
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al intentar listar - " + ex);
+        } finally {
+            try {
+                this.cerrarConexion();
+            } catch (SQLException ex) {
+                System.err.println("Error al cerrar la conexión - " + ex);
+            }
+        }
+        return (ArrayList<Odontologo>)lista;
     }
    
 }

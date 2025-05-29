@@ -125,7 +125,32 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     
     @Override
     public ArrayList<Cita>listarPorOdontologo(Odontologo odontologo,LocalDate fechaInicio,LocalDate fechaFin){
-        return null;
+        String sql = "SELECT * FROM cita WHERE idOdontologo = ";
+        sql+=odontologo.getIdOdontologo();
+        sql+= " and fecha < '";
+        sql+=fechaFin.toString();
+        sql+= "' and fecha > '";
+        sql+=fechaInicio.toString();
+        sql+="'";
+        
+        List lista = new ArrayList<>();
+        try {
+            this.abrirConexion();
+            this.colocarSQLenStatement(sql);
+            this.ejecutarConsultaEnBD();
+            while (this.resultSet.next()) {
+                agregarObjetoALaLista(lista);
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al intentar listar - " + ex);
+        } finally {
+            try {
+                this.cerrarConexion();
+            } catch (SQLException ex) {
+                System.err.println("Error al cerrar la conexión - " + ex);
+            }
+        }
+        return (ArrayList<Cita>)lista;
     }
     
 }
