@@ -67,5 +67,6 @@ public class CitaBO {
                 calcularDisponibilidadDia(lista);
             }
         }
+        return null;
     }
 }

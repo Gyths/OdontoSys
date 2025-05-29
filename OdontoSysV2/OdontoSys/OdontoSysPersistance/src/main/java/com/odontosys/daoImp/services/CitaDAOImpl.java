@@ -124,7 +124,7 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     }
     
     @Override
-    public ArrayList<Cita>listarPorOdontologo(Odontologo odontologo,String fechaInicio,String fechaFin){
+    public ArrayList<Cita>listarPorOdontologo(Odontologo odontologo,LocalDate fechaInicio,LocalDate fechaFin){
         return null;
     }
     
