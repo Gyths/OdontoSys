@@ -17,15 +17,19 @@ public class OdontologoBO {
     }
     
     public Integer modificarOdontologo(Odontologo odontologo){
-       return this.odontologoDAO.modificarOdontologo(odontologo);
+       return this.odontologoDAO.modificar(odontologo);
     }
     
     public Integer eliminarOdontologo(Odontologo odontologo){
        return this.odontologoDAO.eliminar(odontologo);
     }
     
-    public Odontologo obtenerPorID(Integer ondontologoID){
-        return this.odontologoDAO.obtenerPorID(odontologoID);
+    public Odontologo obtenerPorID(Integer odontologoID){
+        return this.odontologoDAO.obtenerPorId(odontologoID);
+    }
+    
+    public Odontologo buscarPorUsuario(String odontologoUsuario){
+        return this.odontologoDAO.buscarPorUsuario(odontologoUsuario);
     }
     
     public ArrayList<Odontologo> listarOdontologos(){
