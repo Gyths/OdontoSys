@@ -1,4 +1,4 @@
-package com.odontosys.dao;
+package com.odontosys.dao.services;
 
 import com.odontosys.services.model.Cita;
 import java.util.ArrayList;

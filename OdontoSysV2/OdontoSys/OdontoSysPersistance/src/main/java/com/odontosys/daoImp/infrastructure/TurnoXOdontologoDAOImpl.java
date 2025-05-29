@@ -1,10 +1,11 @@
-package com.odontosys.daoImp;
+package com.odontosys.daoImp.infrastructure;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.odontosys.dao.TurnoXOdontologoDAO;
+import com.odontosys.dao.infrastructure.TurnoXOdontologoDAO;
+import com.odontosys.daoImp.DAOImplBase;
 import com.odontosys.daoImp.util.Columna;
 import com.odontosys.infrastructure.model.TurnoXOdontologo;
 

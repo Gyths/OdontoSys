@@ -1,6 +1,6 @@
 package dao;
 
-import com.odontosys.daoImp.RecepcionistaDAOImpl;
+import com.odontosys.daoImp.users.RecepcionistaDAOImpl;
 import com.odontosys.users.model.Recepcionista;
 import org.junit.jupiter.api.Test;
 
