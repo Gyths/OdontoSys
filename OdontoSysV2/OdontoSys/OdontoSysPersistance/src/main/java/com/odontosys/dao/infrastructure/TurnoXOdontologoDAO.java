@@ -1,4 +1,4 @@
-package com.odontosys.dao;
+package com.odontosys.dao.infrastructure;
 
 import java.util.ArrayList;
 

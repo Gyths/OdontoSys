@@ -1,8 +1,7 @@
 package com.odontosys.users.model;
 
-public class Persona {
+public abstract class Persona {
     
-    protected int idPersona;
     protected String contrasenha;
     protected String nombreUsuario;
     protected String correo;
@@ -13,14 +12,6 @@ public class Persona {
     protected TipoUsuario tipoUsuario;
     
     public Persona(){    
-    }
-    
-    public int getIdPersona() {
-        return idPersona;
-    }
-
-    public void setIdPersona(int idPersona) {
-        this.idPersona = idPersona;
     }
 
     public String getContrasenha() {
@@ -89,7 +80,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "idUsuario=" + idPersona + ", contrase\u00f1a=" + contrasenha + ", nombreUsuario=" + nombreUsuario + ", correo=" + correo + ", telefono=" + telefono + ", nombre=" + nombre + ", apellidos=" + apellidos + ", DNI=" + DNI + ", tipoUsuario=" + tipoUsuario + '}';
+        return "Persona{" + ", contraseña=" + contrasenha + ", nombreUsuario=" + nombreUsuario + ", correo=" + correo + ", telefono=" + telefono + ", nombre=" + nombre + ", apellidos=" + apellidos + ", DNI=" + DNI + ", tipoUsuario=" + tipoUsuario + '}';
     }
     
 }

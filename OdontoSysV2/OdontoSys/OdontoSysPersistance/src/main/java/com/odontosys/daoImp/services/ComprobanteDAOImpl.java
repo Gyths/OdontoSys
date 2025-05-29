@@ -1,4 +1,4 @@
-package com.odontosys.daoImp;
+package com.odontosys.daoImp.services;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -6,7 +6,8 @@ import java.util.List;
 import java.sql.Date;
 import java.sql.Time;
 
-import com.odontosys.dao.ComprobanteDAO;
+import com.odontosys.dao.services.ComprobanteDAO;
+import com.odontosys.daoImp.DAOImplBase;
 import com.odontosys.daoImp.util.Columna;
 import com.odontosys.services.model.Comprobante;
 import com.odontosys.infrastructure.model.MetodoPago;
