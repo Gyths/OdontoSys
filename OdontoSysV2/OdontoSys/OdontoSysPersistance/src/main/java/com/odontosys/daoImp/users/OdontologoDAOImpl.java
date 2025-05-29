@@ -112,6 +112,12 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     }
     
     @Override
+    public Integer modificar(Odontologo odontologo) {
+       this.odontologo=odontologo;
+       return super.modificar();
+    }
+    
+    @Override
     public Integer eliminar(Odontologo odontologo) {
        this.odontologo=odontologo;
        return super.eliminar();
@@ -128,6 +134,15 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     @Override
     public ArrayList<Odontologo> listarTodos(){
         return (ArrayList<Odontologo>) super.listarTodos();
+    }
+    
+    @Override
+    public Odontologo buscarPorUsuario(String nombreUsuario){
+        return null;
+    }
+    @Override
+    public ArrayList<Odontologo> listarPorEspecialidad(Especialidad especialidad){
+        return null;
     }
    
 }

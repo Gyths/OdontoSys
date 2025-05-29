@@ -1,7 +1,7 @@
 package com.odontosys.bo;
 import com.odontosys.users.model.Recepcionista;
-import com.odontosys.dao.RecepcionistaDAO;
-import com.odontosys.daoImp.RecepcionistaDAOImpl;
+import com.odontosys.dao.users.RecepcionistaDAO;
+import com.odontosys.daoImp.users.RecepcionistaDAOImpl;
 import java.util.ArrayList;
 
 public class RecepcionistaBO {
@@ -16,7 +16,7 @@ public class RecepcionistaBO {
     }
     
     public Integer modificarRecepcionista(Recepcionista recepcionista){
-       return this.recepcionistaDAO.modificarRecepcionista(recepcionista);
+       return this.recepcionistaDAO.modificar(recepcionista);
     }
     
     public Integer eliminarRecepcionista(Recepcionista recepcionista){
@@ -24,10 +24,14 @@ public class RecepcionistaBO {
     }
     
     public Recepcionista obtenerPorID(Integer recepcionistaID){
-        return this.recepcionistaDAO.obtenerPorID(recepcionistaID);
+        return this.recepcionistaDAO.obtenerPorId(recepcionistaID);
     }
     
-    public ArrayList<Recepcionista> listarOdontologos(){
+    public Recepcionista buscarPorUsuario(String nombreUsuario){
+        return this.recepcionistaDAO.buscarPorUsuario(nombreUsuario);
+    }
+    
+    public ArrayList<Recepcionista> listarRecepcionista(){
         ArrayList<Recepcionista> lista = this.recepcionistaDAO.listarTodos();
         return lista;
     }

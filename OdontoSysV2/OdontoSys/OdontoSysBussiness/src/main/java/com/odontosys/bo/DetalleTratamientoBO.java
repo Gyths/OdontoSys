@@ -1,7 +1,7 @@
 package com.odontosys.bo;
 
-import com.odontosys.dao.DetalleTratamientoDAO;
-import com.odontosys.daoImp.DetalleTratamientoDAOImpl;
+import com.odontosys.dao.services.DetalleTratamientoDAO;
+import com.odontosys.daoImp.services.DetalleTratamientoDAOImpl;
 import com.odontosys.services.model.DetalleTratamiento;
 
 public class DetalleTratamientoBO {

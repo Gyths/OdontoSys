@@ -1,16 +1,15 @@
 package com.odontosys.bo;
-import com.odontosys.dao.OdontologoDAO;
-import com.odontosys.daoImp.OdontologoDAOImpl;
+import com.odontosys.dao.users.OdontologoDAO;
+import com.odontosys.daoImp.users.OdontologoDAOImpl;
+import com.odontosys.services.model.Especialidad;
 import com.odontosys.users.model.Odontologo;
 import java.util.ArrayList;
 
 public class OdontologoBO {
     private OdontologoDAO odontologoDAO;
-    private PersonaBO personaBO;
     
     public OdontologoBO(){
         this.odontologoDAO = new OdontologoDAOImpl();
-        this.personaBO = new PersonaBO();
     }
     
     public Integer insertarOdontologo(Odontologo odontologo){
@@ -34,6 +33,9 @@ public class OdontologoBO {
         return lista;
     }
     
-    
+    public ArrayList<Odontologo> listarPorEspecialidad(Especialidad especialidad){
+        ArrayList<Odontologo> lista = this.odontologoDAO.listarPorEspecialidad(especialidad);
+        return lista;
+    }
     
 }

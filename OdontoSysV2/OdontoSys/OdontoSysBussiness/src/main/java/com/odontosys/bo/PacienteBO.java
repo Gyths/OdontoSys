@@ -1,7 +1,7 @@
 package com.odontosys.bo;
 import com.odontosys.users.model.Paciente;
-import com.odontosys.dao.PacienteDAO;
-import com.odontosys.daoImp.PacienteDAOImpl;
+import com.odontosys.dao.users.PacienteDAO;
+import com.odontosys.daoImp.users.PacienteDAOImpl;
 import java.util.ArrayList;
 
 public class PacienteBO {
@@ -24,7 +24,7 @@ public class PacienteBO {
     }
     
     public Paciente obtenerPorID(Integer pacienteID){
-       return this.pacienteDAO.obtenerPorID(pacienteID);
+       return this.pacienteDAO.obtenerPorId(pacienteID);
     }
     
     public Paciente buscarPorUsuario(String nombreUsuario){

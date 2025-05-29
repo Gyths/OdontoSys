@@ -1,8 +1,8 @@
 
 package com.odontosys.bo;
 
-import com.odontosys.dao.SalaDAO;
-import com.odontosys.daoImp.SalaDAOImpl;
+import com.odontosys.dao.infrastructure.SalaDAO;
+import com.odontosys.daoImp.infrastructure.SalaDAOImpl;
 import com.odontosys.infrastructure.model.Sala;
 import java.util.ArrayList;
 

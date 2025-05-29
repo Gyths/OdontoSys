@@ -1,7 +1,7 @@
 package com.odontosys.bo;
 
-import com.odontosys.dao.TurnoDAO;
-import com.odontosys.daoImp.TurnoDAOImpl;
+import com.odontosys.dao.infrastructure.TurnoDAO;
+import com.odontosys.daoImp.infrastructure.TurnoDAOImpl;
 import com.odontosys.infrastructure.model.DiaSemana;
 import com.odontosys.infrastructure.model.Turno;
 import java.time.LocalTime;

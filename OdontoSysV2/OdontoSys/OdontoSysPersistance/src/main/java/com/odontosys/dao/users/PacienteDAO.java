@@ -5,8 +5,10 @@ import java.util.ArrayList;
 
 public interface PacienteDAO{
     Integer insertar(Paciente paciente);
+    Integer modificar(Paciente paciente);
     Integer eliminar(Paciente paciente);
     Paciente obtenerPorId(Integer Id);
     ArrayList<Paciente> listarTodos();
+    Paciente buscarPorUsuario(String nombreUsuario);
 }
 

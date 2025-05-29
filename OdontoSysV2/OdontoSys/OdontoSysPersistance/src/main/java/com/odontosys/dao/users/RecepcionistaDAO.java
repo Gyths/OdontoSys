@@ -5,7 +5,9 @@ import java.util.ArrayList;
 
 public interface RecepcionistaDAO{
     Integer insertar(Recepcionista recepcionista);
+    Integer modificar(Recepcionista recepcionista);
     Integer eliminar(Recepcionista recepcionista);
     Recepcionista obtenerPorId(Integer Id);
     ArrayList<Recepcionista> listarTodos();
+    Recepcionista buscarPorUsuario(String nombreUsuario);
 }

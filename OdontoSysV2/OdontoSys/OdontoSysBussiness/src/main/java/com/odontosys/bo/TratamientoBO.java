@@ -1,7 +1,7 @@
 package com.odontosys.bo;
 
-import com.odontosys.dao.TratamientoDAO;
-import com.odontosys.daoImp.TratamientoDAOImpl;
+import com.odontosys.dao.services.TratamientoDAO;
+import com.odontosys.daoImp.services.TratamientoDAOImpl;
 import com.odontosys.services.model.Especialidad;
 import com.odontosys.services.model.Tratamiento;
 import java.util.ArrayList;

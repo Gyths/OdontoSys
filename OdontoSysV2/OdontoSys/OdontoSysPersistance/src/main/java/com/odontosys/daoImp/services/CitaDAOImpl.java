@@ -9,6 +9,7 @@ import com.odontosys.daoImp.DAOImplBase;
 import com.odontosys.daoImp.util.Columna;
 import com.odontosys.services.model.Cita;
 import com.odontosys.services.model.EstadoCita;
+import com.odontosys.users.model.Odontologo;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -120,6 +121,11 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     @Override
     public ArrayList<Cita> listarTodos(){
         return (ArrayList<Cita>) super.listarTodos();
+    }
+    
+    @Override
+    public ArrayList<Cita>listarPorOdontologo(Odontologo odontologo,String fechaInicio,String fechaFin){
+        return null;
     }
     
 }

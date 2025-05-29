@@ -99,6 +99,12 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
     }
     
     @Override
+    public Integer modificar(Paciente paciente) {
+       this.paciente=paciente;
+       return super.modificar();
+    }
+    
+    @Override
     public Integer eliminar(Paciente paciente) {
        this.paciente=paciente;
        return super.eliminar();
@@ -115,6 +121,13 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
     @Override
     public ArrayList<Paciente> listarTodos(){
         return (ArrayList<Paciente>) super.listarTodos();
+    }
+    
+    //to-do
+    @Override
+    public Paciente buscarPorUsuario(String nombreUsuario){
+        Paciente p = new Paciente();
+        return p;
     }
     
 }

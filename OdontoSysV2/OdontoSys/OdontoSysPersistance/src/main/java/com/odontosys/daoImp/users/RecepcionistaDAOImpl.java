@@ -100,6 +100,12 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
     }
     
     @Override
+    public Integer modificar(Recepcionista recepcionista) {
+       this.recepcionista=recepcionista;
+       return super.modificar();
+    }
+    
+    @Override
     public Integer eliminar(Recepcionista recepcionista) {
        this.recepcionista=recepcionista;
        return super.eliminar();
@@ -116,5 +122,12 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
     @Override
     public ArrayList<Recepcionista> listarTodos(){
         return (ArrayList<Recepcionista>) super.listarTodos();
+    }
+    
+    //to-do
+    @Override
+    public Recepcionista buscarPorUsuario(String nombreUsuario){
+        Recepcionista r = new Recepcionista();
+        return r;
     }
 }

@@ -1,7 +1,7 @@
 package com.odontosys.bo;
 
-import com.odontosys.dao.TurnoXOdontologoDAO;
-import com.odontosys.daoImp.TurnoXOdontologoDAOImpl;
+import com.odontosys.dao.infrastructure.TurnoXOdontologoDAO;
+import com.odontosys.daoImp.infrastructure.TurnoXOdontologoDAOImpl;
 import com.odontosys.infrastructure.model.TurnoXOdontologo;
 import java.util.ArrayList;
 
