@@ -104,10 +104,11 @@ public class Main {
         SalaBO sala = new SalaBO();
         int salaInsert = sala.InsertarSala("23", 2);
         int salaDel = sala.EliminarSala("23", 2);
-        */
+        
         
         TurnoXOdontologoBO turnoOd = new TurnoXOdontologoBO();
-        //int turOdInsert = turnoOd.InsertarTurnoXOdontologo(1, 1);
+        int turOdInsert = turnoOd.InsertarTurnoXOdontologo(1, 1);
         int turOdElim = turnoOd.EliminarTurnoXOdontologo(1, 1);
+        */
     }
 }
