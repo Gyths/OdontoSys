@@ -463,7 +463,7 @@ public class Main {
         //insertarMetodosPago(); //no implementado
         ArrayList<Tratamiento>listaTra = insertaTratamientos();
         ArrayList<Comprobante>listaCom = insertaComprobantes();
-        ArrayList<Recepcionista>listaRep = insertaRecepcionistas();
+        ArrayList<Recepcionista>listaRep = insertaRecepcionistas(); //no lo usa nadie pipipi
         ArrayList<Paciente>listaPa = insertaPacientes();
         ArrayList<Odontologo>listaOd = insertaOdontologos(listaSa);
         ArrayList<Cita>listaCita = insertaCita(listaOd,listaPa,listaCom);
