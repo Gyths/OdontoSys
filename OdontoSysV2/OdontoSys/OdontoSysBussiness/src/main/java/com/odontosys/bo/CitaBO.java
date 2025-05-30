@@ -2,13 +2,16 @@ package com.odontosys.bo;
 
 import com.odontosys.dao.services.CitaDAO;
 import com.odontosys.daoImp.services.CitaDAOImpl;
+import com.odontosys.infrastructure.model.Turno;
 import com.odontosys.services.model.Cita;
 import com.odontosys.services.model.Comprobante;
 import com.odontosys.services.model.EstadoCita;
 import com.odontosys.users.model.Odontologo;
 import com.odontosys.users.model.Paciente;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class CitaBO {
@@ -46,28 +49,42 @@ public class CitaBO {
         return lista;
     }
     
-    public Integer[] calcularDisponibilidadDia(ArrayList<Cita>citas){
-        Integer[] timeSlots = new Integer[48];
-        for(Cita cita:citas){
-           Integer index = cita.getHoraInicio().getHour();
-           if(cita.getHoraInicio().getMinute() != 0)index++;
-           timeSlots[index] = 1;
-        }
-        return timeSlots;
-    }
-    
-    public ArrayList<Integer[]> calcularDisponibilidad(ArrayList<Cita>citas){
-        ArrayList<Integer[]>semana = new ArrayList<>();
-        for(int i=0;i<citas.size();i++){
-            ArrayList<Cita>lista = new ArrayList<>();
-            if(citas.get(i).getFecha().equals(citas.get(i+1).getFecha())){
-                lista.add(citas.get(i));
+    //Magia de @jared
+    public boolean[][] calcularDisponibilidad(ArrayList<Cita> citas, ArrayList<Turno> turnos, String fechaInicio){
+        
+        boolean[][] disponibilidad = new boolean[7][48];
+        LocalDate inicio = LocalDate.parse(fechaInicio);
+        
+        for(int i=0; i<7; i++){
+            LocalDate fecha = inicio.plusDays(i);
+            DayOfWeek dia = fecha.getDayOfWeek();
+            
+            for(Turno turno : turnos){
+                if(turno.getDiaSemana().equals(dia)){
+                    int inicioBloque = (turno.getHoraInicio().getHour() * 2) + 
+                                      (turno.getHoraInicio().getMinute() >= 30 ? 1 : 0);
+                    int finBloque = (turno.getHoraFin().getHour() * 2) + 
+                                   (turno.getHoraFin().getMinute() > 0 ? 1 : 0);
+                
+                    inicioBloque--;
+                    finBloque++;
+                    
+                    for(int j = inicioBloque; j < finBloque; j++)
+                        disponibilidad[i][j] = true;
+                }
             }
-            else{
-                lista.add(citas.get(i));
-                semana.add(calcularDisponibilidadDia(lista));
+            
+            for (Cita cita : citas){
+                LocalDate fechaCita = cita.getFecha();
+                int diferencia = (int) ChronoUnit.DAYS.between(inicio, fechaCita);
+                if(diferencia >= 0 && diferencia < 7){
+                    int bloque = cita.getHoraInicio().getHour() * 2 + 
+                            (cita.getHoraInicio().getMinute() >= 30 ? 1 : 0);
+                    disponibilidad[diferencia][bloque] = false;
+                }
             }
         }
-        return semana;
+        return disponibilidad;
     }
+
 }
