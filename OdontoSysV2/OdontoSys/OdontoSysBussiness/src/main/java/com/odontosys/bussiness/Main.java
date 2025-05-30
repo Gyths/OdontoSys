@@ -189,10 +189,17 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World From Bussiness");
         /*Dummy data
-            Especialidades deben ya existir en la bd, son fijas (sino no va a insertar odontologos)
+            Especialidades deben ya existir en la bd, son fijas (sino no va a insertar odontologos), utilizar estas sentencias
+                insert into especialidad (descripcion) values ('ODONTOLOGIA_GENERAL');
+                insert into especialidad (descripcion) values ('ORTODONCIA');
+                insert into especialidad (descripcion) values ('ENDODONCIA');
+                insert into especialidad (descripcion) values ('CIRUGIA');
+                insert into especialidad (descripcion) values ('PEDIATRIA');
             Falta insertar citas,turnoXodontologo,detalleTratamiento -> puede ser a mano o devolver listas del insertar 
                                                                         para tener los objetos listos
             ModificarBOs para que todos reciban objetos enves de parametros(sala,turno,citas,....)
+            Especialidad deberia ser una clase aparte con sus DAOs
+            Modificar y eliminar deberian funcionar en principio pero no estan probados para esta nueva version
         */
         insertaRecepcionistas();
         insertaPacientes();
