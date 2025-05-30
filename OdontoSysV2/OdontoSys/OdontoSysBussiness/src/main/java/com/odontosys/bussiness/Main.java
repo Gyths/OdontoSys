@@ -455,6 +455,7 @@ public class Main {
                 insert into metodopago (descripcion) values ('PLIN'); 
             Especialidad y MetodoPago deberian ser una clase aparte con sus DAOs
             Modificar y eliminar deberian funcionar en principio pero no estan probados para esta nueva version
+            El primer comprobante existe como placeholder para no pagados -> tiene que haber una mejor forma de hacer esto xd
         */
         ArrayList<Sala>listaSa = insertaSalas();
         ArrayList<Turno>listaTur = insertaTurnos();
@@ -464,14 +465,9 @@ public class Main {
         ArrayList<Comprobante>listaCom = insertaComprobantes();
         ArrayList<Recepcionista>listaRep = insertaRecepcionistas();
         ArrayList<Paciente>listaPa = insertaPacientes();
-        
         ArrayList<Odontologo>listaOd = insertaOdontologos(listaSa);
         ArrayList<Cita>listaCita = insertaCita(listaOd,listaPa,listaCom);
         insertaDetalleTratamiento(listaCita,listaTra); //seria util que reciba objeto cita enves de id en el model?
         insertaTurnoOdontologo(listaOd,listaTur); // lo mismo que arriba, seria mejor objetos enves de solo ids?
-        
-        
-        
-        
     }
 }
