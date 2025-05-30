@@ -80,24 +80,10 @@ public abstract class DAOImplBase {
         this.resultSet = this.statement.executeQuery();
     }
 
-    protected Integer insertar() {
-        return this.ejecuta_DML(Tipo_Operacion.INSERTAR);
-    }
-
-    protected Integer modificar() {
-        return this.ejecuta_DML(Tipo_Operacion.MODIFICAR);
-    }
-
-    protected Integer eliminar() {
-        return this.ejecuta_DML(Tipo_Operacion.ELIMINAR);
-    }
-
     private Integer ejecuta_DML(Tipo_Operacion tipo_Operacion) {
         int resultado = 0;
         try {
             this.iniciarTransaccion();
-            //this.conexion = DBManager.getInstance().getConnection();
-            //this.conexion.setAutoCommit(false);
             String sql = null;
             switch (tipo_Operacion) {
                 case Tipo_Operacion.INSERTAR ->
@@ -127,18 +113,12 @@ public abstract class DAOImplBase {
             System.err.println("Error al intentar ejecutar consulta - " + tipo_Operacion.toString() + ": " + ex);
             try {
                 this.rollbackTransaccion();
-                //if (this.conexion != null) {
-                //    this.conexion.rollback();
-                //}
             } catch (SQLException ex1) {
                 System.err.println("Error al hacer rollback - " + ex);
             }
         } finally {
             try {
                 this.cerrarConexion();
-                //if (this.conexion != null) {
-                //    this.conexion.close();
-                //}
             } catch (SQLException ex) {
                 System.err.println("Error al cerrar la conexión - " + ex);
             }
@@ -147,8 +127,8 @@ public abstract class DAOImplBase {
     }
 
     protected String generarSQLParaInsercion() {
-        //sentencia SQL a generar es similar a 
-        //INSERT INTO INV_ALMACENES (NOMBRE, ALMACEN_CENTRAL) VALUES (?,?)
+        //sentencia SQL a generar similar a 
+        //INSERT INTO NOMBRE_TABLA (COL1, COL2) VALUES (?,?)
         String sql = "INSERT INTO ";
         sql = sql.concat(this.nombre_tabla);
         sql = sql.concat("(");
@@ -172,8 +152,8 @@ public abstract class DAOImplBase {
     }
 
     protected String generarSQLParaModificacion() {
-        //sentencia SQL a generar es similar a 
-        //UPDATE INV_ALMACENES SET NOMBRE=?, ALMACEN_CENTRAL=? WHERE ALMACEN_ID=?
+        //sentencia SQL a generar similar a 
+        //UPDATE NOMBRE_TABLA SET COL1=?, COL2=? WHERE COL_ID=?
         String sql = "UPDATE ";
         sql = sql.concat(this.nombre_tabla);
         sql = sql.concat(" SET ");
@@ -201,8 +181,8 @@ public abstract class DAOImplBase {
     }
 
     protected String generarSQLParaEliminacion() {
-        //sentencia SQL a generar es similar a 
-        //DELETE FROM INV_ALMACENES WHERE ALMACEN_ID=?
+        //sentencia SQL a generar similar a 
+        //DELETE FROM NOMBRE_TABLA WHERE COL_ID=?
         String sql = "DELETE FROM ";
         sql = sql.concat(this.nombre_tabla);
         sql = sql.concat(" WHERE ");
@@ -222,7 +202,7 @@ public abstract class DAOImplBase {
 
     protected String generarSQLParaObtenerPorNombreUsuario() {
         //sentencia SQL a generar es similar a 
-        //SELECT ALMACEN_ID, NOMBRE, ALMACEN_CENTRAL FROM INV_ALMACENES WHERE ALMACEN_ID = ?
+        //SELECT COL1, COL2, COL3 FROM NOMBRE_TABLA WHERE COL_USER = ?
         String sql = "SELECT ";
         String sql_columnas = "";
         String sql_predicado = "";
@@ -246,7 +226,7 @@ public abstract class DAOImplBase {
     
     protected String generarSQLParaObtenerPorId() {
         //sentencia SQL a generar es similar a 
-        //SELECT ALMACEN_ID, NOMBRE, ALMACEN_CENTRAL FROM INV_ALMACENES WHERE ALMACEN_ID = ?
+        //SELECT COL1, COL2, COL3 FROM NOMBRE_TABLA WHERE COL_ID = ?
         String sql = "SELECT ";
         String sql_columnas = "";
         String sql_predicado = "";
@@ -273,7 +253,7 @@ public abstract class DAOImplBase {
     
     protected String generarSQLParaListarTodos() {
         //sentencia SQL a generar es similar a 
-        //SELECT ALMACEN_ID, NOMBRE, ALMACEN_CENTRAL FROM INV_ALMACENES
+        //SELECT COL1, COL2, COL3 FROM NOMBRE_TABLA
         String sql = "SELECT ";
         String sql_columnas = "";
         for (Columna columna : this.listaColumnas) {
@@ -299,7 +279,27 @@ public abstract class DAOImplBase {
     protected void incluirValorDeParametrosParaEliminacion() throws SQLException {
         throw new UnsupportedOperationException("Método no sobreescrito.");
     }
+    
+    protected void incluirValorDeParametrosParaObtenerPorId() throws SQLException {
+        throw new UnsupportedOperationException("Método no sobreescrito.");
+    }
+    
+    protected void incluirValorDeParametrosParaObtenerPorNombreUsuario() throws SQLException {
+        throw new UnsupportedOperationException("Método no sobreescrito.");
+    }
+    
+    protected Integer insertar() {
+        return this.ejecuta_DML(Tipo_Operacion.INSERTAR);
+    }
 
+    protected Integer modificar() {
+        return this.ejecuta_DML(Tipo_Operacion.MODIFICAR);
+    }
+
+    protected Integer eliminar() {
+        return this.ejecuta_DML(Tipo_Operacion.ELIMINAR);
+    }
+    
     public Integer retornarUltimoAutoGenerado() {
         Integer resultado = null;
         try {
@@ -396,14 +396,6 @@ public abstract class DAOImplBase {
         }
         return lista;
     }
-
-    protected void incluirValorDeParametrosParaObtenerPorId() throws SQLException {
-        throw new UnsupportedOperationException("Método no sobreescrito.");
-    }
-    
-    protected void incluirValorDeParametrosParaObtenerPorNombreUsuario() throws SQLException {
-        throw new UnsupportedOperationException("Método no sobreescrito.");
-    }
     
     protected void instanciarObjetoDelResultSet() throws SQLException {
         throw new UnsupportedOperationException("Método no sobreescrito.");
@@ -415,44 +407,5 @@ public abstract class DAOImplBase {
 
     protected void agregarObjetoALaLista(List lista) throws SQLException {
         throw new UnsupportedOperationException("Método no sobreescrito.");
-    }
-
-    protected void ejecutarProcedimientoAlmacenado(String sql, Boolean conTransaccion) {
-        Consumer incluirValorDeParametros = null;
-        Object parametros = null;
-        this.ejecutarProcedimientoAlmacenado(sql, incluirValorDeParametros, parametros, conTransaccion);
-    }
-
-    protected void ejecutarProcedimientoAlmacenado(String sql, Consumer incluirValorDeParametros, Object parametros, Boolean conTransaccion) {
-        try {
-            if (conTransaccion) {
-                this.iniciarTransaccion();
-            } else {
-                this.abrirConexion();
-            }
-            this.colocarSQLenStatement(sql);
-            if (incluirValorDeParametros != null) {
-                incluirValorDeParametros.accept(parametros);
-            }
-            this.ejecutarModificacionEnBD();
-            if (conTransaccion) {
-                this.comitarTransaccion();
-            }
-        } catch (SQLException ex) {
-            if (conTransaccion)
-                try {
-                this.rollbackTransaccion();
-            } catch (SQLException ex1) {
-                Logger.getLogger(DAOImplBase.class.getName()).log(Level.SEVERE, null, ex1);
-            }
-            Logger.getLogger(DAOImplBase.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                this.cerrarConexion();
-            } catch (SQLException ex) {
-                Logger.getLogger(DAOImplBase.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-
     }
 }
