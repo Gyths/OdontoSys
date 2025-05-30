@@ -455,8 +455,9 @@ public class Main {
         ArrayList<Paciente>listaPa = insertaPacientes();
         ArrayList<Odontologo>listaOd = insertaOdontologos(listaSa);
         ArrayList<Cita>listaCita = insertaCita(listaOd,listaPa,listaCom);
-        insertaDetalleTratamiento(listaCita,listaTra); //seria util que reciba objeto cita enves de id en el model?
-        insertaTurnoOdontologo(listaOd,listaTur); // lo mismo que arriba, seria mejor objetos enves de solo ids??*/
+        insertaDetalleTratamiento(listaCita,listaTra); 
+        insertaTurnoOdontologo(listaOd,listaTur);
+        */
         
         //Test horarios libres por doctor, @jared
         OdontologoBO odBO = new OdontologoBO();
