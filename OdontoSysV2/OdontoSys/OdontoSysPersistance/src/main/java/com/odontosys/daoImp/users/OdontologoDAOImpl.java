@@ -30,9 +30,8 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         this.listaColumnas.add(new Columna("nombre",false,false));
         this.listaColumnas.add(new Columna("apellidos",false,false));
         this.listaColumnas.add(new Columna("DNI",false,false));
-        this.listaColumnas.add(new Columna("tipoUsuario",false,false));
         this.listaColumnas.add(new Columna("puntuacionPromedio",false,false));
-        this.listaColumnas.add(new Columna("especialidad",false,false));   
+        this.listaColumnas.add(new Columna("idEspecialidad",false,false));   
         this.listaColumnas.add(new Columna("idSala",false,false));   
     }
     
@@ -45,10 +44,9 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         this.statement.setString(5,this.odontologo.getNombre());
         this.statement.setString(6,this.odontologo.getApellidos());
         this.statement.setString(7,this.odontologo.getDNI());
-        this.statement.setInt(8,this.odontologo.getTipoUsuario().ordinal());
-        this.statement.setDouble(9,this.odontologo.getPuntuacionPromedio());
-        this.statement.setInt(10,this.odontologo.getEspecialidad().ordinal());
-        this.statement.setInt(11,this.odontologo.getConsultorio().getIdSala());
+        this.statement.setDouble(8,this.odontologo.getPuntuacionPromedio());
+        this.statement.setInt(9,this.odontologo.getEspecialidad().ordinal());
+        this.statement.setInt(10,this.odontologo.getConsultorio().getIdSala());
     }
     
     @Override
@@ -60,11 +58,10 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         this.statement.setString(5,this.odontologo.getNombre());
         this.statement.setString(6,this.odontologo.getApellidos());
         this.statement.setString(7,this.odontologo.getDNI());
-        this.statement.setInt(8,this.odontologo.getTipoUsuario().ordinal());
-        this.statement.setDouble(9,this.odontologo.getPuntuacionPromedio());
-        this.statement.setInt(10,this.odontologo.getEspecialidad().ordinal());
-        this.statement.setInt(11,this.odontologo.getConsultorio().getIdSala());
-        this.statement.setInt(12, this.odontologo.getIdOdontologo());
+        this.statement.setDouble(8,this.odontologo.getPuntuacionPromedio());
+        this.statement.setInt(9,this.odontologo.getEspecialidad().ordinal());
+        this.statement.setInt(10,this.odontologo.getConsultorio().getIdSala());
+        this.statement.setInt(11, this.odontologo.getIdOdontologo());
     }
     
     @Override
@@ -93,7 +90,6 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         this.odontologo.setNombre(this.resultSet.getString("nombre"));
         this.odontologo.setApellidos(this.resultSet.getString("apellidos"));
         this.odontologo.setDNI(this.resultSet.getString("DNI"));
-        this.odontologo.setTipoUsuario(TipoUsuario.values()[this.resultSet.getInt("tipoUsuario")]);
         this.odontologo.setPuntuacionPromedio(this.resultSet.getDouble("puntuacionPromedio"));
         this.odontologo.setEspecialidad(Especialidad.values()[this.resultSet.getInt("especialidad")]);
         this.odontologo.getConsultorio().setIdSala(this.resultSet.getInt("idSala"));

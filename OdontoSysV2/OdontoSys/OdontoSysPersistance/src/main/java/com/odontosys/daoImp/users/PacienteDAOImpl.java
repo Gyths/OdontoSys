@@ -29,7 +29,6 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.listaColumnas.add(new Columna("nombre",false,false));
         this.listaColumnas.add(new Columna("apellidos",false,false));
         this.listaColumnas.add(new Columna("DNI",false,false));
-        this.listaColumnas.add(new Columna("tipoUsuario",false,false));
     }
     
     @Override
@@ -41,7 +40,6 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.statement.setString(5,this.paciente.getNombre());
         this.statement.setString(6,this.paciente.getApellidos());
         this.statement.setString(7,this.paciente.getDNI());
-        this.statement.setInt(8,this.paciente.getTipoUsuario().ordinal());
     }
     
     @Override
@@ -53,8 +51,7 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.statement.setString(5,this.paciente.getNombre());
         this.statement.setString(6,this.paciente.getApellidos());
         this.statement.setString(7,this.paciente.getDNI());
-        this.statement.setInt(8,this.paciente.getTipoUsuario().ordinal());
-        this.statement.setInt(9,this.paciente.getIdPaciente());
+        this.statement.setInt(8,this.paciente.getIdPaciente());
     }
     
     @Override
@@ -83,7 +80,6 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.paciente.setNombre(this.resultSet.getString("nombre"));
         this.paciente.setApellidos(this.resultSet.getString("apellidos"));
         this.paciente.setDNI(this.resultSet.getString("DNI"));
-        this.paciente.setTipoUsuario(TipoUsuario.values()[this.resultSet.getInt("tipoUsuario")]);
     }
     
     @Override

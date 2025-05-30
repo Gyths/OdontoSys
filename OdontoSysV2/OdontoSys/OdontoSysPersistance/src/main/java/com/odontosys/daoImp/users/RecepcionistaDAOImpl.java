@@ -30,7 +30,6 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.listaColumnas.add(new Columna("nombre",false,false));
         this.listaColumnas.add(new Columna("apellidos",false,false));
         this.listaColumnas.add(new Columna("DNI",false,false));
-        this.listaColumnas.add(new Columna("tipoUsuario",false,false));
     }
     
     @Override
@@ -42,7 +41,6 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.statement.setString(5,this.recepcionista.getNombre());
         this.statement.setString(6,this.recepcionista.getApellidos());
         this.statement.setString(7,this.recepcionista.getDNI());
-        this.statement.setInt(8,this.recepcionista.getTipoUsuario().ordinal());
     }
     
     @Override
@@ -54,8 +52,7 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.statement.setString(5,this.recepcionista.getNombre());
         this.statement.setString(6,this.recepcionista.getApellidos());
         this.statement.setString(7,this.recepcionista.getDNI());
-        this.statement.setInt(8,this.recepcionista.getTipoUsuario().ordinal());
-        this.statement.setInt(9,this.recepcionista.getIdRecepcionista());
+        this.statement.setInt(8,this.recepcionista.getIdRecepcionista());
     }
     
     @Override
@@ -84,7 +81,6 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.recepcionista.setNombre(this.resultSet.getString("nombre"));
         this.recepcionista.setApellidos(this.resultSet.getString("apellidos"));
         this.recepcionista.setDNI(this.resultSet.getString("DNI"));
-        this.recepcionista.setTipoUsuario(TipoUsuario.values()[this.resultSet.getInt("tipoUsuario")]);
     }
     
     @Override
