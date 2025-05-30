@@ -15,12 +15,7 @@ public class ComprobanteBO {
         this.comprobanteDAO = new ComprobanteDAOImpl();
     }
     
-    public Integer InsertComprobante (LocalDate fechaEmision,LocalTime horaEmision,double total, MetodoPago metodoPago){
-        Comprobante comprobante = new Comprobante();
-        comprobante.setFechaEmision(fechaEmision);
-        comprobante.setHoraEmision(horaEmision);
-        comprobante.setTotal(total);
-        comprobante.setMetodoDePago(metodoPago);
+    public Integer InsertComprobante (Comprobante comprobante){
         return this.comprobanteDAO.insertar(comprobante);
     }
     

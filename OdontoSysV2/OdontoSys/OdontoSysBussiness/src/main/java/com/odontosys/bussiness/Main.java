@@ -19,6 +19,7 @@ import com.odontosys.services.model.Comprobante;
 import com.odontosys.services.model.DetalleTratamiento;
 import com.odontosys.services.model.Especialidad;
 import com.odontosys.services.model.EstadoCita;
+import com.odontosys.services.model.Tratamiento;
 import com.odontosys.users.model.Odontologo;
 import com.odontosys.users.model.Paciente;
 import com.odontosys.users.model.Recepcionista;
@@ -169,21 +170,59 @@ public class Main {
     }
     public static void insertaSalas(){
         SalaBO sBO = new SalaBO();
-        sBO.InsertarSala("101",1);
-        sBO.InsertarSala("102",1);
-        sBO.InsertarSala("103",1);
-        sBO.InsertarSala("201",2);
-        sBO.InsertarSala("202",2);
-        sBO.InsertarSala("203",2);
-        sBO.InsertarSala("301",3);
-        sBO.InsertarSala("302",3);
+        Sala s = new Sala();
+        s.setNumero("101");
+        s.setPiso(1);
+        sBO.InsertarSala(s);
+        
+        s.setNumero("201");
+        s.setPiso(2);
+        sBO.InsertarSala(s);
+        
+        s.setNumero("301");
+        s.setPiso(3);
+        sBO.InsertarSala(s);
+        
+        s.setNumero("102");
+        s.setPiso(1);
+        sBO.InsertarSala(s);
+        
+        s.setNumero("202");
+        s.setPiso(2);
+        sBO.InsertarSala(s);
+        
+        s.setNumero("302");
+        s.setPiso(3);
+        sBO.InsertarSala(s);
+        
     }
     public static void insertaTratamientos(){
-        TratamientoBO tratamiento = new TratamientoBO();
-        tratamiento.InsertarTratamiento("Endodoncia", "tratamiento del interior del diente", 500, Especialidad.ENDODONCIA);
-        tratamiento.InsertarTratamiento("Limpieza", "tratemiento exterior", 150, Especialidad.PEDIATRIA);
-        tratamiento.InsertarTratamiento("Corona", "recubrimiento superiror del diente", 300, Especialidad.ODONTOLOGIA_GENERAL);
-        tratamiento.InsertarTratamiento("Curacion", "tratamiento superficial de caries", 100, Especialidad.ODONTOLOGIA_GENERAL);
+        TratamientoBO tBO = new TratamientoBO();
+        Tratamiento t = new Tratamiento();
+        t.setCosto(500);
+        t.setDescripcion("Tratamiento del interior del diente");
+        t.setNombre("Endodoncia");
+        t.setEspecialidad(Especialidad.ENDODONCIA);
+        tBO.InsertarTratamiento(t);
+        
+        t.setCosto(150);
+        t.setDescripcion("Tratamiento exterior");
+        t.setNombre("Limpieza");
+        t.setEspecialidad(Especialidad.PEDIATRIA);
+        tBO.InsertarTratamiento(t);
+        
+        t.setCosto(300);
+        t.setDescripcion("Recubrimiento superiror del diente");
+        t.setNombre("Corona");
+        t.setEspecialidad(Especialidad.ODONTOLOGIA_GENERAL);
+        tBO.InsertarTratamiento(t);
+        
+        t.setCosto(100);
+        t.setDescripcion("Tratamiento superficial de caries");
+        t.setNombre("Curacion");
+        t.setEspecialidad(Especialidad.ODONTOLOGIA_GENERAL);
+        tBO.InsertarTratamiento(t);
+        
     }
     
     public static void main(String[] args) {
@@ -197,15 +236,14 @@ public class Main {
                 insert into especialidad (descripcion) values ('PEDIATRIA');
             Falta insertar citas,turnoXodontologo,detalleTratamiento -> puede ser a mano o devolver listas del insertar 
                                                                         para tener los objetos listos
-            ModificarBOs para que todos reciban objetos enves de parametros(sala,turno,citas,....)
             Especialidad deberia ser una clase aparte con sus DAOs
             Modificar y eliminar deberian funcionar en principio pero no estan probados para esta nueva version
         */
+        insertaSalas();
+        insertaTratamientos();
+        //insertarEspecialidades(); //no implementado
         insertaRecepcionistas();
         insertaPacientes();
         insertaOdontologos();
-        insertaSalas();
-        insertaTratamientos();
-        
     }
 }

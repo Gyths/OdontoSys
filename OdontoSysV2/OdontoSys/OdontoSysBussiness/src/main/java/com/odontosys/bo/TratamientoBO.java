@@ -14,33 +14,15 @@ public class TratamientoBO {
         this.tratamientoDAO = new TratamientoDAOImpl();
     }
     
-    public Integer InsertarTratamiento(String nombre, String descripcion, double costo, Especialidad especialidad){
-        Tratamiento tratamiento = new Tratamiento();
-        tratamiento.setNombre(nombre);
-        tratamiento.setDescripcion(descripcion);
-        tratamiento.setCosto(costo);
-        tratamiento.setEspecialidad(especialidad);
-        
+    public Integer InsertarTratamiento(Tratamiento tratamiento){
         return this.tratamientoDAO.insertar(tratamiento);
     }
    
-    public Integer ModificarTratamiento(String nombre, Especialidad especialidad, Double costo){
-        ArrayList<Tratamiento> list = this.tratamientoDAO.listarTodos();
-        for(Tratamiento t : list){
-            if(t.getNombre().matches(nombre) && t.getEspecialidad().equals(especialidad)){
-                t.setCosto(costo);
-                return this.tratamientoDAO.modificar(t);
-            }
-        }
-        return -1;
+    public Integer ModificarTratamiento(Tratamiento tratamiento){
+        return this.tratamientoDAO.modificar(tratamiento);
     }
     
-    public Integer EliminarTratamiento(String nombre, Especialidad especialidad){
-        ArrayList<Tratamiento> list = this.tratamientoDAO.listarTodos();
-        for(Tratamiento t : list){
-            if(t.getNombre().matches(nombre) && t.getEspecialidad().equals(especialidad))
-                return this.tratamientoDAO.eliminar(t);
-        }
-        return -1;
+    public Integer EliminarTratamiento(Tratamiento tratamiento){
+        return this.tratamientoDAO.eliminar(tratamiento);
     }
 }

@@ -4,13 +4,9 @@ import com.odontosys.dao.services.CitaDAO;
 import com.odontosys.daoImp.services.CitaDAOImpl;
 import com.odontosys.infrastructure.model.Turno;
 import com.odontosys.services.model.Cita;
-import com.odontosys.services.model.Comprobante;
-import com.odontosys.services.model.EstadoCita;
 import com.odontosys.users.model.Odontologo;
-import com.odontosys.users.model.Paciente;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
@@ -23,16 +19,7 @@ public class CitaBO {
         this.pacienteBO = new PacienteBO();
     }
     
-    public Integer insertCita(Odontologo odontologo,Paciente paciente, Comprobante comprobante,
-            LocalDate fecha, LocalTime horaInicio, double puntuacion, EstadoCita estado){
-        Cita cita = new Cita();
-        cita.setOdontologo(odontologo);
-        cita.setPaciente(paciente);
-        cita.setComprobante(comprobante);
-        cita.setFecha(fecha);
-        cita.setHoraInicio(horaInicio);
-        cita.setPuntuacion(puntuacion);
-        cita.setEstado(estado);
+    public Integer insertCita(Cita cita){
         return this.citaDAO.insertar(cita);
     }
     

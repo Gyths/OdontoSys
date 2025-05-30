@@ -14,11 +14,7 @@ public class TurnoBO {
         this.turnoDAO = new TurnoDAOImpl();
     }
     
-    public Integer InsertarTurno(LocalTime horaInicio, LocalTime horaFin, DiaSemana diaSemana){
-        Turno turno = new Turno();
-        turno.setHoraInicio(horaInicio);
-        turno.setHoraFin(horaFin);
-        turno.setDiaSemana(diaSemana);
+    public Integer InsertarTurno(Turno turno){
         return this.turnoDAO.insertar(turno);
     }
     

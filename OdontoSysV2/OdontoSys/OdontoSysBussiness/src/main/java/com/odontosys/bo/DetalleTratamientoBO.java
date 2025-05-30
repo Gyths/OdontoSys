@@ -11,12 +11,7 @@ public class DetalleTratamientoBO {
         this.detalleTratamientoDAO = new DetalleTratamientoDAOImpl();
     }
     
-    public Integer InsertarDetalle(Integer idCita, Integer idTratamiento, Integer cantidad, double subtotal){
-        DetalleTratamiento detalle = new DetalleTratamiento();
-        detalle.setIdCita(idCita);
-        detalle.getTratamiento().setIdTratamiento(idTratamiento);
-        detalle.setCantidad(cantidad);
-        detalle.setSubtotal(subtotal);
+    public Integer InsertarDetalle(DetalleTratamiento detalle){
         return this.detalleTratamientoDAO.insertar(detalle);
     }
     
