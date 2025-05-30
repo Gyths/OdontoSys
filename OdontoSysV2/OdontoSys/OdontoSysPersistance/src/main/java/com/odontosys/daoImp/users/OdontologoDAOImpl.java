@@ -91,7 +91,7 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         this.odontologo.setApellidos(this.resultSet.getString("apellidos"));
         this.odontologo.setDNI(this.resultSet.getString("DNI"));
         this.odontologo.setPuntuacionPromedio(this.resultSet.getDouble("puntuacionPromedio"));
-        this.odontologo.setEspecialidad(Especialidad.values()[this.resultSet.getInt("especialidad")]);
+        this.odontologo.setEspecialidad(Especialidad.values()[this.resultSet.getInt("idEspecialidad")]);
         this.odontologo.getConsultorio().setIdSala(this.resultSet.getInt("idSala"));
     }
     

@@ -38,7 +38,6 @@ public class CitaBO {
     
     //Magia de @jared
     public boolean[][] calcularDisponibilidad(ArrayList<Cita> citas, ArrayList<Turno> turnos, String fechaInicio){
-        
         boolean[][] disponibilidad = new boolean[7][48];
         LocalDate inicio = LocalDate.parse(fechaInicio);
         
@@ -47,14 +46,11 @@ public class CitaBO {
             DayOfWeek dia = fecha.getDayOfWeek();
             
             for(Turno turno : turnos){
-                if(turno.getDiaSemana().equals(dia)){
+                if(turno.getDiaSemana().toString().equals(dia.toString())){
                     int inicioBloque = (turno.getHoraInicio().getHour() * 2) + 
                                       (turno.getHoraInicio().getMinute() >= 30 ? 1 : 0);
                     int finBloque = (turno.getHoraFin().getHour() * 2) + 
                                    (turno.getHoraFin().getMinute() > 0 ? 1 : 0);
-                
-                    inicioBloque--;
-                    finBloque++;
                     
                     for(int j = inicioBloque; j < finBloque; j++)
                         disponibilidad[i][j] = true;

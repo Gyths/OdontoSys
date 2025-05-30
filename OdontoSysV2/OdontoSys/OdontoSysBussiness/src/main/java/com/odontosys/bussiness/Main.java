@@ -28,8 +28,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-
-
 public class Main {
     public static ArrayList<Recepcionista>insertaRecepcionistas(){
         ArrayList<Recepcionista>listaRec = new ArrayList<>();
@@ -287,28 +285,28 @@ public class Main {
         TurnoBO tBO = new TurnoBO();
         
         Turno t = new Turno();
-        t.setDiaSemana(DiaSemana.LUNES);
+        t.setDiaSemana(DiaSemana.MONDAY);
         t.setHoraInicio(LocalTime.of(13,30));
         t.setHoraFin(LocalTime.of(17,30));
         t.setIdTurno(tBO.InsertarTurno(t));
         listaTur.add(t);
         
         Turno t1 = new Turno();
-        t1.setDiaSemana(DiaSemana.LUNES);
+        t1.setDiaSemana(DiaSemana.MONDAY);
         t1.setHoraInicio(LocalTime.of(8,30));
         t1.setHoraFin(LocalTime.of(12,30));
         t1.setIdTurno(tBO.InsertarTurno(t1));
         listaTur.add(t1);
         
         Turno t2 = new Turno();
-        t2.setDiaSemana(DiaSemana.MARTES);
+        t2.setDiaSemana(DiaSemana.TUESDAY);
         t2.setHoraInicio(LocalTime.of(8,30));
         t2.setHoraFin(LocalTime.of(12,30));
         t2.setIdTurno(tBO.InsertarTurno(t2));
         listaTur.add(t2);
         
         Turno t3 = new Turno();
-        t3.setDiaSemana(DiaSemana.VIERNES);
+        t3.setDiaSemana(DiaSemana.FRIDAY);
         t3.setHoraInicio(LocalTime.of(8,30));
         t3.setHoraFin(LocalTime.of(12,30));
         t3.setIdTurno(tBO.InsertarTurno(t3));
@@ -440,23 +438,13 @@ public class Main {
     
     public static void main(String[] args) {
         System.out.println("Hello World From Bussiness");
-        /*Dummy data (respetar el orden)
-            Especialidades ya deben existir en la bd, son fijas (sino no va a insertar odontologos), utilizar estas sentencias
-                insert into especialidad (descripcion) values ('ODONTOLOGIA_GENERAL');
-                insert into especialidad (descripcion) values ('ORTODONCIA');
-                insert into especialidad (descripcion) values ('ENDODONCIA');
-                insert into especialidad (descripcion) values ('CIRUGIA');
-                insert into especialidad (descripcion) values ('PEDIATRIA');
-            Metodos de pago ya deben existir en la bd, son fijas (sino no va a insertar cita), utilizar estas sentencias
-                insert into metodopago (descripcion) values ('EFECTIVO');
-                insert into metodopago (descripcion) values ('TARJETA');
-                insert into metodopago (descripcion) values ('TRANSFERENCIA');
-                insert into metodopago (descripcion) values ('YAPE');
-                insert into metodopago (descripcion) values ('PLIN'); 
-            Especialidad y MetodoPago deberian ser una clase aparte con sus DAOs
+        /*
             Modificar y eliminar deberian funcionar en principio pero no estan probados para esta nueva version
             El primer comprobante existe como placeholder para no pagados -> tiene que haber una mejor forma de hacer esto xd
         */
+        
+        /*Dummy data (respetar el orden)*/
+        /*
         ArrayList<Sala>listaSa = insertaSalas();
         ArrayList<Turno>listaTur = insertaTurnos();
         //insertarEspecialidades(); //no implementado
@@ -468,6 +456,31 @@ public class Main {
         ArrayList<Odontologo>listaOd = insertaOdontologos(listaSa);
         ArrayList<Cita>listaCita = insertaCita(listaOd,listaPa,listaCom);
         insertaDetalleTratamiento(listaCita,listaTra); //seria util que reciba objeto cita enves de id en el model?
-        insertaTurnoOdontologo(listaOd,listaTur); // lo mismo que arriba, seria mejor objetos enves de solo ids?
+        insertaTurnoOdontologo(listaOd,listaTur); // lo mismo que arriba, seria mejor objetos enves de solo ids??*/
+        
+        //Test horarios libres por doctor, @jared
+        OdontologoBO odBO = new OdontologoBO();
+        Odontologo odontologo = odBO.obtenerPorID(1);
+        System.out.println(odontologo.getNombre());
+        
+        TurnoXOdontologoBO toBO = new TurnoXOdontologoBO();
+        ArrayList<TurnoXOdontologo>listaTurnoOd = toBO.listarPorOdontologo(odontologo.getIdOdontologo());
+        TurnoBO tBO = new TurnoBO();
+        ArrayList<Turno>listaTurno = new ArrayList<>();
+        for(TurnoXOdontologo turno:listaTurnoOd){
+            listaTurno.add(tBO.obtenerPorId(turno.getIdTurno()));
+        }
+        
+        CitaBO cBO = new CitaBO(); 
+        ArrayList<Cita>lCita = cBO.listarPorOdontologo(odontologo, "2025-05-27", "2025-06-01");
+        boolean[][] test = cBO.calcularDisponibilidad(lCita, listaTurno, "2025-05-27");
+        for(int i=0;i<7;i++){
+            for(int j=0;j<48;j++){
+                System.out.print(test[i][j]);
+                System.out.print(" ");
+            }
+            System.out.print("\n");
+        }
+        
     }
 }

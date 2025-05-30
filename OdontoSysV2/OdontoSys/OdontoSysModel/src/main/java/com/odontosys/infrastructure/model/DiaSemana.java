@@ -1,10 +1,11 @@
 package com.odontosys.infrastructure.model;
 
 public enum DiaSemana {
-    LUNES,
-    MARTES,
-    MIERCOLES,
-    JUEVES,
-    VIERNES,
-    SABADO
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY,
+    SUNDAY
 }
