@@ -262,7 +262,7 @@ CREATE TABLE `recepcionista` (
   `contrasenha` varchar(50) DEFAULT NULL,
   `nombreUsuario` UNIQUE varchar(100) DEFAULT NULL,
   `correo` UNIQUE varchar(100) DEFAULT NULL,
-  `telefono` varchar(10) DEFAULT NULL,
+  `telefono` UNIQUE varchar(10) DEFAULT NULL,
   `nombre` varchar(50) DEFAULT NULL,
   `apellidos` varchar(50) DEFAULT NULL,
   `DNI` UNIQUE varchar(10) DEFAULT NULL,
