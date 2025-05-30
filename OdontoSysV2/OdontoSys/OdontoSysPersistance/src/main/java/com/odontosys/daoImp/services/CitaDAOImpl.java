@@ -131,7 +131,7 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
         sql+=fechaFin.toString();
         sql+= "' and fecha > '";
         sql+=fechaInicio.toString();
-        sql+="'";
+        sql+="' ORDER BY fecha, horaInicio";
         
         List lista = new ArrayList<>();
         try {

@@ -10,4 +10,5 @@ public interface TurnoXOdontologoDAO {
     Integer eliminar(TurnoXOdontologo turnoXOdontologo);
     TurnoXOdontologo obtenerPorId(Integer Id);
     ArrayList<TurnoXOdontologo> listarTodos();
+    ArrayList<TurnoXOdontologo> listarPorDoctor();
 }

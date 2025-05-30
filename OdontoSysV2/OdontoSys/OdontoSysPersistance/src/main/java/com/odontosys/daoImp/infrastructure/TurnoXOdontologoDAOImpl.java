@@ -122,4 +122,27 @@ public class TurnoXOdontologoDAOImpl extends DAOImplBase implements TurnoXOdonto
         return resultado;
     }
     
+    @Override
+    public ArrayList<TurnoXOdontologo> listarPorDoctor(Integer odontologoID){
+        String sql = "SELECT * FROM odontologo_turno WHERE idOdontologo = ";
+        sql+=odontologoID.toString();
+        List lista = new ArrayList<>();
+        try {
+            this.abrirConexion();
+            this.colocarSQLenStatement(sql);
+            this.ejecutarConsultaEnBD();
+            while (this.resultSet.next()) {
+                agregarObjetoALaLista(lista);
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al intentar listar - " + ex);
+        } finally {
+            try {
+                this.cerrarConexion();
+            } catch (SQLException ex) {
+                System.err.println("Error al cerrar la conexión - " + ex);
+            }
+        }
+        return (ArrayList<TurnoXOdontologo>)lista;
+    }
 }

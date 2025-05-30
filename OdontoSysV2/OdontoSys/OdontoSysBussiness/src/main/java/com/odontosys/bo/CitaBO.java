@@ -57,16 +57,17 @@ public class CitaBO {
     }
     
     public ArrayList<Integer[]> calcularDisponibilidad(ArrayList<Cita>citas){
-        ArrayList<Cita>lista = new ArrayList<>();
+        ArrayList<Integer[]>semana = new ArrayList<>();
         for(int i=0;i<citas.size();i++){
+            ArrayList<Cita>lista = new ArrayList<>();
             if(citas.get(i).getFecha().equals(citas.get(i+1).getFecha())){
                 lista.add(citas.get(i));
             }
             else{
                 lista.add(citas.get(i));
-                calcularDisponibilidadDia(lista);
+                semana.add(calcularDisponibilidadDia(lista));
             }
         }
-        return null;
+        return semana;
     }
 }
