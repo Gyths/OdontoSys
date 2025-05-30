@@ -224,6 +224,29 @@ public class Main {
         tBO.InsertarTratamiento(t);
         
     }
+    public static void insertaTurnos(){
+        TurnoBO tBO = new TurnoBO();
+        Turno t = new Turno();
+        t.setDiaSemana(DiaSemana.LUNES);
+        t.setHoraInicio(LocalTime.of(13,30));
+        t.setHoraFin(LocalTime.of(17,30));
+        tBO.InsertarTurno(t);
+        
+        t.setDiaSemana(DiaSemana.LUNES);
+        t.setHoraInicio(LocalTime.of(8,30));
+        t.setHoraFin(LocalTime.of(12,30));
+        tBO.InsertarTurno(t);
+        
+        t.setDiaSemana(DiaSemana.MARTES);
+        t.setHoraInicio(LocalTime.of(8,30));
+        t.setHoraFin(LocalTime.of(12,30));
+        tBO.InsertarTurno(t);
+        
+        t.setDiaSemana(DiaSemana.VIERNES);
+        t.setHoraInicio(LocalTime.of(8,30));
+        t.setHoraFin(LocalTime.of(12,30));
+        tBO.InsertarTurno(t);
+    }
     
     public static void main(String[] args) {
         System.out.println("Hello World From Bussiness");
@@ -236,11 +259,12 @@ public class Main {
                 insert into especialidad (descripcion) values ('PEDIATRIA');
             Falta insertar citas,turnoXodontologo,detalleTratamiento -> puede ser a mano o devolver listas del insertar 
                                                                         para tener los objetos listos
-            Especialidad deberia ser una clase aparte con sus DAOs
+            Especialidad y MetodoPago deberian ser una clase aparte con sus DAOs
             Modificar y eliminar deberian funcionar en principio pero no estan probados para esta nueva version
         */
         insertaSalas();
         insertaTratamientos();
+        insertaTurnos();
         //insertarEspecialidades(); //no implementado
         insertaRecepcionistas();
         insertaPacientes();
