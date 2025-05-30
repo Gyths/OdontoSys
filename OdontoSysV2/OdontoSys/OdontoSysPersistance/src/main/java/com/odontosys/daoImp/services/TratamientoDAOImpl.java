@@ -23,47 +23,47 @@ public class TratamientoDAOImpl extends DAOImplBase implements TratamientoDAO{
     @Override
     protected void configurarListaDeColumnas(){
         this.listaColumnas.add(new Columna("idTratamiento",true,true));
+        this.listaColumnas.add(new Columna("idEspecialidad",false,false));
         this.listaColumnas.add(new Columna("nombre",false,false));
         this.listaColumnas.add(new Columna("descripcion",false,false));
-        this.listaColumnas.add(new Columna("costo",false,false));
-        this.listaColumnas.add(new Columna("especialidad",false,false));
+        this.listaColumnas.add(new Columna("costo",false,false));  
     }
     
     @Override
     protected void incluirValorDeParametrosParaInsercion() throws SQLException{
-        this.statement.setString(1, this.tratamiento.getNombre());
-        this.statement.setString(2, this.tratamiento.getDescripcion());
-        this.statement.setDouble(3, this.tratamiento.getCosto());
-        this.statement.setString(4, this.tratamiento.getEspecialidad().name());
+        this.statement.setInt(1, this.tratamiento.getEspecialidad().getIdEspecialidad());
+        this.statement.setString(2, this.tratamiento.getNombre());
+        this.statement.setString(3, this.tratamiento.getDescripcion());
+        this.statement.setDouble(4, this.tratamiento.getCosto()); 
     }
     
     @Override
     protected void incluirValorDeParametrosParaModificacion() throws SQLException{ 
-        this.statement.setString(1, this.tratamiento.getNombre());
-        this.statement.setString(2, this.tratamiento.getDescripcion());
-        this.statement.setDouble(3, this.tratamiento.getCosto());
-        this.statement.setString(4, this.tratamiento.getEspecialidad().name());
+        this.statement.setInt(1, this.tratamiento.getEspecialidad().getIdEspecialidad());
+        this.statement.setString(2, this.tratamiento.getNombre());
+        this.statement.setString(3, this.tratamiento.getDescripcion());
+        this.statement.setDouble(4, this.tratamiento.getCosto()); 
         this.statement.setInt(5, this.tratamiento.getIdTratamiento());
     }
     
     @Override
     protected void incluirValorDeParametrosParaEliminacion() throws SQLException{
-        this.statement.setInt(5, this.tratamiento.getIdTratamiento()); 
+        this.statement.setInt(1, this.tratamiento.getIdTratamiento()); 
     }
     
     @Override
     protected void incluirValorDeParametrosParaObtenerPorId() throws SQLException {
-        this.statement.setInt(5, this.tratamiento.getIdTratamiento());
+        this.statement.setInt(1, this.tratamiento.getIdTratamiento());
     }
     
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.tratamiento = new Tratamiento();
         this.tratamiento.setIdTratamiento(this.resultSet.getInt("idTratamiento"));
+        this.tratamiento.getEspecialidad().setIdEspecialidad(this.resultSet.getInt("idEspecialidad"));
         this.tratamiento.setNombre(this.resultSet.getString("nombre"));
         this.tratamiento.setDescripcion(this.resultSet.getString("descripcion"));
-        this.tratamiento.setCosto(this.resultSet.getDouble("costo"));
-        this.tratamiento.setEspecialidad(Especialidad.valueOf(this.resultSet.getString("especialidad")));
+        this.tratamiento.setCosto(this.resultSet.getDouble("costo")); 
     }
     
     @Override

@@ -25,26 +25,26 @@ public class ComprobanteDAOImpl extends DAOImplBase implements ComprobanteDAO{
     @Override
     protected void configurarListaDeColumnas(){
         this.listaColumnas.add(new Columna("idComprobante",true,true));
+        this.listaColumnas.add(new Columna("idMetodoPago",false,false));
         this.listaColumnas.add(new Columna("fechaEmision",false,false));
         this.listaColumnas.add(new Columna("horaEmision",false,false));
-        this.listaColumnas.add(new Columna("total",false,false));
-        this.listaColumnas.add(new Columna("idMetodoPago",false,false));
+        this.listaColumnas.add(new Columna("total",false,false));  
     }
     
     @Override
     protected void incluirValorDeParametrosParaInsercion() throws SQLException{
-        this.statement.setDate(1, Date.valueOf(this.comprobante.getFechaEmision()));
-        this.statement.setTime(2, Time.valueOf(this.comprobante.getHoraEmision()));
-        this.statement.setDouble(3, this.comprobante.getTotal());
-        this.statement.setInt(4, this.comprobante.getMetodoDePago().ordinal());
+        this.statement.setInt(1, this.comprobante.getMetodoDePago().getIdMetodoPago());
+        this.statement.setDate(2, Date.valueOf(this.comprobante.getFechaEmision()));
+        this.statement.setTime(3, Time.valueOf(this.comprobante.getHoraEmision()));
+        this.statement.setDouble(4, this.comprobante.getTotal());
     }
     
     @Override
     protected void incluirValorDeParametrosParaModificacion() throws SQLException{ 
-        this.statement.setDate(1, Date.valueOf(this.comprobante.getFechaEmision()));
-        this.statement.setTime(2, Time.valueOf(this.comprobante.getHoraEmision()));
-        this.statement.setDouble(3, this.comprobante.getTotal());
-        this.statement.setInt(4, this.comprobante.getMetodoDePago().ordinal());
+        this.statement.setInt(1, this.comprobante.getMetodoDePago().getIdMetodoPago());
+        this.statement.setDate(2, Date.valueOf(this.comprobante.getFechaEmision()));
+        this.statement.setTime(3, Time.valueOf(this.comprobante.getHoraEmision()));
+        this.statement.setDouble(4, this.comprobante.getTotal());
         this.statement.setInt(5, this.comprobante.getIdComprobante());
     }
     
@@ -62,10 +62,10 @@ public class ComprobanteDAOImpl extends DAOImplBase implements ComprobanteDAO{
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.comprobante = new Comprobante();
         this.comprobante.setIdComprobante(this.resultSet.getInt("idComprobante"));
+        this.comprobante.getMetodoDePago().setIdMetodoPago(this.resultSet.getInt("idMetodoPago"));
         this.comprobante.setFechaEmision(this.resultSet.getDate("fechaEmision").toLocalDate());
         this.comprobante.setHoraEmision(this.resultSet.getTime("horaEmision").toLocalTime());
-        this.comprobante.setTotal(this.resultSet.getDouble("total"));
-        this.comprobante.setMetodoDePago(MetodoPago.values()[this.resultSet.getInt("idMetodoPago")]);
+        this.comprobante.setTotal(this.resultSet.getDouble("total")); 
     }
     
     @Override

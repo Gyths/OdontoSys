@@ -1,9 +1,30 @@
 package com.odontosys.services.model;
 
-public enum Especialidad {
-    ODONTOLOGIA_GENERAL,
-    ORTODONCIA,
-    ENDODONCIA,
-    CIRUGIA,
-    PEDIATRIA
+public class Especialidad {
+    private int idEspecialidad;
+    private String nombre;
+    
+    public Especialidad(){
+    }
+    
+    public Especialidad(int idEspecialidad, String nombre) {
+        this.idEspecialidad = idEspecialidad;
+        this.nombre = nombre;
+    }
+
+    public int getIdEspecialidad() {
+        return idEspecialidad;
+    }
+
+    public void setIdEspecialidad(int idEspecialidad) {
+        this.idEspecialidad = idEspecialidad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }

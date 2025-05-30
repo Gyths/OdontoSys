@@ -45,7 +45,7 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         this.statement.setString(6,this.odontologo.getApellidos());
         this.statement.setString(7,this.odontologo.getDNI());
         this.statement.setDouble(8,this.odontologo.getPuntuacionPromedio());
-        this.statement.setInt(9,this.odontologo.getEspecialidad().ordinal());
+        this.statement.setInt(9, this.odontologo.getEspecialidad().getIdEspecialidad());
         this.statement.setInt(10,this.odontologo.getConsultorio().getIdSala());
     }
     
@@ -59,7 +59,7 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         this.statement.setString(6,this.odontologo.getApellidos());
         this.statement.setString(7,this.odontologo.getDNI());
         this.statement.setDouble(8,this.odontologo.getPuntuacionPromedio());
-        this.statement.setInt(9,this.odontologo.getEspecialidad().ordinal());
+        this.statement.setInt(9, this.odontologo.getEspecialidad().getIdEspecialidad());
         this.statement.setInt(10,this.odontologo.getConsultorio().getIdSala());
         this.statement.setInt(11, this.odontologo.getIdOdontologo());
     }
@@ -91,7 +91,7 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         this.odontologo.setApellidos(this.resultSet.getString("apellidos"));
         this.odontologo.setDNI(this.resultSet.getString("DNI"));
         this.odontologo.setPuntuacionPromedio(this.resultSet.getDouble("puntuacionPromedio"));
-        this.odontologo.setEspecialidad(Especialidad.values()[this.resultSet.getInt("especialidad")]);
+        this.odontologo.getEspecialidad().setIdEspecialidad(this.resultSet.getInt("idEspecialidad"));
         this.odontologo.getConsultorio().setIdSala(this.resultSet.getInt("idSala"));
     }
     
@@ -147,7 +147,7 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     @Override
     public ArrayList<Odontologo> listarPorEspecialidad(Especialidad especialidad){
         String sql = "SELECT * FROM odontologo WHERE especialidad = ";
-        sql+=especialidad.ordinal();
+        sql+=especialidad.getIdEspecialidad();
         List lista = new ArrayList<>();
         try {
             this.abrirConexion();
