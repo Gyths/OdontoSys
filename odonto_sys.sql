@@ -230,12 +230,12 @@ DROP TABLE IF EXISTS `paciente`;
 CREATE TABLE `paciente` (
   `idPaciente` int NOT NULL AUTO_INCREMENT,
   `contrasenha` varchar(50) DEFAULT NULL,
-  `nombreUsuario` varchar(100) DEFAULT NULL,
-  `correo` varchar(100) DEFAULT NULL,
+  `nombreUsuario` varchar(100) DEFAULT NULL UNIQUE,
+  `correo`  varchar(100) DEFAULT NULL,
   `telefono` varchar(10) DEFAULT NULL,
   `nombre` varchar(50) DEFAULT NULL,
   `apellidos` varchar(50) DEFAULT NULL,
-  `DNI` varchar(10) DEFAULT NULL,
+  `DNI` varchar(10) DEFAULT NULL UNIQUE,
   PRIMARY KEY (`idPaciente`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -260,12 +260,12 @@ DROP TABLE IF EXISTS `recepcionista`;
 CREATE TABLE `recepcionista` (
   `idRecepcionista` int NOT NULL AUTO_INCREMENT,
   `contrasenha` varchar(50) DEFAULT NULL,
-  `nombreUsuario` varchar(100) DEFAULT NULL,
-  `correo` varchar(100) DEFAULT NULL,
-  `telefono` varchar(10) DEFAULT NULL,
+  `nombreUsuario` varchar(100) DEFAULT NULL UNIQUE,
+  `correo` varchar(100) DEFAULT NULL UNIQUE,
+  `telefono` varchar(10) DEFAULT NULL UNIQUE,
   `nombre` varchar(50) DEFAULT NULL,
   `apellidos` varchar(50) DEFAULT NULL,
-  `DNI` varchar(10) DEFAULT NULL,
+  `DNI` varchar(10) DEFAULT NULL UNIQUE,
   PRIMARY KEY (`idRecepcionista`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -369,7 +369,7 @@ CREATE TABLE `turno` (
   `idTurno` int NOT NULL AUTO_INCREMENT,
   `horaInicio` time NOT NULL,
   `horaFin` time NOT NULL,
-  `diaSemana` enum('LUNES','MARTES','MIERCOLES','JUEVES','VIERNES','SABADO') NOT NULL,
+  `diaSemana` enum('MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY','SUNDAY') NOT NULL,
   PRIMARY KEY (`idTurno`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;

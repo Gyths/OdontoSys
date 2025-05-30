@@ -26,4 +26,8 @@ public class TurnoBO {
     public Integer EliminarTurno(Turno turno){
         return this.turnoDAO.eliminar(turno);
     }
+    
+    public Turno obtenerPorId(Integer idTurno){
+        return this.turnoDAO.obtenerPorId(idTurno);
+    }
 }
