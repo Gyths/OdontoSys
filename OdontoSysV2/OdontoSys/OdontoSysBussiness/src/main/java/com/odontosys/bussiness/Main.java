@@ -431,7 +431,6 @@ public class Main {
         insertaDetalleTratamiento(listaCita,listaTra); 
         insertaTurnoOdontologo(listaOd,listaTur);
         
-        
         //Test horarios libres por doctor, @jared
         OdontologoBO odBO = new OdontologoBO();
         Odontologo odontologo = odBO.obtenerPorID(1);
@@ -448,6 +447,7 @@ public class Main {
         CitaBO cBO = new CitaBO(); 
         ArrayList<Cita>lCita = cBO.listarPorOdontologo(odontologo, "2025-05-27", "2025-06-01");
         boolean[][] test = cBO.calcularDisponibilidad(lCita, listaTurno, "2025-05-27");
+        /*Test matriz*/
         for(int i=0;i<7;i++){
             for(int j=0;j<48;j++){
                 System.out.print(test[i][j]);
