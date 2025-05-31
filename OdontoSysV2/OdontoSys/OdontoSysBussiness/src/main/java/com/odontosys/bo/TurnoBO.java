@@ -17,7 +17,6 @@ public class TurnoBO {
     public Integer InsertarTurno(Turno turno){
         return this.turnoDAO.insertar(turno);
     }
-    
 
     public Integer ModificarTurno(Turno turno){
         return this.turnoDAO.modificar(turno);

@@ -49,7 +49,6 @@ CREATE TABLE `cita` (
 
 LOCK TABLES `cita` WRITE;
 /*!40000 ALTER TABLE `cita` DISABLE KEYS */;
-INSERT INTO `cita` VALUES (1,1,1,1,'2025-05-13','21:26:52',2,'RESERVADA');
 /*!40000 ALTER TABLE `cita` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,7 +77,7 @@ CREATE TABLE `comprobante` (
 
 LOCK TABLES `comprobante` WRITE;
 /*!40000 ALTER TABLE `comprobante` DISABLE KEYS */;
-INSERT INTO `comprobante` VALUES (1,'2001-12-02',0,NULL,NULL);
+INSERT INTO `comprobante` VALUES (1,'1000-01-01',0,0,1);
 /*!40000 ALTER TABLE `comprobante` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -107,7 +106,6 @@ CREATE TABLE `detalletratamiento` (
 
 LOCK TABLES `detalletratamiento` WRITE;
 /*!40000 ALTER TABLE `detalletratamiento` DISABLE KEYS */;
-INSERT INTO `detalletratamiento` VALUES (1,1,20,400);
 /*!40000 ALTER TABLE `detalletratamiento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,6 +129,11 @@ CREATE TABLE `especialidad` (
 
 LOCK TABLES `especialidad` WRITE;
 /*!40000 ALTER TABLE `especialidad` DISABLE KEYS */;
+insert into especialidad (descripcion) values ('ODONTOLOGIA_GENERAL');
+insert into especialidad (descripcion) values ('ORTODONCIA');
+insert into especialidad (descripcion) values ('ENDODONCIA');
+insert into especialidad (descripcion) values ('CIRUGIA');
+insert into especialidad (descripcion) values ('PEDIATRIA');
 /*!40000 ALTER TABLE `especialidad` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -154,6 +157,11 @@ CREATE TABLE `metodopago` (
 
 LOCK TABLES `metodopago` WRITE;
 /*!40000 ALTER TABLE `metodopago` DISABLE KEYS */;
+insert into metodopago (descripcion) values ('EFECTIVO');
+insert into metodopago (descripcion) values ('TARJETA');
+insert into metodopago (descripcion) values ('TRANSFERENCIA');
+insert into metodopago (descripcion) values ('YAPE');
+insert into metodopago (descripcion) values ('PLIN');
 /*!40000 ALTER TABLE `metodopago` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -190,7 +198,6 @@ CREATE TABLE `odontologo` (
 
 LOCK TABLES `odontologo` WRITE;
 /*!40000 ALTER TABLE `odontologo` DISABLE KEYS */;
-INSERT INTO `odontologo` VALUES (1,3.2,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `odontologo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -246,7 +253,6 @@ CREATE TABLE `paciente` (
 
 LOCK TABLES `paciente` WRITE;
 /*!40000 ALTER TABLE `paciente` DISABLE KEYS */;
-INSERT INTO `paciente` VALUES (1,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -276,7 +282,6 @@ CREATE TABLE `recepcionista` (
 
 LOCK TABLES `recepcionista` WRITE;
 /*!40000 ALTER TABLE `recepcionista` DISABLE KEYS */;
-INSERT INTO `recepcionista` VALUES (1,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `recepcionista` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -302,7 +307,6 @@ CREATE TABLE `sala` (
 
 LOCK TABLES `sala` WRITE;
 /*!40000 ALTER TABLE `sala` DISABLE KEYS */;
-INSERT INTO `sala` VALUES (1,'2',3);
 /*!40000 ALTER TABLE `sala` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -342,9 +346,10 @@ CREATE TABLE `tratamiento` (
   `nombre` varchar(100) NOT NULL,
   `descripcion` text,
   `costo` double NOT NULL,
-  `especialidad` enum('ODONTOLOGIA_GENERAL','ORTODONCIA','ENDODONCIA','CIRUGIA','PEDIATRIA') DEFAULT NULL,
+  `idEspecialidad` int NOT NULL,
   PRIMARY KEY (`idTratamiento`),
-  UNIQUE KEY `nombre` (`nombre`)
+  UNIQUE KEY `nombre` (`nombre`),
+  CONSTRAINT `tratamiento_ibfk_1` FOREIGN KEY (`idEspecialidad`) REFERENCES `Especialidad` (`idEspecialidad`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -354,7 +359,10 @@ CREATE TABLE `tratamiento` (
 
 LOCK TABLES `tratamiento` WRITE;
 /*!40000 ALTER TABLE `tratamiento` DISABLE KEYS */;
-INSERT INTO `tratamiento` VALUES (1,'Endodoncia','Taladro en tu diente',5000,'PEDIATRIA');
+INSERT INTO `tratamiento` VALUES (1,'Endodoncia','Tratamiento del interior del diente',500,5);
+INSERT INTO `tratamiento` VALUES (2,'Limpieza','Tratamiento exterior',150,3);
+INSERT INTO `tratamiento` VALUES (3,'Corona','Recubrimiento superior del diente',300,1);
+INSERT INTO `tratamiento` VALUES (4,'Curacion','Tratamiento superficial de caries',100,1);
 /*!40000 ALTER TABLE `tratamiento` ENABLE KEYS */;
 UNLOCK TABLES;
 

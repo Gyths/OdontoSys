@@ -10,6 +10,7 @@ public class Tratamiento {
     private Especialidad especialidad;
 
     public Tratamiento() {
+        this.especialidad = new Especialidad();
     }
 
     public int getIdTratamiento() {

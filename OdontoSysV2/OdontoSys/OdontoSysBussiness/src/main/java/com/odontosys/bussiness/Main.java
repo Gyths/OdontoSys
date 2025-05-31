@@ -3,6 +3,8 @@ package com.odontosys.bussiness;
 import com.odontosys.bo.CitaBO;
 import com.odontosys.bo.ComprobanteBO;
 import com.odontosys.bo.DetalleTratamientoBO;
+import com.odontosys.bo.EspecialidadBO;
+import com.odontosys.bo.MetodoPagoBO;
 import com.odontosys.bo.OdontologoBO;
 import com.odontosys.bo.PacienteBO;
 import com.odontosys.bo.RecepcionistaBO;
@@ -29,6 +31,99 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Main {
+    public static ArrayList<Tratamiento> cargaTratamientos(){
+        TratamientoBO tBO = new TratamientoBO();
+        ArrayList<Tratamiento>listaTratamiento = tBO.listarTodos();
+        return listaTratamiento;
+    }
+    public static ArrayList<Especialidad> cargaEspecialidad(){
+        EspecialidadBO eBO = new EspecialidadBO();
+        ArrayList<Especialidad>listaEspecialidad = eBO.ListarEspecialidades();
+        return listaEspecialidad;
+    }
+    public static ArrayList<MetodoPago> cargaMetodoPago(){
+        MetodoPagoBO mBO = new MetodoPagoBO();
+        ArrayList<MetodoPago>listaMetodoPago = mBO.ListarMetodosDePago();
+        return listaMetodoPago;
+    }
+    
+    public static ArrayList<Sala> insertaSalas(){
+        ArrayList<Sala>listaSa = new ArrayList<>();
+        SalaBO sBO = new SalaBO();
+        Sala s = new Sala();
+        s.setNumero("101");
+        s.setPiso(1);
+        s.setIdSala(sBO.InsertarSala(s));
+        listaSa.add(s);
+        
+        Sala s1 = new Sala();
+        s1.setNumero("201");
+        s1.setPiso(2);
+        s1.setIdSala(sBO.InsertarSala(s1));
+        listaSa.add(s1);
+        
+        Sala s2 = new Sala();
+        s2.setNumero("301");
+        s2.setPiso(3);
+        s2.setIdSala(sBO.InsertarSala(s2));
+        listaSa.add(s2);
+        
+        Sala s3 = new Sala();
+        s3.setNumero("102");
+        s3.setPiso(1);
+        s3.setIdSala(sBO.InsertarSala(s3));
+        listaSa.add(s3);
+        
+        Sala s4 = new Sala();
+        s4.setNumero("202");
+        s4.setPiso(2);
+        s4.setIdSala(sBO.InsertarSala(s4));
+        listaSa.add(s4);
+        
+        Sala s5 = new Sala();
+        s5.setNumero("302");
+        s5.setPiso(3);
+        s5.setIdSala(sBO.InsertarSala(s5));
+        listaSa.add(s5);
+        
+        return listaSa;
+        
+    } 
+    public static ArrayList<Turno> insertaTurnos(){
+        ArrayList<Turno>listaTur = new ArrayList<>();
+        TurnoBO tBO = new TurnoBO();
+        
+        Turno t = new Turno();
+        t.setDiaSemana(DiaSemana.MONDAY);
+        t.setHoraInicio(LocalTime.of(13,30));
+        t.setHoraFin(LocalTime.of(17,30));
+        t.setIdTurno(tBO.InsertarTurno(t));
+        listaTur.add(t);
+        
+        Turno t1 = new Turno();
+        t1.setDiaSemana(DiaSemana.MONDAY);
+        t1.setHoraInicio(LocalTime.of(8,30));
+        t1.setHoraFin(LocalTime.of(12,30));
+        t1.setIdTurno(tBO.InsertarTurno(t1));
+        listaTur.add(t1);
+        
+        Turno t2 = new Turno();
+        t2.setDiaSemana(DiaSemana.TUESDAY);
+        t2.setHoraInicio(LocalTime.of(8,30));
+        t2.setHoraFin(LocalTime.of(12,30));
+        t2.setIdTurno(tBO.InsertarTurno(t2));
+        listaTur.add(t2);
+        
+        Turno t3 = new Turno();
+        t3.setDiaSemana(DiaSemana.FRIDAY);
+        t3.setHoraInicio(LocalTime.of(8,30));
+        t3.setHoraFin(LocalTime.of(12,30));
+        t3.setIdTurno(tBO.InsertarTurno(t3));
+        listaTur.add(t3);
+        
+        return listaTur;
+    }
+    
     public static ArrayList<Recepcionista>insertaRecepcionistas(){
         ArrayList<Recepcionista>listaRec = new ArrayList<>();
         RecepcionistaBO rBO = new RecepcionistaBO();
@@ -151,7 +246,7 @@ public class Main {
         
         return listaPac;
     }
-    public static ArrayList<Odontologo>insertaOdontologos(ArrayList<Sala>listaSa){
+    public static ArrayList<Odontologo>insertaOdontologos(ArrayList<Sala>listaSa,ArrayList<Especialidad>listaE){
         ArrayList<Odontologo>listaOD = new ArrayList<>();
         OdontologoBO odBO = new OdontologoBO();
         
@@ -163,7 +258,7 @@ public class Main {
         o.setNombre("Javier");
         o.setNombreUsuario("JCastaneda");
         o.setTelefono("958762135");
-        o.setEspecialidad(Especialidad.PEDIATRIA);
+        o.setEspecialidad(listaE.get(4));
         o.setPuntuacionPromedio(3.2);
         o.setConsultorio(listaSa.get(1));
         o.setIdOdontologo(odBO.insertarOdontologo(o));
@@ -177,7 +272,7 @@ public class Main {
         o1.setNombre("Sandra");
         o1.setNombreUsuario("SVillegas");
         o1.setTelefono("927546831");
-        o1.setEspecialidad(Especialidad.ENDODONCIA);
+        o1.setEspecialidad(listaE.get(2));
         o1.setPuntuacionPromedio(4.1);
         o1.setConsultorio(listaSa.get(2));
         o1.setIdOdontologo(odBO.insertarOdontologo(o1));
@@ -191,7 +286,7 @@ public class Main {
         o2.setNombre("Sebastian");
         o2.setNombreUsuario("SSuarez");
         o2.setTelefono("972135628");
-        o2.setEspecialidad(Especialidad.ENDODONCIA);
+        o2.setEspecialidad(listaE.get(0));
         o2.setPuntuacionPromedio(4.5);
         o2.setConsultorio(listaSa.get(3));
         o2.setIdOdontologo(odBO.insertarOdontologo(o2));
@@ -199,120 +294,20 @@ public class Main {
         
         return listaOD;
     }
-    public static ArrayList<Sala> insertaSalas(){
-        ArrayList<Sala>listaSa = new ArrayList<>();
-        SalaBO sBO = new SalaBO();
-        Sala s = new Sala();
-        s.setNumero("101");
-        s.setPiso(1);
-        s.setIdSala(sBO.InsertarSala(s));
-        listaSa.add(s);
+    
+    public static ArrayList<Comprobante>insertaComprobantes(ArrayList<MetodoPago>listaMp){
+        ComprobanteBO cBO = new ComprobanteBO();
+        ArrayList<Comprobante>listaCom = cBO.ListarTodos();
         
-        Sala s1 = new Sala();
-        s1.setNumero("201");
-        s1.setPiso(2);
-        s1.setIdSala(sBO.InsertarSala(s1));
-        listaSa.add(s1);
+        Comprobante c1 = new Comprobante();
+        c1.setFechaEmision(LocalDate.now());
+        c1.setHoraEmision(LocalTime.now());
+        c1.setMetodoDePago(listaMp.get(1));
+        c1.setTotal(1500);
+        c1.setIdComprobante(cBO.InsertComprobante(c1));
+        listaCom.add(c1);
         
-        Sala s2 = new Sala();
-        s2.setNumero("301");
-        s2.setPiso(3);
-        s2.setIdSala(sBO.InsertarSala(s2));
-        listaSa.add(s2);
-        
-        Sala s3 = new Sala();
-        s3.setNumero("102");
-        s3.setPiso(1);
-        s3.setIdSala(sBO.InsertarSala(s3));
-        listaSa.add(s3);
-        
-        Sala s4 = new Sala();
-        s4.setNumero("202");
-        s4.setPiso(2);
-        s4.setIdSala(sBO.InsertarSala(s4));
-        listaSa.add(s4);
-        
-        Sala s5 = new Sala();
-        s5.setNumero("302");
-        s5.setPiso(3);
-        s5.setIdSala(sBO.InsertarSala(s5));
-        listaSa.add(s5);
-        
-        return listaSa;
-        
-    }
-    public static ArrayList<Tratamiento> insertaTratamientos(){
-        ArrayList<Tratamiento>listaTra = new ArrayList<>();
-        TratamientoBO tBO = new TratamientoBO();
-        
-        Tratamiento t = new Tratamiento();
-        t.setCosto(500);
-        t.setDescripcion("Tratamiento del interior del diente");
-        t.setNombre("Endodoncia");
-        t.setEspecialidad(Especialidad.ENDODONCIA);
-        t.setIdTratamiento(tBO.InsertarTratamiento(t));
-        listaTra.add(t);
-        
-        Tratamiento t1 = new Tratamiento();
-        t1.setCosto(150);
-        t1.setDescripcion("Tratamiento exterior");
-        t1.setNombre("Limpieza");
-        t1.setEspecialidad(Especialidad.PEDIATRIA);
-        t1.setIdTratamiento(tBO.InsertarTratamiento(t1));
-        listaTra.add(t1);
-        
-        Tratamiento t2 = new Tratamiento();
-        t2.setCosto(300);
-        t2.setDescripcion("Recubrimiento superiror del diente");
-        t2.setNombre("Corona");
-        t2.setEspecialidad(Especialidad.ODONTOLOGIA_GENERAL);
-        t2.setIdTratamiento(tBO.InsertarTratamiento(t2));
-        listaTra.add(t2);
-        
-        Tratamiento t3 = new Tratamiento();
-        t3.setCosto(100);
-        t3.setDescripcion("Tratamiento superficial de caries");
-        t3.setNombre("Curacion");
-        t3.setEspecialidad(Especialidad.ODONTOLOGIA_GENERAL);
-        t3.setIdTratamiento(tBO.InsertarTratamiento(t3));
-        listaTra.add(t3);
-        
-        return listaTra;
-        
-    }
-    public static ArrayList<Turno> insertaTurnos(){
-        ArrayList<Turno>listaTur = new ArrayList<>();
-        TurnoBO tBO = new TurnoBO();
-        
-        Turno t = new Turno();
-        t.setDiaSemana(DiaSemana.MONDAY);
-        t.setHoraInicio(LocalTime.of(13,30));
-        t.setHoraFin(LocalTime.of(17,30));
-        t.setIdTurno(tBO.InsertarTurno(t));
-        listaTur.add(t);
-        
-        Turno t1 = new Turno();
-        t1.setDiaSemana(DiaSemana.MONDAY);
-        t1.setHoraInicio(LocalTime.of(8,30));
-        t1.setHoraFin(LocalTime.of(12,30));
-        t1.setIdTurno(tBO.InsertarTurno(t1));
-        listaTur.add(t1);
-        
-        Turno t2 = new Turno();
-        t2.setDiaSemana(DiaSemana.TUESDAY);
-        t2.setHoraInicio(LocalTime.of(8,30));
-        t2.setHoraFin(LocalTime.of(12,30));
-        t2.setIdTurno(tBO.InsertarTurno(t2));
-        listaTur.add(t2);
-        
-        Turno t3 = new Turno();
-        t3.setDiaSemana(DiaSemana.FRIDAY);
-        t3.setHoraInicio(LocalTime.of(8,30));
-        t3.setHoraFin(LocalTime.of(12,30));
-        t3.setIdTurno(tBO.InsertarTurno(t3));
-        listaTur.add(t3);
-        
-        return listaTur;
+        return listaCom;
     }
     public static void insertaTurnoOdontologo(ArrayList<Odontologo>listaOd,ArrayList<Turno>listaTur){
         TurnoXOdontologoBO toBO = new TurnoXOdontologoBO();
@@ -336,28 +331,6 @@ public class Main {
         to.setIdOdontologo(listaOd.get(2).getIdOdontologo());
         to.setIdTurno(listaTur.get(2).getIdTurno());
         toBO.InsertarTurnoXOdontologo(to);
-    }
-    public static ArrayList<Comprobante>insertaComprobantes(){
-        ArrayList<Comprobante>listaCom = new ArrayList<>();
-        ComprobanteBO cBO = new ComprobanteBO();
-        
-        Comprobante c = new Comprobante();
-        c.setFechaEmision(LocalDate.of(1000,1,1));
-        c.setHoraEmision(LocalTime.of(0,0));
-        c.setMetodoDePago(MetodoPago.PLIN);
-        c.setTotal(0);
-        c.setIdComprobante(cBO.InsertComprobante(c));
-        listaCom.add(c);
-        
-        Comprobante c1 = new Comprobante();
-        c1.setFechaEmision(LocalDate.now());
-        c1.setHoraEmision(LocalTime.now());
-        c1.setMetodoDePago(MetodoPago.TARJETA);
-        c1.setTotal(1500);
-        c1.setIdComprobante(cBO.InsertComprobante(c1));
-        listaCom.add(c1);
-        
-        return listaCom;
     }
     public static ArrayList<Cita> insertaCita(ArrayList<Odontologo>listaOd,ArrayList<Paciente>listaPa,ArrayList<Comprobante>listaCom){
         ArrayList<Cita>listaCita = new ArrayList<>();
@@ -442,22 +415,22 @@ public class Main {
             Modificar y eliminar deberian funcionar en principio pero no estan probados para esta nueva version
             El primer comprobante existe como placeholder para no pagados -> tiene que haber una mejor forma de hacer esto xd
         */
+        /*Carga de datos fijos iniciales*/
+        ArrayList<Tratamiento>listaTra = cargaTratamientos();
+        ArrayList<Especialidad>listaEs = cargaEspecialidad();
+        ArrayList<MetodoPago>listaMp = cargaMetodoPago();
         
         /*Dummy data (respetar el orden)*/
-        /*
         ArrayList<Sala>listaSa = insertaSalas();
         ArrayList<Turno>listaTur = insertaTurnos();
-        //insertarEspecialidades(); //no implementado
-        //insertarMetodosPago(); //no implementado
-        ArrayList<Tratamiento>listaTra = insertaTratamientos();
-        ArrayList<Comprobante>listaCom = insertaComprobantes();
-        ArrayList<Recepcionista>listaRep = insertaRecepcionistas(); //no lo usa nadie pipipi
+        ArrayList<Comprobante>listaCom = insertaComprobantes(listaMp);
+        ArrayList<Recepcionista>listaRep = insertaRecepcionistas(); //no lo usa nadie
         ArrayList<Paciente>listaPa = insertaPacientes();
-        ArrayList<Odontologo>listaOd = insertaOdontologos(listaSa);
+        ArrayList<Odontologo>listaOd = insertaOdontologos(listaSa,listaEs);
         ArrayList<Cita>listaCita = insertaCita(listaOd,listaPa,listaCom);
         insertaDetalleTratamiento(listaCita,listaTra); 
         insertaTurnoOdontologo(listaOd,listaTur);
-        */
+        
         
         //Test horarios libres por doctor, @jared
         OdontologoBO odBO = new OdontologoBO();

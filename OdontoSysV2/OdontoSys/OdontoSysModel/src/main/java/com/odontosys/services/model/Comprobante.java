@@ -13,6 +13,7 @@ public class Comprobante {
     private MetodoPago metodoDePago;
 
     public Comprobante() {
+        this.metodoDePago = new MetodoPago();
     }
 
     public int getIdComprobante() {

@@ -18,6 +18,7 @@ public class Odontologo extends Persona{
 
     public Odontologo() {
         this.consultorio = new Sala();
+        this.especialidad = new Especialidad();
     }
            
     public Especialidad getEspecialidad() {

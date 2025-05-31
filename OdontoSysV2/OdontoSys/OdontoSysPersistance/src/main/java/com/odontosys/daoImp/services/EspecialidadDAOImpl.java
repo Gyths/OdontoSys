@@ -20,7 +20,7 @@ public class EspecialidadDAOImpl extends DAOImplBase implements EspecialidadDAO{
     @Override
     protected void configurarListaDeColumnas(){
         this.listaColumnas.add(new Columna("idEspecialidad",true,true));
-        this.listaColumnas.add(new Columna("nombre",false,false));
+        this.listaColumnas.add(new Columna("descripcion",false,false));
     }
     
     @Override
@@ -48,7 +48,7 @@ public class EspecialidadDAOImpl extends DAOImplBase implements EspecialidadDAO{
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.especialidad = new Especialidad();
         this.especialidad.setIdEspecialidad(this.resultSet.getInt("idEspecialidad"));
-        this.especialidad.setNombre(this.resultSet.getString("nombre"));
+        this.especialidad.setNombre(this.resultSet.getString("descripcion"));
     }
     
     @Override

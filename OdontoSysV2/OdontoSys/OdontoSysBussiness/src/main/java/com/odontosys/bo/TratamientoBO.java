@@ -25,4 +25,8 @@ public class TratamientoBO {
     public Integer EliminarTratamiento(Tratamiento tratamiento){
         return this.tratamientoDAO.eliminar(tratamiento);
     }
+    
+    public ArrayList<Tratamiento> listarTodos(){
+        return this.tratamientoDAO.listarTodos();
+    }
 }

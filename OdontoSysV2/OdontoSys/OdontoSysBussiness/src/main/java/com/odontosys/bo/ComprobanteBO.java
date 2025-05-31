@@ -7,6 +7,7 @@ import com.odontosys.infrastructure.model.MetodoPago;
 import com.odontosys.services.model.Comprobante;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class ComprobanteBO {
     private ComprobanteDAO comprobanteDAO;
@@ -23,4 +24,7 @@ public class ComprobanteBO {
         return this.comprobanteDAO.eliminar(comprobante);
     }
     
+    public ArrayList<Comprobante>ListarTodos(){
+        return this.comprobanteDAO.listarTodos();
+    }
 }
