@@ -7,4 +7,8 @@ config.properties
 .vs/
 /OdontoSysFrontEnd/packages
 /OdontoSysFrontEnd/config/applicationhost.config
+/OdontoSysFrontEnd/v17/DocumentLayout.json
+
 /OdontoSysV2/OdontoSys/OdontoSysBussiness/target/
+OdontoSysFrontEnd/obj/Debug/OdontoSysFrontEnd.csproj.AssemblyReference.cache
+OdontoSysFrontEnd/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
