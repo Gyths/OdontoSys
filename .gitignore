@@ -6,5 +6,5 @@
 config.properties
 .vs/
 /OdontoSysFrontEnd/packages
-
+/OdontoSysFrontEnd/config/applicationhost.config
 /OdontoSysV2/OdontoSys/OdontoSysBussiness/target/
