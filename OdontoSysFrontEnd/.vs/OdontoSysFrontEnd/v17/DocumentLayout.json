@@ -1,82 +1,82 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\",
+  "WorkspaceRootPath": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\odontosys.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:odontosys.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\estadocita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\estadocita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\odontosys.master.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:odontosys.master.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\odontologo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\odontologo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\odontosys.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:odontosys.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\reservar_cita.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:reservar_cita.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\tipousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\tipousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\reservar_cita.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:reservar_cita.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\registrar_paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:registrar_paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\tratamiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\tratamiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\registrar_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:registrar_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\especialidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\especialidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\recepcionista_cita.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:recepcionista_cita.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\detalletratamiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\detalletratamiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\recepcionista_cita.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:recepcionista_cita.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\comprobante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\comprobante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\puntuar_doctor.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:puntuar_doctor.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\cita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\cita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\puntuar_doctor.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:puntuar_doctor.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\turnoxodontologo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\turnoxodontologo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\pacientes_odontologo.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:pacientes_odontologo.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\pacientes_odontologo.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:pacientes_odontologo.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\diasemana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\diasemana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\listar_doctores.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:listar_doctores.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysmodel\\metodopago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\metodopago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\listar_doctores.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:listar_doctores.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|c:\\users\\lenovo\\onedrive\\documentos\\visual studio 2022\\odontosysfrontend\\odontosysfrontend\\odontosys.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\odontosys.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\listar_citas_paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:listar_citas_paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\odontosysfrontend\\odontosys.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\odontosys.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\listar_citas_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:listar_citas_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\odontosysfrontend\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\progra3\\odontosysfrontend\\index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{956883EB-ECC5-42EA-BF85-DB7A429DAF7A}|OdontoSysFrontEnd.csproj|solutionrelative:index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\odontosysfrontend\\index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,258 +86,251 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EstadoCita.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\EstadoCita.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\EstadoCita.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\EstadoCita.cs",
+              "RelativeToolTip": "OdontoSysModel\\EstadoCita.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T22:33:25.486Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\site.css",
-              "RelativeDocumentMoniker": "site.css",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\site.css",
-              "RelativeToolTip": "site.css",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAIwFkAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-14T05:22:18.12Z",
+              "Title": "Paciente.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Paciente.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\Paciente.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Paciente.cs",
+              "RelativeToolTip": "OdontoSysModel\\Paciente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T22:31:23.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "OdontoSys.Master.designer.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\OdontoSys.Master.designer.cs",
-              "RelativeDocumentMoniker": "OdontoSys.Master.designer.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\OdontoSys.Master.designer.cs",
-              "RelativeToolTip": "OdontoSys.Master.designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Title": "Odontologo.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Odontologo.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\Odontologo.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Odontologo.cs",
+              "RelativeToolTip": "OdontoSysModel\\Odontologo.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAYwBwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T05:20:31.757Z",
+              "WhenOpened": "2025-05-31T22:31:15.558Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "reservar_cita.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\reservar_cita.aspx.cs",
-              "RelativeDocumentMoniker": "reservar_cita.aspx.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\reservar_cita.aspx.cs",
-              "RelativeToolTip": "reservar_cita.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Title": "TipoUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\TipoUsuario.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\TipoUsuario.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\TipoUsuario.cs",
+              "RelativeToolTip": "OdontoSysModel\\TipoUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T05:20:02.063Z",
+              "WhenOpened": "2025-05-31T22:30:45.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "reservar_cita.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\reservar_cita.aspx",
-              "RelativeDocumentMoniker": "reservar_cita.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\reservar_cita.aspx",
-              "RelativeToolTip": "reservar_cita.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-14T05:19:56.637Z",
+              "Title": "Persona.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Persona.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\Persona.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Persona.cs",
+              "RelativeToolTip": "OdontoSysModel\\Persona.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T22:30:09.81Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "registrar_paciente.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
-              "RelativeDocumentMoniker": "registrar_paciente.aspx.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
-              "RelativeToolTip": "registrar_paciente.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Title": "Tratamiento.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Tratamiento.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\Tratamiento.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Tratamiento.cs",
+              "RelativeToolTip": "OdontoSysModel\\Tratamiento.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAwA0AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T05:19:35.081Z",
+              "WhenOpened": "2025-05-31T22:29:55.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "registrar_paciente.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\registrar_paciente.aspx",
-              "RelativeDocumentMoniker": "registrar_paciente.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\registrar_paciente.aspx",
-              "RelativeToolTip": "registrar_paciente.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-14T05:19:27.755Z",
+              "Title": "Especialidad.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Especialidad.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\Especialidad.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Especialidad.cs",
+              "RelativeToolTip": "OdontoSysModel\\Especialidad.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T22:29:41.024Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "recepcionista_cita.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\recepcionista_cita.aspx.cs",
-              "RelativeDocumentMoniker": "recepcionista_cita.aspx.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\recepcionista_cita.aspx.cs",
-              "RelativeToolTip": "recepcionista_cita.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Title": "DetalleTratamiento.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\DetalleTratamiento.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\DetalleTratamiento.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\DetalleTratamiento.cs",
+              "RelativeToolTip": "OdontoSysModel\\DetalleTratamiento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwA0AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T05:19:07.582Z",
+              "WhenOpened": "2025-05-31T22:29:22.8Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "recepcionista_cita.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\recepcionista_cita.aspx",
-              "RelativeDocumentMoniker": "recepcionista_cita.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\recepcionista_cita.aspx",
-              "RelativeToolTip": "recepcionista_cita.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-14T05:19:03.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OdontoSys.Master",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\OdontoSys.Master",
-              "RelativeDocumentMoniker": "OdontoSys.Master",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\OdontoSys.Master",
-              "RelativeToolTip": "OdontoSys.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-14T05:15:49.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OdontoSys.Master.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\OdontoSys.Master.cs",
-              "RelativeDocumentMoniker": "OdontoSys.Master.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\OdontoSys.Master.cs",
-              "RelativeToolTip": "OdontoSys.Master.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
+              "Title": "Comprobante.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Comprobante.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\Comprobante.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Comprobante.cs",
+              "RelativeToolTip": "OdontoSysModel\\Comprobante.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAYwAwAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T05:20:28.347Z",
+              "WhenOpened": "2025-05-31T22:28:53.142Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "puntuar_doctor.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\puntuar_doctor.aspx.cs",
-              "RelativeDocumentMoniker": "puntuar_doctor.aspx.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\puntuar_doctor.aspx.cs",
-              "RelativeToolTip": "puntuar_doctor.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
+              "Title": "Cita.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Cita.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\Cita.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Cita.cs",
+              "RelativeToolTip": "OdontoSysModel\\Cita.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwA8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T05:18:36.316Z",
+              "WhenOpened": "2025-05-31T22:28:08.518Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "puntuar_doctor.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\puntuar_doctor.aspx",
-              "RelativeDocumentMoniker": "puntuar_doctor.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\puntuar_doctor.aspx",
-              "RelativeToolTip": "puntuar_doctor.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-14T05:18:28.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "pacientes_odontologo.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\pacientes_odontologo.aspx.cs",
-              "RelativeDocumentMoniker": "pacientes_odontologo.aspx.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\pacientes_odontologo.aspx.cs",
-              "RelativeToolTip": "pacientes_odontologo.aspx.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAADwv0AAAAABAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Sala.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Sala.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\Sala.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Sala.cs",
+              "RelativeToolTip": "OdontoSysModel\\Sala.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T05:18:00.347Z",
+              "WhenOpened": "2025-05-31T22:24:54.585Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "pacientes_odontologo.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\pacientes_odontologo.aspx",
-              "RelativeDocumentMoniker": "pacientes_odontologo.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\pacientes_odontologo.aspx",
-              "RelativeToolTip": "pacientes_odontologo.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-14T05:17:52.268Z",
+              "Title": "DiaSemana.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\DiaSemana.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\DiaSemana.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\DiaSemana.cs",
+              "RelativeToolTip": "OdontoSysModel\\DiaSemana.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T22:27:02.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TurnoXOdontologo.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\TurnoXOdontologo.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\TurnoXOdontologo.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\TurnoXOdontologo.cs",
+              "RelativeToolTip": "OdontoSysModel\\TurnoXOdontologo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T22:26:20.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Turno.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Turno.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\Turno.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\Turno.cs",
+              "RelativeToolTip": "OdontoSysModel\\Turno.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T22:25:11.952Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "listar_doctores.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\listar_doctores.aspx.cs",
-              "RelativeDocumentMoniker": "listar_doctores.aspx.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\listar_doctores.aspx.cs",
-              "RelativeToolTip": "listar_doctores.aspx.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAADwvz4AAAABAAAAAAAAAA==",
+              "Title": "MetodoPago.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\MetodoPago.cs",
+              "RelativeDocumentMoniker": "OdontoSysModel\\MetodoPago.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysModel\\MetodoPago.cs",
+              "RelativeToolTip": "OdontoSysModel\\MetodoPago.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T05:17:20.032Z",
+              "WhenOpened": "2025-05-31T22:24:29.472Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "listar_doctores.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\listar_doctores.aspx",
-              "RelativeDocumentMoniker": "listar_doctores.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\listar_doctores.aspx",
-              "RelativeToolTip": "listar_doctores.aspx",
+              "Title": "OdontoSys.Master",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\OdontoSys.Master",
+              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\OdontoSys.Master",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\OdontoSys.Master",
+              "RelativeToolTip": "OdontoSysFrontEnd\\OdontoSys.Master",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-14T05:17:15.243Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "listar_citas_paciente.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\listar_citas_paciente.aspx.cs",
-              "RelativeDocumentMoniker": "listar_citas_paciente.aspx.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\listar_citas_paciente.aspx.cs",
-              "RelativeToolTip": "listar_citas_paciente.aspx.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAADwvz4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T05:16:47.992Z",
+              "WhenOpened": "2025-05-12T21:05:28.573Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "listar_citas_paciente.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\listar_citas_paciente.aspx",
-              "RelativeDocumentMoniker": "listar_citas_paciente.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\listar_citas_paciente.aspx",
-              "RelativeToolTip": "listar_citas_paciente.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-14T05:16:41.543Z",
-              "EditorCaption": ""
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\Content\\site.css",
+              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\Content\\site.css",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\Content\\site.css",
+              "RelativeToolTip": "OdontoSysFrontEnd\\Content\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-12T21:02:28.195Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "index.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\index.aspx",
-              "RelativeDocumentMoniker": "index.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\progra3\\OdontoSysFrontEnd\\index.aspx",
-              "RelativeToolTip": "index.aspx",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\index.aspx",
+              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\index.aspx",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\index.aspx",
+              "RelativeToolTip": "OdontoSysFrontEnd\\index.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-14T05:16:02.522Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T21:11:42.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "OdontoSys.master.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\OdontoSys.master.cs",
+              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\OdontoSys.master.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Documentos\\Visual Studio 2022\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\OdontoSys.master.cs",
+              "RelativeToolTip": "OdontoSysFrontEnd\\OdontoSys.master.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T21:00:56.742Z"
             }
           ]
         }
