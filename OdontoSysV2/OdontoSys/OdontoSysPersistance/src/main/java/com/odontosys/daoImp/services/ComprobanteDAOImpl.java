@@ -17,18 +17,18 @@ public class ComprobanteDAOImpl extends DAOImplBase implements ComprobanteDAO{
     private Comprobante comprobante;
     
     public ComprobanteDAOImpl(){
-        super("comprobante");
+        super("OS_COMPROBANTES");
         this.retornarLlavePrimaria = true;
         this.comprobante = null;
     }
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idComprobante",true,true));
-        this.listaColumnas.add(new Columna("idMetodoPago",false,false));
-        this.listaColumnas.add(new Columna("fechaEmision",false,false));
-        this.listaColumnas.add(new Columna("horaEmision",false,false));
-        this.listaColumnas.add(new Columna("total",false,false));  
+        this.listaColumnas.add(new Columna("COMPROBANTE_ID",true,true));
+        this.listaColumnas.add(new Columna("METODO_PAGO_ID",false,false));
+        this.listaColumnas.add(new Columna("FECHA_EMISION",false,false));
+        this.listaColumnas.add(new Columna("HORA_EMISION",false,false));
+        this.listaColumnas.add(new Columna("TOTAL",false,false));  
     }
     
     @Override
@@ -61,11 +61,11 @@ public class ComprobanteDAOImpl extends DAOImplBase implements ComprobanteDAO{
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.comprobante = new Comprobante();
-        this.comprobante.setIdComprobante(this.resultSet.getInt("idComprobante"));
-        this.comprobante.getMetodoDePago().setIdMetodoPago(this.resultSet.getInt("idMetodoPago"));
-        this.comprobante.setFechaEmision(this.resultSet.getDate("fechaEmision").toLocalDate());
-        this.comprobante.setHoraEmision(this.resultSet.getTime("horaEmision").toLocalTime());
-        this.comprobante.setTotal(this.resultSet.getDouble("total")); 
+        this.comprobante.setIdComprobante(this.resultSet.getInt("COMPROBANTE_ID"));
+        this.comprobante.getMetodoDePago().setIdMetodoPago(this.resultSet.getInt("METODO_PAGO_ID"));
+        this.comprobante.setFechaEmision(this.resultSet.getDate("FECHA_EMISION").toLocalDate());
+        this.comprobante.setHoraEmision(this.resultSet.getTime("HORA_EMISION").toLocalTime());
+        this.comprobante.setTotal(this.resultSet.getDouble("TOTAL")); 
     }
     
     @Override

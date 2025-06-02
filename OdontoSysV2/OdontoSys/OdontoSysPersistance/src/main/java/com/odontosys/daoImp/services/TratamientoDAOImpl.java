@@ -15,18 +15,18 @@ public class TratamientoDAOImpl extends DAOImplBase implements TratamientoDAO{
     private Tratamiento tratamiento;
     
     public TratamientoDAOImpl(){
-        super("tratamiento");
+        super("OS_TRATAMIENTOS");
         this.retornarLlavePrimaria = true;
         this.tratamiento = null;
     }
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idTratamiento",true,true));
-        this.listaColumnas.add(new Columna("idEspecialidad",false,false));
-        this.listaColumnas.add(new Columna("nombre",false,false));
-        this.listaColumnas.add(new Columna("descripcion",false,false));
-        this.listaColumnas.add(new Columna("costo",false,false));  
+        this.listaColumnas.add(new Columna("TRATAMIENTO_ID",true,true));
+        this.listaColumnas.add(new Columna("ESPECIALIDAD_ID",false,false));
+        this.listaColumnas.add(new Columna("NOMBRE",false,false));
+        this.listaColumnas.add(new Columna("DESCRIPCION",false,false));
+        this.listaColumnas.add(new Columna("COSTO",false,false));  
     }
     
     @Override
@@ -59,11 +59,11 @@ public class TratamientoDAOImpl extends DAOImplBase implements TratamientoDAO{
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.tratamiento = new Tratamiento();
-        this.tratamiento.setIdTratamiento(this.resultSet.getInt("idTratamiento"));
-        this.tratamiento.getEspecialidad().setIdEspecialidad(this.resultSet.getInt("idEspecialidad"));
-        this.tratamiento.setNombre(this.resultSet.getString("nombre"));
-        this.tratamiento.setDescripcion(this.resultSet.getString("descripcion"));
-        this.tratamiento.setCosto(this.resultSet.getDouble("costo")); 
+        this.tratamiento.setIdTratamiento(this.resultSet.getInt("TRATAMIENTO_ID"));
+        this.tratamiento.getEspecialidad().setIdEspecialidad(this.resultSet.getInt("ESPECIALIDAD_ID"));
+        this.tratamiento.setNombre(this.resultSet.getString("NOMBRE"));
+        this.tratamiento.setDescripcion(this.resultSet.getString("DESCRIPCION"));
+        this.tratamiento.setCosto(this.resultSet.getDouble("COSTO")); 
     }
     
     @Override

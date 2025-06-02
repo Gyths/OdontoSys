@@ -14,16 +14,16 @@ public class SalaDAOImpl extends DAOImplBase implements SalaDAO{
     private Sala sala;
     
     public SalaDAOImpl(){
-        super("sala");
+        super("OS_SALAS");
         this.retornarLlavePrimaria = true;
         this.sala = null;
     }
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idSala",true,true));
-        this.listaColumnas.add(new Columna("numeroSala",false,false));
-        this.listaColumnas.add(new Columna("piso",false,false));
+        this.listaColumnas.add(new Columna("SALA_ID",true,true));
+        this.listaColumnas.add(new Columna("NUMERO_SALA",false,false));
+        this.listaColumnas.add(new Columna("PISO",false,false));
     }
     
     @Override
@@ -52,9 +52,9 @@ public class SalaDAOImpl extends DAOImplBase implements SalaDAO{
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.sala = new Sala();
-        this.sala.setIdSala(this.resultSet.getInt("idsala"));
-        this.sala.setNumero(this.resultSet.getString("numeroSala"));
-        this.sala.setPiso(this.resultSet.getInt("piso"));
+        this.sala.setIdSala(this.resultSet.getInt("SALA_ID"));
+        this.sala.setNumero(this.resultSet.getString("NUMERO_SALA"));
+        this.sala.setPiso(this.resultSet.getInt("PISO"));
     }
     
     @Override

@@ -16,17 +16,17 @@ public class TurnoDAOImpl extends DAOImplBase implements TurnoDAO{
     private Turno turno;
     
     public TurnoDAOImpl(){
-        super("turno");
+        super("OS_TURNOS");
         this.retornarLlavePrimaria = true;
         this.turno = null;
     }
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idTurno",true,true));
-        this.listaColumnas.add(new Columna("horaInicio",false,false));
-        this.listaColumnas.add(new Columna("horaFin",false,false));
-        this.listaColumnas.add(new Columna("diaSemana",false,false));
+        this.listaColumnas.add(new Columna("TURNO_ID",true,true));
+        this.listaColumnas.add(new Columna("HORA_INICIO",false,false));
+        this.listaColumnas.add(new Columna("HORA_FIN",false,false));
+        this.listaColumnas.add(new Columna("DIA_SEMANA",false,false));
     }
     
     @Override
@@ -57,10 +57,10 @@ public class TurnoDAOImpl extends DAOImplBase implements TurnoDAO{
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.turno = new Turno();
-        this.turno.setIdTurno(this.resultSet.getInt("idTurno"));
-        this.turno.setHoraInicio(this.resultSet.getTime("horaInicio").toLocalTime());
-        this.turno.setHoraFin(this.resultSet.getTime("horaFin").toLocalTime());
-        this.turno.setDiaSemana(DiaSemana.valueOf(this.resultSet.getString("diaSemana")));
+        this.turno.setIdTurno(this.resultSet.getInt("TURNO_ID"));
+        this.turno.setHoraInicio(this.resultSet.getTime("HORA_INICIO").toLocalTime());
+        this.turno.setHoraFin(this.resultSet.getTime("HORA_FIN").toLocalTime());
+        this.turno.setDiaSemana(DiaSemana.valueOf(this.resultSet.getString("DIA_SEMANA")));
     }
     
     @Override

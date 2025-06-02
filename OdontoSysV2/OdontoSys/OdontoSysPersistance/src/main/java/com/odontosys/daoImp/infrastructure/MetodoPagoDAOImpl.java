@@ -13,15 +13,15 @@ public class MetodoPagoDAOImpl extends DAOImplBase implements MetodoPagoDAO{
     private MetodoPago metodoPago;
     
     public MetodoPagoDAOImpl(){
-        super("metodoPago");
+        super("OS_METODOS_PAGOS");
         this.retornarLlavePrimaria = true;
         this.metodoPago = null;
     }
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idMetodoPago",true,true));
-        this.listaColumnas.add(new Columna("descripcion",false,false));
+        this.listaColumnas.add(new Columna("METODO_PAGO_ID",true,true));
+        this.listaColumnas.add(new Columna("DESCRIPCION",false,false));
     }
     
     @Override
@@ -48,8 +48,8 @@ public class MetodoPagoDAOImpl extends DAOImplBase implements MetodoPagoDAO{
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.metodoPago = new MetodoPago();
-        this.metodoPago.setIdMetodoPago(this.resultSet.getInt("idMetodoPago"));
-        this.metodoPago.setNombre(this.resultSet.getString("descripcion"));
+        this.metodoPago.setIdMetodoPago(this.resultSet.getInt("METODO_PAGO_ID"));
+        this.metodoPago.setNombre(this.resultSet.getString("DESCRIPCION"));
     }
     
     @Override

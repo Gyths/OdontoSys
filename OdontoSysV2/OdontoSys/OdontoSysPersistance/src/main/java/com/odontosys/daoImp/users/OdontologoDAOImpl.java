@@ -15,24 +15,24 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     private Odontologo odontologo;
     
     public OdontologoDAOImpl(){
-        super("odontologo");
+        super("OS_ODONTOLOGOS");
         this.retornarLlavePrimaria=true;
         this.odontologo = null;
     }
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idOdontologo",true,true));
-        this.listaColumnas.add(new Columna("contrasenha",false,false));
-        this.listaColumnas.add(new Columna("nombreUsuario",false,false));
-        this.listaColumnas.add(new Columna("correo",false,false));
-        this.listaColumnas.add(new Columna("telefono",false,false));
-        this.listaColumnas.add(new Columna("nombre",false,false));
-        this.listaColumnas.add(new Columna("apellidos",false,false));
-        this.listaColumnas.add(new Columna("DNI",false,false));
-        this.listaColumnas.add(new Columna("puntuacionPromedio",false,false));
-        this.listaColumnas.add(new Columna("idEspecialidad",false,false));   
-        this.listaColumnas.add(new Columna("idSala",false,false));   
+        this.listaColumnas.add(new Columna("ODONTOLOGO_ID",true,true));
+        this.listaColumnas.add(new Columna("CONTRASENHA",false,false));
+        this.listaColumnas.add(new Columna("NOMBRE_USUARIO",false,false));
+        this.listaColumnas.add(new Columna("CORREO",false,false));
+        this.listaColumnas.add(new Columna("TELEFONO",false,false));
+        this.listaColumnas.add(new Columna("NOMBRES",false,false));
+        this.listaColumnas.add(new Columna("APELLIDOS",false,false));
+        this.listaColumnas.add(new Columna("DOCUMENTO_IDENTIDAD",false,false));
+        this.listaColumnas.add(new Columna("PUNTUACION_PROMEDIO",false,false));
+        this.listaColumnas.add(new Columna("ESPECIALIDAD_ID",false,false));   
+        this.listaColumnas.add(new Columna("SALA_ID",false,false));   
     }
     
     @Override
@@ -82,17 +82,17 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException { 
         this.odontologo = new Odontologo();
-        this.odontologo.setIdOdontologo(this.resultSet.getInt("idOdontologo"));
-        this.odontologo.setContrasenha(this.resultSet.getString("contrasenha"));
-        this.odontologo.setNombreUsuario(this.resultSet.getString("nombreUsuario"));
-        this.odontologo.setCorreo(this.resultSet.getString("correo"));
-        this.odontologo.setTelefono(this.resultSet.getString("telefono"));
-        this.odontologo.setNombre(this.resultSet.getString("nombre"));
-        this.odontologo.setApellidos(this.resultSet.getString("apellidos"));
-        this.odontologo.setDNI(this.resultSet.getString("DNI"));
-        this.odontologo.setPuntuacionPromedio(this.resultSet.getDouble("puntuacionPromedio"));
-        this.odontologo.getEspecialidad().setIdEspecialidad(this.resultSet.getInt("idEspecialidad"));
-        this.odontologo.getConsultorio().setIdSala(this.resultSet.getInt("idSala"));
+        this.odontologo.setIdOdontologo(this.resultSet.getInt("ODONTOLOGO_ID"));
+        this.odontologo.setContrasenha(this.resultSet.getString("CONTRASENHA"));
+        this.odontologo.setNombreUsuario(this.resultSet.getString("NOMBRE_USUARIO"));
+        this.odontologo.setCorreo(this.resultSet.getString("CORREO"));
+        this.odontologo.setTelefono(this.resultSet.getString("TELEFONO"));
+        this.odontologo.setNombre(this.resultSet.getString("NOMBRES"));
+        this.odontologo.setApellidos(this.resultSet.getString("APELLIDOS"));
+        this.odontologo.setDNI(this.resultSet.getString("DOCUMENTO_IDENTIDAD"));
+        this.odontologo.setPuntuacionPromedio(this.resultSet.getDouble("PUNTUACION_PROMEDIO"));
+        this.odontologo.getEspecialidad().setIdEspecialidad(this.resultSet.getInt("ESPECIALIDAD_ID"));
+        this.odontologo.getConsultorio().setIdSala(this.resultSet.getInt("SALA_ID"));
     }
     
     @Override
@@ -146,7 +146,7 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     }
     @Override
     public ArrayList<Odontologo> listarPorEspecialidad(Especialidad especialidad){
-        String sql = "SELECT * FROM odontologo WHERE especialidad = ";
+        String sql = "SELECT * FROM OS_ODONTOLOGOS WHERE ESPECIALIDAD = ";
         sql+=especialidad.getIdEspecialidad();
         List lista = new ArrayList<>();
         try {

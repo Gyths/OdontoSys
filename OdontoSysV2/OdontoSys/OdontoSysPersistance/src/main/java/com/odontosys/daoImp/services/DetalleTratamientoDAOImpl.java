@@ -15,17 +15,17 @@ public class DetalleTratamientoDAOImpl extends DAOImplBase implements DetalleTra
     private DetalleTratamiento detalleTratamiento;
     
     public DetalleTratamientoDAOImpl(){
-        super("DetalleTratamiento");
+        super("OS_DETALLES_TRATAMIENTOS");
         this.retornarLlavePrimaria = true;
         this.detalleTratamiento = null;
     }
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idCita",true,false));
-        this.listaColumnas.add(new Columna("idTratamiento",true,false));
-        this.listaColumnas.add(new Columna("cantidad",false,false));
-        this.listaColumnas.add(new Columna("subtotal",false,false));
+        this.listaColumnas.add(new Columna("CITA_ID",true,false));
+        this.listaColumnas.add(new Columna("TRATAMIENTO_ID",true,false));
+        this.listaColumnas.add(new Columna("CANTIDAD",false,false));
+        this.listaColumnas.add(new Columna("SUBTOTAL",false,false));
     }
     
     @Override
@@ -59,12 +59,12 @@ public class DetalleTratamientoDAOImpl extends DAOImplBase implements DetalleTra
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.detalleTratamiento = new DetalleTratamiento();
-        this.detalleTratamiento.setIdCita(this.resultSet.getInt("idCita"));
+        this.detalleTratamiento.setIdCita(this.resultSet.getInt("CITA_ID"));
         Tratamiento t = new Tratamiento();
-        t.setIdTratamiento(this.resultSet.getInt("idTratamiento"));
+        t.setIdTratamiento(this.resultSet.getInt("TRATAMIENTO_ID"));
         this.detalleTratamiento.setTratamiento(t);
-        this.detalleTratamiento.setCantidad(this.resultSet.getInt("cantidad"));
-        this.detalleTratamiento.setSubtotal(this.resultSet.getDouble("subtotal"));
+        this.detalleTratamiento.setCantidad(this.resultSet.getInt("CANTIDAD"));
+        this.detalleTratamiento.setSubtotal(this.resultSet.getDouble("SUBTOTAL"));
     }
     
     @Override

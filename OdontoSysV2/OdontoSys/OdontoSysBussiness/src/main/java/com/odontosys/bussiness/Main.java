@@ -433,7 +433,7 @@ public class Main {
         
         //Test horarios libres por doctor, @jared
         OdontologoBO odBO = new OdontologoBO();
-        Odontologo odontologo = odBO.obtenerPorID(1);
+        Odontologo odontologo = odBO.obtenerPorID(2);
         System.out.println(odontologo.getNombre());
         
         TurnoXOdontologoBO toBO = new TurnoXOdontologoBO();

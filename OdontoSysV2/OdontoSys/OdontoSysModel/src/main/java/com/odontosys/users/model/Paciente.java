@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.odontosys.services.model.Cita;
 
-public class Paciente extends Persona{
+public class Paciente extends Cuenta{
 
     private int idPaciente;
     private List<Cita> citas;

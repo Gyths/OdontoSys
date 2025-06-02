@@ -15,21 +15,21 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
     private Recepcionista recepcionista;
     
     public RecepcionistaDAOImpl(){
-        super("recepcionista");
+        super("OS_RECEPCIONISTAS");
         this.retornarLlavePrimaria=true;
         this.recepcionista = null;
     }
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idrecepcionista",true,true));
-        this.listaColumnas.add(new Columna("contrasenha",false,false));
-        this.listaColumnas.add(new Columna("nombreUsuario",false,false));
-        this.listaColumnas.add(new Columna("correo",false,false));
-        this.listaColumnas.add(new Columna("telefono",false,false));
-        this.listaColumnas.add(new Columna("nombre",false,false));
-        this.listaColumnas.add(new Columna("apellidos",false,false));
-        this.listaColumnas.add(new Columna("DNI",false,false));
+        this.listaColumnas.add(new Columna("RECEPCIONISTA_ID",true,true));
+        this.listaColumnas.add(new Columna("CONTRASENHA",false,false));
+        this.listaColumnas.add(new Columna("NOMBRE_USUARIO",false,false));
+        this.listaColumnas.add(new Columna("CORREO",false,false));
+        this.listaColumnas.add(new Columna("TELEFONO",false,false));
+        this.listaColumnas.add(new Columna("NOMBRES",false,false));
+        this.listaColumnas.add(new Columna("APELLIDOS",false,false));
+        this.listaColumnas.add(new Columna("DOCUMENTO_IDENTIDAD",false,false));
     }
     
     @Override
@@ -73,14 +73,14 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException { 
         this.recepcionista = new Recepcionista();
-        this.recepcionista.setIdRecepcionista(this.resultSet.getInt("idRecepcionista"));
-        this.recepcionista.setContrasenha(this.resultSet.getString("contrasenha"));
-        this.recepcionista.setNombreUsuario(this.resultSet.getString("nombreUsuario"));
-        this.recepcionista.setCorreo(this.resultSet.getString("correo"));
-        this.recepcionista.setTelefono(this.resultSet.getString("telefono"));
-        this.recepcionista.setNombre(this.resultSet.getString("nombre"));
-        this.recepcionista.setApellidos(this.resultSet.getString("apellidos"));
-        this.recepcionista.setDNI(this.resultSet.getString("DNI"));
+        this.recepcionista.setIdRecepcionista(this.resultSet.getInt("RECEPCIONISTA_ID"));
+        this.recepcionista.setContrasenha(this.resultSet.getString("CONTRASENHA"));
+        this.recepcionista.setNombreUsuario(this.resultSet.getString("NOMBRE_USUARIO"));
+        this.recepcionista.setCorreo(this.resultSet.getString("CORREO"));
+        this.recepcionista.setTelefono(this.resultSet.getString("TELEFONO"));
+        this.recepcionista.setNombre(this.resultSet.getString("NOMBRES"));
+        this.recepcionista.setApellidos(this.resultSet.getString("APELLIDOS"));
+        this.recepcionista.setDNI(this.resultSet.getString("DOCUMENTO_IDENTIDAD"));
     }
     
     @Override

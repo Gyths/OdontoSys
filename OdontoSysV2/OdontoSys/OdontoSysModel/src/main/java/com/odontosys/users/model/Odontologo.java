@@ -7,7 +7,7 @@ import com.odontosys.services.model.Cita;
 import com.odontosys.infrastructure.model.Sala;
 import com.odontosys.infrastructure.model.Turno;
 
-public class Odontologo extends Persona{
+public class Odontologo extends Cuenta{
 
     private int idOdontologo;
     private Especialidad especialidad;

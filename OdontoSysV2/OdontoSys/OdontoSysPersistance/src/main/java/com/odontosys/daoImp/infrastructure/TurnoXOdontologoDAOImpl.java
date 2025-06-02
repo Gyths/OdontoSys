@@ -14,15 +14,15 @@ public class TurnoXOdontologoDAOImpl extends DAOImplBase implements TurnoXOdonto
     private TurnoXOdontologo turnoXOdontologo;
     
     public TurnoXOdontologoDAOImpl(){
-        super("odontologo_turno");
+        super("OS_TURNOS_POR_ODONTOLOGOS");
         this.retornarLlavePrimaria = true;
         this.turnoXOdontologo = null;
     }
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idOdontologo",true,false));
-        this.listaColumnas.add(new Columna("idTurno",true,false));
+        this.listaColumnas.add(new Columna("ODONTOLOGO_ID",true,false));
+        this.listaColumnas.add(new Columna("TURNO_ID",true,false));
     }
     
     @Override
@@ -50,8 +50,8 @@ public class TurnoXOdontologoDAOImpl extends DAOImplBase implements TurnoXOdonto
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.turnoXOdontologo = new TurnoXOdontologo();
-        this.turnoXOdontologo.setIdOdontologo(this.resultSet.getInt("idOdontologo"));
-        this.turnoXOdontologo.setIdTurno(this.resultSet.getInt("idTurno"));
+        this.turnoXOdontologo.setIdOdontologo(this.resultSet.getInt("ODONTOLOGO_ID"));
+        this.turnoXOdontologo.setIdTurno(this.resultSet.getInt("TURNO_ID"));
     }
     
     @Override
@@ -100,7 +100,7 @@ public class TurnoXOdontologoDAOImpl extends DAOImplBase implements TurnoXOdonto
         int resultado = 0;
         try {
             this.iniciarTransaccion();
-             String sql = "DELETE FROM odontologo_turno WHERE idOdontologo = ? AND idTurno = ?";
+             String sql = "DELETE FROM OS_ODONTOLOGOS_POR_TURNOS WHERE ODONTOLOGO_ID = ? AND TURNO_ID = ?";
              this.colocarSQLenStatement(sql);
              this.incluirValorDeParametrosParaEliminacion();
              resultado = this.ejecutarModificacionEnBD();
@@ -124,7 +124,7 @@ public class TurnoXOdontologoDAOImpl extends DAOImplBase implements TurnoXOdonto
     
     @Override
     public ArrayList<TurnoXOdontologo> listarPorDoctor(Integer odontologoID){
-        String sql = "SELECT * FROM odontologo_turno WHERE idOdontologo = ";
+        String sql = "SELECT * FROM OS_TURNOS_POR_ODONTOLOGOS WHERE ODONTOLOGO_ID = ";
         sql+=odontologoID.toString();
         List lista = new ArrayList<>();
         try {

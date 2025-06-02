@@ -12,15 +12,15 @@ public class EspecialidadDAOImpl extends DAOImplBase implements EspecialidadDAO{
     private Especialidad especialidad;
     
     public EspecialidadDAOImpl(){
-        super("especialidad");
+        super("OS_ESPECIALIDADES");
         this.retornarLlavePrimaria = true;
         this.especialidad = null;
     }
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idEspecialidad",true,true));
-        this.listaColumnas.add(new Columna("descripcion",false,false));
+        this.listaColumnas.add(new Columna("ESPECIALIDAD_ID",true,true));
+        this.listaColumnas.add(new Columna("DESCRIPCION",false,false));
     }
     
     @Override
@@ -47,8 +47,8 @@ public class EspecialidadDAOImpl extends DAOImplBase implements EspecialidadDAO{
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.especialidad = new Especialidad();
-        this.especialidad.setIdEspecialidad(this.resultSet.getInt("idEspecialidad"));
-        this.especialidad.setNombre(this.resultSet.getString("descripcion"));
+        this.especialidad.setIdEspecialidad(this.resultSet.getInt("ESPECIALIDAD_ID"));
+        this.especialidad.setNombre(this.resultSet.getString("DESCRIPCION"));
     }
     
     @Override

@@ -14,21 +14,21 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
     private Paciente paciente;
     
     public PacienteDAOImpl(){
-        super("paciente");
+        super("OS_PACIENTES");
         this.retornarLlavePrimaria=true;
         this.paciente = null;
     }
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idPaciente",true,true));
-        this.listaColumnas.add(new Columna("contrasenha",false,false));
-        this.listaColumnas.add(new Columna("nombreUsuario",false,false));
-        this.listaColumnas.add(new Columna("correo",false,false));
-        this.listaColumnas.add(new Columna("telefono",false,false));
-        this.listaColumnas.add(new Columna("nombre",false,false));
-        this.listaColumnas.add(new Columna("apellidos",false,false));
-        this.listaColumnas.add(new Columna("DNI",false,false));
+        this.listaColumnas.add(new Columna("PACIENTE_ID",true,true));
+        this.listaColumnas.add(new Columna("CONTRASENHA",false,false));
+        this.listaColumnas.add(new Columna("NOMBRE_USUARIO",false,false));
+        this.listaColumnas.add(new Columna("CORREO",false,false));
+        this.listaColumnas.add(new Columna("TELEFONO",false,false));
+        this.listaColumnas.add(new Columna("NOMBRES",false,false));
+        this.listaColumnas.add(new Columna("APELLIDOS",false,false));
+        this.listaColumnas.add(new Columna("DOCUMENTO_IDENTIDAD",false,false));
     }
     
     @Override
@@ -72,14 +72,14 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException { 
         this.paciente = new Paciente();
-        this.paciente.setIdPaciente(this.resultSet.getInt("idPaciente"));
-        this.paciente.setContrasenha(this.resultSet.getString("contrasenha"));
-        this.paciente.setNombreUsuario(this.resultSet.getString("nombreUsuario"));
-        this.paciente.setCorreo(this.resultSet.getString("correo"));
-        this.paciente.setTelefono(this.resultSet.getString("telefono"));
-        this.paciente.setNombre(this.resultSet.getString("nombre"));
-        this.paciente.setApellidos(this.resultSet.getString("apellidos"));
-        this.paciente.setDNI(this.resultSet.getString("DNI"));
+        this.paciente.setIdPaciente(this.resultSet.getInt("PACIENTE_ID"));
+        this.paciente.setContrasenha(this.resultSet.getString("CONTRASENHA"));
+        this.paciente.setNombreUsuario(this.resultSet.getString("NOMBRE_USUARIO"));
+        this.paciente.setCorreo(this.resultSet.getString("CORREO"));
+        this.paciente.setTelefono(this.resultSet.getString("TELEFONO"));
+        this.paciente.setNombre(this.resultSet.getString("NOMBRES"));
+        this.paciente.setApellidos(this.resultSet.getString("APELLIDOS"));
+        this.paciente.setDNI(this.resultSet.getString("DOCUMENTO_IDENTIDAD"));
     }
     
     @Override

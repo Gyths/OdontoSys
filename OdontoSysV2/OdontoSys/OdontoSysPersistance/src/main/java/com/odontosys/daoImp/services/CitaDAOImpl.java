@@ -18,21 +18,21 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     private Cita cita;
     
     public CitaDAOImpl(){
-        super("cita");
+        super("OS_CITAS");
         this.retornarLlavePrimaria = true;
         this.cita = null;
     }
     
     @Override
     protected void configurarListaDeColumnas(){
-        this.listaColumnas.add(new Columna("idCita",true,true));
-        this.listaColumnas.add(new Columna("idPaciente",false,false));
-        this.listaColumnas.add(new Columna("idOdontologo",false,false));
-        this.listaColumnas.add(new Columna("idComprobante",false,false));
-        this.listaColumnas.add(new Columna("fecha",false,false));
-        this.listaColumnas.add(new Columna("horaInicio",false,false));
-        this.listaColumnas.add(new Columna("puntuacion",false,false));
-        this.listaColumnas.add(new Columna("estado",false,false));
+        this.listaColumnas.add(new Columna("CITA_ID",true,true));
+        this.listaColumnas.add(new Columna("PACIENTE_ID",false,false));
+        this.listaColumnas.add(new Columna("ODONTOLOGO_ID",false,false));
+        this.listaColumnas.add(new Columna("COMPROBANTE_ID",false,false));
+        this.listaColumnas.add(new Columna("FECHA",false,false));
+        this.listaColumnas.add(new Columna("HORA_INICIO",false,false));
+        this.listaColumnas.add(new Columna("PUNTUACION",false,false));
+        this.listaColumnas.add(new Columna("ESTADO",false,false));
     }
     
     @Override
@@ -71,14 +71,14 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.cita = new Cita();
-        this.cita.setIdCita(this.resultSet.getInt("idCita"));
-        this.cita.getPaciente().setIdPaciente(this.resultSet.getInt("idPaciente"));
-        this.cita.getOdontologo().setIdOdontologo(this.resultSet.getInt("idOdontologo"));
-        this.cita.getComprobante().setIdComprobante(this.resultSet.getInt("idComprobante"));
-        this.cita.setFecha(this.resultSet.getObject("fecha",LocalDate.class));
-        this.cita.setHoraInicio(this.resultSet.getObject("horaInicio",LocalTime.class));
-        this.cita.setPuntuacion(this.resultSet.getDouble("puntuacion"));
-        this.cita.setEstado(EstadoCita.valueOf(this.resultSet.getString("estado")));
+        this.cita.setIdCita(this.resultSet.getInt("CITA_ID"));
+        this.cita.getPaciente().setIdPaciente(this.resultSet.getInt("PACIENTE_ID"));
+        this.cita.getOdontologo().setIdOdontologo(this.resultSet.getInt("ODONTOLOGO_ID"));
+        this.cita.getComprobante().setIdComprobante(this.resultSet.getInt("COMPROBANTE_ID"));
+        this.cita.setFecha(this.resultSet.getObject("FECHA",LocalDate.class));
+        this.cita.setHoraInicio(this.resultSet.getObject("HORA_INICIO",LocalTime.class));
+        this.cita.setPuntuacion(this.resultSet.getDouble("PUNTUACION"));
+        this.cita.setEstado(EstadoCita.valueOf(this.resultSet.getString("ESTADO")));
     }
     
     @Override
@@ -125,13 +125,13 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     
     @Override
     public ArrayList<Cita>listarPorOdontologo(Odontologo odontologo,LocalDate fechaInicio,LocalDate fechaFin){
-        String sql = "SELECT * FROM cita WHERE idOdontologo = ";
+        String sql = "SELECT * FROM OS_CITAS WHERE ODONTOLOGO_ID = ";
         sql+=odontologo.getIdOdontologo();
-        sql+= " and fecha < '";
+        sql+= " and FECHA < '";
         sql+=fechaFin.toString();
-        sql+= "' and fecha > '";
+        sql+= "' and FECHA > '";
         sql+=fechaInicio.toString();
-        sql+="' ORDER BY fecha, horaInicio";
+        sql+="' ORDER BY FECHA, HORA_INICIO";
         
         List lista = new ArrayList<>();
         try {
