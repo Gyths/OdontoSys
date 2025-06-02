@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OdontoSysModel.Users;
 
-namespace OdontoSysModel
+namespace OdontoSysModel.Services
 {
     public class Cita
     {

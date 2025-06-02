@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OdontoSysModel
+namespace OdontoSysModel.Services
 {
     public class DetalleTratamiento
     {

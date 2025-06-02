@@ -41,22 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cita.cs" />
-    <Compile Include="Comprobante.cs" />
-    <Compile Include="DetalleTratamiento.cs" />
-    <Compile Include="DiaSemana.cs" />
-    <Compile Include="Especialidad.cs" />
-    <Compile Include="EstadoCita.cs" />
-    <Compile Include="MetodoPago.cs" />
-    <Compile Include="Odontologo.cs" />
-    <Compile Include="Paciente.cs" />
-    <Compile Include="Persona.cs" />
+    <Compile Include="Services\Cita.cs" />
+    <Compile Include="Services\Comprobante.cs" />
+    <Compile Include="Services\DetalleTratamiento.cs" />
+    <Compile Include="Infraestructure\DiaSemana.cs" />
+    <Compile Include="Services\Especialidad.cs" />
+    <Compile Include="Services\EstadoCita.cs" />
+    <Compile Include="Infraestructure\MetodoPago.cs" />
+    <Compile Include="Users\Odontologo.cs" />
+    <Compile Include="Users\Paciente.cs" />
+    <Compile Include="Users\Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sala.cs" />
-    <Compile Include="TipoUsuario.cs" />
-    <Compile Include="Tratamiento.cs" />
-    <Compile Include="Turno.cs" />
-    <Compile Include="TurnoXOdontologo.cs" />
+    <Compile Include="Infraestructure\Sala.cs" />
+    <Compile Include="Users\TipoUsuario.cs" />
+    <Compile Include="Services\Tratamiento.cs" />
+    <Compile Include="Infraestructure\Turno.cs" />
+    <Compile Include="Infraestructure\TurnoXOdontologo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

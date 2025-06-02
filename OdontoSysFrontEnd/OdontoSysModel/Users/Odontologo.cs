@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OdontoSysModel.Infraestructure;
+using OdontoSysModel.Services;
 
-namespace OdontoSysModel
+namespace OdontoSysModel.Users
 {
     public class Odontologo : Persona
     {
