@@ -26,6 +26,7 @@ import com.odontosys.services.model.Tratamiento;
 import com.odontosys.users.model.Odontologo;
 import com.odontosys.users.model.Paciente;
 import com.odontosys.users.model.Recepcionista;
+import com.odontosys.users.model.TipoDocumento;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -130,7 +131,8 @@ public class Main {
         
         Recepcionista r = new Recepcionista();
         r.setApellidos("Mendoza");
-        r.setDNI("74758691");
+        r.setTipoDocumento(TipoDocumento.DNI);
+        r.setNumeroDocumento("74758691");
         r.setContrasenha("pass1");
         r.setCorreo("repMendoza@gmail.com");
         r.setNombre("Carlos");
@@ -141,7 +143,8 @@ public class Main {
         
         Recepcionista r1 = new Recepcionista();
         r1.setApellidos("Paredes");
-        r1.setDNI("21546369");
+        r.setTipoDocumento(TipoDocumento.PASAPORTE);
+        r1.setNumeroDocumento("21546369");
         r1.setContrasenha("pass2");
         r1.setCorreo("repParedes@gmail.com");
         r1.setNombre("Juan");
@@ -152,7 +155,8 @@ public class Main {
         
         Recepcionista r2 = new Recepcionista();
         r2.setApellidos("Castillo");
-        r2.setDNI("32564871");
+        r2.setTipoDocumento(TipoDocumento.PASAPORTE);
+        r2.setNumeroDocumento("32564871");
         r2.setContrasenha("pass3");
         r2.setCorreo("repCastillo@gmail.com");
         r2.setNombre("Manuel");
@@ -163,7 +167,8 @@ public class Main {
         
         Recepcionista r3 = new Recepcionista();
         r3.setApellidos("Pollo");
-        r3.setDNI("76985212");
+        r3.setTipoDocumento(TipoDocumento.DNI);
+        r3.setNumeroDocumento("76985212");
         r3.setContrasenha("pass4");
         r3.setCorreo("repPollo@gmail.com");
         r3.setNombre("Cena");
@@ -174,7 +179,8 @@ public class Main {
         
         Recepcionista r4 = new Recepcionista();
         r4.setApellidos("Cardenas");
-        r4.setDNI("75486921");
+        r4.setTipoDocumento(TipoDocumento.CARNE_DE_EXTRANJERIA);
+        r4.setNumeroDocumento("75486921");
         r4.setContrasenha("pass5");
         r4.setCorreo("repCardenas@gmail.com");
         r4.setNombre("Pedro");
@@ -191,7 +197,8 @@ public class Main {
         
         Paciente p = new Paciente();
         p.setApellidos("Gutierrez");
-        p.setDNI("35621489");
+        p.setTipoDocumento(TipoDocumento.DNI);
+        p.setNumeroDocumento("35621489");
         p.setContrasenha("con1");
         p.setCorreo("joseGutierrez45@gmail.com");
         p.setNombre("Jose");
@@ -202,7 +209,8 @@ public class Main {
         
         Paciente p1 = new Paciente();
         p1.setApellidos("Marquez");
-        p1.setDNI("15234562");
+        p1.setTipoDocumento(TipoDocumento.DNI);
+        p1.setNumeroDocumento("15234562");
         p1.setContrasenha("papas23");
         p1.setCorreo("marmar78@gmail.com");
         p1.setNombre("Maria");
@@ -213,7 +221,8 @@ public class Main {
         
         Paciente p2 = new Paciente();
         p2.setApellidos("Milla");
-        p2.setDNI("52132654");
+        p2.setTipoDocumento(TipoDocumento.DNI);
+        p2.setNumeroDocumento("52132654");
         p2.setContrasenha("vmilla785");
         p2.setCorreo("ElMetroEsSuperior@gmail.com");
         p2.setNombre("Victor");
@@ -224,7 +233,8 @@ public class Main {
         
         Paciente p3 = new Paciente();
         p3.setApellidos("Goku");
-        p3.setDNI("7621548");
+        p3.setTipoDocumento(TipoDocumento.PASAPORTE);
+        p3.setNumeroDocumento("7621548");
         p3.setContrasenha("ssj24lvldios");
         p3.setCorreo("kamehameha45@gmail.com");
         p3.setNombre("Son");
@@ -235,7 +245,8 @@ public class Main {
         
         Paciente p4 = new Paciente();
         p4.setApellidos("Caceres");
-        p4.setDNI("65212325");
+        p4.setTipoDocumento(TipoDocumento.DNI);
+        p4.setNumeroDocumento("65212325");
         p4.setContrasenha("+kπto");
         p4.setCorreo("caceresOrlando1995@gmail.com");
         p4.setNombre("Orlando");
@@ -252,7 +263,8 @@ public class Main {
         
         Odontologo o = new Odontologo();
         o.setApellidos("Castaneda");
-        o.setDNI("25645863");
+        o.setTipoDocumento(TipoDocumento.DNI);
+        o.setNumeroDocumento("25645863");
         o.setContrasenha("75486235555");
         o.setCorreo("docCastaneda@gmail.com");
         o.setNombre("Javier");
@@ -266,7 +278,8 @@ public class Main {
         
         Odontologo o1 = new Odontologo();
         o1.setApellidos("Villegas");
-        o1.setDNI("45869523");
+        o1.setTipoDocumento(TipoDocumento.DNI);
+        o1.setNumeroDocumento("45869523");
         o1.setContrasenha("vi__45M");
         o1.setCorreo("docVillegas@gmail.com");
         o1.setNombre("Sandra");
@@ -280,7 +293,8 @@ public class Main {
         
         Odontologo o2 = new Odontologo();
         o2.setApellidos("Suarez");
-        o2.setDNI("45862135");
+        o2.setTipoDocumento(TipoDocumento.DNI);
+        o2.setNumeroDocumento("45862135");
         o2.setContrasenha("ss_ss-0012");
         o2.setCorreo("docSuarez@gmail.com");
         o2.setNombre("Sebastian");
