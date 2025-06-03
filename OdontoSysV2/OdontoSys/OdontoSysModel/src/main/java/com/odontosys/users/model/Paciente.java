@@ -10,7 +10,7 @@ public class Paciente extends Persona{
     private List<Cita> citas;
     
     public Paciente(){
-        
+        super();
     }
 
     public List<Cita> getCitas() {
