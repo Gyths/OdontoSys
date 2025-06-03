@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `odonto_sys` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `odonto_sys`;
--- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: odonto_sys
+-- Database: ODONTO_SYS
 -- ------------------------------------------------------
--- Server version	8.0.42
+-- Server version	8.4.4
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -17,380 +15,397 @@ USE `odonto_sys`;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+
+CREATE DATABASE  IF NOT EXISTS `ODONTO_SYS` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `ODONTO_SYS`;
+
+
+
 --
--- Table structure for table `cita`
+-- Table structure for table `OS_CITAS`
 --
 
-DROP TABLE IF EXISTS `cita`;
+DROP TABLE IF EXISTS `OS_CITAS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `cita` (
-  `idCita` int NOT NULL AUTO_INCREMENT,
-  `idPaciente` int NOT NULL,
-  `idOdontologo` int NOT NULL,
-  `idComprobante` int DEFAULT NULL,
-  `fecha` date NOT NULL,
-  `horaInicio` time NOT NULL,
-  `puntuacion` int DEFAULT '0',
-  `estado` enum('RESERVADA','ATENDIDA','CANCELADA','PAGO_CANCELADO') NOT NULL,
-  PRIMARY KEY (`idCita`),
-  KEY `idPaciente` (`idPaciente`),
-  KEY `idOdontologo` (`idOdontologo`),
-  KEY `idComprobante` (`idComprobante`),
-  CONSTRAINT `cita_ibfk_1` FOREIGN KEY (`idPaciente`) REFERENCES `paciente` (`idPaciente`),
-  CONSTRAINT `cita_ibfk_2` FOREIGN KEY (`idOdontologo`) REFERENCES `odontologo` (`idOdontologo`),
-  CONSTRAINT `cita_ibfk_3` FOREIGN KEY (`idComprobante`) REFERENCES `comprobante` (`idComprobante`)
+CREATE TABLE `OS_CITAS` (
+  `CITA_ID` int NOT NULL AUTO_INCREMENT,
+  `PACIENTE_ID` int NOT NULL,
+  `RECEPCIONISTA_ID` int NOT NULL,
+  `ODONTOLOGO_ID` int NOT NULL,
+  `COMPROBANTE_ID` int DEFAULT NULL,
+  `FECHA` date NOT NULL,
+  `HORA_INICIO` time NOT NULL,
+  `PUNTUACION` int DEFAULT '0',
+  `ESTADO` enum('RESERVADA','ATENDIDA','CANCELADA','PAGO_CANCELADO') NOT NULL,
+  PRIMARY KEY (`CITA_ID`),
+  KEY `PACIENTE_ID` (`PACIENTE_ID`),
+  KEY `RECEPCIONISTA_ID` (`RECEPCIONISTA_ID`),
+  KEY `ODONTOLOGO_ID` (`ODONTOLOGO_ID`),
+  KEY `COMPROBANTE_ID` (`COMPROBANTE_ID`),
+  CONSTRAINT `cita_ibfk_1` FOREIGN KEY (`PACIENTE_ID`) REFERENCES `OS_PACIENTES` (`PACIENTE_ID`),
+  CONSTRAINT `cita_ibfk_2` FOREIGN KEY (`RECEPCIONISTA_ID`) REFERENCES `OS_RECEPCIONISTAS` (`RECEPCIONISTA_ID`),
+  CONSTRAINT `cita_ibfk_3` FOREIGN KEY (`ODONTOLOGO_ID`) REFERENCES `OS_ODONTOLOGOS` (`ODONTOLOGO_ID`),
+  CONSTRAINT `cita_ibfk_4` FOREIGN KEY (`COMPROBANTE_ID`) REFERENCES `OS_COMPROBANTES` (`COMPROBANTE_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cita`
+-- Dumping data for table `OS_CITAS`
 --
 
-LOCK TABLES `cita` WRITE;
-/*!40000 ALTER TABLE `cita` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cita` ENABLE KEYS */;
+LOCK TABLES `OS_CITAS` WRITE;
+/*!40000 ALTER TABLE `OS_CITAS` DISABLE KEYS */;
+/*!40000 ALTER TABLE `OS_CITAS` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `comprobante`
+-- Table structure for table `OS_COMPROBANTES`
 --
 
-DROP TABLE IF EXISTS `comprobante`;
+DROP TABLE IF EXISTS `OS_COMPROBANTES`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `comprobante` (
-  `idComprobante` int NOT NULL AUTO_INCREMENT,
-  `fechaEmision` date NOT NULL,
-  `total` double NOT NULL,
-  `horaEmision` time DEFAULT NULL,
-  `idMetodoPago` int DEFAULT NULL,
-  PRIMARY KEY (`idComprobante`),
-  KEY `comprobante_ibfk_1` (`idMetodoPago`),
-  CONSTRAINT `comprobante_ibfk_1` FOREIGN KEY (`idMetodoPago`) REFERENCES `metodopago` (`idMetodoPago`)
+CREATE TABLE `OS_COMPROBANTES` (
+  `COMPROBANTE_ID` int NOT NULL AUTO_INCREMENT,
+  `FECHA_EMISION` date NOT NULL,
+  `TOTAL` double NOT NULL,
+  `HORA_EMISION` time DEFAULT NULL,
+  `METODO_PAGO_ID` int DEFAULT NULL,
+  PRIMARY KEY (`COMPROBANTE_ID`),
+  KEY `comprobante_ibfk_1` (`METODO_PAGO_ID`),
+  CONSTRAINT `comprobante_ibfk_1` FOREIGN KEY (`METODO_PAGO_ID`) REFERENCES `OS_METODOS_PAGOS` (`METODO_PAGO_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `OS_COMPROBANTES`
+--
+
+LOCK TABLES `OS_COMPROBANTES` WRITE;
+/*!40000 ALTER TABLE `OS_COMPROBANTES` DISABLE KEYS */;
+INSERT INTO `OS_COMPROBANTES` VALUES (3,'1000-01-01',0,'00:00:00',1);
+/*!40000 ALTER TABLE `OS_COMPROBANTES` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `OS_DETALLES_TRATAMIENTOS`
+--
+
+DROP TABLE IF EXISTS `OS_DETALLES_TRATAMIENTOS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `OS_DETALLES_TRATAMIENTOS` (
+  `CITA_ID` int NOT NULL,
+  `TRATAMIENTO_ID` int NOT NULL,
+  `CANTIDAD` int NOT NULL DEFAULT '1',
+  `SUBTOTAL` double NOT NULL,
+  PRIMARY KEY (`CITA_ID`,`TRATAMIENTO_ID`),
+  KEY `TRATAMIENTO_ID` (`TRATAMIENTO_ID`),
+  CONSTRAINT `detalletratamiento_ibfk_1` FOREIGN KEY (`CITA_ID`) REFERENCES `OS_CITAS` (`CITA_ID`),
+  CONSTRAINT `detalletratamiento_ibfk_2` FOREIGN KEY (`TRATAMIENTO_ID`) REFERENCES `OS_TRATAMIENTOS` (`TRATAMIENTO_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `OS_DETALLES_TRATAMIENTOS`
+--
+
+LOCK TABLES `OS_DETALLES_TRATAMIENTOS` WRITE;
+/*!40000 ALTER TABLE `OS_DETALLES_TRATAMIENTOS` DISABLE KEYS */;
+/*!40000 ALTER TABLE `OS_DETALLES_TRATAMIENTOS` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `OS_ESPECIALIDADES`
+--
+
+DROP TABLE IF EXISTS `OS_ESPECIALIDADES`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `OS_ESPECIALIDADES` (
+  `ESPECIALIDAD_ID` int NOT NULL AUTO_INCREMENT,
+  `DESCRIPCION` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`ESPECIALIDAD_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `OS_ESPECIALIDADES`
+--
+
+LOCK TABLES `OS_ESPECIALIDADES` WRITE;
+/*!40000 ALTER TABLE `OS_ESPECIALIDADES` DISABLE KEYS */;
+INSERT INTO `OS_ESPECIALIDADES` VALUES (1,'ODONTOLOGIA_GENERAL'),(2,'ORTODONCIA'),(3,'ENDODONCIA'),(4,'CIRUGIA'),(5,'PEDIATRIA');
+/*!40000 ALTER TABLE `OS_ESPECIALIDADES` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `OS_METODOS_PAGOS`
+--
+
+DROP TABLE IF EXISTS `OS_METODOS_PAGOS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `OS_METODOS_PAGOS` (
+  `METODO_PAGO_ID` int NOT NULL AUTO_INCREMENT,
+  `DESCRIPCION` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`METODO_PAGO_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `OS_METODOS_PAGOS`
+--
+
+LOCK TABLES `OS_METODOS_PAGOS` WRITE;
+/*!40000 ALTER TABLE `OS_METODOS_PAGOS` DISABLE KEYS */;
+INSERT INTO `OS_METODOS_PAGOS` VALUES (1,'EFECTIVO'),(2,'TARJETA'),(3,'TRANSFERENCIA'),(4,'YAPE'),(5,'PLIN');
+/*!40000 ALTER TABLE `OS_METODOS_PAGOS` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `OS_ODONTOLOGOS`
+--
+
+DROP TABLE IF EXISTS `OS_ODONTOLOGOS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `OS_ODONTOLOGOS` (
+  `ODONTOLOGO_ID` int NOT NULL AUTO_INCREMENT,
+  `PUNTUACION_PROMEDIO` double DEFAULT '0',
+  `SALA_ID` int DEFAULT NULL,
+  `CONTRASENHA` varchar(50) DEFAULT NULL,
+  `NOMBRE_USUARIO` varchar(100) DEFAULT NULL,
+  `CORREO` varchar(100) DEFAULT NULL,
+  `TELEFONO` varchar(10) DEFAULT NULL,
+  `NOMBRES` varchar(50) DEFAULT NULL,
+  `APELLIDOS` varchar(50) DEFAULT NULL,
+  `TIPO_DOCUMENTO_ID` int NOT NULL,
+  `NUMERO_DOCUMENTO_IDENTIDAD` varchar(10) DEFAULT NULL,
+  `ESPECIALIDAD_ID` int DEFAULT NULL,
+  PRIMARY KEY (`ODONTOLOGO_ID`),
+  KEY `SALA_ID` (`SALA_ID`),
+  KEY `TIPO_DOCUMENTO_ID` (`TIPO_DOCUMENTO_ID`),
+  KEY `ESPECIALIDAD_ID` (`ESPECIALIDAD_ID`),
+  CONSTRAINT `odontologo_ibfk_1` FOREIGN KEY (`ESPECIALIDAD_ID`) REFERENCES `OS_ESPECIALIDADES` (`ESPECIALIDAD_ID`),
+  CONSTRAINT `odontologo_ibfk_2` FOREIGN KEY (`TIPO_DOCUMENTO_ID`) REFERENCES `OS_TIPOS_DOCUMENTOS` (`TIPO_DOCUMENTO_ID`),
+  CONSTRAINT `odontologo_ibfk_3` FOREIGN KEY (`SALA_ID`) REFERENCES `OS_SALAS` (`SALA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `OS_ODONTOLOGOS`
+--
+
+LOCK TABLES `OS_ODONTOLOGOS` WRITE;
+/*!40000 ALTER TABLE `OS_ODONTOLOGOS` DISABLE KEYS */;
+/*!40000 ALTER TABLE `OS_ODONTOLOGOS` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `OS_PACIENTES`
+--
+
+DROP TABLE IF EXISTS `OS_PACIENTES`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `OS_PACIENTES` (
+  `PACIENTE_ID` int NOT NULL AUTO_INCREMENT,
+  `CONTRASENHA` varchar(50) DEFAULT NULL,
+  `NOMBRE_USUARIO` varchar(100) DEFAULT NULL,
+  `CORREO` varchar(100) DEFAULT NULL,
+  `TELEFONO` varchar(10) DEFAULT NULL,
+  `NOMBRES` varchar(50) DEFAULT NULL,
+  `APELLIDOS` varchar(50) DEFAULT NULL,
+  `TIPO_DOCUMENTO_ID` int NOT NULL,
+  `NUMERO_DOCUMENTO_IDENTIDAD` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`PACIENTE_ID`),
+  UNIQUE KEY `NOMBRE_USUARIO` (`NOMBRE_USUARIO`),
+  UNIQUE KEY `NUMERO_DOCUMENTO_IDENTIDAD` (`NUMERO_DOCUMENTO_IDENTIDAD`),
+  KEY `TIPO_DOCUMENTO_ID` (`TIPO_DOCUMENTO_ID`),
+  CONSTRAINT `paciente_ibfk_1` FOREIGN KEY (`TIPO_DOCUMENTO_ID`) REFERENCES `OS_TIPOS_DOCUMENTOS` (`TIPO_DOCUMENTO_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `OS_PACIENTES`
+--
+
+LOCK TABLES `OS_PACIENTES` WRITE;
+/*!40000 ALTER TABLE `OS_PACIENTES` DISABLE KEYS */;
+/*!40000 ALTER TABLE `OS_PACIENTES` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `OS_RECEPCIONISTAS`
+--
+
+DROP TABLE IF EXISTS `OS_RECEPCIONISTAS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `OS_RECEPCIONISTAS` (
+  `RECEPCIONISTA_ID` int NOT NULL AUTO_INCREMENT,
+  `CONTRASENHA` varchar(50) DEFAULT NULL,
+  `NOMBRE_USUARIO` varchar(100) DEFAULT NULL,
+  `CORREO` varchar(100) DEFAULT NULL,
+  `TELEFONO` varchar(10) DEFAULT NULL,
+  `NOMBRES` varchar(50) DEFAULT NULL,
+  `APELLIDOS` varchar(50) DEFAULT NULL,
+  `TIPO_DOCUMENTO_ID` int NOT NULL,
+  `NUMERO_DOCUMENTO_IDENTIDAD` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`RECEPCIONISTA_ID`),
+  UNIQUE KEY `NOMBRE_USUARIO` (`NOMBRE_USUARIO`),
+  UNIQUE KEY `CORREO` (`CORREO`),
+  UNIQUE KEY `TELEFONO` (`TELEFONO`),
+  UNIQUE KEY `NUMERO_DOCUMENTO_IDENTIDAD` (`NUMERO_DOCUMENTO_IDENTIDAD`),
+  KEY `TIPO_DOCUMENTO_ID` (`TIPO_DOCUMENTO_ID`),
+  CONSTRAINT `recepcionista_ibfk_1` FOREIGN KEY (`TIPO_DOCUMENTO_ID`) REFERENCES `OS_TIPOS_DOCUMENTOS` (`TIPO_DOCUMENTO_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `comprobante`
+-- Dumping data for table `OS_RECEPCIONISTAS`
 --
 
-LOCK TABLES `comprobante` WRITE;
-/*!40000 ALTER TABLE `comprobante` DISABLE KEYS */;
-INSERT INTO `comprobante` VALUES (1,'1000-01-01',0,0,1);
-/*!40000 ALTER TABLE `comprobante` ENABLE KEYS */;
+LOCK TABLES `OS_RECEPCIONISTAS` WRITE;
+/*!40000 ALTER TABLE `OS_RECEPCIONISTAS` DISABLE KEYS */;
+INSERT INTO `OS_RECEPCIONISTAS` VALUES (2,'CONTRASENHA','DEFAULT','r.default@odontosys.com','999999999','Recepcionista','Default',1,'12345678');
+/*!40000 ALTER TABLE `OS_RECEPCIONISTAS` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `detalletratamiento`
+-- Table structure for table `OS_SALAS`
 --
 
-DROP TABLE IF EXISTS `detalletratamiento`;
+DROP TABLE IF EXISTS `OS_SALAS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `detalletratamiento` (
-  `idCita` int NOT NULL,
-  `idTratamiento` int NOT NULL,
-  `cantidad` int NOT NULL DEFAULT '1',
-  `subtotal` double NOT NULL,
-  PRIMARY KEY (`idCita`,`idTratamiento`),
-  KEY `idTratamiento` (`idTratamiento`),
-  CONSTRAINT `detalletratamiento_ibfk_1` FOREIGN KEY (`idCita`) REFERENCES `cita` (`idCita`),
-  CONSTRAINT `detalletratamiento_ibfk_2` FOREIGN KEY (`idTratamiento`) REFERENCES `tratamiento` (`idTratamiento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `detalletratamiento`
---
-
-LOCK TABLES `detalletratamiento` WRITE;
-/*!40000 ALTER TABLE `detalletratamiento` DISABLE KEYS */;
-/*!40000 ALTER TABLE `detalletratamiento` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `especialidad`
---
-
-DROP TABLE IF EXISTS `especialidad`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `especialidad` (
-  `idEspecialidad` int NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`idEspecialidad`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `especialidad`
---
-
-LOCK TABLES `especialidad` WRITE;
-/*!40000 ALTER TABLE `especialidad` DISABLE KEYS */;
-insert into especialidad (descripcion) values ('ODONTOLOGIA_GENERAL');
-insert into especialidad (descripcion) values ('ORTODONCIA');
-insert into especialidad (descripcion) values ('ENDODONCIA');
-insert into especialidad (descripcion) values ('CIRUGIA');
-insert into especialidad (descripcion) values ('PEDIATRIA');
-/*!40000 ALTER TABLE `especialidad` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `metodopago`
---
-
-DROP TABLE IF EXISTS `metodopago`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `metodopago` (
-  `idMetodoPago` int NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`idMetodoPago`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `metodopago`
---
-
-LOCK TABLES `metodopago` WRITE;
-/*!40000 ALTER TABLE `metodopago` DISABLE KEYS */;
-insert into metodopago (descripcion) values ('EFECTIVO');
-insert into metodopago (descripcion) values ('TARJETA');
-insert into metodopago (descripcion) values ('TRANSFERENCIA');
-insert into metodopago (descripcion) values ('YAPE');
-insert into metodopago (descripcion) values ('PLIN');
-/*!40000 ALTER TABLE `metodopago` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `odontologo`
---
-
-DROP TABLE IF EXISTS `odontologo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `odontologo` (
-  `idOdontologo` int NOT NULL AUTO_INCREMENT,
-  `puntuacionPromedio` double DEFAULT '0',
-  `idSala` int DEFAULT NULL,
-  `contrasenha` varchar(50) DEFAULT NULL,
-  `nombreUsuario` varchar(100) DEFAULT NULL,
-  `correo` varchar(100) DEFAULT NULL,
-  `telefono` varchar(10) DEFAULT NULL,
-  `nombre` varchar(50) DEFAULT NULL,
-  `apellidos` varchar(50) DEFAULT NULL,
-  `DNI` varchar(10) DEFAULT NULL,
-  `idEspecialidad` int DEFAULT NULL,
-  PRIMARY KEY (`idOdontologo`),
-  KEY `idSala` (`idSala`),
-  KEY `odontologo_ibfk_1` (`idEspecialidad`),
-  CONSTRAINT `odontologo_ibfk_1` FOREIGN KEY (`idEspecialidad`) REFERENCES `especialidad` (`idEspecialidad`),
-  CONSTRAINT `odontologo_ibfk_3` FOREIGN KEY (`idSala`) REFERENCES `sala` (`idSala`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `odontologo`
---
-
-LOCK TABLES `odontologo` WRITE;
-/*!40000 ALTER TABLE `odontologo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `odontologo` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `odontologo_turno`
---
-
-DROP TABLE IF EXISTS `odontologo_turno`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `odontologo_turno` (
-  `idOdontologo` int NOT NULL,
-  `idTurno` int NOT NULL,
-  PRIMARY KEY (`idOdontologo`,`idTurno`),
-  KEY `idTurno` (`idTurno`),
-  CONSTRAINT `odontologo_turno_ibfk_1` FOREIGN KEY (`idOdontologo`) REFERENCES `odontologo` (`idOdontologo`),
-  CONSTRAINT `odontologo_turno_ibfk_2` FOREIGN KEY (`idTurno`) REFERENCES `turno` (`idTurno`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `odontologo_turno`
---
-
-LOCK TABLES `odontologo_turno` WRITE;
-/*!40000 ALTER TABLE `odontologo_turno` DISABLE KEYS */;
-/*!40000 ALTER TABLE `odontologo_turno` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `paciente`
---
-
-DROP TABLE IF EXISTS `paciente`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `paciente` (
-  `idPaciente` int NOT NULL AUTO_INCREMENT,
-  `contrasenha` varchar(50) DEFAULT NULL,
-  `nombreUsuario` varchar(100) DEFAULT NULL UNIQUE,
-  `correo`  varchar(100) DEFAULT NULL,
-  `telefono` varchar(10) DEFAULT NULL,
-  `nombre` varchar(50) DEFAULT NULL,
-  `apellidos` varchar(50) DEFAULT NULL,
-  `DNI` varchar(10) DEFAULT NULL UNIQUE,
-  PRIMARY KEY (`idPaciente`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `paciente`
---
-
-LOCK TABLES `paciente` WRITE;
-/*!40000 ALTER TABLE `paciente` DISABLE KEYS */;
-/*!40000 ALTER TABLE `paciente` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `recepcionista`
---
-
-DROP TABLE IF EXISTS `recepcionista`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `recepcionista` (
-  `idRecepcionista` int NOT NULL AUTO_INCREMENT,
-  `contrasenha` varchar(50) DEFAULT NULL,
-  `nombreUsuario` varchar(100) DEFAULT NULL UNIQUE,
-  `correo` varchar(100) DEFAULT NULL UNIQUE,
-  `telefono` varchar(10) DEFAULT NULL UNIQUE,
-  `nombre` varchar(50) DEFAULT NULL,
-  `apellidos` varchar(50) DEFAULT NULL,
-  `DNI` varchar(10) DEFAULT NULL UNIQUE,
-  PRIMARY KEY (`idRecepcionista`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `recepcionista`
---
-
-LOCK TABLES `recepcionista` WRITE;
-/*!40000 ALTER TABLE `recepcionista` DISABLE KEYS */;
-/*!40000 ALTER TABLE `recepcionista` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sala`
---
-
-DROP TABLE IF EXISTS `sala`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `sala` (
-  `idSala` int NOT NULL AUTO_INCREMENT,
-  `numeroSala` varchar(10) NOT NULL,
-  `piso` int NOT NULL,
-  PRIMARY KEY (`idSala`),
-  UNIQUE KEY `numeroSala` (`numeroSala`)
+CREATE TABLE `OS_SALAS` (
+  `SALA_ID` int NOT NULL AUTO_INCREMENT,
+  `NUMERO_SALA` varchar(10) NOT NULL,
+  `PISO` int NOT NULL,
+  PRIMARY KEY (`SALA_ID`),
+  UNIQUE KEY `NUMERO_SALA` (`NUMERO_SALA`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `sala`
+-- Dumping data for table `OS_SALAS`
 --
 
-LOCK TABLES `sala` WRITE;
-/*!40000 ALTER TABLE `sala` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sala` ENABLE KEYS */;
+LOCK TABLES `OS_SALAS` WRITE;
+/*!40000 ALTER TABLE `OS_SALAS` DISABLE KEYS */;
+/*!40000 ALTER TABLE `OS_SALAS` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tipousuario`
+-- Table structure for table `OS_TIPOS_DOCUMENTOS`
 --
 
-DROP TABLE IF EXISTS `tipousuario`;
+DROP TABLE IF EXISTS `OS_TIPOS_DOCUMENTOS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tipousuario` (
-  `idTipo` int NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(100) NOT NULL,
-  PRIMARY KEY (`idTipo`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `OS_TIPOS_DOCUMENTOS` (
+  `TIPO_DOCUMENTO_ID` int NOT NULL AUTO_INCREMENT,
+  `DESCRIPCION` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`TIPO_DOCUMENTO_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tipousuario`
+-- Dumping data for table `OS_TIPOS_DOCUMENTOS`
 --
 
-LOCK TABLES `tipousuario` WRITE;
-/*!40000 ALTER TABLE `tipousuario` DISABLE KEYS */;
-INSERT INTO `tipousuario` VALUES (1,'PACIENTE'),(2,'ODONTOLOGO'),(3,'RECEPCIONISTA'),(4,'ADMINISTRADOR');
-/*!40000 ALTER TABLE `tipousuario` ENABLE KEYS */;
+LOCK TABLES `OS_TIPOS_DOCUMENTOS` WRITE;
+/*!40000 ALTER TABLE `OS_TIPOS_DOCUMENTOS` DISABLE KEYS */;
+INSERT INTO `OS_TIPOS_DOCUMENTOS` VALUES (1,'DNI'),(2,'CARNE_DE_EXTRANJERIA'),(3,'PASAPORTE');
+/*!40000 ALTER TABLE `OS_TIPOS_DOCUMENTOS` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tratamiento`
+-- Table structure for table `OS_TRATAMIENTOS`
 --
 
-DROP TABLE IF EXISTS `tratamiento`;
+DROP TABLE IF EXISTS `OS_TRATAMIENTOS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tratamiento` (
-  `idTratamiento` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  `descripcion` text,
-  `costo` double NOT NULL,
-  `idEspecialidad` int NOT NULL,
-  PRIMARY KEY (`idTratamiento`),
-  UNIQUE KEY `nombre` (`nombre`),
-  CONSTRAINT `tratamiento_ibfk_1` FOREIGN KEY (`idEspecialidad`) REFERENCES `Especialidad` (`idEspecialidad`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `OS_TRATAMIENTOS` (
+  `TRATAMIENTO_ID` int NOT NULL AUTO_INCREMENT,
+  `NOMBRE` varchar(100) NOT NULL,
+  `DESCRIPCION` text,
+  `COSTO` double NOT NULL,
+  `ESPECIALIDAD_ID` int NOT NULL,
+  PRIMARY KEY (`TRATAMIENTO_ID`),
+  UNIQUE KEY `NOMBRE` (`NOMBRE`),
+  KEY `tratamiento_ibfk_1` (`ESPECIALIDAD_ID`),
+  CONSTRAINT `tratamiento_ibfk_1` FOREIGN KEY (`ESPECIALIDAD_ID`) REFERENCES `OS_ESPECIALIDADES` (`ESPECIALIDAD_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tratamiento`
+-- Dumping data for table `OS_TRATAMIENTOS`
 --
 
-LOCK TABLES `tratamiento` WRITE;
-/*!40000 ALTER TABLE `tratamiento` DISABLE KEYS */;
-INSERT INTO `tratamiento` VALUES (1,'Endodoncia','Tratamiento del interior del diente',500,5);
-INSERT INTO `tratamiento` VALUES (2,'Limpieza','Tratamiento exterior',150,3);
-INSERT INTO `tratamiento` VALUES (3,'Corona','Recubrimiento superior del diente',300,1);
-INSERT INTO `tratamiento` VALUES (4,'Curacion','Tratamiento superficial de caries',100,1);
-/*!40000 ALTER TABLE `tratamiento` ENABLE KEYS */;
+LOCK TABLES `OS_TRATAMIENTOS` WRITE;
+/*!40000 ALTER TABLE `OS_TRATAMIENTOS` DISABLE KEYS */;
+INSERT INTO `OS_TRATAMIENTOS` VALUES (2,'Limpieza','Limpieza y profilaxis dental',120,1),(3,'Profilaxis','Eliminación de sarro y pulido dental',200,1),(4,'Sellado de Surcos','Sellado de fisuras para prevención de caries',180,1),(5,'Frenillos Metálicos','Aparatos metálicos para corrección dental',2000,2),(6,'Frenillos Cerámicos','Aparatos cerámicos estéticos para ortodoncia',2500,2),(7,'Retenedores','Dispositivos para mantener posición dental',800,2),(8,'Tratamiento de Conducto','Eliminación de pulpa infectada',500,3),(9,'Retratamiento Endodóntico','Reintervención en canal radicular',600,3),(10,'Apicoformación','Cierre apical en dientes inmaduros',700,3),(11,'Extracción Simple','Remoción de diente con anestesia local',300,4),(12,'Extracción Quirúrgica','Remoción de muela del juicio',500,4),(13,'Injerto Óseo','Colocación de injerto para regeneración ósea',1500,4),(14,'Aplicación de Flúor Infantil','Prevención de caries en niños',100,5),(15,'Limpieza Infantil','Limpieza dental adaptada a niños',120,5),(16,'Sellado de Surcos Infantil','Prevención de caries en molares infantiles',150,5);
+/*!40000 ALTER TABLE `OS_TRATAMIENTOS` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `turno`
+-- Table structure for table `OS_TURNOS`
 --
 
-DROP TABLE IF EXISTS `turno`;
+DROP TABLE IF EXISTS `OS_TURNOS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `turno` (
-  `idTurno` int NOT NULL AUTO_INCREMENT,
-  `horaInicio` time NOT NULL,
-  `horaFin` time NOT NULL,
-  `diaSemana` enum('MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY','SUNDAY') NOT NULL,
-  PRIMARY KEY (`idTurno`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `OS_TURNOS` (
+  `TURNO_ID` int NOT NULL AUTO_INCREMENT,
+  `HORA_INICIO` time NOT NULL,
+  `HORA_FIN` time NOT NULL,
+  `DIA_SEMANA` enum('MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY','SUNDAY') NOT NULL,
+  PRIMARY KEY (`TURNO_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `turno`
+-- Dumping data for table `OS_TURNOS`
 --
 
-LOCK TABLES `turno` WRITE;
-/*!40000 ALTER TABLE `turno` DISABLE KEYS */;
-INSERT INTO `turno` VALUES (1,'00:24:45','00:24:45','JUEVES');
-/*!40000 ALTER TABLE `turno` ENABLE KEYS */;
+LOCK TABLES `OS_TURNOS` WRITE;
+/*!40000 ALTER TABLE `OS_TURNOS` DISABLE KEYS */;
+INSERT INTO `OS_TURNOS` VALUES (2,'08:00:00','17:00:00','THURSDAY');
+/*!40000 ALTER TABLE `OS_TURNOS` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `OS_TURNOS_POR_ODONTOLOGOS`
+--
+
+DROP TABLE IF EXISTS `OS_TURNOS_POR_ODONTOLOGOS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `OS_TURNOS_POR_ODONTOLOGOS` (
+  `ODONTOLOGO_ID` int NOT NULL,
+  `TURNO_ID` int NOT NULL,
+  PRIMARY KEY (`ODONTOLOGO_ID`,`TURNO_ID`),
+  KEY `TURNO_ID` (`TURNO_ID`),
+  CONSTRAINT `odontologo_turno_ibfk_1` FOREIGN KEY (`ODONTOLOGO_ID`) REFERENCES `OS_ODONTOLOGOS` (`ODONTOLOGO_ID`),
+  CONSTRAINT `odontologo_turno_ibfk_2` FOREIGN KEY (`TURNO_ID`) REFERENCES `OS_TURNOS` (`TURNO_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `OS_TURNOS_POR_ODONTOLOGOS`
+--
+
+LOCK TABLES `OS_TURNOS_POR_ODONTOLOGOS` WRITE;
+/*!40000 ALTER TABLE `OS_TURNOS_POR_ODONTOLOGOS` DISABLE KEYS */;
+/*!40000 ALTER TABLE `OS_TURNOS_POR_ODONTOLOGOS` ENABLE KEYS */;
+UNLOCK TABLES;
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -401,4 +416,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-29 19:54:47
+-- Dump completed on 2025-06-03 10:14:28
