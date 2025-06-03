@@ -44,7 +44,7 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         this.statement.setString(4,this.odontologo.getTelefono());
         this.statement.setString(5,this.odontologo.getNombre());
         this.statement.setString(6,this.odontologo.getApellidos());
-        this.statement.setInt(7,this.odontologo.getTipoDocumento().ordinal());
+        this.statement.setInt(7,this.odontologo.getTipoDocumento().ordinal()+1);
         this.statement.setString(8,this.odontologo.getNumeroDocumento());
         this.statement.setDouble(9,this.odontologo.getPuntuacionPromedio());
         this.statement.setInt(10, this.odontologo.getEspecialidad().getIdEspecialidad());
@@ -59,7 +59,7 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         this.statement.setString(4,this.odontologo.getTelefono());
         this.statement.setString(5,this.odontologo.getNombre());
         this.statement.setString(6,this.odontologo.getApellidos());
-        this.statement.setInt(7,this.odontologo.getTipoDocumento().ordinal());
+        this.statement.setInt(7,this.odontologo.getTipoDocumento().ordinal()+1);
         this.statement.setString(8,this.odontologo.getNumeroDocumento());
         this.statement.setDouble(9,this.odontologo.getPuntuacionPromedio());
         this.statement.setInt(10, this.odontologo.getEspecialidad().getIdEspecialidad());
@@ -92,7 +92,7 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         this.odontologo.setTelefono(this.resultSet.getString("TELEFONO"));
         this.odontologo.setNombre(this.resultSet.getString("NOMBRES"));
         this.odontologo.setApellidos(this.resultSet.getString("APELLIDOS"));
-        this.odontologo.setTipoDocumento(TipoDocumento.values()[this.resultSet.getInt("TIPO_DOCUMENTO_ID")]);
+        this.odontologo.setTipoDocumento(TipoDocumento.values()[this.resultSet.getInt("TIPO_DOCUMENTO_ID")-1]);
         this.odontologo.setNumeroDocumento(this.resultSet.getString("NUMERO_DOCUMENTO_IDENTIDAD"));
         this.odontologo.setPuntuacionPromedio(this.resultSet.getDouble("PUNTUACION_PROMEDIO"));
         this.odontologo.getEspecialidad().setIdEspecialidad(this.resultSet.getInt("ESPECIALIDAD_ID"));

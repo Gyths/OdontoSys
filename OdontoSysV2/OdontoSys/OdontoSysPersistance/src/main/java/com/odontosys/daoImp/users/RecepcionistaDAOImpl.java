@@ -41,7 +41,7 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.statement.setString(4,this.recepcionista.getTelefono());
         this.statement.setString(5,this.recepcionista.getNombre());
         this.statement.setString(6,this.recepcionista.getApellidos());
-        this.statement.setInt(7,this.recepcionista.getTipoDocumento().ordinal());
+        this.statement.setInt(7, this.recepcionista.getTipoDocumento().ordinal()+1);
         this.statement.setString(8,this.recepcionista.getNumeroDocumento());
     }
     
@@ -53,7 +53,7 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.statement.setString(4,this.recepcionista.getTelefono());
         this.statement.setString(5,this.recepcionista.getNombre());
         this.statement.setString(6,this.recepcionista.getApellidos());
-        this.statement.setInt(7,this.recepcionista.getTipoDocumento().ordinal());
+        this.statement.setInt(7, this.recepcionista.getTipoDocumento().ordinal()+1);
         this.statement.setString(8,this.recepcionista.getNumeroDocumento());
         this.statement.setInt(9,this.recepcionista.getIdRecepcionista());
     }
@@ -83,7 +83,7 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.recepcionista.setTelefono(this.resultSet.getString("TELEFONO"));
         this.recepcionista.setNombre(this.resultSet.getString("NOMBRES"));
         this.recepcionista.setApellidos(this.resultSet.getString("APELLIDOS"));
-        this.recepcionista.setTipoDocumento(TipoDocumento.values()[this.resultSet.getInt("TIPO_DOCUMENTO_ID")]);
+        this.recepcionista.setTipoDocumento(TipoDocumento.values()[this.resultSet.getInt("TIPO_DOCUMENTO_ID")-1]);
         this.recepcionista.setNumeroDocumento(this.resultSet.getString("NUMERO_DOCUMENTO_IDENTIDAD"));
     }
     
