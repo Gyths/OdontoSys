@@ -8,46 +8,31 @@ namespace OdontoSysModel.Users
 {
     public class Persona
     {
-        protected string Contrasenha { get; set; }
-        protected string NombreUsuario { get; set; }
-        protected string Correo { get; set; }
-        protected string Telefono { get; set; }
-        protected string Nombre { get; set; }
-        protected string Apellidos { get; set; }
-        protected string DNI { get; set; }
-        protected TipoUsuario TipoUsuario { get; set; }
+        private string contrasenha;
+        private string nombreUsuario;
+        private string correo;
+        private string telefono;
+        private string nombre;
+        private string apellidos;
+        private string dni;
+        private TipoUsuario tipoUsuario;
 
         public Persona()
         {
         }
 
-        public string GetContrasenha() => Contrasenha;
-        public void SetContrasenha(string contrasenha) => Contrasenha = contrasenha;
-
-        public string GetNombreUsuario() => NombreUsuario;
-        public void SetNombreUsuario(string nombreUsuario) => NombreUsuario = nombreUsuario;
-
-        public string GetCorreo() => Correo;
-        public void SetCorreo(string correo) => Correo = correo;
-
-        public string GetTelefono() => Telefono;
-        public void SetTelefono(string telefono) => Telefono = telefono;
-
-        public string GetNombre() => Nombre;
-        public void SetNombre(string nombre) => Nombre = nombre;
-
-        public string GetApellidos() => Apellidos;
-        public void SetApellidos(string apellidos) => Apellidos = apellidos;
-
-        public string GetDNI() => DNI;
-        public void SetDNI(string dni) => DNI = dni;
-
-        public TipoUsuario GetTipoUsuario() => TipoUsuario;
-        public void SetTipoUsuario(TipoUsuario tipoUsuario) => TipoUsuario = tipoUsuario;
+        public string Contrasenha { get => contrasenha; set => contrasenha = value; }
+        public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
+        public string Correo { get => correo; set => correo = value; }
+        public string Telefono { get => telefono; set => telefono = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Apellidos { get => apellidos; set => apellidos = value; }
+        public string Dni { get => dni; set => dni = value; }
+        public TipoUsuario TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
 
         public override string ToString()
         {
-            return $"Persona{{Contrasenha={Contrasenha}, NombreUsuario={NombreUsuario}, Correo={Correo}, Telefono={Telefono}, Nombre={Nombre}, Apellidos={Apellidos}, DNI={DNI}, TipoUsuario={TipoUsuario}}}";
+            return $"Persona{{Contrasenha={Contrasenha}, NombreUsuario={NombreUsuario}, Correo={Correo}, Telefono={Telefono}, Nombre={Nombre}, Apellidos={Apellidos}, DNI={Dni}, TipoUsuario={TipoUsuario}}}";
         }
     }
 }
