@@ -143,7 +143,7 @@ public class Main {
         
         Recepcionista r1 = new Recepcionista();
         r1.setApellidos("Paredes");
-        r.setTipoDocumento(TipoDocumento.PASAPORTE);
+        r1.setTipoDocumento(TipoDocumento.PASAPORTE);
         r1.setNumeroDocumento("21546369");
         r1.setContrasenha("pass2");
         r1.setCorreo("repParedes@gmail.com");
@@ -349,9 +349,11 @@ public class Main {
     public static ArrayList<Cita> insertaCita(ArrayList<Odontologo>listaOd,ArrayList<Paciente>listaPa,ArrayList<Comprobante>listaCom){
         ArrayList<Cita>listaCita = new ArrayList<>();
         CitaBO cBO = new CitaBO();
-        
+        Recepcionista de = new Recepcionista();
+        de.setIdRecepcionista(2);
         Cita c = new Cita();
         c.setOdontologo(listaOd.get(0));
+        c.setRecepcionista(de);
         c.setPaciente(listaPa.get(0));
         c.setHoraInicio(LocalTime.now());
         c.setPuntuacion(3.24);
@@ -363,6 +365,7 @@ public class Main {
         
         Cita c1 = new Cita();
         c1.setOdontologo(listaOd.get(1));
+        c1.setRecepcionista(de);
         c1.setPaciente(listaPa.get(1));
         c1.setHoraInicio(LocalTime.now());
         c1.setPuntuacion(4.5);
@@ -374,6 +377,7 @@ public class Main {
         
         Cita c2 = new Cita();
         c2.setOdontologo(listaOd.get(2));
+        c2.setRecepcionista(de);
         c2.setPaciente(listaPa.get(2));
         c2.setHoraInicio(LocalTime.now());
         c2.setPuntuacion(0);
