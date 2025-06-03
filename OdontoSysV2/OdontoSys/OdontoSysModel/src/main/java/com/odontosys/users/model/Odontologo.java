@@ -17,6 +17,7 @@ public class Odontologo extends Persona{
     private List<Turno> turnos;
 
     public Odontologo() {
+        super();
         this.consultorio = new Sala();
         this.especialidad = new Especialidad();
     }

@@ -40,7 +40,7 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.statement.setString(4,this.paciente.getTelefono());
         this.statement.setString(5,this.paciente.getNombre());
         this.statement.setString(6,this.paciente.getApellidos());
-        this.statement.setInt(7,this.paciente.getTipoDocumento().ordinal());
+        this.statement.setInt(7,this.paciente.getTipoDocumento().ordinal()+1);
         this.statement.setString(8,this.paciente.getNumeroDocumento());
     }
     
@@ -52,7 +52,7 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.statement.setString(4,this.paciente.getTelefono());
         this.statement.setString(5,this.paciente.getNombre());
         this.statement.setString(6,this.paciente.getApellidos());
-        this.statement.setInt(7,this.paciente.getTipoDocumento().ordinal());
+        this.statement.setInt(7,this.paciente.getTipoDocumento().ordinal()+1);
         this.statement.setString(8,this.paciente.getNumeroDocumento());
         this.statement.setInt(9,this.paciente.getIdPaciente());
     }
@@ -82,7 +82,7 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.paciente.setTelefono(this.resultSet.getString("TELEFONO"));
         this.paciente.setNombre(this.resultSet.getString("NOMBRES"));
         this.paciente.setApellidos(this.resultSet.getString("APELLIDOS"));
-        this.paciente.setTipoDocumento(TipoDocumento.values()[this.resultSet.getInt("TIPO_DOCUMENTO_ID")]);
+        this.paciente.setTipoDocumento(TipoDocumento.values()[this.resultSet.getInt("TIPO_DOCUMENTO_ID")-1]);
         this.paciente.setNumeroDocumento(this.resultSet.getString("NUMERO_DOCUMENTO_IDENTIDAD"));
     }
     
