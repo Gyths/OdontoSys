@@ -8,7 +8,8 @@ public abstract class Persona {
     protected String telefono;
     protected String nombre;
     protected String apellidos;
-    protected String DNI;
+    protected TipoDocumento tipoDocumento;
+    protected String NumeroDocumento;
     protected TipoUsuario tipoUsuario;
     
     public Persona(){    
@@ -62,12 +63,20 @@ public abstract class Persona {
         this.apellidos = apellidos;
     }
 
-    public String getDNI() {
-        return DNI;
+    public TipoDocumento getTipoDocumento() {
+        return tipoDocumento;
     }
 
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
+    public void setTipoDocumento(TipoDocumento tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
+    }
+
+    public String getNumeroDocumento() {
+        return NumeroDocumento;
+    }
+
+    public void setNumeroDocumento(String NumeroDocumento) {
+        this.NumeroDocumento = NumeroDocumento;
     }
 
     public TipoUsuario getTipoUsuario() {
@@ -80,7 +89,7 @@ public abstract class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + ", contraseña=" + contrasenha + ", nombreUsuario=" + nombreUsuario + ", correo=" + correo + ", telefono=" + telefono + ", nombre=" + nombre + ", apellidos=" + apellidos + ", DNI=" + DNI + ", tipoUsuario=" + tipoUsuario + '}';
+        return "Persona{" + "contrasenha=" + contrasenha + ", nombreUsuario=" + nombreUsuario + ", correo=" + correo + ", telefono=" + telefono + ", nombre=" + nombre + ", apellidos=" + apellidos + ", tipoDocumento=" + tipoDocumento + ", NumeroDocumento=" + NumeroDocumento + ", tipoUsuario=" + tipoUsuario + '}';
     }
     
 }
