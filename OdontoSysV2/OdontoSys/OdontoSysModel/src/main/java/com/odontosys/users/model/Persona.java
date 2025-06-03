@@ -64,7 +64,7 @@ public abstract class Persona {
     }
 
     public TipoDocumento getTipoDocumento() {
-        return tipoDocumento;
+        return this.tipoDocumento;
     }
 
     public void setTipoDocumento(TipoDocumento tipoDocumento) {
