@@ -15,7 +15,6 @@ public class DBManagerMSSQL extends DBManager{
         url = url.concat(";");
         url = url.concat("databaseName=" + this.base_de_datos);
         url = url.concat(";encrypt=false");
-        //System.out.println(url);
         return url;
     }
     
