@@ -23,11 +23,11 @@ namespace OdontoSysFrontEnd
             Paciente paciente = new Paciente
             {
                 Nombre = txtNombre.Text,
-                Apellidos = TxtApellido.Text,
+                Apellidos = txtApellido.Text,
                 Correo = txtCorreo.Text,
                 Dni = txtDNI.Text,
                 Telefono = txtTelefono.Text,
-                NombreUsuario = txtUsuario.Text,
+                NombreUsuario = txtNombreUsuario.Text,
                 Contrasenha = txtContrasena.Text
             };
             // Crear instancia del BO

@@ -7,19 +7,19 @@
       "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\registrar_paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\user\\documents\\github\\odontosys\\odontosysfrontend\\odontosysmodel\\users\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\users\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\github\\odontosys\\odontosysfrontend\\odontosysfrontend\\registrar_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\registrar_paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|c:\\users\\user\\documents\\github\\odontosys\\odontosysfrontend\\odontosysfrontend\\odontosys.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "AbsoluteMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\odontosysfrontend\\odontosys.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
       "RelativeMoniker": "D:0:0:{030AC3FC-FA29-4379-B5FE-F8139B24F573}|OdontoSysFrontEnd\\OdontoSysFrontEnd.csproj|solutionrelative:odontosysfrontend\\odontosys.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|c:\\users\\user\\documents\\github\\odontosys\\odontosysfrontend\\odontosysmodel\\users\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\odontosysmodel\\users\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\users\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\odontosysmodel\\users\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}|OdontoSysModel\\OdontoSysModel.csproj|solutionrelative:odontosysmodel\\users\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -90,11 +90,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "registrar_paciente.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
+              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
+              "RelativeToolTip": "OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAADwvx8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T21:46:05.714Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "registrar_paciente.aspx",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx",
+              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\registrar_paciente.aspx",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx",
+              "RelativeToolTip": "OdontoSysFrontEnd\\registrar_paciente.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-03T21:45:54.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Persona.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysModel\\Users\\Persona.cs",
               "RelativeDocumentMoniker": "OdontoSysModel\\Users\\Persona.cs",
@@ -102,8 +132,7 @@
               "RelativeToolTip": "OdontoSysModel\\Users\\Persona.cs*",
               "ViewState": "AgIAABQAAAAAAAAAAAAvwCQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T21:33:22.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-03T21:33:22.781Z"
             },
             {
               "$type": "Document",
@@ -115,8 +144,7 @@
               "RelativeToolTip": "OdontoSysModel\\Users\\Paciente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T21:33:12.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-03T21:33:12.674Z"
             },
             {
               "$type": "Document",
@@ -204,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "OdontoSys.Master",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\OdontoSys.Master",
               "RelativeDocumentMoniker": "OdontoSysFrontEnd\\OdontoSys.Master",
@@ -213,32 +241,6 @@
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2025-05-12T21:05:28.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "registrar_paciente.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
-              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\registrar_paciente.aspx.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx.cs*",
-              "RelativeToolTip": "OdontoSysFrontEnd\\registrar_paciente.aspx.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAwCcAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T21:23:55.58Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "registrar_paciente.aspx",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx",
-              "RelativeDocumentMoniker": "OdontoSysFrontEnd\\registrar_paciente.aspx",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\OdontoSys\\OdontoSysFrontEnd\\OdontoSysFrontEnd\\registrar_paciente.aspx",
-              "RelativeToolTip": "OdontoSysFrontEnd\\registrar_paciente.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-03T21:22:44.703Z",
               "EditorCaption": ""
             },
             {
@@ -252,10 +254,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-31T22:30:45.311Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
