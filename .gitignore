@@ -16,3 +16,6 @@ OdontoSysFrontEnd/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 /glassfish-7.0.24
 OdontoSysV2/OdontoSys/OdontoSysDBManager/src/main/resources/jdbc.properties
 /OdontoSysV2/OdontoSys/OdontoSysDBManager
+OdontoSysV2/OdontoSys/OdontoSysDBManager/src/main/java/com/odontosys/db/DBManager.java
+OdontoSysV2/OdontoSys/OdontoSysDBManager/src/main/java/com/odontosys/db/DBManagerMSSQL.java
+OdontoSysV2/OdontoSys/OdontoSysDBManager/src/main/java/com/odontosys/db/DBManagerMySQL.java
