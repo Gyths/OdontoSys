@@ -31,13 +31,13 @@ public class Pacientes {
         return this.pacienteBO.eliminarPaciente(paciente);
     }
     
-    @WebMethod(operationName = "obtenerPorID")
-    public Paciente obtenerPorID(@WebParam(name = "pacienteId") Integer pacienteId) {
+    @WebMethod(operationName = "pa_obtenerPorID")
+    public Paciente pa_obtenerPorID(@WebParam(name = "pacienteId") Integer pacienteId) {
         return this.pacienteBO.obtenerPorID(pacienteId);
     }
     
-    @WebMethod(operationName = "buscarPorUsuario")
-    public Paciente buscarPorUsuario(@WebParam(name = "nombreUsuario") String nombreUsuario) {
+    @WebMethod(operationName = "pa_buscarPorUsuario")
+    public Paciente pa_buscarPorUsuario(@WebParam(name = "nombreUsuario") String nombreUsuario) {
         return this.pacienteBO.buscarPorUsuario(nombreUsuario);
     }
     

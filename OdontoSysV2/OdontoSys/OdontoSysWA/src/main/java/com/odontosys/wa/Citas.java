@@ -33,12 +33,12 @@ public class Citas {
         return this.citaBO.eliminarCita(cita);
     }
     
-    @WebMethod(operationName = "listarPorOdontologo")
-    public ArrayList<Cita> listarPorOdontologo(@WebParam(name = "odontologo") Odontologo odontologo, @WebParam(name = "fechaInicio") String fechaInicio, @WebParam(name = "fechaFin") String fechaFin) {
+    @WebMethod(operationName = "od_listarPorOdontologo")
+    public ArrayList<Cita> od_listarPorOdontologo(@WebParam(name = "odontologo") Odontologo odontologo, @WebParam(name = "fechaInicio") String fechaInicio, @WebParam(name = "fechaFin") String fechaFin) {
         return this.citaBO.listarPorOdontologo(odontologo, fechaInicio, fechaFin);
     }
     
-    @WebMethod(operationName = "insertCita")
+    @WebMethod(operationName = "calcularDisponibilidad")
     public boolean[][] calcularDisponibilidad(@WebParam(name = "citas") ArrayList<Cita> citas, @WebParam(name = "turnos") ArrayList<Turno> turnos, @WebParam(name = "fechaInicio") String fechaInicio) {
         return this.citaBO.calcularDisponibilidad(citas, turnos, fechaInicio);
     }

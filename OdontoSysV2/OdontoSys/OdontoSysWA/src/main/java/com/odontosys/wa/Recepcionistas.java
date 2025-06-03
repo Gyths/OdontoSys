@@ -32,12 +32,12 @@ public class Recepcionistas {
     }
     
     @WebMethod(operationName = "obtenerPorID")
-    public Recepcionista obtenerPorID(@WebParam(name = "recepcionistaId") Integer recepcionistaId) {
+    public Recepcionista rep_obtenerPorID(@WebParam(name = "recepcionistaId") Integer recepcionistaId) {
         return this.recepcionistaBO.obtenerPorID(recepcionistaId);
     }
     
     @WebMethod(operationName = "buscarPorUsuario")
-    public Recepcionista buscarPorUsuario(@WebParam(name = "nombreUsuario") String nombreUsuario) {
+    public Recepcionista rep_buscarPorUsuario(@WebParam(name = "nombreUsuario") String nombreUsuario) {
         return this.recepcionistaBO.buscarPorUsuario(nombreUsuario);
     }
     

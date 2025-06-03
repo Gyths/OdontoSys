@@ -16,23 +16,23 @@ public class MetodosPago {
         this.metodoPagoBO = new MetodoPagoBO();
     }
     
-    @WebMethod(operationName = "InsertarEspecialidad")
-    public Integer InsertarEspecialidad(@WebParam(name = "metodoPago") MetodoPago metodoPago) {
+    @WebMethod(operationName = "InsertarMetodoPago")
+    public Integer InsertarMetodoPago(@WebParam(name = "metodoPago") MetodoPago metodoPago) {
         return this.metodoPagoBO.InsertarMetodoPago(metodoPago);
     }
     
-    @WebMethod(operationName = "ModificarEspecialidad")
-    public Integer ModificarEspecialidad(@WebParam(name = "metodoPago") MetodoPago metodoPago) {
+    @WebMethod(operationName = "ModificarMetodoPago")
+    public Integer ModificarMetodoPago(@WebParam(name = "metodoPago") MetodoPago metodoPago) {
         return this.metodoPagoBO.ModificarMetodoPago(metodoPago);
     }
     
-    @WebMethod(operationName = "EliminarEspecialidad")
-    public Integer EliminarEspecialidad(@WebParam(name = "metodoPago") MetodoPago metodoPago) {
+    @WebMethod(operationName = "EliminarMetodoPago")
+    public Integer EliminarMetodoPago(@WebParam(name = "metodoPago") MetodoPago metodoPago) {
         return this.metodoPagoBO.EliminarMetodoPago(metodoPago);
     }
     
-    @WebMethod(operationName = "ListarEspecialidades")
-    public ArrayList<MetodoPago> ListarEspecialidades() {
+    @WebMethod(operationName = "ListarMetodosPago")
+    public ArrayList<MetodoPago> ListarMetodoPago() {
         return this.metodoPagoBO.ListarMetodosDePago();
     }
 }

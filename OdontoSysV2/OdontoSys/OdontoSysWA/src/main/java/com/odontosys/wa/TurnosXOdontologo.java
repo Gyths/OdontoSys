@@ -26,7 +26,7 @@ public class TurnosXOdontologo {
         return this.turnoXOdontologoBO.EliminarTurnoXOdontologo(turnoXOdontologo);
     }
     
-    @WebMethod(operationName = "listarPorOdontologo")
+    @WebMethod(operationName = "TurnoListarPorOdontologo")
     public ArrayList<TurnoXOdontologo> listarPorOdontologo(@WebParam(name = "idOdontologo") Integer idOdontologo) {
         return this.turnoXOdontologoBO.listarPorOdontologo(idOdontologo);
     }

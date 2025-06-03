@@ -31,13 +31,13 @@ public class Odontologos {
         return this.odontologoBO.eliminarOdontologo(odontologo);
     }
     
-    @WebMethod(operationName = "obtenerPorID")
-    public Odontologo obtenerPorID(@WebParam(name = "odontologoId") Integer odontologoId) {
+    @WebMethod(operationName = "od_obtenerPorID")
+    public Odontologo od_obtenerPorID(@WebParam(name = "odontologoId") Integer odontologoId) {
         return this.odontologoBO.obtenerPorID(odontologoId);
     }
     
-    @WebMethod(operationName = "buscarPorUsuario")
-    public Odontologo buscarPorUsuario(@WebParam(name = "odontologoUusuario") String odontologoUusuario) {
+    @WebMethod(operationName = "od_buscarPorUsuario")
+    public Odontologo od_buscarPorUsuario(@WebParam(name = "odontologoUusuario") String odontologoUusuario) {
         return this.odontologoBO.buscarPorUsuario(odontologoUusuario);
     }
     
@@ -46,8 +46,8 @@ public class Odontologos {
         return this.odontologoBO.listarPorEspecialidad(especialidad);
     }
     
-    @WebMethod(operationName = "listarOdontologos")
-    public ArrayList<Odontologo> listarOdontologos() {
+    @WebMethod(operationName = "od_listarOdontologos")
+    public ArrayList<Odontologo> od_listarOdontologos() {
         return this.odontologoBO.listarOdontologos();
     }
 }
