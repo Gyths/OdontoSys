@@ -27,6 +27,7 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     protected void configurarListaDeColumnas(){
         this.listaColumnas.add(new Columna("CITA_ID",true,true));
         this.listaColumnas.add(new Columna("PACIENTE_ID",false,false));
+        this.listaColumnas.add(new Columna("RECEPCIONISTA_ID", false, false));
         this.listaColumnas.add(new Columna("ODONTOLOGO_ID",false,false));
         this.listaColumnas.add(new Columna("COMPROBANTE_ID",false,false));
         this.listaColumnas.add(new Columna("FECHA",false,false));
@@ -38,24 +39,26 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     @Override
     protected void incluirValorDeParametrosParaInsercion() throws SQLException{
         this.statement.setInt(1, this.cita.getPaciente().getIdPaciente());
-        this.statement.setInt(2, this.cita.getOdontologo().getIdOdontologo());
-        this.statement.setInt(3, this.cita.getComprobante().getIdComprobante());
-        this.statement.setObject(4, this.cita.getFecha());
-        this.statement.setObject(5,this.cita.getHoraInicio());
-        this.statement.setDouble(6,this.cita.getPuntuacion());
-        this.statement.setString(7, this.cita.getEstado().name());
+        this.statement.setInt(2, this.cita.getRecepcionista().getIdRecepcionista());
+        this.statement.setInt(3, this.cita.getOdontologo().getIdOdontologo());
+        this.statement.setInt(4, this.cita.getComprobante().getIdComprobante());
+        this.statement.setObject(5, this.cita.getFecha());
+        this.statement.setObject(6,this.cita.getHoraInicio());
+        this.statement.setDouble(7,this.cita.getPuntuacion());
+        this.statement.setString(8, this.cita.getEstado().name());
     }
     
     @Override
     protected void incluirValorDeParametrosParaModificacion() throws SQLException{ 
         this.statement.setInt(1, this.cita.getPaciente().getIdPaciente());
-        this.statement.setInt(2, this.cita.getOdontologo().getIdOdontologo());
-        this.statement.setInt(3, this.cita.getComprobante().getIdComprobante());
-        this.statement.setObject(4, this.cita.getFecha());
-        this.statement.setObject(5,this.cita.getHoraInicio());
-        this.statement.setDouble(6,this.cita.getPuntuacion());
-        this.statement.setString(7, this.cita.getEstado().name());
-        this.statement.setInt(8, this.cita.getIdCita());
+        this.statement.setInt(2, this.cita.getRecepcionista().getIdRecepcionista());
+        this.statement.setInt(3, this.cita.getOdontologo().getIdOdontologo());
+        this.statement.setInt(4, this.cita.getComprobante().getIdComprobante());
+        this.statement.setObject(5, this.cita.getFecha());
+        this.statement.setObject(6,this.cita.getHoraInicio());
+        this.statement.setDouble(7,this.cita.getPuntuacion());
+        this.statement.setString(8, this.cita.getEstado().name());
+        this.statement.setInt(9, this.cita.getIdCita());
     }
     
     @Override
@@ -73,6 +76,7 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
         this.cita = new Cita();
         this.cita.setIdCita(this.resultSet.getInt("CITA_ID"));
         this.cita.getPaciente().setIdPaciente(this.resultSet.getInt("PACIENTE_ID"));
+        this.cita.getRecepcionista().setIdRecepcionista(this.resultSet.getInt("RECEPCIONISTA_ID"));
         this.cita.getOdontologo().setIdOdontologo(this.resultSet.getInt("ODONTOLOGO_ID"));
         this.cita.getComprobante().setIdComprobante(this.resultSet.getInt("COMPROBANTE_ID"));
         this.cita.setFecha(this.resultSet.getObject("FECHA",LocalDate.class));

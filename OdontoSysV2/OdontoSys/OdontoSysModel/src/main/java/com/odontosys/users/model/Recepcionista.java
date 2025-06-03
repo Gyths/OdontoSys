@@ -1,6 +1,6 @@
 package com.odontosys.users.model;
 
-public class Recepcionista extends Cuenta{
+public class Recepcionista extends Persona{
     private int idRecepcionista;
     
     public Recepcionista(){

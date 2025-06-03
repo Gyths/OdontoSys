@@ -29,7 +29,8 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.listaColumnas.add(new Columna("TELEFONO",false,false));
         this.listaColumnas.add(new Columna("NOMBRES",false,false));
         this.listaColumnas.add(new Columna("APELLIDOS",false,false));
-        this.listaColumnas.add(new Columna("DOCUMENTO_IDENTIDAD",false,false));
+        this.listaColumnas.add(new Columna("TIPO_DOCUMENTO_ID",false,false));
+        this.listaColumnas.add(new Columna("NUMERO_DOCUMENTO_IDENTIDAD",false,false));
     }
     
     @Override
@@ -40,7 +41,8 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.statement.setString(4,this.recepcionista.getTelefono());
         this.statement.setString(5,this.recepcionista.getNombre());
         this.statement.setString(6,this.recepcionista.getApellidos());
-        this.statement.setString(7,this.recepcionista.getDNI());
+        this.statement.setInt(7,this.recepcionista.getTipoDocumento().ordinal());
+        this.statement.setString(8,this.recepcionista.getNumeroDocumento());
     }
     
     @Override
@@ -51,8 +53,9 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.statement.setString(4,this.recepcionista.getTelefono());
         this.statement.setString(5,this.recepcionista.getNombre());
         this.statement.setString(6,this.recepcionista.getApellidos());
-        this.statement.setString(7,this.recepcionista.getDNI());
-        this.statement.setInt(8,this.recepcionista.getIdRecepcionista());
+        this.statement.setInt(7,this.recepcionista.getTipoDocumento().ordinal());
+        this.statement.setString(8,this.recepcionista.getNumeroDocumento());
+        this.statement.setInt(9,this.recepcionista.getIdRecepcionista());
     }
     
     @Override
@@ -80,7 +83,8 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.recepcionista.setTelefono(this.resultSet.getString("TELEFONO"));
         this.recepcionista.setNombre(this.resultSet.getString("NOMBRES"));
         this.recepcionista.setApellidos(this.resultSet.getString("APELLIDOS"));
-        this.recepcionista.setDNI(this.resultSet.getString("DOCUMENTO_IDENTIDAD"));
+        this.recepcionista.setTipoDocumento(TipoDocumento.values()[this.resultSet.getInt("TIPO_DOCUMENTO_ID")]);
+        this.recepcionista.setNumeroDocumento(this.resultSet.getString("NUMERO_DOCUMENTO_IDENTIDAD"));
     }
     
     @Override

@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.odontosys.users.model.Odontologo;
 import com.odontosys.users.model.Paciente;
+import com.odontosys.users.model.Recepcionista;
 
 public class Cita {
     
@@ -15,6 +16,7 @@ public class Cita {
     private double puntuacion;
     private EstadoCita estado;
     private Odontologo odontologo;
+    private Recepcionista recepcionista;
     private Paciente paciente;
     private Comprobante comprobante;
     private List<DetalleTratamiento> tratamientos;
@@ -71,6 +73,14 @@ public class Cita {
 
     public void setOdontologo(Odontologo odontologo) {
         this.odontologo = odontologo;
+    }
+
+    public Recepcionista getRecepcionista() {
+        return recepcionista;
+    }
+
+    public void setRecepcionista(Recepcionista recepcionista) {
+        this.recepcionista = recepcionista;
     }
     
     public Paciente getPaciente() {

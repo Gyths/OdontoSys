@@ -2,7 +2,7 @@
 --
 -- Database: ODONTO_SYS
 -- ------------------------------------------------------
--- Server version	8.4.4
+-- Server version 8.4.4
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -85,7 +85,7 @@ CREATE TABLE `OS_COMPROBANTES` (
 
 LOCK TABLES `OS_COMPROBANTES` WRITE;
 /*!40000 ALTER TABLE `OS_COMPROBANTES` DISABLE KEYS */;
-INSERT INTO `OS_COMPROBANTES` VALUES (3,'1000-01-01',0,'00:00:00',1);
+INSERT INTO `OS_COMPROBANTES` VALUES (1,'1000-01-01',0,'00:00:00',1);
 /*!40000 ALTER TABLE `OS_COMPROBANTES` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -271,7 +271,7 @@ CREATE TABLE `OS_RECEPCIONISTAS` (
 
 LOCK TABLES `OS_RECEPCIONISTAS` WRITE;
 /*!40000 ALTER TABLE `OS_RECEPCIONISTAS` DISABLE KEYS */;
-INSERT INTO `OS_RECEPCIONISTAS` VALUES (2,'CONTRASENHA','DEFAULT','r.default@odontosys.com','999999999','Recepcionista','Default',1,'12345678');
+INSERT INTO `OS_RECEPCIONISTAS` VALUES (1,'CONTRASENHA','DEFAULT','r.default@odontosys.com','999999999','Recepcionista','Default',1,'12345678');
 /*!40000 ALTER TABLE `OS_RECEPCIONISTAS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -350,7 +350,7 @@ CREATE TABLE `OS_TRATAMIENTOS` (
 
 LOCK TABLES `OS_TRATAMIENTOS` WRITE;
 /*!40000 ALTER TABLE `OS_TRATAMIENTOS` DISABLE KEYS */;
-INSERT INTO `OS_TRATAMIENTOS` VALUES (2,'Limpieza','Limpieza y profilaxis dental',120,1),(3,'Profilaxis','Eliminación de sarro y pulido dental',200,1),(4,'Sellado de Surcos','Sellado de fisuras para prevención de caries',180,1),(5,'Frenillos Metálicos','Aparatos metálicos para corrección dental',2000,2),(6,'Frenillos Cerámicos','Aparatos cerámicos estéticos para ortodoncia',2500,2),(7,'Retenedores','Dispositivos para mantener posición dental',800,2),(8,'Tratamiento de Conducto','Eliminación de pulpa infectada',500,3),(9,'Retratamiento Endodóntico','Reintervención en canal radicular',600,3),(10,'Apicoformación','Cierre apical en dientes inmaduros',700,3),(11,'Extracción Simple','Remoción de diente con anestesia local',300,4),(12,'Extracción Quirúrgica','Remoción de muela del juicio',500,4),(13,'Injerto Óseo','Colocación de injerto para regeneración ósea',1500,4),(14,'Aplicación de Flúor Infantil','Prevención de caries en niños',100,5),(15,'Limpieza Infantil','Limpieza dental adaptada a niños',120,5),(16,'Sellado de Surcos Infantil','Prevención de caries en molares infantiles',150,5);
+INSERT INTO `OS_TRATAMIENTOS` VALUES (1,'Limpieza','Limpieza y profilaxis dental',120,1),(2,'Profilaxis','Eliminación de sarro y pulido dental',200,1),(3,'Sellado de Surcos','Sellado de fisuras para prevención de caries',180,1),(4,'Frenillos Metálicos','Aparatos metálicos para corrección dental',2000,2),(5,'Frenillos Cerámicos','Aparatos cerámicos estéticos para ortodoncia',2500,2),(6,'Retenedores','Dispositivos para mantener posición dental',800,2),(7,'Tratamiento de Conducto','Eliminación de pulpa infectada',500,3),(8,'Retratamiento Endodóntico','Reintervención en canal radicular',600,3),(9,'Apicoformación','Cierre apical en dientes inmaduros',700,3),(10,'Extracción Simple','Remoción de diente con anestesia local',300,4),(11,'Extracción Quirúrgica','Remoción de muela del juicio',500,4),(12,'Injerto Óseo','Colocación de injerto para regeneración ósea',1500,4),(13,'Aplicación de Flúor Infantil','Prevención de caries en niños',100,5),(14,'Limpieza Infantil','Limpieza dental adaptada a niños',120,5),(15,'Sellado de Surcos Infantil','Prevención de caries en molares infantiles',150,5);
 /*!40000 ALTER TABLE `OS_TRATAMIENTOS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -376,7 +376,7 @@ CREATE TABLE `OS_TURNOS` (
 
 LOCK TABLES `OS_TURNOS` WRITE;
 /*!40000 ALTER TABLE `OS_TURNOS` DISABLE KEYS */;
-INSERT INTO `OS_TURNOS` VALUES (2,'08:00:00','17:00:00','THURSDAY');
+INSERT INTO `OS_TURNOS` VALUES (1,'08:00:00','17:00:00','THURSDAY');
 /*!40000 ALTER TABLE `OS_TURNOS` ENABLE KEYS */;
 UNLOCK TABLES;
 

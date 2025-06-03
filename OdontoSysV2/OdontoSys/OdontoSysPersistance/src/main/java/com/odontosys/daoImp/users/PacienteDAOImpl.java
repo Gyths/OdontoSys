@@ -28,7 +28,8 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.listaColumnas.add(new Columna("TELEFONO",false,false));
         this.listaColumnas.add(new Columna("NOMBRES",false,false));
         this.listaColumnas.add(new Columna("APELLIDOS",false,false));
-        this.listaColumnas.add(new Columna("DOCUMENTO_IDENTIDAD",false,false));
+        this.listaColumnas.add(new Columna("TIPO_DOCUMENTO_ID",false,false));
+        this.listaColumnas.add(new Columna("NUMERO_DOCUMENTO_IDENTIDAD",false,false));
     }
     
     @Override
@@ -39,7 +40,8 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.statement.setString(4,this.paciente.getTelefono());
         this.statement.setString(5,this.paciente.getNombre());
         this.statement.setString(6,this.paciente.getApellidos());
-        this.statement.setString(7,this.paciente.getDNI());
+        this.statement.setInt(7,this.paciente.getTipoDocumento().ordinal());
+        this.statement.setString(8,this.paciente.getNumeroDocumento());
     }
     
     @Override
@@ -50,8 +52,9 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.statement.setString(4,this.paciente.getTelefono());
         this.statement.setString(5,this.paciente.getNombre());
         this.statement.setString(6,this.paciente.getApellidos());
-        this.statement.setString(7,this.paciente.getDNI());
-        this.statement.setInt(8,this.paciente.getIdPaciente());
+        this.statement.setInt(7,this.paciente.getTipoDocumento().ordinal());
+        this.statement.setString(8,this.paciente.getNumeroDocumento());
+        this.statement.setInt(9,this.paciente.getIdPaciente());
     }
     
     @Override
@@ -79,7 +82,8 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.paciente.setTelefono(this.resultSet.getString("TELEFONO"));
         this.paciente.setNombre(this.resultSet.getString("NOMBRES"));
         this.paciente.setApellidos(this.resultSet.getString("APELLIDOS"));
-        this.paciente.setDNI(this.resultSet.getString("DOCUMENTO_IDENTIDAD"));
+        this.paciente.setTipoDocumento(TipoDocumento.values()[this.resultSet.getInt("TIPO_DOCUMENTO_ID")]);
+        this.paciente.setNumeroDocumento(this.resultSet.getString("NUMERO_DOCUMENTO_IDENTIDAD"));
     }
     
     @Override
