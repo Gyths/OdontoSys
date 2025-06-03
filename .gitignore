@@ -12,3 +12,7 @@ config.properties
 /OdontoSysV2/OdontoSys/OdontoSysBussiness/target/
 OdontoSysFrontEnd/obj/Debug/OdontoSysFrontEnd.csproj.AssemblyReference.cache
 OdontoSysFrontEnd/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+
+/glassfish-7.0.24
+OdontoSysV2/OdontoSys/OdontoSysDBManager/src/main/resources/jdbc.properties
+/OdontoSysV2/OdontoSys/OdontoSysDBManager
