@@ -131,7 +131,7 @@ public class Main {
         
         Recepcionista r = new Recepcionista();
         r.setApellidos("Mendoza");
-        r.setTipoDocumento(TipoDocumento.CARNE_DE_EXTRANJERIA);
+        r.setTipoDocumento(TipoDocumento.DNI);
         r.setNumeroDocumento("74758691");
         r.setContrasenha("pass1");
         r.setCorreo("repMendoza@gmail.com");
@@ -167,7 +167,7 @@ public class Main {
         
         Recepcionista r3 = new Recepcionista();
         r3.setApellidos("Pollo");
-        r3.setTipoDocumento(TipoDocumento.PASAPORTE);
+        r3.setTipoDocumento(TipoDocumento.DNI);
         r3.setNumeroDocumento("76985212");
         r3.setContrasenha("pass4");
         r3.setCorreo("repPollo@gmail.com");
