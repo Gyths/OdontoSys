@@ -42,8 +42,8 @@ namespace OdontoSysFrontEnd
             {
                 //var especialidades = this.especialidadBO.ListarEspecialidades();
                 //ddlEspecialidad.DataSource = especialidades;
-                ddlEspecialidad.DataTextField = "nombre"; // Ajusta según tu modelo
-                ddlEspecialidad.DataValueField = "idEspecialidad"; // Ajusta según tu modelo
+                ddlEspecialidad.DataTextField = "nombre"; 
+                ddlEspecialidad.DataValueField = "idEspecialidad"; 
                 ddlEspecialidad.DataBind();
                 ddlEspecialidad.Items.Insert(0, new ListItem("-- Seleccione Especialidad --", ""));
             }
@@ -64,8 +64,8 @@ namespace OdontoSysFrontEnd
                 //var doctores = this.odontologoBO.listarPorEspecialidad(especialidad);
 
                 //ddlDoctor.DataSource = doctores;
-                ddlDoctor.DataTextField = "nombreCompleto"; // Ajusta según tu modelo
-                ddlDoctor.DataValueField = "idOdontologo"; // Ajusta según tu modelo
+                ddlDoctor.DataTextField = "nombreCompleto"; 
+                ddlDoctor.DataValueField = "idOdontologo"; 
                 ddlDoctor.DataBind();
                 ddlDoctor.Items.Insert(0, new ListItem("-- Seleccione Doctor --", ""));
             }
@@ -96,8 +96,7 @@ namespace OdontoSysFrontEnd
                     // Obtener citas existentes para el odontólogo en la fecha seleccionada
                   //  var citasExistentes = this.citaBO.listarPorOdontologo(odontologo, fechaSeleccionada, fechaSeleccionada);
 
-                    // Aquí necesitarías obtener los turnos del odontólogo
-                    // Por ahora, crearemos horarios de ejemplo
+                    
                     //var horariosDisponibles = GenerarHorariosDisponibles(citasExistentes, fechaSeleccionada);
 
                    // ddlHorario.DataSource = horariosDisponibles;
@@ -117,7 +116,6 @@ namespace OdontoSysFrontEnd
         {
             var horarios = new List<object>();
 
-            // Generar horarios de 8:00 AM a 6:00 PM cada 30 minutos
             for (int hora = 8; hora < 18; hora++)
             {
                 for (int minuto = 0; minuto < 60; minuto += 30)
@@ -156,7 +154,6 @@ namespace OdontoSysFrontEnd
                 CargarDoctoresPorEspecialidad(especialidadId);
                 ddlDoctor.Enabled = true;
 
-                // Limpiar horarios cuando cambia la especialidad
                 LimpiarHorarios();
             }
             else
@@ -183,7 +180,7 @@ namespace OdontoSysFrontEnd
         {
             if (!string.IsNullOrEmpty(ddlDoctor.SelectedValue) && !string.IsNullOrEmpty(txtFechaCita.Text))
             {
-                // Validar que la fecha no sea anterior a hoy
+               
                 DateTime fechaSeleccionada;
                 if (DateTime.TryParse(txtFechaCita.Text, out fechaSeleccionada))
                 {
@@ -226,7 +223,7 @@ namespace OdontoSysFrontEnd
                 Cita nuevaCita = new Cita();
 
                 // Configurar los datos de la cita
-                nuevaCita.Fecha=fechaCita; // Ajustar formato según tu modelo
+                nuevaCita.Fecha=fechaCita; 
                 nuevaCita.HoraInicio=horaCita;
                 nuevaCita.Estado = EstadoCita.RESERVADA; // Estado inicial
 
@@ -234,8 +231,7 @@ namespace OdontoSysFrontEnd
                 //Odontologo odontologo = this.odontologoBO.obtenerPorID(odontologoId);
                 //nuevaCita.Odontologo = odontologo;
 
-                // Aquí deberías obtener el paciente de la sesión o de alguna manera
-                // Por ahora, usaremos un paciente de ejemplo
+               
                 // Paciente paciente = (Paciente)Session["PacienteLogueado"];
                 // nuevaCita.setPaciente(paciente);
 
