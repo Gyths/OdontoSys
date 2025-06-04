@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://wa.odontosys.com/" targetNamespace="http://wa.odontosys.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="EliminarMetodoPago" type="tns:EliminarMetodoPago" />
+  <xs:element name="EliminarMetodoPagoResponse" type="tns:EliminarMetodoPagoResponse" />
+  <xs:element name="InsertarMetodoPago" type="tns:InsertarMetodoPago" />
+  <xs:element name="InsertarMetodoPagoResponse" type="tns:InsertarMetodoPagoResponse" />
+  <xs:element name="ListarMetodosPago" type="tns:ListarMetodosPago" />
+  <xs:element name="ListarMetodosPagoResponse" type="tns:ListarMetodosPagoResponse" />
+  <xs:element name="ModificarMetodoPago" type="tns:ModificarMetodoPago" />
+  <xs:element name="ModificarMetodoPagoResponse" type="tns:ModificarMetodoPagoResponse" />
+  <xs:complexType name="InsertarMetodoPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="metodoPago" type="tns:metodoPago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="metodoPago">
+    <xs:sequence>
+      <xs:element name="idMetodoPago" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertarMetodoPagoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarMetodosPago">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ListarMetodosPagoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:metodoPago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EliminarMetodoPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="metodoPago" type="tns:metodoPago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EliminarMetodoPagoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModificarMetodoPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="metodoPago" type="tns:metodoPago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModificarMetodoPagoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.UI;
-using OdontoSysModel.Users;
+using OdontoSysBusiness.BO;
+using OdontoSysBusiness.pacienteWS;
 
 namespace OdontoSysFrontEnd
 {
@@ -27,17 +28,17 @@ namespace OdontoSysFrontEnd
 
                 // Instanciar el objeto BO
                 PacienteBO pacienteBO = new PacienteBO();
-                Paciente paciente = pacienteBO.buscarPorUsuario(usuario);
+                paciente paciente = pacienteBO.buscarPorUsuario(usuario);
 
                 if (paciente != null)
                 {
                     // Validar contraseña
-                    if (paciente.Contrasenha.Equals(contrasenaIngresada))
+                    if (paciente.contrasenha.Equals(contrasenaIngresada))
                     {
                         // Login exitoso - guardar en sesión
                         Session["paciente"] = paciente;
-                        Session["usuarioId"] = paciente.IdPaciente;
-                        Session["nombreUsuario"] = paciente.Nombre;
+                        Session["usuarioId"] = paciente.idPaciente;
+                        Session["nombreUsuario"] = paciente.nombre;
 
                         // Redirigir a la página principal
                         Response.Redirect("index.aspx");

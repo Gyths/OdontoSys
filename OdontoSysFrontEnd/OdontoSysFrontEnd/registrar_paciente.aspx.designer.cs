@@ -69,22 +69,40 @@ namespace OdontoSysFrontEnd
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
 
         /// <summary>
-        /// Control LblDNI.
+        /// Control LblTipoDocumento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblDNI;
+        protected global::System.Web.UI.WebControls.Label LblTipoDocumento;
 
         /// <summary>
-        /// Control txtDNI.
+        /// Control txtTipoDocumento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDNI;
+        protected global::System.Web.UI.WebControls.TextBox txtTipoDocumento;
+
+        /// <summary>
+        /// Control LblNumeroDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblNumeroDocumento;
+
+        /// <summary>
+        /// Control txtNumeroDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroDocumento;
 
         /// <summary>
         /// Control LblTelefono.

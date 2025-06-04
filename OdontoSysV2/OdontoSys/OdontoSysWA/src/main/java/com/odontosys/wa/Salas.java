@@ -17,11 +17,11 @@ public class Salas {
     
     @WebMethod(operationName = "InsertarSala")
     public Integer InsertarSala(@WebParam(name = "sala") Sala sala) {
-        return this.InsertarSala(sala);
+        return this.salaBO.InsertarSala(sala);
     }
     
     @WebMethod(operationName = "EliminarSala")
     public Integer EliminarSala(@WebParam(name = "sala") Sala sala) {
-        return this.EliminarSala(sala);
+        return this.salaBO.EliminarSala(sala);
     }
 }

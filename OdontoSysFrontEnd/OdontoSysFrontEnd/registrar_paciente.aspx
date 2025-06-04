@@ -26,11 +26,17 @@
                 </div>
             </div>
              <div class="mb-3 row">
-                 <asp:Label ID="LblDNI" runat="server" Text="DNI: " CssClass="col-sm-4 col-form-label"></asp:Label>
+                 <asp:Label ID="LblTipoDocumento" runat="server" Text="Tipo de Documento: " CssClass="col-sm-4 col-form-label"></asp:Label>
                  <div class="col-sm-4">
-                     <asp:TextBox ID="txtDNI" runat="server" CssClass="form-control"></asp:TextBox>
+                     <asp:TextBox ID="txtTipoDocumento" runat="server" CssClass="form-control"></asp:TextBox>
                  </div>
              </div>
+            <div class="mb-3 row">
+                <asp:Label ID="LblNumeroDocumento" runat="server" Text="Numero de Documento: " CssClass="col-sm-4 col-form-label"></asp:Label>
+                <div class="col-sm-4">
+                    <asp:TextBox ID="txtNumeroDocumento" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+            </div>
              <div class="mb-3 row">
                  <asp:Label ID="LblTelefono" runat="server" Text="Teléfono: " CssClass="col-sm-4 col-form-label"></asp:Label>
                  <div class="col-sm-4">

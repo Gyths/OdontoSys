@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdontoSysFrontEnd", "Odonto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdontoSysModel", "OdontoSysModel\OdontoSysModel.csproj", "{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdontoSysBusiness", "OdontoSysBusiness\OdontoSysBusiness.csproj", "{D3F2DE1F-828E-4EA0-B130-55EB26152D2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A19C7AE0-132D-40C9-9BBE-31ABFBB0AB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3F2DE1F-828E-4EA0-B130-55EB26152D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F2DE1F-828E-4EA0-B130-55EB26152D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F2DE1F-828E-4EA0-B130-55EB26152D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F2DE1F-828E-4EA0-B130-55EB26152D2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

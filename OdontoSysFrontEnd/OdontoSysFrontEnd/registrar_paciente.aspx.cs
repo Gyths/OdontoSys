@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using OdontoSysModel.Users;
+using OdontoSysBusiness.pacienteWS;
 
 namespace OdontoSysFrontEnd
 {
@@ -20,15 +20,15 @@ namespace OdontoSysFrontEnd
         }
         protected void btnInsertar_Click(object sender, EventArgs e)
         {
-            Paciente paciente = new Paciente
+            paciente paciente = new paciente
             {
-                Nombre = txtNombre.Text,
-                Apellidos = txtApellido.Text,
-                Correo = txtCorreo.Text,
-                Dni = txtDNI.Text,
-                Telefono = txtTelefono.Text,
-                NombreUsuario = txtNombreUsuario.Text,
-                Contrasenha = txtContrasena.Text
+                nombre = txtNombre.Text,
+                apellidos = txtApellido.Text,
+                correo = txtCorreo.Text,
+                numeroDocumento = txtNumeroDocumento.Text,
+                telefono = txtTelefono.Text,
+                nombreUsuario = txtNombreUsuario.Text,
+                contrasenha = txtContrasena.Text
             };
             // Crear instancia del BO
             //PacienteBO pacienteBO = new PacienteBO();

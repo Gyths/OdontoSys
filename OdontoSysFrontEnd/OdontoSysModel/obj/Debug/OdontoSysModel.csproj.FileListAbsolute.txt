@@ -16,3 +16,9 @@ C:\Users\USER\Documents\GitHub\OdontoSys\OdontoSysFrontEnd\OdontoSysModel\obj\De
 C:\Users\USER\Documents\GitHub\OdontoSys\OdontoSysFrontEnd\OdontoSysModel\obj\Debug\OdontoSysModel.csproj.CoreCompileInputs.cache
 C:\Users\USER\Documents\GitHub\OdontoSys\OdontoSysFrontEnd\OdontoSysModel\obj\Debug\OdontoSysModel.dll
 C:\Users\USER\Documents\GitHub\OdontoSys\OdontoSysFrontEnd\OdontoSysModel\obj\Debug\OdontoSysModel.pdb
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\OdontoSysFrontEnd\OdontoSysModel\bin\Debug\OdontoSysModel.dll
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\OdontoSysFrontEnd\OdontoSysModel\bin\Debug\OdontoSysModel.pdb
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\OdontoSysFrontEnd\OdontoSysModel\obj\Debug\OdontoSysModel.csproj.AssemblyReference.cache
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\OdontoSysFrontEnd\OdontoSysModel\obj\Debug\OdontoSysModel.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\OdontoSysFrontEnd\OdontoSysModel\obj\Debug\OdontoSysModel.dll
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\OdontoSysFrontEnd\OdontoSysModel\obj\Debug\OdontoSysModel.pdb

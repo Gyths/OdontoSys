@@ -31,8 +31,8 @@ public class Tratamientos {
         return this.tratamientoBO.EliminarTratamiento(tratamiento);
     }
     
-    @WebMethod(operationName = "listarTodos")
-    public ArrayList<Tratamiento> listarTodos() {
+    @WebMethod(operationName = "ListarTratamientos")
+    public ArrayList<Tratamiento> ListarTratamientos() {
         return this.tratamientoBO.listarTodos();
     }
 }

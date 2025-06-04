@@ -189,9 +189,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OdontoSysModel\OdontoSysModel.csproj">
-      <Project>{a19c7ae0-132d-40c9-9bbe-31abfbb0ab9a}</Project>
-      <Name>OdontoSysModel</Name>
+    <ProjectReference Include="..\OdontoSysBusiness\OdontoSysBusiness.csproj">
+      <Project>{d3f2de1f-828e-4ea0-b130-55eb26152d2d}</Project>
+      <Name>OdontoSysBusiness</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

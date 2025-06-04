@@ -10,7 +10,7 @@ import org.apache.commons.codec.binary.Base64;
 public class Cifrado {
     
     //cambiar por pwd de la instancia
-    private static final String llave = "inkachips";
+    private static final String llave = "dbodontosys";
 
     public static String cifrarMD5(String texto) {
         String base64EncryptedString = "";

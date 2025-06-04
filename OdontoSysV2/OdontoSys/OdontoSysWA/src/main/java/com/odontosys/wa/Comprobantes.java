@@ -26,8 +26,8 @@ public class Comprobantes {
         return this.comprobanteBO.EliminarComprobante(comprobante);
     }
     
-    @WebMethod(operationName = "InsertComprobante")
-    public ArrayList<Comprobante> ListarTodos() {
+    @WebMethod(operationName = "ListarComprobantes")
+    public ArrayList<Comprobante> ListarComprobantes() {
         return this.comprobanteBO.ListarTodos();
     }
 }

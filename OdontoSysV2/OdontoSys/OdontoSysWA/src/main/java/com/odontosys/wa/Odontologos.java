@@ -37,8 +37,8 @@ public class Odontologos {
     }
     
     @WebMethod(operationName = "od_buscarPorUsuario")
-    public Odontologo od_buscarPorUsuario(@WebParam(name = "odontologoUusuario") String odontologoUusuario) {
-        return this.odontologoBO.buscarPorUsuario(odontologoUusuario);
+    public Odontologo od_buscarPorUsuario(@WebParam(name = "odontologoUsuario") String odontologoUsuario) {
+        return this.odontologoBO.buscarPorUsuario(odontologoUsuario);
     }
     
     @WebMethod(operationName = "listarPorEspecialidad")

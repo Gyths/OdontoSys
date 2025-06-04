@@ -41,7 +41,7 @@ public class Pacientes {
         return this.pacienteBO.buscarPorUsuario(nombreUsuario);
     }
     
-    @WebMethod(operationName = "listarOdontologos")
+    @WebMethod(operationName = "listarPacientes")
     public ArrayList<Paciente> listarOdontologos() {
         return this.pacienteBO.listarOdontologos();
     }

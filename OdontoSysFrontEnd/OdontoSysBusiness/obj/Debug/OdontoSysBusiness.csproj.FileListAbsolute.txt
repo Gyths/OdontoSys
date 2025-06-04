@@ -1,0 +1,7 @@
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\OdontoSysFrontEnd\OdontoSysBusiness\bin\Debug\OdontoSysBusiness.dll.config
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\OdontoSysFrontEnd\OdontoSysBusiness\bin\Debug\OdontoSysBusiness.dll
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\OdontoSysFrontEnd\OdontoSysBusiness\bin\Debug\OdontoSysBusiness.pdb
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\OdontoSysFrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.csproj.AssemblyReference.cache
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\OdontoSysFrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\OdontoSysFrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.dll
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\OdontoSysFrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.pdb

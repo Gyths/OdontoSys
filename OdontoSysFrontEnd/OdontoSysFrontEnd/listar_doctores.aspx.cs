@@ -5,30 +5,30 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using OdontoSysModel;
-using OdontoSysModel.Users;
-//using OdontoSysBusiness;
+using OdontoSysBusiness.odontologoWS;
+
+using OdontoSysBusiness.BO;
 
 namespace OdontoSysFrontEnd
 {
     public partial class listar_doctores : System.Web.UI.Page
     {
-        //private OdontologoBO odontologoBO;
-        private BindingList<Odontologo> listaDoctores;
+        private OdontologoBO odontologoBO;
+        private BindingList<odontologo> listaDoctores;
 
         public listar_doctores()
         {
-            //this.OdontologoBO = new OdontologoBO();
-            //this.ListaDoctores = this.OdontologoBO.ListarTodos();
+            this.odontologoBO = new OdontologoBO();
+            this.listaDoctores = this.odontologoBO.listarOdontologos();
         }
 
-       /* public OdontologoBO OdontologoBO
+        public OdontologoBO OdontologoBO
         {
             get => odontologoBO;
             set => odontologoBO = value;
-        }*/
+        }
 
-        public BindingList<Odontologo> ListaDoctores
+        public BindingList<odontologo> ListaDoctores
         {
             get => listaDoctores;
             set => listaDoctores = value;

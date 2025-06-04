@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wa.odontosys.com/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Recepcionistas" targetNamespace="http://wa.odontosys.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/OdontoSysWA/Recepcionistas?xsd=1" namespace="http://wa.odontosys.com/" />
+    </xsd:schema>
+  </types>
+  <message name="obtenerPorID">
+    <part name="parameters" element="tns:obtenerPorID" />
+  </message>
+  <message name="obtenerPorIDResponse">
+    <part name="parameters" element="tns:obtenerPorIDResponse" />
+  </message>
+  <message name="buscarPorUsuario">
+    <part name="parameters" element="tns:buscarPorUsuario" />
+  </message>
+  <message name="buscarPorUsuarioResponse">
+    <part name="parameters" element="tns:buscarPorUsuarioResponse" />
+  </message>
+  <message name="eliminarRecepcionista">
+    <part name="parameters" element="tns:eliminarRecepcionista" />
+  </message>
+  <message name="eliminarRecepcionistaResponse">
+    <part name="parameters" element="tns:eliminarRecepcionistaResponse" />
+  </message>
+  <message name="modificarRecepcionista">
+    <part name="parameters" element="tns:modificarRecepcionista" />
+  </message>
+  <message name="modificarRecepcionistaResponse">
+    <part name="parameters" element="tns:modificarRecepcionistaResponse" />
+  </message>
+  <message name="listarRecepcionista">
+    <part name="parameters" element="tns:listarRecepcionista" />
+  </message>
+  <message name="listarRecepcionistaResponse">
+    <part name="parameters" element="tns:listarRecepcionistaResponse" />
+  </message>
+  <message name="insertarRecepcionista">
+    <part name="parameters" element="tns:insertarRecepcionista" />
+  </message>
+  <message name="insertarRecepcionistaResponse">
+    <part name="parameters" element="tns:insertarRecepcionistaResponse" />
+  </message>
+  <portType name="Recepcionistas">
+    <operation name="obtenerPorID">
+      <input wsam:Action="http://wa.odontosys.com/Recepcionistas/obtenerPorIDRequest" message="tns:obtenerPorID" />
+      <output wsam:Action="http://wa.odontosys.com/Recepcionistas/obtenerPorIDResponse" message="tns:obtenerPorIDResponse" />
+    </operation>
+    <operation name="buscarPorUsuario">
+      <input wsam:Action="http://wa.odontosys.com/Recepcionistas/buscarPorUsuarioRequest" message="tns:buscarPorUsuario" />
+      <output wsam:Action="http://wa.odontosys.com/Recepcionistas/buscarPorUsuarioResponse" message="tns:buscarPorUsuarioResponse" />
+    </operation>
+    <operation name="eliminarRecepcionista">
+      <input wsam:Action="http://wa.odontosys.com/Recepcionistas/eliminarRecepcionistaRequest" message="tns:eliminarRecepcionista" />
+      <output wsam:Action="http://wa.odontosys.com/Recepcionistas/eliminarRecepcionistaResponse" message="tns:eliminarRecepcionistaResponse" />
+    </operation>
+    <operation name="modificarRecepcionista">
+      <input wsam:Action="http://wa.odontosys.com/Recepcionistas/modificarRecepcionistaRequest" message="tns:modificarRecepcionista" />
+      <output wsam:Action="http://wa.odontosys.com/Recepcionistas/modificarRecepcionistaResponse" message="tns:modificarRecepcionistaResponse" />
+    </operation>
+    <operation name="listarRecepcionista">
+      <input wsam:Action="http://wa.odontosys.com/Recepcionistas/listarRecepcionistaRequest" message="tns:listarRecepcionista" />
+      <output wsam:Action="http://wa.odontosys.com/Recepcionistas/listarRecepcionistaResponse" message="tns:listarRecepcionistaResponse" />
+    </operation>
+    <operation name="insertarRecepcionista">
+      <input wsam:Action="http://wa.odontosys.com/Recepcionistas/insertarRecepcionistaRequest" message="tns:insertarRecepcionista" />
+      <output wsam:Action="http://wa.odontosys.com/Recepcionistas/insertarRecepcionistaResponse" message="tns:insertarRecepcionistaResponse" />
+    </operation>
+  </portType>
+  <binding name="RecepcionistasPortBinding" type="tns:Recepcionistas">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="obtenerPorID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarPorUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarRecepcionista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarRecepcionista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarRecepcionista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarRecepcionista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Recepcionistas">
+    <port name="RecepcionistasPort" binding="tns:RecepcionistasPortBinding">
+      <soap:address location="http://localhost:8080/OdontoSysWA/Recepcionistas" />
+    </port>
+  </service>
+</definitions>

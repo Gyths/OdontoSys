@@ -4,10 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using OdontoSysModel;
-using OdontoSysModel.Users;
-//using OdontoSysBusiness;
-using OdontoSysModel.Services;
+using OdontoSysBusiness;
+using OdontoSysBusiness.citaWS;
 
 namespace OdontoSysFrontEnd
 {
@@ -58,8 +56,8 @@ namespace OdontoSysFrontEnd
             try
             {
                 // Crear objeto especialidad para filtrar
-                Especialidad especialidad = new Especialidad();
-                especialidad.IdEspecialidad = especialidadId;
+                especialidad especialidad = new especialidad();
+                especialidad.idEspecialidad = especialidadId;
 
                 //var doctores = this.odontologoBO.listarPorEspecialidad(especialidad);
 
@@ -112,7 +110,7 @@ namespace OdontoSysFrontEnd
             }
         }
 
-        private List<object> GenerarHorariosDisponibles(List<Cita> citasExistentes, string fecha)
+        private List<object> GenerarHorariosDisponibles(List<cita> citasExistentes, string fecha)
         {
             var horarios = new List<object>();
 
@@ -220,12 +218,12 @@ namespace OdontoSysFrontEnd
                 
 
                 // Crear objeto Cita
-                Cita nuevaCita = new Cita();
+                cita nuevaCita = new cita();
 
                 // Configurar los datos de la cita
-                nuevaCita.Fecha=fechaCita; 
-                nuevaCita.HoraInicio=horaCita;
-                nuevaCita.Estado = EstadoCita.RESERVADA; // Estado inicial
+                nuevaCita.fecha = fechaCita;
+                nuevaCita.horaInicio=horaCita;
+                nuevaCita.estado = estadoCita.RESERVADA; // Estado inicial
 
                 // Obtener el odontólogo
                 //Odontologo odontologo = this.odontologoBO.obtenerPorID(odontologoId);

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="e77b1430-82b4-4d14-9933-1bb5dc0ed09c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/OdontoSysWA/Citas?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Citas.wsdl" MetadataType="Wsdl" ID="7d5f6956-0e7d-4f90-9744-2c36c4cbaa6b" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWA/Citas?wsdl" />
+    <MetadataFile FileName="Citas.xsd" MetadataType="Schema" ID="4ae69215-1e34-42a6-9d39-85c5d398014c" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWA/Citas?xsd=2" />
+    <MetadataFile FileName="Citas1.xsd" MetadataType="Schema" ID="1508b80e-61f8-4d95-b04d-13ecb6bd271f" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWA/Citas?xsd=1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

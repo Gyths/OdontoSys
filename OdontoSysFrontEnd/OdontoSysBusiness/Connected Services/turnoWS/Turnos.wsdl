@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wa.odontosys.com/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Turnos" targetNamespace="http://wa.odontosys.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/OdontoSysWA/Turnos?xsd=1" namespace="http://wa.odontosys.com/" />
+    </xsd:schema>
+  </types>
+  <message name="ModificarTurno">
+    <part name="parameters" element="tns:ModificarTurno" />
+  </message>
+  <message name="ModificarTurnoResponse">
+    <part name="parameters" element="tns:ModificarTurnoResponse" />
+  </message>
+  <message name="EliminarTurno">
+    <part name="parameters" element="tns:EliminarTurno" />
+  </message>
+  <message name="EliminarTurnoResponse">
+    <part name="parameters" element="tns:EliminarTurnoResponse" />
+  </message>
+  <message name="obtenerPorId">
+    <part name="parameters" element="tns:obtenerPorId" />
+  </message>
+  <message name="obtenerPorIdResponse">
+    <part name="parameters" element="tns:obtenerPorIdResponse" />
+  </message>
+  <message name="InsertarTurno">
+    <part name="parameters" element="tns:InsertarTurno" />
+  </message>
+  <message name="InsertarTurnoResponse">
+    <part name="parameters" element="tns:InsertarTurnoResponse" />
+  </message>
+  <portType name="Turnos">
+    <operation name="ModificarTurno">
+      <input wsam:Action="http://wa.odontosys.com/Turnos/ModificarTurnoRequest" message="tns:ModificarTurno" />
+      <output wsam:Action="http://wa.odontosys.com/Turnos/ModificarTurnoResponse" message="tns:ModificarTurnoResponse" />
+    </operation>
+    <operation name="EliminarTurno">
+      <input wsam:Action="http://wa.odontosys.com/Turnos/EliminarTurnoRequest" message="tns:EliminarTurno" />
+      <output wsam:Action="http://wa.odontosys.com/Turnos/EliminarTurnoResponse" message="tns:EliminarTurnoResponse" />
+    </operation>
+    <operation name="obtenerPorId">
+      <input wsam:Action="http://wa.odontosys.com/Turnos/obtenerPorIdRequest" message="tns:obtenerPorId" />
+      <output wsam:Action="http://wa.odontosys.com/Turnos/obtenerPorIdResponse" message="tns:obtenerPorIdResponse" />
+    </operation>
+    <operation name="InsertarTurno">
+      <input wsam:Action="http://wa.odontosys.com/Turnos/InsertarTurnoRequest" message="tns:InsertarTurno" />
+      <output wsam:Action="http://wa.odontosys.com/Turnos/InsertarTurnoResponse" message="tns:InsertarTurnoResponse" />
+    </operation>
+  </portType>
+  <binding name="TurnosPortBinding" type="tns:Turnos">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ModificarTurno">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="EliminarTurno">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="InsertarTurno">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Turnos">
+    <port name="TurnosPort" binding="tns:TurnosPortBinding">
+      <soap:address location="http://localhost:8080/OdontoSysWA/Turnos" />
+    </port>
+  </service>
+</definitions>

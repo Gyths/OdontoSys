@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wa.odontosys.com/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="MetodosPago" targetNamespace="http://wa.odontosys.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/OdontoSysWA/MetodosPago?xsd=1" namespace="http://wa.odontosys.com/" />
+    </xsd:schema>
+  </types>
+  <message name="EliminarMetodoPago">
+    <part name="parameters" element="tns:EliminarMetodoPago" />
+  </message>
+  <message name="EliminarMetodoPagoResponse">
+    <part name="parameters" element="tns:EliminarMetodoPagoResponse" />
+  </message>
+  <message name="ListarMetodosPago">
+    <part name="parameters" element="tns:ListarMetodosPago" />
+  </message>
+  <message name="ListarMetodosPagoResponse">
+    <part name="parameters" element="tns:ListarMetodosPagoResponse" />
+  </message>
+  <message name="InsertarMetodoPago">
+    <part name="parameters" element="tns:InsertarMetodoPago" />
+  </message>
+  <message name="InsertarMetodoPagoResponse">
+    <part name="parameters" element="tns:InsertarMetodoPagoResponse" />
+  </message>
+  <message name="ModificarMetodoPago">
+    <part name="parameters" element="tns:ModificarMetodoPago" />
+  </message>
+  <message name="ModificarMetodoPagoResponse">
+    <part name="parameters" element="tns:ModificarMetodoPagoResponse" />
+  </message>
+  <portType name="MetodosPago">
+    <operation name="EliminarMetodoPago">
+      <input wsam:Action="http://wa.odontosys.com/MetodosPago/EliminarMetodoPagoRequest" message="tns:EliminarMetodoPago" />
+      <output wsam:Action="http://wa.odontosys.com/MetodosPago/EliminarMetodoPagoResponse" message="tns:EliminarMetodoPagoResponse" />
+    </operation>
+    <operation name="ListarMetodosPago">
+      <input wsam:Action="http://wa.odontosys.com/MetodosPago/ListarMetodosPagoRequest" message="tns:ListarMetodosPago" />
+      <output wsam:Action="http://wa.odontosys.com/MetodosPago/ListarMetodosPagoResponse" message="tns:ListarMetodosPagoResponse" />
+    </operation>
+    <operation name="InsertarMetodoPago">
+      <input wsam:Action="http://wa.odontosys.com/MetodosPago/InsertarMetodoPagoRequest" message="tns:InsertarMetodoPago" />
+      <output wsam:Action="http://wa.odontosys.com/MetodosPago/InsertarMetodoPagoResponse" message="tns:InsertarMetodoPagoResponse" />
+    </operation>
+    <operation name="ModificarMetodoPago">
+      <input wsam:Action="http://wa.odontosys.com/MetodosPago/ModificarMetodoPagoRequest" message="tns:ModificarMetodoPago" />
+      <output wsam:Action="http://wa.odontosys.com/MetodosPago/ModificarMetodoPagoResponse" message="tns:ModificarMetodoPagoResponse" />
+    </operation>
+  </portType>
+  <binding name="MetodosPagoPortBinding" type="tns:MetodosPago">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="EliminarMetodoPago">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarMetodosPago">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="InsertarMetodoPago">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ModificarMetodoPago">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="MetodosPago">
+    <port name="MetodosPagoPort" binding="tns:MetodosPagoPortBinding">
+      <soap:address location="http://localhost:8080/OdontoSysWA/MetodosPago" />
+    </port>
+  </service>
+</definitions>

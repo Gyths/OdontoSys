@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://wa.odontosys.com/" targetNamespace="http://wa.odontosys.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="EliminarDetalle" type="tns:EliminarDetalle" />
+  <xs:element name="EliminarDetalleResponse" type="tns:EliminarDetalleResponse" />
+  <xs:element name="InsertarDetalle" type="tns:InsertarDetalle" />
+  <xs:element name="InsertarDetalleResponse" type="tns:InsertarDetalleResponse" />
+  <xs:element name="ModificarDetalle" type="tns:ModificarDetalle" />
+  <xs:element name="ModificarDetalleResponse" type="tns:ModificarDetalleResponse" />
+  <xs:complexType name="EliminarDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="detalle" type="tns:detalleTratamiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="detalleTratamiento">
+    <xs:sequence>
+      <xs:element name="cantidad" type="xs:int" />
+      <xs:element name="idCita" type="xs:int" />
+      <xs:element name="subtotal" type="xs:double" />
+      <xs:element minOccurs="0" name="tratamiento" type="tns:tratamiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tratamiento">
+    <xs:sequence>
+      <xs:element name="costo" type="xs:double" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="especialidad" type="tns:especialidad" />
+      <xs:element name="idTratamiento" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="especialidad">
+    <xs:sequence>
+      <xs:element name="idEspecialidad" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EliminarDetalleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModificarDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="detalle" type="tns:detalleTratamiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModificarDetalleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertarDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="detalle" type="tns:detalleTratamiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertarDetalleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
