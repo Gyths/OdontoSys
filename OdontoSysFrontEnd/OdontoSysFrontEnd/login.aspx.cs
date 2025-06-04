@@ -1,0 +1,61 @@
+﻿using System;
+using System.Web.UI;
+using OdontoSysModel.Users;
+
+namespace OdontoSysFrontEnd
+{
+    public partial class login : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string usuario = txtUsuario.Text.Trim();
+                string contrasenaIngresada = txtContrasena.Text.Trim();
+
+                // Validación básica
+                if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contrasenaIngresada))
+                {
+                    lblMensaje.Text = "Por favor, complete todos los campos.";
+                    return;
+                }
+
+                // Instanciar el objeto BO
+                PacienteBO pacienteBO = new PacienteBO();
+                Paciente paciente = pacienteBO.buscarPorUsuario(usuario);
+
+                if (paciente != null)
+                {
+                    // Validar contraseña
+                    if (paciente.Contrasenha.Equals(contrasenaIngresada))
+                    {
+                        // Login exitoso - guardar en sesión
+                        Session["paciente"] = paciente;
+                        Session["usuarioId"] = paciente.IdPaciente;
+                        Session["nombreUsuario"] = paciente.Nombre;
+
+                        // Redirigir a la página principal
+                        Response.Redirect("index.aspx");
+                    }
+                    else
+                    {
+                        lblMensaje.Text = "Contraseña incorrecta.";
+                    }
+                }
+                else
+                {
+                    lblMensaje.Text = "Usuario no encontrado.";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.Text = "Error al procesar la solicitud: " + ex.Message;
+            }
+        }
+    }
+}

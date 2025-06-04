@@ -68,16 +68,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <label for="txtObservaciones" class="form-label">
-                                    <i class="fas fa-comment me-1"></i>Observaciones (Opcional):
-                                </label>
-                                <asp:TextBox ID="txtObservaciones" runat="server" CssClass="form-control" 
-                                    TextMode="MultiLine" Rows="3" 
-                                    placeholder="Ingrese cualquier observación adicional..."/>
-                            </div>
-                        </div>
+                       
 
                         <div class="row">
                             <div class="col-12">

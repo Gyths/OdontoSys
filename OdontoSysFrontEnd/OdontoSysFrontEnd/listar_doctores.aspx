@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/OdontoSys.Master" AutoEventWireup="true" CodeBehind="listar_doctores.aspx.cs" Inherits="OdontoSysWA.listar_doctores" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/OdontoSys.Master" AutoEventWireup="true" CodeBehind="listar_doctores.aspx.cs" Inherits="OdontoSysFrontEnd.listar_doctores" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphContenido" runat="server">
     <div class="container">

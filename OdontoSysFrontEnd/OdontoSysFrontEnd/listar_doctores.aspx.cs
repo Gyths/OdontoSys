@@ -9,7 +9,7 @@ using OdontoSysModel;
 using OdontoSysModel.Users;
 //using OdontoSysBusiness;
 
-namespace OdontoSysWA
+namespace OdontoSysFrontEnd
 {
     public partial class listar_doctores : System.Web.UI.Page
     {

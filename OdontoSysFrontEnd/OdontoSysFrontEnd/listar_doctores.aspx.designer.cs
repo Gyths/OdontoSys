@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace OdontoSysWA
+namespace OdontoSysFrontEnd
 {
 
 

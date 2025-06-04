@@ -217,7 +217,7 @@ namespace OdontoSysFrontEnd
                 int odontologoId = Convert.ToInt32(ddlDoctor.SelectedValue);
                 DateTime fechaCita = Convert.ToDateTime(txtFechaCita.Text);
                 DateTime horaCita = Convert.ToDateTime(ddlHorario.SelectedValue);
-                string observaciones = txtObservaciones.Text.Trim();
+                
 
                 // Crear objeto Cita
                 Cita nuevaCita = new Cita();
@@ -232,7 +232,7 @@ namespace OdontoSysFrontEnd
                 //nuevaCita.Odontologo = odontologo;
 
                
-                // Paciente paciente = (Paciente)Session["PacienteLogueado"];
+                // Paciente paciente = (Paciente)Session["paciente"];
                 // nuevaCita.setPaciente(paciente);
 
                 // Insertar la cita
