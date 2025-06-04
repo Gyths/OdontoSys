@@ -18,8 +18,8 @@ namespace OdontoSysFrontEnd
 
         public listar_doctores()
         {
-            this.odontologoBO = new OdontologoBO();
-            this.listaDoctores = this.odontologoBO.listarOdontologos();
+            this.OdontologoBO = new OdontologoBO();
+            this.ListaDoctores = this.OdontologoBO.listarOdontologos();
         }
 
         public OdontologoBO OdontologoBO

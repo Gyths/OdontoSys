@@ -5,23 +5,26 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using OdontoSysBusiness;
+using OdontoSysBusiness.BO;
+using OdontoSysBusiness.odontologoWS;
 using OdontoSysBusiness.citaWS;
+using System.ComponentModel;
 
 namespace OdontoSysFrontEnd
 {
     public partial class reservar_cita : System.Web.UI.Page
     {
-       // private CitaBO citaBO;
-        //private EspecialidadBO especialidadBO;
-        //private OdontologoBO odontologoBO;
-        //private PacienteBO pacienteBO;
+        private CitaBO citaBO;
+        private EspecialidadBO especialidadBO;
+        private OdontologoBO odontologoBO;
+        private PacienteBO pacienteBO;
 
         public reservar_cita()
         {
-          //  this.citaBO = new CitaBO();
-           // this.especialidadBO = new EspecialidadBO();
-            //this.odontologoBO = new OdontologoBO();
-            //this.pacienteBO = new PacienteBO();
+            this.citaBO = new CitaBO();
+            this.especialidadBO = new EspecialidadBO();
+            this.odontologoBO = new OdontologoBO();
+            this.pacienteBO = new PacienteBO();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -38,8 +41,8 @@ namespace OdontoSysFrontEnd
         {
             try
             {
-                //var especialidades = this.especialidadBO.ListarEspecialidades();
-                //ddlEspecialidad.DataSource = especialidades;
+                var especialidades = this.especialidadBO.ListarEspecialidades();
+                ddlEspecialidad.DataSource = especialidades;
                 ddlEspecialidad.DataTextField = "nombre"; 
                 ddlEspecialidad.DataValueField = "idEspecialidad"; 
                 ddlEspecialidad.DataBind();
@@ -56,12 +59,12 @@ namespace OdontoSysFrontEnd
             try
             {
                 // Crear objeto especialidad para filtrar
-                especialidad especialidad = new especialidad();
+                OdontoSysBusiness.odontologoWS.especialidad especialidad = new OdontoSysBusiness.odontologoWS.especialidad();
                 especialidad.idEspecialidad = especialidadId;
 
-                //var doctores = this.odontologoBO.listarPorEspecialidad(especialidad);
+                var doctores = this.odontologoBO.listarPorEspecialidad(especialidad);
 
-                //ddlDoctor.DataSource = doctores;
+                ddlDoctor.DataSource = doctores;
                 ddlDoctor.DataTextField = "nombreCompleto"; 
                 ddlDoctor.DataValueField = "idOdontologo"; 
                 ddlDoctor.DataBind();
@@ -87,22 +90,21 @@ namespace OdontoSysFrontEnd
                 string fechaSeleccionada = txtFechaCita.Text;
 
                 // Crear objeto odontólogo
-                //Odontologo odontologo = this.odontologoBO.obtenerPorID(odontologoId);
+                OdontoSysBusiness.odontologoWS.odontologo odontologo = this.odontologoBO.obtenerPorId(odontologoId);
 
-                //if (odontologo != null)
-                //{
+                if (odontologo != null)
+                {
                     // Obtener citas existentes para el odontólogo en la fecha seleccionada
-                  //  var citasExistentes = this.citaBO.listarPorOdontologo(odontologo, fechaSeleccionada, fechaSeleccionada);
-
+                    BindingList<OdontoSysBusiness.citaWS.cita> citasExistentes = this.citaBO.ListarPorOdontologo(odontologo, fechaSeleccionada, fechaSeleccionada);
                     
-                    //var horariosDisponibles = GenerarHorariosDisponibles(citasExistentes, fechaSeleccionada);
+                    var horariosDisponibles = GenerarHorariosDisponibles(citasExistentes, fechaSeleccionada);
 
-                   // ddlHorario.DataSource = horariosDisponibles;
+                    ddlHorario.DataSource = horariosDisponibles;
                     ddlHorario.DataTextField = "Descripcion";
                     ddlHorario.DataValueField = "Hora";
                     ddlHorario.DataBind();
                     ddlHorario.Items.Insert(0, new ListItem("-- Seleccione Horario --", ""));
-               // }
+                }
             }
             catch (Exception ex)
             {
@@ -110,7 +112,12 @@ namespace OdontoSysFrontEnd
             }
         }
 
-        private List<object> GenerarHorariosDisponibles(List<cita> citasExistentes, string fecha)
+        private object GenerarHorariosDisponibles(BindingList<OdontoSysBusiness.citaWS.cita> citasExistentes, string fechaSeleccionada)
+        {
+            throw new NotImplementedException();
+        }
+
+        private List<object> GenerarHorariosDisponibles(List<OdontoSysBusiness.citaWS.cita> citasExistentes, string fecha)
         {
             var horarios = new List<object>();
 
@@ -218,32 +225,32 @@ namespace OdontoSysFrontEnd
                 
 
                 // Crear objeto Cita
-                cita nuevaCita = new cita();
+                OdontoSysBusiness.citaWS.cita nuevaCita = new OdontoSysBusiness.citaWS.cita();
 
                 // Configurar los datos de la cita
                 nuevaCita.fecha = fechaCita;
                 nuevaCita.horaInicio=horaCita;
-                nuevaCita.estado = estadoCita.RESERVADA; // Estado inicial
+                nuevaCita.estado = OdontoSysBusiness.citaWS.estadoCita.RESERVADA; // Estado inicial
 
                 // Obtener el odontólogo
-                //Odontologo odontologo = this.odontologoBO.obtenerPorID(odontologoId);
-                //nuevaCita.Odontologo = odontologo;
+                OdontoSysBusiness.odontologoWS.odontologo odontologo = this.odontologoBO.obtenerPorId(odontologoId);
+                nuevaCita.odontologo = odontologo;
 
                
-                // Paciente paciente = (Paciente)Session["paciente"];
-                // nuevaCita.setPaciente(paciente);
+                OdontoSysBusiness.citaWS.paciente paciente = (OdontoSysBusiness.citaWS.paciente)Session["paciente"];
+                nuevaCita.paciente = paciente;
 
                 // Insertar la cita
-                //int resultado = this.citaBO.insertCita(nuevaCita);
+                int resultado = this.citaBO.InsertCita(nuevaCita);
 
-                //if (resultado > 0)
-                //{
+                if (resultado > 0)
+                {
                     MostrarMensajeYRedireccionar("Cita reservada exitosamente.", "Default.aspx");
-                //}
-                //else
-                //{
-                 //   MostrarMensaje("Error al reservar la cita. Inténtelo nuevamente.");
-                //}
+                }
+                else
+                {
+                    MostrarMensaje("Error al reservar la cita. Inténtelo nuevamente.");
+                }
             }
             catch (Exception ex)
             {

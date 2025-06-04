@@ -110,6 +110,7 @@
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="ver_pagos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +153,13 @@
     </Compile>
     <Compile Include="reservar_cita.aspx.designer.cs">
       <DependentUpon>reservar_cita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ver_pagos.aspx.cs">
+      <DependentUpon>ver_pagos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ver_pagos.aspx.designer.cs">
+      <DependentUpon>ver_pagos.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

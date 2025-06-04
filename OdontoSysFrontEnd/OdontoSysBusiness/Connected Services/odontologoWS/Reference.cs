@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+
 namespace OdontoSysBusiness.odontologoWS {
     
     
@@ -455,6 +457,11 @@ namespace OdontoSysBusiness.odontologoWS {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+
+        public static implicit operator localDate(DateTime v)
+        {
+            throw new NotImplementedException();
+        }
     }
     
     /// <remarks/>
@@ -588,6 +595,11 @@ namespace OdontoSysBusiness.odontologoWS {
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        public static implicit operator localTime(DateTime v)
+        {
+            throw new NotImplementedException();
         }
     }
     

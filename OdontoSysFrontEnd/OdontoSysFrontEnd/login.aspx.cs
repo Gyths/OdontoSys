@@ -33,7 +33,7 @@ namespace OdontoSysFrontEnd
                 if (paciente != null)
                 {
                     // Validar contraseña
-                    if (paciente.contrasenha.Equals(contrasenaIngresada))
+                    if (contrasenaIngresada.Equals(paciente.contrasenha))
                     {
                         // Login exitoso - guardar en sesión
                         Session["paciente"] = paciente;

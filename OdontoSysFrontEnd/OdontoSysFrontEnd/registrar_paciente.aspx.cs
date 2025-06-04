@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using OdontoSysBusiness.BO;
 using OdontoSysBusiness.pacienteWS;
 
 namespace OdontoSysFrontEnd
@@ -31,13 +32,13 @@ namespace OdontoSysFrontEnd
                 contrasenha = txtContrasena.Text
             };
             // Crear instancia del BO
-            //PacienteBO pacienteBO = new PacienteBO();
+            PacienteBO pacienteBO = new PacienteBO();
 
             // Llamar al método Insertar del BO
-            //pacienteBO.Insertar(paciente);
+            pacienteBO.insertarPaciente(paciente);
 
             // Redirigir o mostrar mensaje de éxito
-            //Response.Redirect("index.aspx");
+            Response.Redirect("index.aspx");
         }
     }
 }

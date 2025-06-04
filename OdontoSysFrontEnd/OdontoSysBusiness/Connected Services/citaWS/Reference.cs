@@ -1154,6 +1154,11 @@ namespace OdontoSysBusiness.citaWS {
                 this.RaisePropertyChanged("turnos");
             }
         }
+
+        public static implicit operator odontologo(odontologoWS.odontologo v)
+        {
+            throw new NotImplementedException();
+        }
     }
     
     /// <remarks/>

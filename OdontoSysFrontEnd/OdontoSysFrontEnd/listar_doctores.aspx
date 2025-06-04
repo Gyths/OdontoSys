@@ -9,10 +9,9 @@
                 CssClass="table table-hover table-responsive table-striped">
                 <Columns>
                     <asp:BoundField HeaderText="ID" DataField="IdOdontologo"/>
-                    <asp:BoundField HeaderText="Nombre Completo" DataField="NombreCompleto"/>  
-                    <asp:BoundField HeaderText="DNI" DataField="Dni"/>
+                    <asp:BoundField HeaderText="Nombre Completo" DataField="Nombre"/>  
                     <asp:BoundField HeaderText="Teléfono" DataField="Telefono"/>
-                    <asp:BoundField HeaderText="Email" DataField="Email"/>
+                    <asp:BoundField HeaderText="Correo" DataField="Correo"/>
                     <asp:BoundField HeaderText="Especialidad" DataField="Especialidad"/>
                    
                 </Columns>

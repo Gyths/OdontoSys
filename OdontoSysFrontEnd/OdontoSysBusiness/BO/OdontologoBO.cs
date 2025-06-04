@@ -42,6 +42,12 @@ namespace OdontoSysBusiness.BO
             return this.odontologosClienteSOAP.od_buscarPorUsuario(odontologoUsuario);
         }
 
+        public BindingList<odontologo> listarPorEspecialidad(especialidad especialidad)
+        {
+            odontologo[] lista = this.odontologosClienteSOAP.listarPorEspecialidad(especialidad);
+            return new BindingList<odontologo>(lista);
+        }
+
         public BindingList<odontologo> listarOdontologos()
         {
             odontologo[] lista = this.odontologosClienteSOAP.od_listarOdontologos();
