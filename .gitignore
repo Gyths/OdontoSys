@@ -4,3 +4,8 @@ config.properties
 /glassfish-7.0.24
 OdontoSysV2/OdontoSys/OdontoSysDBManager/src/main/resources/jdbc.properties
 
+/BackEnd/OdontoSysModel/target/
+/BackEnd/OdontoSysDBManager/target/
+/BackEnd/OdontoSysPersistance/target/
+/BackEnd/OdontoSysBussiness/target/
+/BackEnd/OdontoSysWebApplication/target/
