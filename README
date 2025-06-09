@@ -1,0 +1,26 @@
+Requerimientos:
+Apache Netbeans IDE 25
+JDK 22
+Glassfish 7.0.24
+Visual Studio compatible con:
+.Net development tools 4.8.1
+
+Pasos (desarrollo):
+Dentro de la carpeta DATABASE
+1) Cargar Base de datos con el sql ODONTO_SYS_DATABASE
+2) Cargar Procedimietos almacenados PROCEDIMIENTOS_ALMACENADOS
+
+Dentro de la carpeta BackEnd
+1) Abrir el proyecto en Netbeans
+2) Compilar los proyectos en orden
+  - Model
+  - DBManager
+  - Persistance
+  - Business
+  - WS
+3) Cargar el servidor de Glassfish (recordar compilar con JDK 22)
+4) Ejecutar los Web Services (WS)
+
+Dentro de la carpeta FrontEnd
+1) Asegurarse de que se tenga el .Net 4.8.1
+2) Cambiar el target de compilacion a un navegador diferente a edge(puede dar problemas pero no es estrictamente necesario)
