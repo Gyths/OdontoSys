@@ -1,0 +1,16 @@
+pe\pucp\edu\odontosys\webapplication\resources\JakartaEE10Resource.class
+pe\pucp\edu\odontosys\webapplication\JakartaRestConfiguration.class
+pe\pucp\edu\odontosys\webapplication\RecepcionistaWA.class
+pe\pucp\edu\odontosys\webapplication\EspecialidadWA.class
+pe\pucp\edu\odontosys\webapplication\TipoDocumentoWA.class
+pe\pucp\edu\odontosys\webapplication\ValoracionWA.class
+pe\pucp\edu\odontosys\webapplication\MetodoPagoWA.class
+pe\pucp\edu\odontosys\webapplication\SalaWA.class
+pe\pucp\edu\odontosys\webapplication\ComprobanteWA.class
+pe\pucp\edu\odontosys\webapplication\TurnoXOdontologoWA.class
+pe\pucp\edu\odontosys\webapplication\CitaWA.class
+pe\pucp\edu\odontosys\webapplication\TurnoWA.class
+pe\pucp\edu\odontosys\webapplication\DetalleTratamientoWA.class
+pe\pucp\edu\odontosys\webapplication\PacienteWA.class
+pe\pucp\edu\odontosys\webapplication\TratamientoWA.class
+pe\pucp\edu\odontosys\webapplication\OdontologoWA.class
