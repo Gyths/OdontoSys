@@ -1,0 +1,780 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EEF8505A-32C1-4A13-8E80-774A7D834BA9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OdontoSysWebApplication</RootNamespace>
+    <AssemblyName>OdontoSysWebApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CitaWS\CitaWA.wsdl" />
+    <None Include="Connected Services\CitaWS\CitaWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CitaWS\CitaWA1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.booleanArray.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_actualizarFkValoracionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_calcularDisponibilidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoFechasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_listarPorRecepcionistaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ComprobanteWS\ComprobanteWA.wsdl" />
+    <None Include="Connected Services\ComprobanteWS\ComprobanteWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CitaWS\configuration91.svcinfo" />
+    <None Include="Connected Services\CitaWS\configuration.svcinfo" />
+    <None Include="Connected Services\CitaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_actualizarTotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_modificaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\DetalleTratamientoWS\DetalleTratamientoWA.wsdl" />
+    <None Include="Connected Services\DetalleTratamientoWS\DetalleTratamientoWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\DetalleTratamientoWS\OdontoSysWebApplication.DetalleTratamientoWS.detalleTratamiento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\DetalleTratamientoWS\OdontoSysWebApplication.DetalleTratamientoWS.detalleTratamiento_actualizarSubtotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\DetalleTratamientoWS\OdontoSysWebApplication.DetalleTratamientoWS.detalleTratamiento_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\DetalleTratamientoWS\OdontoSysWebApplication.DetalleTratamientoWS.detalleTratamiento_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\DetalleTratamientoWS\OdontoSysWebApplication.DetalleTratamientoWS.detalleTratamiento_listarPorCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\DetalleTratamientoWS\OdontoSysWebApplication.DetalleTratamientoWS.detalleTratamiento_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\DetalleTratamientoWS\OdontoSysWebApplication.DetalleTratamientoWS.detalleTratamiento_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\DetalleTratamientoWS\OdontoSysWebApplication.DetalleTratamientoWS.detalleTratamiento_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\EspecialidadWS\configuration91.svcinfo" />
+    <None Include="Connected Services\EspecialidadWS\configuration.svcinfo" />
+    <None Include="Connected Services\ComprobanteWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ComprobanteWS\configuration.svcinfo" />
+    <None Include="Connected Services\ComprobanteWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\DetalleTratamientoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\DetalleTratamientoWS\configuration.svcinfo" />
+    <None Include="Connected Services\DetalleTratamientoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\EspecialidadWS\OdontoSysWebApplication.EspecialidadWS.especialidad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\EspecialidadWS\OdontoSysWebApplication.EspecialidadWS.especialidad_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\EspecialidadWS\OdontoSysWebApplication.EspecialidadWS.especialidad_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\EspecialidadWS\OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\EspecialidadWS\OdontoSysWebApplication.EspecialidadWS.especialidad_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\EspecialidadWS\OdontoSysWebApplication.EspecialidadWS.especialidad_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\EspecialidadWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\MetodoPagoWS\MetodoPagoWA.wsdl" />
+    <None Include="Connected Services\MetodoPagoWS\MetodoPagoWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\MetodoPagoWS\OdontoSysWebApplication.MetodoPagoWS.metodoPago.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\MetodoPagoWS\OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\MetodoPagoWS\OdontoSysWebApplication.MetodoPagoWS.metodoPago_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\MetodoPagoWS\OdontoSysWebApplication.MetodoPagoWS.metodoPago_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\MetodoPagoWS\OdontoSysWebApplication.MetodoPagoWS.metodoPago_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\MetodoPagoWS\OdontoSysWebApplication.MetodoPagoWS.metodoPago_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\OdontologoWS\OdontologoWA.wsdl" />
+    <None Include="Connected Services\OdontologoWS\OdontologoWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_actualizarPuntuacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_listarPorEspecialidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\PacienteWS\configuration91.svcinfo" />
+    <None Include="Connected Services\PacienteWS\configuration.svcinfo" />
+    <None Include="Connected Services\OdontologoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\OdontologoWS\configuration.svcinfo" />
+    <None Include="Connected Services\OdontologoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_obtenerPorUsuarioContrasenhaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\PacienteWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\RecepcionistaWS\OdontoSysWebApplication.RecepcionistaWS.recepcionista.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RecepcionistaWS\OdontoSysWebApplication.RecepcionistaWS.recepcionista_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RecepcionistaWS\OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RecepcionistaWS\OdontoSysWebApplication.RecepcionistaWS.recepcionista_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RecepcionistaWS\OdontoSysWebApplication.RecepcionistaWS.recepcionista_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RecepcionistaWS\OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RecepcionistaWS\OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorUsuarioContrasenhaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\PacienteWS\PacienteWA.wsdl" />
+    <None Include="Connected Services\PacienteWS\PacienteWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RecepcionistaWS\RecepcionistaWA.wsdl" />
+    <None Include="Connected Services\RecepcionistaWS\RecepcionistaWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SalaWS\configuration91.svcinfo" />
+    <None Include="Connected Services\SalaWS\configuration.svcinfo" />
+    <None Include="Connected Services\MetodoPagoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\MetodoPagoWS\configuration.svcinfo" />
+    <None Include="Connected Services\MetodoPagoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\RecepcionistaWS\configuration91.svcinfo" />
+    <None Include="Connected Services\RecepcionistaWS\configuration.svcinfo" />
+    <None Include="Connected Services\RecepcionistaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\SalaWS\OdontoSysWebApplication.SalaWS.sala.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\SalaWS\OdontoSysWebApplication.SalaWS.sala_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\SalaWS\OdontoSysWebApplication.SalaWS.sala_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\SalaWS\OdontoSysWebApplication.SalaWS.sala_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\SalaWS\OdontoSysWebApplication.SalaWS.sala_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\SalaWS\OdontoSysWebApplication.SalaWS.sala_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\SalaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\TipoDocumentoWS\OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TipoDocumentoWS\OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TipoDocumentoWS\OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TipoDocumentoWS\OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TipoDocumentoWS\OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TipoDocumentoWS\OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\TipoDocumentoWS\TipoDocumentoWA.wsdl" />
+    <None Include="Connected Services\TipoDocumentoWS\TipoDocumentoWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\TratamientoWS\OdontoSysWebApplication.TratamientoWS.tratamiento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TratamientoWS\OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TratamientoWS\OdontoSysWebApplication.TratamientoWS.tratamiento_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TratamientoWS\OdontoSysWebApplication.TratamientoWS.tratamiento_listarPorEspecilidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TratamientoWS\OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TratamientoWS\OdontoSysWebApplication.TratamientoWS.tratamiento_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TratamientoWS\OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\TratamientoWS\TratamientoWA.wsdl" />
+    <None Include="Connected Services\TratamientoWS\TratamientoWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\TurnoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\TurnoWS\configuration.svcinfo" />
+    <None Include="Connected Services\TratamientoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\TratamientoWS\configuration.svcinfo" />
+    <None Include="Connected Services\TratamientoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\TurnoWS\OdontoSysWebApplication.TurnoWS.turno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TurnoWS\OdontoSysWebApplication.TurnoWS.turno_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TurnoWS\OdontoSysWebApplication.TurnoWS.turno_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TurnoWS\OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TurnoWS\OdontoSysWebApplication.TurnoWS.turno_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TurnoWS\OdontoSysWebApplication.TurnoWS.turno_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TurnoWS\OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\TurnoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\TurnoXOdontologoWS\OdontoSysWebApplication.TurnoXOdontologoWS.turnoXOdontologo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TurnoXOdontologoWS\OdontoSysWebApplication.TurnoXOdontologoWS.turnoXOdontologo_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TurnoXOdontologoWS\OdontoSysWebApplication.TurnoXOdontologoWS.turnoXOdontologo_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TurnoXOdontologoWS\OdontoSysWebApplication.TurnoXOdontologoWS.turnoXOdontologo_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\TurnoXOdontologoWS\OdontoSysWebApplication.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\TurnoWS\TurnoWA.wsdl" />
+    <None Include="Connected Services\TurnoWS\TurnoWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\TurnoXOdontologoWS\TurnoXOdontologoWA.wsdl" />
+    <None Include="Connected Services\TurnoXOdontologoWS\TurnoXOdontologoWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ValoracionWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ValoracionWS\configuration.svcinfo" />
+    <None Include="Connected Services\TipoDocumentoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\TipoDocumentoWS\configuration.svcinfo" />
+    <None Include="Connected Services\TipoDocumentoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\TurnoXOdontologoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\TurnoXOdontologoWS\configuration.svcinfo" />
+    <None Include="Connected Services\TurnoXOdontologoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\ValoracionWS\OdontoSysWebApplication.ValoracionWS.valoracion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ValoracionWS\OdontoSysWebApplication.ValoracionWS.valoracion_eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ValoracionWS\OdontoSysWebApplication.ValoracionWS.valoracion_insertarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ValoracionWS\OdontoSysWebApplication.ValoracionWS.valoracion_listarPorOdontologoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ValoracionWS\OdontoSysWebApplication.ValoracionWS.valoracion_listarPorPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ValoracionWS\OdontoSysWebApplication.ValoracionWS.valoracion_listarTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ValoracionWS\OdontoSysWebApplication.ValoracionWS.valoracion_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ValoracionWS\OdontoSysWebApplication.ValoracionWS.valoracion_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ValoracionWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Fonts\css\all.css" />
+    <Content Include="Content\Fonts\css\all.min.css" />
+    <Content Include="Content\Fonts\css\brands.css" />
+    <Content Include="Content\Fonts\css\brands.min.css" />
+    <Content Include="Content\Fonts\css\fontawesome.css" />
+    <Content Include="Content\Fonts\css\fontawesome.min.css" />
+    <Content Include="Content\Fonts\css\regular.css" />
+    <Content Include="Content\Fonts\css\regular.min.css" />
+    <Content Include="Content\Fonts\css\solid.css" />
+    <Content Include="Content\Fonts\css\solid.min.css" />
+    <Content Include="Content\Fonts\css\svg-with-js.css" />
+    <Content Include="Content\Fonts\css\svg-with-js.min.css" />
+    <Content Include="Content\Fonts\css\v4-font-face.css" />
+    <Content Include="Content\Fonts\css\v4-font-face.min.css" />
+    <Content Include="Content\Fonts\css\v4-shims.css" />
+    <Content Include="Content\Fonts\css\v4-shims.min.css" />
+    <Content Include="Content\Fonts\css\v5-font-face.css" />
+    <Content Include="Content\Fonts\css\v5-font-face.min.css" />
+    <Content Include="Content\Fonts\LICENSE.txt" />
+    <Content Include="crearCuenta.aspx" />
+    <Content Include="home.aspx" />
+    <Content Include="Images\crearCuenta\fondo.png" />
+    <Content Include="Images\home\fondo.png" />
+    <Content Include="Images\inicioSesion\fondo.png" />
+    <Content Include="Images\logo\horizontal.png" />
+    <Content Include="inicioSesion.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Fonts\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-v4compatibility.woff2" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Web.config" />
+    <None Include="Connected Services\SalaWS\SalaWA.wsdl" />
+    <None Include="Connected Services\SalaWS\SalaWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ValoracionWS\ValoracionWA.wsdl" />
+    <None Include="Connected Services\ValoracionWS\ValoracionWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Paciente.Master" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\CitaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ComprobanteWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\DetalleTratamientoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\EspecialidadWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\MetodoPagoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\OdontologoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PacienteWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\RecepcionistaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SalaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\TipoDocumentoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\TratamientoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\TurnoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\TurnoXOdontologoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ValoracionWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="crearCuenta.aspx.cs">
+      <DependentUpon>crearCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="crearCuenta.aspx.designer.cs">
+      <DependentUpon>crearCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inicioSesion.aspx.cs">
+      <DependentUpon>inicioSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inicioSesion.aspx.designer.cs">
+      <DependentUpon>inicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OdontoSysBusiness\CitaBO.cs" />
+    <Compile Include="OdontoSysBusiness\ComprobanteBO.cs" />
+    <Compile Include="OdontoSysBusiness\DetalleTratamientoBO.cs" />
+    <Compile Include="OdontoSysBusiness\EspecialidadBO.cs" />
+    <Compile Include="OdontoSysBusiness\MetodoPagoBO.cs" />
+    <Compile Include="OdontoSysBusiness\OdontologoBO.cs" />
+    <Compile Include="OdontoSysBusiness\PacienteBO.cs" />
+    <Compile Include="OdontoSysBusiness\RecepcionistaBO.cs" />
+    <Compile Include="OdontoSysBusiness\SalaBO.cs" />
+    <Compile Include="OdontoSysBusiness\TipoDocumento.cs" />
+    <Compile Include="OdontoSysBusiness\TratamientoBO.cs" />
+    <Compile Include="OdontoSysBusiness\TurnoBO.cs" />
+    <Compile Include="OdontoSysBusiness\TurnoXOdontologoBO.cs" />
+    <Compile Include="OdontoSysBusiness\ValoracionBO.cs" />
+    <Compile Include="Paciente.Master.cs">
+      <DependentUpon>Paciente.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente.Master.designer.cs">
+      <DependentUpon>Paciente.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Xtras\PasswordHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EspecialidadWS\EspecialidadWA.wsdl" />
+    <None Include="Connected Services\EspecialidadWS\EspecialidadWA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\CitaWS\" />
+    <WCFMetadataStorage Include="Connected Services\ComprobanteWS\" />
+    <WCFMetadataStorage Include="Connected Services\DetalleTratamientoWS\" />
+    <WCFMetadataStorage Include="Connected Services\EspecialidadWS\" />
+    <WCFMetadataStorage Include="Connected Services\MetodoPagoWS\" />
+    <WCFMetadataStorage Include="Connected Services\OdontologoWS\" />
+    <WCFMetadataStorage Include="Connected Services\PacienteWS\" />
+    <WCFMetadataStorage Include="Connected Services\RecepcionistaWS\" />
+    <WCFMetadataStorage Include="Connected Services\SalaWS\" />
+    <WCFMetadataStorage Include="Connected Services\TipoDocumentoWS\" />
+    <WCFMetadataStorage Include="Connected Services\TratamientoWS\" />
+    <WCFMetadataStorage Include="Connected Services\TurnoWS\" />
+    <WCFMetadataStorage Include="Connected Services\TurnoXOdontologoWS\" />
+    <WCFMetadataStorage Include="Connected Services\ValoracionWS\" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53092</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53092/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
