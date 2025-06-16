@@ -1,13 +1,12 @@
 package pe.pucp.edu.odontosys.services.model;
 
-import java.time.LocalDate;
 
 public class Valoracion {
     
     private Integer idValoracion;
     private String comentario;
     private Integer calicicacion;
-    private LocalDate fechaCalificacion;
+    private String fechaCalificacion;
 
     public Valoracion() {
     }
@@ -36,11 +35,11 @@ public class Valoracion {
         this.calicicacion = calicicacion;
     }
 
-    public LocalDate getFechaCalificacion() {
+    public String getFechaCalificacion() {
         return fechaCalificacion;
     }
 
-    public void setFechaCalificacion(LocalDate fechaCalificacion) {
+    public void setFechaCalificacion(String fechaCalificacion) {
         this.fechaCalificacion = fechaCalificacion;
     }
     

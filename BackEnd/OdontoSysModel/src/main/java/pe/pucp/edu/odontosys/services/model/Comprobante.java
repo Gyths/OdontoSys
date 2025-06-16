@@ -1,14 +1,12 @@
 package pe.pucp.edu.odontosys.services.model;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import pe.pucp.edu.odontosys.infrastructure.model.MetodoPago;
 
 public class Comprobante {
     
     private Integer idComprobante;
-    private LocalDate fechaEmision;
-    private LocalTime horaEmision;
+    private String fechaEmision;
+    private String horaEmision;
     private String numeroDocumento;
     private double total;
     private MetodoPago metodoDePago;
@@ -25,19 +23,19 @@ public class Comprobante {
         this.idComprobante = idComprobante;
     }
 
-    public LocalDate getFechaEmision() {
+    public String getFechaEmision() {
         return fechaEmision;
     }
 
-    public void setFechaEmision(LocalDate fechaEmision) {
+    public void setFechaEmision(String fechaEmision) {
         this.fechaEmision = fechaEmision;
     }
 
-    public LocalTime getHoraEmision() {
+    public String getHoraEmision() {
         return horaEmision;
     }
 
-    public void setHoraEmision(LocalTime horaEmision) {
+    public void setHoraEmision(String horaEmision) {
         this.horaEmision = horaEmision;
     }
 

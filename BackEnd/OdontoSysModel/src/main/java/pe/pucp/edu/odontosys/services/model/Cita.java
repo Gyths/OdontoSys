@@ -1,7 +1,5 @@
 package pe.pucp.edu.odontosys.services.model;
 
-import java.time.LocalTime;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 import pe.pucp.edu.odontosys.users.model.Odontologo;
@@ -11,8 +9,8 @@ import pe.pucp.edu.odontosys.users.model.Recepcionista;
 public class Cita {
     
     private Integer idCita;
-    private LocalDate fecha;
-    private LocalTime horaInicio;
+    private String fecha;
+    private String horaInicio;
     private Valoracion valoracion;
     private EstadoCita estado;
     private Odontologo odontologo;
@@ -38,19 +36,19 @@ public class Cita {
         this.idCita = idCita;
     }
 
-    public LocalDate getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-    public LocalTime getHoraInicio() {
+    public String getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
+    public void setHoraInicio(String horaInicio) {
         this.horaInicio = horaInicio;
     }
 
