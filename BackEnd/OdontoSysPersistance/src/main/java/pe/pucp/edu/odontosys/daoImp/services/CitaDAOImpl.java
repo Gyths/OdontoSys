@@ -43,8 +43,8 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
         this.statement.setInt(2, this.cita.getRecepcionista().getIdRecepcionista());
         this.statement.setInt(3, this.cita.getOdontologo().getIdOdontologo());
         this.statement.setInt(4, this.cita.getComprobante().getIdComprobante());
-        this.statement.setObject(5, this.cita.getFecha());
-        this.statement.setObject(6,this.cita.getHoraInicio());
+        this.statement.setObject(5, LocalDate.parse(this.cita.getFecha()));
+        this.statement.setObject(6,LocalTime.parse(this.cita.getHoraInicio()));
         this.statement.setDouble(7,this.cita.getValoracion().getIdValoracion());
         this.statement.setString(8, this.cita.getEstado().name());
     }
@@ -55,8 +55,8 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
         this.statement.setInt(2, this.cita.getRecepcionista().getIdRecepcionista());
         this.statement.setInt(3, this.cita.getOdontologo().getIdOdontologo());
         this.statement.setInt(4, this.cita.getComprobante().getIdComprobante());
-        this.statement.setObject(5, this.cita.getFecha());
-        this.statement.setObject(6,this.cita.getHoraInicio());
+        this.statement.setObject(5, LocalDate.parse(this.cita.getFecha()));
+        this.statement.setObject(6,LocalTime.parse(this.cita.getHoraInicio()));
         this.statement.setDouble(7,this.cita.getValoracion().getIdValoracion());
         this.statement.setString(8, this.cita.getEstado().name());
         this.statement.setInt(9, this.cita.getIdCita());
@@ -80,8 +80,8 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
         this.cita.getRecepcionista().setIdRecepcionista(this.resultSet.getInt("RECEPCIONISTA_ID"));
         this.cita.getOdontologo().setIdOdontologo(this.resultSet.getInt("ODONTOLOGO_ID"));
         this.cita.getComprobante().setIdComprobante(this.resultSet.getInt("COMPROBANTE_ID"));
-        this.cita.setFecha(this.resultSet.getObject("FECHA",LocalDate.class));
-        this.cita.setHoraInicio(this.resultSet.getObject("HORA_INICIO",LocalTime.class));
+        this.cita.setFecha(this.resultSet.getObject("FECHA").toString());
+        this.cita.setHoraInicio(this.resultSet.getObject("HORA_INICIO").toString());
         this.cita.getValoracion().setIdValoracion(this.resultSet.getInt("VALORACION_ID"));
         this.cita.setEstado(EstadoCita.valueOf(this.resultSet.getString("ESTADO")));
     }
@@ -129,9 +129,9 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     }
     
     @Override
-    public ArrayList<Cita> listarPorOdontologoFechas(Odontologo odontologo, LocalDate fechaInicio, LocalDate fechaFin){
+    public ArrayList<Cita> listarPorOdontologoFechas(Odontologo odontologo, String fechaInicio, String fechaFin){
         String sql = "CALL CITAS_listar_por_odontologo_fechas(?, ?, ?);"; 
-        return (ArrayList<Cita>) ejecutarStoredProcedureLista(sql, odontologo.getIdOdontologo(), fechaInicio, fechaFin);
+        return (ArrayList<Cita>) ejecutarStoredProcedureLista(sql, odontologo.getIdOdontologo(), LocalDate.parse(fechaInicio), LocalDate.parse(fechaFin));
     }
     
     @Override

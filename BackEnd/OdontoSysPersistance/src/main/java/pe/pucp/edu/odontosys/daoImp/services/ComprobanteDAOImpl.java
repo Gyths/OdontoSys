@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import pe.pucp.edu.odontosys.dao.services.ComprobanteDAO;
 import pe.pucp.edu.odontosys.daoImp.DAOImplBase;
@@ -35,16 +37,16 @@ public class ComprobanteDAOImpl extends DAOImplBase implements ComprobanteDAO{
     @Override
     protected void incluirValorDeParametrosParaInsercion() throws SQLException{
         this.statement.setInt(1, this.comprobante.getMetodoDePago().getIdMetodoPago());
-        this.statement.setDate(2, Date.valueOf(this.comprobante.getFechaEmision()));
-        this.statement.setTime(3, Time.valueOf(this.comprobante.getHoraEmision()));
+        this.statement.setObject(2, LocalDate.parse(this.comprobante.getFechaEmision()));
+        this.statement.setObject(3, LocalTime.parse(this.comprobante.getHoraEmision()));
         this.statement.setDouble(4, this.comprobante.getTotal());
     }
     
     @Override
     protected void incluirValorDeParametrosParaModificacion() throws SQLException{ 
         this.statement.setInt(1, this.comprobante.getMetodoDePago().getIdMetodoPago());
-        this.statement.setDate(2, Date.valueOf(this.comprobante.getFechaEmision()));
-        this.statement.setTime(3, Time.valueOf(this.comprobante.getHoraEmision()));
+        this.statement.setObject(2, LocalDate.parse(this.comprobante.getFechaEmision()));
+        this.statement.setObject(3, LocalTime.parse(this.comprobante.getHoraEmision()));
         this.statement.setDouble(4, this.comprobante.getTotal());
         this.statement.setInt(5, this.comprobante.getIdComprobante());
     }
@@ -64,8 +66,8 @@ public class ComprobanteDAOImpl extends DAOImplBase implements ComprobanteDAO{
         this.comprobante = new Comprobante();
         this.comprobante.setIdComprobante(this.resultSet.getInt("COMPROBANTE_ID"));
         this.comprobante.getMetodoDePago().setIdMetodoPago(this.resultSet.getInt("METODO_PAGO_ID"));
-        this.comprobante.setFechaEmision(this.resultSet.getDate("FECHA_EMISION").toLocalDate());
-        this.comprobante.setHoraEmision(this.resultSet.getTime("HORA_EMISION").toLocalTime());
+        this.comprobante.setFechaEmision(this.resultSet.getObject("FECHA_EMISION").toString());
+        this.comprobante.setHoraEmision(this.resultSet.getObject("HORA_EMISION").toString());
         this.comprobante.setTotal(this.resultSet.getDouble("TOTAL")); 
     }
     

@@ -1,12 +1,13 @@
 package pe.pucp.edu.odontosys.infrastructure.model;
 
-import java.time.LocalTime;
-
 public class Turno {
     
     private Integer idTurno;
-    private LocalTime horaInicio;
-    private LocalTime horaFin;
+    
+    private String horaInicio;
+    
+    private String horaFin;
+    
     private DiaSemana diaSemana;
 
     public Turno() {
@@ -20,19 +21,19 @@ public class Turno {
         this.idTurno = idTurno;
     }
 
-    public LocalTime getHoraInicio() {
+    public String getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
+    public void setHoraInicio(String horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public LocalTime getHoraFin() {
+    public String getHoraFin() {
         return horaFin;
     }
 
-    public void setHoraFin(LocalTime horaFin) {
+    public void setHoraFin(String horaFin) {
         this.horaFin = horaFin;
     }
 

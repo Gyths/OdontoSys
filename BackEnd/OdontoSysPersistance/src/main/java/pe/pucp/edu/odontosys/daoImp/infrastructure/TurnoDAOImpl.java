@@ -3,6 +3,7 @@ package pe.pucp.edu.odontosys.daoImp.infrastructure;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.List;
 
 import pe.pucp.edu.odontosys.dao.infrastructure.TurnoDAO;
@@ -32,15 +33,15 @@ public class TurnoDAOImpl extends DAOImplBase implements TurnoDAO{
     
     @Override
     protected void incluirValorDeParametrosParaInsercion() throws SQLException{
-        this.statement.setTime(1,Time.valueOf(this.turno.getHoraInicio()));
-        this.statement.setTime(2,Time.valueOf(this.turno.getHoraFin()));
+        this.statement.setObject(1,LocalTime.parse(this.turno.getHoraInicio()));
+        this.statement.setObject(2,LocalTime.parse(this.turno.getHoraFin()));
         this.statement.setString(3,this.turno.getDiaSemana().name());
     }
     
     @Override
     protected void incluirValorDeParametrosParaModificacion() throws SQLException{ 
-        this.statement.setTime(1,Time.valueOf(this.turno.getHoraInicio()));
-        this.statement.setTime(2,Time.valueOf(this.turno.getHoraFin()));
+        this.statement.setObject(1,LocalTime.parse(this.turno.getHoraInicio()));
+        this.statement.setObject(2,LocalTime.parse(this.turno.getHoraFin()));
         this.statement.setString(3,this.turno.getDiaSemana().name());
         this.statement.setInt(4, this.turno.getIdTurno()); 
     }
@@ -59,8 +60,8 @@ public class TurnoDAOImpl extends DAOImplBase implements TurnoDAO{
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.turno = new Turno();
         this.turno.setIdTurno(this.resultSet.getInt("TURNO_ID"));
-        this.turno.setHoraInicio(this.resultSet.getTime("HORA_INICIO").toLocalTime());
-        this.turno.setHoraFin(this.resultSet.getTime("HORA_FIN").toLocalTime());
+        this.turno.setHoraInicio(this.resultSet.getObject("HORA_INICIO").toString());
+        this.turno.setHoraFin(this.resultSet.getObject("HORA_FIN").toString());
         this.turno.setDiaSemana(DiaSemana.valueOf(this.resultSet.getString("DIA_SEMANA")));
     }
     

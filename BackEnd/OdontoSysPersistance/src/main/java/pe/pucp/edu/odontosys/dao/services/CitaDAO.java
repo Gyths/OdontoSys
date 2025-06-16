@@ -14,7 +14,7 @@ public interface CitaDAO{
     Integer eliminar(Cita cita);
     Cita obtenerPorId(Integer id);
     ArrayList<Cita> listarTodos();
-    ArrayList<Cita> listarPorOdontologoFechas(Odontologo odontologo,LocalDate fechaInicio,LocalDate fechaFin);
+    ArrayList<Cita> listarPorOdontologoFechas(Odontologo odontologo, String fechaInicio, String fechaFin);
     ArrayList<Cita> listarPorOdontologo(Odontologo odontologo);
     ArrayList<Cita> listarPorPaciente(Paciente paciente);
     ArrayList<Cita> listarPorRecepcionista(Recepcionista recepcionista);

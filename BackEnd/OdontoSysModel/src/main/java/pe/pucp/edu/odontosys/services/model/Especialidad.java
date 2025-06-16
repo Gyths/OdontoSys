@@ -11,7 +11,7 @@ public class Especialidad {
         return idEspecialidad;
     }
 
-    public void setIdEspecialidad(int idEspecialidad) {
+    public void setIdEspecialidad(Integer idEspecialidad) {
         this.idEspecialidad = idEspecialidad;
     }
 

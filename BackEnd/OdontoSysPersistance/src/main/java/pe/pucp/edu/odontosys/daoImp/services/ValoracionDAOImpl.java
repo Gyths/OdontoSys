@@ -36,14 +36,14 @@ public class ValoracionDAOImpl extends DAOImplBase implements ValoracionDAO{
     protected void incluirValorDeParametrosParaInsercion() throws SQLException{
         this.statement.setString(1, this.valoracion.getComentario());
         this.statement.setInt(2, this.valoracion.getCalicicacion());
-        this.statement.setObject(3, this.valoracion.getFechaCalificacion());
+        this.statement.setObject(3, LocalDate.parse(this.valoracion.getFechaCalificacion()));
     }
     
     @Override
     protected void incluirValorDeParametrosParaModificacion() throws SQLException{ 
         this.statement.setString(1, this.valoracion.getComentario());
         this.statement.setInt(2, this.valoracion.getCalicicacion());
-        this.statement.setObject(3, this.valoracion.getFechaCalificacion());
+        this.statement.setObject(3, LocalDate.parse(this.valoracion.getFechaCalificacion()));
         this.statement.setInt(4, this.valoracion.getIdValoracion());
     }
     
@@ -63,7 +63,7 @@ public class ValoracionDAOImpl extends DAOImplBase implements ValoracionDAO{
         this.valoracion.setIdValoracion(this.resultSet.getInt("VALORACION_ID"));
         this.valoracion.setComentario(this.resultSet.getString("COMENTARIO"));
         this.valoracion.setCalicicacion(this.resultSet.getInt("CALIFICACION"));
-        this.valoracion.setFechaCalificacion(this.resultSet.getObject("FECHA", LocalDate.class));
+        this.valoracion.setFechaCalificacion(this.resultSet.getObject("FECHA").toString());
     }
     
     @Override
