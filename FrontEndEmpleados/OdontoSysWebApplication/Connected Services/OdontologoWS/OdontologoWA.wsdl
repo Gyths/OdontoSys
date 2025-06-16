@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webapplication.odontosys.edu.pucp.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="OdontologoWA" targetNamespace="http://webapplication.odontosys.edu.pucp.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/OdontologoWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="odontologo_actualizarPuntuacion">
+    <part name="parameters" element="tns:odontologo_actualizarPuntuacion" />
+  </message>
+  <message name="odontologo_actualizarPuntuacionResponse">
+    <part name="parameters" element="tns:odontologo_actualizarPuntuacionResponse" />
+  </message>
+  <message name="odontologo_listarPorEspecialidad">
+    <part name="parameters" element="tns:odontologo_listarPorEspecialidad" />
+  </message>
+  <message name="odontologo_listarPorEspecialidadResponse">
+    <part name="parameters" element="tns:odontologo_listarPorEspecialidadResponse" />
+  </message>
+  <message name="odontologo_insertar">
+    <part name="parameters" element="tns:odontologo_insertar" />
+  </message>
+  <message name="odontologo_insertarResponse">
+    <part name="parameters" element="tns:odontologo_insertarResponse" />
+  </message>
+  <message name="odontologo_modificar">
+    <part name="parameters" element="tns:odontologo_modificar" />
+  </message>
+  <message name="odontologo_modificarResponse">
+    <part name="parameters" element="tns:odontologo_modificarResponse" />
+  </message>
+  <message name="odontologo_listarTodos">
+    <part name="parameters" element="tns:odontologo_listarTodos" />
+  </message>
+  <message name="odontologo_listarTodosResponse">
+    <part name="parameters" element="tns:odontologo_listarTodosResponse" />
+  </message>
+  <message name="odontologo_eliminar">
+    <part name="parameters" element="tns:odontologo_eliminar" />
+  </message>
+  <message name="odontologo_eliminarResponse">
+    <part name="parameters" element="tns:odontologo_eliminarResponse" />
+  </message>
+  <message name="odontologo_obtenerPorId">
+    <part name="parameters" element="tns:odontologo_obtenerPorId" />
+  </message>
+  <message name="odontologo_obtenerPorIdResponse">
+    <part name="parameters" element="tns:odontologo_obtenerPorIdResponse" />
+  </message>
+  <message name="odontologo_obtenerPorUsuarioContrasenha">
+    <part name="parameters" element="tns:odontologo_obtenerPorUsuarioContrasenha" />
+  </message>
+  <message name="odontologo_obtenerPorUsuarioContrasenhaResponse">
+    <part name="parameters" element="tns:odontologo_obtenerPorUsuarioContrasenhaResponse" />
+  </message>
+  <portType name="OdontologoWA">
+    <operation name="odontologo_actualizarPuntuacion">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_actualizarPuntuacionRequest" message="tns:odontologo_actualizarPuntuacion" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_actualizarPuntuacionResponse" message="tns:odontologo_actualizarPuntuacionResponse" />
+    </operation>
+    <operation name="odontologo_listarPorEspecialidad">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarPorEspecialidadRequest" message="tns:odontologo_listarPorEspecialidad" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarPorEspecialidadResponse" message="tns:odontologo_listarPorEspecialidadResponse" />
+    </operation>
+    <operation name="odontologo_insertar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_insertarRequest" message="tns:odontologo_insertar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_insertarResponse" message="tns:odontologo_insertarResponse" />
+    </operation>
+    <operation name="odontologo_modificar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarRequest" message="tns:odontologo_modificar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarResponse" message="tns:odontologo_modificarResponse" />
+    </operation>
+    <operation name="odontologo_listarTodos">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarTodosRequest" message="tns:odontologo_listarTodos" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarTodosResponse" message="tns:odontologo_listarTodosResponse" />
+    </operation>
+    <operation name="odontologo_eliminar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarRequest" message="tns:odontologo_eliminar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarResponse" message="tns:odontologo_eliminarResponse" />
+    </operation>
+    <operation name="odontologo_obtenerPorId">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorIdRequest" message="tns:odontologo_obtenerPorId" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorIdResponse" message="tns:odontologo_obtenerPorIdResponse" />
+    </operation>
+    <operation name="odontologo_obtenerPorUsuarioContrasenha">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorUsuarioContrasenhaRequest" message="tns:odontologo_obtenerPorUsuarioContrasenha" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorUsuarioContrasenhaResponse" message="tns:odontologo_obtenerPorUsuarioContrasenhaResponse" />
+    </operation>
+  </portType>
+  <binding name="OdontologoWAPortBinding" type="tns:OdontologoWA">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="odontologo_actualizarPuntuacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="odontologo_listarPorEspecialidad">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="odontologo_insertar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="odontologo_modificar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="odontologo_listarTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="odontologo_eliminar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="odontologo_obtenerPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="odontologo_obtenerPorUsuarioContrasenha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="OdontologoWA">
+    <port name="OdontologoWAPort" binding="tns:OdontologoWAPortBinding">
+      <soap:address location="http://localhost:8080/OdontoSysWebApplication/OdontologoWA" />
+    </port>
+  </service>
+</definitions>

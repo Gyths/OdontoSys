@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="20c5f124-67e6-45a8-84e5-9615b35d4514" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication/CitaWA?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CitaWA.wsdl" MetadataType="Wsdl" ID="090bebd8-0c9c-4af4-9da3-3c6e7e40b049" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/CitaWA?wsdl" />
+    <MetadataFile FileName="CitaWA.xsd" MetadataType="Schema" ID="4e43f8d6-8e93-44fd-9807-9d32e509e725" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/CitaWA?xsd=1" />
+    <MetadataFile FileName="CitaWA1.xsd" MetadataType="Schema" ID="cec00631-ed2b-4e07-8ad9-b5516cc6355e" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/CitaWA?xsd=2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
