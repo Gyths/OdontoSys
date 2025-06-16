@@ -72,9 +72,4 @@ public class CitaWA {
         return this.citaBO.actualizarFkValoracion(cita, valoracion);
     }
 
-    @WebMethod(operationName = "cita_calcularDisponibilidad")
-    public boolean[][] cita_calcularDisponibilidad(@WebParam(name = "citas") ArrayList<Cita> citas, @WebParam(name = "turnos") ArrayList<Turno> turnos, @WebParam(name = "fechaInicio") String fechaInicio) {
-        return this.citaBO.calcularDisponibilidad(citas, turnos, fechaInicio);
-    }
-    
 }
