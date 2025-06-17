@@ -1,0 +1,2 @@
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.csproj.AssemblyReference.cache
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.csproj.CoreCompileInputs.cache

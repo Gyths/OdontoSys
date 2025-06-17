@@ -5,7 +5,6 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using OdontoSysWebApplication.OdontoSysBusiness;
 using OdontoSysWebApplication.Xtras;
 
 namespace OdontoSysWebApplication

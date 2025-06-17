@@ -689,20 +689,6 @@
     <Compile Include="inicioSesion.aspx.designer.cs">
       <DependentUpon>inicioSesion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OdontoSysBusiness\CitaBO.cs" />
-    <Compile Include="OdontoSysBusiness\ComprobanteBO.cs" />
-    <Compile Include="OdontoSysBusiness\DetalleTratamientoBO.cs" />
-    <Compile Include="OdontoSysBusiness\EspecialidadBO.cs" />
-    <Compile Include="OdontoSysBusiness\MetodoPagoBO.cs" />
-    <Compile Include="OdontoSysBusiness\OdontologoBO.cs" />
-    <Compile Include="OdontoSysBusiness\PacienteBO.cs" />
-    <Compile Include="OdontoSysBusiness\RecepcionistaBO.cs" />
-    <Compile Include="OdontoSysBusiness\SalaBO.cs" />
-    <Compile Include="OdontoSysBusiness\TipoDocumento.cs" />
-    <Compile Include="OdontoSysBusiness\TratamientoBO.cs" />
-    <Compile Include="OdontoSysBusiness\TurnoBO.cs" />
-    <Compile Include="OdontoSysBusiness\TurnoXOdontologoBO.cs" />
-    <Compile Include="OdontoSysBusiness\ValoracionBO.cs" />
     <Compile Include="Paciente.Master.cs">
       <DependentUpon>Paciente.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -711,7 +697,6 @@
       <DependentUpon>Paciente.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Xtras\PasswordHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\EspecialidadWS\EspecialidadWA.wsdl" />
@@ -744,7 +729,12 @@
     <WCFMetadataStorage Include="Connected Services\TurnoXOdontologoWS\" />
     <WCFMetadataStorage Include="Connected Services\ValoracionWS\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\OdontoSysBusiness\OdontoSysBusiness.csproj">
+      <Project>{3a6963e2-b29d-4e07-a53d-1bd2eef045db}</Project>
+      <Name>OdontoSysBusiness</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
