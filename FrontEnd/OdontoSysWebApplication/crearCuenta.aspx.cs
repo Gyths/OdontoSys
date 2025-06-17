@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
 using System.Text.RegularExpressions;
-using OdontoSysWebApplication.OdontoSysBusiness;
-using OdontoSysWebApplication.Xtras;
+using OdontoSysBusiness;
+using OdontoSysBusiness.Xtras;
 
 namespace OdontoSysWebApplication
 {
@@ -83,7 +83,7 @@ namespace OdontoSysWebApplication
         private void RegistrarPaciente(string usuario, string nombres, string apellidos, string telefono, string correo,
                                        string contrasena, string tipoDoc, string numDoc)
         {
-            var nuevoPaciente = new PacienteWS.paciente
+            var nuevoPaciente = new OdontoSysBusiness.PacienteWS.paciente
             {
                 nombreUsuario = usuario,
                 nombre = nombres,
@@ -91,7 +91,7 @@ namespace OdontoSysWebApplication
                 telefono = telefono,
                 correo = correo,
                 contrasenha = PasswordHelper.HashPassword(contrasena),
-                tipoDocumento = new PacienteWS.tipoDocumento
+                tipoDocumento = new OdontoSysBusiness.PacienteWS.tipoDocumento
                 {
                     idTipoDocumento = (tipoDoc == "DNI") ? 1 : 2,
                     idTipoDocumentoSpecified = true

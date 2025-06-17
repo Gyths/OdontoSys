@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using OdontoSysWebApplication.OdontoSysBusiness;
-using OdontoSysWebApplication.PacienteWS;
-using OdontoSysWebApplication.Xtras;
+using OdontoSysBusiness;
+using OdontoSysBusiness.Xtras;
 
 namespace OdontoSysWebApplication
 {

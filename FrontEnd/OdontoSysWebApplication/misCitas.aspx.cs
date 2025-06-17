@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
-using OdontoSysWebApplication.CitaWS;
-using OdontoSysWebApplication.OdontologoWS;
-using OdontoSysWebApplication.PacienteWS;
-using OdontoSysWebApplication.ValoracionWS;
+using OdontoSysBusiness.CitaWS;
+using OdontoSysBusiness.OdontologoWS;
+using OdontoSysBusiness.PacienteWS;
+using OdontoSysBusiness.ValoracionWS;
 
 namespace OdontoSysWebApplication
 {
@@ -17,13 +17,13 @@ namespace OdontoSysWebApplication
 
         private void CargarCitasPaciente()
         {
-            var paciente = (PacienteWS.paciente)Session["Paciente"];
+            var paciente = (OdontoSysBusiness.PacienteWS.paciente)Session["Paciente"];
             if (paciente == null) return;
 
             var clienteCita = new CitaWAClient();
             var clienteOdontologo = new OdontologoWAClient();
 
-            var pacienteCita = new CitaWS.paciente
+            var pacienteCita = new OdontoSysBusiness.CitaWS.paciente
             {
                 idPaciente = paciente.idPaciente,
                 idPacienteSpecified = true
@@ -80,7 +80,7 @@ namespace OdontoSysWebApplication
                 return;
             }
 
-            var valoracion = new ValoracionWS.valoracion
+            var valoracion = new OdontoSysBusiness.ValoracionWS.valoracion
             {
                 comentario = txtComentario.Text.Trim(),
                 calicicacion = int.Parse(ddlPuntaje.SelectedValue),
@@ -90,7 +90,7 @@ namespace OdontoSysWebApplication
             {
                 var clienteValoracion = new ValoracionWAClient();
                 int idV = clienteValoracion.valoracion_insertar(valoracion);
-                var valoracionCita = new CitaWS.valoracion
+                var valoracionCita = new OdontoSysBusiness.CitaWS.valoracion
                 {
                     idValoracion = idV
                 };
