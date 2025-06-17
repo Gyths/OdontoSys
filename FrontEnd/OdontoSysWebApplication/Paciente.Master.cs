@@ -11,7 +11,18 @@ namespace OdontoSysWebApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Página actual
+            string paginaActual = System.IO.Path.GetFileName(Request.Url.AbsolutePath);
 
+            // Páginas públicas
+            string[] paginasLibres = { "inicioSesion.aspx", "crearCuenta.aspx" };
+
+            // Si es página protegida y no hay sesión, redirige
+            bool requiereSesion = !paginasLibres.Contains(paginaActual, StringComparer.OrdinalIgnoreCase);
+            bool sesionInvalida = Session["Paciente"] == null;
+
+            if (requiereSesion && sesionInvalida)
+                Response.Redirect("~/inicioSesion.aspx");
         }
     }
 }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webapplication.odontosys.edu.pucp.pe/" targetNamespace="http://webapplication.odontosys.edu.pucp.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="especialidad_eliminar" type="tns:especialidad_eliminar" />
+  <xs:element name="especialidad_eliminarResponse" type="tns:especialidad_eliminarResponse" />
+  <xs:element name="especialidad_insertar" type="tns:especialidad_insertar" />
+  <xs:element name="especialidad_insertarResponse" type="tns:especialidad_insertarResponse" />
+  <xs:element name="especialidad_listarTodos" type="tns:especialidad_listarTodos" />
+  <xs:element name="especialidad_listarTodosResponse" type="tns:especialidad_listarTodosResponse" />
+  <xs:element name="especialidad_modificar" type="tns:especialidad_modificar" />
+  <xs:element name="especialidad_modificarResponse" type="tns:especialidad_modificarResponse" />
+  <xs:element name="especialidad_obtenerPorId" type="tns:especialidad_obtenerPorId" />
+  <xs:element name="especialidad_obtenerPorIdResponse" type="tns:especialidad_obtenerPorIdResponse" />
+  <xs:complexType name="especialidad_eliminar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="especialidad" type="tns:especialidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="especialidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idEspecialidad" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="especialidad_eliminarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="especialidad_insertar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="especialidad" type="tns:especialidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="especialidad_insertarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="especialidad_listarTodos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="especialidad_listarTodosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:especialidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="especialidad_obtenerPorId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="especialidad_obtenerPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:especialidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="especialidad_modificar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="especialidad" type="tns:especialidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="especialidad_modificarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

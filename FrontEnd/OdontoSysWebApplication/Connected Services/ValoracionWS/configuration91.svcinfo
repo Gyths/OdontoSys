@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="oyYzEowWyAU/rRdbk0KJBsDTl9qkfQlvsDrlvH6vEh4=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="oWXVVf0X72CDFsUfITbp8OLdA3Xbuf+mVKNZirNXJzY=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ValoracionWAPortBinding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ValoracionWAPort" contract="ValoracionWS.ValoracionWA" bindingType="basicHttpBinding" address="http://localhost:8080/OdontoSysWebApplication/ValoracionWA" bindingConfiguration="ValoracionWAPortBinding">
+    <endpoint name="ValoracionWAPort" contract="ValoracionWS.ValoracionWA" bindingType="basicHttpBinding" address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/ValoracionWA" bindingConfiguration="ValoracionWAPortBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8080/OdontoSysWebApplication/ValoracionWA</serializedValue>
+          <serializedValue>http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/ValoracionWA</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

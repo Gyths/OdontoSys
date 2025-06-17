@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication/RecepcionistaWA?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/RecepcionistaWA?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RecepcionistaWA.wsdl" MetadataType="Wsdl" ID="cef1da02-50f7-426e-8d07-4ef3a3e68098" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/RecepcionistaWA?wsdl" />
-    <MetadataFile FileName="RecepcionistaWA.xsd" MetadataType="Schema" ID="5defcdb3-1215-48fd-906d-92e5aad2c9fb" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/RecepcionistaWA?xsd=1" />
+    <MetadataFile FileName="RecepcionistaWA1.xsd" MetadataType="Schema" ID="64454ede-20cf-4c1c-8b96-e211e73f6ed2" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/RecepcionistaWA?xsd=1" />
+    <MetadataFile FileName="RecepcionistaWA1.wsdl" MetadataType="Wsdl" ID="a3ebc29d-e93a-4476-bad1-a2dc9262dc9d" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/RecepcionistaWA?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

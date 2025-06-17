@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication/OdontologoWA?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/OdontologoWA?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="OdontologoWA.xsd" MetadataType="Schema" ID="63aad8b9-3735-4b63-80c2-66a69728e004" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/OdontologoWA?xsd=1" />
-    <MetadataFile FileName="OdontologoWA.wsdl" MetadataType="Wsdl" ID="b56bd576-ec93-45dd-99c1-7854bb205081" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/OdontologoWA?wsdl" />
+    <MetadataFile FileName="OdontologoWA1.wsdl" MetadataType="Wsdl" ID="8fad683e-46d6-4921-b6d1-86c7190c20fb" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/OdontologoWA?wsdl" />
+    <MetadataFile FileName="OdontologoWA1.xsd" MetadataType="Schema" ID="f3e4f4da-ce84-4d88-a87b-1233ed746c33" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/OdontologoWA?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

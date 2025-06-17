@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication/TurnoXOdontologoWA?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/TurnoXOdontologoWA?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TurnoXOdontologoWA.xsd" MetadataType="Schema" ID="66ff977d-bb29-4efa-9410-c0243c5afc98" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/TurnoXOdontologoWA?xsd=1" />
-    <MetadataFile FileName="TurnoXOdontologoWA.wsdl" MetadataType="Wsdl" ID="56002f79-b8bc-4b4c-97cc-6d4e4f8b93ea" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/TurnoXOdontologoWA?wsdl" />
+    <MetadataFile FileName="TurnoXOdontologoWA1.wsdl" MetadataType="Wsdl" ID="fdcbde8b-dbbd-4f1f-9c12-5b6db82d8c26" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/TurnoXOdontologoWA?wsdl" />
+    <MetadataFile FileName="TurnoXOdontologoWA1.xsd" MetadataType="Schema" ID="f7f2e5c4-fbd9-4cc8-891c-9711b26a929a" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/TurnoXOdontologoWA?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

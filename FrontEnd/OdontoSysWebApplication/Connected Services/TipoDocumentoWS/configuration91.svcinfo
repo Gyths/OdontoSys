@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="aMpMSUzNsxUFsyMCYyCCWUvVrngch3mmiL29pVdU9tc=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="uGWBR3BvQbX8oPmbv83g7s9UzBBxng4zduwnHOp+810=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="TipoDocumentoWAPortBinding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="TipoDocumentoWAPort" contract="TipoDocumentoWS.TipoDocumentoWA" bindingType="basicHttpBinding" address="http://localhost:8080/OdontoSysWebApplication/TipoDocumentoWA" bindingConfiguration="TipoDocumentoWAPortBinding">
+    <endpoint name="TipoDocumentoWAPort" contract="TipoDocumentoWS.TipoDocumentoWA" bindingType="basicHttpBinding" address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/TipoDocumentoWA" bindingConfiguration="TipoDocumentoWAPortBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8080/OdontoSysWebApplication/TipoDocumentoWA</serializedValue>
+          <serializedValue>http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/TipoDocumentoWA</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -5,3 +5,10 @@ C:\Users\jared\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSys\OdontoSys
 C:\Users\jared\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSys\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.CoreCompileInputs.cache
 C:\Users\jared\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSys\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.dll
 C:\Users\jared\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSys\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.pdb
+C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysWebApplication\bin\OdontoSysWebApplication.dll.config
+C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysWebApplication\bin\OdontoSysWebApplication.dll
+C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysWebApplication\bin\OdontoSysWebApplication.pdb
+C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.AssemblyReference.cache
+C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.CoreCompileInputs.cache
+C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.dll
+C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.pdb

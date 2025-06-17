@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication/ValoracionWA?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/ValoracionWA?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ValoracionWA.wsdl" MetadataType="Wsdl" ID="3c5353ef-ff44-43d5-b723-f8ab4ef5f275" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/ValoracionWA?wsdl" />
-    <MetadataFile FileName="ValoracionWA.xsd" MetadataType="Schema" ID="cfe3c272-aec9-41e2-bc62-7b85570fa2e2" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/ValoracionWA?xsd=1" />
+    <MetadataFile FileName="ValoracionWA1.wsdl" MetadataType="Wsdl" ID="b1ddb520-fa96-492f-b23c-b370dfaa0ad0" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/ValoracionWA?wsdl" />
+    <MetadataFile FileName="ValoracionWA1.xsd" MetadataType="Schema" ID="c74d8485-b569-4bb8-925a-6515f6e41e61" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/ValoracionWA?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

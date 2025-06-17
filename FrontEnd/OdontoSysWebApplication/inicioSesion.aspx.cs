@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Text.RegularExpressions;  // <<< Asegúrate de importar esto
+using System.Text.RegularExpressions;
 using OdontoSysWebApplication.OdontoSysBusiness;
 using OdontoSysWebApplication.PacienteWS;
 using OdontoSysWebApplication.Xtras;
+
 namespace OdontoSysWebApplication
 {
     public partial class inicioSesion : System.Web.UI.Page
@@ -10,38 +11,44 @@ namespace OdontoSysWebApplication
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {
                 ltMensaje.Text = "";
-                // Si quisieras validación instantánea:
-                // txtContrasenha.AutoPostBack = true;
-                // txtContrasenha.TextChanged += TxtContrasenha_TextChanged;
-            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text.Trim();
-            string contrasena = txtContrasenha.Text.Trim();
+            string usuarioIngresado = txtUsuario.Text.Trim();
+            string contrasenaIngresada = txtContrasenha.Text.Trim();
 
-            // 1) Validación vacíos
-            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contrasena))
-            {
-                ShowError("Por favor, ingresa usuario y contraseña.");
+            if (!EsEntradaValida(usuarioIngresado, contrasenaIngresada))
                 return;
+
+            AutenticarPaciente(usuarioIngresado, contrasenaIngresada);
+        }
+
+        private bool EsEntradaValida(string usuario, string contrasena)
+        {
+            if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contrasena))
+            {
+                MostrarMensajeError("Por favor, ingresa usuario y contraseña.");
+                return false;
             }
 
-            // 2) Validación de sólo mayúsculas, minúsculas y números
             if (!Regex.IsMatch(contrasena, @"^[A-Za-z0-9]+$"))
             {
-                ShowError("La contraseña sólo puede contener letras y números (no caracteres especiales).");
-                return;
+                MostrarMensajeError("La contraseña solo puede contener letras y números.");
+                return false;
             }
 
+            return true;
+        }
+
+        private void AutenticarPaciente(string usuario, string contrasena)
+        {
             try
             {
-                // 3) Tu lógica de autenticación
-                PacienteBO bo = new PacienteBO();
-                var paciente = bo.paciente_obtenerPorUsuarioContrasenha(usuario, PasswordHelper.HashPassword(contrasena));
+                var logicaPaciente = new PacienteBO();
+                string contrasenaHasheada = PasswordHelper.HashPassword(contrasena);
+                var paciente = logicaPaciente.paciente_obtenerPorUsuarioContrasenha(usuario, contrasenaHasheada);
 
                 if (paciente != null && paciente.idPaciente > 0)
                 {
@@ -50,28 +57,16 @@ namespace OdontoSysWebApplication
                 }
                 else
                 {
-                    ShowError("Usuario o contraseña inválidos.");
+                    MostrarMensajeError("Usuario o contraseña inválidos.");
                 }
             }
-            catch (Exception)
+            catch
             {
-                ShowError("Ocurrió un error al conectarse con el servicio. Intenta más tarde.");
+                MostrarMensajeError("Ocurrió un error al conectarse con el servicio. Intenta más tarde.");
             }
         }
 
-        // (Opcional) Para validación al cambiar el texto sin hacer clic en el botón
-        /*
-        private void TxtContrasenha_TextChanged(object sender, EventArgs e)
-        {
-            string pwd = txtContrasenha.Text;
-            if (!Regex.IsMatch(pwd, @"^[A-Za-z0-9]+$"))
-                ShowError("Sólo se permiten letras y números en la contraseña.");
-            else
-                ltMensaje.Text = "";
-        }
-        */
-
-        private void ShowError(string mensaje)
+        private void MostrarMensajeError(string mensaje)
         {
             ltMensaje.Text = $"<div class='alert alert-danger'>{mensaje}</div>";
         }

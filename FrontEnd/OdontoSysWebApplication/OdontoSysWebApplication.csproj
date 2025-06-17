@@ -63,23 +63,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\CitaWS\CitaWA.wsdl" />
-    <None Include="Connected Services\CitaWS\CitaWA.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\CitaWS\CitaWA1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.booleanArray.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_actualizarFkValoracionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_calcularDisponibilidadResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_eliminarResponse.datasource">
@@ -109,8 +96,8 @@
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_obtenerPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\ComprobanteWS\ComprobanteWA.wsdl" />
-    <None Include="Connected Services\ComprobanteWS\ComprobanteWA.xsd">
+    <None Include="Connected Services\CitaWS\CitaWA1.wsdl" />
+    <None Include="Connected Services\CitaWS\CitaWA2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\CitaWS\configuration91.svcinfo" />
@@ -140,8 +127,8 @@
     <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_obtenerPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\DetalleTratamientoWS\DetalleTratamientoWA.wsdl" />
-    <None Include="Connected Services\DetalleTratamientoWS\DetalleTratamientoWA.xsd">
+    <None Include="Connected Services\ComprobanteWS\ComprobanteWA1.wsdl" />
+    <None Include="Connected Services\ComprobanteWS\ComprobanteWA1.xsd">
       <SubType>Designer</SubType>
     </None>
     <Content Include="Connected Services\DetalleTratamientoWS\OdontoSysWebApplication.DetalleTratamientoWS.detalleTratamiento.datasource">
@@ -168,6 +155,10 @@
     <Content Include="Connected Services\DetalleTratamientoWS\OdontoSysWebApplication.DetalleTratamientoWS.detalleTratamiento_obtenerPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\DetalleTratamientoWS\DetalleTratamientoWA1.wsdl" />
+    <None Include="Connected Services\DetalleTratamientoWS\DetalleTratamientoWA1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\EspecialidadWS\configuration91.svcinfo" />
     <None Include="Connected Services\EspecialidadWS\configuration.svcinfo" />
     <None Include="Connected Services\ComprobanteWS\configuration91.svcinfo" />
@@ -200,13 +191,13 @@
     <Content Include="Connected Services\EspecialidadWS\OdontoSysWebApplication.EspecialidadWS.especialidad_obtenerPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\EspecialidadWS\EspecialidadWA1.wsdl" />
+    <None Include="Connected Services\EspecialidadWS\EspecialidadWA1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\EspecialidadWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Connected Services\MetodoPagoWS\MetodoPagoWA.wsdl" />
-    <None Include="Connected Services\MetodoPagoWS\MetodoPagoWA.xsd">
-      <SubType>Designer</SubType>
     </None>
     <Content Include="Connected Services\MetodoPagoWS\OdontoSysWebApplication.MetodoPagoWS.metodoPago.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -226,8 +217,8 @@
     <Content Include="Connected Services\MetodoPagoWS\OdontoSysWebApplication.MetodoPagoWS.metodoPago_obtenerPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\OdontologoWS\OdontologoWA.wsdl" />
-    <None Include="Connected Services\OdontologoWS\OdontologoWA.xsd">
+    <None Include="Connected Services\MetodoPagoWS\MetodoPagoWA1.wsdl" />
+    <None Include="Connected Services\MetodoPagoWS\MetodoPagoWA1.xsd">
       <SubType>Designer</SubType>
     </None>
     <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo.datasource">
@@ -257,6 +248,10 @@
     <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\OdontologoWS\OdontologoWA1.wsdl" />
+    <None Include="Connected Services\OdontologoWS\OdontologoWA1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\PacienteWS\configuration91.svcinfo" />
     <None Include="Connected Services\PacienteWS\configuration.svcinfo" />
     <None Include="Connected Services\OdontologoWS\configuration91.svcinfo" />
@@ -286,6 +281,10 @@
     <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_obtenerPorUsuarioContrasenhaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\PacienteWS\PacienteWA1.wsdl" />
+    <None Include="Connected Services\PacienteWS\PacienteWA1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\PacienteWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -311,12 +310,8 @@
     <Content Include="Connected Services\RecepcionistaWS\OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorUsuarioContrasenhaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\PacienteWS\PacienteWA.wsdl" />
-    <None Include="Connected Services\PacienteWS\PacienteWA.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\RecepcionistaWS\RecepcionistaWA.wsdl" />
-    <None Include="Connected Services\RecepcionistaWS\RecepcionistaWA.xsd">
+    <None Include="Connected Services\RecepcionistaWS\RecepcionistaWA1.wsdl" />
+    <None Include="Connected Services\RecepcionistaWS\RecepcionistaWA1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\SalaWS\configuration91.svcinfo" />
@@ -373,8 +368,8 @@
     <Content Include="Connected Services\TipoDocumentoWS\OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_obtenerPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\TipoDocumentoWS\TipoDocumentoWA.wsdl" />
-    <None Include="Connected Services\TipoDocumentoWS\TipoDocumentoWA.xsd">
+    <None Include="Connected Services\SalaWS\SalaWA1.wsdl" />
+    <None Include="Connected Services\SalaWS\SalaWA1.xsd">
       <SubType>Designer</SubType>
     </None>
     <Content Include="Connected Services\TratamientoWS\OdontoSysWebApplication.TratamientoWS.tratamiento.datasource">
@@ -398,8 +393,12 @@
     <Content Include="Connected Services\TratamientoWS\OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\TratamientoWS\TratamientoWA.wsdl" />
-    <None Include="Connected Services\TratamientoWS\TratamientoWA.xsd">
+    <None Include="Connected Services\TipoDocumentoWS\TipoDocumentoWA1.wsdl" />
+    <None Include="Connected Services\TipoDocumentoWS\TipoDocumentoWA1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\TratamientoWS\TratamientoWA1.wsdl" />
+    <None Include="Connected Services\TratamientoWS\TratamientoWA1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\TurnoWS\configuration91.svcinfo" />
@@ -450,12 +449,12 @@
     <Content Include="Connected Services\TurnoXOdontologoWS\OdontoSysWebApplication.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\TurnoWS\TurnoWA.wsdl" />
-    <None Include="Connected Services\TurnoWS\TurnoWA.xsd">
+    <None Include="Connected Services\TurnoWS\TurnoWA1.wsdl" />
+    <None Include="Connected Services\TurnoWS\TurnoWA1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\TurnoXOdontologoWS\TurnoXOdontologoWA.wsdl" />
-    <None Include="Connected Services\TurnoXOdontologoWS\TurnoXOdontologoWA.xsd">
+    <None Include="Connected Services\TurnoXOdontologoWS\TurnoXOdontologoWA1.wsdl" />
+    <None Include="Connected Services\TurnoXOdontologoWS\TurnoXOdontologoWA1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ValoracionWS\configuration91.svcinfo" />
@@ -500,6 +499,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="contacto.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -542,6 +542,8 @@
     <Content Include="Images\inicioSesion\fondo.png" />
     <Content Include="Images\logo\horizontal.png" />
     <Content Include="inicioSesion.aspx" />
+    <Content Include="misCitas.aspx" />
+    <Content Include="reservaCita.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -556,20 +558,16 @@
     <Content Include="Content\Fonts\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\Fonts\webfonts\fa-v4compatibility.ttf" />
     <Content Include="Content\Fonts\webfonts\fa-v4compatibility.woff2" />
+    <None Include="Connected Services\ValoracionWS\ValoracionWA1.wsdl" />
+    <None Include="Connected Services\ValoracionWS\ValoracionWA1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
     <Content Include="Web.config" />
-    <None Include="Connected Services\SalaWS\SalaWA.wsdl" />
-    <None Include="Connected Services\SalaWS\SalaWA.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ValoracionWS\ValoracionWA.wsdl" />
-    <None Include="Connected Services\ValoracionWS\ValoracionWA.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Paciente.Master" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
@@ -668,6 +666,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="contacto.aspx.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contacto.aspx.designer.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="crearCuenta.aspx.cs">
       <DependentUpon>crearCuenta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -688,6 +693,13 @@
     </Compile>
     <Compile Include="inicioSesion.aspx.designer.cs">
       <DependentUpon>inicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="misCitas.aspx.cs">
+      <DependentUpon>misCitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="misCitas.aspx.designer.cs">
+      <DependentUpon>misCitas.aspx</DependentUpon>
     </Compile>
     <Compile Include="OdontoSysBusiness\CitaBO.cs" />
     <Compile Include="OdontoSysBusiness\ComprobanteBO.cs" />
@@ -711,13 +723,16 @@
       <DependentUpon>Paciente.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reservaCita.aspx.cs">
+      <DependentUpon>reservaCita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reservaCita.aspx.designer.cs">
+      <DependentUpon>reservaCita.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Xtras\PasswordHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\EspecialidadWS\EspecialidadWA.wsdl" />
-    <None Include="Connected Services\EspecialidadWS\EspecialidadWA.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

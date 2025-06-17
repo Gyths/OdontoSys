@@ -85,8 +85,8 @@
           <p class="lead">
             Tu sonrisa, nuestra mayor prioridad. ¡Reserva tu cita en un clic!
           </p>
-          <a href="ReservaCita.aspx"
-             class="btn btn-light btn-lg mt-3">
+          <a href="reservaCita.aspx"
+             class="btn btn-primary">
             Agendar Cita
           </a>
         </div>

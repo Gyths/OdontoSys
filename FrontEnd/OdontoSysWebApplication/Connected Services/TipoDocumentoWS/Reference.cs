@@ -42,19 +42,6 @@ namespace OdontoSysWebApplication.TipoDocumentoWS {
         System.Threading.Tasks.Task<OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_obtenerPorIdResponse> tipoDocumento_obtenerPorIdAsync(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_obtenerPorIdRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_modific" +
-            "arRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_modific" +
-            "arResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarResponse tipoDocumento_modificar(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_modific" +
-            "arRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_modific" +
-            "arResponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarResponse> tipoDocumento_modificarAsync(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_elimina" +
             "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_elimina" +
             "rResponse")]
@@ -66,6 +53,19 @@ namespace OdontoSysWebApplication.TipoDocumentoWS {
             "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_elimina" +
             "rResponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_eliminarResponse> tipoDocumento_eliminarAsync(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_eliminarRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_modific" +
+            "arRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_modific" +
+            "arResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarResponse tipoDocumento_modificar(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_modific" +
+            "arRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_modific" +
+            "arResponse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarResponse> tipoDocumento_modificarAsync(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_listarT" +
@@ -216,42 +216,6 @@ namespace OdontoSysWebApplication.TipoDocumentoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tipoDocumento_modificarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento tipoDocumento;
-        
-        public tipoDocumento_modificarRequest() {
-        }
-        
-        public tipoDocumento_modificarRequest(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento tipoDocumento) {
-            this.tipoDocumento = tipoDocumento;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tipoDocumento_modificarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public tipoDocumento_modificarResponse() {
-        }
-        
-        public tipoDocumento_modificarResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class tipoDocumento_eliminarRequest {
         
@@ -281,6 +245,42 @@ namespace OdontoSysWebApplication.TipoDocumentoWS {
         }
         
         public tipoDocumento_eliminarResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class tipoDocumento_modificarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento tipoDocumento;
+        
+        public tipoDocumento_modificarRequest() {
+        }
+        
+        public tipoDocumento_modificarRequest(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento tipoDocumento) {
+            this.tipoDocumento = tipoDocumento;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class tipoDocumento_modificarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public tipoDocumento_modificarResponse() {
+        }
+        
+        public tipoDocumento_modificarResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -387,29 +387,6 @@ namespace OdontoSysWebApplication.TipoDocumentoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarResponse OdontoSysWebApplication.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_modificar(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest request) {
-            return base.Channel.tipoDocumento_modificar(request);
-        }
-        
-        public int tipoDocumento_modificar(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento tipoDocumento) {
-            OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest inValue = new OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest();
-            inValue.tipoDocumento = tipoDocumento;
-            OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarResponse retVal = ((OdontoSysWebApplication.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_modificar(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarResponse> OdontoSysWebApplication.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_modificarAsync(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest request) {
-            return base.Channel.tipoDocumento_modificarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarResponse> tipoDocumento_modificarAsync(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento tipoDocumento) {
-            OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest inValue = new OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest();
-            inValue.tipoDocumento = tipoDocumento;
-            return ((OdontoSysWebApplication.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_modificarAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_eliminarResponse OdontoSysWebApplication.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_eliminar(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_eliminarRequest request) {
             return base.Channel.tipoDocumento_eliminar(request);
         }
@@ -430,6 +407,29 @@ namespace OdontoSysWebApplication.TipoDocumentoWS {
             OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_eliminarRequest inValue = new OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_eliminarRequest();
             inValue.tipoDocumento = tipoDocumento;
             return ((OdontoSysWebApplication.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_eliminarAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarResponse OdontoSysWebApplication.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_modificar(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest request) {
+            return base.Channel.tipoDocumento_modificar(request);
+        }
+        
+        public int tipoDocumento_modificar(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento tipoDocumento) {
+            OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest inValue = new OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest();
+            inValue.tipoDocumento = tipoDocumento;
+            OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarResponse retVal = ((OdontoSysWebApplication.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_modificar(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarResponse> OdontoSysWebApplication.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_modificarAsync(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest request) {
+            return base.Channel.tipoDocumento_modificarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarResponse> tipoDocumento_modificarAsync(OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento tipoDocumento) {
+            OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest inValue = new OdontoSysWebApplication.TipoDocumentoWS.tipoDocumento_modificarRequest();
+            inValue.tipoDocumento = tipoDocumento;
+            return ((OdontoSysWebApplication.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_modificarAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

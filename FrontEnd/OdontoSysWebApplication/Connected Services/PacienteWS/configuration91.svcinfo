@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="CF63lTfGnRNXqBhshJrmTh6X0MCeKjFGFNgvGp/uLnk=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="wVYgY8Bx1NAhhwN/inc+MzMBQnUS+ZkadqSQNmcxVQ0=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="PacienteWAPortBinding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="PacienteWAPort" contract="PacienteWS.PacienteWA" bindingType="basicHttpBinding" address="http://localhost:8080/OdontoSysWebApplication/PacienteWA" bindingConfiguration="PacienteWAPortBinding">
+    <endpoint name="PacienteWAPort" contract="PacienteWS.PacienteWA" bindingType="basicHttpBinding" address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/PacienteWA" bindingConfiguration="PacienteWAPortBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8080/OdontoSysWebApplication/PacienteWA</serializedValue>
+          <serializedValue>http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/PacienteWA</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

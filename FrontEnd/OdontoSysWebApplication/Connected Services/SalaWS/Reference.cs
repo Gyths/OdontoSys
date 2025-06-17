@@ -16,15 +16,6 @@ namespace OdontoSysWebApplication.SalaWS {
     public interface SalaWA {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_modificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_modificarResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.SalaWS.sala_modificarResponse sala_modificar(OdontoSysWebApplication.SalaWS.sala_modificarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_modificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_modificarResponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_modificarResponse> sala_modificarAsync(OdontoSysWebApplication.SalaWS.sala_modificarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_eliminarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_eliminarResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -32,15 +23,6 @@ namespace OdontoSysWebApplication.SalaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_eliminarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_eliminarResponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_eliminarResponse> sala_eliminarAsync(OdontoSysWebApplication.SalaWS.sala_eliminarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_insertarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_insertarResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.SalaWS.sala_insertarResponse sala_insertar(OdontoSysWebApplication.SalaWS.sala_insertarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_insertarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_insertarResponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_insertarResponse> sala_insertarAsync(OdontoSysWebApplication.SalaWS.sala_insertarRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_obtenerPorIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_obtenerPorIdResponse")]
@@ -59,6 +41,24 @@ namespace OdontoSysWebApplication.SalaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_listarTodosRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_listarTodosResponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_listarTodosResponse> sala_listarTodosAsync(OdontoSysWebApplication.SalaWS.sala_listarTodosRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_insertarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_insertarResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.SalaWS.sala_insertarResponse sala_insertar(OdontoSysWebApplication.SalaWS.sala_insertarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_insertarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_insertarResponse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_insertarResponse> sala_insertarAsync(OdontoSysWebApplication.SalaWS.sala_insertarRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_modificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_modificarResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.SalaWS.sala_modificarResponse sala_modificar(OdontoSysWebApplication.SalaWS.sala_modificarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_modificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_modificarResponse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_modificarResponse> sala_modificarAsync(OdontoSysWebApplication.SalaWS.sala_modificarRequest request);
     }
     
     /// <remarks/>
@@ -152,42 +152,6 @@ namespace OdontoSysWebApplication.SalaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sala_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class sala_modificarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.SalaWS.sala sala;
-        
-        public sala_modificarRequest() {
-        }
-        
-        public sala_modificarRequest(OdontoSysWebApplication.SalaWS.sala sala) {
-            this.sala = sala;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sala_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class sala_modificarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public sala_modificarResponse() {
-        }
-        
-        public sala_modificarResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sala_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class sala_eliminarRequest {
         
@@ -217,42 +181,6 @@ namespace OdontoSysWebApplication.SalaWS {
         }
         
         public sala_eliminarResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sala_insertar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class sala_insertarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.SalaWS.sala sala;
-        
-        public sala_insertarRequest() {
-        }
-        
-        public sala_insertarRequest(OdontoSysWebApplication.SalaWS.sala sala) {
-            this.sala = sala;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sala_insertarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class sala_insertarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public sala_insertarResponse() {
-        }
-        
-        public sala_insertarResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -321,6 +249,78 @@ namespace OdontoSysWebApplication.SalaWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sala_insertar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class sala_insertarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.SalaWS.sala sala;
+        
+        public sala_insertarRequest() {
+        }
+        
+        public sala_insertarRequest(OdontoSysWebApplication.SalaWS.sala sala) {
+            this.sala = sala;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sala_insertarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class sala_insertarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public sala_insertarResponse() {
+        }
+        
+        public sala_insertarResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sala_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class sala_modificarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.SalaWS.sala sala;
+        
+        public sala_modificarRequest() {
+        }
+        
+        public sala_modificarRequest(OdontoSysWebApplication.SalaWS.sala sala) {
+            this.sala = sala;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sala_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class sala_modificarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public sala_modificarResponse() {
+        }
+        
+        public sala_modificarResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface SalaWAChannel : OdontoSysWebApplication.SalaWS.SalaWA, System.ServiceModel.IClientChannel {
     }
@@ -349,29 +349,6 @@ namespace OdontoSysWebApplication.SalaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.SalaWS.sala_modificarResponse OdontoSysWebApplication.SalaWS.SalaWA.sala_modificar(OdontoSysWebApplication.SalaWS.sala_modificarRequest request) {
-            return base.Channel.sala_modificar(request);
-        }
-        
-        public int sala_modificar(OdontoSysWebApplication.SalaWS.sala sala) {
-            OdontoSysWebApplication.SalaWS.sala_modificarRequest inValue = new OdontoSysWebApplication.SalaWS.sala_modificarRequest();
-            inValue.sala = sala;
-            OdontoSysWebApplication.SalaWS.sala_modificarResponse retVal = ((OdontoSysWebApplication.SalaWS.SalaWA)(this)).sala_modificar(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_modificarResponse> OdontoSysWebApplication.SalaWS.SalaWA.sala_modificarAsync(OdontoSysWebApplication.SalaWS.sala_modificarRequest request) {
-            return base.Channel.sala_modificarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_modificarResponse> sala_modificarAsync(OdontoSysWebApplication.SalaWS.sala sala) {
-            OdontoSysWebApplication.SalaWS.sala_modificarRequest inValue = new OdontoSysWebApplication.SalaWS.sala_modificarRequest();
-            inValue.sala = sala;
-            return ((OdontoSysWebApplication.SalaWS.SalaWA)(this)).sala_modificarAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         OdontoSysWebApplication.SalaWS.sala_eliminarResponse OdontoSysWebApplication.SalaWS.SalaWA.sala_eliminar(OdontoSysWebApplication.SalaWS.sala_eliminarRequest request) {
             return base.Channel.sala_eliminar(request);
         }
@@ -392,29 +369,6 @@ namespace OdontoSysWebApplication.SalaWS {
             OdontoSysWebApplication.SalaWS.sala_eliminarRequest inValue = new OdontoSysWebApplication.SalaWS.sala_eliminarRequest();
             inValue.sala = sala;
             return ((OdontoSysWebApplication.SalaWS.SalaWA)(this)).sala_eliminarAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.SalaWS.sala_insertarResponse OdontoSysWebApplication.SalaWS.SalaWA.sala_insertar(OdontoSysWebApplication.SalaWS.sala_insertarRequest request) {
-            return base.Channel.sala_insertar(request);
-        }
-        
-        public int sala_insertar(OdontoSysWebApplication.SalaWS.sala sala) {
-            OdontoSysWebApplication.SalaWS.sala_insertarRequest inValue = new OdontoSysWebApplication.SalaWS.sala_insertarRequest();
-            inValue.sala = sala;
-            OdontoSysWebApplication.SalaWS.sala_insertarResponse retVal = ((OdontoSysWebApplication.SalaWS.SalaWA)(this)).sala_insertar(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_insertarResponse> OdontoSysWebApplication.SalaWS.SalaWA.sala_insertarAsync(OdontoSysWebApplication.SalaWS.sala_insertarRequest request) {
-            return base.Channel.sala_insertarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_insertarResponse> sala_insertarAsync(OdontoSysWebApplication.SalaWS.sala sala) {
-            OdontoSysWebApplication.SalaWS.sala_insertarRequest inValue = new OdontoSysWebApplication.SalaWS.sala_insertarRequest();
-            inValue.sala = sala;
-            return ((OdontoSysWebApplication.SalaWS.SalaWA)(this)).sala_insertarAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -459,6 +413,52 @@ namespace OdontoSysWebApplication.SalaWS {
         public System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_listarTodosResponse> sala_listarTodosAsync() {
             OdontoSysWebApplication.SalaWS.sala_listarTodosRequest inValue = new OdontoSysWebApplication.SalaWS.sala_listarTodosRequest();
             return ((OdontoSysWebApplication.SalaWS.SalaWA)(this)).sala_listarTodosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysWebApplication.SalaWS.sala_insertarResponse OdontoSysWebApplication.SalaWS.SalaWA.sala_insertar(OdontoSysWebApplication.SalaWS.sala_insertarRequest request) {
+            return base.Channel.sala_insertar(request);
+        }
+        
+        public int sala_insertar(OdontoSysWebApplication.SalaWS.sala sala) {
+            OdontoSysWebApplication.SalaWS.sala_insertarRequest inValue = new OdontoSysWebApplication.SalaWS.sala_insertarRequest();
+            inValue.sala = sala;
+            OdontoSysWebApplication.SalaWS.sala_insertarResponse retVal = ((OdontoSysWebApplication.SalaWS.SalaWA)(this)).sala_insertar(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_insertarResponse> OdontoSysWebApplication.SalaWS.SalaWA.sala_insertarAsync(OdontoSysWebApplication.SalaWS.sala_insertarRequest request) {
+            return base.Channel.sala_insertarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_insertarResponse> sala_insertarAsync(OdontoSysWebApplication.SalaWS.sala sala) {
+            OdontoSysWebApplication.SalaWS.sala_insertarRequest inValue = new OdontoSysWebApplication.SalaWS.sala_insertarRequest();
+            inValue.sala = sala;
+            return ((OdontoSysWebApplication.SalaWS.SalaWA)(this)).sala_insertarAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysWebApplication.SalaWS.sala_modificarResponse OdontoSysWebApplication.SalaWS.SalaWA.sala_modificar(OdontoSysWebApplication.SalaWS.sala_modificarRequest request) {
+            return base.Channel.sala_modificar(request);
+        }
+        
+        public int sala_modificar(OdontoSysWebApplication.SalaWS.sala sala) {
+            OdontoSysWebApplication.SalaWS.sala_modificarRequest inValue = new OdontoSysWebApplication.SalaWS.sala_modificarRequest();
+            inValue.sala = sala;
+            OdontoSysWebApplication.SalaWS.sala_modificarResponse retVal = ((OdontoSysWebApplication.SalaWS.SalaWA)(this)).sala_modificar(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_modificarResponse> OdontoSysWebApplication.SalaWS.SalaWA.sala_modificarAsync(OdontoSysWebApplication.SalaWS.sala_modificarRequest request) {
+            return base.Channel.sala_modificarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.SalaWS.sala_modificarResponse> sala_modificarAsync(OdontoSysWebApplication.SalaWS.sala sala) {
+            OdontoSysWebApplication.SalaWS.sala_modificarRequest inValue = new OdontoSysWebApplication.SalaWS.sala_modificarRequest();
+            inValue.sala = sala;
+            return ((OdontoSysWebApplication.SalaWS.SalaWA)(this)).sala_modificarAsync(inValue);
         }
     }
 }

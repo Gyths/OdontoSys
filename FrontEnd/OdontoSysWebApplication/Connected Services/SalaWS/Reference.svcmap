@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication/SalaWA?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/SalaWA?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SalaWA.xsd" MetadataType="Schema" ID="c3149bb1-6aba-4972-8acd-0de0ffa60d31" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/SalaWA?xsd=1" />
-    <MetadataFile FileName="SalaWA.wsdl" MetadataType="Wsdl" ID="7837aa50-e7b1-4b71-8264-eb19a17c800b" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/SalaWA?wsdl" />
+    <MetadataFile FileName="SalaWA1.xsd" MetadataType="Schema" ID="2c285a26-bf34-47b7-ab14-96a8ebcb6bd1" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/SalaWA?xsd=1" />
+    <MetadataFile FileName="SalaWA1.wsdl" MetadataType="Wsdl" ID="9bc11023-5de1-49de-b112-f6aea7bc6ccc" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/SalaWA?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

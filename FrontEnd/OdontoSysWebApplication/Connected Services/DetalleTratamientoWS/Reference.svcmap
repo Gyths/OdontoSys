@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication/DetalleTratamientoWA?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/DetalleTratamientoWA?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DetalleTratamientoWA.xsd" MetadataType="Schema" ID="a2d51b31-a35e-442a-ba17-d9aa5d96c4c3" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/DetalleTratamientoWA?xsd=1" />
-    <MetadataFile FileName="DetalleTratamientoWA.wsdl" MetadataType="Wsdl" ID="3a1b6ab2-3c8e-4f91-bbec-780ba864b600" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/DetalleTratamientoWA?wsdl" />
+    <MetadataFile FileName="DetalleTratamientoWA1.xsd" MetadataType="Schema" ID="eec519e8-c1c7-4f19-a521-1659ecb2f4a5" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/DetalleTratamientoWA?xsd=1" />
+    <MetadataFile FileName="DetalleTratamientoWA1.wsdl" MetadataType="Wsdl" ID="b7d6bdf4-5011-4a2c-aeea-5ad38fec0deb" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/DetalleTratamientoWA?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

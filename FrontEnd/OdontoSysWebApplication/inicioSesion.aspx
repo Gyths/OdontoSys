@@ -86,7 +86,7 @@
             OnClick="btnLogin_Click" />
         </div>
 
-        <asp:HyperLink runat="server" NavigateUrl="~/registro.aspx"
+        <asp:HyperLink runat="server" NavigateUrl="~/crearCuenta.aspx"
           CssClass="d-block text-center">
           ¿No tienes cuenta? Crear una ahora
         </asp:HyperLink>

@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication/TipoDocumentoWA?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/TipoDocumentoWA?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TipoDocumentoWA.wsdl" MetadataType="Wsdl" ID="d7f98f06-b39a-4be8-ac0d-0c9ba70d4592" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/TipoDocumentoWA?wsdl" />
-    <MetadataFile FileName="TipoDocumentoWA.xsd" MetadataType="Schema" ID="8edb506e-e3b4-450d-ac99-996d45af3f7f" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/TipoDocumentoWA?xsd=1" />
+    <MetadataFile FileName="TipoDocumentoWA1.xsd" MetadataType="Schema" ID="f6531a36-0ba9-4b1d-8535-a37a66282b96" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/TipoDocumentoWA?xsd=1" />
+    <MetadataFile FileName="TipoDocumentoWA1.wsdl" MetadataType="Wsdl" ID="905c5e18-bd3f-40eb-87cc-b205585d1c96" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/TipoDocumentoWA?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

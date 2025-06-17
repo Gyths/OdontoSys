@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication/ComprobanteWA?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/ComprobanteWA?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ComprobanteWA.wsdl" MetadataType="Wsdl" ID="af12da5f-40fa-410d-9288-324521b6eeaf" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/ComprobanteWA?wsdl" />
-    <MetadataFile FileName="ComprobanteWA.xsd" MetadataType="Schema" ID="653b2a06-f91c-460a-a263-82445394306d" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/ComprobanteWA?xsd=1" />
+    <MetadataFile FileName="ComprobanteWA1.xsd" MetadataType="Schema" ID="b4c850f4-348e-4b0f-bbed-bcf14c240ab2" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/ComprobanteWA?xsd=1" />
+    <MetadataFile FileName="ComprobanteWA1.wsdl" MetadataType="Wsdl" ID="c4e031f7-a77d-44f0-9067-1fcb9308350a" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/ComprobanteWA?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

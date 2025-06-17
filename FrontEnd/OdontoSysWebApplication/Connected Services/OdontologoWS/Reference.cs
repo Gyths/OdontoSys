@@ -44,34 +44,6 @@ namespace OdontoSysWebApplication.OdontologoWS {
         System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_actualizarPuntuacionResponse> odontologo_actualizarPuntuacionAsync(OdontoSysWebApplication.OdontologoWS.odontologo_actualizarPuntuacionRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorUsu" +
-            "arioContrasenhaRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorUsu" +
-            "arioContrasenhaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse odontologo_obtenerPorUsuarioContrasenha(OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorUsu" +
-            "arioContrasenhaRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorUsu" +
-            "arioContrasenhaResponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse> odontologo_obtenerPorUsuarioContrasenhaAsync(OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarReque" +
-            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarRespo" +
-            "nse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse odontologo_eliminar(OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarReque" +
-            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse> odontologo_eliminarAsync(OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorIdR" +
             "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorIdR" +
             "esponse")]
@@ -84,20 +56,6 @@ namespace OdontoSysWebApplication.OdontologoWS {
             "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorIdR" +
             "esponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorIdResponse> odontologo_obtenerPorIdAsync(OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorIdRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarRequ" +
-            "est", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarResp" +
-            "onse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.OdontologoWS.odontologo_modificarResponse odontologo_modificar(OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarRequ" +
-            "est", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarResp" +
-            "onse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_modificarResponse> odontologo_modificarAsync(OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_insertarReque" +
@@ -114,6 +72,34 @@ namespace OdontoSysWebApplication.OdontologoWS {
         System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_insertarResponse> odontologo_insertarAsync(OdontoSysWebApplication.OdontologoWS.odontologo_insertarRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarRequ" +
+            "est", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarResp" +
+            "onse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.OdontologoWS.odontologo_modificarResponse odontologo_modificar(OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarRequ" +
+            "est", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarResp" +
+            "onse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_modificarResponse> odontologo_modificarAsync(OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarReque" +
+            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarRespo" +
+            "nse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse odontologo_eliminar(OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarReque" +
+            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse> odontologo_eliminarAsync(OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarTodosRe" +
             "quest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarTodosRe" +
             "sponse")]
@@ -126,6 +112,20 @@ namespace OdontoSysWebApplication.OdontologoWS {
             "quest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarTodosRe" +
             "sponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_listarTodosResponse> odontologo_listarTodosAsync(OdontoSysWebApplication.OdontologoWS.odontologo_listarTodosRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorUsu" +
+            "arioContrasenhaRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorUsu" +
+            "arioContrasenhaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse odontologo_obtenerPorUsuarioContrasenha(OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorUsu" +
+            "arioContrasenhaRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorUsu" +
+            "arioContrasenhaResponse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse> odontologo_obtenerPorUsuarioContrasenhaAsync(OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest request);
     }
     
     /// <remarks/>
@@ -136,10 +136,38 @@ namespace OdontoSysWebApplication.OdontologoWS {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/")]
     public partial class especialidad : object, System.ComponentModel.INotifyPropertyChanged {
         
+        private int idEspecialidadField;
+        
+        private bool idEspecialidadFieldSpecified;
+        
         private string nombreField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int idEspecialidad {
+            get {
+                return this.idEspecialidadField;
+            }
+            set {
+                this.idEspecialidadField = value;
+                this.RaisePropertyChanged("idEspecialidad");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool idEspecialidadSpecified {
+            get {
+                return this.idEspecialidadFieldSpecified;
+            }
+            set {
+                this.idEspecialidadFieldSpecified = value;
+                this.RaisePropertyChanged("idEspecialidadSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
         public string nombre {
             get {
                 return this.nombreField;
@@ -172,9 +200,9 @@ namespace OdontoSysWebApplication.OdontologoWS {
         
         private bool diaSemanaFieldSpecified;
         
-        private localTime horaFinField;
+        private string horaFinField;
         
-        private localTime horaInicioField;
+        private string horaInicioField;
         
         private int idTurnoField;
         
@@ -206,7 +234,7 @@ namespace OdontoSysWebApplication.OdontologoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public localTime horaFin {
+        public string horaFin {
             get {
                 return this.horaFinField;
             }
@@ -218,7 +246,7 @@ namespace OdontoSysWebApplication.OdontologoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public localTime horaInicio {
+        public string horaInicio {
             get {
                 return this.horaInicioField;
             }
@@ -288,24 +316,6 @@ namespace OdontoSysWebApplication.OdontologoWS {
         
         /// <remarks/>
         SUNDAY,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/")]
-    public partial class localTime : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
     }
     
     /// <remarks/>
@@ -410,7 +420,7 @@ namespace OdontoSysWebApplication.OdontologoWS {
         
         private string comentarioField;
         
-        private localDate fechaCalificacionField;
+        private string fechaCalificacionField;
         
         private int idValoracionField;
         
@@ -454,7 +464,7 @@ namespace OdontoSysWebApplication.OdontologoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public localDate fechaCalificacion {
+        public string fechaCalificacion {
             get {
                 return this.fechaCalificacionField;
             }
@@ -487,24 +497,6 @@ namespace OdontoSysWebApplication.OdontologoWS {
                 this.RaisePropertyChanged("idValoracionSpecified");
             }
         }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/")]
-    public partial class localDate : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
@@ -788,9 +780,9 @@ namespace OdontoSysWebApplication.OdontologoWS {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/")]
     public partial class comprobante : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private localDate fechaEmisionField;
+        private string fechaEmisionField;
         
-        private localTime horaEmisionField;
+        private string horaEmisionField;
         
         private int idComprobanteField;
         
@@ -802,7 +794,7 @@ namespace OdontoSysWebApplication.OdontologoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public localDate fechaEmision {
+        public string fechaEmision {
             get {
                 return this.fechaEmisionField;
             }
@@ -814,7 +806,7 @@ namespace OdontoSysWebApplication.OdontologoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public localTime horaEmision {
+        public string horaEmision {
             get {
                 return this.horaEmisionField;
             }
@@ -896,9 +888,9 @@ namespace OdontoSysWebApplication.OdontologoWS {
         
         private bool estadoFieldSpecified;
         
-        private localDate fechaField;
+        private string fechaField;
         
-        private localTime horaInicioField;
+        private string horaInicioField;
         
         private int idCitaField;
         
@@ -952,7 +944,7 @@ namespace OdontoSysWebApplication.OdontologoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public localDate fecha {
+        public string fecha {
             get {
                 return this.fechaField;
             }
@@ -964,7 +956,7 @@ namespace OdontoSysWebApplication.OdontologoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public localTime horaInicio {
+        public string horaInicio {
             get {
                 return this.horaInicioField;
             }
@@ -1561,83 +1553,6 @@ namespace OdontoSysWebApplication.OdontologoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_obtenerPorUsuarioContrasenha", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class odontologo_obtenerPorUsuarioContrasenhaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string nombreUsuario;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string contrasenha;
-        
-        public odontologo_obtenerPorUsuarioContrasenhaRequest() {
-        }
-        
-        public odontologo_obtenerPorUsuarioContrasenhaRequest(string nombreUsuario, string contrasenha) {
-            this.nombreUsuario = nombreUsuario;
-            this.contrasenha = contrasenha;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_obtenerPorUsuarioContrasenhaResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class odontologo_obtenerPorUsuarioContrasenhaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.OdontologoWS.odontologo @return;
-        
-        public odontologo_obtenerPorUsuarioContrasenhaResponse() {
-        }
-        
-        public odontologo_obtenerPorUsuarioContrasenhaResponse(OdontoSysWebApplication.OdontologoWS.odontologo @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class odontologo_eliminarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.OdontologoWS.odontologo odontologo;
-        
-        public odontologo_eliminarRequest() {
-        }
-        
-        public odontologo_eliminarRequest(OdontoSysWebApplication.OdontologoWS.odontologo odontologo) {
-            this.odontologo = odontologo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class odontologo_eliminarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public odontologo_eliminarResponse() {
-        }
-        
-        public odontologo_eliminarResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_obtenerPorId", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class odontologo_obtenerPorIdRequest {
         
@@ -1667,42 +1582,6 @@ namespace OdontoSysWebApplication.OdontologoWS {
         }
         
         public odontologo_obtenerPorIdResponse(OdontoSysWebApplication.OdontologoWS.odontologo @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class odontologo_modificarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.OdontologoWS.odontologo odontologo;
-        
-        public odontologo_modificarRequest() {
-        }
-        
-        public odontologo_modificarRequest(OdontoSysWebApplication.OdontologoWS.odontologo odontologo) {
-            this.odontologo = odontologo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class odontologo_modificarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public odontologo_modificarResponse() {
-        }
-        
-        public odontologo_modificarResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -1746,6 +1625,78 @@ namespace OdontoSysWebApplication.OdontologoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class odontologo_modificarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.OdontologoWS.odontologo odontologo;
+        
+        public odontologo_modificarRequest() {
+        }
+        
+        public odontologo_modificarRequest(OdontoSysWebApplication.OdontologoWS.odontologo odontologo) {
+            this.odontologo = odontologo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class odontologo_modificarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public odontologo_modificarResponse() {
+        }
+        
+        public odontologo_modificarResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class odontologo_eliminarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.OdontologoWS.odontologo odontologo;
+        
+        public odontologo_eliminarRequest() {
+        }
+        
+        public odontologo_eliminarRequest(OdontoSysWebApplication.OdontologoWS.odontologo odontologo) {
+            this.odontologo = odontologo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class odontologo_eliminarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public odontologo_eliminarResponse() {
+        }
+        
+        public odontologo_eliminarResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class odontologo_listarTodosRequest {
         
@@ -1767,6 +1718,47 @@ namespace OdontoSysWebApplication.OdontologoWS {
         }
         
         public odontologo_listarTodosResponse(OdontoSysWebApplication.OdontologoWS.odontologo[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_obtenerPorUsuarioContrasenha", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class odontologo_obtenerPorUsuarioContrasenhaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nombreUsuario;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string contrasenha;
+        
+        public odontologo_obtenerPorUsuarioContrasenhaRequest() {
+        }
+        
+        public odontologo_obtenerPorUsuarioContrasenhaRequest(string nombreUsuario, string contrasenha) {
+            this.nombreUsuario = nombreUsuario;
+            this.contrasenha = contrasenha;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="odontologo_obtenerPorUsuarioContrasenhaResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class odontologo_obtenerPorUsuarioContrasenhaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.OdontologoWS.odontologo @return;
+        
+        public odontologo_obtenerPorUsuarioContrasenhaResponse() {
+        }
+        
+        public odontologo_obtenerPorUsuarioContrasenhaResponse(OdontoSysWebApplication.OdontologoWS.odontologo @return) {
             this.@return = @return;
         }
     }
@@ -1845,54 +1837,6 @@ namespace OdontoSysWebApplication.OdontologoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_obtenerPorUsuarioContrasenha(OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest request) {
-            return base.Channel.odontologo_obtenerPorUsuarioContrasenha(request);
-        }
-        
-        public OdontoSysWebApplication.OdontologoWS.odontologo odontologo_obtenerPorUsuarioContrasenha(string nombreUsuario, string contrasenha) {
-            OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest();
-            inValue.nombreUsuario = nombreUsuario;
-            inValue.contrasenha = contrasenha;
-            OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse retVal = ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_obtenerPorUsuarioContrasenha(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse> OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_obtenerPorUsuarioContrasenhaAsync(OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest request) {
-            return base.Channel.odontologo_obtenerPorUsuarioContrasenhaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse> odontologo_obtenerPorUsuarioContrasenhaAsync(string nombreUsuario, string contrasenha) {
-            OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest();
-            inValue.nombreUsuario = nombreUsuario;
-            inValue.contrasenha = contrasenha;
-            return ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_obtenerPorUsuarioContrasenhaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_eliminar(OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest request) {
-            return base.Channel.odontologo_eliminar(request);
-        }
-        
-        public int odontologo_eliminar(OdontoSysWebApplication.OdontologoWS.odontologo odontologo) {
-            OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest();
-            inValue.odontologo = odontologo;
-            OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse retVal = ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_eliminar(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse> OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_eliminarAsync(OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest request) {
-            return base.Channel.odontologo_eliminarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse> odontologo_eliminarAsync(OdontoSysWebApplication.OdontologoWS.odontologo odontologo) {
-            OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest();
-            inValue.odontologo = odontologo;
-            return ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_eliminarAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorIdResponse OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_obtenerPorId(OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorIdRequest request) {
             return base.Channel.odontologo_obtenerPorId(request);
         }
@@ -1913,29 +1857,6 @@ namespace OdontoSysWebApplication.OdontologoWS {
             OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorIdRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorIdRequest();
             inValue.id = id;
             return ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_obtenerPorIdAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.OdontologoWS.odontologo_modificarResponse OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_modificar(OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest request) {
-            return base.Channel.odontologo_modificar(request);
-        }
-        
-        public int odontologo_modificar(OdontoSysWebApplication.OdontologoWS.odontologo odontologo) {
-            OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest();
-            inValue.odontologo = odontologo;
-            OdontoSysWebApplication.OdontologoWS.odontologo_modificarResponse retVal = ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_modificar(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_modificarResponse> OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_modificarAsync(OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest request) {
-            return base.Channel.odontologo_modificarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_modificarResponse> odontologo_modificarAsync(OdontoSysWebApplication.OdontologoWS.odontologo odontologo) {
-            OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest();
-            inValue.odontologo = odontologo;
-            return ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_modificarAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1962,6 +1883,52 @@ namespace OdontoSysWebApplication.OdontologoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysWebApplication.OdontologoWS.odontologo_modificarResponse OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_modificar(OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest request) {
+            return base.Channel.odontologo_modificar(request);
+        }
+        
+        public int odontologo_modificar(OdontoSysWebApplication.OdontologoWS.odontologo odontologo) {
+            OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest();
+            inValue.odontologo = odontologo;
+            OdontoSysWebApplication.OdontologoWS.odontologo_modificarResponse retVal = ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_modificar(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_modificarResponse> OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_modificarAsync(OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest request) {
+            return base.Channel.odontologo_modificarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_modificarResponse> odontologo_modificarAsync(OdontoSysWebApplication.OdontologoWS.odontologo odontologo) {
+            OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_modificarRequest();
+            inValue.odontologo = odontologo;
+            return ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_modificarAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_eliminar(OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest request) {
+            return base.Channel.odontologo_eliminar(request);
+        }
+        
+        public int odontologo_eliminar(OdontoSysWebApplication.OdontologoWS.odontologo odontologo) {
+            OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest();
+            inValue.odontologo = odontologo;
+            OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse retVal = ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_eliminar(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse> OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_eliminarAsync(OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest request) {
+            return base.Channel.odontologo_eliminarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse> odontologo_eliminarAsync(OdontoSysWebApplication.OdontologoWS.odontologo odontologo) {
+            OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_eliminarRequest();
+            inValue.odontologo = odontologo;
+            return ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_eliminarAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         OdontoSysWebApplication.OdontologoWS.odontologo_listarTodosResponse OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_listarTodos(OdontoSysWebApplication.OdontologoWS.odontologo_listarTodosRequest request) {
             return base.Channel.odontologo_listarTodos(request);
         }
@@ -1980,6 +1947,31 @@ namespace OdontoSysWebApplication.OdontologoWS {
         public System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_listarTodosResponse> odontologo_listarTodosAsync() {
             OdontoSysWebApplication.OdontologoWS.odontologo_listarTodosRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_listarTodosRequest();
             return ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_listarTodosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_obtenerPorUsuarioContrasenha(OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest request) {
+            return base.Channel.odontologo_obtenerPorUsuarioContrasenha(request);
+        }
+        
+        public OdontoSysWebApplication.OdontologoWS.odontologo odontologo_obtenerPorUsuarioContrasenha(string nombreUsuario, string contrasenha) {
+            OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest();
+            inValue.nombreUsuario = nombreUsuario;
+            inValue.contrasenha = contrasenha;
+            OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse retVal = ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_obtenerPorUsuarioContrasenha(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse> OdontoSysWebApplication.OdontologoWS.OdontologoWA.odontologo_obtenerPorUsuarioContrasenhaAsync(OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest request) {
+            return base.Channel.odontologo_obtenerPorUsuarioContrasenhaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse> odontologo_obtenerPorUsuarioContrasenhaAsync(string nombreUsuario, string contrasenha) {
+            OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest inValue = new OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaRequest();
+            inValue.nombreUsuario = nombreUsuario;
+            inValue.contrasenha = contrasenha;
+            return ((OdontoSysWebApplication.OdontologoWS.OdontologoWA)(this)).odontologo_obtenerPorUsuarioContrasenhaAsync(inValue);
         }
     }
 }

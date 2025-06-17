@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication/EspecialidadWA?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/EspecialidadWA?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="EspecialidadWA.wsdl" MetadataType="Wsdl" ID="8e20a38a-1af9-4c69-a95c-cc986919f8fe" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/EspecialidadWA?wsdl" />
-    <MetadataFile FileName="EspecialidadWA.xsd" MetadataType="Schema" ID="6c3a07c1-740a-4220-8986-4528841c90aa" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/EspecialidadWA?xsd=1" />
+    <MetadataFile FileName="EspecialidadWA1.wsdl" MetadataType="Wsdl" ID="86e70dbd-4918-4dea-bc6b-34f43f134baf" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/EspecialidadWA?wsdl" />
+    <MetadataFile FileName="EspecialidadWA1.xsd" MetadataType="Schema" ID="9e32d539-96b6-4f9f-bade-fa468bcbe4a0" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/EspecialidadWA?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

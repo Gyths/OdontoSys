@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication/MetodoPagoWA?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/MetodoPagoWA?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MetodoPagoWA.xsd" MetadataType="Schema" ID="615b8b8a-3fa7-4dca-9edd-459832197354" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/MetodoPagoWA?xsd=1" />
-    <MetadataFile FileName="MetodoPagoWA.wsdl" MetadataType="Wsdl" ID="fe5236e8-98ce-4c19-bcee-ecd0ecc0c578" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/MetodoPagoWA?wsdl" />
+    <MetadataFile FileName="MetodoPagoWA1.xsd" MetadataType="Schema" ID="61a5c6e4-72ae-41c6-ae12-5486b011ceae" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/MetodoPagoWA?xsd=1" />
+    <MetadataFile FileName="MetodoPagoWA1.wsdl" MetadataType="Wsdl" ID="9a46bcf3-a04b-4139-9159-4bc281696ccd" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/MetodoPagoWA?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

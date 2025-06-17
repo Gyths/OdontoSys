@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication/TurnoWA?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/TurnoWA?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TurnoWA.wsdl" MetadataType="Wsdl" ID="2bda8b71-ed94-4b29-a987-8f5a840f109e" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/TurnoWA?wsdl" />
-    <MetadataFile FileName="TurnoWA.xsd" MetadataType="Schema" ID="bfb9cd6b-14e4-47e9-ba58-522663bef671" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/TurnoWA?xsd=1" />
+    <MetadataFile FileName="TurnoWA1.xsd" MetadataType="Schema" ID="40a2ae54-1be5-473c-b62e-f296bb158c34" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/TurnoWA?xsd=1" />
+    <MetadataFile FileName="TurnoWA1.wsdl" MetadataType="Wsdl" ID="e71753bb-4381-44d1-8a66-d41adc6c0acc" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/TurnoWA?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -19,12 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication/CitaWA?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/CitaWA?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CitaWA.wsdl" MetadataType="Wsdl" ID="090bebd8-0c9c-4af4-9da3-3c6e7e40b049" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/CitaWA?wsdl" />
-    <MetadataFile FileName="CitaWA.xsd" MetadataType="Schema" ID="4e43f8d6-8e93-44fd-9807-9d32e509e725" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/CitaWA?xsd=1" />
-    <MetadataFile FileName="CitaWA1.xsd" MetadataType="Schema" ID="cec00631-ed2b-4e07-8ad9-b5516cc6355e" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication/CitaWA?xsd=2" />
+    <MetadataFile FileName="CitaWA2.xsd" MetadataType="Schema" ID="7d7e5d97-368e-4a32-843c-c8ddbab061f5" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/CitaWA?xsd=1" />
+    <MetadataFile FileName="CitaWA1.wsdl" MetadataType="Wsdl" ID="dc3e8417-e278-49dc-ad65-d66119958e48" SourceId="1" SourceUrl="http://localhost:8080/OdontoSysWebApplication-1.0-SNAPSHOT/CitaWA?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

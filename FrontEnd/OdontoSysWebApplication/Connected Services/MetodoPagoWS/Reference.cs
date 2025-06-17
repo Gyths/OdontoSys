@@ -42,19 +42,6 @@ namespace OdontoSysWebApplication.MetodoPagoWS {
         System.Threading.Tasks.Task<OdontoSysWebApplication.MetodoPagoWS.metodoPago_modificarResponse> metodoPago_modificarAsync(OdontoSysWebApplication.MetodoPagoWS.metodoPago_modificarRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_eliminarReque" +
-            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_eliminarRespo" +
-            "nse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarResponse metodoPago_eliminar(OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_eliminarReque" +
-            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_eliminarRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarResponse> metodoPago_eliminarAsync(OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_obtenerPorIdR" +
             "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_obtenerPorIdR" +
             "esponse")]
@@ -79,6 +66,19 @@ namespace OdontoSysWebApplication.MetodoPagoWS {
             "quest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_listarTodosRe" +
             "sponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.MetodoPagoWS.metodoPago_listarTodosResponse> metodoPago_listarTodosAsync(OdontoSysWebApplication.MetodoPagoWS.metodoPago_listarTodosRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_eliminarReque" +
+            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_eliminarRespo" +
+            "nse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarResponse metodoPago_eliminar(OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_eliminarReque" +
+            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_eliminarRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarResponse> metodoPago_eliminarAsync(OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest request);
     }
     
     /// <remarks/>
@@ -216,42 +216,6 @@ namespace OdontoSysWebApplication.MetodoPagoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="metodoPago_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class metodoPago_eliminarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.MetodoPagoWS.metodoPago metodoPago;
-        
-        public metodoPago_eliminarRequest() {
-        }
-        
-        public metodoPago_eliminarRequest(OdontoSysWebApplication.MetodoPagoWS.metodoPago metodoPago) {
-            this.metodoPago = metodoPago;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="metodoPago_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class metodoPago_eliminarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public metodoPago_eliminarResponse() {
-        }
-        
-        public metodoPago_eliminarResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="metodoPago_obtenerPorId", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class metodoPago_obtenerPorIdRequest {
         
@@ -309,6 +273,42 @@ namespace OdontoSysWebApplication.MetodoPagoWS {
         }
         
         public metodoPago_listarTodosResponse(OdontoSysWebApplication.MetodoPagoWS.metodoPago[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="metodoPago_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class metodoPago_eliminarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.MetodoPagoWS.metodoPago metodoPago;
+        
+        public metodoPago_eliminarRequest() {
+        }
+        
+        public metodoPago_eliminarRequest(OdontoSysWebApplication.MetodoPagoWS.metodoPago metodoPago) {
+            this.metodoPago = metodoPago;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="metodoPago_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class metodoPago_eliminarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public metodoPago_eliminarResponse() {
+        }
+        
+        public metodoPago_eliminarResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -387,29 +387,6 @@ namespace OdontoSysWebApplication.MetodoPagoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarResponse OdontoSysWebApplication.MetodoPagoWS.MetodoPagoWA.metodoPago_eliminar(OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest request) {
-            return base.Channel.metodoPago_eliminar(request);
-        }
-        
-        public int metodoPago_eliminar(OdontoSysWebApplication.MetodoPagoWS.metodoPago metodoPago) {
-            OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest inValue = new OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest();
-            inValue.metodoPago = metodoPago;
-            OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarResponse retVal = ((OdontoSysWebApplication.MetodoPagoWS.MetodoPagoWA)(this)).metodoPago_eliminar(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarResponse> OdontoSysWebApplication.MetodoPagoWS.MetodoPagoWA.metodoPago_eliminarAsync(OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest request) {
-            return base.Channel.metodoPago_eliminarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarResponse> metodoPago_eliminarAsync(OdontoSysWebApplication.MetodoPagoWS.metodoPago metodoPago) {
-            OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest inValue = new OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest();
-            inValue.metodoPago = metodoPago;
-            return ((OdontoSysWebApplication.MetodoPagoWS.MetodoPagoWA)(this)).metodoPago_eliminarAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         OdontoSysWebApplication.MetodoPagoWS.metodoPago_obtenerPorIdResponse OdontoSysWebApplication.MetodoPagoWS.MetodoPagoWA.metodoPago_obtenerPorId(OdontoSysWebApplication.MetodoPagoWS.metodoPago_obtenerPorIdRequest request) {
             return base.Channel.metodoPago_obtenerPorId(request);
         }
@@ -451,6 +428,29 @@ namespace OdontoSysWebApplication.MetodoPagoWS {
         public System.Threading.Tasks.Task<OdontoSysWebApplication.MetodoPagoWS.metodoPago_listarTodosResponse> metodoPago_listarTodosAsync() {
             OdontoSysWebApplication.MetodoPagoWS.metodoPago_listarTodosRequest inValue = new OdontoSysWebApplication.MetodoPagoWS.metodoPago_listarTodosRequest();
             return ((OdontoSysWebApplication.MetodoPagoWS.MetodoPagoWA)(this)).metodoPago_listarTodosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarResponse OdontoSysWebApplication.MetodoPagoWS.MetodoPagoWA.metodoPago_eliminar(OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest request) {
+            return base.Channel.metodoPago_eliminar(request);
+        }
+        
+        public int metodoPago_eliminar(OdontoSysWebApplication.MetodoPagoWS.metodoPago metodoPago) {
+            OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest inValue = new OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest();
+            inValue.metodoPago = metodoPago;
+            OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarResponse retVal = ((OdontoSysWebApplication.MetodoPagoWS.MetodoPagoWA)(this)).metodoPago_eliminar(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarResponse> OdontoSysWebApplication.MetodoPagoWS.MetodoPagoWA.metodoPago_eliminarAsync(OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest request) {
+            return base.Channel.metodoPago_eliminarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarResponse> metodoPago_eliminarAsync(OdontoSysWebApplication.MetodoPagoWS.metodoPago metodoPago) {
+            OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest inValue = new OdontoSysWebApplication.MetodoPagoWS.metodoPago_eliminarRequest();
+            inValue.metodoPago = metodoPago;
+            return ((OdontoSysWebApplication.MetodoPagoWS.MetodoPagoWA)(this)).metodoPago_eliminarAsync(inValue);
         }
     }
 }
