@@ -1,13 +1,9 @@
 .vs/
 
 /glassfish-7.0.24
-/BackEnd/OdontoSysDBManager/src/main/resources/jdbc.properties
-
 
 /BackEnd/OdontoSysModel/target/
 /BackEnd/OdontoSysDBManager/target/
 /BackEnd/OdontoSysPersistance/target/
 /BackEnd/OdontoSysBussiness/target/
 /BackEnd/OdontoSysWebApplication/target/
-/BackEnd/OdontoSysDBManager/src/main/resources/jdbc.properties
-/BackEnd/OdontoSysModel/target
