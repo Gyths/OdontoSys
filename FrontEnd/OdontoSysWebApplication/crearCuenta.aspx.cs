@@ -99,9 +99,14 @@ namespace OdontoSysWebApplication
                 numeroDocumento = numDoc
             };
 
-            try
+            var bo = new OdontoSysBusiness.PacienteBO();
+            bo.paciente_insertar(nuevoPaciente);
+
+            ltMensajes.Text = "<div class='alert alert-success'>Cuenta creada correctamente. " +
+                              "Puedes <a href='inicioSesion.aspx'>iniciar sesión</a> ahora.</div>";
+            /*try
             {
-                var bo = new PacienteBO();
+                var bo = new OdontoSysBusiness.PacienteBO();
                 bo.paciente_insertar(nuevoPaciente);
 
                 ltMensajes.Text = "<div class='alert alert-success'>Cuenta creada correctamente. " +
@@ -110,7 +115,7 @@ namespace OdontoSysWebApplication
             catch (Exception)
             {
                 ltMensajes.Text = "<div class='alert alert-danger'>Ocurrió un error al crear la cuenta. Intenta nuevamente más tarde.</div>";
-            }
+            }*/
         }
     }
 }

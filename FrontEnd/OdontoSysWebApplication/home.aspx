@@ -76,11 +76,7 @@
       <div class="row align-items-center">
         <div class="col-md-6 hero-text">
           <h1>
-            Bienvenido
-            <% var pac = Session["Paciente"] as OdontoSysWebApplication.PacienteWS.paciente;
-               if (pac != null) { %>
-              <%= pac.nombre %>
-            <% } %>
+            Bienvenido <%= NombrePaciente %>
           </h1>
           <p class="lead">
             Tu sonrisa, nuestra mayor prioridad. ¡Reserva tu cita en un clic!

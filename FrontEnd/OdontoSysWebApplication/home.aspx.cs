@@ -5,8 +5,14 @@ namespace OdontoSysWebApplication
 {
     public partial class Home : System.Web.UI.Page
     {
+        protected string NombrePaciente = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
+            var paciente = Session["Paciente"] as OdontoSysBusiness.PacienteWS.paciente;
+            if (paciente != null) 
+            {
+                NombrePaciente = paciente.nombre;
+            }
             if (!IsPostBack)
                 VerificarSesionPaciente();
         }

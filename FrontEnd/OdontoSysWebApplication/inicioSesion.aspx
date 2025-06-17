@@ -6,7 +6,6 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <style>
-    <style>
   html, body, form { height: 100%; margin: 0; }
   .login-container { display: flex; height: 100vh; }
 
@@ -27,7 +26,7 @@
 
   .login-card { max-width: 360px; width: 75%; }
   .login-logo { max-width: 200px; margin: 0 auto 1.5rem; display: block; }
-</style>
+
   </style>
 
   <!-- Toggle password -->
