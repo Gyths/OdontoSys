@@ -10,3 +10,5 @@ config.properties
 /BackEnd/OdontoSysBussiness/target
 /BackEnd/OdontoSysWebApplication/target
 /BackEnd/OdontoSysDBManager/src/main/resources/jdbc.properties
+/BackEnd/OdontoSysDBManager/target
+/BackEnd/OdontoSysDBManager/target
