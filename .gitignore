@@ -10,3 +10,4 @@
 /BackEnd/OdontoSysBussiness/target/
 /BackEnd/OdontoSysWebApplication/target/
 /BackEnd/OdontoSysDBManager/src/main/resources/jdbc.properties
+/BackEnd/OdontoSysModel/target
