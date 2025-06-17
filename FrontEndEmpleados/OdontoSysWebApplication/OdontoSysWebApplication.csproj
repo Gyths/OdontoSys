@@ -70,6 +70,7 @@
     <None Include="Connected Services\CitaWS\CitaWA1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="CitasDia.aspx" />
     <Content Include="citasOdontologo.aspx" />
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.booleanArray.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -543,6 +544,8 @@
     <Content Include="Images\inicioSesion\fondo.png" />
     <Content Include="Images\logo\horizontal.png" />
     <Content Include="inicioSesion.aspx" />
+    <Content Include="ListarDoctores.aspx" />
+    <Content Include="ListarPacientes.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -598,6 +601,13 @@
     <Content Include="Scripts\jquery-3.7.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CitasDia.aspx.cs">
+      <DependentUpon>CitasDia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CitasDia.aspx.designer.cs">
+      <DependentUpon>CitasDia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="citasOdontologo.aspx.cs">
       <DependentUpon>citasOdontologo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -695,6 +705,20 @@
     </Compile>
     <Compile Include="inicioSesion.aspx.designer.cs">
       <DependentUpon>inicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarDoctores.aspx.cs">
+      <DependentUpon>ListarDoctores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarDoctores.aspx.designer.cs">
+      <DependentUpon>ListarDoctores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarPacientes.aspx.cs">
+      <DependentUpon>ListarPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarPacientes.aspx.designer.cs">
+      <DependentUpon>ListarPacientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="OdontoSysBusiness\CitaBO.cs" />
     <Compile Include="OdontoSysBusiness\ComprobanteBO.cs" />
