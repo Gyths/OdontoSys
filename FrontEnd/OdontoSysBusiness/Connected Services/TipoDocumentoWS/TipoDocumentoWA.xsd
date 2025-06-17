@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webapplication.odontosys.edu.pucp.pe/" targetNamespace="http://webapplication.odontosys.edu.pucp.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="tipoDocumento_eliminar" type="tns:tipoDocumento_eliminar" />
+  <xs:element name="tipoDocumento_eliminarResponse" type="tns:tipoDocumento_eliminarResponse" />
+  <xs:element name="tipoDocumento_insertar" type="tns:tipoDocumento_insertar" />
+  <xs:element name="tipoDocumento_insertarResponse" type="tns:tipoDocumento_insertarResponse" />
+  <xs:element name="tipoDocumento_listarTodos" type="tns:tipoDocumento_listarTodos" />
+  <xs:element name="tipoDocumento_listarTodosResponse" type="tns:tipoDocumento_listarTodosResponse" />
+  <xs:element name="tipoDocumento_modificar" type="tns:tipoDocumento_modificar" />
+  <xs:element name="tipoDocumento_modificarResponse" type="tns:tipoDocumento_modificarResponse" />
+  <xs:element name="tipoDocumento_obtenerPorId" type="tns:tipoDocumento_obtenerPorId" />
+  <xs:element name="tipoDocumento_obtenerPorIdResponse" type="tns:tipoDocumento_obtenerPorIdResponse" />
+  <xs:complexType name="tipoDocumento_eliminar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipoDocumento" type="tns:tipoDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idTipoDocumento" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento_eliminarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento_listarTodos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento_listarTodosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tipoDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento_modificar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipoDocumento" type="tns:tipoDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento_modificarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento_insertar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipoDocumento" type="tns:tipoDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento_insertarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento_obtenerPorId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento_obtenerPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tipoDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
