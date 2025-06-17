@@ -11,7 +11,7 @@ namespace OdontoSysWebApplication
             var paciente = Session["Paciente"] as OdontoSysBusiness.PacienteWS.paciente;
             if (paciente != null) 
             {
-                NombrePaciente = paciente.nombre;
+                this.NombrePaciente = paciente.nombre;
             }
             if (!IsPostBack)
                 VerificarSesionPaciente();
