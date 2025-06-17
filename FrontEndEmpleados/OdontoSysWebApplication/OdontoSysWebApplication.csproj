@@ -70,6 +70,7 @@
     <None Include="Connected Services\CitaWS\CitaWA1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="citasOdontologo.aspx" />
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.booleanArray.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -597,6 +598,13 @@
     <Content Include="Scripts\jquery-3.7.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="citasOdontologo.aspx.cs">
+      <DependentUpon>citasOdontologo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="citasOdontologo.aspx.designer.cs">
+      <DependentUpon>citasOdontologo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\CitaWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

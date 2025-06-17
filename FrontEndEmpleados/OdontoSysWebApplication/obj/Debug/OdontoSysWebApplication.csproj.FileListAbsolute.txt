@@ -12,3 +12,10 @@ C:\Users\gabri\Documents\PROGRA3 TA LOCAL\Actual\FrontEnd\OdontoSysWebApplicatio
 C:\Users\gabri\Documents\PROGRA3 TA LOCAL\Actual\FrontEnd\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.CoreCompileInputs.cache
 C:\Users\gabri\Documents\PROGRA3 TA LOCAL\Actual\FrontEnd\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.dll
 C:\Users\gabri\Documents\PROGRA3 TA LOCAL\Actual\FrontEnd\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.pdb
+C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.dll.config
+C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.dll
+C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.pdb
+C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.AssemblyReference.cache
+C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.dll
+C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.pdb
