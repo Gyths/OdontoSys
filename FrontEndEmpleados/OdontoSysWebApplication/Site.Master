@@ -13,7 +13,7 @@
         <!-- Navbar solo para empleados -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="Home.aspx">
+                <a class="navbar-brand" href="citasOdontologo.aspx">
                     <asp:Image runat="server" CssClass="d-inline-block align-text-top"
                         ImageUrl="~/Images/logo/horizontal.png"
                         AlternateText="Logo Sonrisa Vital" Width="150" />
@@ -24,7 +24,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
 
-                        <li class="nav-item"><a class="nav-link" href="Home.aspx">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="citasOdontologo.aspx">Inicio</a></li>
 
                         <%
                             string tipo = Session["TipoCuenta"] as string;
