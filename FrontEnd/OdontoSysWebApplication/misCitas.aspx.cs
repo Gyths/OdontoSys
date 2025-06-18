@@ -57,7 +57,7 @@ namespace OdontoSysWebApplication
                 if (DateTime.TryParse(cita.fecha, out DateTime fechaCita) &&
                     fechaCita.Date < DateTime.Today)
                 {
-                    if (cita.valoracion.idValoracion <= 0) {
+                    if (cita.valoracion.idValoracion <= 1) {
                         sb.AppendLine($"<button type='button' class='btn btn-outline-primary btn-sm' onclick='valorarCita(event, {cita.idCita})'>Valorar Cita</button>");
                     }
                 }
