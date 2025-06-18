@@ -62,7 +62,8 @@
   </div>
 
   <script>
-      function valorarCita(idCita) {
+      function valorarCita(event, idCita) {
+          event.preventDefault();
           document.getElementById('<%= hfIdCita.ClientID %>').value = idCita;
         document.getElementById('<%= pnlValoracion.ClientID %>').classList.remove('d-none');
       window.scrollTo({ top: document.getElementById('<%= pnlValoracion.ClientID %>').offsetTop, behavior: 'smooth' });
