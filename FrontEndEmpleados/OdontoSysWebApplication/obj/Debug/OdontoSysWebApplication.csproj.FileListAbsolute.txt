@@ -26,3 +26,10 @@ C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWe
 C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.CoreCompileInputs.cache
 C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.dll
 C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.pdb
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.dll.config
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.dll
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.pdb
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.AssemblyReference.cache
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.dll
+C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.pdb

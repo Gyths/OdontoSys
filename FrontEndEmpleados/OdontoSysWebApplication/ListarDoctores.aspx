@@ -13,7 +13,8 @@
         CssClass="table table-hover table-striped"
         DataKeyNames="idOdontologo"
         EmptyDataText="No hay doctores registrados."
-        Width="100%">
+        Width="100%"
+        OnRowDataBound="gvDoctores_RowDataBound">
         <Columns>
             <asp:BoundField DataField="nombre" HeaderText="Nombre" />
             <asp:BoundField DataField="apellidos" HeaderText="Apellidos" />

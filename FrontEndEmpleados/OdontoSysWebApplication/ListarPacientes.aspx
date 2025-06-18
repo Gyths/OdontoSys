@@ -13,7 +13,9 @@
         CssClass="table table-hover table-striped"
         DataKeyNames="idPaciente"
         EmptyDataText="No hay pacientes registrados."
-        Width="100%">
+        Width="100%"
+        OnRowDataBound="gvPacientes_RowDataBound"
+        OnRowCommand="gvPacientes_RowCommand">
         <Columns>
             <asp:BoundField DataField="nombre" HeaderText="Nombre" />
             <asp:BoundField DataField="apellidos" HeaderText="Apellidos" />
@@ -28,6 +30,16 @@
             </asp:TemplateField>
 
             <asp:BoundField DataField="NumeroDocumento" HeaderText="N° Documento" />
+
+             <%-- Columna de acciones con boton--%>
+            <asp:TemplateField HeaderText="Citas">
+                <ItemTemplate>
+                    <asp:Button ID="btnVerCitas" runat="server" Text="Ver Citas"
+                        CommandName="VerCitas"
+                        CommandArgument='<%# Eval("idPaciente") %>'
+                        CssClass="btn btn-outline-primary btn-sm" />
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
         <HeaderStyle CssClass="bg-primary text-white" />
     </asp:GridView>
