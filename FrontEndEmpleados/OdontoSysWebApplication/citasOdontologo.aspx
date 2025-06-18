@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <!-- ScriptManager necesario para el UpdatePanel -->
+
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
 
     <div class="container-fluid">
