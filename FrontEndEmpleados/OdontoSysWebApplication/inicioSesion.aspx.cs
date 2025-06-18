@@ -23,14 +23,14 @@ namespace OdontoSysWebApplication
             string usuario = txtUsuario.Text.Trim();
             string contrasena = txtContrasenha.Text.Trim();
 
-            // 1) Validación vacíos
+           
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contrasena))
             {
                 ShowError("Por favor, ingresa usuario y contraseña.");
                 return;
             }
 
-            // 2) Validación de sólo mayúsculas, minúsculas y números
+          
             if (!Regex.IsMatch(contrasena, @"^[A-Za-z0-9]+$"))
             {
                 ShowError("La contraseña sólo puede contener letras y números (no caracteres especiales).");
@@ -39,7 +39,7 @@ namespace OdontoSysWebApplication
 
             try
             {
-                // 3) Tu lógica de autenticación
+                
                 // Intentar con Recepcionista
                 var recepcionistaBO = new RecepcionistaBO();
                 var recepcionista = recepcionistaBO.recepcionista_obtenerPorUsuarioContrasenha(usuario, PasswordHelper.HashPassword(contrasena));
@@ -70,7 +70,7 @@ namespace OdontoSysWebApplication
             }
         }
 
-        // (Opcional) Para validación al cambiar el texto sin hacer clic en el botón
+       
         /*
         private void TxtContrasenha_TextChanged(object sender, EventArgs e)
         {

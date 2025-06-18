@@ -5,8 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using OdontoSysWebAppliation.OdontoSysBusiness;
-using OdontoSysWebApplication.CitaWS;
-using OdontoSysWebApplication.OdontologoWS;
 using OdontoSysWebApplication.OdontoSysBusiness;
 
 namespace OdontoSysWebApplication
@@ -18,60 +16,32 @@ namespace OdontoSysWebApplication
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["idPacienteSeleccionado"] == null)
-            {
-                System.Diagnostics.Debug.WriteLine(" No hay paciente seleccionado en sesión.");
-                Response.Redirect("ListarPacientes.aspx");
-                return;
-            }
             if (!IsPostBack)
             {
-                CargarCitas();
+                var paciente = Session["pacienteSeleccionado"] as CitaWS.paciente;
+                if (paciente != null)
+                {
+                    CargarCitas(paciente);
+                }
+                else
+                {
+                    Response.Redirect("ListarPacientes.aspx");
+                }
             }
         }
 
-        private void CargarCitas()
+        private void CargarCitas(CitaWS.paciente paciente)
         {
-            int idPaciente = (int)Session["idPacienteSeleccionado"];
-
-            var pacienteCita = new CitaWS.paciente
+            try
             {
-                idPaciente = idPaciente,
-                idPacienteSpecified = true
-            };
-
-            var clienteCita = new CitaWAClient();
-            var citas = clienteCita.cita_listarPorPaciente(pacienteCita);
-
-            // Convertir a lista enriquecida para mostrar en GridView
-            var citasProcesadas = citas.Select(c => new {
-                c.idCita,
-                c.horaInicio,
-                c.fecha,
-                c.estado,
-                odontologoNombre = c.odontologo?.nombre ?? "Sin odontólogo",
-                calificacion = c.valoracion?.calicicacion.ToString() ?? "Sin calificación",
-                tieneComprobante = c.comprobante != null && c.comprobante.idComprobante > 0,
-                c.comprobante
-            }).ToList();
-
-            gvCitas.DataSource = citasProcesadas;
-            gvCitas.DataBind();
-        }
-
-        protected void gvCitas_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            int idCita = Convert.ToInt32(e.CommandArgument);
-
-            if (e.CommandName == "AñadirComprobante")
-            {
-                Session["idCita"] = idCita;
-                Response.Redirect("RegistrarComprobante.aspx"); // Asegúrate de tener esta página
+                var citaService = new CitaWS.cita();
+                var citas = boCita.cita_listarPorPaciente(paciente); 
+                gvCitas.DataSource = citas;
+                gvCitas.DataBind();
             }
-            else if (e.CommandName == "VerComprobante")
+            catch (Exception ex)
             {
-                Session["idCita"] = idCita;
-                Response.Redirect("VerComprobante.aspx"); // Asegúrate de tener esta página
+                // Manejar errores
             }
         }
 
@@ -79,38 +49,35 @@ namespace OdontoSysWebApplication
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                var btnVer = (Button)e.Row.FindControl("btnVer");
-                var btnAdd = (Button)e.Row.FindControl("btnAdd");
+                // Obtener el idComprobante del DataItem
+                var idComprobante = DataBinder.Eval(e.Row.DataItem, "idComprobante");
 
-                string estado = DataBinder.Eval(e.Row.DataItem, "estado").ToString();
-                bool tieneComprobante = (bool)DataBinder.Eval(e.Row.DataItem, "tieneComprobante");
+                // Encontrar el botón en la fila
+                Button btnVerPago = (Button)e.Row.FindControl("btnVerPago");
 
-                if (estado != "CANCELADA")
+                // Mostrar el botón solo si idComprobante no es null
+                if (idComprobante != null && !string.IsNullOrEmpty(idComprobante.ToString()))
                 {
-                    if (tieneComprobante)
-                    {
-                        btnVer.Visible = true;
-                    }
-                    else
-                    {
-                        btnAdd.Visible = true;
-                    }
+                    btnVerPago.Visible = true;
+                }
+                else
+                {
+                    btnVerPago.Visible = false;
                 }
             }
         }
 
-        /*protected void btnActualizarEstado_Click(object sender, EventArgs e)
+        protected void btnVerPago_Command(object sender, CommandEventArgs e)
         {
-            int idCita = int.Parse(hfIdCitaEditar.Value);
-            string nuevoEstado = ddlNuevoEstado.SelectedValue;
+            if (e.CommandName == "VerPago")
+            {
+                string idComprobante = e.CommandArgument.ToString();
 
-            var estado = (estado)Enum.Parse(typeof(estado), nuevoEstado);
+                
+                Response.Redirect($"VerComprobante.aspx?idComprobante={idComprobante}");
 
-            var clienteCita = new CitaWAClient();
-            clienteCita.actualizarEstadoCita(idCita, estado);
-
-            // Refrescar la lista
-            cargarCitas();
-        }*/
+              
+            }
+        }
     }
 }
