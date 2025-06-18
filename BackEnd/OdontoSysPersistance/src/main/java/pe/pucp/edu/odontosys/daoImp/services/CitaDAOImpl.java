@@ -28,7 +28,6 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     protected void configurarListaDeColumnas(){
         this.listaColumnas.add(new Columna("CITA_ID",true,true));
         this.listaColumnas.add(new Columna("PACIENTE_ID",false,false));
-        this.listaColumnas.add(new Columna("RECEPCIONISTA_ID", false, false));
         this.listaColumnas.add(new Columna("ODONTOLOGO_ID",false,false));
         this.listaColumnas.add(new Columna("FECHA",false,false));
         this.listaColumnas.add(new Columna("HORA_INICIO",false,false));
@@ -38,22 +37,20 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     @Override
     protected void incluirValorDeParametrosParaInsercion() throws SQLException{
         this.statement.setInt(1, this.cita.getPaciente().getIdPaciente());
-        this.statement.setInt(2, this.cita.getRecepcionista().getIdRecepcionista());
-        this.statement.setInt(3, this.cita.getOdontologo().getIdOdontologo());
-        this.statement.setObject(4, LocalDate.parse(this.cita.getFecha()));
-        this.statement.setObject(5,LocalTime.parse(this.cita.getHoraInicio()));
-        this.statement.setString(6, this.cita.getEstado().name());
+        this.statement.setInt(2, this.cita.getOdontologo().getIdOdontologo());
+        this.statement.setObject(3, LocalDate.parse(this.cita.getFecha()));
+        this.statement.setObject(4,LocalTime.parse(this.cita.getHoraInicio()));
+        this.statement.setString(5, this.cita.getEstado().name());
     }
     
     @Override
     protected void incluirValorDeParametrosParaModificacion() throws SQLException{ 
         this.statement.setInt(1, this.cita.getPaciente().getIdPaciente());
-        this.statement.setInt(2, this.cita.getRecepcionista().getIdRecepcionista());
-        this.statement.setInt(3, this.cita.getOdontologo().getIdOdontologo());
-        this.statement.setObject(4, LocalDate.parse(this.cita.getFecha()));
-        this.statement.setObject(5,LocalTime.parse(this.cita.getHoraInicio()));
-        this.statement.setString(6, this.cita.getEstado().name());
-        this.statement.setInt(7, this.cita.getIdCita());
+        this.statement.setInt(2, this.cita.getOdontologo().getIdOdontologo());
+        this.statement.setObject(3, LocalDate.parse(this.cita.getFecha()));
+        this.statement.setObject(4,LocalTime.parse(this.cita.getHoraInicio()));
+        this.statement.setString(5, this.cita.getEstado().name());
+        this.statement.setInt(6, this.cita.getIdCita());
     }
     
     @Override
