@@ -57,7 +57,9 @@ namespace OdontoSysWebApplication
                 if (DateTime.TryParse(cita.fecha, out DateTime fechaCita) &&
                     fechaCita.Date < DateTime.Today)
                 {
-                    sb.AppendLine($"<button type='button' class='btn btn-outline-primary btn-sm' onclick='valorarCita(event, {cita.idCita})'>Valorar Cita</button>");
+                    if (cita.valoracion.idValoracion <= 0) {
+                        sb.AppendLine($"<button type='button' class='btn btn-outline-primary btn-sm' onclick='valorarCita(event, {cita.idCita})'>Valorar Cita</button>");
+                    }
                 }
 
                 sb.AppendLine("</div>");
@@ -84,15 +86,18 @@ namespace OdontoSysWebApplication
             {
                 comentario = txtComentario.Text.Trim(),
                 calicicacion = int.Parse(ddlPuntaje.SelectedValue),
-                fechaCalificacion = DateTime.Today.ToString()
+                calicicacionSpecified = true,
+                fechaCalificacion = DateTime.Today.ToString("yyyy-MM-dd")
             };
+            
             try
             {
                 var clienteValoracion = new ValoracionWAClient();
                 int idV = clienteValoracion.valoracion_insertar(valoracion);
                 var valoracionCita = new OdontoSysBusiness.CitaWS.valoracion
                 {
-                    idValoracion = idV
+                    idValoracion = idV,
+                    idValoracionSpecified = true
                 };
                 clienteCita.cita_actualizarFkValoracion(cita, valoracionCita);
                 ltCitas.Text = "<div class='alert alert-success'>Gracias por valorar tu cita.</div>";
