@@ -7,21 +7,40 @@
         <a href="ListarPacientes.aspx" class="btn btn-secondary">← Volver a Pacientes</a>
     </div>
 
-    <asp:GridView ID="gvCitas" runat="server" AutoGenerateColumns="false"
-        CssClass="table table-striped"
-        EmptyDataText="No hay citas registradas para este paciente.">
+   <asp:GridView ID="gvCitas" runat="server" AutoGenerateColumns="false"
+    CssClass="table table-striped"
+    EmptyDataText="No hay citas registradas para este paciente."
+    OnRowCommand="gvCitas_RowCommand"
+       OnRowDataBound="gvCitas_RowDataBound">
+    
+    <Columns>
+        <asp:BoundField DataField="fecha" HeaderText="Fecha" />
+<asp:BoundField DataField="horaInicio" HeaderText="Hora de Inicio" />
 
-        <Columns>
-            <asp:BoundField DataField="fecha" HeaderText="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
-            <asp:BoundField DataField="horaInicio" HeaderText="Hora de Inicio" />
-            <asp:BoundField DataField="idRecepcionista" HeaderText="ID Recepcionista" />
-            <asp:BoundField DataField="idOdontologo" HeaderText="ID Odontólogo" />
-            <asp:BoundField DataField="idComprobante" HeaderText="ID Comprobante" />
-            <asp:BoundField DataField="idValoracion" HeaderText="ID Valoración" />
-            <asp:BoundField DataField="estado" HeaderText="Estado" />
-        </Columns>
+<asp:BoundField DataField="odontologoNombre" HeaderText="Odontólogo" />
+<asp:BoundField DataField="calificacion" HeaderText="Calificación" />
+<asp:BoundField DataField="estado" HeaderText="Estado" />
 
-        <HeaderStyle CssClass="bg-primary text-white" />
-    </asp:GridView>
+<asp:TemplateField HeaderText="Comprobante">
+    <ItemTemplate>
+        <%# (bool)Eval("tieneComprobante") ? "Comprobante generado" : "Sin comprobante" %>
+    </ItemTemplate>
+</asp:TemplateField>
 
+<asp:TemplateField HeaderText="Acción">
+    <ItemTemplate>
+        <asp:Button ID="btnVer" runat="server" Text="Ver Detalles"
+            CommandName="VerComprobante" CommandArgument='<%# Eval("idCita") %>'
+            CssClass="btn btn-sm btn-outline-primary" Visible="false" />
+
+        <asp:Button ID="btnAdd" runat="server" Text="Añadir Comprobante"
+            CommandName="AñadirComprobante" CommandArgument='<%# Eval("idCita") %>'
+            CssClass="btn btn-sm btn-outline-primary" Visible="false" />
+    </ItemTemplate>
+</asp:TemplateField>
+    </Columns>
+
+    <HeaderStyle CssClass="bg-primary text-white" />
+</asp:GridView>
+    </script>
 </asp:Content>

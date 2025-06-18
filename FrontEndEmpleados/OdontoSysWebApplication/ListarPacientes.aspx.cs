@@ -66,9 +66,9 @@ namespace OdontoSysWebApplication
                 {
                     int idPaciente = Convert.ToInt32(e.CommandArgument);
                     boPaciente = new PacienteBO();
-                    var paciente = boPaciente.paciente_obtenerPorId(idPaciente);
+                    PacienteWS.paciente paciente = boPaciente.paciente_obtenerPorId(idPaciente);
 
-                    Session["pacienteSeleccionado"] = paciente;
+                    Session["idPacienteSeleccionado"] = idPaciente;
                     Response.Redirect("ListarCitas.aspx");
                 }
                 catch (Exception ex)

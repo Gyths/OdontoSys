@@ -5,7 +5,6 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2><i class="fas fa-users"></i> Listado de Pacientes</h2>
      
-        <a href="RegistrarPaciente.aspx" class="btn btn-primary">Registrar Nuevo Paciente</a>
     </div>
 
     <asp:GridView ID="gvPacientes" runat="server"

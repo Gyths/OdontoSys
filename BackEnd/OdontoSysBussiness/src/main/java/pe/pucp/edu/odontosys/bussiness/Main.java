@@ -492,6 +492,17 @@ public class Main {
             System.out.println(t);
         }
         
+        Paciente paciente = new Paciente();
+        paciente.setIdPaciente(11);
+        
+        CitaBO citaBO = new CitaBO();
+        
+        ArrayList<Cita> citas = citaBO.listarPorPaciente(paciente);
+        
+        for(Cita c : citas){
+            System.out.println(c);
+        }
+        
         RecepcionistaBO recepcionistaBO= new RecepcionistaBO();
         
         Recepcionista recepcionista = recepcionistaBO.obtenerPorUsuarioContrasenha("default", "Contrasenha123");

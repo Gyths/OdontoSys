@@ -567,6 +567,7 @@
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="VerComprobante.aspx" />
     <Content Include="Web.config" />
     <None Include="Connected Services\SalaWS\SalaWA.wsdl" />
     <None Include="Connected Services\SalaWS\SalaWA.xsd">
@@ -757,6 +758,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="VerComprobante.aspx.cs">
+      <DependentUpon>VerComprobante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerComprobante.aspx.designer.cs">
+      <DependentUpon>VerComprobante.aspx</DependentUpon>
     </Compile>
     <Compile Include="Xtras\PasswordHelper.cs" />
   </ItemGroup>

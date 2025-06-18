@@ -15,13 +15,22 @@ namespace OdontoSysWebApplication
     {
 
         /// <summary>
-        /// Control pnlMensaje.
+        /// Control pnlFormulario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlMensaje;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnlFormulario;
+
+        /// <summary>
+        /// Control imgLogoReg.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgLogoReg;
 
         /// <summary>
         /// Control lblMensaje.
@@ -42,15 +51,6 @@ namespace OdontoSysWebApplication
         protected global::System.Web.UI.WebControls.TextBox txtFechaEmision;
 
         /// <summary>
-        /// Control rfvFechaEmision.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFechaEmision;
-
-        /// <summary>
         /// Control txtHoraEmision.
         /// </summary>
         /// <remarks>
@@ -58,33 +58,6 @@ namespace OdontoSysWebApplication
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHoraEmision;
-
-        /// <summary>
-        /// Control rfvHoraEmision.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHoraEmision;
-
-        /// <summary>
-        /// Control txtNumeroDocumento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumeroDocumento;
-
-        /// <summary>
-        /// Control rfvNumeroDocumento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNumeroDocumento;
 
         /// <summary>
         /// Control txtTotal.
@@ -96,24 +69,6 @@ namespace OdontoSysWebApplication
         protected global::System.Web.UI.WebControls.TextBox txtTotal;
 
         /// <summary>
-        /// Control rfvTotal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTotal;
-
-        /// <summary>
-        /// Control rvTotal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator rvTotal;
-
-        /// <summary>
         /// Control ddlMetodoPago.
         /// </summary>
         /// <remarks>
@@ -123,30 +78,12 @@ namespace OdontoSysWebApplication
         protected global::System.Web.UI.WebControls.DropDownList ddlMetodoPago;
 
         /// <summary>
-        /// Control rfvMetodoPago.
+        /// Control btnGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMetodoPago;
-
-        /// <summary>
-        /// Control btnRegresar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegresar;
-
-        /// <summary>
-        /// Control btnInsertar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInsertar;
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
     }
 }

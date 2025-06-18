@@ -56,7 +56,7 @@
                         <% } %>
                     </p>
                     <% if (tipo == "recepcionista") { %>
-                      <a href="gestionarPacientes.aspx" class="btn btn-outline-success me-2 mt-3">Gestionar Pacientes</a>
+                      <a href="ListarPacientes.aspx" class="btn btn-outline-success me-2 mt-3">Gestionar Pacientes</a>
                       <a href="registrarCitas.aspx" class="btn btn-outline-primary mt-3">Registrar Citas</a>
                     <% } else if (tipo == "odontologo") { %>
                      <a href="miAgenda.aspx" class="btn btn-outline-success me-2 mt-3">Ver Agenda</a>
