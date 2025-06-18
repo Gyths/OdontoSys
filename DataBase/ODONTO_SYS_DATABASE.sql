@@ -216,21 +216,21 @@ LOCK TABLES `OS_ODONTOLOGOS` WRITE;
 -- Insertar datos de odontologos activos.
 INSERT INTO `OS_ODONTOLOGOS` (`PUNTUACION_PROMEDIO`, `SALA_ID`, `CONTRASENHA`, `NOMBRE_USUARIO`, `CORREO`, `TELEFONO`, `NOMBRES`, `APELLIDOS`, `TIPO_DOCUMENTO_ID`, `NUMERO_DOCUMENTO_IDENTIDAD`, `ESPECIALIDAD_ID`) VALUES
 -- 2 odontologos para ODONTOLOGIA GENERAL (ESPECIALIDAD_ID = 1)
-(0,  1, 'ogeneral1',   'ogeneral_juanp',   'juan.perez@odontosys.com',    '987654001', 'Juan',  'Pérez Gómez',    1, '52345678', 1),
-(0,  2, 'ogeneral2',   'ogeneral_marial',  'maria.lopez@odontosys.com',   '987654002', 'María', 'López Aliaga',    1, '87654321', 1),
+(0,  1, 'fcb99c4cdcda82fa84aeb196dc9663edc570e99c31e70529541b3309d18c0683',   'ogeneral_juanp',   'juan.perez@odontosys.com',    '987654001', 'Juan',  'Pérez Gómez',    1, '52345678', 1),
+(0,  2, 'a9402f22e6f60f51d6367c58dbdce411cb796553202152d0b9650b936a2273a4',   'ogeneral_marial',  'maria.lopez@odontosys.com',   '987654002', 'María', 'López Aliaga',    1, '87654321', 1),
 
 -- 2 odontologos para ORTODONCIA (ESPECIALIDAD_ID = 2)
-(0,  3, 'ortodon1',    'ortodojas1',       'jose.alfaro@odontosys.com',    '987654011', 'José',  'Alfaro Corvetto',   1, '71223344', 2),
-(0,  5, 'ortodon2',    'ortodona2',        'ana.guzman@odontosys.com',     '987654012', 'Ana',   'Guzmán Medina',   1, '44332211', 2),
+(0,  3, '9b3706a899c55f7e6df8590934c9191774d853172fd6297e726be8df0d25e7f9',    'ortodojas1',       'jose.alfaro@odontosys.com',    '987654011', 'José',  'Alfaro Corvetto',   1, '71223344', 2),
+(0,  5, 'c73e7060d7a406bb6e6bc1ec23b5679a72320630b46e5df1b838832c8316d8ba',    'ortodona2',        'ana.guzman@odontosys.com',     '987654012', 'Ana',   'Guzmán Medina',   1, '44332211', 2),
 
 -- 1 odontologo para ENDODONCIA (ESPECIALIDAD_ID = 3)
-(0,  6, 'endodon1',    'endodon_diego',    'diego.ramos@odontosys.com',    '987654021', 'Diego', 'Ramos García',    1, '55667788', 3),
+(0,  6, '5d86c7acf18d5213a94860bd3510e5c8b223e0c7294d6188566ff27b58441c3c',    'endodon_diego',    'diego.ramos@odontosys.com',    '987654021', 'Diego', 'Ramos García',    1, '55667788', 3),
 
 -- 1 odontologo para CIRUGIA (ESPECIALIDAD_ID = 4)
-(0,  7, 'cirugia1',    'cirugia_carla',    'carla.sanchez@odontosys.com',  '987654031', 'Carla', 'Sánchez Montenegro',  1, '88776655', 4),
+(0,  7, 'eb00167bc474e07633db17fdacf7b18173adc5d6c74811bd033950fb3de6a8af',    'cirugia_carla',    'carla.sanchez@odontosys.com',  '987654031', 'Carla', 'Sánchez Montenegro',  1, '88776655', 4),
 
 -- 1 odontologo para PEDIATRIA (ESPECIALIDAD_ID = 5)
-(0,  4, 'pedinf1',     'pediatra_luis',    'luis.morales@odontosys.com',   '987654041', 'Luis',  'Morales Mendoza',  1, '99887766', 5);
+(0,  4, '089f3572306aba72914eddfcc4dea0324477304e23c3537121cf21854af20b36',     'pediatra_luis',    'luis.morales@odontosys.com',   '987654041', 'Luis',  'Morales Mendoza',  1, '99887766', 5);
 
 /*!40000 ALTER TABLE `OS_ODONTOLOGOS` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -305,8 +305,8 @@ LOCK TABLES `OS_RECEPCIONISTAS` WRITE;
 -- Insertar un recepcionista por defecto para asignar a las citas que los pacientes reservan desde la web y no son gestionadas por un recepcionista real
 INSERT INTO `OS_RECEPCIONISTAS` (`CONTRASENHA`, `NOMBRE_USUARIO`, `CORREO`, `TELEFONO`, `NOMBRES`, `APELLIDOS`, `TIPO_DOCUMENTO_ID`, `NUMERO_DOCUMENTO_IDENTIDAD`) VALUES
 ('Contrasenha123', 'default', 'r.default@gmail.com', '999999999', 'Recepcionista', 'Default', 1, '12345678'),
-('Gcarrillo2024!', 'giancarlo.carrillo', 'giancarlo.carrillo@gmail.com', '981234567', 'Giancarlo', 'Carrillo Aquise', 1, '45678901'),
-('Fherrera2024!',  'fiorela.herrera',  'fiorela.herrera@gmail.com',  '982345678', 'Fiorela',   'Herrera Torres',   1, '56789012');
+('bd90e96a1bc1ccc5001e268d298835b77bd6c055df15dd16fac79304eec34079', 'giancarlo.carrillo', 'giancarlo.carrillo@gmail.com', '981234567', 'Giancarlo', 'Carrillo Aquise', 1, '45678901'),
+('91fa43dd10a589b847de65f63e2533fa508389a9661e3357a6de95ea738ba918',  'fiorela.herrera',  'fiorela.herrera@gmail.com',  '982345678', 'Fiorela',   'Herrera Torres',   1, '56789012');
 /*!40000 ALTER TABLE `OS_RECEPCIONISTAS` ENABLE KEYS */;
 UNLOCK TABLES;
 

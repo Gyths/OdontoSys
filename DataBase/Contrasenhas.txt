@@ -1,0 +1,28 @@
+// Para los odontologos
+usuario = ogeneral_juanp
+contrasenha = ogeneral1
+
+usuario = ogeneral_marial
+contrasenha = ogeneral2
+
+usuario = ortodojas1
+contrasenha = ortodon1
+
+usuario = ortodona2
+contrasenha = ortodon2
+
+usuario = endodon_diego
+contrasenha = endodon1
+
+usuario = cirugia_carla
+contrasenha = cirugia1
+
+usuario = pediatra_luis
+contrasenha = pedinf1
+
+//Para recepcionistas
+usuario = giancarlo.carrillo
+contrasenha = Gcarrillo2024
+
+usuario = fiorela.herrera
+contrasenha = Fherrera2024
