@@ -30,10 +30,8 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
         this.listaColumnas.add(new Columna("PACIENTE_ID",false,false));
         this.listaColumnas.add(new Columna("RECEPCIONISTA_ID", false, false));
         this.listaColumnas.add(new Columna("ODONTOLOGO_ID",false,false));
-        this.listaColumnas.add(new Columna("COMPROBANTE_ID",false,false));
         this.listaColumnas.add(new Columna("FECHA",false,false));
         this.listaColumnas.add(new Columna("HORA_INICIO",false,false));
-        this.listaColumnas.add(new Columna("VALORACION_ID",false,false));
         this.listaColumnas.add(new Columna("ESTADO",false,false));
     }
     
@@ -42,11 +40,9 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
         this.statement.setInt(1, this.cita.getPaciente().getIdPaciente());
         this.statement.setInt(2, this.cita.getRecepcionista().getIdRecepcionista());
         this.statement.setInt(3, this.cita.getOdontologo().getIdOdontologo());
-        this.statement.setInt(4, this.cita.getComprobante().getIdComprobante());
-        this.statement.setObject(5, LocalDate.parse(this.cita.getFecha()));
-        this.statement.setObject(6,LocalTime.parse(this.cita.getHoraInicio()));
-        this.statement.setDouble(7,this.cita.getValoracion().getIdValoracion());
-        this.statement.setString(8, this.cita.getEstado().name());
+        this.statement.setObject(4, LocalDate.parse(this.cita.getFecha()));
+        this.statement.setObject(5,LocalTime.parse(this.cita.getHoraInicio()));
+        this.statement.setString(6, this.cita.getEstado().name());
     }
     
     @Override
@@ -54,12 +50,10 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
         this.statement.setInt(1, this.cita.getPaciente().getIdPaciente());
         this.statement.setInt(2, this.cita.getRecepcionista().getIdRecepcionista());
         this.statement.setInt(3, this.cita.getOdontologo().getIdOdontologo());
-        this.statement.setInt(4, this.cita.getComprobante().getIdComprobante());
-        this.statement.setObject(5, LocalDate.parse(this.cita.getFecha()));
-        this.statement.setObject(6,LocalTime.parse(this.cita.getHoraInicio()));
-        this.statement.setDouble(7,this.cita.getValoracion().getIdValoracion());
-        this.statement.setString(8, this.cita.getEstado().name());
-        this.statement.setInt(9, this.cita.getIdCita());
+        this.statement.setObject(4, LocalDate.parse(this.cita.getFecha()));
+        this.statement.setObject(5,LocalTime.parse(this.cita.getHoraInicio()));
+        this.statement.setString(6, this.cita.getEstado().name());
+        this.statement.setInt(7, this.cita.getIdCita());
     }
     
     @Override

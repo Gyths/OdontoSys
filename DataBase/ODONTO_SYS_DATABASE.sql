@@ -82,10 +82,6 @@ CREATE TABLE `OS_COMPROBANTES` (
 
 LOCK TABLES `OS_COMPROBANTES` WRITE;
 /*!40000 ALTER TABLE `OS_COMPROBANTES` DISABLE KEYS */;
--- Insert base para citas reservadas que aun no se han pagado: 
--- se crea un comprobante inicial con valores minimos para enlazar como FK en las citas reservadas
-INSERT INTO `OS_COMPROBANTES` (`FECHA_EMISION`, `TOTAL`, `HORA_EMISION`, `METODO_PAGO_ID`) VALUES 
-('0001-01-01',0,'00:00:00',1);
 /*!40000 ALTER TABLE `OS_COMPROBANTES` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -610,9 +606,6 @@ CREATE TABLE `OS_VALORACIONES` (
 
 LOCK TABLES `OS_VALORACIONES` WRITE;
 /*!40000 ALTER TABLE `OS_VALORACIONES` DISABLE KEYS */;
--- Insertar una valoración por defecto para las citas que aún no cuentan con una valoración real o que tal vez nunca la tengan
-INSERT INTO `OS_VALORACIONES` (`COMENTARIO`, `CALIFICACION`, `FECHA`) VALUES 
-(' ', 1, '0001-01-01');
 /*!40000 ALTER TABLE `OS_VALORACIONES` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
