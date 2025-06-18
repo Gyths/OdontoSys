@@ -300,7 +300,6 @@ LOCK TABLES `OS_RECEPCIONISTAS` WRITE;
 /*!40000 ALTER TABLE `OS_RECEPCIONISTAS` DISABLE KEYS */;
 -- Insertar un recepcionista por defecto para asignar a las citas que los pacientes reservan desde la web y no son gestionadas por un recepcionista real
 INSERT INTO `OS_RECEPCIONISTAS` (`CONTRASENHA`, `NOMBRE_USUARIO`, `CORREO`, `TELEFONO`, `NOMBRES`, `APELLIDOS`, `TIPO_DOCUMENTO_ID`, `NUMERO_DOCUMENTO_IDENTIDAD`) VALUES
-('Contrasenha123', 'default', 'r.default@gmail.com', '999999999', 'Recepcionista', 'Default', 1, '12345678'),
 ('bd90e96a1bc1ccc5001e268d298835b77bd6c055df15dd16fac79304eec34079', 'giancarlo.carrillo', 'giancarlo.carrillo@gmail.com', '981234567', 'Giancarlo', 'Carrillo Aquise', 1, '45678901'),
 ('91fa43dd10a589b847de65f63e2533fa508389a9661e3357a6de95ea738ba918',  'fiorela.herrera',  'fiorela.herrera@gmail.com',  '982345678', 'Fiorela',   'Herrera Torres',   1, '56789012');
 /*!40000 ALTER TABLE `OS_RECEPCIONISTAS` ENABLE KEYS */;
