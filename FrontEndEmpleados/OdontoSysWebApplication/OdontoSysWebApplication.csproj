@@ -540,6 +540,7 @@
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
     <Content Include="Content\Fonts\LICENSE.txt" />
     <Content Include="crearCuenta.aspx" />
+    <Content Include="FrontOdontologo\CitasPorAtender.aspx" />
     <Content Include="gestionOdontologo.aspx" />
     <Content Include="gestionPaciente.aspx" />
     <Content Include="home.aspx" />
@@ -713,6 +714,13 @@
     <Compile Include="crearCuenta.aspx.designer.cs">
       <DependentUpon>crearCuenta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FrontOdontologo\CitasPorAtender.aspx.cs">
+      <DependentUpon>CitasPorAtender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontOdontologo\CitasPorAtender.aspx.designer.cs">
+      <DependentUpon>CitasPorAtender.aspx</DependentUpon>
+    </Compile>
     <Compile Include="gestionOdontologo.aspx.cs">
       <DependentUpon>gestionOdontologo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -832,9 +840,7 @@
     <WCFMetadataStorage Include="Connected Services\TurnoXOdontologoWS\" />
     <WCFMetadataStorage Include="Connected Services\ValoracionWS\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="FrontOdontologo\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
