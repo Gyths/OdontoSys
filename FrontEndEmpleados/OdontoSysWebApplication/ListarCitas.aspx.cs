@@ -19,7 +19,6 @@ namespace OdontoSysWebApplication
             if (!IsPostBack)
             {
                 var paciente = Session["pacienteSeleccionado"] as CitaWS.paciente;
-
                 if (paciente != null)
                 {
                     CargarCitas(paciente);
@@ -43,6 +42,41 @@ namespace OdontoSysWebApplication
             catch (Exception ex)
             {
                 // Manejar errores
+            }
+        }
+
+        protected void gvCitas_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                // Obtener el idComprobante del DataItem
+                var idComprobante = DataBinder.Eval(e.Row.DataItem, "idComprobante");
+
+                // Encontrar el botón en la fila
+                Button btnVerPago = (Button)e.Row.FindControl("btnVerPago");
+
+                // Mostrar el botón solo si idComprobante no es null
+                if (idComprobante != null && !string.IsNullOrEmpty(idComprobante.ToString()))
+                {
+                    btnVerPago.Visible = true;
+                }
+                else
+                {
+                    btnVerPago.Visible = false;
+                }
+            }
+        }
+
+        protected void btnVerPago_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "VerPago")
+            {
+                string idComprobante = e.CommandArgument.ToString();
+
+                
+                Response.Redirect($"VerComprobante.aspx?idComprobante={idComprobante}");
+
+              
             }
         }
     }
