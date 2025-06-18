@@ -70,6 +70,8 @@
     <None Include="Connected Services\CitaWS\CitaWA1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="buscarOdontologo.aspx" />
+    <Content Include="buscarPaciente.aspx" />
     <Content Include="CitasDia.aspx" />
     <Content Include="citasOdontologo.aspx" />
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.booleanArray.datasource">
@@ -538,6 +540,8 @@
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
     <Content Include="Content\Fonts\LICENSE.txt" />
     <Content Include="crearCuenta.aspx" />
+    <Content Include="gestionOdontologo.aspx" />
+    <Content Include="gestionPaciente.aspx" />
     <Content Include="home.aspx" />
     <Content Include="Images\crearCuenta\fondo.png" />
     <Content Include="Images\home\fondo.png" />
@@ -604,6 +608,20 @@
     <Content Include="Scripts\jquery-3.7.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="buscarOdontologo.aspx.cs">
+      <DependentUpon>buscarOdontologo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="buscarOdontologo.aspx.designer.cs">
+      <DependentUpon>buscarOdontologo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="buscarPaciente.aspx.cs">
+      <DependentUpon>buscarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="buscarPaciente.aspx.designer.cs">
+      <DependentUpon>buscarPaciente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CitasDia.aspx.cs">
       <DependentUpon>CitasDia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -694,6 +712,20 @@
     </Compile>
     <Compile Include="crearCuenta.aspx.designer.cs">
       <DependentUpon>crearCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gestionOdontologo.aspx.cs">
+      <DependentUpon>gestionOdontologo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gestionOdontologo.aspx.designer.cs">
+      <DependentUpon>gestionOdontologo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gestionPaciente.aspx.cs">
+      <DependentUpon>gestionPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gestionPaciente.aspx.designer.cs">
+      <DependentUpon>gestionPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
@@ -800,7 +832,9 @@
     <WCFMetadataStorage Include="Connected Services\TurnoXOdontologoWS\" />
     <WCFMetadataStorage Include="Connected Services\ValoracionWS\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="FrontOdontologo\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
