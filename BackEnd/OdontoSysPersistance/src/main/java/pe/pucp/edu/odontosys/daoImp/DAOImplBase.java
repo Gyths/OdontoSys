@@ -414,9 +414,6 @@ public abstract class DAOImplBase {
         return resultado;
     }
     
-    
-    
-    
     protected void ejecutarStoredProcedureObtener(String sql, Object... parametros){
         try {
             this.abrirConexion();

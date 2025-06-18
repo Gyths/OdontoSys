@@ -372,7 +372,34 @@ BEGIN
 END $$
 DELIMITER ;
 
+-- ---------------------------------------------------------------------
+-- Procedure: PACIENTES_obtener_por_usuario
+-- Description: Obtiene un paciente a partir de su nombre de usuario
+-- Parameters:
+--   IN in_nombre_usuario VARCHAR(100)
+-- ---------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `PACIENTES_obtener_por_usuario`;
+DELIMITER $$
 
+CREATE PROCEDURE `PACIENTES_obtener_por_usuario`(
+    IN in_nombre_usuario VARCHAR(100)
+)
+BEGIN
+    SELECT
+        P.PACIENTE_ID,
+        P.CONTRASENHA,
+        P.NOMBRE_USUARIO,
+        P.CORREO,
+        P.TELEFONO,
+        P.NOMBRES,
+        P.APELLIDOS,
+        P.TIPO_DOCUMENTO_ID,
+        P.NUMERO_DOCUMENTO_IDENTIDAD
+    FROM `OS_PACIENTES` AS P
+    WHERE P.NOMBRE_USUARIO = in_nombre_usuario
+    LIMIT 1;
+END $$
+DELIMITER ;
 
 -- =========================================================================
 -- TABLE: OS_ODONTOLOGOS
@@ -530,7 +557,7 @@ BEGIN
     DECLARE v_total         DOUBLE;
 
     -- Obtener el COMPROBANTE_ID asociado a la cita
-    SELECT C.COMPROBANTE_ID
+    SELECT C.COMPROBANTE_IDos_pacientes
     INTO v_comprobante_id
     FROM `OS_CITAS` AS C
     WHERE C.CITA_ID = in_cita_id;

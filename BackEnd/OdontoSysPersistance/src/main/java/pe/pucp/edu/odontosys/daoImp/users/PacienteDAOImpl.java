@@ -130,4 +130,11 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         return this.paciente;
     }
     
+    @Override
+    public Boolean existeNombreUsuario(String nombreUsuario) {
+        String sql= "CALL PACIENTES_obtener_por_usuario(?);";
+        super.ejecutarStoredProcedureObtener(sql, nombreUsuario);
+        if(this.paciente==null)return false;
+        return true;
+    }
 }

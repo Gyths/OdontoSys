@@ -46,4 +46,8 @@ public class PacienteWA {
         return this.pacienteBO.obtenerPorUsuarioContrasenha(nombreUsuario, contrasenha);
     }
     
+    @WebMethod(operationName = "paciente_verificarExistenciaNombreUsuario")
+    public Boolean paciente_verificarExistenciaNombreUsuario(@WebParam(name = "nombreUsuario") String nombreUsuario){
+        return this.pacienteBO.verificarExistenciaNombreUsuario(nombreUsuario);
+    }
 }
