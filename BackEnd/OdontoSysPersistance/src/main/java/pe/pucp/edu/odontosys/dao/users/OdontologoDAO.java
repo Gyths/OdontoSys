@@ -13,4 +13,5 @@ public interface OdontologoDAO{
     ArrayList<Odontologo> listarPorEspecialidad(Especialidad especialidad);
     Odontologo obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha);
     Integer actualizarPuntuacion(Odontologo odontologo);
+    Boolean existeNombreUsuario(String nombreUsuario);
 }

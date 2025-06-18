@@ -46,4 +46,8 @@ public class RecepcionistaWA {
         return this.recepcionistaBO.obtenerPorUsuarioContrasenha(nombreUsuario, contrasenha);
     }
     
+    @WebMethod(operationName = "recepcionista_verificarExistenciaNombreUsuario")
+    public Boolean recepcionista_verificarExistenciaNombreUsuario(@WebParam(name = "nombreUsuario") String nombreUsuario){
+        return this.recepcionistaBO.verificarExistenciaNombreUsuario(nombreUsuario);
+    }
 }

@@ -157,4 +157,11 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         return super.ejecutarStoredProcedureModificar(sql, odontologo.getIdOdontologo());
     }
     
+    @Override
+    public Boolean existeNombreUsuario(String nombreUsuario) {
+        String sql= "CALL ODONTOLOGOS_obtener_por_usuario(?);";
+        super.ejecutarStoredProcedureObtener(sql, nombreUsuario);
+        if(this.odontologo==null)return false;
+        return true;
+    }
 }

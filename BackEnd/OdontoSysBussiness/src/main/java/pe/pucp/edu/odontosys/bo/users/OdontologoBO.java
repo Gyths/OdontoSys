@@ -45,4 +45,7 @@ public class OdontologoBO {
         return this.odontologoDAO.actualizarPuntuacion(odontologo);
     }
     
+    public Boolean verificarExistenciaNombreUsuario(String nombreUsuario){
+        return this.odontologoDAO.existeNombreUsuario(nombreUsuario);
+    }
 }

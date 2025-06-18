@@ -439,6 +439,38 @@ END $$
 DELIMITER ;
 
 -- ---------------------------------------------------------------------
+-- Procedure: ODONTOLOGOS_obtener_por_usuario
+-- Description: Obtiene el registro de un odontólogo según su nombre de usuario.
+-- Parameters:
+--   IN in_nombre_usuario VARCHAR(100)
+-- ---------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `ODONTOLOGOS_obtener_por_usuario`;
+DELIMITER $$
+
+CREATE PROCEDURE `ODONTOLOGOS_obtener_por_usuario`(
+    IN in_nombre_usuario VARCHAR(100)
+)
+BEGIN
+    SELECT
+        O.ODONTOLOGO_ID,
+        O.PUNTUACION_PROMEDIO,
+        O.SALA_ID,
+        O.CONTRASENHA,
+        O.NOMBRE_USUARIO,
+        O.CORREO,
+        O.TELEFONO,
+        O.NOMBRES,
+        O.APELLIDOS,
+        O.TIPO_DOCUMENTO_ID,
+        O.NUMERO_DOCUMENTO_IDENTIDAD,
+        O.ESPECIALIDAD_ID
+    FROM `OS_ODONTOLOGOS` AS O
+    WHERE O.NOMBRE_USUARIO = in_nombre_usuario
+    LIMIT 1;
+END $$
+DELIMITER ;
+
+-- ---------------------------------------------------------------------
 -- Procedure: ODONTOLOGOS_actualizar_puntuacion
 -- Description: Actualiza el campo PUNTUACION_PROMEDIO de un odontólogo.
 -- Parameters:
@@ -533,6 +565,34 @@ BEGIN
 END $$
 DELIMITER ;
 
+-- ---------------------------------------------------------------------
+-- Procedure: RECEPCIONISTAS_obtener_por_usuario
+-- Description: Obtiene el registro de un recepcionista según su nombre de usuario.
+-- Parameters:
+--   IN in_nombre_usuario VARCHAR(100)
+-- ---------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `RECEPCIONISTAS_obtener_por_usuario`;
+DELIMITER $$
+
+CREATE PROCEDURE `RECEPCIONISTAS_obtener_por_usuario`(
+    IN in_nombre_usuario VARCHAR(100)
+)
+BEGIN
+    SELECT
+        R.RECEPCIONISTA_ID,
+        R.CONTRASENHA,
+        R.NOMBRE_USUARIO,
+        R.CORREO,
+        R.TELEFONO,
+        R.NOMBRES,
+        R.APELLIDOS,
+        R.TIPO_DOCUMENTO_ID,
+        R.NUMERO_DOCUMENTO_IDENTIDAD
+    FROM `OS_RECEPCIONISTAS` AS R
+    WHERE R.NOMBRE_USUARIO = in_nombre_usuario
+    LIMIT 1;
+END $$
+DELIMITER ;
 
 
 -- =========================================================================
