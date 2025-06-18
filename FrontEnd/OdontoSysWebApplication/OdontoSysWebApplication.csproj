@@ -107,6 +107,7 @@
     <Content Include="Images\logo\horizontal.png" />
     <Content Include="inicioSesion.aspx" />
     <Content Include="misCitas.aspx" />
+    <Content Include="modificarCuenta.aspx" />
     <Content Include="reservaCita.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -190,6 +191,13 @@
     </Compile>
     <Compile Include="misCitas.aspx.designer.cs">
       <DependentUpon>misCitas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modificarCuenta.aspx.cs">
+      <DependentUpon>modificarCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modificarCuenta.aspx.designer.cs">
+      <DependentUpon>modificarCuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paciente.Master.cs">
       <DependentUpon>Paciente.Master</DependentUpon>
