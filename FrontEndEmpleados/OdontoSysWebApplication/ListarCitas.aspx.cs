@@ -25,7 +25,7 @@ namespace OdontoSysWebApplication
                 }
                 else
                 {
-                    Response.Redirect("ListarPacientes.aspx"); // O muestra un mensaje
+                    Response.Redirect("ListarPacientes.aspx");
                 }
             }
         }
@@ -35,7 +35,7 @@ namespace OdontoSysWebApplication
             try
             {
                 var citaService = new CitaWS.cita();
-                var citas = boCita.cita_listarPorPaciente(paciente); // Aquí usas el objeto completo
+                var citas = boCita.cita_listarPorPaciente(paciente); 
                 gvCitas.DataSource = citas;
                 gvCitas.DataBind();
             }
