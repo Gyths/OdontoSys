@@ -135,11 +135,11 @@ LOCK TABLES `OS_ESPECIALIDADES` WRITE;
 /*!40000 ALTER TABLE `OS_ESPECIALIDADES` DISABLE KEYS */;
 -- Insertar las especialidades dentales principales en la tabla para que las tablas que la requieran puedan asociarse a ellas
 INSERT INTO `OS_ESPECIALIDADES` (`DESCRIPCION`) VALUES  
-('ODONTOLOGIA_GENERAL'),
-('ORTODONCIA'),
-('ENDODONCIA'),
-('CIRUGIA'),
-('PEDIATRIA');
+('Odontologia General'),
+('Ortodoncia'),
+('Endodoncia'),
+('Cirugia'),
+('Pediatria');
 /*!40000 ALTER TABLE `OS_ESPECIALIDADES` ENABLE KEYS */;
 UNLOCK TABLES;
 
