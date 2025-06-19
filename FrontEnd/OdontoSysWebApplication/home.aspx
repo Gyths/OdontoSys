@@ -58,6 +58,9 @@
                         <a class="nav-link" href="ReservaCita.aspx">Agendar Cita</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="ModificarCuenta.aspx"><i class="fas fa-user-cog me-1"></i>Modificar Cuenta</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="Contacto.aspx">Contáctanos</a>
                     </li>
                     <li class="nav-item ms-3">
