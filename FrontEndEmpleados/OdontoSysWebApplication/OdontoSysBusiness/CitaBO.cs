@@ -73,10 +73,5 @@ namespace OdontoSysWebAppliation.OdontoSysBusiness
         {
             return this.cita_actualizarFkValoracion(valoracion);
         }
-
-        public booleanArray[] cita_calcularDisponibilidad(cita[] citas, turno[] turnos, string fechaInicio)
-        { 
-            return this.citaWAClient.cita_calcularDisponibilidad(citas, turnos, fechaInicio);
-        }
     }
 }

@@ -67,23 +67,14 @@
     <None Include="Connected Services\CitaWS\CitaWA.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\CitaWS\CitaWA1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="buscarOdontologo.aspx" />
     <Content Include="buscarPaciente.aspx" />
     <Content Include="CitasDia.aspx" />
     <Content Include="citasOdontologo.aspx" />
-    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.booleanArray.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_actualizarFkValoracionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_calcularDisponibilidadResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_eliminarResponse.datasource">

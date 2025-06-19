@@ -22,23 +22,27 @@
   </xs:complexType>
   <xs:complexType name="comprobante">
     <xs:sequence>
-      <xs:element minOccurs="0" name="fechaEmision" type="tns:localDate" />
-      <xs:element minOccurs="0" name="horaEmision" type="tns:localTime" />
+      <xs:element minOccurs="0" name="fechaEmision" type="xs:string" />
+      <xs:element minOccurs="0" name="horaEmision" type="xs:string" />
       <xs:element minOccurs="0" name="idComprobante" type="xs:int" />
       <xs:element minOccurs="0" name="metodoDePago" type="tns:metodoPago" />
       <xs:element name="total" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="localDate" final="extension restriction">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="localTime" final="extension restriction">
-    <xs:sequence />
-  </xs:complexType>
   <xs:complexType name="metodoPago">
     <xs:sequence>
       <xs:element minOccurs="0" name="idMetodoPago" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comprobante_eliminar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="comprobante" type="tns:comprobante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comprobante_eliminarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="comprobante_actualizarTotal">
@@ -50,8 +54,8 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="comprobante" type="tns:comprobante" />
       <xs:element minOccurs="0" name="estado" type="tns:estadoCita" />
-      <xs:element minOccurs="0" name="fecha" type="tns:localDate" />
-      <xs:element minOccurs="0" name="horaInicio" type="tns:localTime" />
+      <xs:element minOccurs="0" name="fecha" type="xs:string" />
+      <xs:element minOccurs="0" name="horaInicio" type="xs:string" />
       <xs:element minOccurs="0" name="idCita" type="xs:int" />
       <xs:element minOccurs="0" name="odontologo" type="tns:odontologo" />
       <xs:element minOccurs="0" name="paciente" type="tns:paciente" />
@@ -95,14 +99,15 @@
   </xs:complexType>
   <xs:complexType name="especialidad">
     <xs:sequence>
+      <xs:element minOccurs="0" name="idEspecialidad" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="turno">
     <xs:sequence>
       <xs:element minOccurs="0" name="diaSemana" type="tns:diaSemana" />
-      <xs:element minOccurs="0" name="horaFin" type="tns:localTime" />
-      <xs:element minOccurs="0" name="horaInicio" type="tns:localTime" />
+      <xs:element minOccurs="0" name="horaFin" type="xs:string" />
+      <xs:element minOccurs="0" name="horaInicio" type="xs:string" />
       <xs:element minOccurs="0" name="idTurno" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
@@ -153,21 +158,11 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="calicicacion" type="xs:int" />
       <xs:element minOccurs="0" name="comentario" type="xs:string" />
-      <xs:element minOccurs="0" name="fechaCalificacion" type="tns:localDate" />
+      <xs:element minOccurs="0" name="fechaCalificacion" type="xs:string" />
       <xs:element minOccurs="0" name="idValoracion" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="comprobante_actualizarTotalResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="comprobante_eliminar">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="comprobante" type="tns:comprobante" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="comprobante_eliminarResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
