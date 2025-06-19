@@ -92,7 +92,7 @@ namespace OdontoSysWebApplication
         protected void BtnSemana_Click(object sender, EventArgs e)
         {
             int semanas = int.Parse((sender as LinkButton).CommandArgument);
-            DateTime fechaInicio = DateTime.Today.AddDays(semanas * 7);
+            DateTime fechaInicio = DateTime.Today.AddDays(1 + semanas * 7);
             DateTime fechaFin = fechaInicio.AddDays(7);
 
             string fechaInicioStr = fechaInicio.ToString("yyyy-MM-dd");
@@ -161,7 +161,7 @@ namespace OdontoSysWebApplication
                 if (!DateTime.TryParse(cita.fecha, out var fechaCita)) continue;
                 if (!TimeSpan.TryParse(cita.horaInicio, out var horaCita)) continue;
 
-                int diaRelativo = (fechaCita.Date - fechaInicio.Date).Days;
+                int diaRelativo = (int)(fechaCita.Date - fechaInicio.Date).Days;
                 if (diaRelativo < 0 || diaRelativo >= 7) continue;
 
                 int idx = horaCita.Hours * 2 + (horaCita.Minutes == 30 ? 1 : 0);
@@ -253,7 +253,7 @@ namespace OdontoSysWebApplication
                 var clienteCita = new OdontoSysBusiness.CitaWS.CitaWAClient();
                 clienteCita.cita_insertar(cita);
                 //EnviarCorreoConfirmacion(cita, paciente);
-                Response.AddHeader("Refresh", "3;URL=home.aspx");
+                Response.AddHeader("Refresh", "1;URL=home.aspx");
                 ltDisponibilidad.Text = "<div class='alert alert-success'>¡Cita registrada correctamente!</div>";
 
                 btnConfirmarCita.Visible = false;
