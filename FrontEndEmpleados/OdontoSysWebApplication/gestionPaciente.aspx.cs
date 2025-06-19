@@ -87,22 +87,26 @@ namespace OdontoSysWebApplication
 
         private void CargarCitasPaciente(int idPaciente)
         {
-
+            //???????
             if (idPaciente == null) Response.Redirect("buscarPaciente.aspx");
+            //????????
+
             var citaBO = new CitaBO();
 
             var paciente = new CitaWS.paciente { idPaciente = idPaciente };
 
-            var citas = citaBO.cita_listarPorPaciente(paciente);
-
-            if(citas == null)
+            try
             {
-
-            }
-            else
-            {
+                var citas = citaBO.cita_listarPorPaciente(paciente);
                 gvCitas.DataSource = citas;
                 gvCitas.DataBind();
+            }
+            catch (Exception ex) 
+            {
+                System.Diagnostics.Debug.WriteLine("Error al cargar citas del paciente : " + ex.Message);
+                gvCitas.DataSource = null;
+                gvCitas.DataBind();
+
             }
         }
     }
