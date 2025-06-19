@@ -35,4 +35,7 @@ public class RecepcionistaBO {
         return this.recepcionistaDAO.obtenerPorUsuarioContrasenha(nombreUsuario, contrasenha);
     }
     
+    public Boolean verificarExistenciaNombreUsuario(String nombreUsuario){
+        return this.recepcionistaDAO.existeNombreUsuario(nombreUsuario);
+    }
 }

@@ -35,4 +35,7 @@ public class PacienteBO {
         return this.pacienteDAO.obtenerPorUsuarioContrasenha(nombreUsuario, contrasenha);
     }
     
+    public Boolean verificarExistenciaNombreUsuario(String nombreUsuario){
+        return this.pacienteDAO.existeNombreUsuario(nombreUsuario);
+    }
 }

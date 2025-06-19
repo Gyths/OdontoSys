@@ -57,4 +57,8 @@ public class OdontologoWA {
         return this.odontologoBO.actualizarPuntuacion(odontologo);
     }
     
+    @WebMethod(operationName = "odontologo_verificarExistenciaNombreUsuario")
+    public Boolean odontologo_verificarExistenciaNombreUsuario(@WebParam(name = "nombreUsuario") String nombreUsuario){
+        return this.odontologoBO.verificarExistenciaNombreUsuario(nombreUsuario);
+    }
 }

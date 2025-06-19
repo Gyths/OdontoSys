@@ -59,7 +59,7 @@
                       <a href="buscarPaciente.aspx" class="btn btn-outline-success me-2 mt-3">Gestionar Pacientes</a>
                       <a href="buscarOdontologo.aspx" class="btn btn-outline-primary mt-3">Gestionar Odontólogos</a>
                     <% } else if (tipo == "odontologo") { %>
-                     <a href="miAgenda.aspx" class="btn btn-outline-success me-2 mt-3">Ver Agenda</a>
+                     <a href="/Odontologo/CitasPorAtender.aspx" class="btn btn-outline-success me-2 mt-3">Ver Agenda</a>
                     <a href="historialPacientes.aspx" class="btn btn-outline-primary mt-3">Historial de Pacientes</a>
                     <% } %>
                     <% if (tipo == null) { %>

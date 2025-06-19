@@ -131,4 +131,11 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         return this.recepcionista;
     }
     
+    @Override
+    public Boolean existeNombreUsuario(String nombreUsuario) {
+        String sql= "CALL RECEPCIONISTAS_obtener_por_usuario(?);";
+        super.ejecutarStoredProcedureObtener(sql, nombreUsuario);
+        if(this.recepcionista==null)return false;
+        return true;
+    }
 }
