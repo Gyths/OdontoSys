@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Text;
+using System.Web.UI;
+using System.Globalization;
 using OdontoSysBusiness.CitaWS;
+using OdontoSysBusiness.EspecialidadWS;
 using OdontoSysBusiness.OdontologoWS;
 using OdontoSysBusiness.PacienteWS;
-using OdontoSysBusiness.ValoracionWS;
+using System.Web.UI.WebControls;
 
 namespace OdontoSysWebApplication
 {
@@ -20,8 +23,11 @@ namespace OdontoSysWebApplication
             var paciente = (OdontoSysBusiness.PacienteWS.paciente)Session["Paciente"];
             if (paciente == null) return;
 
+            string estadoSeleccionado = ddlEstado.SelectedValue;
+
             var clienteCita = new CitaWAClient();
             var clienteOdontologo = new OdontologoWAClient();
+            var clienteEspecialidad = new EspecialidadWAClient();
 
             var pacienteCita = new OdontoSysBusiness.CitaWS.paciente
             {
@@ -30,7 +36,6 @@ namespace OdontoSysWebApplication
             };
 
             var citas = clienteCita.cita_listarPorPaciente(pacienteCita);
-            
 
             if (citas == null || citas.Length == 0)
             {
@@ -39,73 +44,66 @@ namespace OdontoSysWebApplication
             }
 
             var sb = new StringBuilder();
-
             foreach (var cita in citas)
             {
+                if (cita.estado.ToString() != estadoSeleccionado)
+                    continue;
+
                 var odontologo = clienteOdontologo.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
-                string fechaTexto = DateTime.TryParse(cita.fecha, out DateTime fechaObj)
-                    ? fechaObj.ToString("dddd dd/MM/yyyy")
-                    : cita.fecha;
+                var especialidad = clienteEspecialidad.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
 
-                sb.AppendLine("<div class='card mb-3'>");
+                string badgeColor = GetBadgeColor(cita.estado.ToString());
+
+                sb.AppendLine("<div class='card mb-3 shadow-sm'>");
                 sb.AppendLine("<div class='card-body'>");
-                sb.AppendLine($"<h5 class='card-title'>Fecha: {fechaTexto} - Hora: {cita.horaInicio}</h5>");
+                sb.AppendLine($"<h5 class='card-title'>Fecha: {cita.fecha} - Hora: {cita.horaInicio}</h5>");
                 sb.AppendLine($"<p class='card-text'><strong>Odontólogo:</strong> {odontologo.nombre} {odontologo.apellidos}</p>");
-                sb.AppendLine($"<p class='card-text'><strong>Estado:</strong> {cita.estado}</p>");
+                sb.AppendLine($"<p class='card-text'><strong>Especialidad:</strong> {especialidad.nombre}</p>");
+                sb.AppendLine($"<p class='card-text'><strong>Estado:</strong> <span class='badge bg-{badgeColor}'>{ToTitleCase(cita.estado.ToString())}</span></p>");
 
-                // Mostrar botón de valoración si la fecha ya pasó y no tiene valoracion asignada aún
-                if (DateTime.TryParse(cita.fecha, out DateTime fechaCita) &&
-                    fechaCita.Date < DateTime.Today)
-                {
-                    if (cita.valoracion.idValoracion <= 0) {
-                        sb.AppendLine($"<button type='button' class='btn btn-outline-primary btn-sm' onclick='valorarCita(event, {cita.idCita})'>Valorar Cita</button>");
-                    }
-                }
+                sb.AppendLine("<form method='post'>");
+                sb.AppendLine($"<a href='gestionCita.aspx?id={cita.idCita}' class='btn btn-primary btn-sm'>Gestionar</a>");
+                sb.AppendLine("</form>");
 
-                sb.AppendLine("</div>");
-                sb.AppendLine("</div>");
+                sb.AppendLine("</div></div>");
             }
 
             ltCitas.Text = sb.ToString();
         }
 
-        protected void btnEnviarValoracion_Click(object sender, EventArgs e)
+        private string GetBadgeColor(string estado)
         {
-            if (!int.TryParse(hfIdCita.Value, out int idCita)) return;
-
-            var clienteCita = new CitaWAClient();
-            var cita = clienteCita.cita_obtenerPorId(idCita);
-
-            if (cita == null)
+            switch (estado.ToUpper())
             {
-                ltCitas.Text = "<div class='alert alert-danger'>No se encontró la cita para valorar.</div>";
-                return;
+                case "RESERVADA": return "warning";
+                case "ATENDIDA": return "success";
+                case "CANCELADA": return "danger";
+                default: return "secondary";
             }
+        }
 
-            var valoracion = new OdontoSysBusiness.ValoracionWS.valoracion
+        private string ToTitleCase(string input)
+        {
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input.ToLower());
+        }
+
+        protected void ddlEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarCitasPaciente();
+        }
+
+        protected void btnGestionar_Command(object sender, CommandEventArgs e)
+        {
+            if (int.TryParse(e.CommandArgument.ToString(), out int idCita))
             {
-                comentario = txtComentario.Text.Trim(),
-                calicicacion = int.Parse(ddlPuntaje.SelectedValue),
-                calicicacionSpecified = true,
-                fechaCalificacion = DateTime.Today.ToString("yyyy-MM-dd")
-            };
-            
-            try
-            {
-                var clienteValoracion = new ValoracionWAClient();
-                int idV = clienteValoracion.valoracion_insertar(valoracion);
-                var valoracionCita = new OdontoSysBusiness.CitaWS.valoracion
+                var clienteCita = new CitaWAClient();
+                var cita = clienteCita.cita_obtenerPorId(idCita);
+
+                if (cita != null)
                 {
-                    idValoracion = idV,
-                    idValoracionSpecified = true
-                };
-                clienteCita.cita_actualizarFkValoracion(cita, valoracionCita);
-                ltCitas.Text = "<div class='alert alert-success'>Gracias por valorar tu cita.</div>";
-                pnlValoracion.CssClass += " d-none";
-            }
-            catch (Exception)
-            {
-                ltCitas.Text = "<div class='alert alert-danger'>Error al registrar la valoración. Intenta nuevamente.</div>";
+                    Session["CitaSeleccionada"] = cita;
+                    Response.Redirect("gestionCita.aspx");
+                }
             }
         }
 
