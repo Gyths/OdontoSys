@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/EspecialidadWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
-  <message name="especialidad_listarTodos">
-    <part name="parameters" element="tns:especialidad_listarTodos" />
-  </message>
-  <message name="especialidad_listarTodosResponse">
-    <part name="parameters" element="tns:especialidad_listarTodosResponse" />
-  </message>
   <message name="especialidad_modificar">
     <part name="parameters" element="tns:especialidad_modificar" />
   </message>
@@ -35,11 +29,13 @@
   <message name="especialidad_obtenerPorIdResponse">
     <part name="parameters" element="tns:especialidad_obtenerPorIdResponse" />
   </message>
+  <message name="especialidad_listarTodos">
+    <part name="parameters" element="tns:especialidad_listarTodos" />
+  </message>
+  <message name="especialidad_listarTodosResponse">
+    <part name="parameters" element="tns:especialidad_listarTodosResponse" />
+  </message>
   <portType name="EspecialidadWA">
-    <operation name="especialidad_listarTodos">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTodosRequest" message="tns:especialidad_listarTodos" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTodosResponse" message="tns:especialidad_listarTodosResponse" />
-    </operation>
     <operation name="especialidad_modificar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificarRequest" message="tns:especialidad_modificar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificarResponse" message="tns:especialidad_modificarResponse" />
@@ -56,18 +52,13 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_obtenerPorIdRequest" message="tns:especialidad_obtenerPorId" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_obtenerPorIdResponse" message="tns:especialidad_obtenerPorIdResponse" />
     </operation>
+    <operation name="especialidad_listarTodos">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTodosRequest" message="tns:especialidad_listarTodos" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTodosResponse" message="tns:especialidad_listarTodosResponse" />
+    </operation>
   </portType>
   <binding name="EspecialidadWAPortBinding" type="tns:EspecialidadWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="especialidad_listarTodos">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="especialidad_modificar">
       <soap:operation soapAction="" />
       <input>
@@ -96,6 +87,15 @@
       </output>
     </operation>
     <operation name="especialidad_obtenerPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="especialidad_listarTodos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

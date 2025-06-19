@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/SalaWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
-  <message name="sala_modificar">
-    <part name="parameters" element="tns:sala_modificar" />
+  <message name="sala_obtenerPorId">
+    <part name="parameters" element="tns:sala_obtenerPorId" />
   </message>
-  <message name="sala_modificarResponse">
-    <part name="parameters" element="tns:sala_modificarResponse" />
+  <message name="sala_obtenerPorIdResponse">
+    <part name="parameters" element="tns:sala_obtenerPorIdResponse" />
   </message>
   <message name="sala_listarTodos">
     <part name="parameters" element="tns:sala_listarTodos" />
@@ -23,22 +23,22 @@
   <message name="sala_insertarResponse">
     <part name="parameters" element="tns:sala_insertarResponse" />
   </message>
+  <message name="sala_modificar">
+    <part name="parameters" element="tns:sala_modificar" />
+  </message>
+  <message name="sala_modificarResponse">
+    <part name="parameters" element="tns:sala_modificarResponse" />
+  </message>
   <message name="sala_eliminar">
     <part name="parameters" element="tns:sala_eliminar" />
   </message>
   <message name="sala_eliminarResponse">
     <part name="parameters" element="tns:sala_eliminarResponse" />
   </message>
-  <message name="sala_obtenerPorId">
-    <part name="parameters" element="tns:sala_obtenerPorId" />
-  </message>
-  <message name="sala_obtenerPorIdResponse">
-    <part name="parameters" element="tns:sala_obtenerPorIdResponse" />
-  </message>
   <portType name="SalaWA">
-    <operation name="sala_modificar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_modificarRequest" message="tns:sala_modificar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_modificarResponse" message="tns:sala_modificarResponse" />
+    <operation name="sala_obtenerPorId">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_obtenerPorIdRequest" message="tns:sala_obtenerPorId" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_obtenerPorIdResponse" message="tns:sala_obtenerPorIdResponse" />
     </operation>
     <operation name="sala_listarTodos">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_listarTodosRequest" message="tns:sala_listarTodos" />
@@ -48,18 +48,18 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_insertarRequest" message="tns:sala_insertar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_insertarResponse" message="tns:sala_insertarResponse" />
     </operation>
+    <operation name="sala_modificar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_modificarRequest" message="tns:sala_modificar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_modificarResponse" message="tns:sala_modificarResponse" />
+    </operation>
     <operation name="sala_eliminar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_eliminarRequest" message="tns:sala_eliminar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_eliminarResponse" message="tns:sala_eliminarResponse" />
     </operation>
-    <operation name="sala_obtenerPorId">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_obtenerPorIdRequest" message="tns:sala_obtenerPorId" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/SalaWA/sala_obtenerPorIdResponse" message="tns:sala_obtenerPorIdResponse" />
-    </operation>
   </portType>
   <binding name="SalaWAPortBinding" type="tns:SalaWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="sala_modificar">
+    <operation name="sala_obtenerPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="sala_eliminar">
+    <operation name="sala_modificar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="sala_obtenerPorId">
+    <operation name="sala_eliminar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

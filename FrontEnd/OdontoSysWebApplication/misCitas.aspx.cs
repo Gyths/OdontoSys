@@ -61,6 +61,10 @@ namespace OdontoSysWebApplication
                 sb.AppendLine($"<p class='card-text'><strong>Especialidad:</strong> {especialidad.nombre}</p>");
                 sb.AppendLine($"<p class='card-text'><strong>Estado:</strong> <span class='badge bg-{badgeColor}'>{ToTitleCase(cita.estado.ToString())}</span></p>");
 
+                sb.AppendLine("<form method='post'>");
+                sb.AppendLine($"<a href='gestionCita.aspx?id={cita.idCita}' class='btn btn-primary btn-sm'>Gestionar</a>");
+                sb.AppendLine("</form>");
+
                 sb.AppendLine("</div></div>");
             }
 

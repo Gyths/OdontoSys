@@ -5,6 +5,18 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/ValoracionWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
+  <message name="valoracion_modificar">
+    <part name="parameters" element="tns:valoracion_modificar" />
+  </message>
+  <message name="valoracion_modificarResponse">
+    <part name="parameters" element="tns:valoracion_modificarResponse" />
+  </message>
+  <message name="valoracion_obtenerPorId">
+    <part name="parameters" element="tns:valoracion_obtenerPorId" />
+  </message>
+  <message name="valoracion_obtenerPorIdResponse">
+    <part name="parameters" element="tns:valoracion_obtenerPorIdResponse" />
+  </message>
   <message name="valoracion_insertar">
     <part name="parameters" element="tns:valoracion_insertar" />
   </message>
@@ -17,23 +29,11 @@
   <message name="valoracion_listarTodosResponse">
     <part name="parameters" element="tns:valoracion_listarTodosResponse" />
   </message>
-  <message name="valoracion_modificar">
-    <part name="parameters" element="tns:valoracion_modificar" />
-  </message>
-  <message name="valoracion_modificarResponse">
-    <part name="parameters" element="tns:valoracion_modificarResponse" />
-  </message>
   <message name="valoracion_eliminar">
     <part name="parameters" element="tns:valoracion_eliminar" />
   </message>
   <message name="valoracion_eliminarResponse">
     <part name="parameters" element="tns:valoracion_eliminarResponse" />
-  </message>
-  <message name="valoracion_obtenerPorId">
-    <part name="parameters" element="tns:valoracion_obtenerPorId" />
-  </message>
-  <message name="valoracion_obtenerPorIdResponse">
-    <part name="parameters" element="tns:valoracion_obtenerPorIdResponse" />
   </message>
   <message name="valoracion_listarPorPaciente">
     <part name="parameters" element="tns:valoracion_listarPorPaciente" />
@@ -48,6 +48,14 @@
     <part name="parameters" element="tns:valoracion_listarPorOdontologoResponse" />
   </message>
   <portType name="ValoracionWA">
+    <operation name="valoracion_modificar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_modificarRequest" message="tns:valoracion_modificar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_modificarResponse" message="tns:valoracion_modificarResponse" />
+    </operation>
+    <operation name="valoracion_obtenerPorId">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdRequest" message="tns:valoracion_obtenerPorId" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdResponse" message="tns:valoracion_obtenerPorIdResponse" />
+    </operation>
     <operation name="valoracion_insertar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_insertarRequest" message="tns:valoracion_insertar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_insertarResponse" message="tns:valoracion_insertarResponse" />
@@ -56,17 +64,9 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_listarTodosRequest" message="tns:valoracion_listarTodos" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_listarTodosResponse" message="tns:valoracion_listarTodosResponse" />
     </operation>
-    <operation name="valoracion_modificar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_modificarRequest" message="tns:valoracion_modificar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_modificarResponse" message="tns:valoracion_modificarResponse" />
-    </operation>
     <operation name="valoracion_eliminar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarRequest" message="tns:valoracion_eliminar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarResponse" message="tns:valoracion_eliminarResponse" />
-    </operation>
-    <operation name="valoracion_obtenerPorId">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdRequest" message="tns:valoracion_obtenerPorId" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdResponse" message="tns:valoracion_obtenerPorIdResponse" />
     </operation>
     <operation name="valoracion_listarPorPaciente">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_listarPorPacienteRequest" message="tns:valoracion_listarPorPaciente" />
@@ -79,6 +79,24 @@
   </portType>
   <binding name="ValoracionWAPortBinding" type="tns:ValoracionWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="valoracion_modificar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="valoracion_obtenerPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="valoracion_insertar">
       <soap:operation soapAction="" />
       <input>
@@ -97,25 +115,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="valoracion_modificar">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="valoracion_eliminar">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="valoracion_obtenerPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
