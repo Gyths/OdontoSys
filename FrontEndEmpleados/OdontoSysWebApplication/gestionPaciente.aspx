@@ -58,4 +58,17 @@
             }
         });
     </script>
+    <hr class="my-4" />
+        <h3 class="mt-4">Citas del Paciente</h3>
+
+        <asp:GridView ID="gvCitas" runat="server" CssClass="table table-bordered table-hover mt-3"
+            AutoGenerateColumns="false" EmptyDataText="Este paciente no tiene citas registradas." Width="100%">
+            <Columns>
+                <asp:BoundField DataField="fecha" HeaderText="Fecha" />
+                <asp:BoundField DataField="horaInicio" HeaderText="Hora" />
+                <asp:BoundField DataField="odontologo.nombre" HeaderText="Odontólogo" />
+                <asp:BoundField DataField="odontologo.especialidad.nombre" HeaderText="Especialidad" />
+                <asp:BoundField DataField="estado" HeaderText="Estado" />
+            </Columns>
+</asp:GridView>
 </asp:Content>

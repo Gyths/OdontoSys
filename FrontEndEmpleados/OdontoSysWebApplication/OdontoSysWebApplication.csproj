@@ -252,6 +252,9 @@
     <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_verificarExistenciaNombreUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\PacienteWS\configuration91.svcinfo" />
     <None Include="Connected Services\PacienteWS\configuration.svcinfo" />
     <None Include="Connected Services\OdontologoWS\configuration91.svcinfo" />
@@ -279,6 +282,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_obtenerPorUsuarioContrasenhaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_verificarExistenciaNombreUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\PacienteWS\Reference.svcmap">
@@ -310,6 +316,9 @@
     <None Include="Connected Services\PacienteWS\PacienteWA.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Connected Services\RecepcionistaWS\OdontoSysWebApplication.RecepcionistaWS.recepcionista_verificarExistenciaNombreUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\RecepcionistaWS\RecepcionistaWA.wsdl" />
     <None Include="Connected Services\RecepcionistaWS\RecepcionistaWA.xsd">
       <SubType>Designer</SubType>

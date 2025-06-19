@@ -11,17 +11,17 @@
   <message name="valoracion_listarTodosResponse">
     <part name="parameters" element="tns:valoracion_listarTodosResponse" />
   </message>
-  <message name="valoracion_eliminar">
-    <part name="parameters" element="tns:valoracion_eliminar" />
-  </message>
-  <message name="valoracion_eliminarResponse">
-    <part name="parameters" element="tns:valoracion_eliminarResponse" />
-  </message>
   <message name="valoracion_obtenerPorId">
     <part name="parameters" element="tns:valoracion_obtenerPorId" />
   </message>
   <message name="valoracion_obtenerPorIdResponse">
     <part name="parameters" element="tns:valoracion_obtenerPorIdResponse" />
+  </message>
+  <message name="valoracion_eliminar">
+    <part name="parameters" element="tns:valoracion_eliminar" />
+  </message>
+  <message name="valoracion_eliminarResponse">
+    <part name="parameters" element="tns:valoracion_eliminarResponse" />
   </message>
   <message name="valoracion_modificar">
     <part name="parameters" element="tns:valoracion_modificar" />
@@ -52,13 +52,13 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_listarTodosRequest" message="tns:valoracion_listarTodos" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_listarTodosResponse" message="tns:valoracion_listarTodosResponse" />
     </operation>
-    <operation name="valoracion_eliminar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarRequest" message="tns:valoracion_eliminar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarResponse" message="tns:valoracion_eliminarResponse" />
-    </operation>
     <operation name="valoracion_obtenerPorId">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdRequest" message="tns:valoracion_obtenerPorId" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdResponse" message="tns:valoracion_obtenerPorIdResponse" />
+    </operation>
+    <operation name="valoracion_eliminar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarRequest" message="tns:valoracion_eliminar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarResponse" message="tns:valoracion_eliminarResponse" />
     </operation>
     <operation name="valoracion_modificar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_modificarRequest" message="tns:valoracion_modificar" />
@@ -88,7 +88,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="valoracion_eliminar">
+    <operation name="valoracion_obtenerPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -97,7 +97,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="valoracion_obtenerPorId">
+    <operation name="valoracion_eliminar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
