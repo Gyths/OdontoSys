@@ -300,8 +300,9 @@ namespace OdontoSysWebApplication
             mensaje.Body = sb.ToString();
 
             var smtp = new SmtpClient("smtp.gmail.com", 587); // Cambia host y puerto
-            smtp.Credentials = new System.Net.NetworkCredential("odontosys123@gmail.com", "_odontoSys321");
+            smtp.Credentials = new System.Net.NetworkCredential("odontosys123@gmail.com", "mhgu bbyi inqf hzwl");
             smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
             smtp.Send(mensaje);
         }
 
