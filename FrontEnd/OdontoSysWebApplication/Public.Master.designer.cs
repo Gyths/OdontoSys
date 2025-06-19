@@ -11,7 +11,7 @@ namespace OdontoSysWebApplication
 {
 
 
-    public partial class Paciente
+    public partial class Public
     {
 
         /// <summary>
@@ -31,15 +31,6 @@ namespace OdontoSysWebApplication
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// Control lnkCerrarSesion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkCerrarSesion;
 
         /// <summary>
         /// Control ContentPlaceHolder1.

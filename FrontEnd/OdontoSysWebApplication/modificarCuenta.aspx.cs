@@ -85,5 +85,11 @@ namespace OdontoSysWebApplication
                 ltMensajes.Text = $"<div class='alert alert-danger'>Ocurrió un error: {ex.Message}</div>";
             }
         }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx");
+        }
+
     }
 }

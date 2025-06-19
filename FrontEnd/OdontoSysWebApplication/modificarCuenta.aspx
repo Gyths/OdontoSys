@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Paciente.Master" AutoEventWireup="true" CodeBehind="modificarCuenta.aspx.cs" Inherits="OdontoSysWebApplication.modificarCuenta" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     html, body, form { height: 100%; margin: 0; }
     .form-container { display: flex; justify-content: center; align-items: center; min-height: 100vh; }
@@ -75,6 +74,14 @@
             <asp:Button ID="btnGuardarCambios" runat="server"
                         CssClass="btn btn-success" Text="Guardar Cambios"
                         OnClick="btnGuardarCambios_Click" />
+          </div>
+        </div>
+        <!-- Botón Volver -->
+        <div class="col-12">
+         <div class="d-grid">
+           <asp:LinkButton ID="btnVolver" runat="server" CssClass="btn btn-link" OnClick="btnVolver_Click">
+                            <i class="fas fa-arrow-left me-1"></i> Volver al inicio
+                            </asp:LinkButton>
           </div>
         </div>
       </div>
