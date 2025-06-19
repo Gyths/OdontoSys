@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using OdontoSysWebAppliation.OdontoSysBusiness;
 using OdontoSysWebApplication.OdontoSysBusiness;
 
 namespace OdontoSysWebApplication
@@ -17,6 +18,7 @@ namespace OdontoSysWebApplication
                 if (Session["idPacienteSeleccionado"] != null && int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPaciente))
                 {
                     CargarPaciente(idPaciente);
+                    CargarCitasPaciente(idPaciente);
                 }
                 else
                 {
@@ -81,6 +83,27 @@ namespace OdontoSysWebApplication
         protected void btnVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("buscarPaciente.aspx");
+        }
+
+        private void CargarCitasPaciente(int idPaciente)
+        {
+
+            if (idPaciente == null) Response.Redirect("buscarPaciente.aspx");
+            var citaBO = new CitaBO();
+
+            var paciente = new CitaWS.paciente { idPaciente = idPaciente };
+
+            var citas = citaBO.cita_listarPorPaciente(paciente);
+
+            if(citas == null)
+            {
+
+            }
+            else
+            {
+                gvCitas.DataSource = citas;
+                gvCitas.DataBind();
+            }
         }
     }
 }

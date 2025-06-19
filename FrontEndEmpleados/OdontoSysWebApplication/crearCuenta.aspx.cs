@@ -152,6 +152,9 @@ namespace OdontoSysWebApplication
                     tdocRecepcionista.idTipoDocumento = (tipoDoc == "DNI") ? 1 : 2;
                     tdocRecepcionista.idTipoDocumentoSpecified = true;
                     recepcionista.tipoDocumento = tdocRecepcionista;
+                    recepcionista.numeroDocumento = numDoc;
+
+                    // Insertar recepcionista
                     var recepcionistaBO = new RecepcionistaBO();
                     recepcionistaBO.recepcionista_insertar(recepcionista);
                 }
