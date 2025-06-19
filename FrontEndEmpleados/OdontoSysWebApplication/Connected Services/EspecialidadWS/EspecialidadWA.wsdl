@@ -17,11 +17,11 @@
   <message name="especialidad_modificarResponse">
     <part name="parameters" element="tns:especialidad_modificarResponse" />
   </message>
-  <message name="especialidad_insertar">
-    <part name="parameters" element="tns:especialidad_insertar" />
+  <message name="especialidad_listarTodos">
+    <part name="parameters" element="tns:especialidad_listarTodos" />
   </message>
-  <message name="especialidad_insertarResponse">
-    <part name="parameters" element="tns:especialidad_insertarResponse" />
+  <message name="especialidad_listarTodosResponse">
+    <part name="parameters" element="tns:especialidad_listarTodosResponse" />
   </message>
   <message name="especialidad_eliminar">
     <part name="parameters" element="tns:especialidad_eliminar" />
@@ -29,11 +29,11 @@
   <message name="especialidad_eliminarResponse">
     <part name="parameters" element="tns:especialidad_eliminarResponse" />
   </message>
-  <message name="especialidad_listarTodos">
-    <part name="parameters" element="tns:especialidad_listarTodos" />
+  <message name="especialidad_insertar">
+    <part name="parameters" element="tns:especialidad_insertar" />
   </message>
-  <message name="especialidad_listarTodosResponse">
-    <part name="parameters" element="tns:especialidad_listarTodosResponse" />
+  <message name="especialidad_insertarResponse">
+    <part name="parameters" element="tns:especialidad_insertarResponse" />
   </message>
   <portType name="EspecialidadWA">
     <operation name="especialidad_obtenerPorId">
@@ -44,17 +44,17 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificarRequest" message="tns:especialidad_modificar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificarResponse" message="tns:especialidad_modificarResponse" />
     </operation>
-    <operation name="especialidad_insertar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_insertarRequest" message="tns:especialidad_insertar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_insertarResponse" message="tns:especialidad_insertarResponse" />
+    <operation name="especialidad_listarTodos">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTodosRequest" message="tns:especialidad_listarTodos" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTodosResponse" message="tns:especialidad_listarTodosResponse" />
     </operation>
     <operation name="especialidad_eliminar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_eliminarRequest" message="tns:especialidad_eliminar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_eliminarResponse" message="tns:especialidad_eliminarResponse" />
     </operation>
-    <operation name="especialidad_listarTodos">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTodosRequest" message="tns:especialidad_listarTodos" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTodosResponse" message="tns:especialidad_listarTodosResponse" />
+    <operation name="especialidad_insertar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_insertarRequest" message="tns:especialidad_insertar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_insertarResponse" message="tns:especialidad_insertarResponse" />
     </operation>
   </portType>
   <binding name="EspecialidadWAPortBinding" type="tns:EspecialidadWA">
@@ -77,7 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="especialidad_insertar">
+    <operation name="especialidad_listarTodos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="especialidad_listarTodos">
+    <operation name="especialidad_insertar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

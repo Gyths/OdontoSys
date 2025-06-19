@@ -11,11 +11,11 @@
   <message name="recepcionista_obtenerPorUsuarioContrasenhaResponse">
     <part name="parameters" element="tns:recepcionista_obtenerPorUsuarioContrasenhaResponse" />
   </message>
-  <message name="recepcionista_insertar">
-    <part name="parameters" element="tns:recepcionista_insertar" />
+  <message name="recepcionista_obtenerPorId">
+    <part name="parameters" element="tns:recepcionista_obtenerPorId" />
   </message>
-  <message name="recepcionista_insertarResponse">
-    <part name="parameters" element="tns:recepcionista_insertarResponse" />
+  <message name="recepcionista_obtenerPorIdResponse">
+    <part name="parameters" element="tns:recepcionista_obtenerPorIdResponse" />
   </message>
   <message name="recepcionista_eliminar">
     <part name="parameters" element="tns:recepcionista_eliminar" />
@@ -23,11 +23,11 @@
   <message name="recepcionista_eliminarResponse">
     <part name="parameters" element="tns:recepcionista_eliminarResponse" />
   </message>
-  <message name="recepcionista_obtenerPorId">
-    <part name="parameters" element="tns:recepcionista_obtenerPorId" />
+  <message name="recepcionista_insertar">
+    <part name="parameters" element="tns:recepcionista_insertar" />
   </message>
-  <message name="recepcionista_obtenerPorIdResponse">
-    <part name="parameters" element="tns:recepcionista_obtenerPorIdResponse" />
+  <message name="recepcionista_insertarResponse">
+    <part name="parameters" element="tns:recepcionista_insertarResponse" />
   </message>
   <message name="recepcionista_listarTodos">
     <part name="parameters" element="tns:recepcionista_listarTodos" />
@@ -46,17 +46,17 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtenerPorUsuarioContrasenhaRequest" message="tns:recepcionista_obtenerPorUsuarioContrasenha" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtenerPorUsuarioContrasenhaResponse" message="tns:recepcionista_obtenerPorUsuarioContrasenhaResponse" />
     </operation>
-    <operation name="recepcionista_insertar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_insertarRequest" message="tns:recepcionista_insertar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_insertarResponse" message="tns:recepcionista_insertarResponse" />
+    <operation name="recepcionista_obtenerPorId">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtenerPorIdRequest" message="tns:recepcionista_obtenerPorId" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtenerPorIdResponse" message="tns:recepcionista_obtenerPorIdResponse" />
     </operation>
     <operation name="recepcionista_eliminar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_eliminarRequest" message="tns:recepcionista_eliminar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_eliminarResponse" message="tns:recepcionista_eliminarResponse" />
     </operation>
-    <operation name="recepcionista_obtenerPorId">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtenerPorIdRequest" message="tns:recepcionista_obtenerPorId" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtenerPorIdResponse" message="tns:recepcionista_obtenerPorIdResponse" />
+    <operation name="recepcionista_insertar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_insertarRequest" message="tns:recepcionista_insertar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_insertarResponse" message="tns:recepcionista_insertarResponse" />
     </operation>
     <operation name="recepcionista_listarTodos">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_listarTodosRequest" message="tns:recepcionista_listarTodos" />
@@ -78,7 +78,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="recepcionista_insertar">
+    <operation name="recepcionista_obtenerPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -96,7 +96,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="recepcionista_obtenerPorId">
+    <operation name="recepcionista_insertar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
