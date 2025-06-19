@@ -300,6 +300,9 @@
     <None Include="Connected Services\OdontologoWS\OdontoSysBusiness.OdontologoWS.odontologo_obtenerPorUsuarioContrasenhaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\OdontologoWS\OdontoSysBusiness.OdontologoWS.odontologo_verificarExistenciaNombreUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\PacienteWS\OdontoSysBusiness.PacienteWS.paciente.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -319,6 +322,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\PacienteWS\OdontoSysBusiness.PacienteWS.paciente_obtenerPorUsuarioContrasenhaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PacienteWS\OdontoSysBusiness.PacienteWS.paciente_verificarExistenciaNombreUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\PacienteWS\PacienteWA.wsdl" />
@@ -344,6 +350,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\RecepcionistaWS\OdontoSysBusiness.RecepcionistaWS.recepcionista_obtenerPorUsuarioContrasenhaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RecepcionistaWS\OdontoSysBusiness.RecepcionistaWS.recepcionista_verificarExistenciaNombreUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\RecepcionistaWS\RecepcionistaWA.wsdl" />
