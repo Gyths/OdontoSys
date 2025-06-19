@@ -53,11 +53,12 @@ namespace OdontoSysWebApplication.FrontOdontologo
             }
         }
 
-        protected void gvCitas_RowDataBound(object sender, System.Web.UI.WebControls.GridViewCommandEventArgs e)
+        protected void gvCitas_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Atender")
             {
                 string idCita = e.CommandArgument.ToString();
+                
                 Response.Redirect($"/FrontOdontologo/AtenderCita.aspx?idCita={idCita}");
             }
         }

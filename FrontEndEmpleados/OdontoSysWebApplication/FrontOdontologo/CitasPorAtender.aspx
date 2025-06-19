@@ -12,7 +12,7 @@
         DataKeyNames="idCita"
         EmptyDataText="No hay citas por atender."
         Width="100%"
-        OnRowDataBound="gvCitas_RowDataBound">
+        OnRowCommand="gvCitas_RowCommand">
         <Columns>
             <asp:TemplateField HeaderText="Paciente">
                 <ItemTemplate>

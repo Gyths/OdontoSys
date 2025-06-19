@@ -7,15 +7,6 @@
   </types>
   <message name="tipoDocumento_listarTodos">
     <part name="parameters" element="tns:tipoDocumento_listarTodos" />
-<<<<<<< Updated upstream
-  </message>
-  <message name="tipoDocumento_listarTodosResponse">
-    <part name="parameters" element="tns:tipoDocumento_listarTodosResponse" />
-  </message>
-  <message name="tipoDocumento_insertar">
-    <part name="parameters" element="tns:tipoDocumento_insertar" />
-=======
->>>>>>> Stashed changes
   </message>
   <message name="tipoDocumento_listarTodosResponse">
     <part name="parameters" element="tns:tipoDocumento_listarTodosResponse" />
@@ -38,26 +29,16 @@
   <message name="tipoDocumento_eliminarResponse">
     <part name="parameters" element="tns:tipoDocumento_eliminarResponse" />
   </message>
-<<<<<<< Updated upstream
-=======
   <message name="tipoDocumento_insertar">
     <part name="parameters" element="tns:tipoDocumento_insertar" />
   </message>
   <message name="tipoDocumento_insertarResponse">
     <part name="parameters" element="tns:tipoDocumento_insertarResponse" />
   </message>
->>>>>>> Stashed changes
   <portType name="TipoDocumentoWA">
     <operation name="tipoDocumento_listarTodos">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_listarTodosRequest" message="tns:tipoDocumento_listarTodos" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_listarTodosResponse" message="tns:tipoDocumento_listarTodosResponse" />
-<<<<<<< Updated upstream
-    </operation>
-    <operation name="tipoDocumento_insertar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_insertarRequest" message="tns:tipoDocumento_insertar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_insertarResponse" message="tns:tipoDocumento_insertarResponse" />
-=======
->>>>>>> Stashed changes
     </operation>
     <operation name="tipoDocumento_obtenerPorId">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_obtenerPorIdRequest" message="tns:tipoDocumento_obtenerPorId" />
@@ -71,29 +52,14 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_eliminarRequest" message="tns:tipoDocumento_eliminar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_eliminarResponse" message="tns:tipoDocumento_eliminarResponse" />
     </operation>
-<<<<<<< Updated upstream
-=======
     <operation name="tipoDocumento_insertar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_insertarRequest" message="tns:tipoDocumento_insertar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_insertarResponse" message="tns:tipoDocumento_insertarResponse" />
     </operation>
->>>>>>> Stashed changes
   </portType>
   <binding name="TipoDocumentoWAPortBinding" type="tns:TipoDocumentoWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="tipoDocumento_listarTodos">
-<<<<<<< Updated upstream
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="tipoDocumento_insertar">
-=======
->>>>>>> Stashed changes
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -129,8 +95,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-<<<<<<< Updated upstream
-=======
     <operation name="tipoDocumento_insertar">
       <soap:operation soapAction="" />
       <input>
@@ -140,7 +104,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
->>>>>>> Stashed changes
   </binding>
   <service name="TipoDocumentoWA">
     <port name="TipoDocumentoWAPort" binding="tns:TipoDocumentoWAPortBinding">

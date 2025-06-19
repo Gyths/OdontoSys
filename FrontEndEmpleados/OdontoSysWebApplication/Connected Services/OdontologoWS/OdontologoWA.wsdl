@@ -17,15 +17,12 @@
   <message name="odontologo_insertarResponse">
     <part name="parameters" element="tns:odontologo_insertarResponse" />
   </message>
-<<<<<<< Updated upstream
-=======
   <message name="odontologo_modificar">
     <part name="parameters" element="tns:odontologo_modificar" />
   </message>
   <message name="odontologo_modificarResponse">
     <part name="parameters" element="tns:odontologo_modificarResponse" />
   </message>
->>>>>>> Stashed changes
   <message name="odontologo_eliminar">
     <part name="parameters" element="tns:odontologo_eliminar" />
   </message>
@@ -44,35 +41,17 @@
   <message name="odontologo_listarTodosResponse">
     <part name="parameters" element="tns:odontologo_listarTodosResponse" />
   </message>
-<<<<<<< Updated upstream
-  <message name="odontologo_modificar">
-    <part name="parameters" element="tns:odontologo_modificar" />
-  </message>
-  <message name="odontologo_modificarResponse">
-    <part name="parameters" element="tns:odontologo_modificarResponse" />
-  </message>
-  <message name="odontologo_listarPorEspecialidad">
-    <part name="parameters" element="tns:odontologo_listarPorEspecialidad" />
-  </message>
-  <message name="odontologo_listarPorEspecialidadResponse">
-    <part name="parameters" element="tns:odontologo_listarPorEspecialidadResponse" />
-  </message>
-=======
->>>>>>> Stashed changes
   <message name="odontologo_actualizarPuntuacion">
     <part name="parameters" element="tns:odontologo_actualizarPuntuacion" />
   </message>
   <message name="odontologo_actualizarPuntuacionResponse">
     <part name="parameters" element="tns:odontologo_actualizarPuntuacionResponse" />
-<<<<<<< Updated upstream
-=======
   </message>
   <message name="odontologo_listarPorEspecialidad">
     <part name="parameters" element="tns:odontologo_listarPorEspecialidad" />
   </message>
   <message name="odontologo_listarPorEspecialidadResponse">
     <part name="parameters" element="tns:odontologo_listarPorEspecialidadResponse" />
->>>>>>> Stashed changes
   </message>
   <portType name="OdontologoWA">
     <operation name="odontologo_obtenerPorUsuarioContrasenha">
@@ -83,13 +62,10 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_insertarRequest" message="tns:odontologo_insertar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_insertarResponse" message="tns:odontologo_insertarResponse" />
     </operation>
-<<<<<<< Updated upstream
-=======
     <operation name="odontologo_modificar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarRequest" message="tns:odontologo_modificar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarResponse" message="tns:odontologo_modificarResponse" />
     </operation>
->>>>>>> Stashed changes
     <operation name="odontologo_eliminar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarRequest" message="tns:odontologo_eliminar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarResponse" message="tns:odontologo_eliminarResponse" />
@@ -102,26 +78,13 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarTodosRequest" message="tns:odontologo_listarTodos" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarTodosResponse" message="tns:odontologo_listarTodosResponse" />
     </operation>
-<<<<<<< Updated upstream
-    <operation name="odontologo_modificar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarRequest" message="tns:odontologo_modificar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarResponse" message="tns:odontologo_modificarResponse" />
-=======
     <operation name="odontologo_actualizarPuntuacion">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_actualizarPuntuacionRequest" message="tns:odontologo_actualizarPuntuacion" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_actualizarPuntuacionResponse" message="tns:odontologo_actualizarPuntuacionResponse" />
->>>>>>> Stashed changes
     </operation>
     <operation name="odontologo_listarPorEspecialidad">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarPorEspecialidadRequest" message="tns:odontologo_listarPorEspecialidad" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarPorEspecialidadResponse" message="tns:odontologo_listarPorEspecialidadResponse" />
-<<<<<<< Updated upstream
-    </operation>
-    <operation name="odontologo_actualizarPuntuacion">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_actualizarPuntuacionRequest" message="tns:odontologo_actualizarPuntuacion" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_actualizarPuntuacionResponse" message="tns:odontologo_actualizarPuntuacionResponse" />
-=======
->>>>>>> Stashed changes
     </operation>
   </portType>
   <binding name="OdontologoWAPortBinding" type="tns:OdontologoWA">
@@ -144,8 +107,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-<<<<<<< Updated upstream
-=======
     <operation name="odontologo_modificar">
       <soap:operation soapAction="" />
       <input>
@@ -155,7 +116,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
->>>>>>> Stashed changes
     <operation name="odontologo_eliminar">
       <soap:operation soapAction="" />
       <input>
@@ -183,11 +143,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-<<<<<<< Updated upstream
-    <operation name="odontologo_modificar">
-=======
     <operation name="odontologo_actualizarPuntuacion">
->>>>>>> Stashed changes
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -197,18 +153,6 @@
       </output>
     </operation>
     <operation name="odontologo_listarPorEspecialidad">
-<<<<<<< Updated upstream
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="odontologo_actualizarPuntuacion">
-=======
->>>>>>> Stashed changes
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

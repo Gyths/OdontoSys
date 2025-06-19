@@ -10,27 +10,6 @@
   </message>
   <message name="cita_modificarResponse">
     <part name="parameters" element="tns:cita_modificarResponse" />
-<<<<<<< Updated upstream
-  </message>
-  <message name="cita_listarPorPaciente">
-    <part name="parameters" element="tns:cita_listarPorPaciente" />
-  </message>
-  <message name="cita_listarPorPacienteResponse">
-    <part name="parameters" element="tns:cita_listarPorPacienteResponse" />
-  </message>
-  <message name="cita_listarPorOdontologo">
-    <part name="parameters" element="tns:cita_listarPorOdontologo" />
-  </message>
-  <message name="cita_listarPorOdontologoResponse">
-    <part name="parameters" element="tns:cita_listarPorOdontologoResponse" />
-  </message>
-  <message name="cita_obtenerPorId">
-    <part name="parameters" element="tns:cita_obtenerPorId" />
-  </message>
-  <message name="cita_obtenerPorIdResponse">
-    <part name="parameters" element="tns:cita_obtenerPorIdResponse" />
-=======
->>>>>>> Stashed changes
   </message>
   <message name="cita_insertar">
     <part name="parameters" element="tns:cita_insertar" />
@@ -38,37 +17,12 @@
   <message name="cita_insertarResponse">
     <part name="parameters" element="tns:cita_insertarResponse" />
   </message>
-  <message name="cita_eliminar">
-    <part name="parameters" element="tns:cita_eliminar" />
-  </message>
-  <message name="cita_eliminarResponse">
-    <part name="parameters" element="tns:cita_eliminarResponse" />
-  </message>
   <message name="cita_listarTodos">
     <part name="parameters" element="tns:cita_listarTodos" />
   </message>
   <message name="cita_listarTodosResponse">
     <part name="parameters" element="tns:cita_listarTodosResponse" />
   </message>
-<<<<<<< Updated upstream
-  <message name="cita_listarPorOdontologoFechas">
-    <part name="parameters" element="tns:cita_listarPorOdontologoFechas" />
-  </message>
-  <message name="cita_listarPorOdontologoFechasResponse">
-    <part name="parameters" element="tns:cita_listarPorOdontologoFechasResponse" />
-  </message>
-  <message name="cita_listarPorRecepcionista">
-    <part name="parameters" element="tns:cita_listarPorRecepcionista" />
-  </message>
-  <message name="cita_listarPorRecepcionistaResponse">
-    <part name="parameters" element="tns:cita_listarPorRecepcionistaResponse" />
-  </message>
-  <message name="cita_actualizarFkValoracion">
-    <part name="parameters" element="tns:cita_actualizarFkValoracion" />
-  </message>
-  <message name="cita_actualizarFkValoracionResponse">
-    <part name="parameters" element="tns:cita_actualizarFkValoracionResponse" />
-=======
   <message name="cita_obtenerPorId">
     <part name="parameters" element="tns:cita_obtenerPorId" />
   </message>
@@ -86,7 +40,6 @@
   </message>
   <message name="cita_listarPorPacienteResponse">
     <part name="parameters" element="tns:cita_listarPorPacienteResponse" />
->>>>>>> Stashed changes
   </message>
   <message name="cita_listarPorOdontologo">
     <part name="parameters" element="tns:cita_listarPorOdontologo" />
@@ -116,47 +69,15 @@
     <operation name="cita_modificar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarRequest" message="tns:cita_modificar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarResponse" message="tns:cita_modificarResponse" />
-<<<<<<< Updated upstream
-    </operation>
-    <operation name="cita_listarPorPaciente">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteRequest" message="tns:cita_listarPorPaciente" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteResponse" message="tns:cita_listarPorPacienteResponse" />
-    </operation>
-    <operation name="cita_listarPorOdontologo">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoRequest" message="tns:cita_listarPorOdontologo" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoResponse" message="tns:cita_listarPorOdontologoResponse" />
-    </operation>
-    <operation name="cita_obtenerPorId">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdRequest" message="tns:cita_obtenerPorId" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdResponse" message="tns:cita_obtenerPorIdResponse" />
-=======
->>>>>>> Stashed changes
     </operation>
     <operation name="cita_insertar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_insertarRequest" message="tns:cita_insertar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_insertarResponse" message="tns:cita_insertarResponse" />
     </operation>
-    <operation name="cita_eliminar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_eliminarRequest" message="tns:cita_eliminar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_eliminarResponse" message="tns:cita_eliminarResponse" />
-    </operation>
     <operation name="cita_listarTodos">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarTodosRequest" message="tns:cita_listarTodos" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarTodosResponse" message="tns:cita_listarTodosResponse" />
     </operation>
-<<<<<<< Updated upstream
-    <operation name="cita_listarPorOdontologoFechas">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechasRequest" message="tns:cita_listarPorOdontologoFechas" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechasResponse" message="tns:cita_listarPorOdontologoFechasResponse" />
-    </operation>
-    <operation name="cita_listarPorRecepcionista">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorRecepcionistaRequest" message="tns:cita_listarPorRecepcionista" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorRecepcionistaResponse" message="tns:cita_listarPorRecepcionistaResponse" />
-    </operation>
-    <operation name="cita_actualizarFkValoracion">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_actualizarFkValoracionRequest" message="tns:cita_actualizarFkValoracion" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_actualizarFkValoracionResponse" message="tns:cita_actualizarFkValoracionResponse" />
-=======
     <operation name="cita_obtenerPorId">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdRequest" message="tns:cita_obtenerPorId" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdResponse" message="tns:cita_obtenerPorIdResponse" />
@@ -168,7 +89,6 @@
     <operation name="cita_listarPorPaciente">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteRequest" message="tns:cita_listarPorPaciente" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteResponse" message="tns:cita_listarPorPacienteResponse" />
->>>>>>> Stashed changes
     </operation>
     <operation name="cita_listarPorOdontologo">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoRequest" message="tns:cita_listarPorOdontologo" />
@@ -190,36 +110,6 @@
   <binding name="CitaWAPortBinding" type="tns:CitaWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="cita_modificar">
-<<<<<<< Updated upstream
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="cita_listarPorPaciente">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="cita_listarPorOdontologo">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="cita_obtenerPorId">
-=======
->>>>>>> Stashed changes
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -237,15 +127,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="cita_eliminar">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="cita_listarTodos">
       <soap:operation soapAction="" />
       <input>
@@ -255,11 +136,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-<<<<<<< Updated upstream
-    <operation name="cita_listarPorOdontologoFechas">
-=======
     <operation name="cita_obtenerPorId">
->>>>>>> Stashed changes
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -268,9 +145,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-<<<<<<< Updated upstream
-    <operation name="cita_listarPorRecepcionista">
-=======
     <operation name="cita_eliminar">
       <soap:operation soapAction="" />
       <input>
@@ -281,7 +155,6 @@
       </output>
     </operation>
     <operation name="cita_listarPorPaciente">
->>>>>>> Stashed changes
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -290,8 +163,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-<<<<<<< Updated upstream
-=======
     <operation name="cita_listarPorOdontologo">
       <soap:operation soapAction="" />
       <input>
@@ -319,7 +190,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
->>>>>>> Stashed changes
     <operation name="cita_actualizarFkValoracion">
       <soap:operation soapAction="" />
       <input>

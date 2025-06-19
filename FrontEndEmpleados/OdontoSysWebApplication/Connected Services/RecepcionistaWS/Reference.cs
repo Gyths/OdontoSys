@@ -29,23 +29,6 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
             "PorUsuarioContrasenhaResponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorUsuarioContrasenhaResponse> recepcionista_obtenerPorUsuarioContrasenhaAsync(OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorUsuarioContrasenhaRequest request);
         
-<<<<<<< Updated upstream
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_inserta" +
-            "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_inserta" +
-            "rResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarResponse recepcionista_insertar(OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_inserta" +
-            "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_inserta" +
-            "rResponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarResponse> recepcionista_insertarAsync(OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-=======
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtener" +
             "PorIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtener" +
@@ -61,7 +44,6 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
         System.Threading.Tasks.Task<OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdResponse> recepcionista_obtenerPorIdAsync(OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
->>>>>>> Stashed changes
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_elimina" +
             "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_elimina" +
             "rResponse")]
@@ -75,23 +57,6 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
             "rResponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.RecepcionistaWS.recepcionista_eliminarResponse> recepcionista_eliminarAsync(OdontoSysWebApplication.RecepcionistaWS.recepcionista_eliminarRequest request);
         
-<<<<<<< Updated upstream
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtener" +
-            "PorIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtener" +
-            "PorIdResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdResponse recepcionista_obtenerPorId(OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtener" +
-            "PorIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtener" +
-            "PorIdResponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdResponse> recepcionista_obtenerPorIdAsync(OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-=======
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_inserta" +
             "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_inserta" +
@@ -107,7 +72,6 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
         System.Threading.Tasks.Task<OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarResponse> recepcionista_insertarAsync(OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
->>>>>>> Stashed changes
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_listarT" +
             "odosRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_listarT" +
             "odosResponse")]
@@ -121,11 +85,7 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
             "odosResponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.RecepcionistaWS.recepcionista_listarTodosResponse> recepcionista_listarTodosAsync(OdontoSysWebApplication.RecepcionistaWS.recepcionista_listarTodosRequest request);
         
-<<<<<<< Updated upstream
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-=======
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
->>>>>>> Stashed changes
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_modific" +
             "arRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_modific" +
             "arResponse")]
@@ -1534,13 +1494,8 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-    [System.ServiceModel.MessageContractAttribute(WrapperName="recepcionista_insertar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class recepcionista_insertarRequest {
-=======
     [System.ServiceModel.MessageContractAttribute(WrapperName="recepcionista_obtenerPorId", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class recepcionista_obtenerPorIdRequest {
->>>>>>> Stashed changes
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -1611,20 +1566,6 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-    [System.ServiceModel.MessageContractAttribute(WrapperName="recepcionista_obtenerPorId", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class recepcionista_obtenerPorIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public recepcionista_obtenerPorIdRequest() {
-        }
-        
-        public recepcionista_obtenerPorIdRequest(int id) {
-            this.id = id;
-=======
     [System.ServiceModel.MessageContractAttribute(WrapperName="recepcionista_insertar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class recepcionista_insertarRequest {
         
@@ -1637,26 +1578,12 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
         
         public recepcionista_insertarRequest(OdontoSysWebApplication.RecepcionistaWS.recepcionista recepcionista) {
             this.recepcionista = recepcionista;
->>>>>>> Stashed changes
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-    [System.ServiceModel.MessageContractAttribute(WrapperName="recepcionista_obtenerPorIdResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class recepcionista_obtenerPorIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.RecepcionistaWS.recepcionista @return;
-        
-        public recepcionista_obtenerPorIdResponse() {
-        }
-        
-        public recepcionista_obtenerPorIdResponse(OdontoSysWebApplication.RecepcionistaWS.recepcionista @return) {
-=======
     [System.ServiceModel.MessageContractAttribute(WrapperName="recepcionista_insertarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class recepcionista_insertarResponse {
         
@@ -1668,7 +1595,6 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
         }
         
         public recepcionista_insertarResponse(int @return) {
->>>>>>> Stashed changes
             this.@return = @return;
         }
     }
@@ -1790,16 +1716,6 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-        OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarResponse OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA.recepcionista_insertar(OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest request) {
-            return base.Channel.recepcionista_insertar(request);
-        }
-        
-        public int recepcionista_insertar(OdontoSysWebApplication.RecepcionistaWS.recepcionista recepcionista) {
-            OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest inValue = new OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest();
-            inValue.recepcionista = recepcionista;
-            OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarResponse retVal = ((OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA)(this)).recepcionista_insertar(inValue);
-=======
         OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdResponse OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA.recepcionista_obtenerPorId(OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest request) {
             return base.Channel.recepcionista_obtenerPorId(request);
         }
@@ -1808,21 +1724,10 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
             OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest inValue = new OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest();
             inValue.id = id;
             OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdResponse retVal = ((OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA)(this)).recepcionista_obtenerPorId(inValue);
->>>>>>> Stashed changes
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-        System.Threading.Tasks.Task<OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarResponse> OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA.recepcionista_insertarAsync(OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest request) {
-            return base.Channel.recepcionista_insertarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarResponse> recepcionista_insertarAsync(OdontoSysWebApplication.RecepcionistaWS.recepcionista recepcionista) {
-            OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest inValue = new OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest();
-            inValue.recepcionista = recepcionista;
-            return ((OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA)(this)).recepcionista_insertarAsync(inValue);
-=======
         System.Threading.Tasks.Task<OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdResponse> OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA.recepcionista_obtenerPorIdAsync(OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest request) {
             return base.Channel.recepcionista_obtenerPorIdAsync(request);
         }
@@ -1831,7 +1736,6 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
             OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest inValue = new OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest();
             inValue.id = id;
             return ((OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA)(this)).recepcionista_obtenerPorIdAsync(inValue);
->>>>>>> Stashed changes
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1858,16 +1762,6 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-        OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdResponse OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA.recepcionista_obtenerPorId(OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest request) {
-            return base.Channel.recepcionista_obtenerPorId(request);
-        }
-        
-        public OdontoSysWebApplication.RecepcionistaWS.recepcionista recepcionista_obtenerPorId(int id) {
-            OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest inValue = new OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest();
-            inValue.id = id;
-            OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdResponse retVal = ((OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA)(this)).recepcionista_obtenerPorId(inValue);
-=======
         OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarResponse OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA.recepcionista_insertar(OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest request) {
             return base.Channel.recepcionista_insertar(request);
         }
@@ -1876,21 +1770,10 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
             OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest inValue = new OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest();
             inValue.recepcionista = recepcionista;
             OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarResponse retVal = ((OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA)(this)).recepcionista_insertar(inValue);
->>>>>>> Stashed changes
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-        System.Threading.Tasks.Task<OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdResponse> OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA.recepcionista_obtenerPorIdAsync(OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest request) {
-            return base.Channel.recepcionista_obtenerPorIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdResponse> recepcionista_obtenerPorIdAsync(int id) {
-            OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest inValue = new OdontoSysWebApplication.RecepcionistaWS.recepcionista_obtenerPorIdRequest();
-            inValue.id = id;
-            return ((OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA)(this)).recepcionista_obtenerPorIdAsync(inValue);
-=======
         System.Threading.Tasks.Task<OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarResponse> OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA.recepcionista_insertarAsync(OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest request) {
             return base.Channel.recepcionista_insertarAsync(request);
         }
@@ -1899,7 +1782,6 @@ namespace OdontoSysWebApplication.RecepcionistaWS {
             OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest inValue = new OdontoSysWebApplication.RecepcionistaWS.recepcionista_insertarRequest();
             inValue.recepcionista = recepcionista;
             return ((OdontoSysWebApplication.RecepcionistaWS.RecepcionistaWA)(this)).recepcionista_insertarAsync(inValue);
->>>>>>> Stashed changes
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

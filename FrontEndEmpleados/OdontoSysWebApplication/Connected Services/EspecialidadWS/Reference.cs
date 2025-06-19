@@ -15,11 +15,7 @@ namespace OdontoSysWebApplication.EspecialidadWS {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", ConfigurationName="EspecialidadWS.EspecialidadWA")]
     public interface EspecialidadWA {
         
-<<<<<<< Updated upstream
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-=======
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
->>>>>>> Stashed changes
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_obtenerPo" +
             "rIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_obtenerPo" +
             "rIdResponse")]
@@ -32,11 +28,7 @@ namespace OdontoSysWebApplication.EspecialidadWS {
             "rIdResponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_obtenerPorIdResponse> especialidad_obtenerPorIdAsync(OdontoSysWebApplication.EspecialidadWS.especialidad_obtenerPorIdRequest request);
         
-<<<<<<< Updated upstream
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-=======
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
->>>>>>> Stashed changes
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificar" +
             "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificar" +
             "Response")]
@@ -49,22 +41,6 @@ namespace OdontoSysWebApplication.EspecialidadWS {
             "Response")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_modificarResponse> especialidad_modificarAsync(OdontoSysWebApplication.EspecialidadWS.especialidad_modificarRequest request);
         
-<<<<<<< Updated upstream
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_insertarR" +
-            "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_insertarR" +
-            "esponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.EspecialidadWS.especialidad_insertarResponse especialidad_insertar(OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_insertarR" +
-            "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_insertarR" +
-            "esponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_insertarResponse> especialidad_insertarAsync(OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-=======
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTod" +
             "osRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTod" +
@@ -79,7 +55,6 @@ namespace OdontoSysWebApplication.EspecialidadWS {
         System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosResponse> especialidad_listarTodosAsync(OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
->>>>>>> Stashed changes
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_eliminarR" +
             "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_eliminarR" +
             "esponse")]
@@ -92,20 +67,6 @@ namespace OdontoSysWebApplication.EspecialidadWS {
             "esponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_eliminarResponse> especialidad_eliminarAsync(OdontoSysWebApplication.EspecialidadWS.especialidad_eliminarRequest request);
         
-<<<<<<< Updated upstream
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTod" +
-            "osRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTod" +
-            "osResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosResponse especialidad_listarTodos(OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTod" +
-            "osRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_listarTod" +
-            "osResponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosResponse> especialidad_listarTodosAsync(OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest request);
-=======
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_insertarR" +
             "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_insertarR" +
@@ -118,7 +79,6 @@ namespace OdontoSysWebApplication.EspecialidadWS {
             "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_insertarR" +
             "esponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_insertarResponse> especialidad_insertarAsync(OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest request);
->>>>>>> Stashed changes
     }
     
     /// <remarks/>
@@ -256,44 +216,16 @@ namespace OdontoSysWebApplication.EspecialidadWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-    [System.ServiceModel.MessageContractAttribute(WrapperName="especialidad_insertar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class especialidad_insertarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.EspecialidadWS.especialidad especialidad;
-        
-        public especialidad_insertarRequest() {
-        }
-        
-        public especialidad_insertarRequest(OdontoSysWebApplication.EspecialidadWS.especialidad especialidad) {
-            this.especialidad = especialidad;
-=======
     [System.ServiceModel.MessageContractAttribute(WrapperName="especialidad_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class especialidad_listarTodosRequest {
         
         public especialidad_listarTodosRequest() {
->>>>>>> Stashed changes
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-    [System.ServiceModel.MessageContractAttribute(WrapperName="especialidad_insertarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class especialidad_insertarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public especialidad_insertarResponse() {
-        }
-        
-        public especialidad_insertarResponse(int @return) {
-=======
     [System.ServiceModel.MessageContractAttribute(WrapperName="especialidad_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class especialidad_listarTodosResponse {
         
@@ -305,7 +237,6 @@ namespace OdontoSysWebApplication.EspecialidadWS {
         }
         
         public especialidad_listarTodosResponse(OdontoSysWebApplication.EspecialidadWS.especialidad[] @return) {
->>>>>>> Stashed changes
             this.@return = @return;
         }
     }
@@ -349,12 +280,6 @@ namespace OdontoSysWebApplication.EspecialidadWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-    [System.ServiceModel.MessageContractAttribute(WrapperName="especialidad_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class especialidad_listarTodosRequest {
-        
-        public especialidad_listarTodosRequest() {
-=======
     [System.ServiceModel.MessageContractAttribute(WrapperName="especialidad_insertar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class especialidad_insertarRequest {
         
@@ -367,36 +292,23 @@ namespace OdontoSysWebApplication.EspecialidadWS {
         
         public especialidad_insertarRequest(OdontoSysWebApplication.EspecialidadWS.especialidad especialidad) {
             this.especialidad = especialidad;
->>>>>>> Stashed changes
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-    [System.ServiceModel.MessageContractAttribute(WrapperName="especialidad_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class especialidad_listarTodosResponse {
-=======
     [System.ServiceModel.MessageContractAttribute(WrapperName="especialidad_insertarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class especialidad_insertarResponse {
->>>>>>> Stashed changes
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.EspecialidadWS.especialidad[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
         
-<<<<<<< Updated upstream
-        public especialidad_listarTodosResponse() {
-        }
-        
-        public especialidad_listarTodosResponse(OdontoSysWebApplication.EspecialidadWS.especialidad[] @return) {
-=======
         public especialidad_insertarResponse() {
         }
         
         public especialidad_insertarResponse(int @return) {
->>>>>>> Stashed changes
             this.@return = @return;
         }
     }
@@ -475,16 +387,6 @@ namespace OdontoSysWebApplication.EspecialidadWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-        OdontoSysWebApplication.EspecialidadWS.especialidad_insertarResponse OdontoSysWebApplication.EspecialidadWS.EspecialidadWA.especialidad_insertar(OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest request) {
-            return base.Channel.especialidad_insertar(request);
-        }
-        
-        public int especialidad_insertar(OdontoSysWebApplication.EspecialidadWS.especialidad especialidad) {
-            OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest inValue = new OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest();
-            inValue.especialidad = especialidad;
-            OdontoSysWebApplication.EspecialidadWS.especialidad_insertarResponse retVal = ((OdontoSysWebApplication.EspecialidadWS.EspecialidadWA)(this)).especialidad_insertar(inValue);
-=======
         OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosResponse OdontoSysWebApplication.EspecialidadWS.EspecialidadWA.especialidad_listarTodos(OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest request) {
             return base.Channel.especialidad_listarTodos(request);
         }
@@ -492,21 +394,10 @@ namespace OdontoSysWebApplication.EspecialidadWS {
         public OdontoSysWebApplication.EspecialidadWS.especialidad[] especialidad_listarTodos() {
             OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest inValue = new OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest();
             OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosResponse retVal = ((OdontoSysWebApplication.EspecialidadWS.EspecialidadWA)(this)).especialidad_listarTodos(inValue);
->>>>>>> Stashed changes
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-        System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_insertarResponse> OdontoSysWebApplication.EspecialidadWS.EspecialidadWA.especialidad_insertarAsync(OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest request) {
-            return base.Channel.especialidad_insertarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_insertarResponse> especialidad_insertarAsync(OdontoSysWebApplication.EspecialidadWS.especialidad especialidad) {
-            OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest inValue = new OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest();
-            inValue.especialidad = especialidad;
-            return ((OdontoSysWebApplication.EspecialidadWS.EspecialidadWA)(this)).especialidad_insertarAsync(inValue);
-=======
         System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosResponse> OdontoSysWebApplication.EspecialidadWS.EspecialidadWA.especialidad_listarTodosAsync(OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest request) {
             return base.Channel.especialidad_listarTodosAsync(request);
         }
@@ -514,7 +405,6 @@ namespace OdontoSysWebApplication.EspecialidadWS {
         public System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosResponse> especialidad_listarTodosAsync() {
             OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest inValue = new OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest();
             return ((OdontoSysWebApplication.EspecialidadWS.EspecialidadWA)(this)).especialidad_listarTodosAsync(inValue);
->>>>>>> Stashed changes
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -541,15 +431,6 @@ namespace OdontoSysWebApplication.EspecialidadWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-        OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosResponse OdontoSysWebApplication.EspecialidadWS.EspecialidadWA.especialidad_listarTodos(OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest request) {
-            return base.Channel.especialidad_listarTodos(request);
-        }
-        
-        public OdontoSysWebApplication.EspecialidadWS.especialidad[] especialidad_listarTodos() {
-            OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest inValue = new OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest();
-            OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosResponse retVal = ((OdontoSysWebApplication.EspecialidadWS.EspecialidadWA)(this)).especialidad_listarTodos(inValue);
-=======
         OdontoSysWebApplication.EspecialidadWS.especialidad_insertarResponse OdontoSysWebApplication.EspecialidadWS.EspecialidadWA.especialidad_insertar(OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest request) {
             return base.Channel.especialidad_insertar(request);
         }
@@ -558,20 +439,10 @@ namespace OdontoSysWebApplication.EspecialidadWS {
             OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest inValue = new OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest();
             inValue.especialidad = especialidad;
             OdontoSysWebApplication.EspecialidadWS.especialidad_insertarResponse retVal = ((OdontoSysWebApplication.EspecialidadWS.EspecialidadWA)(this)).especialidad_insertar(inValue);
->>>>>>> Stashed changes
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-        System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosResponse> OdontoSysWebApplication.EspecialidadWS.EspecialidadWA.especialidad_listarTodosAsync(OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest request) {
-            return base.Channel.especialidad_listarTodosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosResponse> especialidad_listarTodosAsync() {
-            OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest inValue = new OdontoSysWebApplication.EspecialidadWS.especialidad_listarTodosRequest();
-            return ((OdontoSysWebApplication.EspecialidadWS.EspecialidadWA)(this)).especialidad_listarTodosAsync(inValue);
-=======
         System.Threading.Tasks.Task<OdontoSysWebApplication.EspecialidadWS.especialidad_insertarResponse> OdontoSysWebApplication.EspecialidadWS.EspecialidadWA.especialidad_insertarAsync(OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest request) {
             return base.Channel.especialidad_insertarAsync(request);
         }
@@ -580,7 +451,6 @@ namespace OdontoSysWebApplication.EspecialidadWS {
             OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest inValue = new OdontoSysWebApplication.EspecialidadWS.especialidad_insertarRequest();
             inValue.especialidad = especialidad;
             return ((OdontoSysWebApplication.EspecialidadWS.EspecialidadWA)(this)).especialidad_insertarAsync(inValue);
->>>>>>> Stashed changes
         }
     }
 }

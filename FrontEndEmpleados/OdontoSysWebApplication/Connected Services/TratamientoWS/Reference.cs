@@ -15,22 +15,6 @@ namespace OdontoSysWebApplication.TratamientoWS {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", ConfigurationName="TratamientoWS.TratamientoWA")]
     public interface TratamientoWA {
         
-<<<<<<< Updated upstream
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_modificarRe" +
-            "quest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_modificarRe" +
-            "sponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.TratamientoWS.tratamiento_modificarResponse tratamiento_modificar(OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_modificarRe" +
-            "quest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_modificarRe" +
-            "sponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_modificarResponse> tratamiento_modificarAsync(OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-=======
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_listarTodos" +
             "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_listarTodos" +
@@ -45,7 +29,6 @@ namespace OdontoSysWebApplication.TratamientoWS {
         System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosResponse> tratamiento_listarTodosAsync(OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
->>>>>>> Stashed changes
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_insertarReq" +
             "uest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_insertarRes" +
             "ponse")]
@@ -58,51 +41,18 @@ namespace OdontoSysWebApplication.TratamientoWS {
             "ponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_insertarResponse> tratamiento_insertarAsync(OdontoSysWebApplication.TratamientoWS.tratamiento_insertarRequest request);
         
-<<<<<<< Updated upstream
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_obtenerPorI" +
-            "dRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_obtenerPorI" +
-            "dResponse")]
-=======
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_modificarRe" +
             "quest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_modificarRe" +
             "sponse")]
->>>>>>> Stashed changes
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdResponse tratamiento_obtenerPorId(OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdRequest request);
+        OdontoSysWebApplication.TratamientoWS.tratamiento_modificarResponse tratamiento_modificar(OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_obtenerPorI" +
-            "dRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_obtenerPorI" +
-            "dResponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdResponse> tratamiento_obtenerPorIdAsync(OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_listarTodos" +
-            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_listarTodos" +
-            "Response")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosResponse tratamiento_listarTodos(OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_listarTodos" +
-            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_listarTodos" +
-            "Response")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosResponse> tratamiento_listarTodosAsync(OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_eliminarReq" +
-            "uest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_eliminarRes" +
-            "ponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarResponse tratamiento_eliminar(OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_eliminarReq" +
-            "uest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_eliminarRes" +
-            "ponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarResponse> tratamiento_eliminarAsync(OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_modificarRe" +
+            "quest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_modificarRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_modificarResponse> tratamiento_modificarAsync(OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_eliminarReq" +
@@ -309,44 +259,16 @@ namespace OdontoSysWebApplication.TratamientoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tratamiento_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tratamiento_modificarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.TratamientoWS.tratamiento tratamiento;
-        
-        public tratamiento_modificarRequest() {
-        }
-        
-        public tratamiento_modificarRequest(OdontoSysWebApplication.TratamientoWS.tratamiento tratamiento) {
-            this.tratamiento = tratamiento;
-=======
     [System.ServiceModel.MessageContractAttribute(WrapperName="tratamiento_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class tratamiento_listarTodosRequest {
         
         public tratamiento_listarTodosRequest() {
->>>>>>> Stashed changes
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tratamiento_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tratamiento_modificarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public tratamiento_modificarResponse() {
-        }
-        
-        public tratamiento_modificarResponse(int @return) {
-=======
     [System.ServiceModel.MessageContractAttribute(WrapperName="tratamiento_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class tratamiento_listarTodosResponse {
         
@@ -358,7 +280,6 @@ namespace OdontoSysWebApplication.TratamientoWS {
         }
         
         public tratamiento_listarTodosResponse(OdontoSysWebApplication.TratamientoWS.tratamiento[] @return) {
->>>>>>> Stashed changes
             this.@return = @return;
         }
     }
@@ -402,81 +323,17 @@ namespace OdontoSysWebApplication.TratamientoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tratamiento_obtenerPorId", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tratamiento_obtenerPorIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public tratamiento_obtenerPorIdRequest() {
-        }
-        
-        public tratamiento_obtenerPorIdRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tratamiento_obtenerPorIdResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tratamiento_obtenerPorIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.TratamientoWS.tratamiento @return;
-        
-        public tratamiento_obtenerPorIdResponse() {
-        }
-        
-        public tratamiento_obtenerPorIdResponse(OdontoSysWebApplication.TratamientoWS.tratamiento @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tratamiento_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tratamiento_listarTodosRequest {
-        
-        public tratamiento_listarTodosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tratamiento_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tratamiento_listarTodosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.TratamientoWS.tratamiento[] @return;
-        
-        public tratamiento_listarTodosResponse() {
-        }
-        
-        public tratamiento_listarTodosResponse(OdontoSysWebApplication.TratamientoWS.tratamiento[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tratamiento_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tratamiento_eliminarRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="tratamiento_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class tratamiento_modificarRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public OdontoSysWebApplication.TratamientoWS.tratamiento tratamiento;
         
-        public tratamiento_eliminarRequest() {
+        public tratamiento_modificarRequest() {
         }
         
-        public tratamiento_eliminarRequest(OdontoSysWebApplication.TratamientoWS.tratamiento tratamiento) {
+        public tratamiento_modificarRequest(OdontoSysWebApplication.TratamientoWS.tratamiento tratamiento) {
             this.tratamiento = tratamiento;
         }
     }
@@ -484,17 +341,17 @@ namespace OdontoSysWebApplication.TratamientoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tratamiento_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tratamiento_eliminarResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="tratamiento_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class tratamiento_modificarResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public tratamiento_eliminarResponse() {
+        public tratamiento_modificarResponse() {
         }
         
-        public tratamiento_eliminarResponse(int @return) {
+        public tratamiento_modificarResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -635,16 +492,6 @@ namespace OdontoSysWebApplication.TratamientoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-        OdontoSysWebApplication.TratamientoWS.tratamiento_modificarResponse OdontoSysWebApplication.TratamientoWS.TratamientoWA.tratamiento_modificar(OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest request) {
-            return base.Channel.tratamiento_modificar(request);
-        }
-        
-        public int tratamiento_modificar(OdontoSysWebApplication.TratamientoWS.tratamiento tratamiento) {
-            OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest inValue = new OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest();
-            inValue.tratamiento = tratamiento;
-            OdontoSysWebApplication.TratamientoWS.tratamiento_modificarResponse retVal = ((OdontoSysWebApplication.TratamientoWS.TratamientoWA)(this)).tratamiento_modificar(inValue);
-=======
         OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosResponse OdontoSysWebApplication.TratamientoWS.TratamientoWA.tratamiento_listarTodos(OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest request) {
             return base.Channel.tratamiento_listarTodos(request);
         }
@@ -652,21 +499,10 @@ namespace OdontoSysWebApplication.TratamientoWS {
         public OdontoSysWebApplication.TratamientoWS.tratamiento[] tratamiento_listarTodos() {
             OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest inValue = new OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest();
             OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosResponse retVal = ((OdontoSysWebApplication.TratamientoWS.TratamientoWA)(this)).tratamiento_listarTodos(inValue);
->>>>>>> Stashed changes
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< Updated upstream
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_modificarResponse> OdontoSysWebApplication.TratamientoWS.TratamientoWA.tratamiento_modificarAsync(OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest request) {
-            return base.Channel.tratamiento_modificarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_modificarResponse> tratamiento_modificarAsync(OdontoSysWebApplication.TratamientoWS.tratamiento tratamiento) {
-            OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest inValue = new OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest();
-            inValue.tratamiento = tratamiento;
-            return ((OdontoSysWebApplication.TratamientoWS.TratamientoWA)(this)).tratamiento_modificarAsync(inValue);
-=======
         System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosResponse> OdontoSysWebApplication.TratamientoWS.TratamientoWA.tratamiento_listarTodosAsync(OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest request) {
             return base.Channel.tratamiento_listarTodosAsync(request);
         }
@@ -674,7 +510,6 @@ namespace OdontoSysWebApplication.TratamientoWS {
         public System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosResponse> tratamiento_listarTodosAsync() {
             OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest inValue = new OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest();
             return ((OdontoSysWebApplication.TratamientoWS.TratamientoWA)(this)).tratamiento_listarTodosAsync(inValue);
->>>>>>> Stashed changes
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -701,70 +536,26 @@ namespace OdontoSysWebApplication.TratamientoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdResponse OdontoSysWebApplication.TratamientoWS.TratamientoWA.tratamiento_obtenerPorId(OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdRequest request) {
-            return base.Channel.tratamiento_obtenerPorId(request);
+        OdontoSysWebApplication.TratamientoWS.tratamiento_modificarResponse OdontoSysWebApplication.TratamientoWS.TratamientoWA.tratamiento_modificar(OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest request) {
+            return base.Channel.tratamiento_modificar(request);
         }
         
-        public OdontoSysWebApplication.TratamientoWS.tratamiento tratamiento_obtenerPorId(int id) {
-            OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdRequest inValue = new OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdRequest();
-            inValue.id = id;
-            OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdResponse retVal = ((OdontoSysWebApplication.TratamientoWS.TratamientoWA)(this)).tratamiento_obtenerPorId(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdResponse> OdontoSysWebApplication.TratamientoWS.TratamientoWA.tratamiento_obtenerPorIdAsync(OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdRequest request) {
-            return base.Channel.tratamiento_obtenerPorIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdResponse> tratamiento_obtenerPorIdAsync(int id) {
-            OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdRequest inValue = new OdontoSysWebApplication.TratamientoWS.tratamiento_obtenerPorIdRequest();
-            inValue.id = id;
-            return ((OdontoSysWebApplication.TratamientoWS.TratamientoWA)(this)).tratamiento_obtenerPorIdAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosResponse OdontoSysWebApplication.TratamientoWS.TratamientoWA.tratamiento_listarTodos(OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest request) {
-            return base.Channel.tratamiento_listarTodos(request);
-        }
-        
-        public OdontoSysWebApplication.TratamientoWS.tratamiento[] tratamiento_listarTodos() {
-            OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest inValue = new OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest();
-            OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosResponse retVal = ((OdontoSysWebApplication.TratamientoWS.TratamientoWA)(this)).tratamiento_listarTodos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosResponse> OdontoSysWebApplication.TratamientoWS.TratamientoWA.tratamiento_listarTodosAsync(OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest request) {
-            return base.Channel.tratamiento_listarTodosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosResponse> tratamiento_listarTodosAsync() {
-            OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest inValue = new OdontoSysWebApplication.TratamientoWS.tratamiento_listarTodosRequest();
-            return ((OdontoSysWebApplication.TratamientoWS.TratamientoWA)(this)).tratamiento_listarTodosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarResponse OdontoSysWebApplication.TratamientoWS.TratamientoWA.tratamiento_eliminar(OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarRequest request) {
-            return base.Channel.tratamiento_eliminar(request);
-        }
-        
-        public int tratamiento_eliminar(OdontoSysWebApplication.TratamientoWS.tratamiento tratamiento) {
-            OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarRequest inValue = new OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarRequest();
+        public int tratamiento_modificar(OdontoSysWebApplication.TratamientoWS.tratamiento tratamiento) {
+            OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest inValue = new OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest();
             inValue.tratamiento = tratamiento;
-            OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarResponse retVal = ((OdontoSysWebApplication.TratamientoWS.TratamientoWA)(this)).tratamiento_eliminar(inValue);
+            OdontoSysWebApplication.TratamientoWS.tratamiento_modificarResponse retVal = ((OdontoSysWebApplication.TratamientoWS.TratamientoWA)(this)).tratamiento_modificar(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarResponse> OdontoSysWebApplication.TratamientoWS.TratamientoWA.tratamiento_eliminarAsync(OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarRequest request) {
-            return base.Channel.tratamiento_eliminarAsync(request);
+        System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_modificarResponse> OdontoSysWebApplication.TratamientoWS.TratamientoWA.tratamiento_modificarAsync(OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest request) {
+            return base.Channel.tratamiento_modificarAsync(request);
         }
         
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarResponse> tratamiento_eliminarAsync(OdontoSysWebApplication.TratamientoWS.tratamiento tratamiento) {
-            OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarRequest inValue = new OdontoSysWebApplication.TratamientoWS.tratamiento_eliminarRequest();
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.TratamientoWS.tratamiento_modificarResponse> tratamiento_modificarAsync(OdontoSysWebApplication.TratamientoWS.tratamiento tratamiento) {
+            OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest inValue = new OdontoSysWebApplication.TratamientoWS.tratamiento_modificarRequest();
             inValue.tratamiento = tratamiento;
-            return ((OdontoSysWebApplication.TratamientoWS.TratamientoWA)(this)).tratamiento_eliminarAsync(inValue);
+            return ((OdontoSysWebApplication.TratamientoWS.TratamientoWA)(this)).tratamiento_modificarAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
