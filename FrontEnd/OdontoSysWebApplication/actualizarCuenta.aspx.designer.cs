@@ -11,7 +11,7 @@ namespace OdontoSysWebApplication
 {
 
 
-    public partial class modificarCuenta
+    public partial class actualizarCuenta
     {
 
         /// <summary>
@@ -33,15 +33,6 @@ namespace OdontoSysWebApplication
         protected global::System.Web.UI.WebControls.TextBox txtUsuario;
 
         /// <summary>
-        /// Control txtTelefono.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefono;
-
-        /// <summary>
         /// Control txtCorreo.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace OdontoSysWebApplication
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
+
+        /// <summary>
+        /// Control txtTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTelefono;
 
         /// <summary>
         /// Control txtNombres.
@@ -87,21 +87,12 @@ namespace OdontoSysWebApplication
         protected global::System.Web.UI.WebControls.TextBox txtNumDoc;
 
         /// <summary>
-        /// Control btnGuardarCambios.
+        /// Control btnGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarCambios;
-
-        /// <summary>
-        /// Control btnVolver.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnVolver;
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
     }
 }

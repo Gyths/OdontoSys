@@ -75,7 +75,7 @@
                                 <%: InicialPaciente %>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="modificarCuenta.aspx"><i class="fas fa-user-cog me-2"></i>Modificar cuenta</a></li>
+                                <li><a class="dropdown-item" href="miCuenta.aspx"><i class="fas fa-user me-2"></i>Mi Cuenta</a></li>
                                 <li><hr class="dropdown-divider" /></li>
                                 <li>
                                     <asp:LinkButton ID="lnkCerrarSesion"

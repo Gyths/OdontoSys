@@ -63,6 +63,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="actualizarCuenta.aspx" />
+    <Content Include="cambiarContrasena.aspx" />
     <Content Include="contacto.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -106,8 +108,8 @@
     <Content Include="Images\inicioSesion\fondo.png" />
     <Content Include="Images\logo\horizontal.png" />
     <Content Include="inicioSesion.aspx" />
+    <Content Include="miCuenta.aspx" />
     <Content Include="misCitas.aspx" />
-    <Content Include="modificarCuenta.aspx" />
     <Content Include="reservaCita.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -158,6 +160,20 @@
     <Content Include="Scripts\jquery-3.7.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="actualizarCuenta.aspx.cs">
+      <DependentUpon>actualizarCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="actualizarCuenta.aspx.designer.cs">
+      <DependentUpon>actualizarCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cambiarContrasena.aspx.cs">
+      <DependentUpon>cambiarContrasena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cambiarContrasena.aspx.designer.cs">
+      <DependentUpon>cambiarContrasena.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contacto.aspx.cs">
       <DependentUpon>contacto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -186,19 +202,19 @@
     <Compile Include="inicioSesion.aspx.designer.cs">
       <DependentUpon>inicioSesion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="miCuenta.aspx.cs">
+      <DependentUpon>miCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="miCuenta.aspx.designer.cs">
+      <DependentUpon>miCuenta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="misCitas.aspx.cs">
       <DependentUpon>misCitas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="misCitas.aspx.designer.cs">
       <DependentUpon>misCitas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="modificarCuenta.aspx.cs">
-      <DependentUpon>modificarCuenta.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="modificarCuenta.aspx.designer.cs">
-      <DependentUpon>modificarCuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paciente.Master.cs">
       <DependentUpon>Paciente.Master</DependentUpon>
