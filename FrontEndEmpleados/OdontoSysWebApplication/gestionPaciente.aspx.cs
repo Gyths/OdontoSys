@@ -87,10 +87,6 @@ namespace OdontoSysWebApplication
 
         private void CargarCitasPaciente(int idPaciente)
         {
-            //???????
-            if (idPaciente == null) Response.Redirect("buscarPaciente.aspx");
-            //????????
-
             var citaBO = new CitaBO();
 
             var paciente = new CitaWS.paciente { idPaciente = idPaciente };
