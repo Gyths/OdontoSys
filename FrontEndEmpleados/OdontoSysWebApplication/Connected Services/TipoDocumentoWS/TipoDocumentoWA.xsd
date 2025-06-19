@@ -28,6 +28,7 @@
   </xs:complexType>
   <xs:complexType name="tipoDocumento_listarTodos">
     <xs:sequence />
+<<<<<<< Updated upstream
   </xs:complexType>
   <xs:complexType name="tipoDocumento_listarTodosResponse">
     <xs:sequence>
@@ -38,10 +39,12 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="tipoDocumento" type="tns:tipoDocumento" />
     </xs:sequence>
+=======
+>>>>>>> Stashed changes
   </xs:complexType>
-  <xs:complexType name="tipoDocumento_insertarResponse">
+  <xs:complexType name="tipoDocumento_listarTodosResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tipoDocumento" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="tipoDocumento_modificar">
@@ -54,6 +57,19 @@
       <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+<<<<<<< Updated upstream
+=======
+  <xs:complexType name="tipoDocumento_insertar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipoDocumento" type="tns:tipoDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento_insertarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+>>>>>>> Stashed changes
   <xs:complexType name="tipoDocumento_obtenerPorId">
     <xs:sequence>
       <xs:element minOccurs="0" name="id" type="xs:int" />

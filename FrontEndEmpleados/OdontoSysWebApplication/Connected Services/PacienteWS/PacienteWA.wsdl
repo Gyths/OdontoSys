@@ -5,6 +5,27 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/PacienteWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
+<<<<<<< Updated upstream
+=======
+  <message name="paciente_insertar">
+    <part name="parameters" element="tns:paciente_insertar" />
+  </message>
+  <message name="paciente_insertarResponse">
+    <part name="parameters" element="tns:paciente_insertarResponse" />
+  </message>
+  <message name="paciente_eliminar">
+    <part name="parameters" element="tns:paciente_eliminar" />
+  </message>
+  <message name="paciente_eliminarResponse">
+    <part name="parameters" element="tns:paciente_eliminarResponse" />
+  </message>
+  <message name="paciente_modificar">
+    <part name="parameters" element="tns:paciente_modificar" />
+  </message>
+  <message name="paciente_modificarResponse">
+    <part name="parameters" element="tns:paciente_modificarResponse" />
+  </message>
+>>>>>>> Stashed changes
   <message name="paciente_obtenerPorUsuarioContrasenha">
     <part name="parameters" element="tns:paciente_obtenerPorUsuarioContrasenha" />
   </message>
@@ -42,6 +63,21 @@
     <part name="parameters" element="tns:paciente_eliminarResponse" />
   </message>
   <portType name="PacienteWA">
+<<<<<<< Updated upstream
+=======
+    <operation name="paciente_insertar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_insertarRequest" message="tns:paciente_insertar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_insertarResponse" message="tns:paciente_insertarResponse" />
+    </operation>
+    <operation name="paciente_eliminar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_eliminarRequest" message="tns:paciente_eliminar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_eliminarResponse" message="tns:paciente_eliminarResponse" />
+    </operation>
+    <operation name="paciente_modificar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_modificarRequest" message="tns:paciente_modificar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_modificarResponse" message="tns:paciente_modificarResponse" />
+    </operation>
+>>>>>>> Stashed changes
     <operation name="paciente_obtenerPorUsuarioContrasenha">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_obtenerPorUsuarioContrasenhaRequest" message="tns:paciente_obtenerPorUsuarioContrasenha" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_obtenerPorUsuarioContrasenhaResponse" message="tns:paciente_obtenerPorUsuarioContrasenhaResponse" />
@@ -69,7 +105,11 @@
   </portType>
   <binding name="PacienteWAPortBinding" type="tns:PacienteWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+<<<<<<< Updated upstream
     <operation name="paciente_obtenerPorUsuarioContrasenha">
+=======
+    <operation name="paciente_insertar">
+>>>>>>> Stashed changes
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -78,6 +118,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< Updated upstream
     <operation name="paciente_obtenerPorId">
       <soap:operation soapAction="" />
       <input>
@@ -88,6 +129,9 @@
       </output>
     </operation>
     <operation name="paciente_listarTodos">
+=======
+    <operation name="paciente_eliminar">
+>>>>>>> Stashed changes
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,7 +149,11 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< Updated upstream
     <operation name="paciente_insertar">
+=======
+    <operation name="paciente_obtenerPorUsuarioContrasenha">
+>>>>>>> Stashed changes
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -114,7 +162,20 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< Updated upstream
     <operation name="paciente_eliminar">
+=======
+    <operation name="paciente_obtenerPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="paciente_listarTodos">
+>>>>>>> Stashed changes
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

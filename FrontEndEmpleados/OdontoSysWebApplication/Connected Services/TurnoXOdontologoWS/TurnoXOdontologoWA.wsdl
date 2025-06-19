@@ -11,6 +11,12 @@
   <message name="turnoXOdontologo_insertarResponse">
     <part name="parameters" element="tns:turnoXOdontologo_insertarResponse" />
   </message>
+  <message name="turnoXOdontologo_eliminar">
+    <part name="parameters" element="tns:turnoXOdontologo_eliminar" />
+  </message>
+  <message name="turnoXOdontologo_eliminarResponse">
+    <part name="parameters" element="tns:turnoXOdontologo_eliminarResponse" />
+  </message>
   <message name="turnoXOdontologo_modificar">
     <part name="parameters" element="tns:turnoXOdontologo_modificar" />
   </message>
@@ -34,6 +40,10 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_insertarRequest" message="tns:turnoXOdontologo_insertar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_insertarResponse" message="tns:turnoXOdontologo_insertarResponse" />
     </operation>
+    <operation name="turnoXOdontologo_eliminar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_eliminarRequest" message="tns:turnoXOdontologo_eliminar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_eliminarResponse" message="tns:turnoXOdontologo_eliminarResponse" />
+    </operation>
     <operation name="turnoXOdontologo_modificar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_modificarRequest" message="tns:turnoXOdontologo_modificar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_modificarResponse" message="tns:turnoXOdontologo_modificarResponse" />
@@ -50,6 +60,18 @@
   <binding name="TurnoXOdontologoWAPortBinding" type="tns:TurnoXOdontologoWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="turnoXOdontologo_insertar">
+<<<<<<< Updated upstream
+=======
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="turnoXOdontologo_eliminar">
+>>>>>>> Stashed changes
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

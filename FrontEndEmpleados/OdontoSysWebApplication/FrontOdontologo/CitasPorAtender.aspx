@@ -1,4 +1,4 @@
-﻿<%@ Page Title= "Citas por atender" Language="C#" AutoEventWireup="true" CodeBehind="CitasPorAtender.aspx.cs" Inherits="OdontoSysWebApplication.FrontOdontologo.CitasPorAtender" %>
+﻿<%@ Page Title= "Citas por atender" Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CitasPorAtender.aspx.cs" Inherits="OdontoSysWebApplication.FrontOdontologo.CitasPorAtender" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
@@ -14,18 +14,23 @@
         Width="100%"
         OnRowDataBound="gvCitas_RowDataBound">
         <Columns>
-            <asp:BoundField DataField="paciente" HeaderText="Paciente" />
-            <asp:BoundField DataField="fecha" HeaderText="fecha" />
-            <asp:BoundField DataField="hora" HeaderText="hora" />
-            <asp:BoundField DataField="estado" HeaderText="estado" />
+            <asp:TemplateField HeaderText="Paciente">
+                <ItemTemplate>
+                    <%# Eval("paciente.nombre") %>
+                </ItemTemplate>
+            </asp:TemplateField>
+            
+            <asp:BoundField DataField="fecha" HeaderText="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
+            <asp:BoundField DataField="horaInicio" HeaderText="Hora" />
+
+            <asp:BoundField DataField="estado" HeaderText="Estado" />
             
             <asp:TemplateField>
                 <ItemTemplate>
                     <asp:Button ID="btnAtender" runat="server" CommandName="Atender" CommandArgument='<%# Container.DataItemIndex %>' Text ="Atender"/>
                 </ItemTemplate>
             </asp:TemplateField>
-            
-            <asp:BoundField DataField="puntuacionPromedio" HeaderText="Puntuación" DataFormatString="{0:N2}" />
+           
         </Columns>
         <HeaderStyle CssClass="bg-primary text-white" />
     </asp:GridView>
