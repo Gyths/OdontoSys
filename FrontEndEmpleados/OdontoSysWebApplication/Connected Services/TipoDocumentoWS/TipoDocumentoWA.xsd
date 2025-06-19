@@ -26,16 +26,6 @@
       <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="tipoDocumento_insertar">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="tipoDocumento" type="tns:tipoDocumento" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="tipoDocumento_insertarResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="tipoDocumento_listarTodos">
     <xs:sequence />
   </xs:complexType>
@@ -50,6 +40,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="tipoDocumento_modificarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento_insertar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipoDocumento" type="tns:tipoDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento_insertarResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>

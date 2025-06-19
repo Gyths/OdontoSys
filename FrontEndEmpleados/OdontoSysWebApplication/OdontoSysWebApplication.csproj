@@ -540,6 +540,7 @@
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
     <Content Include="Content\Fonts\LICENSE.txt" />
     <Content Include="crearCuenta.aspx" />
+    <Content Include="FrontOdontologo\AtenderCita.aspx" />
     <Content Include="FrontOdontologo\CitasPorAtender.aspx" />
     <Content Include="gestionOdontologo.aspx" />
     <Content Include="gestionPaciente.aspx" />
@@ -713,6 +714,13 @@
     </Compile>
     <Compile Include="crearCuenta.aspx.designer.cs">
       <DependentUpon>crearCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontOdontologo\AtenderCita.aspx.cs">
+      <DependentUpon>AtenderCita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontOdontologo\AtenderCita.aspx.designer.cs">
+      <DependentUpon>AtenderCita.aspx</DependentUpon>
     </Compile>
     <Compile Include="FrontOdontologo\CitasPorAtender.aspx.cs">
       <DependentUpon>CitasPorAtender.aspx</DependentUpon>
