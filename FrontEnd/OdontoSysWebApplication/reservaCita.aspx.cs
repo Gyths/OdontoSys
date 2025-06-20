@@ -236,11 +236,6 @@ namespace OdontoSysWebApplication
                     idOdontologo = int.Parse(ddlOdontologos.SelectedValue),
                     idOdontologoSpecified = true
                 },
-                recepcionista = new OdontoSysBusiness.CitaWS.recepcionista
-                {
-                    idRecepcionista = 1,
-                    idRecepcionistaSpecified = true
-                },
                 paciente = new OdontoSysBusiness.CitaWS.paciente
                 {
                     idPaciente = paciente.idPaciente,
