@@ -40,7 +40,6 @@
                         %>
                                     <li class="nav-item"><a class="nav-link" href="ListarPacientes.aspx">Pacientes</a></li>
                                     <li class="nav-item"><a class="nav-link" href="ListarDoctores.aspx">Doctores</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="HistoriaClinica.aspx">Historia Clínica</a></li>
                         <%
                                 }
                                 else if (tipo == "odontologo")
