@@ -64,7 +64,7 @@ namespace OdontoSysWebApplication
                     {
                         clienteCita.cita_eliminar(cita);
                     }
-                } catch (Exception e)
+                } catch (Exception ex1)
                 {
 
                 }

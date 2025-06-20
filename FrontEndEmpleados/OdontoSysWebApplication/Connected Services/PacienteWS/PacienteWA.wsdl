@@ -5,30 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/PacienteWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
-  <message name="paciente_insertar">
-    <part name="parameters" element="tns:paciente_insertar" />
-  </message>
-  <message name="paciente_insertarResponse">
-    <part name="parameters" element="tns:paciente_insertarResponse" />
-  </message>
-  <message name="paciente_eliminar">
-    <part name="parameters" element="tns:paciente_eliminar" />
-  </message>
-  <message name="paciente_eliminarResponse">
-    <part name="parameters" element="tns:paciente_eliminarResponse" />
-  </message>
-  <message name="paciente_modificar">
-    <part name="parameters" element="tns:paciente_modificar" />
-  </message>
-  <message name="paciente_modificarResponse">
-    <part name="parameters" element="tns:paciente_modificarResponse" />
-  </message>
-  <message name="paciente_obtenerPorUsuarioContrasenha">
-    <part name="parameters" element="tns:paciente_obtenerPorUsuarioContrasenha" />
-  </message>
-  <message name="paciente_obtenerPorUsuarioContrasenhaResponse">
-    <part name="parameters" element="tns:paciente_obtenerPorUsuarioContrasenhaResponse" />
-  </message>
   <message name="paciente_obtenerPorId">
     <part name="parameters" element="tns:paciente_obtenerPorId" />
   </message>
@@ -41,23 +17,37 @@
   <message name="paciente_listarTodosResponse">
     <part name="parameters" element="tns:paciente_listarTodosResponse" />
   </message>
+  <message name="paciente_verificarExistenciaNombreUsuario">
+    <part name="parameters" element="tns:paciente_verificarExistenciaNombreUsuario" />
+  </message>
+  <message name="paciente_verificarExistenciaNombreUsuarioResponse">
+    <part name="parameters" element="tns:paciente_verificarExistenciaNombreUsuarioResponse" />
+  </message>
+  <message name="paciente_obtenerPorUsuarioContrasenha">
+    <part name="parameters" element="tns:paciente_obtenerPorUsuarioContrasenha" />
+  </message>
+  <message name="paciente_obtenerPorUsuarioContrasenhaResponse">
+    <part name="parameters" element="tns:paciente_obtenerPorUsuarioContrasenhaResponse" />
+  </message>
+  <message name="paciente_modificar">
+    <part name="parameters" element="tns:paciente_modificar" />
+  </message>
+  <message name="paciente_modificarResponse">
+    <part name="parameters" element="tns:paciente_modificarResponse" />
+  </message>
+  <message name="paciente_insertar">
+    <part name="parameters" element="tns:paciente_insertar" />
+  </message>
+  <message name="paciente_insertarResponse">
+    <part name="parameters" element="tns:paciente_insertarResponse" />
+  </message>
+  <message name="paciente_eliminar">
+    <part name="parameters" element="tns:paciente_eliminar" />
+  </message>
+  <message name="paciente_eliminarResponse">
+    <part name="parameters" element="tns:paciente_eliminarResponse" />
+  </message>
   <portType name="PacienteWA">
-    <operation name="paciente_insertar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_insertarRequest" message="tns:paciente_insertar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_insertarResponse" message="tns:paciente_insertarResponse" />
-    </operation>
-    <operation name="paciente_eliminar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_eliminarRequest" message="tns:paciente_eliminar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_eliminarResponse" message="tns:paciente_eliminarResponse" />
-    </operation>
-    <operation name="paciente_modificar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_modificarRequest" message="tns:paciente_modificar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_modificarResponse" message="tns:paciente_modificarResponse" />
-    </operation>
-    <operation name="paciente_obtenerPorUsuarioContrasenha">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_obtenerPorUsuarioContrasenhaRequest" message="tns:paciente_obtenerPorUsuarioContrasenha" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_obtenerPorUsuarioContrasenhaResponse" message="tns:paciente_obtenerPorUsuarioContrasenhaResponse" />
-    </operation>
     <operation name="paciente_obtenerPorId">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_obtenerPorIdRequest" message="tns:paciente_obtenerPorId" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_obtenerPorIdResponse" message="tns:paciente_obtenerPorIdResponse" />
@@ -66,10 +56,30 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_listarTodosRequest" message="tns:paciente_listarTodos" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_listarTodosResponse" message="tns:paciente_listarTodosResponse" />
     </operation>
+    <operation name="paciente_verificarExistenciaNombreUsuario">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_verificarExistenciaNombreUsuarioRequest" message="tns:paciente_verificarExistenciaNombreUsuario" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_verificarExistenciaNombreUsuarioResponse" message="tns:paciente_verificarExistenciaNombreUsuarioResponse" />
+    </operation>
+    <operation name="paciente_obtenerPorUsuarioContrasenha">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_obtenerPorUsuarioContrasenhaRequest" message="tns:paciente_obtenerPorUsuarioContrasenha" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_obtenerPorUsuarioContrasenhaResponse" message="tns:paciente_obtenerPorUsuarioContrasenhaResponse" />
+    </operation>
+    <operation name="paciente_modificar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_modificarRequest" message="tns:paciente_modificar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_modificarResponse" message="tns:paciente_modificarResponse" />
+    </operation>
+    <operation name="paciente_insertar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_insertarRequest" message="tns:paciente_insertar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_insertarResponse" message="tns:paciente_insertarResponse" />
+    </operation>
+    <operation name="paciente_eliminar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_eliminarRequest" message="tns:paciente_eliminar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/PacienteWA/paciente_eliminarResponse" message="tns:paciente_eliminarResponse" />
+    </operation>
   </portType>
   <binding name="PacienteWAPortBinding" type="tns:PacienteWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="paciente_insertar">
+    <operation name="paciente_obtenerPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -78,7 +88,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="paciente_eliminar">
+    <operation name="paciente_listarTodos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -87,7 +97,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="paciente_modificar">
+    <operation name="paciente_verificarExistenciaNombreUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,7 +115,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="paciente_obtenerPorId">
+    <operation name="paciente_modificar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -114,7 +124,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="paciente_listarTodos">
+    <operation name="paciente_insertar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="paciente_eliminar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

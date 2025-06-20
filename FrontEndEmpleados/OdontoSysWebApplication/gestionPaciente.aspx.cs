@@ -337,7 +337,10 @@ namespace OdontoSysWebApplication
         private void CargarCitasPaciente(int idPaciente)
         {
             var citaBO = new CitaBO();
-            var pacienteWS = new CitaWS.paciente { idPaciente = idPaciente };
+            var pacienteWS = new CitaWS.paciente {
+                idPaciente = idPaciente,
+                idPacienteSpecified = true
+            };
             try
             {
                 var citas = citaBO.cita_listarPorPaciente(pacienteWS);
@@ -346,7 +349,7 @@ namespace OdontoSysWebApplication
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine("Error al cargar citas del paciente: " + ex.Message);
+                System.Diagnostics.Debug.WriteLine("Error al cargar citas del paciente: " + ex.Message + " " + pacienteWS.idPaciente);
                 gvCitas.DataSource = null;
                 gvCitas.DataBind();
             }
