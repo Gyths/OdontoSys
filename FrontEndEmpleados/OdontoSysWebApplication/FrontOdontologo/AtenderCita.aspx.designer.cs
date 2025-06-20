@@ -15,13 +15,13 @@ namespace OdontoSysWebApplication.FrontOdontologo
     {
 
         /// <summary>
-        /// form1 control.
+        /// lblPaciente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblPaciente;
 
         /// <summary>
         /// txtPaciente control.
@@ -33,6 +33,15 @@ namespace OdontoSysWebApplication.FrontOdontologo
         protected global::System.Web.UI.WebControls.TextBox txtPaciente;
 
         /// <summary>
+        /// lblCorreo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCorreo;
+
+        /// <summary>
         /// txtCorreo control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace OdontoSysWebApplication.FrontOdontologo
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
+
+        /// <summary>
+        /// lblTelefono control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTelefono;
 
         /// <summary>
         /// txtTelefono control.
@@ -51,13 +69,13 @@ namespace OdontoSysWebApplication.FrontOdontologo
         protected global::System.Web.UI.WebControls.TextBox txtTelefono;
 
         /// <summary>
-        /// gvTratamientos control.
+        /// lblTratamiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvTratamientos;
+        protected global::System.Web.UI.WebControls.Label lblTratamiento;
 
         /// <summary>
         /// btnAgregarTratamiento control.
@@ -67,5 +85,32 @@ namespace OdontoSysWebApplication.FrontOdontologo
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregarTratamiento;
+
+        /// <summary>
+        /// btnQuitarTodos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnQuitarTodos;
+
+        /// <summary>
+        /// gvTratamientos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvTratamientos;
+
+        /// <summary>
+        /// btnEliminarSeleccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEliminarSeleccion;
     }
 }
