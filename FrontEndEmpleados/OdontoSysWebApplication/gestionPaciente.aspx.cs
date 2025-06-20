@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Web.UI;
+using System.ComponentModel;
+using System.Linq;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using OdontoSysWebAppliation.OdontoSysBusiness;
@@ -10,8 +12,9 @@ namespace OdontoSysWebApplication
 {
     public partial class gestionPaciente : System.Web.UI.Page
     {
-        // Variables para almacenar los datos del paciente
+     
         private PacienteWS.paciente pacienteActual;
+        private BindingList<CitaWS.cita> citasActuales;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -75,7 +78,7 @@ namespace OdontoSysWebApplication
                     original.nombreUsuario = txtUsuario.Text;
                     pacienteBO.paciente_modificar(original);
 
-                    // Actualizar datos actuales
+                    
                     pacienteActual = original;
 
                     pnlAlerta.Visible = true;
@@ -95,7 +98,7 @@ namespace OdontoSysWebApplication
             {
                 if (Session["idPacienteSeleccionado"] != null && int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPaciente))
                 {
-                    // Recargar datos actuales del paciente para el PDF
+                   
                     CargarDatosParaPDF(idPaciente);
                     GenerarPDFHistoriaClinica();
                 }
@@ -106,11 +109,11 @@ namespace OdontoSysWebApplication
             }
             catch (Exception ex)
             {
-                // Log del error específico para debugging
+               
                 System.Diagnostics.Debug.WriteLine("Error específico al generar PDF: " + ex.Message);
                 System.Diagnostics.Debug.WriteLine("Stack trace: " + ex.StackTrace);
 
-                // Mostrar mensaje de error al usuario
+               
                 Response.Write($"<script>alert('Error al generar el PDF: {ex.Message}');</script>");
             }
         }
@@ -119,7 +122,7 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                // Solo cargar datos del paciente
+                // Cargar datos del paciente
                 var pacienteBO = new PacienteBO();
                 pacienteActual = pacienteBO.paciente_obtenerPorId(idPaciente);
 
@@ -127,17 +130,42 @@ namespace OdontoSysWebApplication
                 {
                     throw new Exception("No se pudieron cargar los datos del paciente.");
                 }
+
+                //Descomentar cuando se puedan listar las citas
+                /*
+                // Cargar citas del paciente
+                var citaBO = new CitaBO();
+                var pacienteWS = new CitaWS.paciente { idPaciente = idPaciente };
+                var todasLasCitas = citaBO.cita_listarPorPaciente(pacienteWS);
+                
+                // Filtrar solo las citas ATENDIDAS
+                if (todasLasCitas != null && todasLasCitas.Count > 0)
+                {
+                    var citasAtendidas = todasLasCitas.Where(c => c != null && 
+                        !string.IsNullOrEmpty(c.estado) && 
+                        c.estado.Equals("ATENDIDA", StringComparison.OrdinalIgnoreCase)).ToList();
+                    
+                    citasActuales = new BindingList<CitaWS.cita>(citasAtendidas);
+                }
+                else
+                {
+                    citasActuales = new BindingList<CitaWS.cita>();
+                }
+                
+                System.Diagnostics.Debug.WriteLine($"Citas cargadas para PDF: {citasActuales?.Count ?? 0}");
+                */
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Error al cargar datos para PDF: " + ex.Message);
-                throw; // Re-lanzar la excepción para manejarla en el método llamador
+                // citasActuales = new BindingList<CitaWS.cita>(); // Inicializar lista vacía en caso de error
+                throw;
             }
         }
 
         private void GenerarPDFHistoriaClinica()
         {
-            // Verificar que tenemos datos del paciente
+            
             if (pacienteActual == null)
             {
                 throw new Exception("No hay datos del paciente para generar el PDF.");
@@ -153,29 +181,33 @@ namespace OdontoSysWebApplication
                     PdfWriter writer = PdfWriter.GetInstance(documento, stream);
                     documento.Open();
 
-                    // Configurar fuentes
+                    
                     BaseFont bfTimes = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, false);
                     Font fontTitulo = new Font(bfTimes, 18, Font.BOLD);
                     Font fontSubtitulo = new Font(bfTimes, 14, Font.BOLD);
                     Font fontNormal = new Font(bfTimes, 11, Font.NORMAL);
                     Font fontNormalBold = new Font(bfTimes, 11, Font.BOLD);
 
-                    // Título principal
+                   
                     Paragraph titulo = new Paragraph("HISTORIA CLÍNICA", fontTitulo);
                     titulo.Alignment = Element.ALIGN_CENTER;
                     titulo.SpacingAfter = 20f;
                     documento.Add(titulo);
 
-                    // Información del paciente
-                    documento.Add(new Paragraph("DATOS DEL PACIENTE", fontSubtitulo));
-                    documento.Add(new Paragraph(" ", fontNormal)); // Espacio
+                    Paragraph subtitulo = new Paragraph("Sonrisa Vital SAC", fontTitulo);
+                    subtitulo.Alignment = Element.ALIGN_CENTER;
+                    subtitulo.SpacingAfter = 20f;
+                    documento.Add(subtitulo);
 
-                    // Crear tabla para los datos del paciente
+                    documento.Add(new Paragraph("DATOS DEL PACIENTE", fontSubtitulo));
+                    documento.Add(new Paragraph(" ", fontNormal)); 
+
+                   
                     PdfPTable tablaPaciente = new PdfPTable(2);
                     tablaPaciente.WidthPercentage = 100;
                     tablaPaciente.SpacingAfter = 20f;
 
-                    // Configurar anchos de columnas
+                   
                     float[] anchosPaciente = { 1f, 2f };
                     tablaPaciente.SetWidths(anchosPaciente);
 
@@ -188,18 +220,62 @@ namespace OdontoSysWebApplication
                         pacienteActual.telefono ?? "N/D", fontNormalBold, fontNormal);
                     AgregarFilaTabla(tablaPaciente, "Correo:",
                         pacienteActual.correo ?? "N/D", fontNormalBold, fontNormal);
-                    AgregarFilaTabla(tablaPaciente, "Usuario:",
-                        pacienteActual.nombreUsuario ?? "N/D", fontNormalBold, fontNormal);
-                    AgregarFilaTabla(tablaPaciente, "Fecha de Generación:",
-                        DateTime.Now.ToString("dd/MM/yyyy HH:mm"), fontNormalBold, fontNormal);
 
                     documento.Add(tablaPaciente);
 
-                    // Nota sobre citas (temporal)
-                    documento.Add(new Paragraph("CITAS DEL PACIENTE:", fontSubtitulo));
-                    documento.Add(new Paragraph("acá van las citas del paciente que no aparecen por alguna razón.", fontNormal));
+                    // Descomentar cuando se puedan listar las citas, sino da error
+                    /*
+                    // Sección de citas atendidas
+                    documento.Add(new Paragraph("CITAS ATENDIDAS DEL PACIENTE:", fontSubtitulo));
+                    documento.Add(new Paragraph(" ", fontNormal)); // Espacio
 
-                    // Pie de página
+                    if (citasActuales != null && citasActuales.Count > 0)
+                    {
+                        // Crear tabla para las citas
+                        PdfPTable tablaCitas = new PdfPTable(4);
+                        tablaCitas.WidthPercentage = 100;
+                        tablaCitas.SpacingAfter = 20f;
+
+                        // Configurar anchos de columnas
+                        float[] anchosCitas = { 1.5f, 1f, 2f, 2f };
+                        tablaCitas.SetWidths(anchosCitas);
+
+                        // Encabezados de la tabla
+                        AgregarEncabezadoTabla(tablaCitas, "Fecha", fontNormalBold);
+                        AgregarEncabezadoTabla(tablaCitas, "Hora", fontNormalBold);
+                        AgregarEncabezadoTabla(tablaCitas, "Odontólogo", fontNormalBold);
+                        AgregarEncabezadoTabla(tablaCitas, "Especialidad", fontNormalBold);
+
+                        // Agregar datos de las citas
+                        foreach (var cita in citasActuales)
+                        {
+                            if (cita != null)
+                            {
+                                AgregarCeldaTabla(tablaCitas, cita.fecha ?? "N/D", fontNormal);
+                                AgregarCeldaTabla(tablaCitas, cita.horaInicio ?? "N/D", fontNormal);
+                                AgregarCeldaTabla(tablaCitas, 
+                                    cita.odontologo?.nombre ?? "N/D", fontNormal);
+                                AgregarCeldaTabla(tablaCitas, 
+                                    cita.odontologo?.especialidad?.nombre ?? "N/D", fontNormal);
+                            }
+                        }
+
+                        documento.Add(tablaCitas);
+
+                        // Resumen de citas
+                        documento.Add(new Paragraph($"Total de citas atendidas: {citasActuales.Count}", fontNormalBold));
+                    }
+                    else
+                    {
+                        documento.Add(new Paragraph("No se encontraron citas atendidas para este paciente.", fontNormal));
+                    }
+                    */
+
+                   
+                    documento.Add(new Paragraph("CITAS DEL PACIENTE:", fontSubtitulo));
+                    documento.Add(new Paragraph("--------acá irían las citas del paciente--------", fontNormal));
+
+                    
                     documento.Add(new Paragraph(" ", fontNormal));
                     documento.Add(new Paragraph(" ", fontNormal));
                     Paragraph pie = new Paragraph($"Documento generado el {DateTime.Now.ToString("dd/MM/yyyy")} a las {DateTime.Now.ToString("HH:mm")}",
@@ -221,7 +297,6 @@ namespace OdontoSysWebApplication
                     }
                 }
 
-                // Configurar respuesta para descarga
                 string nombreArchivo = $"Historia_Clinica_{pacienteActual?.numeroDocumento ?? "Paciente"}_{DateTime.Now.ToString("yyyyMMdd")}.pdf";
 
                 Response.Clear();
@@ -262,10 +337,10 @@ namespace OdontoSysWebApplication
         private void CargarCitasPaciente(int idPaciente)
         {
             var citaBO = new CitaBO();
-            var paciente = new CitaWS.paciente { idPaciente = idPaciente };
+            var pacienteWS = new CitaWS.paciente { idPaciente = idPaciente };
             try
             {
-                var citas = citaBO.cita_listarPorPaciente(paciente);
+                var citas = citaBO.cita_listarPorPaciente(pacienteWS);
                 gvCitas.DataSource = citas;
                 gvCitas.DataBind();
             }
@@ -276,5 +351,40 @@ namespace OdontoSysWebApplication
                 gvCitas.DataBind();
             }
         }
+        // TODO
+        /*
+        private void AgregarEncabezadoTabla(PdfPTable tabla, string texto, Font font)
+        {
+            try
+            {
+                PdfPCell celda = new PdfPCell(new Phrase(texto ?? "", font));
+                celda.BackgroundColor = BaseColor.LIGHT_GRAY;
+                celda.HorizontalAlignment = Element.ALIGN_CENTER;
+                celda.Padding = 5f;
+                tabla.AddCell(celda);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al agregar encabezado a tabla: " + ex.Message);
+                throw;
+            }
+        }
+
+        private void AgregarCeldaTabla(PdfPTable tabla, string texto, Font font)
+        {
+            try
+            {
+                PdfPCell celda = new PdfPCell(new Phrase(texto ?? "", font));
+                celda.HorizontalAlignment = Element.ALIGN_CENTER;
+                celda.Padding = 5f;
+                tabla.AddCell(celda);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al agregar celda a tabla: " + ex.Message);
+                throw;
+            }
+        }
+        */
     }
 }
