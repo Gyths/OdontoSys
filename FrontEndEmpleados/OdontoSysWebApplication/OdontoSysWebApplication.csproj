@@ -546,8 +546,10 @@
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
     <Content Include="Content\Fonts\LICENSE.txt" />
     <Content Include="crearCuenta.aspx" />
+    <Content Include="FrontOdontologo\AgregarTratamiento.aspx" />
     <Content Include="FrontOdontologo\AtenderCita.aspx" />
     <Content Include="FrontOdontologo\CitasPorAtender.aspx" />
+    <Content Include="FrontOdontologo\EditarTratamiento.aspx" />
     <Content Include="gestionOdontologo.aspx" />
     <Content Include="gestionPaciente.aspx" />
     <Content Include="home.aspx" />
@@ -721,6 +723,13 @@
     <Compile Include="crearCuenta.aspx.designer.cs">
       <DependentUpon>crearCuenta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FrontOdontologo\AgregarTratamiento.aspx.cs">
+      <DependentUpon>AgregarTratamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontOdontologo\AgregarTratamiento.aspx.designer.cs">
+      <DependentUpon>AgregarTratamiento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FrontOdontologo\AtenderCita.aspx.cs">
       <DependentUpon>AtenderCita.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -734,6 +743,13 @@
     </Compile>
     <Compile Include="FrontOdontologo\CitasPorAtender.aspx.designer.cs">
       <DependentUpon>CitasPorAtender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontOdontologo\EditarTratamiento.aspx.cs">
+      <DependentUpon>EditarTratamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontOdontologo\EditarTratamiento.aspx.designer.cs">
+      <DependentUpon>EditarTratamiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="gestionOdontologo.aspx.cs">
       <DependentUpon>gestionOdontologo.aspx</DependentUpon>

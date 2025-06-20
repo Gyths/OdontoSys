@@ -1,5 +1,6 @@
 ﻿using OdontoSysWebAppliation.OdontoSysBusiness;
 using OdontoSysWebApplication.OdontoSysBusiness;
+using OdontoSysWebApplication.ValoracionWS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +18,11 @@ namespace OdontoSysWebApplication.FrontOdontologo
         private TratamientoBO boTratamiento;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string idCita = Request.QueryString["idCita"];
-            System.Diagnostics.Debug.WriteLine("ID Cita: " + idCita);
-            CargarDatosCita(idCita);
-            CargarTratamientos(idCita);
-
+            if (!IsPostBack) {
+                string idCita = Session["Cita"]?.ToString();
+                CargarDatosCita(idCita);
+                CargarTratamientos(idCita);
+            }
         }
 
         private void CargarDatosCita(string idCita)
@@ -30,7 +31,7 @@ namespace OdontoSysWebApplication.FrontOdontologo
             boPaciente = new PacienteBO();
             var cita = boCita.cita_obtenerPorId(Int32.Parse(idCita));
             var paciente = boPaciente.paciente_obtenerPorId(cita.paciente.idPaciente);
-            txtPaciente.Text = paciente.nombre + paciente.apellidos;
+            txtPaciente.Text = paciente.nombre + " " +paciente.apellidos;
             txtCorreo.Text = paciente.correo;
             txtTelefono.Text = paciente.telefono;
         }
@@ -67,10 +68,23 @@ namespace OdontoSysWebApplication.FrontOdontologo
             
         }
         protected void gvTratamientos_RowCommand(object sender, GridViewCommandEventArgs e){
-            
+            if (e.CommandName == "Editar")
+            {
+                Session["Tratamiento"] = e.CommandArgument.ToString();
+                Response.Redirect($"/FrontOdontologo/EditarTratamiento.aspx");
+            }
         }
-        protected void btnAgregarTratamiento_Click(object sender, EventArgs e) { 
-        
+        protected void btnAgregarTratamiento_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"/FrontOdontologo/AgregarTratamiento.aspx");
+        }
+        protected void btnQuitarTodos_Click(object sender, EventArgs e) 
+        {
+
+        }
+        protected void btnEliminarSeleccion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

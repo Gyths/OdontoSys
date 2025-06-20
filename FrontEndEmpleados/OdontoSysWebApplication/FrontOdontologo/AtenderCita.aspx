@@ -1,84 +1,83 @@
-﻿<%@Title="AtenderCita" Language="C#" AutoEventWireup="true" CodeBehind="AtenderCita.aspx.cs" Inherits="OdontoSysWebApplication.FrontOdontologo.AtenderCita" %>
+﻿<%@ Title="AtenderCita" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AtenderCita.aspx.cs" Inherits="OdontoSysWebApplication.FrontOdontologo.AtenderCita" %>
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Cita</title>
-    <style>
-        .title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+<asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        .info-label {
-            display: inline-block;
-            width: 80px;
-            font-weight: bold;
-        }
+    <!-- Page Title -->
+    <asp:Panel CssClass="d-flex justify-content-between align-items-center mb-4" runat="server">
+        <asp:Label CssClass="h2" runat="server" Text='<i class="fas fa-user-md"></i> Atención de cita' />
+    </asp:Panel>
 
-        .form-section {
-            margin-bottom: 15px;
-        }
+    <!-- Patient Info -->
+    <asp:Panel CssClass="row mb-3" runat="server">
+        <asp:Panel CssClass="col-md-4" runat="server">
+            <asp:Label ID="lblPaciente" runat="server" CssClass="info-label" AssociatedControlID="txtPaciente" Text="Paciente:" />
+            <asp:TextBox ID="txtPaciente" runat="server" ReadOnly="true" CssClass="form-control" />
+        </asp:Panel>
+        <asp:Panel CssClass="col-md-4" runat="server">
+            <asp:Label ID="lblCorreo" runat="server" CssClass="info-label" AssociatedControlID="txtCorreo" Text="Correo:" />
+            <asp:TextBox ID="txtCorreo" runat="server" ReadOnly="true" CssClass="form-control" />
+        </asp:Panel>
+        <asp:Panel CssClass="col-md-4" runat="server">
+            <asp:Label ID="lblTelefono" runat="server" CssClass="info-label" AssociatedControlID="txtTelefono" Text="Teléfono:" />
+            <asp:TextBox ID="txtTelefono" runat="server" ReadOnly="true" CssClass="form-control" />
+        </asp:Panel>
+    </asp:Panel>
 
-        .grid-buttons input {
-            margin-right: 5px;
-        }
 
-        .header-section {
-            margin-bottom: 30px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div style="padding: 30px">
+    <!-- Tratamiento Header with Button -->
+    <asp:Panel CssClass="d-flex justify-content-between align-items-center mb-3" runat="server">
+       <asp:Panel CssClass="d-flex align-items-center gap-3" runat="server">
+            <asp:Label ID="lblTratamiento" runat="server" Text="Tratamiento" CssClass="h4 mb-0" />
+            <asp:Button ID="btnAgregarTratamiento" runat="server" Text="Agregar tratamiento"
+                CssClass="btn btn-outline-primary"
+                OnClick="btnAgregarTratamiento_Click" />
+        </asp:Panel>
+        <asp:Button ID="btnQuitarTodos" runat="server" Text="Quitar todos"
+            CssClass="btn btn-outline-danger"
+            OnClick="btnQuitarTodos_Click" />
+    </asp:Panel>
 
-            <!-- Title -->
-            <div class="header-section">
-                <span class="title">Cita</span>
-            </div>
+   <!-- Tratamientos grid with spacing -->
+    <asp:Panel CssClass="mt-3" runat="server">
+        <asp:GridView ID="gvTratamientos" runat="server" AutoGenerateColumns="False"
+            CssClass="table table-hover table-striped treatment-grid"
+            DataKeyNames="subtotal"
+            OnRowCommand="gvTratamientos_RowCommand">
+            <Columns>
+                <asp:BoundField DataField="tratamiento.nombre" HeaderText="Nombre" />
+                <asp:BoundField DataField="tratamiento.descripcion" HeaderText="Descripción" />
+                <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
+                <asp:BoundField DataField="tratamiento.costo" HeaderText="Costo Unitario" />
 
-            <!-- Patient Info -->
-            <div class="form-section">
-                <span class="info-label">Paciente:</span>
-                <asp:TextBox ID="txtPaciente" runat="server" ReadOnly="true" Width="300px" />
-            </div>
-            <div class="form-section">
-                <span class="info-label">Correo:</span>
-                <asp:TextBox ID="txtCorreo" runat="server" ReadOnly="true" Width="300px" />
-            </div>
-            <div class="form-section">
-                <span class="info-label">Teléfono:</span>
-                <asp:TextBox ID="txtTelefono" runat="server" ReadOnly="true" Width="300px" />
-            </div>
+                <asp:TemplateField HeaderText="Acciones">
+                    <ItemTemplate>
+                        <asp:Panel CssClass="grid-buttons" runat="server">
+                            <asp:Button ID="btnEditar" runat="server" Text="Editar"
+                                CommandName="Editar"
+                                CommandArgument='<%# Eval("tratamiento.idTratamiento") %>'
+                                CssClass="btn btn-primary btn-sm" />
+                        </asp:Panel>
+                    </ItemTemplate>
+                </asp:TemplateField>
 
-            <!-- Treatments Grid -->
-            <asp:GridView ID="gvTratamientos" runat="server" AutoGenerateColumns="False"
-                          CssClass="treatment-grid" DataKeyNames="idTratamiento" 
-                          OnRowCommand="gvTratamientos_RowCommand">
-                <Columns>
-                    <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
-                    <asp:BoundField DataField="estado" HeaderText="Estado" />
-                    <asp:TemplateField HeaderText="Acciones">
-                        <ItemTemplate>
-                            <div class="grid-buttons">
-                                <asp:Button ID="btnEditar" runat="server" Text="Editar"
-                                            CommandName="Editar" CommandArgument='<%# Eval("idTratamiento") %>' CssClass="btn" />
-                                <asp:Button ID="btnFinalizar" runat="server" Text="Finalizar"
-                                            CommandName="Finalizar" CommandArgument='<%# Eval("idTratamiento") %>' CssClass="btn" />
-                            </div>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
-            </asp:GridView>
+                <asp:TemplateField HeaderText="Seleccionar">
+                    <ItemTemplate>
+                        <div class="text-center">
+                            <asp:CheckBox ID="chkSeleccionar" runat="server" />
+                        </div>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center"/>
+                </asp:TemplateField>
 
-            <!-- Add Treatment Button -->
-            <div style="margin-top: 20px;">
-                <asp:Button ID="btnAgregarTratamiento" runat="server" Text="Añadir tratamiento"
-                            CssClass="btn" OnClick="btnAgregarTratamiento_Click" />
-            </div>
-        </div>
-    </form>
-</body>
-</html>
+            </Columns>
+            <HeaderStyle CssClass="bg-primary text-white" />
+        </asp:GridView>
+    </asp:Panel>
+
+    <asp:Panel CssClass="mt-3 text-end" runat="server">
+        <asp:Button ID="btnEliminarSeleccion" runat="server" Text="Eliminar selección"
+            CssClass="btn btn-outline-danger"
+            OnClick="btnEliminarSeleccion_Click" />
+    </asp:Panel>
+
+</asp:Content>

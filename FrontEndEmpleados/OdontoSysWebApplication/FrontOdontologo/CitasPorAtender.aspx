@@ -25,9 +25,14 @@
 
             <asp:BoundField DataField="estado" HeaderText="Estado" />
             
-            <asp:TemplateField>
+            <asp:TemplateField HeaderText="Acciones">
                 <ItemTemplate>
-                    <asp:Button ID="btnAtender" runat="server" CommandName="Atender" CommandArgument='<%# Container.DataItemIndex %>' Text ="Atender"/>
+                    <asp:Panel CssClass="grid-buttons" runat="server">
+                        <asp:Button ID="btnAtender" runat="server" Text="Atender"
+                            CommandName="Atender"
+                            CommandArgument='<%# Eval("idCita") %>'
+                            CssClass="btn btn-primary btn-sm" />
+                    </asp:Panel>
                 </ItemTemplate>
             </asp:TemplateField>
            
