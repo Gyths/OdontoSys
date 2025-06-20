@@ -33,3 +33,8 @@ C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\FrontEndEmpleados\OdontoSysWeb
 C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.CoreCompileInputs.cache
 C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.dll
 C:\Users\gabri\Documents\GIT\TA Progra3\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.pdb
+C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\BouncyCastle.Cryptography.dll
+C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\itextsharp.dll
+C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\BouncyCastle.Cryptography.xml
+C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\itextsharp.xml
+C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSy.7DA6DC66.Up2Date

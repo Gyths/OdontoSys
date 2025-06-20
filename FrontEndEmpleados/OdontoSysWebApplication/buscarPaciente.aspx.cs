@@ -19,10 +19,20 @@ namespace OdontoSysWebApplication
         {
             // Ejemplo básico: reemplazar por llamada a tu web service real
             var pacienteBO = new PacienteBO();
-            var pacientes = pacienteBO.paciente_listarTodos();
 
-            gvPacientes.DataSource = pacientes;
-            gvPacientes.DataBind();
+            try
+            {
+                var pacientes = pacienteBO.paciente_listarTodos();
+                gvPacientes.DataSource = pacientes;
+                gvPacientes.DataBind();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al cargar pacientes : " + ex.Message);
+                gvPacientes.DataSource = null;
+                gvPacientes.DataBind();
+            }
+            
         }
 
         protected void gvPacientes_RowCommand(object sender, GridViewCommandEventArgs e)
