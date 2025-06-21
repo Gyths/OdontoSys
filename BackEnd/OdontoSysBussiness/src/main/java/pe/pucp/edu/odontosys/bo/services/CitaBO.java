@@ -5,6 +5,7 @@ import pe.pucp.edu.odontosys.daoImp.services.CitaDAOImpl;
 import pe.pucp.edu.odontosys.services.model.Cita;
 import pe.pucp.edu.odontosys.users.model.Odontologo;
 import java.util.ArrayList;
+import pe.pucp.edu.odontosys.services.model.Comprobante;
 import pe.pucp.edu.odontosys.services.model.Valoracion;
 import pe.pucp.edu.odontosys.users.model.Paciente;
 import pe.pucp.edu.odontosys.users.model.Recepcionista;
@@ -54,5 +55,16 @@ public class CitaBO {
     public Integer actualizarFkValoracion(Cita cita, Valoracion valoracion){
         return this.citaDAO.actualizarFkValoracion(cita, valoracion);
     }
-
+    
+    public Integer actualizarFkComprobante(Cita cita, Comprobante comprobante){
+        return this.citaDAO.actualizarFkComprobante(cita, comprobante);
+    }
+            
+    public Integer actualizarEstado(Cita cita){
+        return this.citaDAO.actualizarEstado(cita);
+    }
+    
+    public ArrayList<Cita> listarPorPacienteFechas(Paciente paciente, String fechaInicio, String fechaFin){
+        return this.citaDAO.listarPorPacienteFechas(paciente, fechaInicio, fechaInicio);
+    }
 }

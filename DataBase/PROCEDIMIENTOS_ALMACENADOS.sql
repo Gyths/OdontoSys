@@ -65,6 +65,40 @@ END $$
 DELIMITER ;
 
 -- ---------------------------------------------------------------------
+-- Procedure: CITAS_listar_por_paciente_fechas
+-- Description: Lista todas las citas asociadas a un paciente dado en un rango de fechas.
+-- Parameters:
+--   IN in_idPaciente INT
+--   IN in_fechaInicio DATE
+--   IN in_fechaFin    DATE
+-- ---------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `CITAS_listar_por_paciente_fechas`;
+DELIMITER $$
+CREATE PROCEDURE `CITAS_listar_por_paciente_fechas`(
+    IN in_idPaciente INT,
+    IN in_fechaInicio DATE,
+    IN in_fechaFin    DATE
+)
+BEGIN
+    SELECT
+        C.CITA_ID,
+        C.PACIENTE_ID,
+        C.RECEPCIONISTA_ID,
+        C.ODONTOLOGO_ID,
+        C.COMPROBANTE_ID,
+        C.FECHA,
+        C.HORA_INICIO,
+        C.VALORACION_ID,
+        C.ESTADO
+    FROM `OS_CITAS` AS C
+    WHERE C.PACIENTE_ID = in_idPaciente
+      AND C.FECHA BETWEEN in_fechaInicio AND in_fechaFin
+    ORDER BY C.FECHA, C.HORAINICIO;
+END $$
+DELIMITER ;
+
+
+-- ---------------------------------------------------------------------
 -- Procedure: CITAS_listar_por_odontologo
 -- Description: Lista todas las citas pertenecientes a un odontólogo dado.
 -- Parameters:
@@ -144,7 +178,45 @@ BEGIN
 END $$
 DELIMITER ;
 
+-- ---------------------------------------------------------------------
+-- Procedure: CITAS_actualizar_fk_comprobante
+-- Description: Actualiza la clave foránea de comprobante en una cita dada.
+-- Parameters:
+--   IN in_idCita        INT
+--   IN in_idComprobante INT
+-- ---------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `CITAS_actualizar_fk_comprobante`;
+DELIMITER $$
+CREATE PROCEDURE `CITAS_actualizar_fk_comprobante`(
+    IN in_idCita        INT,
+    IN in_idComprobante INT
+)
+BEGIN
+    UPDATE `OS_CITAS`
+    SET COMPROBANTE_ID = in_idComprobante
+    WHERE CITA_ID = in_idCita;
+END $$
+DELIMITER ;
 
+-- ---------------------------------------------------------------------
+-- Procedure: CITAS_actualizar_estado
+-- Description: Actualiza el estado de una cita dada (enum).
+-- Parameters:
+--   IN in_idCita   INT
+--   IN in_estado   ENUM('RESERVADA','ATENDIDA','CANCELADA')  
+-- ---------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `CITAS_actualizar_estado`;
+DELIMITER $$
+CREATE PROCEDURE `CITAS_actualizar_estado`(
+    IN in_idCita   INT,
+    IN in_estado   ENUM('RESERVADA','ATENDIDA','CANCELADA')
+)
+BEGIN
+    UPDATE `OS_CITAS`
+    SET ESTADO = in_estado
+    WHERE CITA_ID = in_idCita;
+END $$
+DELIMITER ;
 
 -- =========================================================================
 -- TABLE: OS_VALORACIONES
@@ -401,6 +473,102 @@ BEGIN
 END $$
 DELIMITER ;
 
+-- ---------------------------------------------------------------------
+-- Procedure: PACIENTES_buscar_por_nombre_apellido
+-- Description: Busca pacientes por nombre y apellido (uso de LIKE para búsqueda parcial)
+-- Parameters:
+--   IN in_nombre   VARCHAR(100)
+--   IN in_apellidos VARCHAR(100)
+-- ---------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `PACIENTES_buscar_por_nombre_apellido`;
+DELIMITER $$
+CREATE PROCEDURE `PACIENTES_buscar_por_nombre_apellido`(
+    IN in_nombre    VARCHAR(100),
+    IN in_apellidos VARCHAR(100)
+)
+BEGIN
+    SELECT
+        P.PACIENTE_ID,
+        P.CONTRASENHA,
+        P.NOMBRE_USUARIO,
+        P.CORREO,
+        P.TELEFONO,
+        P.NOMBRES,
+        P.APELLIDOS,
+        P.TIPO_DOCUMENTO_ID,
+        P.NUMERO_DOCUMENTO_IDENTIDAD
+    FROM `OS_PACIENTES` AS P
+    WHERE P.NOMBRES   LIKE CONCAT('%', in_nombre, '%')
+      AND P.APELLIDOS LIKE CONCAT('%', in_apellidos, '%');
+END $$
+DELIMITER ;
+
+-- ---------------------------------------------------------------------
+-- Procedure: PACIENTES_buscar_por_nombre_apellido_telefono
+-- Description: Busca pacientes por nombre, apellido y teléfono (todos con LIKE)
+-- Parameters:
+--   IN in_nombre    VARCHAR(100)
+--   IN in_apellidos VARCHAR(100)
+--   IN in_telefono  VARCHAR(20)
+-- ---------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `PACIENTES_buscar_por_nombre_apellido_telefono`;
+DELIMITER $$
+CREATE PROCEDURE `PACIENTES_buscar_por_nombre_apellido_telefono`(
+    IN in_nombre    VARCHAR(100),
+    IN in_apellidos VARCHAR(100),
+    IN in_telefono  VARCHAR(20)
+)
+BEGIN
+    SELECT
+        P.PACIENTE_ID,
+        P.CONTRASENHA,
+        P.NOMBRE_USUARIO,
+        P.CORREO,
+        P.TELEFONO,
+        P.NOMBRES,
+        P.APELLIDOS,
+        P.TIPO_DOCUMENTO_ID,
+        P.NUMERO_DOCUMENTO_IDENTIDAD
+    FROM `OS_PACIENTES` AS P
+    WHERE P.NOMBRES   LIKE CONCAT('%', in_nombre, '%')
+      AND P.APELLIDOS LIKE CONCAT('%', in_apellidos, '%')
+      AND P.TELEFONO  LIKE CONCAT('%', in_telefono, '%');
+END $$
+DELIMITER ;
+
+-- ---------------------------------------------------------------------
+-- Procedure: PACIENTES_buscar_por_nombre_apellido_documento
+-- Description: Busca pacientes por nombre, apellido y número de documento (igualdad exacta)
+-- Parameters:
+--   IN in_nombre    VARCHAR(100)
+--   IN in_apellidos VARCHAR(100)
+--   IN in_documento VARCHAR(50)
+-- ---------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `PACIENTES_buscar_por_nombre_apellido_documento`;
+DELIMITER $$
+CREATE PROCEDURE `PACIENTES_buscar_por_nombre_apellido_documento`(
+    IN in_nombre    VARCHAR(100),
+    IN in_apellidos VARCHAR(100),
+    IN in_documento VARCHAR(50)
+)
+BEGIN
+    SELECT
+        P.PACIENTE_ID,
+        P.CONTRASENHA,
+        P.NOMBRE_USUARIO,
+        P.CORREO,
+        P.TELEFONO,
+        P.NOMBRES,
+        P.APELLIDOS,
+        P.TIPO_DOCUMENTO_ID,
+        P.NUMERO_DOCUMENTO_IDENTIDAD
+    FROM `OS_PACIENTES` AS P
+    WHERE P.NOMBRES                     LIKE CONCAT('%', in_nombre, '%')
+      AND P.APELLIDOS                   LIKE CONCAT('%', in_apellidos, '%')
+      AND P.NUMERO_DOCUMENTO_IDENTIDAD = in_documento;
+END $$
+DELIMITER ;
+
 -- =========================================================================
 -- TABLE: OS_ODONTOLOGOS
 -- =========================================================================
@@ -529,6 +697,107 @@ BEGIN
 END $$
 DELIMITER ;
 
+-- ---------------------------------------------------------------------
+-- Procedure: ODONTOLOGOS_buscar_por_nombre_apellido
+-- Description: Busca odontólogos por nombre y apellido (búsqueda parcial usando LIKE).
+-- Parameters:
+--   IN in_nombre    VARCHAR(100)
+--   IN in_apellidos VARCHAR(100)
+-- ---------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `ODONTOLOGOS_buscar_por_nombre_apellido`;
+DELIMITER $$
+CREATE PROCEDURE `ODONTOLOGOS_buscar_por_nombre_apellido`(
+    IN in_nombre    VARCHAR(100),
+    IN in_apellidos VARCHAR(100)
+)
+BEGIN
+    SELECT
+        O.ODONTOLOGO_ID,
+        O.CONTRASENHA,
+        O.NOMBRE_USUARIO,
+        O.CORREO,
+        O.TELEFONO,
+        O.NOMBRES,
+        O.APELLIDOS,
+        O.TIPO_DOCUMENTO_ID,
+        O.NUMERO_DOCUMENTO_IDENTIDAD,
+        O.ESPECIALIDAD_ID,
+        O.CONSULTORIO_ID
+    FROM `OS_ODONTOLOGOS` AS O
+    WHERE O.NOMBRES   LIKE CONCAT('%', in_nombre, '%')
+      AND O.APELLIDOS LIKE CONCAT('%', in_apellidos, '%');
+END $$
+DELIMITER ;
+
+-- ---------------------------------------------------------------------
+-- Procedure: ODONTOLOGOS_buscar_por_nombre_apellido_telefono
+-- Description: Busca odontólogos por nombre, apellido y teléfono (búsqueda parcial usando LIKE).
+-- Parameters:
+--   IN in_nombre    VARCHAR(100)
+--   IN in_apellidos VARCHAR(100)
+--   IN in_telefono  VARCHAR(20)
+-- ---------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `ODONTOLOGOS_buscar_por_nombre_apellido_telefono`;
+DELIMITER $$
+CREATE PROCEDURE `ODONTOLOGOS_buscar_por_nombre_apellido_telefono`(
+    IN in_nombre    VARCHAR(100),
+    IN in_apellidos VARCHAR(100),
+    IN in_telefono  VARCHAR(20)
+)
+BEGIN
+    SELECT
+        O.ODONTOLOGO_ID,
+        O.CONTRASENHA,
+        O.NOMBRE_USUARIO,
+        O.CORREO,
+        O.TELEFONO,
+        O.NOMBRES,
+        O.APELLIDOS,
+        O.TIPO_DOCUMENTO_ID,
+        O.NUMERO_DOCUMENTO_IDENTIDAD,
+        O.ESPECIALIDAD_ID,
+        O.CONSULTORIO_ID
+    FROM `OS_ODONTOLOGOS` AS O
+    WHERE O.NOMBRES   LIKE CONCAT('%', in_nombre, '%')
+      AND O.APELLIDOS LIKE CONCAT('%', in_apellidos, '%')
+      AND O.TELEFONO  LIKE CONCAT('%', in_telefono, '%');
+END $$
+DELIMITER ;
+
+-- ---------------------------------------------------------------------
+-- Procedure: ODONTOLOGOS_buscar_por_nombre_apellido_documento
+-- Description: Busca odontólogos por nombre, apellido y número de documento (documento exacto).
+-- Parameters:
+--   IN in_nombre    VARCHAR(100)
+--   IN in_apellidos VARCHAR(100)
+--   IN in_documento VARCHAR(50)
+-- ---------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `ODONTOLOGOS_buscar_por_nombre_apellido_documento`;
+DELIMITER $$
+CREATE PROCEDURE `ODONTOLOGOS_buscar_por_nombre_apellido_documento`(
+    IN in_nombre    VARCHAR(100),
+    IN in_apellidos VARCHAR(100),
+    IN in_documento VARCHAR(50)
+)
+BEGIN
+    SELECT
+        O.ODONTOLOGO_ID,
+        O.CONTRASENHA,
+        O.NOMBRE_USUARIO,
+        O.CORREO,
+        O.TELEFONO,
+        O.NOMBRES,
+        O.APELLIDOS,
+        O.TIPO_DOCUMENTO_ID,
+        O.NUMERO_DOCUMENTO_IDENTIDAD,
+        O.ESPECIALIDAD_ID,
+        O.CONSULTORIO_ID
+    FROM `OS_ODONTOLOGOS` AS O
+    WHERE O.NOMBRES                     LIKE CONCAT('%', in_nombre, '%')
+      AND O.APELLIDOS                   LIKE CONCAT('%', in_apellidos, '%')
+      AND O.NUMERO_DOCUMENTO_IDENTIDAD = in_documento;
+END $$
+DELIMITER ;
 
 
 -- =========================================================================
@@ -617,7 +886,7 @@ BEGIN
     DECLARE v_total         DOUBLE;
 
     -- Obtener el COMPROBANTE_ID asociado a la cita
-    SELECT C.COMPROBANTE_IDos_pacientes
+    SELECT C.COMPROBANTE_ID
     INTO v_comprobante_id
     FROM `OS_CITAS` AS C
     WHERE C.CITA_ID = in_cita_id;

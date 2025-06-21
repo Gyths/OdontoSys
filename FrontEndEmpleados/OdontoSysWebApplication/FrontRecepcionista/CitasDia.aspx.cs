@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using OdontoSysWebAppliation.OdontoSysBusiness;
+using OdontoSysWebApplication.OdontoSysBusiness;
 
 // Ya no necesitamos los 'using' para los namespaces de los servicios
 // porque seremos explícitos en el código.

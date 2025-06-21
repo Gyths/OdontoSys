@@ -5,17 +5,41 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/CitaWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
-  <message name="cita_modificar">
-    <part name="parameters" element="tns:cita_modificar" />
+  <message name="cita_actualizarFkComprobante">
+    <part name="parameters" element="tns:cita_actualizarFkComprobante" />
   </message>
-  <message name="cita_modificarResponse">
-    <part name="parameters" element="tns:cita_modificarResponse" />
+  <message name="cita_actualizarFkComprobanteResponse">
+    <part name="parameters" element="tns:cita_actualizarFkComprobanteResponse" />
+  </message>
+  <message name="cita_listarPorOdontologoFechas">
+    <part name="parameters" element="tns:cita_listarPorOdontologoFechas" />
+  </message>
+  <message name="cita_listarPorOdontologoFechasResponse">
+    <part name="parameters" element="tns:cita_listarPorOdontologoFechasResponse" />
+  </message>
+  <message name="cita_actualizarFkValoracion">
+    <part name="parameters" element="tns:cita_actualizarFkValoracion" />
+  </message>
+  <message name="cita_actualizarFkValoracionResponse">
+    <part name="parameters" element="tns:cita_actualizarFkValoracionResponse" />
+  </message>
+  <message name="cita_listarPorRecepcionista">
+    <part name="parameters" element="tns:cita_listarPorRecepcionista" />
+  </message>
+  <message name="cita_listarPorRecepcionistaResponse">
+    <part name="parameters" element="tns:cita_listarPorRecepcionistaResponse" />
   </message>
   <message name="cita_insertar">
     <part name="parameters" element="tns:cita_insertar" />
   </message>
   <message name="cita_insertarResponse">
     <part name="parameters" element="tns:cita_insertarResponse" />
+  </message>
+  <message name="cita_listarTodos">
+    <part name="parameters" element="tns:cita_listarTodos" />
+  </message>
+  <message name="cita_listarTodosResponse">
+    <part name="parameters" element="tns:cita_listarTodosResponse" />
   </message>
   <message name="cita_eliminar">
     <part name="parameters" element="tns:cita_eliminar" />
@@ -29,11 +53,17 @@
   <message name="cita_obtenerPorIdResponse">
     <part name="parameters" element="tns:cita_obtenerPorIdResponse" />
   </message>
-  <message name="cita_listarTodos">
-    <part name="parameters" element="tns:cita_listarTodos" />
+  <message name="cita_actualizarEstado">
+    <part name="parameters" element="tns:cita_actualizarEstado" />
   </message>
-  <message name="cita_listarTodosResponse">
-    <part name="parameters" element="tns:cita_listarTodosResponse" />
+  <message name="cita_actualizarEstadoResponse">
+    <part name="parameters" element="tns:cita_actualizarEstadoResponse" />
+  </message>
+  <message name="cita_modificar">
+    <part name="parameters" element="tns:cita_modificar" />
+  </message>
+  <message name="cita_modificarResponse">
+    <part name="parameters" element="tns:cita_modificarResponse" />
   </message>
   <message name="cita_listarPorOdontologo">
     <part name="parameters" element="tns:cita_listarPorOdontologo" />
@@ -47,32 +77,30 @@
   <message name="cita_listarPorPacienteResponse">
     <part name="parameters" element="tns:cita_listarPorPacienteResponse" />
   </message>
-  <message name="cita_listarPorRecepcionista">
-    <part name="parameters" element="tns:cita_listarPorRecepcionista" />
-  </message>
-  <message name="cita_listarPorRecepcionistaResponse">
-    <part name="parameters" element="tns:cita_listarPorRecepcionistaResponse" />
-  </message>
-  <message name="cita_actualizarFkValoracion">
-    <part name="parameters" element="tns:cita_actualizarFkValoracion" />
-  </message>
-  <message name="cita_actualizarFkValoracionResponse">
-    <part name="parameters" element="tns:cita_actualizarFkValoracionResponse" />
-  </message>
-  <message name="cita_listarPorOdontologoFechas">
-    <part name="parameters" element="tns:cita_listarPorOdontologoFechas" />
-  </message>
-  <message name="cita_listarPorOdontologoFechasResponse">
-    <part name="parameters" element="tns:cita_listarPorOdontologoFechasResponse" />
-  </message>
   <portType name="CitaWA">
-    <operation name="cita_modificar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarRequest" message="tns:cita_modificar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarResponse" message="tns:cita_modificarResponse" />
+    <operation name="cita_actualizarFkComprobante">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_actualizarFkComprobanteRequest" message="tns:cita_actualizarFkComprobante" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_actualizarFkComprobanteResponse" message="tns:cita_actualizarFkComprobanteResponse" />
+    </operation>
+    <operation name="cita_listarPorOdontologoFechas">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechasRequest" message="tns:cita_listarPorOdontologoFechas" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechasResponse" message="tns:cita_listarPorOdontologoFechasResponse" />
+    </operation>
+    <operation name="cita_actualizarFkValoracion">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_actualizarFkValoracionRequest" message="tns:cita_actualizarFkValoracion" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_actualizarFkValoracionResponse" message="tns:cita_actualizarFkValoracionResponse" />
+    </operation>
+    <operation name="cita_listarPorRecepcionista">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorRecepcionistaRequest" message="tns:cita_listarPorRecepcionista" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorRecepcionistaResponse" message="tns:cita_listarPorRecepcionistaResponse" />
     </operation>
     <operation name="cita_insertar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_insertarRequest" message="tns:cita_insertar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_insertarResponse" message="tns:cita_insertarResponse" />
+    </operation>
+    <operation name="cita_listarTodos">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarTodosRequest" message="tns:cita_listarTodos" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarTodosResponse" message="tns:cita_listarTodosResponse" />
     </operation>
     <operation name="cita_eliminar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_eliminarRequest" message="tns:cita_eliminar" />
@@ -82,9 +110,13 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdRequest" message="tns:cita_obtenerPorId" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdResponse" message="tns:cita_obtenerPorIdResponse" />
     </operation>
-    <operation name="cita_listarTodos">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarTodosRequest" message="tns:cita_listarTodos" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarTodosResponse" message="tns:cita_listarTodosResponse" />
+    <operation name="cita_actualizarEstado">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_actualizarEstadoRequest" message="tns:cita_actualizarEstado" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_actualizarEstadoResponse" message="tns:cita_actualizarEstadoResponse" />
+    </operation>
+    <operation name="cita_modificar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarRequest" message="tns:cita_modificar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarResponse" message="tns:cita_modificarResponse" />
     </operation>
     <operation name="cita_listarPorOdontologo">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoRequest" message="tns:cita_listarPorOdontologo" />
@@ -94,22 +126,37 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteRequest" message="tns:cita_listarPorPaciente" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteResponse" message="tns:cita_listarPorPacienteResponse" />
     </operation>
-    <operation name="cita_listarPorRecepcionista">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorRecepcionistaRequest" message="tns:cita_listarPorRecepcionista" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorRecepcionistaResponse" message="tns:cita_listarPorRecepcionistaResponse" />
-    </operation>
-    <operation name="cita_actualizarFkValoracion">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_actualizarFkValoracionRequest" message="tns:cita_actualizarFkValoracion" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_actualizarFkValoracionResponse" message="tns:cita_actualizarFkValoracionResponse" />
-    </operation>
-    <operation name="cita_listarPorOdontologoFechas">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechasRequest" message="tns:cita_listarPorOdontologoFechas" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechasResponse" message="tns:cita_listarPorOdontologoFechasResponse" />
-    </operation>
   </portType>
   <binding name="CitaWAPortBinding" type="tns:CitaWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="cita_modificar">
+    <operation name="cita_actualizarFkComprobante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cita_listarPorOdontologoFechas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cita_actualizarFkValoracion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cita_listarPorRecepcionista">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -119,6 +166,15 @@
       </output>
     </operation>
     <operation name="cita_insertar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cita_listarTodos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -145,7 +201,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="cita_listarTodos">
+    <operation name="cita_actualizarEstado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cita_modificar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -164,33 +229,6 @@
       </output>
     </operation>
     <operation name="cita_listarPorPaciente">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="cita_listarPorRecepcionista">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="cita_actualizarFkValoracion">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="cita_listarPorOdontologoFechas">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -7,6 +7,12 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using OdontoSysWebAppliation.OdontoSysBusiness;
 using OdontoSysWebApplication.OdontoSysBusiness;
+using System.Web.UI.WebControls;
+using System.Globalization;
+using OdontoSysWebApplication.CitaWS;
+using OdontoSysWebApplication.EspecialidadWS;
+using OdontoSysWebApplication.OdontologoWS;
+using System.Text;
 
 namespace OdontoSysWebApplication
 {
@@ -18,20 +24,30 @@ namespace OdontoSysWebApplication
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["idPacienteSeleccionado"] == null ||
+                !int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPaciente))
+            {
+                Response.Redirect("buscarPaciente.aspx");
+                return;
+            }
+
             if (!IsPostBack)
             {
-                if (Session["idPacienteSeleccionado"] != null && int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPaciente))
-                {
-                    CargarPaciente(idPaciente);
-                    CargarCitasPaciente(idPaciente);
-                }
+                CargarPaciente(idPaciente);          
+                calFiltro.SelectedDate = DateTime.Today;
+            }
+
+            if (IsPostBack && Request.Form["accion"] == "cancelar")
+            {
+                if (int.TryParse(Request.Form["idCita"], out int idCita))
+                    cancelarCita(idCita);
                 else
                 {
-                    Response.Redirect("buscarPaciente.aspx");
+                    lblMensaje.Text = "No se pudo identificar la cita a cancelar.";
+                    lblMensaje.CssClass = "text-danger";
                 }
             }
         }
-
         private void CargarPaciente(int id)
         {
             try
@@ -48,6 +64,8 @@ namespace OdontoSysWebApplication
                     txtTelefono.Text = pacienteActual.telefono ?? "";
                     txtUsuario.Text = pacienteActual.nombreUsuario ?? "";
                 }
+                BloquearTodos();
+                btnGuardar.Visible = false;
             }
             catch (Exception ex)
             {
@@ -55,13 +73,30 @@ namespace OdontoSysWebApplication
             }
         }
 
+        private void SetReadOnly(TextBox txt, bool readOnly)
+        {
+            txt.ReadOnly = readOnly;
+            txt.CssClass = readOnly ? "form-control locked" : "form-control";
+        }
+        private void BloquearTodos()
+        {
+            SetReadOnly(txtNombre, true);
+            SetReadOnly(txtApellido, true);
+            SetReadOnly(txtDocumento, true);
+            SetReadOnly(txtCorreo, true);
+            SetReadOnly(txtTelefono, true);
+            SetReadOnly(txtUsuario, true);
+        }
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            txtCorreo.ReadOnly = false;
-            txtTelefono.ReadOnly = false;
-            txtUsuario.ReadOnly = false;
+            SetReadOnly(txtCorreo, false);
+            SetReadOnly(txtTelefono, false);
+            SetReadOnly(txtUsuario, false);
             btnGuardar.Visible = true;
             btnEditar.Visible = false;
+            btnCita.Visible = false;
+            btnVolver.Visible = false;
+            btnDescargarPDF.Visible = false;
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -83,15 +118,122 @@ namespace OdontoSysWebApplication
 
                     pnlAlerta.Visible = true;
 
-                    txtCorreo.ReadOnly = true;
-                    txtTelefono.ReadOnly = true;
-                    txtUsuario.ReadOnly = true;
+                    BloquearTodos();          
                     btnGuardar.Visible = false;
                     btnEditar.Visible = true;
+                    btnCita.Visible = true;
+                    btnVolver.Visible = true;
+                    btnDescargarPDF.Visible = true;
                 }
             }
         }
 
+        private string GetBadgeColor(string estado)
+        {
+            switch (estado.ToUpper())
+            {
+                case "RESERVADA": return "warning";
+                case "ATENDIDA": return "success";
+                case "CANCELADA": return "danger";
+                default: return "secondary";
+            }
+        }
+
+        private string ToTitleCase(string s)
+        {
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(s.ToLower());
+        }
+
+        private void CargarCitasPaciente()
+        {
+            if (Session["idPacienteSeleccionado"] != null && int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPaciente))
+            {
+                var clientePaciente = new PacienteBO();
+                var paciente = clientePaciente.paciente_obtenerPorId(idPaciente);
+                if (paciente == null) return;
+
+                DateTime baseDate = (calFiltro.SelectedDate == DateTime.MinValue)
+                        ? DateTime.Today                    // primer load
+                        : calFiltro.SelectedDate;
+
+                DateTime desde = baseDate.AddDays(-1).Date;            // 00:00
+                DateTime hasta = baseDate.AddDays(1).Date;
+
+
+                var clienteCita = new CitaBO();
+                var clienteOdontologo = new OdontologoBO();
+                var clienteEspecialidad = new EspecialidadBO();
+
+                var pacienteCita = new CitaWS.paciente
+                {
+                    idPaciente = paciente.idPaciente,
+                    idPacienteSpecified = true
+                };
+                var citas = clienteCita.cita_listarPorPacienteFechas(pacienteCita, desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"));
+
+                if (citas == null)
+                {
+                    ltCitas.Text = "<div class='alert alert-warning'>No tienes citas registradas.</div>";
+                    return;
+                }
+
+                var sb = new StringBuilder();
+
+                foreach (var c in citas)
+                {
+
+
+                    var odonto = clienteOdontologo.odontologo_obtenerPorId(c.odontologo.idOdontologo);
+                    var especialidad = clienteEspecialidad.especialidad_obtenerPorId(odonto.especialidad.idEspecialidad);
+
+                    sb.AppendLine("<div class='card mb-3 shadow-sm'>");
+                    sb.AppendLine("  <div class='card-body'>");
+                    sb.AppendLine($"   <h5 class='card-title'>Fecha: {c.fecha:d} – Hora: {c.horaInicio:hh\\:mm}</h5>");
+                    sb.AppendLine($"   <p class='card-text'><strong>Odontólogo:</strong> {odonto.nombre} {odonto.apellidos}</p>");
+                    sb.AppendLine($"   <p class='card-text'><strong>Especialidad:</strong> {especialidad.nombre}</p>");
+                    sb.AppendLine($"   <p class='card-text'><strong>Estado:</strong> " +
+                                  $"<span class='badge bg-{GetBadgeColor(c.estado.ToString())}'>" +
+                                  $"{ToTitleCase(c.estado.ToString())}</span></p>");
+
+                    //----- botón Cancelar solo cuando el estado es RESERVADA -----
+                    if (c.estado == CitaWS.estadoCita.RESERVADA)
+                    {
+                        sb.AppendLine("<form method='post' class='d-inline'>");
+                        sb.AppendLine("   <input type='hidden' name='accion' value='cancelar' />");
+                        sb.AppendLine($"  <input type='hidden' name='idCita' value='{c.idCita}' />");
+                        sb.AppendLine("   <button type='submit' class='btn btn-danger btn-sm'>");
+                        sb.AppendLine("       Cancelar cita");
+                        sb.AppendLine("   </button>");
+                        sb.AppendLine("</form>");
+
+                    }
+                    if (c.estado != CitaWS.estadoCita.CANCELADA)
+                    {
+                        sb.AppendLine(
+                            $"<a href='comprobanteCita.aspx?idCita={c.idCita}' " +
+                            $"class='btn btn-primary btn-sm'>Ver comprobante</a>");
+                    }
+                    sb.AppendLine("  </div>");
+                    sb.AppendLine("</div>");
+                }
+
+                ltCitas.Text = sb.ToString();
+            }
+        }
+        protected void calFiltro_SelectionChanged(object sender, EventArgs e)
+        {
+            CargarCitasPaciente();
+        }
+        protected void cancelarCita(int idCita)
+        {
+            var clienteCita = new CitaBO();
+            var cita = clienteCita.cita_obtenerPorId(idCita);
+            cita.estado = CitaWS.estadoCita.CANCELADA;
+            clienteCita.cita_actualizarEstado(cita);
+            CargarCitasPaciente();
+            lblMensaje.Text = "La cita fue cancelada correctamente.";
+            lblMensaje.CssClass = "text-success";
+        }
         protected void btnDescargarPDF_Click(object sender, EventArgs e)
         {
             try
@@ -118,6 +260,17 @@ namespace OdontoSysWebApplication
             }
         }
 
+        protected void btnCita_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Response.Redirect("reservaCitaPorRecepcionista.aspx");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error en RowCommand: " + ex.Message);
+            }
+        }
         private void CargarDatosParaPDF(int idPaciente)
         {
             try
@@ -334,26 +487,7 @@ namespace OdontoSysWebApplication
             Response.Redirect("buscarPaciente.aspx");
         }
 
-        private void CargarCitasPaciente(int idPaciente)
-        {
-            var citaBO = new CitaBO();
-            var pacienteWS = new CitaWS.paciente {
-                idPaciente = idPaciente,
-                idPacienteSpecified = true
-            };
-            try
-            {
-                var citas = citaBO.cita_listarPorPaciente(pacienteWS);
-                gvCitas.DataSource = citas;
-                gvCitas.DataBind();
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine("Error al cargar citas del paciente: " + ex.Message + " " + pacienteWS.idPaciente);
-                gvCitas.DataSource = null;
-                gvCitas.DataBind();
-            }
-        }
+        
         // TODO
         /*
         private void AgregarEncabezadoTabla(PdfPTable tabla, string texto, Font font)

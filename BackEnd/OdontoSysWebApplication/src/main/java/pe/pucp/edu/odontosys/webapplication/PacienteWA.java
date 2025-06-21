@@ -50,4 +50,19 @@ public class PacienteWA {
     public Boolean paciente_verificarExistenciaNombreUsuario(@WebParam(name = "nombreUsuario") String nombreUsuario){
         return this.pacienteBO.verificarExistenciaNombreUsuario(nombreUsuario);
     }
+    
+    @WebMethod(operationName = "paciente_buscarPorNombreApellido")
+    public ArrayList<Paciente> paciente_buscarPorNombreApellido(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido){
+        return this.pacienteBO.buscarPorNombreApellido(nombre, apellido);
+    }
+    
+    @WebMethod(operationName = "paciente_buscarPorNombreApellidoDocumento")
+    public ArrayList<Paciente> paciente_buscarPorNombreApellidoDocumento(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido, @WebParam(name = "documento") String documento){
+        return this.pacienteBO.buscarPorNombreApellidoDocumento(nombre, apellido, documento);
+    }
+    
+    @WebMethod(operationName = "paciente_buscarPorNombreApellidoTelefono")
+    public ArrayList<Paciente> paciente_buscarPorNombreApellidoTelefono(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido, @WebParam(name = "telefono") String telefono){
+        return this.pacienteBO.buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
+    }
 }

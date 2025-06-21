@@ -71,8 +71,9 @@ namespace OdontoSysWebApplication
             ddlOdontologos.Items.Add(new ListItem("-- Seleccione un odontólogo --", ""));
             foreach (var o in odontologos)
             {
-                string nombreCompleto = $"{o.nombre} {o.apellidos}";
-                ddlOdontologos.Items.Add(new ListItem(nombreCompleto, o.idOdontologo.ToString()));
+                string nombreCompleto = $"{o.nombre} {o.apellidos}".PadRight(27);
+                string display = $"{nombreCompleto} {o.puntuacionPromedio.ToString()} ⭐";
+                ddlOdontologos.Items.Add(new ListItem(display, o.idOdontologo.ToString()));
             }
 
             pnlOdontologos.Visible = true;

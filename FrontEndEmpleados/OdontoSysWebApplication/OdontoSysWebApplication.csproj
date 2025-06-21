@@ -75,8 +75,9 @@
     </None>
     <Content Include="buscarOdontologo.aspx" />
     <Content Include="buscarPaciente.aspx" />
-    <Content Include="CitasDia.aspx" />
-    <Content Include="citasOdontologo.aspx" />
+    <Content Include="comprobanteCita.aspx" />
+    <Content Include="FrontRecepcionista\CitasDia.aspx" />
+    <Content Include="FrontRecepcionista\citasOdontologo.aspx" />
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -108,6 +109,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_obtenerPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_actualizarEstadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_actualizarFkComprobanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ComprobanteWS\ComprobanteWA.wsdl" />
@@ -261,6 +271,15 @@
     <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_verificarExistenciaNombreUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_buscarPorNombreApellidoDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_buscarPorNombreApellidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_buscarPorNombreApellidoTelefonoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\PacienteWS\configuration91.svcinfo" />
     <None Include="Connected Services\PacienteWS\configuration.svcinfo" />
     <None Include="Connected Services\OdontologoWS\configuration91.svcinfo" />
@@ -291,6 +310,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_verificarExistenciaNombreUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_buscarPorNombreApellidoDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_buscarPorNombreApellidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_buscarPorNombreApellidoTelefonoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\PacienteWS\Reference.svcmap">
@@ -545,23 +573,29 @@
     <Content Include="Content\Fonts\css\v5-font-face.css" />
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
     <Content Include="Content\Fonts\LICENSE.txt" />
+<<<<<<< Updated upstream
     <Content Include="crearCuenta.aspx" />
     <Content Include="FrontOdontologo\AgregarTratamiento.aspx" />
+=======
+    <Content Include="FrontRecepcionista\crearCuenta.aspx" />
+>>>>>>> Stashed changes
     <Content Include="FrontOdontologo\AtenderCita.aspx" />
     <Content Include="FrontOdontologo\CitasPorAtender.aspx" />
     <Content Include="FrontOdontologo\EditarTratamiento.aspx" />
     <Content Include="gestionOdontologo.aspx" />
     <Content Include="gestionPaciente.aspx" />
-    <Content Include="home.aspx" />
+    <Content Include="FrontRecepcionista\home.aspx" />
+    <Content Include="homeRecepcionista.aspx" />
     <Content Include="Images\crearCuenta\fondo.png" />
     <Content Include="Images\home\fondo.png" />
     <Content Include="Images\inicioSesion\fondo.png" />
     <Content Include="Images\logo\horizontal.png" />
     <Content Include="inicioSesion.aspx" />
-    <Content Include="ListarCitas.aspx" />
-    <Content Include="ListarDoctores.aspx" />
-    <Content Include="ListarPacientes.aspx" />
-    <Content Include="RegistrarComprobante.aspx" />
+    <Content Include="FrontRecepcionista\ListarCitas.aspx" />
+    <Content Include="FrontRecepcionista\ListarDoctores.aspx" />
+    <Content Include="FrontRecepcionista\ListarPacientes.aspx" />
+    <Content Include="FrontRecepcionista\RegistrarComprobante.aspx" />
+    <Content Include="reservaCitaPorRecepcionista.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -576,12 +610,15 @@
     <Content Include="Content\Fonts\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\Fonts\webfonts\fa-v4compatibility.ttf" />
     <Content Include="Content\Fonts\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="Public.Master" />
+    <Content Include="Recepcionista.Master" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
-    <Content Include="VerComprobante.aspx" />
+    <Content Include="tipoUsuario.aspx" />
+    <Content Include="FrontRecepcionista\VerComprobante.aspx" />
     <Content Include="Web.config" />
     <None Include="Connected Services\SalaWS\SalaWA.wsdl" />
     <None Include="Connected Services\SalaWS\SalaWA.xsd">
@@ -632,18 +669,25 @@
     <Compile Include="buscarPaciente.aspx.designer.cs">
       <DependentUpon>buscarPaciente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CitasDia.aspx.cs">
+    <Compile Include="comprobanteCita.aspx.cs">
+      <DependentUpon>comprobanteCita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="comprobanteCita.aspx.designer.cs">
+      <DependentUpon>comprobanteCita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontRecepcionista\CitasDia.aspx.cs">
       <DependentUpon>CitasDia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CitasDia.aspx.designer.cs">
+    <Compile Include="FrontRecepcionista\CitasDia.aspx.designer.cs">
       <DependentUpon>CitasDia.aspx</DependentUpon>
     </Compile>
-    <Compile Include="citasOdontologo.aspx.cs">
+    <Compile Include="FrontRecepcionista\citasOdontologo.aspx.cs">
       <DependentUpon>citasOdontologo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="citasOdontologo.aspx.designer.cs">
+    <Compile Include="FrontRecepcionista\citasOdontologo.aspx.designer.cs">
       <DependentUpon>citasOdontologo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\CitaWS\Reference.cs">
@@ -716,11 +760,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="crearCuenta.aspx.cs">
+    <Compile Include="FrontRecepcionista\crearCuenta.aspx.cs">
       <DependentUpon>crearCuenta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="crearCuenta.aspx.designer.cs">
+    <Compile Include="FrontRecepcionista\crearCuenta.aspx.designer.cs">
       <DependentUpon>crearCuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="FrontOdontologo\AgregarTratamiento.aspx.cs">
@@ -765,12 +809,19 @@
     <Compile Include="gestionPaciente.aspx.designer.cs">
       <DependentUpon>gestionPaciente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="home.aspx.cs">
+    <Compile Include="FrontRecepcionista\home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="home.aspx.designer.cs">
+    <Compile Include="FrontRecepcionista\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeRecepcionista.aspx.cs">
+      <DependentUpon>homeRecepcionista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeRecepcionista.aspx.designer.cs">
+      <DependentUpon>homeRecepcionista.aspx</DependentUpon>
     </Compile>
     <Compile Include="inicioSesion.aspx.cs">
       <DependentUpon>inicioSesion.aspx</DependentUpon>
@@ -779,25 +830,25 @@
     <Compile Include="inicioSesion.aspx.designer.cs">
       <DependentUpon>inicioSesion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ListarCitas.aspx.cs">
+    <Compile Include="FrontRecepcionista\ListarCitas.aspx.cs">
       <DependentUpon>ListarCitas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ListarCitas.aspx.designer.cs">
+    <Compile Include="FrontRecepcionista\ListarCitas.aspx.designer.cs">
       <DependentUpon>ListarCitas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ListarDoctores.aspx.cs">
+    <Compile Include="FrontRecepcionista\ListarDoctores.aspx.cs">
       <DependentUpon>ListarDoctores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ListarDoctores.aspx.designer.cs">
+    <Compile Include="FrontRecepcionista\ListarDoctores.aspx.designer.cs">
       <DependentUpon>ListarDoctores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ListarPacientes.aspx.cs">
+    <Compile Include="FrontRecepcionista\ListarPacientes.aspx.cs">
       <DependentUpon>ListarPacientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ListarPacientes.aspx.designer.cs">
+    <Compile Include="FrontRecepcionista\ListarPacientes.aspx.designer.cs">
       <DependentUpon>ListarPacientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="OdontoSysBusiness\CitaBO.cs" />
@@ -815,25 +866,53 @@
     <Compile Include="OdontoSysBusiness\TurnoXOdontologoBO.cs" />
     <Compile Include="OdontoSysBusiness\ValoracionBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistrarComprobante.aspx.cs">
+    <Compile Include="Public.Master.cs">
+      <DependentUpon>Public.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public.Master.designer.cs">
+      <DependentUpon>Public.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FrontRecepcionista\RegistrarComprobante.aspx.cs">
       <DependentUpon>RegistrarComprobante.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RegistrarComprobante.aspx.designer.cs">
+    <Compile Include="FrontRecepcionista\RegistrarComprobante.aspx.designer.cs">
       <DependentUpon>RegistrarComprobante.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Site.Master.cs">
+    <Compile Include="FrontRecepcionista\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Master.designer.cs">
+    <Compile Include="FrontRecepcionista\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="VerComprobante.aspx.cs">
+    <Compile Include="Recepcionista.Master.cs">
+      <DependentUpon>Recepcionista.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recepcionista.Master.designer.cs">
+      <DependentUpon>Recepcionista.Master</DependentUpon>
+    </Compile>
+    <Compile Include="reservaCitaPorRecepcionista.aspx.cs">
+      <DependentUpon>reservaCitaPorRecepcionista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reservaCitaPorRecepcionista.aspx.designer.cs">
+      <DependentUpon>reservaCitaPorRecepcionista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tipoUsuario.aspx.cs">
+      <DependentUpon>tipoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tipoUsuario.aspx.designer.cs">
+      <DependentUpon>tipoUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontRecepcionista\VerComprobante.aspx.cs">
       <DependentUpon>VerComprobante.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VerComprobante.aspx.designer.cs">
+    <Compile Include="FrontRecepcionista\VerComprobante.aspx.designer.cs">
       <DependentUpon>VerComprobante.aspx</DependentUpon>
     </Compile>
     <Compile Include="Xtras\PasswordHelper.cs" />
@@ -843,7 +922,7 @@
     <None Include="Connected Services\EspecialidadWS\EspecialidadWA.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Site.Master" />
+    <Content Include="FrontRecepcionista\Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import pe.pucp.edu.odontosys.bo.services.CitaBO;
 import pe.pucp.edu.odontosys.infrastructure.model.Turno;
 import pe.pucp.edu.odontosys.services.model.Cita;
+import pe.pucp.edu.odontosys.services.model.Comprobante;
 import pe.pucp.edu.odontosys.users.model.Odontologo;
 import pe.pucp.edu.odontosys.services.model.Valoracion;
 import pe.pucp.edu.odontosys.users.model.Paciente;
@@ -71,5 +72,20 @@ public class CitaWA {
     public Integer cita_actualizarFkValoracion(@WebParam(name = "cita")Cita cita, @WebParam(name = "valoracion") Valoracion valoracion){
         return this.citaBO.actualizarFkValoracion(cita, valoracion);
     }
-
+    
+    @WebMethod(operationName = "cita_actualizarFkComprobante")
+    public Integer cita_actualizarFkComprobante(@WebParam(name = "cita")Cita cita, @WebParam(name = "comprobante") Comprobante comprobante){
+        return this.citaBO.actualizarFkComprobante(cita, comprobante);
+    }
+    
+    @WebMethod(operationName = "cita_actualizarEstado")
+    public Integer cita_actualizarEstado(@WebParam(name = "cita")Cita cita){
+        return this.citaBO.actualizarEstado(cita);
+    }
+    
+    @WebMethod(operationName = "cita_listarPorPacienteFechas")
+    public ArrayList<Cita> cita_listarPorPacienteFechas(@WebParam(name = "paciente") Paciente paciente, @WebParam(name = "fechaInicio") String fechaInicio, @WebParam(name = "fechaFin") String fechaFin){
+        return this.citaBO.listarPorPacienteFechas(paciente, fechaInicio, fechaFin);
+    }
+    
 }
