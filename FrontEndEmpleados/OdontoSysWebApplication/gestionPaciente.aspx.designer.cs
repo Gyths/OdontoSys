@@ -114,6 +114,15 @@ namespace OdontoSysWebApplication
         protected global::System.Web.UI.WebControls.Button btnVolver;
 
         /// <summary>
+        /// Control btnCita.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCita;
+
+        /// <summary>
         /// Control pnlAlerta.
         /// </summary>
         /// <remarks>
@@ -123,12 +132,30 @@ namespace OdontoSysWebApplication
         protected global::System.Web.UI.WebControls.Panel pnlAlerta;
 
         /// <summary>
-        /// Control gvCitas.
+        /// Control lblMensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvCitas;
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
+
+        /// <summary>
+        /// Control calFiltro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar calFiltro;
+
+        /// <summary>
+        /// Control ltCitas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltCitas;
     }
 }

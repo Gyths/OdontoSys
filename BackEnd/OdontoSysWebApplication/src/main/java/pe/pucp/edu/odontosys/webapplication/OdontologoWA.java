@@ -61,4 +61,19 @@ public class OdontologoWA {
     public Boolean odontologo_verificarExistenciaNombreUsuario(@WebParam(name = "nombreUsuario") String nombreUsuario){
         return this.odontologoBO.verificarExistenciaNombreUsuario(nombreUsuario);
     }
+    
+    @WebMethod(operationName = "odontologo_buscarPorNombreApellido")
+    public ArrayList<Odontologo> odontologo_buscarPorNombreApellido(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido){
+        return this.odontologoBO.buscarPorNombreApellido(nombre, apellido);
+    }
+    
+    @WebMethod(operationName = "odontologo_buscarPorNombreApellidoDocumento")
+    public ArrayList<Odontologo> odontologo_buscarPorNombreApellidoDocumento(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido, @WebParam(name = "documento") String documento){
+        return this.odontologoBO.buscarPorNombreApellidoDocumento(nombre, apellido, documento);
+    }
+    
+    @WebMethod(operationName = "odontologo_buscarPorNombreApellidoTelefono")
+    public ArrayList<Odontologo> odontologo_buscarPorNombreApellidoTelefono(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido, @WebParam(name = "telefono") String telefono){
+        return this.odontologoBO.buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
+    }
 }

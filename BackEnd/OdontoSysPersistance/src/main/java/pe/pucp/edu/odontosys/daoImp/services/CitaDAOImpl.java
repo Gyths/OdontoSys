@@ -12,6 +12,7 @@ import pe.pucp.edu.odontosys.services.model.EstadoCita;
 import pe.pucp.edu.odontosys.users.model.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import pe.pucp.edu.odontosys.services.model.Comprobante;
 import pe.pucp.edu.odontosys.services.model.Valoracion;
 
 public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
@@ -149,7 +150,6 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     @Override
     public ArrayList<Cita> listarPorRecepcionista(Recepcionista recepcionista){
         String sql = "CALL CITAS_listar_por_recepcionista(?);";
-        
         return (ArrayList<Cita>) super.ejecutarStoredProcedureLista(sql, recepcionista.getIdRecepcionista());
     }
     
@@ -157,6 +157,24 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     public Integer actualizarFkValoracion(Cita cita, Valoracion valoracion){
         String sql = "CALL CITAS_actualizar_fk_valoracion(?, ?);";
         return super.ejecutarStoredProcedureModificar(sql, cita.getIdCita(), valoracion.getIdValoracion());
+    }
+    
+    @Override
+    public Integer actualizarFkComprobante(Cita cita, Comprobante comprobante){
+        String sql = "CALL CITAS_actualizar_fk_comprobante(?, ?);";
+        return super.ejecutarStoredProcedureModificar(sql, cita.getIdCita(), comprobante.getIdComprobante());
+    }
+    
+    @Override
+    public Integer actualizarEstado(Cita cita){
+        String sql = "CALL CITAS_actualizar_estado(?, ?);";
+        return super.ejecutarStoredProcedureModificar(sql, cita.getIdCita(), cita.getEstado().name());
+    }
+    
+    @Override
+    public ArrayList<Cita> listarPorPacienteFechas(Paciente paciente, String fechaInicio, String fechaFin){
+        String sql = "CALL CITAS_listar_por_paciente_fechas(?, ?, ?);"; 
+        return (ArrayList<Cita>) ejecutarStoredProcedureLista(sql, paciente.getIdPaciente(), LocalDate.parse(fechaInicio), LocalDate.parse(fechaFin));
     }
     
 }

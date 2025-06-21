@@ -137,4 +137,22 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         if(this.paciente==null)return false;
         return true;
     }
+    
+    @Override
+    public ArrayList<Paciente> buscarPorNombreApellido(String nombre, String apellido){
+        String sql = "CALL PACIENTES_buscar_por_nombre_apellido(?, ?);";
+        return (ArrayList<Paciente>) super.ejecutarStoredProcedureLista(sql, nombre, apellido);
+    }
+    
+    @Override
+    public ArrayList<Paciente> buscarPorNombreApellidoDocumento(String nombre, String apellido, String documento){
+        String sql = "CALL PACIENTES_buscar_por_nombre_apellido_documento(?, ?, ?);";
+        return (ArrayList<Paciente>) super.ejecutarStoredProcedureLista(sql, nombre, apellido, documento);
+    }
+    
+    @Override
+    public ArrayList<Paciente> buscarPorNombreApellidoTelefono(String nombre, String apellido, String telefono){
+        String sql = "CALL PACIENTES_buscar_por_nombre_apellido_telefono(?, ?, ?);";
+        return (ArrayList<Paciente>) super.ejecutarStoredProcedureLista(sql, nombre, apellido, telefono);
+    }
 }

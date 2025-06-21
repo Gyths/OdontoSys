@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://webapplication.odontosys.edu.pucp.pe/" targetNamespace="http://webapplication.odontosys.edu.pucp.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="cita_actualizarEstado" type="tns:cita_actualizarEstado" />
+  <xs:element name="cita_actualizarEstadoResponse" type="tns:cita_actualizarEstadoResponse" />
+  <xs:element name="cita_actualizarFkComprobante" type="tns:cita_actualizarFkComprobante" />
+  <xs:element name="cita_actualizarFkComprobanteResponse" type="tns:cita_actualizarFkComprobanteResponse" />
   <xs:element name="cita_actualizarFkValoracion" type="tns:cita_actualizarFkValoracion" />
   <xs:element name="cita_actualizarFkValoracionResponse" type="tns:cita_actualizarFkValoracionResponse" />
   <xs:element name="cita_eliminar" type="tns:cita_eliminar" />
@@ -11,6 +15,8 @@
   <xs:element name="cita_listarPorOdontologoFechasResponse" type="tns:cita_listarPorOdontologoFechasResponse" />
   <xs:element name="cita_listarPorOdontologoResponse" type="tns:cita_listarPorOdontologoResponse" />
   <xs:element name="cita_listarPorPaciente" type="tns:cita_listarPorPaciente" />
+  <xs:element name="cita_listarPorPacienteFechas" type="tns:cita_listarPorPacienteFechas" />
+  <xs:element name="cita_listarPorPacienteFechasResponse" type="tns:cita_listarPorPacienteFechasResponse" />
   <xs:element name="cita_listarPorPacienteResponse" type="tns:cita_listarPorPacienteResponse" />
   <xs:element name="cita_listarPorRecepcionista" type="tns:cita_listarPorRecepcionista" />
   <xs:element name="cita_listarPorRecepcionistaResponse" type="tns:cita_listarPorRecepcionistaResponse" />
@@ -20,37 +26,9 @@
   <xs:element name="cita_modificarResponse" type="tns:cita_modificarResponse" />
   <xs:element name="cita_obtenerPorId" type="tns:cita_obtenerPorId" />
   <xs:element name="cita_obtenerPorIdResponse" type="tns:cita_obtenerPorIdResponse" />
-  <xs:complexType name="cita_listarPorOdontologoFechas">
+  <xs:complexType name="cita_eliminar">
     <xs:sequence>
-      <xs:element minOccurs="0" name="odontologo" type="tns:odontologo" />
-      <xs:element minOccurs="0" name="fechaInicio" type="xs:string" />
-      <xs:element minOccurs="0" name="fechaFin" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="odontologo">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:persona">
-        <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="citas" nillable="true" type="tns:cita" />
-          <xs:element minOccurs="0" name="consultorio" type="tns:sala" />
-          <xs:element minOccurs="0" name="especialidad" type="tns:especialidad" />
-          <xs:element minOccurs="0" name="idOdontologo" type="xs:int" />
-          <xs:element name="puntuacionPromedio" type="xs:double" />
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="turnos" nillable="true" type="tns:turno" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="persona" abstract="true">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="apellidos" type="xs:string" />
-      <xs:element minOccurs="0" name="contrasenha" type="xs:string" />
-      <xs:element minOccurs="0" name="correo" type="xs:string" />
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
-      <xs:element minOccurs="0" name="nombreUsuario" type="xs:string" />
-      <xs:element minOccurs="0" name="numeroDocumento" type="xs:string" />
-      <xs:element minOccurs="0" name="telefono" type="xs:string" />
-      <xs:element minOccurs="0" name="tipoDocumento" type="tns:tipoDocumento" />
+      <xs:element minOccurs="0" name="cita" type="tns:cita" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="cita">
@@ -82,6 +60,59 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="odontologo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="citas" nillable="true" type="tns:cita" />
+          <xs:element minOccurs="0" name="consultorio" type="tns:sala" />
+          <xs:element minOccurs="0" name="especialidad" type="tns:especialidad" />
+          <xs:element minOccurs="0" name="idOdontologo" type="xs:int" />
+          <xs:element name="puntuacionPromedio" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="turnos" nillable="true" type="tns:turno" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidos" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasenha" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreUsuario" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumento" type="tns:tipoDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sala">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idSala" type="xs:int" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+      <xs:element minOccurs="0" name="piso" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="especialidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idEspecialidad" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="turno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="diaSemana" type="tns:diaSemana" />
+      <xs:element minOccurs="0" name="horaFin" type="xs:string" />
+      <xs:element minOccurs="0" name="horaInicio" type="xs:string" />
+      <xs:element minOccurs="0" name="idTurno" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idTipoDocumento" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="paciente">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:persona">
@@ -91,12 +122,6 @@
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="tipoDocumento">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="idTipoDocumento" type="xs:int" />
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
-    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="recepcionista">
     <xs:complexContent mixed="false">
@@ -125,43 +150,12 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="especialidad">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="idEspecialidad" type="xs:int" />
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="valoracion">
     <xs:sequence>
       <xs:element minOccurs="0" name="calicicacion" type="xs:int" />
       <xs:element minOccurs="0" name="comentario" type="xs:string" />
       <xs:element minOccurs="0" name="fechaCalificacion" type="xs:string" />
       <xs:element minOccurs="0" name="idValoracion" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="sala">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="idSala" type="xs:int" />
-      <xs:element minOccurs="0" name="numero" type="xs:string" />
-      <xs:element minOccurs="0" name="piso" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="turno">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="diaSemana" type="tns:diaSemana" />
-      <xs:element minOccurs="0" name="horaFin" type="xs:string" />
-      <xs:element minOccurs="0" name="horaInicio" type="xs:string" />
-      <xs:element minOccurs="0" name="idTurno" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="cita_listarPorOdontologoFechasResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="cita_eliminar">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="cita" type="tns:cita" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="cita_eliminarResponse">
@@ -175,6 +169,58 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="cita_listarPorRecepcionistaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_actualizarEstado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cita" type="tns:cita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_actualizarEstadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_listarPorPaciente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="paciente" type="tns:paciente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_listarPorPacienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_insertar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cita" type="tns:cita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_insertarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_modificar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cita" type="tns:cita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_modificarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_listarPorOdontologoFechas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="odontologo" type="tns:odontologo" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_listarPorOdontologoFechasResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
     </xs:sequence>
@@ -198,16 +244,6 @@
       <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="cita_listarPorPaciente">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="paciente" type="tns:paciente" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="cita_listarPorPacienteResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="cita_obtenerPorId">
     <xs:sequence>
       <xs:element minOccurs="0" name="id" type="xs:int" />
@@ -218,6 +254,29 @@
       <xs:element minOccurs="0" name="return" type="tns:cita" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="cita_listarPorPacienteFechas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="paciente" type="tns:paciente" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_listarPorPacienteFechasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_actualizarFkComprobante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cita" type="tns:cita" />
+      <xs:element minOccurs="0" name="comprobante" type="tns:comprobante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_actualizarFkComprobanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="cita_listarPorOdontologo">
     <xs:sequence>
       <xs:element minOccurs="0" name="odontologo" type="tns:odontologo" />
@@ -226,26 +285,6 @@
   <xs:complexType name="cita_listarPorOdontologoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="cita_insertar">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="cita" type="tns:cita" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="cita_insertarResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="cita_modificar">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="cita" type="tns:cita" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="cita_modificarResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="estadoCita">

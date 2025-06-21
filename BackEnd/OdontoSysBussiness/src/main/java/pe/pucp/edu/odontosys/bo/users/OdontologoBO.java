@@ -48,4 +48,17 @@ public class OdontologoBO {
     public Boolean verificarExistenciaNombreUsuario(String nombreUsuario){
         return this.odontologoDAO.existeNombreUsuario(nombreUsuario);
     }
+    
+    public ArrayList<Odontologo> buscarPorNombreApellido(String nombre, String apellido){
+        return this.odontologoDAO.buscarPorNombreApellido(nombre, apellido);
+    }
+    
+    public ArrayList<Odontologo> buscarPorNombreApellidoDocumento(String nombre, String apellido, String documento){
+        return this.odontologoDAO.buscarPorNombreApellidoDocumento(nombre, apellido, documento);
+    }
+    
+    public ArrayList<Odontologo> buscarPorNombreApellidoTelefono(String nombre, String apellido, String telefono){
+        return this.odontologoDAO.buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
+    }
+    
 }

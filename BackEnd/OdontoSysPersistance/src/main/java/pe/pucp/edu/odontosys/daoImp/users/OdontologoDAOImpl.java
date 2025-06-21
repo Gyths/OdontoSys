@@ -164,4 +164,22 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         if(this.odontologo==null)return false;
         return true;
     }
+    
+    @Override
+    public ArrayList<Odontologo> buscarPorNombreApellido(String nombre, String apellido){
+        String sql = "CALL ODONTOLOGOS_buscar_por_nombre_apellido(?, ?);";
+        return (ArrayList<Odontologo>) super.ejecutarStoredProcedureLista(sql, nombre, apellido);
+    }
+    
+    @Override
+    public ArrayList<Odontologo> buscarPorNombreApellidoDocumento(String nombre, String apellido, String documento){
+        String sql = "CALL ODONTOLOGOS_buscar_por_nombre_apellido_documento(?, ?, ?);";
+        return (ArrayList<Odontologo>) super.ejecutarStoredProcedureLista(sql, nombre, apellido, documento);
+    }
+    
+    @Override
+    public ArrayList<Odontologo> buscarPorNombreApellidoTelefono(String nombre, String apellido, String telefono){
+        String sql = "CALL ODONTOLOGOS_buscar_por_nombre_apellido_telefono(?, ?, ?);";
+        return (ArrayList<Odontologo>) super.ejecutarStoredProcedureLista(sql, nombre, apellido, telefono);
+    }
 }

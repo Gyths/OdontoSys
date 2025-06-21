@@ -1,7 +1,60 @@
-﻿<%@ Page Title="Gestión de Paciente" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="gestionPaciente.aspx.cs" Inherits="OdontoSysWebApplication.gestionPaciente" %>
+﻿<%@ Page Title="Gestión de Paciente" Language="C#" MasterPageFile="~/Recepcionista.master" AutoEventWireup="true" CodeBehind="gestionPaciente.aspx.cs" Inherits="OdontoSysWebApplication.gestionPaciente" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* gris claro y cursor prohibido cuando el campo está bloqueado */
+        .locked {
+            background-color: #f0f0f0 !important;
+            cursor: not-allowed;
+        }
+
+        .bscalendar table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Encabezado mes ◀ junio 2025 ▶ */
+        .bscalendar .MonthTitle {
+            background: #f8f9fa;
+            color: #212529;
+            padding: .4rem;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid #dee2e6;
+        }
+
+        /* Días header (lun-dom) */
+        .bscalendar .DayHeader, .bscalendar .WeekendDayHeader {
+            background: #f1f3f5;
+            border: 1px solid #dee2e6;
+            font-weight: 500;
+            padding: .25rem;
+        }
+
+        /* Cada celda */
+        .bscalendar .Day, .bscalendar .WeekendDay, .bscalendar .OtherMonthDay {
+            border: 1px solid #dee2e6;
+            padding: .35rem .25rem;
+            cursor: pointer;
+        }
+
+        .bscalendar .TodayDay {
+            background: #eaf4ff;
+            font-weight: 600;
+        }
+
+        .bscalendar .SelectedDay {
+            background: #0d6efd;
+            color: #fff;
+        }
+
+        /* Hover */
+        .bscalendar td:hover {
+            background: #dbeafe;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid mt-4">
@@ -9,23 +62,23 @@
         <asp:Panel ID="pnlDatos" runat="server" CssClass="row g-3 mt-3">
             <div class="col-md-3">
                 <label class="form-label">Nombre</label>
-                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" ReadOnly="true" />
+                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-controlc locked" ReadOnly="true" />
             </div>
             <div class="col-md-3">
                 <label class="form-label">Apellidos</label>
-                <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" ReadOnly="true" />
+                <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control locked" ReadOnly="true" />
             </div>
             <div class="col-md-3">
                 <label class="form-label">DNI</label>
-                <asp:TextBox ID="txtDocumento" runat="server" CssClass="form-control" ReadOnly="true" />
+                <asp:TextBox ID="txtDocumento" runat="server" CssClass="form-control locked" ReadOnly="true" />
             </div>
             <div class="col-md-3">
                 <label class="form-label">Teléfono</label>
-                <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" ReadOnly="true" />
+                <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control locked" ReadOnly="true" />
             </div>
             <div class="col-md-3">
                 <label class="form-label">Correo</label>
-                <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" ReadOnly="true" />
+                <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control locked" ReadOnly="true" />
             </div>
             <div class="col-md-3">
                 <label class="form-label">Usuario</label>
@@ -35,8 +88,9 @@
         <div class="mt-4">
             <asp:Button ID="btnEditar" runat="server" Text="Editar" CssClass="btn btn-warning" OnClick="btnEditar_Click" />
             <asp:Button ID="btnGuardar" runat="server" Text="Guardar Cambios" CssClass="btn btn-success ms-2" Visible="false" OnClick="btnGuardar_Click" />
-            <asp:Button ID="btnDescargarPDF" runat="server" Text="Descargar Historia Clínica" CssClass="btn btn-info ms-2" OnClick="btnDescargarPDF_Click" />
+            <asp:Button ID="btnDescargarPDF" runat="server" Text="Descargar Historia Clínica" CssClass="btn btn-primary" OnClick="btnDescargarPDF_Click" />
             <asp:Button ID="btnVolver" runat="server" Text="Volver a búsqueda" CssClass="btn btn-secondary ms-2" PostBackUrl="~/buscarPaciente.aspx" />
+            <asp:Button ID="btnCita" runat="server" Text="Agendar Cita" CssClass="btn btn-success" PostBackUrl="~/reservaCitaPorRecepcionista.aspx" />
         </div>
         <asp:Panel ID="pnlAlerta" runat="server" CssClass="alert alert-success mt-3" Visible="false">
             Cambios guardados exitosamente.
@@ -52,16 +106,26 @@
             }
         });
     </script>
-    <hr class="my-4" />
-        <h3 class="mt-4">Citas del Paciente</h3>
-        <asp:GridView ID="gvCitas" runat="server" CssClass="table table-bordered table-hover mt-3"
-            AutoGenerateColumns="false" EmptyDataText="Este paciente no tiene citas registradas." Width="100%">
-            <Columns>
-                <asp:BoundField DataField="fecha" HeaderText="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
-                <asp:BoundField DataField="horaInicio" HeaderText="Hora" />
-                <asp:BoundField DataField="odontologo.nombre" HeaderText="Odontólogo" />
-                <asp:BoundField DataField="odontologo.especialidad.nombre" HeaderText="Especialidad" />
-                <asp:BoundField DataField="estado" HeaderText="Estado" />
-            </Columns>
-        </asp:GridView>
+    <h4>Citas del paciente</h4>
+
+    <asp:Label ID="lblMensaje"
+        runat="server"
+        EnableViewState="false"
+        CssClass=""
+        Text=""></asp:Label>
+
+    <div class="row align-items-center mb-3">
+        <div class="col-auto">
+            <asp:Calendar ID="calFiltro"
+                runat="server"
+                CssClass="bscalendar mb-3"
+                TitleStyle-CssClass="MonthTitle"
+                DayHeaderStyle-CssClass="DayHeader"
+                TodayDayStyle-CssClass="TodayDay"
+                SelectedDayStyle-CssClass="SelectedDay"
+                OnSelectionChanged="calFiltro_SelectionChanged" />
+        </div>
+    </div>
+
+    <asp:Literal ID="ltCitas" runat="server"></asp:Literal>
 </asp:Content>

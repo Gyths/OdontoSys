@@ -58,5 +58,22 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
         {
             return this.odontologoWAClient.odontologo_actualizarPuntuacion(odontologo);
         }
+
+        public BindingList<odontologo> odontologo_buscarPorNombreApellido(string nombre, string apellido)
+        {
+            odontologo[] lista = this.odontologoWAClient.odontologo_buscarPorNombreApellido(nombre, apellido);
+            return new BindingList<odontologo>(lista);
+        }
+
+        public BindingList<odontologo> odontologo_buscarPorNombreApellidoDocumento(string nombre, string apellido, string documento)
+        {
+            odontologo[] lista = this.odontologoWAClient.odontologo_buscarPorNombreApellidoDocumento(nombre, apellido, documento);
+            return new BindingList<odontologo>(lista);
+        }
+        public BindingList<odontologo> odontologo_buscarPorNombreApellidoTelefono(string nombre, string apellido, string telefono)
+        {
+            odontologo[] lista = this.odontologoWAClient.odontologo_buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
+            return new BindingList<odontologo>(lista);
+        }
     }
 }

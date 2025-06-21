@@ -37,31 +37,33 @@ namespace OdontoSysWebApplication
                 return;
             }
 
+            string tipo = Session["TipoUsuario"] as string;
+
             try
             {
                 
-                // Intentar con Recepcionista
-                var recepcionistaBO = new RecepcionistaBO();
-                var recepcionista = recepcionistaBO.recepcionista_obtenerPorUsuarioContrasenha(usuario, PasswordHelper.HashPassword(contrasena));
-                if (recepcionista != null && recepcionista.idRecepcionista > 0)
+                if(tipo == "odontologo")
                 {
-                    Session["TipoCuenta"] = "recepcionista";
-                    Session["Usuario"] = recepcionista;
-                    Response.Redirect("~/home.aspx");
-                    return;
+                    var clienteOdontologo = new OdontologoBO();
+                    var odontologo = clienteOdontologo.odontologo_obtenerPorUsuarioContrasenha(usuario, PasswordHelper.HashPassword(contrasena));
+                    if (odontologo != null && odontologo.idOdontologo > 0)
+                    {
+                        Session["Usuario"] = odontologo;
+                        Response.Redirect("~/home.aspx");
+                        return;
+                    }
                 }
-
-                // Intentar con Odontólogo
-                var odontologoBO = new OdontologoBO();
-                var odontologo = odontologoBO.odontologo_obtenerPorUsuarioContrasenha(usuario, PasswordHelper.HashPassword(contrasena));
-                if (odontologo != null && odontologo.idOdontologo > 0)
+                if(tipo == "recepcionista")
                 {
-                    Session["TipoCuenta"] = "odontologo";
-                    Session["Usuario"] = odontologo;
-                    Response.Redirect("~/home.aspx");
-                    return;
+                    var clienteRecepcionista = new RecepcionistaBO();
+                    var recepcionista = clienteRecepcionista.recepcionista_obtenerPorUsuarioContrasenha(usuario, PasswordHelper.HashPassword(contrasena));
+                    if(recepcionista != null && recepcionista.idRecepcionista > 0)
+                    {
+                        Session["Usuario"] = recepcionista;
+                        Response.Redirect("~/homeRecepcionista.aspx");
+                        return;
+                    }
                 }
-
                 ShowError("Usuario o contraseña inválidos.");
             }
             catch (Exception)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -31,11 +32,54 @@ namespace OdontoSysWebApplication
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            var odontologoBO = new OdontologoBO();
-            var resultado = odontologoBO.odontologo_listarTodos();
+            var oBO = new OdontologoBO();
+            BindingList<OdontologoWS.odontologo> lista = null;
 
-            gvOdontologos.DataSource = resultado;
+            bool hayEspecialidad = !string.IsNullOrEmpty(ddlEspecialidad.SelectedValue);
+            bool hayNombre = !string.IsNullOrWhiteSpace(txtNombre.Text);
+            bool hayApellido = !string.IsNullOrWhiteSpace(txtApellidos.Text);
+            bool hayDocumento = !string.IsNullOrWhiteSpace(txtDocumento.Text);
+
+            try
+            {
+                if (hayEspecialidad)
+                {
+                    int idEsp = int.Parse(ddlEspecialidad.SelectedValue);
+                    var especialidadOdontologo = new OdontologoWS.especialidad
+                    {
+                        idEspecialidad = idEsp,
+                        idEspecialidadSpecified = true
+                    };
+                    lista = oBO.odontologo_listarPorEspecialidad(especialidadOdontologo);
+                }
+                else if (!hayNombre && !hayApellido && !hayDocumento)
+                {
+                    lista = oBO.odontologo_listarTodos();
+                }
+                else if (hayNombre && hayApellido && !hayDocumento)
+                {
+                    lista = oBO.odontologo_buscarPorNombreApellido(txtNombre.Text.Trim(), txtApellidos.Text.Trim());
+                }
+                else if (hayNombre && hayApellido && hayDocumento)
+                {
+                    lista = oBO.odontologo_buscarPorNombreApellidoDocumento(txtNombre.Text.Trim(), txtApellidos.Text.Trim(), txtDocumento.Text.Trim());
+                }
+                else
+                {
+                    lblMensaje.Text = "Completa nombre y apellidos antes de usar documento, o selecciona una especialidad.";
+                    lblMensaje.CssClass = "text-warning";
+                    gvOdontologos.DataSource = null;
+                    gvOdontologos.DataBind();
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            gvOdontologos.DataSource = lista?.ToList();
             gvOdontologos.DataBind();
+            lblMensaje.Text = "";
         }
 
         protected void gvOdontologos_RowDataBound(object sender, GridViewRowEventArgs e)
