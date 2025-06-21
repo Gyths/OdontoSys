@@ -204,7 +204,7 @@ public abstract class DAOImplBase {
         //sentencia SQL a generar es similar a 
         //SELECT COL1, COL2, COL3 FROM NOMBRE_TABLA WHERE COL_ID = ?
         String sql = "SELECT ";
-        String sql_columnas = "*";
+        String sql_columnas = "";
         String sql_predicado = "";
         for (Columna columna : this.listaColumnas) {
             if (columna.getEsllavePrimaria()) {
@@ -214,6 +214,10 @@ public abstract class DAOImplBase {
                 sql_predicado = sql_predicado.concat(columna.getNombre());
                 sql_predicado = sql_predicado.concat("=?");
             }
+            if(!sql_columnas.isBlank()) {
+                sql_columnas = sql_columnas.concat(", ");
+            }
+            sql_columnas = sql_columnas.concat(columna.getNombre());
         }
         sql = sql.concat(sql_columnas);
         sql = sql.concat(" FROM ");
@@ -227,7 +231,13 @@ public abstract class DAOImplBase {
         //sentencia SQL a generar es similar a 
         //SELECT COL1, COL2, COL3 FROM NOMBRE_TABLA
         String sql = "SELECT ";
-        String sql_columnas = "*";
+        String sql_columnas = "";
+        for (Columna columna : this.listaColumnas) {
+            if (!sql_columnas.isBlank()) {
+                sql_columnas = sql_columnas.concat(", ");
+            }
+            sql_columnas = sql_columnas.concat(columna.getNombre());
+        }
         sql = sql.concat(sql_columnas);
         sql = sql.concat(" FROM ");
         sql = sql.concat(this.nombre_tabla);

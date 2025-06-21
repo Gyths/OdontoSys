@@ -13,7 +13,7 @@
         <!-- Navbar solo para empleados -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="citasOdontologo.aspx">
+                <a class="navbar-brand" href="home.aspx">
                     <asp:Image runat="server" CssClass="d-inline-block align-text-top"
                         ImageUrl="~/Images/logo/horizontal.png"
                         AlternateText="Logo Sonrisa Vital" Width="150" />
@@ -40,7 +40,6 @@
                         %>
                                     <li class="nav-item"><a class="nav-link" href="ListarPacientes.aspx">Pacientes</a></li>
                                     <li class="nav-item"><a class="nav-link" href="ListarDoctores.aspx">Doctores</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="HistoriaClinica.aspx">Historia Clínica</a></li>
                         <%
                                 }
                                 else if (tipo == "odontologo")

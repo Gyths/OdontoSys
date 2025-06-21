@@ -102,6 +102,7 @@
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
     <Content Include="Content\Fonts\LICENSE.txt" />
     <Content Include="crearCuenta.aspx" />
+    <Content Include="cuentaEliminada.aspx" />
     <Content Include="gestionCita.aspx" />
     <Content Include="home.aspx" />
     <Content Include="Images\crearCuenta\fondo.png" />
@@ -188,6 +189,13 @@
     </Compile>
     <Compile Include="crearCuenta.aspx.designer.cs">
       <DependentUpon>crearCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cuentaEliminada.aspx.cs">
+      <DependentUpon>cuentaEliminada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cuentaEliminada.aspx.designer.cs">
+      <DependentUpon>cuentaEliminada.aspx</DependentUpon>
     </Compile>
     <Compile Include="gestionCita.aspx.cs">
       <DependentUpon>gestionCita.aspx</DependentUpon>

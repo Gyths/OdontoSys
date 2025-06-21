@@ -477,7 +477,7 @@ public class Main {
         
 
     
-        OdontologoBO odontologoBO = new OdontologoBO();
+        /*OdontologoBO odontologoBO = new OdontologoBO();
         
         ArrayList<Odontologo> odontologos = odontologoBO.listarTodos();
         
@@ -491,9 +491,9 @@ public class Main {
         for (Turno t : turnos){
             System.out.println(t);
         }
-        
+        */
         Paciente paciente = new Paciente();
-        paciente.setIdPaciente(11);
+        paciente.setIdPaciente(1);
         
         CitaBO citaBO = new CitaBO();
         
@@ -502,7 +502,7 @@ public class Main {
         for(Cita c : citas){
             System.out.println(c);
         }
-        
+        /*
         RecepcionistaBO recepcionistaBO= new RecepcionistaBO();
         
         Recepcionista recepcionista = recepcionistaBO.obtenerPorUsuarioContrasenha("default", "Contrasenha123");
@@ -523,7 +523,7 @@ public class Main {
         
         for(Tratamiento tr : tratamientos){
             System.out.println(tr);
-        }
+        }*/
         
     }
 }

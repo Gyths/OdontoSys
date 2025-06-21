@@ -57,9 +57,8 @@ namespace OdontoSysWebApplication.FrontOdontologo
         {
             if (e.CommandName == "Atender")
             {
-                string idCita = e.CommandArgument.ToString();
-                
-                Response.Redirect($"/FrontOdontologo/AtenderCita.aspx?idCita={idCita}");
+                Session["Cita"] = e.CommandArgument.ToString();
+                Response.Redirect($"/FrontOdontologo/AtenderCita.aspx");
             }
         }
     }
