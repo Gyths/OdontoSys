@@ -113,7 +113,7 @@
                                 CssClass="btn btn-primary"
                                 Text="Registrar"
                                 OnClick="btnRegistrar_Click"
-                                Enabled="false" />
+                                Enabled="true" />
 
 		   <!-- Botón Volver -->
                    <div class="col-12 text-center mt-2">

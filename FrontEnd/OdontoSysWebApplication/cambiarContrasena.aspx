@@ -68,6 +68,9 @@
           <a href="cambiarContrasena.aspx" class="list-group-item list-group-item-action active-custom">
             <i class="fas fa-key me-2"></i>Cambiar Contraseña
           </a>
+          <a href="eliminarCuenta.aspx" class="list-group-item list-group-item-action">
+            <i class="fas fa-user-times me-2"></i>Eliminar Cuenta
+          </a>
         </div>
       </div>
 

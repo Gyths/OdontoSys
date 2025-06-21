@@ -103,6 +103,7 @@
     <Content Include="Content\Fonts\LICENSE.txt" />
     <Content Include="crearCuenta.aspx" />
     <Content Include="cuentaEliminada.aspx" />
+    <Content Include="eliminarCuenta.aspx" />
     <Content Include="gestionCita.aspx" />
     <Content Include="home.aspx" />
     <Content Include="Images\crearCuenta\fondo.png" />
@@ -196,6 +197,13 @@
     </Compile>
     <Compile Include="cuentaEliminada.aspx.designer.cs">
       <DependentUpon>cuentaEliminada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="eliminarCuenta.aspx.cs">
+      <DependentUpon>eliminarCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="eliminarCuenta.aspx.designer.cs">
+      <DependentUpon>eliminarCuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="gestionCita.aspx.cs">
       <DependentUpon>gestionCita.aspx</DependentUpon>
