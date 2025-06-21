@@ -573,16 +573,8 @@
     <Content Include="Content\Fonts\css\v5-font-face.css" />
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
     <Content Include="Content\Fonts\LICENSE.txt" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    <Content Include="crearCuenta.aspx" />
     <Content Include="FrontOdontologo\AgregarTratamiento.aspx" />
-=======
     <Content Include="FrontRecepcionista\crearCuenta.aspx" />
->>>>>>> Stashed changes
-=======
-    <Content Include="FrontRecepcionista\crearCuenta.aspx" />
->>>>>>> Stashed changes
     <Content Include="FrontOdontologo\AtenderCita.aspx" />
     <Content Include="FrontOdontologo\CitasPorAtender.aspx" />
     <Content Include="FrontOdontologo\EditarTratamiento.aspx" />
