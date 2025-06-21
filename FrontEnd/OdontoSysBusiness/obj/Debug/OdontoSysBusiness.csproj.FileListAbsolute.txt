@@ -26,3 +26,4 @@ C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSy
 C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.csproj.CoreCompileInputs.cache
 C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.exe
 C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.pdb
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.exe.config

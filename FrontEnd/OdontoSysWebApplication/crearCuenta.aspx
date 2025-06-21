@@ -110,8 +110,15 @@
                     <div class="col-12">
                         <div class="d-grid">
                             <asp:Button ID="btnRegistrar" runat="server"
-                                CssClass="btn btn-primary" Text="Registrar"
-                                OnClick="btnRegistrar_Click" />
+                                CssClass="btn btn-primary"
+                                Text="Registrar"
+                                OnClick="btnRegistrar_Click"
+                                Enabled="false" />
+
+		   <!-- Botón Volver -->
+                   <div class="col-12 text-center mt-2">
+                        <a href="inicioSesion.aspx" class="btn btn-outline-secondary">Volver</a>
+                   </div>
                         </div>
                     </div>
                 </div>

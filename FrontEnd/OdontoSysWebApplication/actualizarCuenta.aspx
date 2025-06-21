@@ -86,7 +86,7 @@
                     
                     <div class="mb-3">
                         <label class="form-label">Nombre de Usuario</label>
-                        <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" MaxLength="50" />
+                        <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" MaxLength="30" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Correo</label>

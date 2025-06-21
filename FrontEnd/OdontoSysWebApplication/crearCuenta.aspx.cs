@@ -1,8 +1,9 @@
-﻿using System;
+﻿using OdontoSysBusiness;
+using OdontoSysBusiness.Xtras;
+using System;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using OdontoSysBusiness;
-using OdontoSysBusiness.Xtras;
 
 namespace OdontoSysWebApplication
 {
@@ -41,18 +42,42 @@ namespace OdontoSysWebApplication
                                                  string correo, string contrasena, string confirmacion, string tipoDoc, string numDoc)
         {
             var errores = new StringBuilder();
-            var regexNombre = new Regex(@"^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$");
+            var regexNombre = new Regex(@"^(?=.{2,60}$)(?=[A-Za-zÁÉÍÓÚÜáéíóúüÑñ]{2,})(?!.*\s{2,})(?![\s'´`’]+$)[A-Za-zÁÉÍÓÚÜáéíóúüÑñ\s'´`’]+$");
 
-            if (string.IsNullOrEmpty(usuario))
-                errores.AppendLine("<li>El usuario es obligatorio.</li>");
+            if (string.IsNullOrWhiteSpace(usuario))
+            {
+                errores.AppendLine("<li>El nombre de usuario es obligatorio.</li>");
+            }
+            else
+            {
+                if (usuario.Length < 4)
+                    errores.AppendLine("<li>El nombre de usuario debe tener al menos 4 caracteres.</li>");
 
-            if (!regexNombre.IsMatch(nombres))
-                errores.AppendLine("<li>Los nombres solo pueden contener letras y espacios.</li>");
-            if (!regexNombre.IsMatch(apellidos))
-                errores.AppendLine("<li>Los apellidos solo pueden contener letras y espacios.</li>");
+                if (!Regex.IsMatch(usuario, @"^[A-Za-z][A-Za-z0-9_.]*$"))
+                    errores.AppendLine("<li>El nombre de usuario debe empezar con una letra y solo puede contener letras, números, puntos o guiones bajos.</li>");
 
-            if (!Regex.IsMatch(telefono, @"^\d{7,15}$"))
-                errores.AppendLine("<li>El teléfono debe tener entre 7 y 15 dígitos.</li>");
+                int letras = usuario.Count(char.IsLetter);
+                if (letras < 3)
+                    errores.AppendLine("<li>El nombre de usuario debe contener al menos 3 letras.</li>");
+
+                if (usuario.Length > 30)
+                    errores.AppendLine("<li>El nombre de usuario no debe tener más de 30 caracteres.</li>");
+            }
+
+            if (string.IsNullOrWhiteSpace(nombres))
+                errores.AppendLine("<li>Los nombres son obligatorios.</li>");
+            else if (!regexNombre.IsMatch(nombres))
+                errores.AppendLine("<li>Nombre(s) inválido(s): mínimo 2 letras juntas, sin símbolos y entre 2 y 60 caracteres.</li>");
+
+            if (string.IsNullOrWhiteSpace(apellidos))
+                errores.AppendLine("<li>Los apellidos son obligatorios.</li>");
+            else if (!regexNombre.IsMatch(apellidos))
+                errores.AppendLine("<li>Apellidos inválidos: mínimo 2 letras juntas, sin símbolos y entre 2 y 60 caracteres.</li>");
+
+            // Teléfono: celular (9xx xxx xxx) o fijo (xxx-xxxx)
+            if (!Regex.IsMatch(telefono, @"^(9\d{2} \d{3} \d{3}|\d{3}-\d{4})$"))
+                errores.AppendLine("<li>El teléfono debe ser un número celular (9xx xxx xxx) o un número fijo (xxx-xxxx).</li>");
+
 
             if (!Regex.IsMatch(correo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
                 errores.AppendLine("<li>Correo electrónico inválido.</li>");
@@ -64,13 +89,27 @@ namespace OdontoSysWebApplication
             if (contrasena != confirmacion)
                 errores.AppendLine("<li>Las contraseñas no coinciden.</li>");
 
+            // Tipo de documento
             if (tipoDoc != "DNI" && tipoDoc != "CE")
                 errores.AppendLine("<li>Debes seleccionar un tipo de documento válido.</li>");
 
+            // Número de documento
             if (!Regex.IsMatch(numDoc, @"^\d+$"))
                 errores.AppendLine("<li>El número de documento solo puede contener dígitos.</li>");
-            else if ((tipoDoc == "DNI" && numDoc.Length != 8) || (tipoDoc == "CE" && numDoc.Length != 12))
-                errores.AppendLine($"<li>El {(tipoDoc == "DNI" ? "DNI" : "Carné de Extranjería")} debe tener {(tipoDoc == "DNI" ? "8" : "12")} dígitos.</li>");
+            else if (tipoDoc == "DNI")
+            {
+                if (numDoc.Length != 8)
+                    errores.AppendLine("<li>El DNI debe tener 8 dígitos.</li>");
+                else if (numDoc.StartsWith("0"))
+                    errores.AppendLine("<li>El DNI no puede comenzar con 0.</li>");
+            }
+            else if (tipoDoc == "CE")
+            {
+                if (numDoc.Length != 12)
+                    errores.AppendLine("<li>El Carné de Extranjería debe tener 12 dígitos.</li>");
+                else if (numDoc.StartsWith("0"))
+                    errores.AppendLine("<li>El Carné de Extranjería no puede comenzar con 0.</li>");
+            }
 
             return errores;
         }

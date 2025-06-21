@@ -1,8 +1,9 @@
-﻿using System;
+﻿using OdontoSysBusiness;
+using OdontoSysBusiness.PacienteWS;
+using System;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using OdontoSysBusiness;
-using OdontoSysBusiness.PacienteWS;
 
 namespace OdontoSysWebApplication
 {
@@ -38,16 +39,60 @@ namespace OdontoSysWebApplication
             string correo = txtCorreo.Text.Trim();
 
             var errores = new StringBuilder();
-            if (string.IsNullOrEmpty(usuario)) errores.AppendLine("<li>El usuario es obligatorio.</li>");
-            if (!Regex.IsMatch(correo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$")) errores.AppendLine("<li>Correo inválido.</li>");
-            if (!Regex.IsMatch(telefono, @"^\d{7,15}$")) errores.AppendLine("<li>Teléfono inválido.</li>");
 
+            // Validación de nombre de usuario
+            if (string.IsNullOrWhiteSpace(usuario))
+            {
+                errores.AppendLine("<li>El nombre de usuario es obligatorio.</li>");
+            }
+            else
+            {
+                if (usuario.Length < 4)
+                    errores.AppendLine("<li>El nombre de usuario debe tener al menos 4 caracteres.</li>");
+
+                if (!Regex.IsMatch(usuario, @"^[A-Za-z][A-Za-z0-9_.]*$"))
+                    errores.AppendLine("<li>El nombre de usuario debe empezar con una letra y solo puede contener letras, números, puntos o guiones bajos.</li>");
+
+                int letras = usuario.Count(char.IsLetter);
+                if (letras < 3)
+                    errores.AppendLine("<li>El nombre de usuario debe contener al menos 3 letras.</li>");
+
+                if (usuario.Length > 30)
+                    errores.AppendLine("<li>El nombre de usuario no debe tener más de 30 caracteres.</li>");
+            }
+
+
+            // Validación de correo
+            if (string.IsNullOrWhiteSpace(correo))
+            {
+                errores.AppendLine("<li>El correo es obligatorio.</li>");
+            }
+            else if (!Regex.IsMatch(correo, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+            {
+                errores.AppendLine("<li>El correo ingresado no es válido.</li>");
+            }
+
+            // Validación de teléfono
+            if (string.IsNullOrWhiteSpace(telefono))
+            {
+                errores.AppendLine("<li>El teléfono es obligatorio.</li>");
+            }
+            else if (
+                !Regex.IsMatch(telefono, @"^9\d{2} ?\d{3} ?\d{3}$") &&  // móvil
+                !Regex.IsMatch(telefono, @"^\d{3}-\d{4}$")              // fijo
+            )
+            {
+                errores.AppendLine("<li>El teléfono debe ser móvil (9xx xxx xxx) o fijo (xxx-xxxx).</li>");
+            }
+
+            // Mostrar errores si existen
             if (errores.Length > 0)
             {
                 ltMensajes.Text = $"<div class='alert alert-danger'><ul>{errores}</ul></div>";
                 return;
             }
 
+            // Verificar usuario repetido
             var paciente = Session["Paciente"] as paciente;
             if (paciente == null)
             {
@@ -65,6 +110,7 @@ namespace OdontoSysWebApplication
                 }
             }
 
+            // Actualizar datos
             paciente.nombreUsuario = usuario;
             paciente.telefono = telefono;
             paciente.correo = correo;
@@ -82,3 +128,4 @@ namespace OdontoSysWebApplication
         }
     }
 }
+
