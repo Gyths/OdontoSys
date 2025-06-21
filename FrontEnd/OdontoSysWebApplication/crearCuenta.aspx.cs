@@ -75,8 +75,8 @@ namespace OdontoSysWebApplication
                 errores.AppendLine("<li>Apellidos inválidos: mínimo 2 letras juntas, sin símbolos y entre 2 y 60 caracteres.</li>");
 
             // Teléfono: celular (9xx xxx xxx) o fijo (xxx-xxxx)
-            if (!Regex.IsMatch(telefono, @"^(9\d{2} \d{3} \d{3}|\d{3}-\d{4})$"))
-                errores.AppendLine("<li>El teléfono debe ser un número celular (9xx xxx xxx) o un número fijo (xxx-xxxx).</li>");
+            if (!Regex.IsMatch(telefono, @"^(9\d{8}|\d{3}-\d{4})$"))
+                errores.AppendLine("<li>El teléfono debe ser un número celular (9xxxxxxxx) o un número fijo (xxx-xxxx).</li>");
 
 
             if (!Regex.IsMatch(correo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
