@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <style>
-        /* gris claro y cursor prohibido cuando el campo está bloqueado */
         .locked {
             background-color: #f0f0f0 !important;
             cursor: not-allowed;
@@ -15,7 +15,6 @@
             border-collapse: collapse;
         }
 
-        /* Encabezado mes ◀ junio 2025 ▶ */
         .bscalendar .MonthTitle {
             background: #f8f9fa;
             color: #212529;
@@ -25,7 +24,6 @@
             border: 1px solid #dee2e6;
         }
 
-        /* Días header (lun-dom) */
         .bscalendar .DayHeader, .bscalendar .WeekendDayHeader {
             background: #f1f3f5;
             border: 1px solid #dee2e6;
@@ -33,7 +31,6 @@
             padding: .25rem;
         }
 
-        /* Cada celda */
         .bscalendar .Day, .bscalendar .WeekendDay, .bscalendar .OtherMonthDay {
             border: 1px solid #dee2e6;
             padding: .35rem .25rem;
@@ -50,19 +47,35 @@
             color: #fff;
         }
 
-        /* Hover */
         .bscalendar td:hover {
             background: #dbeafe;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:HiddenField ID="hfPostbackOrigin" runat="server" />
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#<%= hfPostbackOrigin.ClientID %>').val('');
+            $('#<%= calFiltro.ClientID %>').on('change', function () {
+                $('#<%= hfPostbackOrigin.ClientID %>').val('calendar');
+            });
+        });
+
+        function cancelCita(idCita) {
+            if (confirm('¿Está seguro de que desea cancelar esta cita?')) {
+                __doPostBack('CancelCita', idCita);
+            }
+        }
+    </script>
+
     <div class="container-fluid mt-4">
         <h2>Datos del Paciente</h2>
         <asp:Panel ID="pnlDatos" runat="server" CssClass="row g-3 mt-3">
             <div class="col-md-3">
                 <label class="form-label">Nombre</label>
-                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-controlc locked" ReadOnly="true" />
+                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control locked" ReadOnly="true" />
             </div>
             <div class="col-md-3">
                 <label class="form-label">Apellidos</label>
@@ -108,17 +121,11 @@
     </script>
     <h4>Citas del paciente</h4>
 
-    <asp:Label ID="lblMensaje"
-        runat="server"
-        EnableViewState="false"
-        CssClass=""
-        Text=""></asp:Label>
+    <asp:Label ID="lblMensaje" runat="server" EnableViewState="false" CssClass="" Text=""></asp:Label>
 
     <div class="row align-items-center mb-3">
         <div class="col-auto">
-            <asp:Calendar ID="calFiltro"
-                runat="server"
-                CssClass="bscalendar mb-3"
+            <asp:Calendar ID="calFiltro" runat="server" CssClass="bscalendar mb-3"
                 TitleStyle-CssClass="MonthTitle"
                 DayHeaderStyle-CssClass="DayHeader"
                 TodayDayStyle-CssClass="TodayDay"
