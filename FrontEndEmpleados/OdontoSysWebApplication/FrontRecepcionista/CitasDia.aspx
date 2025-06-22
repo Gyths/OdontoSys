@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Citas del Día" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="CitasDia.aspx.cs" Inherits="OdontoSysWebApplication.CitasDia" %>
+﻿<%@ Page Title="Citas del Día" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeBehind="CitasDia.aspx.cs" Inherits="OdontoSysWebApplication.CitasDia" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     

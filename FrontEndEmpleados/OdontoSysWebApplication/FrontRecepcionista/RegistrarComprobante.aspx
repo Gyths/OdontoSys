@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Registrar Comprobante" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegistrarComprobante.aspx.cs" Inherits="OdontoSysWebApplication.RegistrarComprobante" %>
+﻿<%@ Page Title="Registrar Comprobante" Language="C#" MasterPageFile="Site.Master" AutoEventWireup="true" CodeBehind="RegistrarComprobante.aspx.cs" Inherits="OdontoSysWebApplication.RegistrarComprobante" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />

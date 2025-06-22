@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Inicio" Language="C#" MasterPageFile="~/Site.Master"
+﻿<%@ Page Title="Inicio" Language="C#" MasterPageFile="Site.Master"
     AutoEventWireup="true" CodeBehind="Home.aspx.cs"
     Inherits="OdontoSysWebApplication.Home" %>
 

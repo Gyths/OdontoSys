@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Mis Citas" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="citasOdontologo.aspx.cs" Inherits="OdontoSysWebApplication.citasOdontologo" %>
+﻿<%@ Page Title="Mis Citas" Language="C#" MasterPageFile="Site.Master" AutoEventWireup="true" CodeBehind="citasOdontologo.aspx.cs" Inherits="OdontoSysWebApplication.citasOdontologo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 

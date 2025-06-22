@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Ver Comprobante" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="VerComprobante.aspx.cs" Inherits="OdontoSysWebApplication.VerComprobante" %>
+﻿<%@ Page Title="Ver Comprobante" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeBehind="VerComprobante.aspx.cs" Inherits="OdontoSysWebApplication.VerComprobante" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="d-flex justify-content-between align-items-center mb-4">

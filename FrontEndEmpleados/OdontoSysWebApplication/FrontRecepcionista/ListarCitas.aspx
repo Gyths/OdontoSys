@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Citas del Paciente" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="ListarCitas.aspx.cs" Inherits="OdontoSysWebApplication.ListarCitas" %>
+﻿<%@ Page Title="Citas del Paciente" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeBehind="ListarCitas.aspx.cs" Inherits="OdontoSysWebApplication.ListarCitas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2><i class="fas fa-calendar-alt"></i> Citas del Paciente</h2>

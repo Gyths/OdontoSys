@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Listado de Doctores" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="ListarDoctores.aspx.cs" Inherits="OdontoSysWebApplication.ListarDoctores" %>
+﻿<%@ Page Title="Listado de Doctores" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeBehind="ListarDoctores.aspx.cs" Inherits="OdontoSysWebApplication.ListarDoctores" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
