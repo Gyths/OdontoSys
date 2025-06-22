@@ -722,7 +722,7 @@ BEGIN
         O.TIPO_DOCUMENTO_ID,
         O.NUMERO_DOCUMENTO_IDENTIDAD,
         O.ESPECIALIDAD_ID,
-        O.CONSULTORIO_ID
+        O.SALA_ID
     FROM `OS_ODONTOLOGOS` AS O
     WHERE O.NOMBRES   LIKE CONCAT('%', in_nombre, '%')
       AND O.APELLIDOS LIKE CONCAT('%', in_apellidos, '%');
@@ -756,7 +756,7 @@ BEGIN
         O.TIPO_DOCUMENTO_ID,
         O.NUMERO_DOCUMENTO_IDENTIDAD,
         O.ESPECIALIDAD_ID,
-        O.CONSULTORIO_ID
+        O.SALA_ID
     FROM `OS_ODONTOLOGOS` AS O
     WHERE O.NOMBRES   LIKE CONCAT('%', in_nombre, '%')
       AND O.APELLIDOS LIKE CONCAT('%', in_apellidos, '%')
@@ -791,7 +791,7 @@ BEGIN
         O.TIPO_DOCUMENTO_ID,
         O.NUMERO_DOCUMENTO_IDENTIDAD,
         O.ESPECIALIDAD_ID,
-        O.CONSULTORIO_ID
+        O.SALA_ID
     FROM `OS_ODONTOLOGOS` AS O
     WHERE O.NOMBRES                     LIKE CONCAT('%', in_nombre, '%')
       AND O.APELLIDOS                   LIKE CONCAT('%', in_apellidos, '%')

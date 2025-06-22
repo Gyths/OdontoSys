@@ -25,7 +25,7 @@
     <asp:Label ID="lblMensaje" runat="server" EnableViewState="false"></asp:Label>
     
     <!-- Panel para generar comprobante -->
-    <!--<div class="row mb-3">
+    <div class="row mb-3">
         <div class="col-md-6">
             <label class="form-label">Método de Pago</label>
             <asp:DropDownList ID="ddlMetodoPago" runat="server"
@@ -36,7 +36,7 @@
                 <asp:ListItem Text="-- Seleccione un Método de Pago --" Value="" />
             </asp:DropDownList>
         </div>
-    </div>-->
+    </div>
     
     <div class="mt-4">
         <asp:Button ID="btnGenerar" runat="server" Text="Generar Comprobante" CssClass="btn btn-warning" OnClick="btnGenerar_Click" />
