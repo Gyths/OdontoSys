@@ -32,8 +32,11 @@ namespace OdontoSysWebApplication.FrontOdontologo
             var cita = boCita.cita_obtenerPorId(Int32.Parse(idCita));
             var paciente = boPaciente.paciente_obtenerPorId(cita.paciente.idPaciente);
             txtPaciente.Text = paciente.nombre + " " +paciente.apellidos;
+            txtPaciente.Enabled = false;
             txtCorreo.Text = paciente.correo;
+            txtCorreo.Enabled = false;
             txtTelefono.Text = paciente.telefono;
+            txtTelefono.Enabled = false;
         }
 
         private void CargarTratamientos(string idCita)

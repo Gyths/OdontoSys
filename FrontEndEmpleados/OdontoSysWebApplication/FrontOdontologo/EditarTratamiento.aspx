@@ -1,4 +1,4 @@
-﻿<%@ Page Title="EditarTratamiento" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditarTratamiento.aspx.cs" Inherits="OdontoSysWebApplication.FrontOdontologo.EditarTratamiento" %>
+﻿<%@ Page Title="EditarTratamiento" Language="C#" MasterPageFile="Site.Master" AutoEventWireup="true" CodeBehind="EditarTratamiento.aspx.cs" Inherits="OdontoSysWebApplication.FrontOdontologo.EditarTratamiento" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 

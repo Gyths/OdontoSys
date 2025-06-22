@@ -580,7 +580,7 @@
     <Content Include="FrontOdontologo\EditarTratamiento.aspx" />
     <Content Include="gestionOdontologo.aspx" />
     <Content Include="gestionPaciente.aspx" />
-    <Content Include="FrontRecepcionista\home.aspx" />
+    <Content Include="FrontOdontologo\home.aspx" />
     <Content Include="homeRecepcionista.aspx" />
     <Content Include="Images\crearCuenta\fondo.png" />
     <Content Include="Images\home\fondo.png" />
@@ -805,11 +805,11 @@
     <Compile Include="gestionPaciente.aspx.designer.cs">
       <DependentUpon>gestionPaciente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FrontRecepcionista\home.aspx.cs">
+    <Compile Include="FrontOdontologo\home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FrontRecepcionista\home.aspx.designer.cs">
+    <Compile Include="FrontOdontologo\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
     <Compile Include="homeRecepcionista.aspx.cs">
@@ -876,11 +876,11 @@
     <Compile Include="FrontRecepcionista\RegistrarComprobante.aspx.designer.cs">
       <DependentUpon>RegistrarComprobante.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FrontRecepcionista\Site.Master.cs">
+    <Compile Include="FrontOdontologo\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FrontRecepcionista\Site.Master.designer.cs">
+    <Compile Include="FrontOdontologo\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Recepcionista.Master.cs">
@@ -918,7 +918,7 @@
     <None Include="Connected Services\EspecialidadWS\EspecialidadWA.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="FrontRecepcionista\Site.Master" />
+    <Content Include="FrontOdontologo\Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
