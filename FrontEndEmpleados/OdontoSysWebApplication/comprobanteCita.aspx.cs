@@ -155,29 +155,29 @@ namespace OdontoSysWebApplication
 
         private void GenerarPDF(ComprobanteWS.comprobante comprobante, MetodoPagoWS.metodoPago metodoPago, CitaWS.cita cita)
         {
-            // Crear documento PDF
+          
             Document document = new Document(PageSize.A4, 50, 50, 50, 50);
             MemoryStream ms = new MemoryStream();
             PdfWriter writer = PdfWriter.GetInstance(document, ms);
 
             document.Open();
 
-            // Fuentes
+           
             Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
             Font headerFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
             Font normalFont = FontFactory.GetFont(FontFactory.HELVETICA, 10);
             Font boldFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10);
 
-            // Encabezado de la empresa
+            
             Paragraph title = new Paragraph("SONRISA VITAL S.A.C.", titleFont);
             title.Alignment = Element.ALIGN_CENTER;
             document.Add(title);
 
-            Paragraph ruc = new Paragraph("RUC: 20123456789", normalFont);
+            Paragraph ruc = new Paragraph("RUC: 12345678910", normalFont);
             ruc.Alignment = Element.ALIGN_CENTER;
             document.Add(ruc);
 
-            Paragraph direccion = new Paragraph("Av. Odontología 123, Lima - Perú", normalFont);
+            Paragraph direccion = new Paragraph("Av. Endodoncia 123, Lima - Perú", normalFont);
             direccion.Alignment = Element.ALIGN_CENTER;
             document.Add(direccion);
 
@@ -185,24 +185,23 @@ namespace OdontoSysWebApplication
             telefono.Alignment = Element.ALIGN_CENTER;
             document.Add(telefono);
 
-            // Espacio
+            
             document.Add(new Paragraph(" "));
             document.Add(new Paragraph(" "));
 
-            // Título del comprobante
+           
             Paragraph comprobanteTitle = new Paragraph("COMPROBANTE DE PAGO", headerFont);
             comprobanteTitle.Alignment = Element.ALIGN_CENTER;
             document.Add(comprobanteTitle);
 
-            // Espacio
+            
             document.Add(new Paragraph(" "));
 
-            // Crear tabla para los datos del comprobante
+           
             PdfPTable table = new PdfPTable(2);
             table.WidthPercentage = 100;
             table.SetWidths(new float[] { 1f, 2f });
 
-            // Datos del comprobante
             table.AddCell(new PdfPCell(new Phrase("Comprobante N°:", boldFont)) { Border = Rectangle.NO_BORDER });
             table.AddCell(new PdfPCell(new Phrase(comprobante.idComprobante.ToString().PadLeft(8, '0'), normalFont)) { Border = Rectangle.NO_BORDER });
 
@@ -220,11 +219,11 @@ namespace OdontoSysWebApplication
 
             document.Add(table);
 
-            // Espacio
+           
             document.Add(new Paragraph(" "));
             document.Add(new Paragraph(" "));
 
-            // Total
+            
             PdfPTable totalTable = new PdfPTable(2);
             totalTable.WidthPercentage = 100;
             totalTable.SetWidths(new float[] { 3f, 1f });
@@ -241,11 +240,11 @@ namespace OdontoSysWebApplication
 
             document.Add(totalTable);
 
-            // Espacio
+            
             document.Add(new Paragraph(" "));
             document.Add(new Paragraph(" "));
 
-            // Pie de página
+           
             Paragraph footer = new Paragraph("Gracias por confiar en Sonrisa Vital S.A.C.", normalFont);
             footer.Alignment = Element.ALIGN_CENTER;
             document.Add(footer);
@@ -256,7 +255,7 @@ namespace OdontoSysWebApplication
 
             document.Close();
 
-            // Enviar el PDF al navegador
+            
             Response.ContentType = "application/pdf";
             Response.AddHeader("Content-Disposition", $"attachment; filename=Comprobante_{comprobante.idComprobante.ToString().PadLeft(8, '0')}.pdf");
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
