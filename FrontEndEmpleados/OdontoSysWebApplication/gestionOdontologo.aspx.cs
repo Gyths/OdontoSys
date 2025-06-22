@@ -60,12 +60,12 @@ namespace OdontoSysWebApplication
 
         private void CargarOdontologo(int id)
         {
-            // Simulación. Reemplazar con la llamada real al servicio web.
-            var odontologoBO = new OdontologoBO(); // Método ficticio
+           
+            var odontologoBO = new OdontologoBO(); 
 
             OdontologoWS.odontologo odontologo = odontologoBO.odontologo_obtenerPorId(id);
 
-            // Llenar campos
+           
             txtNombre.Text = odontologo.nombre;
             txtApellido.Text = odontologo.apellidos;
             txtDocumento.Text = odontologo.numeroDocumento;

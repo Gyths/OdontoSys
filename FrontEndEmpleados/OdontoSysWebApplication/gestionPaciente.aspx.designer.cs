@@ -15,15 +15,6 @@ namespace OdontoSysWebApplication
     {
 
         /// <summary>
-        /// Control hfPostbackOrigin.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfPostbackOrigin;
-
-        /// <summary>
         /// Control pnlDatos.
         /// </summary>
         /// <remarks>
@@ -87,13 +78,22 @@ namespace OdontoSysWebApplication
         protected global::System.Web.UI.WebControls.TextBox txtUsuario;
 
         /// <summary>
+        /// Control pnlAlerta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlAlerta;
+
+        /// <summary>
         /// Control btnEditar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditar;
+        protected global::System.Web.UI.WebControls.LinkButton btnEditar;
 
         /// <summary>
         /// Control btnGuardar.
@@ -102,7 +102,7 @@ namespace OdontoSysWebApplication
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
+        protected global::System.Web.UI.WebControls.LinkButton btnGuardar;
 
         /// <summary>
         /// Control btnDescargarPDF.
@@ -111,16 +111,7 @@ namespace OdontoSysWebApplication
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDescargarPDF;
-
-        /// <summary>
-        /// Control btnVolver.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVolver;
+        protected global::System.Web.UI.WebControls.LinkButton btnDescargarPDF;
 
         /// <summary>
         /// Control btnCita.
@@ -129,16 +120,16 @@ namespace OdontoSysWebApplication
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCita;
+        protected global::System.Web.UI.WebControls.LinkButton btnCita;
 
         /// <summary>
-        /// Control pnlAlerta.
+        /// Control btnVolver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlAlerta;
+        protected global::System.Web.UI.WebControls.LinkButton btnVolver;
 
         /// <summary>
         /// Control lblMensaje.
