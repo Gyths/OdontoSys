@@ -30,23 +30,19 @@ namespace OdontoSysWebApplication
                 Response.Redirect("buscarPaciente.aspx");
                 return;
             }
-
+            if (IsPostBack && Request.Form["accion"] == "cancelar")
+            {
+                if (int.TryParse(Request.Form["idCita"], out int idCita))
+                    cancelarCita(idCita, idPaciente);
+            }
             if (!IsPostBack)
             {
                 CargarPaciente(idPaciente);          
                 calFiltro.SelectedDate = DateTime.Today;
             }
+            DateTime fechaBase = calFiltro.SelectedDate == DateTime.MinValue ? DateTime.Today : calFiltro.SelectedDate;
+            CargarCitasPaciente(idPaciente, fechaBase);
 
-            if (IsPostBack && Request.Form["accion"] == "cancelar")
-            {
-                if (int.TryParse(Request.Form["idCita"], out int idCita))
-                    cancelarCita(idCita);
-                else
-                {
-                    lblMensaje.Text = "No se pudo identificar la cita a cancelar.";
-                    lblMensaje.CssClass = "text-danger";
-                }
-            }
         }
         private void CargarPaciente(int id)
         {
@@ -144,45 +140,32 @@ namespace OdontoSysWebApplication
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(s.ToLower());
         }
 
-        private void CargarCitasPaciente()
+        private void CargarCitasPaciente(int idPaciente, DateTime baseDate)
         {
-            if (Session["idPacienteSeleccionado"] != null && int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPaciente))
+            DateTime desde = baseDate.AddDays(-1).Date;     
+            DateTime hasta = baseDate.AddDays(1).Date;
+
+
+            var clienteCita = new CitaWAClient();
+            var clienteOdontologo = new OdontologoWAClient();
+            var clienteEspecialidad = new EspecialidadWAClient();
+
+            var pacienteCita = new CitaWS.paciente
             {
-                var clientePaciente = new PacienteBO();
-                var paciente = clientePaciente.paciente_obtenerPorId(idPaciente);
-                if (paciente == null) return;
-
-                DateTime baseDate = (calFiltro.SelectedDate == DateTime.MinValue)
-                        ? DateTime.Today                    // primer load
-                        : calFiltro.SelectedDate;
-
-                DateTime desde = baseDate.AddDays(-1).Date;            // 00:00
-                DateTime hasta = baseDate.AddDays(1).Date;
-
-
-                var clienteCita = new CitaBO();
-                var clienteOdontologo = new OdontologoBO();
-                var clienteEspecialidad = new EspecialidadBO();
-
-                var pacienteCita = new CitaWS.paciente
-                {
-                    idPaciente = paciente.idPaciente,
-                    idPacienteSpecified = true
-                };
+                idPaciente = idPaciente,
+                idPacienteSpecified = true
+            };
+            try
+            {
                 var citas = clienteCita.cita_listarPorPacienteFechas(pacienteCita, desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"));
-
                 if (citas == null)
                 {
-                    ltCitas.Text = "<div class='alert alert-warning'>No tienes citas registradas.</div>";
+                    ltCitas.Text = "<div class='alert alert-warning'>No hay citas en el rango seleccionado.</div>";
                     return;
                 }
-
                 var sb = new StringBuilder();
-
                 foreach (var c in citas)
                 {
-
-
                     var odonto = clienteOdontologo.odontologo_obtenerPorId(c.odontologo.idOdontologo);
                     var especialidad = clienteEspecialidad.especialidad_obtenerPorId(odonto.especialidad.idEspecialidad);
 
@@ -192,8 +175,8 @@ namespace OdontoSysWebApplication
                     sb.AppendLine($"   <p class='card-text'><strong>Odontólogo:</strong> {odonto.nombre} {odonto.apellidos}</p>");
                     sb.AppendLine($"   <p class='card-text'><strong>Especialidad:</strong> {especialidad.nombre}</p>");
                     sb.AppendLine($"   <p class='card-text'><strong>Estado:</strong> " +
-                                  $"<span class='badge bg-{GetBadgeColor(c.estado.ToString())}'>" +
-                                  $"{ToTitleCase(c.estado.ToString())}</span></p>");
+                                    $"<span class='badge bg-{GetBadgeColor(c.estado.ToString())}'>" +
+                                    $"{ToTitleCase(c.estado.ToString())}</span></p>");
 
                     //----- botón Cancelar solo cuando el estado es RESERVADA -----
                     if (c.estado == CitaWS.estadoCita.RESERVADA)
@@ -218,21 +201,40 @@ namespace OdontoSysWebApplication
                 }
 
                 ltCitas.Text = sb.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw;
             }
         }
         protected void calFiltro_SelectionChanged(object sender, EventArgs e)
         {
-            CargarCitasPaciente();
+            if(Session["idPacienteSeleccionado"] != null &&
+                int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPaciente))
+            {
+                DateTime baseDate = calFiltro.SelectedDate;
+                CargarCitasPaciente(idPaciente, baseDate);
+            }
         }
-        protected void cancelarCita(int idCita)
+        protected void cancelarCita(int idCita, int idPaciente)
         {
             var clienteCita = new CitaBO();
             var cita = clienteCita.cita_obtenerPorId(idCita);
-            cita.estado = CitaWS.estadoCita.CANCELADA;
-            clienteCita.cita_actualizarEstado(cita);
-            CargarCitasPaciente();
-            lblMensaje.Text = "La cita fue cancelada correctamente.";
-            lblMensaje.CssClass = "text-success";
+            if (cita != null && cita.estado == CitaWS.estadoCita.RESERVADA)
+            {
+                cita.estado = CitaWS.estadoCita.CANCELADA;
+                clienteCita.cita_actualizarEstado(cita);
+                lblMensaje.Text = "La cita fue cancelada correctamente.";
+                lblMensaje.CssClass = "text-success";
+            }
+            else
+            {
+                lblMensaje.Text = "No se pudo cancelar la cita.";
+                lblMensaje.CssClass = "text-danger";
+            }
+            DateTime fechaBase = calFiltro.SelectedDate == DateTime.MinValue ? DateTime.Today : calFiltro.SelectedDate;
+            CargarCitasPaciente(idPaciente, fechaBase);
         }
         protected void btnDescargarPDF_Click(object sender, EventArgs e)
         {

@@ -60,7 +60,7 @@ namespace OdontoSysWebApplication
                     if(recepcionista != null && recepcionista.idRecepcionista > 0)
                     {
                         Session["Usuario"] = recepcionista;
-                        Response.Redirect("~/homeRecepcionista.aspx");
+                        Response.Redirect("~/buscarPaciente.aspx");
                         return;
                     }
                 }

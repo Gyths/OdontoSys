@@ -33,12 +33,12 @@ namespace OdontoSysWebApplication
         protected void Page_Load(object sender, EventArgs e)
         {
             // Verificar si requiere sesión
-            string[] paginasLibres = { "inicioSesion.aspx", "crearCuenta.aspx" };
+            string[] paginasLibres = { "inicioSesion.aspx", "crearCuenta.aspx", "tipoUsuario.aspx" };
 
             if (!paginasLibres.Contains(PaginaActual, StringComparer.OrdinalIgnoreCase) &&
                 Session["Usuario"] == null)
             {
-                Response.Redirect("~/inicioSesion.aspx");
+                Response.Redirect("~/tipoUsuario.aspx");
             }
         }
         protected void Page_PreRender(object sender, EventArgs e)

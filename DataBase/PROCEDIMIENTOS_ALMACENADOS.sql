@@ -93,7 +93,7 @@ BEGIN
     FROM `OS_CITAS` AS C
     WHERE C.PACIENTE_ID = in_idPaciente
       AND C.FECHA BETWEEN in_fechaInicio AND in_fechaFin
-    ORDER BY C.FECHA, C.HORAINICIO;
+    ORDER BY C.FECHA, C.HORA_INICIO;
 END $$
 DELIMITER ;
 

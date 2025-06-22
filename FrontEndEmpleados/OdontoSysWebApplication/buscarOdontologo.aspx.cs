@@ -119,8 +119,8 @@ namespace OdontoSysWebApplication
             {
                 try
                 {
-                    int idOdontologo = Convert.ToInt32(e.CommandArgument);
-                    Session["idOdontologoSeleccionado"] = idOdontologo;
+                    int idOdo  = Convert.ToInt32(e.CommandArgument);
+                    Session["idOdontologoSeleccionado"] = idOdo;
                     Response.Redirect("gestionOdontologo.aspx");
                 }
                 catch (Exception ex)

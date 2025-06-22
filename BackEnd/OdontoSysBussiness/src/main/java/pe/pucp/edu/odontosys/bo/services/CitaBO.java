@@ -38,7 +38,7 @@ public class CitaBO {
     }
    
     public ArrayList<Cita> listarPorOdontologoFechas(Odontologo odontologo, String fechaInicio, String fechaFin){
-        return this.citaDAO.listarPorOdontologoFechas(odontologo, fechaInicio, fechaInicio);
+        return this.citaDAO.listarPorOdontologoFechas(odontologo, fechaInicio, fechaFin);
     }
     
     public ArrayList<Cita> listarPorOdontologo(Odontologo odontologo){
@@ -65,6 +65,6 @@ public class CitaBO {
     }
     
     public ArrayList<Cita> listarPorPacienteFechas(Paciente paciente, String fechaInicio, String fechaFin){
-        return this.citaDAO.listarPorPacienteFechas(paciente, fechaInicio, fechaInicio);
+        return this.citaDAO.listarPorPacienteFechas(paciente, fechaInicio, fechaFin);
     }
 }

@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using OdontoSysWebApplication.CitaWS;
+using OdontoSysWebApplication.EspecialidadWS;
 using OdontoSysWebApplication.OdontoSysBusiness;
+using OdontoSysWebApplication.PacienteWS;
 
 namespace OdontoSysWebApplication
 {
     public partial class gestionOdontologo : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["idOdontologoSeleccionado"] == null || !int.TryParse(Session["idOdontologoSeleccionado"].ToString(), out int idOdo))
@@ -21,30 +26,35 @@ namespace OdontoSysWebApplication
             if (IsPostBack && Request.Form["accion"] == "cancelar")
             {
                 if (int.TryParse(Request.Form["idCita"], out int idCita))
-                {
-                    var cliCita = new CitaBO();
-                    var cita = cliCita.cita_obtenerPorId(idCita);
-
-                    if (cita != null && cita.estado == CitaWS.estadoCita.RESERVADA)
-                    {
-                        cita.estado = CitaWS.estadoCita.CANCELADA;
-                        cliCita.cita_actualizarEstado(cita);
-
-                        lblMensaje.Text = "La cita fue cancelada correctamente.";
-                        lblMensaje.CssClass = "text-success";
-                    }
-                    else
-                    {
-                        lblMensaje.Text = "No se pudo cancelar la cita.";
-                        lblMensaje.CssClass = "text-danger";
-                    }
-                }
+                    CancelarCita(idCita, idOdo);
             }
             if (!IsPostBack)
+            {
+                CargarOdontologo(idOdo);
                 calFiltro.SelectedDate = DateTime.Today;
-            DateTime fechaBase = (calFiltro.SelectedDate == DateTime.MinValue)
-                                 ? DateTime.Today
-                                 : calFiltro.SelectedDate;
+            }
+            DateTime fechaBase = calFiltro.SelectedDate == DateTime.MinValue ? DateTime.Today : calFiltro.SelectedDate;
+            CargarCitasOdontologo(idOdo, fechaBase);
+        }
+
+        private void CancelarCita(int idCita, int idOdo)
+        {
+            var cliCita = new CitaBO();
+            var cita = cliCita.cita_obtenerPorId(idCita);
+            if (cita != null && cita.estado == CitaWS.estadoCita.RESERVADA)
+            {
+                cita.estado = CitaWS.estadoCita.CANCELADA;
+                cliCita.cita_actualizarEstado(cita);
+
+                lblMensaje.Text = "La cita fue cancelada correctamente.";
+                lblMensaje.CssClass = "text-success";
+            }
+            else
+            {
+                lblMensaje.Text = "No se pudo cancelar la cita.";
+                lblMensaje.CssClass = "text-danger";
+            }
+            DateTime fechaBase = calFiltro.SelectedDate == DateTime.MinValue ? DateTime.Today : calFiltro.SelectedDate;
             CargarCitasOdontologo(idOdo, fechaBase);
         }
 
@@ -114,9 +124,9 @@ namespace OdontoSysWebApplication
             DateTime desde = baseDate.AddDays(-1);
             DateTime hasta = baseDate.AddDays(+1);
 
-            var cliCita = new CitaBO();
-            var cliEsp = new EspecialidadBO();
-            var cliPac = new PacienteBO();
+            var cliCita = new CitaWAClient();
+            var cliEsp = new EspecialidadWAClient();
+            var cliPac = new PacienteWAClient();
             var odontologoCita = new CitaWS.odontologo
             {
                 idOdontologo = idOdo,
@@ -130,11 +140,11 @@ namespace OdontoSysWebApplication
                     ltCitas.Text = "<div class='alert alert-warning'>No hay citas en el rango seleccionado.</div>";
                     return;
                 }
+                var clienteOdontologo = new OdontologoBO();
                 var sb = new StringBuilder();
                 foreach (var c in citas.OrderBy(c => c.fecha).ThenBy(c => c.horaInicio))
                 {
                     var paciente = cliPac.paciente_obtenerPorId(c.paciente.idPaciente);
-                    var clienteOdontologo = new OdontologoBO();
                     var odontologo = clienteOdontologo.odontologo_obtenerPorId(c.odontologo.idOdontologo);
                     var especialidad = cliEsp.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
 
@@ -143,7 +153,9 @@ namespace OdontoSysWebApplication
                     sb.AppendLine($"   <h5 class='card-title'>Fecha: {c.fecha:d} – Hora: {c.horaInicio:hh\\:mm}</h5>");
                     sb.AppendLine($"   <p class='card-text'><strong>Paciente:</strong> {paciente.nombre} {paciente.apellidos}</p>");
                     sb.AppendLine($"   <p class='card-text'><strong>Especialidad:</strong> {especialidad.nombre}</p>");
-                    sb.AppendLine($"   <p class='card-text'><strong>Estado:</strong> {c.estado}</p>");
+                    sb.AppendLine($"   <p class='card-text'><strong>Estado:</strong> " +
+                                    $"<span class='badge bg-{GetBadgeColor(c.estado.ToString())}'>" +
+                                    $"{ToTitleCase(c.estado.ToString())}</span></p>");
                     sb.AppendLine("  </div>");
                     sb.AppendLine("</div>");
                     if (c.estado == CitaWS.estadoCita.RESERVADA)              
@@ -164,7 +176,21 @@ namespace OdontoSysWebApplication
 
             
         }
+        private string GetBadgeColor(string estado)
+        {
+            switch (estado.ToUpper())
+            {
+                case "RESERVADA": return "warning";
+                case "ATENDIDA": return "success";
+                case "CANCELADA": return "danger";
+                default: return "secondary";
+            }
+        }
 
+        private string ToTitleCase(string s)
+        {
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(s.ToLower());
+        }
         protected void btnVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("buscarOdontologo.aspx");

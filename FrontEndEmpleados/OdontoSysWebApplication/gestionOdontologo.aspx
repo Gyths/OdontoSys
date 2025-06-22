@@ -117,5 +117,6 @@
             Text=""></asp:Label>
         <!-- Aquí pintarás las tarjetas -->
         <asp:Literal ID="ltCitas" runat="server"></asp:Literal>
+
     </div>
 </asp:Content>
