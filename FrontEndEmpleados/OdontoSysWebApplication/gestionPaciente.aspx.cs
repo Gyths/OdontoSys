@@ -368,8 +368,65 @@ namespace OdontoSysWebApplication
 
                     documento.Add(tablaPaciente);
 
-                    documento.Add(new Paragraph("CITAS DEL PACIENTE:", fontSubtitulo));
-                    documento.Add(new Paragraph("--------acá irían las citas del paciente--------", fontNormal));
+                    
+                    documento.Add(new Paragraph("CITAS ATENDIDAS", fontSubtitulo));
+                    documento.Add(new Paragraph(" ", fontNormal));
+
+                  
+                    var citasAtendidas = CargarCitasAtendidasPaciente(pacienteActual.idPaciente);
+
+                    if (citasAtendidas != null && citasAtendidas.Count > 0)
+                    {
+                        PdfPTable tablaCitas = new PdfPTable(4);
+                        tablaCitas.WidthPercentage = 100;
+                        tablaCitas.SpacingAfter = 20f;
+
+                        float[] anchosCitas = { 1.5f, 1f, 2f, 1.5f };
+                        tablaCitas.SetWidths(anchosCitas);
+
+                        AgregarCeldaEncabezado(tablaCitas, "Fecha", fontNormalBold);
+                        AgregarCeldaEncabezado(tablaCitas, "Hora", fontNormalBold);
+                        AgregarCeldaEncabezado(tablaCitas, "Odontólogo", fontNormalBold);
+                        AgregarCeldaEncabezado(tablaCitas, "Especialidad", fontNormalBold);
+
+                        foreach (var cita in citasAtendidas)
+                        {
+                            try
+                            {
+                                var clienteOdontologo = new OdontologoWAClient();
+                                var clienteEspecialidad = new EspecialidadWAClient();
+
+                                var odonto = clienteOdontologo.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
+                                var especialidad = clienteEspecialidad.especialidad_obtenerPorId(odonto.especialidad.idEspecialidad);
+
+                                string fechaTexto = cita.fecha;
+                                string horaTexto = cita.horaInicio;
+                                string odontologoTexto = $"{odonto.nombre} {odonto.apellidos}";
+                                string especialidadTexto = especialidad.nombre;
+
+                                AgregarCeldaCita(tablaCitas, fechaTexto, fontNormal);
+                                AgregarCeldaCita(tablaCitas, horaTexto, fontNormal);
+                                AgregarCeldaCita(tablaCitas, odontologoTexto, fontNormal);
+                                AgregarCeldaCita(tablaCitas, especialidadTexto, fontNormal);
+                            }
+                            catch (Exception ex)
+                            {
+                                System.Diagnostics.Debug.WriteLine($"Error al procesar cita {cita.idCita}: " + ex.Message);
+                                
+                                AgregarCeldaCita(tablaCitas, cita.fecha, fontNormal);
+                                AgregarCeldaCita(tablaCitas, cita.horaInicio, fontNormal);
+                                AgregarCeldaCita(tablaCitas, "N/D", fontNormal);
+                                AgregarCeldaCita(tablaCitas, "N/D", fontNormal);
+                            }
+                        }
+
+                        documento.Add(tablaCitas);
+                    }
+                    else
+                    {
+                        documento.Add(new Paragraph("No hay citas reservadas para este paciente.", fontNormal));
+                        documento.Add(new Paragraph(" ", fontNormal));
+                    }
 
                     documento.Add(new Paragraph(" ", fontNormal));
                     documento.Add(new Paragraph(" ", fontNormal));
@@ -399,6 +456,65 @@ namespace OdontoSysWebApplication
                 Response.Flush();
                 Response.End();
             }
+        }
+
+        private BindingList<CitaWS.cita> CargarCitasAtendidasPaciente(int idPaciente)
+        {
+            try
+            {
+                var clienteCita = new CitaWAClient();
+                var pacienteCita = new CitaWS.paciente
+                {
+                    idPaciente = idPaciente,
+                    idPacienteSpecified = true
+                };
+
+                
+                var todasLasCitas = clienteCita.cita_listarPorPaciente(pacienteCita);
+
+                if (todasLasCitas == null)
+                {
+                    return new BindingList<CitaWS.cita>();
+                }
+
+                // filtrar solo citas atendidas
+                var citasReservadas = new BindingList<CitaWS.cita>();
+                foreach (var cita in todasLasCitas)
+                {
+                    if (cita.estado == CitaWS.estadoCita.ATENDIDA)
+                    {
+                        citasReservadas.Add(cita);
+                    }
+                }
+
+                return citasReservadas;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al cargar citas reservadas: " + ex.Message);
+                return new BindingList<CitaWS.cita>();
+            }
+        }
+
+       
+        private void AgregarCeldaEncabezado(PdfPTable tabla, string texto, Font font)
+        {
+            PdfPCell celda = new PdfPCell(new Phrase(texto ?? "", font));
+            celda.BackgroundColor = BaseColor.LIGHT_GRAY;
+            celda.HorizontalAlignment = Element.ALIGN_CENTER;
+            celda.Padding = 5f;
+            celda.Border = Rectangle.BOX;
+            tabla.AddCell(celda);
+        }
+
+        
+        private void AgregarCeldaCita(PdfPTable tabla, string texto, Font font)
+        {
+            PdfPCell celda = new PdfPCell(new Phrase(texto ?? "", font));
+            celda.HorizontalAlignment = Element.ALIGN_LEFT;
+            celda.Padding = 5f;
+            celda.Border = Rectangle.BOX;
+            tabla.AddCell(celda);
         }
 
         private void AgregarFilaTabla(PdfPTable tabla, string etiqueta, string valor, Font fontEtiqueta, Font fontValor)
