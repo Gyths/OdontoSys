@@ -255,8 +255,6 @@
                     CssClass="btn btn-outline-danger"
                     OnClick="btnEliminarSeleccion_Click" />
             </asp:Panel>
-
-            <asp:Literal ID="ltCitas" runat="server"></asp:Literal>
         </div>
     </div> 
     <script type="text/javascript">

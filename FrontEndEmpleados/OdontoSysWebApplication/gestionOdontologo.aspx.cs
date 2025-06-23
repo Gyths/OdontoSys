@@ -62,14 +62,15 @@ namespace OdontoSysWebApplication
         {
            
             var odontologoBO = new OdontologoBO(); 
-
+            var boEspecialidad = new EspecialidadBO();
             OdontologoWS.odontologo odontologo = odontologoBO.odontologo_obtenerPorId(id);
 
            
             txtNombre.Text = odontologo.nombre;
             txtApellido.Text = odontologo.apellidos;
             txtDocumento.Text = odontologo.numeroDocumento;
-            txtEspecialidad.Text = odontologo.especialidad.nombre;
+            var especialidadOd = boEspecialidad.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
+            txtEspecialidad.Text = especialidadOd.nombre;
             txtCorreo.Text = odontologo.correo;
             txtTelefono.Text = odontologo.telefono;
             txtUsuario.Text = odontologo.nombreUsuario;
@@ -121,79 +122,64 @@ namespace OdontoSysWebApplication
 
         private void CargarCitasOdontologo(int idOdo, DateTime baseDate)
         {
-            DateTime desde = baseDate.AddDays(-1);
-            DateTime hasta = baseDate.AddDays(+1);
 
-            var cliCita = new CitaWAClient();
-            var cliEsp = new EspecialidadWAClient();
-            var cliPac = new PacienteWAClient();
-            var odontologoCita = new CitaWS.odontologo
+            DateTime desde = baseDate.AddDays(-1).Date;
+            DateTime hasta = baseDate.AddDays(1).Date;
+
+            var boOdontologo = new OdontologoBO();
+            var odontologoActual = boOdontologo.odontologo_obtenerPorId(idOdo);
+            var odontologo = new CitaWS.odontologo
             {
-                idOdontologo = idOdo,
+                idOdontologo = odontologoActual.idOdontologo,
                 idOdontologoSpecified = true
             };
-            try
+
+            var boCitas = new CitaBO();
+            var listaCitas = boCitas.cita_listarPorOdontologoFechas(odontologo, desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"));
+            foreach (var cita in listaCitas)
             {
-                var citas = cliCita.cita_listarPorOdontologoFechas(odontologoCita, desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"));
-                if (citas == null)
+                var boPaciente = new PacienteBO();
+                var paciente = boPaciente.paciente_obtenerPorId(cita.paciente.idPaciente);
+                
+                var pac = new CitaWS.paciente
                 {
-                    ltCitas.Text = "<div class='alert alert-warning'>No hay citas en el rango seleccionado.</div>";
-                    return;
-                }
-                var clienteOdontologo = new OdontologoBO();
-                var sb = new StringBuilder();
-                foreach (var c in citas.OrderBy(c => c.fecha).ThenBy(c => c.horaInicio))
+                    idPaciente = paciente.idPaciente,
+                    idPacienteSpecified = true,
+                    nombre = paciente.nombre,
+                    apellidos = paciente.apellidos,
+                };
+                cita.paciente = pac;
+                cita.paciente.nombre += (" " + cita.paciente.apellidos);
+            }
+            gvCitas.DataSource = listaCitas;
+            gvCitas.DataBind();
+
+        }
+        private void CargarTurnos(int idOdo)
+        {
+            var boTurnoOdontologo = new TurnoXOdontologoBO();
+            var listaTurnos = boTurnoOdontologo.turnoXOdontologo_listarTodos();
+            foreach (var turno in listaTurnos)
+            {
+                if (turno.idOdontologo == idOdo) 
                 {
-                    var paciente = cliPac.paciente_obtenerPorId(c.paciente.idPaciente);
-                    var odontologo = clienteOdontologo.odontologo_obtenerPorId(c.odontologo.idOdontologo);
-                    var especialidad = cliEsp.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
-
-                    sb.AppendLine("<div class='card mb-3 shadow-sm'>");
-                    sb.AppendLine("  <div class='card-body'>");
-                    sb.AppendLine($"   <h5 class='card-title'>Fecha: {c.fecha:d} – Hora: {c.horaInicio:hh\\:mm}</h5>");
-                    sb.AppendLine($"   <p class='card-text'><strong>Paciente:</strong> {paciente.nombre} {paciente.apellidos}</p>");
-                    sb.AppendLine($"   <p class='card-text'><strong>Especialidad:</strong> {especialidad.nombre}</p>");
-                    sb.AppendLine($"   <p class='card-text'><strong>Estado:</strong> " +
-                                    $"<span class='badge bg-{GetBadgeColor(c.estado.ToString())}'>" +
-                                    $"{ToTitleCase(c.estado.ToString())}</span></p>");
-                    sb.AppendLine("  </div>");
-                    sb.AppendLine("</div>");
-                    if (c.estado == CitaWS.estadoCita.RESERVADA)              
-                    {                                                            
-                        sb.AppendLine("<form method='post' class='d-inline me-2'>");    
-                        sb.AppendLine("  <input type='hidden' name='accion' value='cancelar' />");
-                        sb.AppendLine($" <input type='hidden' name='idCita' value='{c.idCita}' />"); 
-                        sb.AppendLine("  <button type='submit' class='btn btn-danger btn-sm'>");    
-                        sb.AppendLine("      Cancelar cita</button></form>");    
-                    }
+                    var boTurno = new TurnoBO();
+                    var turnoActual = boTurno.turno_obtenerPorId(turno.idTurno);
+                    //Agregar el turno al grid 
                 }
-                ltCitas.Text = sb.ToString();
             }
-            catch (Exception ex)
-            {
-                throw;
-            }
-
-            
-        }
-        private string GetBadgeColor(string estado)
-        {
-            switch (estado.ToUpper())
-            {
-                case "RESERVADA": return "warning";
-                case "ATENDIDA": return "success";
-                case "CANCELADA": return "danger";
-                default: return "secondary";
-            }
-        }
-
-        private string ToTitleCase(string s)
-        {
-            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(s.ToLower());
         }
         protected void btnVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("buscarOdontologo.aspx");
+        }
+        protected void btnEliminarSeleccion_Click(object sender, EventArgs e)
+        {
+        
+        }
+        protected void gvCitas_RowCommand(object sender, GridViewCommandEventArgs e) 
+        {
+        
         }
     }
 }
