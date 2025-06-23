@@ -150,6 +150,24 @@ namespace OdontoSysWebApplication
         protected global::System.Web.UI.WebControls.Calendar calFiltro;
 
         /// <summary>
+        /// gvCitas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvCitas;
+
+        /// <summary>
+        /// btnEliminarSeleccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEliminarSeleccion;
+
+        /// <summary>
         /// ltCitas control.
         /// </summary>
         /// <remarks>

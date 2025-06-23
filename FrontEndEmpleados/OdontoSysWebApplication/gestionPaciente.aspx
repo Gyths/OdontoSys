@@ -214,12 +214,51 @@
                 </div>
             </div>
             
-          
+            <asp:Panel CssClass="mt-3" runat="server">
+                <asp:GridView ID="gvCitas" runat="server" AutoGenerateColumns="False"
+                    CssClass="table table-hover table-striped treatment-grid"
+                    DataKeyNames="idCita"
+                    OnRowCommand="gvCitas_RowCommand">
+                    <Columns>
+                        <asp:BoundField DataField="fecha" HeaderText="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
+                        <asp:BoundField DataField="horaInicio" HeaderText="Hora" />
+                        <asp:BoundField DataField="odontologo.nombre" HeaderText="Doctor" />
+                        <asp:BoundField DataField="odontologo.consultorio.numero" HeaderText="Sala" />
+                        <asp:BoundField DataField="estado" HeaderText="Estado" />
+
+                        <asp:TemplateField HeaderText="Comprobante">
+                            <ItemTemplate>
+                                <asp:Panel CssClass="grid-buttons" runat="server">
+                                    <asp:Button ID="btnGestionarComprobante" runat="server" Text="Gestionar"
+                                        CommandName="Gestionar"
+                                        CommandArgument='<%# Eval("idCita") %>'
+                                        CssClass="btn btn-primary btn-sm" />
+                                </asp:Panel>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="Cancelar Citas">
+                            <ItemTemplate>
+                                <div class="text-center">
+                                    <asp:CheckBox ID="chkSeleccionar" runat="server" />
+                                </div>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                    </Columns>
+                    <HeaderStyle CssClass="bg-primary text-white" />
+                </asp:GridView>
+            </asp:Panel>
+
+            <asp:Panel CssClass="mt-3 text-end" runat="server">
+                <asp:Button ID="btnEliminarSeleccion" runat="server" Text="Cancelar citas seleccionadas"
+                    CssClass="btn btn-outline-danger"
+                    OnClick="btnEliminarSeleccion_Click" />
+            </asp:Panel>
+
             <asp:Literal ID="ltCitas" runat="server"></asp:Literal>
         </div>
     </div> 
-
-
     <script type="text/javascript">
         $(document).ready(function () {
             

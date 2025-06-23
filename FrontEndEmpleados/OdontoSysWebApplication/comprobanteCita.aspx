@@ -27,7 +27,7 @@
     <!-- Panel para generar comprobante -->
     <div class="row mb-3">
         <div class="col-md-6">
-            <label class="form-label">Método de Pago</label>
+            <asp:label ID="lblhead" runat="server" EnableViewState ="false">Método de Pago</asp:label>
             <asp:DropDownList ID="ddlMetodoPago" runat="server"
                 CssClass="form-select"
                 AutoPostBack="true"
@@ -39,7 +39,7 @@
     </div>
     
     <div class="mt-4">
-        <asp:Button ID="btnGenerar" runat="server" Text="Generar Comprobante" CssClass="btn btn-warning" OnClick="btnGenerar_Click" />
+        <asp:Button ID="btnGenerar" runat="server" Text="Generar Comprobante" CssClass="btn btn-outline-primary" OnClick="btnGenerar_Click" />
     </div>
     
     <!-- Panel para mostrar detalle -->

@@ -19,7 +19,6 @@ namespace OdontoSysWebApplication
     public partial class gestionPaciente : System.Web.UI.Page
     {
         private PacienteWS.paciente pacienteActual;
-        private BindingList<CitaWS.cita> citasActuales;
         Label lblMensaje;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,7 +33,7 @@ namespace OdontoSysWebApplication
             {
                 CargarPaciente(idPaciente);
                 calFiltro.SelectedDate = DateTime.Today;
-                CargarCitasPaciente(idPaciente, DateTime.Today);
+                CargarCitas(idPaciente, DateTime.Today);
             }
             else if (Request.Form["__EVENTTARGET"] == "CancelCita" &&
                      !string.IsNullOrEmpty(Request.Form["__EVENTARGUMENT"]))
@@ -74,6 +73,14 @@ namespace OdontoSysWebApplication
             }
         }
 
+        protected void gvCitas_RowCommand(object sender, GridViewCommandEventArgs e) 
+        {
+            if (e.CommandName == "Gestionar") 
+            {
+                string idCita = e.CommandArgument.ToString();
+                Response.Redirect($"comprobanteCita.aspx?idCita={idCita}");
+            }
+        }
         private void SetReadOnly(TextBox txt, bool readOnly)
         {
             txt.ReadOnly = readOnly;
@@ -150,87 +157,54 @@ namespace OdontoSysWebApplication
                 }
             }
         }
-
-        private string GetBadgeColor(string estado)
-        {
-            switch (estado.ToUpper())
-            {
-                case "RESERVADA": return "warning";
-                case "ATENDIDA": return "success";
-                case "CANCELADA": return "danger";
-                default: return "secondary";
-            }
-        }
-
-        private string ToTitleCase(string s)
-        {
-            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(s.ToLower());
-        }
-
-        private void CargarCitasPaciente(int idPaciente, DateTime baseDate)
+        
+        private void CargarCitas(int id, DateTime baseDate) 
         {
             DateTime desde = baseDate.AddDays(-1).Date;
             DateTime hasta = baseDate.AddDays(1).Date;
 
-            var clienteCita = new CitaWAClient();
-            var clienteOdontologo = new OdontologoWAClient();
-            var clienteEspecialidad = new EspecialidadWAClient();
-
-            var pacienteCita = new CitaWS.paciente
+            var pacienteBO = new PacienteBO();
+            pacienteActual = pacienteBO.paciente_obtenerPorId(id);
+            var paciente = new CitaWS.paciente
             {
-                idPaciente = idPaciente,
+                idPaciente = pacienteActual.idPaciente,
                 idPacienteSpecified = true
             };
 
-            try
+            var boCitas = new CitaBO();
+            var listaCitas = boCitas.cita_listarPorPacienteFechas(paciente,desde.ToString("yyyy-MM-dd"),hasta.ToString("yyyy-MM-dd"));
+            foreach (var cita in listaCitas)
             {
-                var citas = clienteCita.cita_listarPorPacienteFechas(pacienteCita, desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"));
-                if (citas == null || !citas.Any())
+                var boOdontologo = new OdontologoBO();
+                var odontologo = boOdontologo.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
+                var boSala = new SalaBO();
+                var consultorioOd = boSala.sala_obtenerPorId(odontologo.consultorio.idSala);
+                
+                var consultorio = new CitaWS.sala
                 {
-                    ltCitas.Text = "<div class='alert alert-warning'>No hay citas en el rango seleccionado.</div>";
-                    return;
-                }
-
-                var sb = new StringBuilder();
-                foreach (var c in citas)
+                    idSala = odontologo.consultorio.idSala,
+                    idSalaSpecified = true,
+                    numero = consultorioOd.numero,
+                };
+                var od = new CitaWS.odontologo
                 {
-                    var odonto = clienteOdontologo.odontologo_obtenerPorId(c.odontologo.idOdontologo);
-                    var especialidad = clienteEspecialidad.especialidad_obtenerPorId(odonto.especialidad.idEspecialidad);
-
-                    sb.AppendLine("<div class='card mb-3 shadow-sm'>");
-                    sb.AppendLine("  <div class='card-body'>");
-                    sb.AppendLine($"   <h5 class='card-title'>Fecha: {c.fecha:d} – Hora: {c.horaInicio:hh\\:mm}</h5>");
-                    sb.AppendLine($"   <p class='card-text'><strong>Odontólogo:</strong> {odonto.nombre} {odonto.apellidos}</p>");
-                    sb.AppendLine($"   <p class='card-text'><strong>Especialidad:</strong> {especialidad.nombre}</p>");
-                    sb.AppendLine($"   <p class='card-text'><strong>Estado:</strong> " +
-                                  $"<span class='badge bg-{GetBadgeColor(c.estado.ToString())}'>" +
-                                  $"{ToTitleCase(c.estado.ToString())}</span></p>");
-
-                    if (c.estado == CitaWS.estadoCita.RESERVADA)
-                    {
-                        sb.AppendLine($"<button type='button' class='btn btn-danger btn-sm' " +
-                                      $"onclick=\"cancelCita('{c.idCita}');\">Cancelar cita</button>");
-                    }
-
-                    if (c.estado != CitaWS.estadoCita.CANCELADA)
-                    {
-                        sb.AppendLine($"<a href='comprobanteCita.aspx?idCita={c.idCita}' " +
-                                      $"class='btn btn-primary btn-sm'>Ver comprobante</a>");
-                    }
-
-                    sb.AppendLine("  </div>");
-                    sb.AppendLine("</div>");
-                }
-
-                ltCitas.Text = sb.ToString();
+                    idOdontologo = odontologo.idOdontologo,
+                    idOdontologoSpecified = true,
+                    nombre = odontologo.nombre,
+                    apellidos = odontologo.apellidos,
+                    consultorio = consultorio
+                };
+                cita.odontologo = od;
+                cita.odontologo.nombre += (" " + cita.odontologo.apellidos);
             }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine("Error al cargar citas: " + ex.Message);
-                ltCitas.Text = "<div class='alert alert-danger'>Error al cargar las citas.</div>";
-            }
+            gvCitas.DataSource = listaCitas;
+            gvCitas.DataBind();
         }
 
+        protected void btnEliminarSeleccion_Click(object sender, EventArgs e)
+        {
+        
+        }
         private void CancelarCita(int idCita, int idPaciente)
         {
             try
@@ -258,7 +232,7 @@ namespace OdontoSysWebApplication
             }
 
             DateTime fechaBase = calFiltro.SelectedDate == DateTime.MinValue ? DateTime.Today : calFiltro.SelectedDate;
-            CargarCitasPaciente(idPaciente, fechaBase);
+            CargarCitas(idPaciente, fechaBase);
         }
 
         protected void calFiltro_SelectionChanged(object sender, EventArgs e)
@@ -267,7 +241,7 @@ namespace OdontoSysWebApplication
                 int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPaciente))
             {
                 DateTime baseDate = calFiltro.SelectedDate;
-                CargarCitasPaciente(idPaciente, baseDate);
+                CargarCitas(idPaciente, baseDate);
             }
         }
 
