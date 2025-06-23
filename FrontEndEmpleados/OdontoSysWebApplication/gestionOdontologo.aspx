@@ -213,9 +213,37 @@
                     </div>
                 </div>
             </div>
-            
+
+            <asp:Panel CssClass="mt-3" runat="server">
+                <asp:GridView ID="gvCitas" runat="server" AutoGenerateColumns="False"
+                    CssClass="table table-hover table-striped treatment-grid"
+                    DataKeyNames="idCita"
+                    OnRowCommand="gvCitas_RowCommand">
+                    <Columns>
+                         <asp:BoundField DataField="paciente.nombre" HeaderText="Paciente" />
+                        <asp:BoundField DataField="fecha" HeaderText="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
+                        <asp:BoundField DataField="horaInicio" HeaderText="Hora" />
+                        <asp:BoundField DataField="estado" HeaderText="Estado" />
+
+                        <asp:TemplateField HeaderText="Cancelar Citas">
+                            <ItemTemplate>
+                                <div class="text-center">
+                                    <asp:CheckBox ID="chkSeleccionar" runat="server" />
+                                </div>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                    </Columns>
+                    <HeaderStyle CssClass="bg-primary text-white" />
+                </asp:GridView>
+            </asp:Panel>
+
+            <asp:Panel CssClass="mt-3 text-end" runat="server">
+                <asp:Button ID="btnEliminarSeleccion" runat="server" Text="Cancelar citas seleccionadas"
+                    CssClass="btn btn-outline-danger"
+                    OnClick="btnEliminarSeleccion_Click" />
+            </asp:Panel>
            
-            <asp:Literal ID="ltCitas" runat="server"></asp:Literal>
         </div>
     </div>
 
