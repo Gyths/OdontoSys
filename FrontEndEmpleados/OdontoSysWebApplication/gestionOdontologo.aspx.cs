@@ -123,8 +123,8 @@ namespace OdontoSysWebApplication
         private void CargarCitasOdontologo(int idOdo, DateTime baseDate)
         {
 
-            DateTime desde = baseDate.AddDays(-1).Date;
-            DateTime hasta = baseDate.AddDays(1).Date;
+            DateTime desde = baseDate;
+            DateTime hasta = baseDate;
 
             var boOdontologo = new OdontologoBO();
             var odontologoActual = boOdontologo.odontologo_obtenerPorId(idOdo);

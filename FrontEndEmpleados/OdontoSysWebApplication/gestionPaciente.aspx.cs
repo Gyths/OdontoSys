@@ -160,8 +160,8 @@ namespace OdontoSysWebApplication
         
         private void CargarCitas(int id, DateTime baseDate) 
         {
-            DateTime desde = baseDate.AddDays(-1).Date;
-            DateTime hasta = baseDate.AddDays(1).Date;
+            DateTime desde = baseDate;
+            DateTime hasta = baseDate;
 
             var pacienteBO = new PacienteBO();
             pacienteActual = pacienteBO.paciente_obtenerPorId(id);
