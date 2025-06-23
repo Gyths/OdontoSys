@@ -70,7 +70,7 @@ namespace OdontoSysWebApplication
             {
                 panelValoracion.Visible = true;
 
-                if (cita.valoracion.idValoracion  > 0)
+                if (cita.valoracion.idValoracion > 0)
                 {
                     var clienteValoracion = new ValoracionWAClient();
                     var valoracion = clienteValoracion.valoracion_obtenerPorId(cita.valoracion.idValoracion);
@@ -83,7 +83,6 @@ namespace OdontoSysWebApplication
                     panelFormularioValoracion.Visible = true;
                 }
             }
-
         }
 
         private string ToTitleCase(string input)
@@ -111,21 +110,44 @@ namespace OdontoSysWebApplication
         {
             if (Session["CitaSeleccionada"] != null)
             {
-                var cita = Session["CitaSeleccionada"] as OdontoSysBusiness.CitaWS.cita;
+                // Ocultar ambos mensajes antes de validar
+                lblErrorComentario.Visible = false;
+                lblErrorCalificacion.Visible = false;
 
-                if (string.IsNullOrWhiteSpace(txtComentario.Text) || string.IsNullOrWhiteSpace(ddlCalificacion.SelectedValue))
-                    return; // podrías mostrar una alerta si quieres
+                var cita = Session["CitaSeleccionada"] as OdontoSysBusiness.CitaWS.cita;
+                string comentario = txtComentario.Text?.Trim() ?? "";
+                string calificacionSeleccionada = ddlCalificacion.SelectedValue;
+
+                bool esValido = true;
+
+                // Validación de comentario
+                if (string.IsNullOrWhiteSpace(comentario) || comentario.Length > 250)
+                {
+                    lblErrorComentario.Visible = true;
+                    esValido = false;
+                }
+
+                // Validación de calificación
+                if (string.IsNullOrWhiteSpace(calificacionSeleccionada))
+                {
+                    lblErrorCalificacion.Visible = true;
+                    esValido = false;
+                }
+
+                if (!esValido)
+                    return;
 
                 var nuevaValoracion = new OdontoSysBusiness.ValoracionWS.valoracion
                 {
-                    comentario = txtComentario.Text.Trim(),
-                    calicicacion = int.Parse(ddlCalificacion.SelectedValue),
+                    comentario = comentario,
+                    calicicacion = int.Parse(calificacionSeleccionada),
                     calicicacionSpecified = true,
                     fechaCalificacion = DateTime.Now.ToString("yyyy-MM-dd")
                 };
 
                 var clienteValoracion = new ValoracionWAClient();
                 int idGenerado = clienteValoracion.valoracion_insertar(nuevaValoracion);
+
                 var valoracionInsertada = new OdontoSysBusiness.CitaWS.valoracion
                 {
                     idValoracion = idGenerado,
@@ -133,15 +155,13 @@ namespace OdontoSysWebApplication
                 };
 
                 var clienteCita = new CitaWAClient();
-                
-
                 clienteCita.cita_actualizarFkValoracion(cita, valoracionInsertada);
 
-                // Actualizamos sesión y recargamos
                 Session["CitaSeleccionada"] = cita;
                 Response.Redirect("gestionCita.aspx?id=" + cita.idCita);
             }
         }
+
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
             Response.Redirect("misCitas.aspx");

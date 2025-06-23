@@ -67,3 +67,15 @@ C:\Users\LENOVO\OneDrive\Documentos\github\OdontoSys\FrontEndEmpleados\OdontoSys
 C:\Users\LENOVO\OneDrive\Documentos\github\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSy.7DA6DC66.Up2Date
 C:\Users\LENOVO\OneDrive\Documentos\github\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.dll
 C:\Users\LENOVO\OneDrive\Documentos\github\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.pdb
+C:\Users\gabri\Documents\Git OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.dll.config
+C:\Users\gabri\Documents\Git OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.dll
+C:\Users\gabri\Documents\Git OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.pdb
+C:\Users\gabri\Documents\Git OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\BouncyCastle.Cryptography.dll
+C:\Users\gabri\Documents\Git OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\itextsharp.dll
+C:\Users\gabri\Documents\Git OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\BouncyCastle.Cryptography.xml
+C:\Users\gabri\Documents\Git OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\itextsharp.xml
+C:\Users\gabri\Documents\Git OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.AssemblyReference.cache
+C:\Users\gabri\Documents\Git OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Documents\Git OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSy.7DA6DC66.Up2Date
+C:\Users\gabri\Documents\Git OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.dll
+C:\Users\gabri\Documents\Git OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.pdb

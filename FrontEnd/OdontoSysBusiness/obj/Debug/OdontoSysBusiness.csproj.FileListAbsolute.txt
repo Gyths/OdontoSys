@@ -27,3 +27,11 @@ C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSy
 C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.exe
 C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.pdb
 C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.exe.config
+C:\Users\gabri\Documents\Git OdontoSys\FrontEnd\OdontoSysBusiness\bin\Debug\OdontoSysBusiness.exe.config
+C:\Users\gabri\Documents\Git OdontoSys\FrontEnd\OdontoSysBusiness\bin\Debug\OdontoSysBusiness.exe
+C:\Users\gabri\Documents\Git OdontoSys\FrontEnd\OdontoSysBusiness\bin\Debug\OdontoSysBusiness.pdb
+C:\Users\gabri\Documents\Git OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.csproj.AssemblyReference.cache
+C:\Users\gabri\Documents\Git OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.exe.config
+C:\Users\gabri\Documents\Git OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Documents\Git OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.exe
+C:\Users\gabri\Documents\Git OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.pdb

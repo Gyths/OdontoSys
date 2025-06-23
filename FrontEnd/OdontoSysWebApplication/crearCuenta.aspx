@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Public.Master" AutoEventWireup="true" CodeBehind="crearCuenta.aspx.cs" Inherits="OdontoSysWebApplication.crearCuenta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
     <style>
         html, body, form {
             height: 100%;
@@ -82,14 +84,26 @@
                         <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" TextMode="Email" />
                     </div>
 
-                    <!-- Contraseña y Repetir -->
+                    <!-- Contraseña -->
                     <div class="col-md-6">
                         <label class="form-label">Contraseña</label>
-                        <asp:TextBox ID="txtContrasenha" runat="server" CssClass="form-control" TextMode="Password" />
+                        <div class="input-group">
+                            <asp:TextBox ID="txtContrasenha" runat="server" CssClass="form-control" TextMode="Password" />
+                            <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('txtContrasenha', this)">
+                                <i class="fa fa-eye"></i>
+                            </button>
+                        </div>
                     </div>
+
+                    <!-- Repetir Contraseña -->
                     <div class="col-md-6">
                         <label class="form-label">Repetir Contraseña</label>
-                        <asp:TextBox ID="txtContrasenha2" runat="server" CssClass="form-control" TextMode="Password" />
+                        <div class="input-group">
+                            <asp:TextBox ID="txtContrasenha2" runat="server" CssClass="form-control" TextMode="Password" />
+                            <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('txtContrasenha2', this)">
+                                <i class="fa fa-eye"></i>
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Tipo y Número de Documento -->
@@ -128,4 +142,23 @@
         <!-- DERECHA: Fondo -->
         <div class="register-bg-side d-none d-md-block"></div>
     </div>
+    <script>
+    function togglePassword(textBoxId, btn) {
+        const textbox = document.getElementById('<%= txtContrasenha.ClientID %>');
+        const textbox2 = document.getElementById('<%= txtContrasenha2.ClientID %>');
+
+        const target = (textBoxId === 'txtContrasenha') ? textbox : textbox2;
+        const icon = btn.querySelector('i');
+
+        if (target.type === "password") {
+            target.type = "text";
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+        } else {
+            target.type = "password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+        }
+    }
+    </script>
 </asp:Content>

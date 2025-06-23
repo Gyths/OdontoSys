@@ -84,6 +84,9 @@
                 <div class="mb-3">
                     <label for="txtComentario" class="form-label">Comentario (máx. 250 caracteres):</label>
                     <asp:TextBox ID="txtComentario" runat="server" CssClass="form-control" TextMode="MultiLine" MaxLength="250" Rows="4"></asp:TextBox>
+                    <asp:Label ID="lblErrorComentario" runat="server" ClientIDMode="Static"
+                    CssClass="text-danger mt-1 d-block" Visible="false"
+                    Text="Comentario inválido. Por favor, ingréselo nuevamente. Recuerde que debe tener como máximo 250 caracteres y no puede ser un comentario vacío." />
                 </div>
                 <div class="mb-3">
                     <label for="ddlCalificacion" class="form-label">Calificación:</label>
@@ -95,6 +98,9 @@
                         <asp:ListItem Text="4" Value="4" />
                         <asp:ListItem Text="5" Value="5" />
                     </asp:DropDownList>
+                    <asp:Label ID="lblErrorCalificacion" runat="server" ClientIDMode="Static"
+                    CssClass="text-danger mt-1 d-block" Visible="false"
+                    Text="Calificación inválida. Por favor, seleccione una calificación del 1 al 5." />
                 </div>
                 <asp:Button ID="btnEnviarValoracion" runat="server" Text="Enviar Valoración"
                     CssClass="btn btn-success"
@@ -122,5 +128,17 @@
             CssClass="btn btn-secondary mt-3"
             OnClick="btnRegresar_Click" />
     </div>
+    <script>
+        $(document).ready(function () {
+            const mensajes = ["#lblErrorComentario", "#lblErrorCalificacion"];
+            mensajes.forEach(function (id) {
+                if ($(id).is(":visible")) {
+                    setTimeout(function () {
+                        $(id).fadeOut();
+                    }, 3000);
+                }
+            });
+        });
+    </script>
 </asp:Content>
 
