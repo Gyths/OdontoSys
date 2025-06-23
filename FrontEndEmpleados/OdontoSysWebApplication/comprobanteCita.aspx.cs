@@ -46,6 +46,8 @@ namespace OdontoSysWebApplication
                 pnlDetalle.Visible = true;
                 btnGenerar.Visible = false;
                 btnDescargarPDF.Visible = true;
+                ddlMetodoPago.Visible = false;
+                lblhead.Visible = false;
             }
             else
             {
