@@ -169,7 +169,7 @@
             </div>
             <div class="col-md-4">
                 <label class="form-label">Usuario</label>
-                <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" ReadOnly="true" />
+                <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control locked" ReadOnly="true" />
             </div>
         </asp:Panel>
         
@@ -178,11 +178,12 @@
             Cambios guardados exitosamente.
         </asp:Panel>
 
+        <asp:Panel ID="pnlError" runat="server" CssClass="alert alert-danger mt-3" Visible="false"/>
        
         <div class="mt-4 action-buttons">
-            <asp:LinkButton ID="btnEditar" runat="server" Text="<i class='fas fa-pencil-alt me-1'></i> Editar" CssClass="btn btn-warning" OnClick="btnEditar_Click" />
+            <asp:LinkButton ID="btnEditar" runat="server" Text="<i class='fas fa-pencil-alt me-1'></i> Editar" CssClass="btn btn-outline-primary" OnClick="btnEditar_Click" />
             <asp:LinkButton ID="btnGuardar" runat="server" Text="<i class='fas fa-save me-1'></i> Guardar Cambios" CssClass="btn btn-success" Visible="false" OnClick="btnGuardar_Click" />
-            <asp:LinkButton ID="btnDescargarPDF" runat="server" Text="<i class='fas fa-file-pdf me-1'></i> Historia Clínica" CssClass="btn btn-primary" OnClick="btnDescargarPDF_Click" />
+            <asp:LinkButton ID="btnDescargarPDF" runat="server" Text="<i class='fas fa-file-pdf me-1'></i> Historia Clínica" CssClass="btn btn-outline-primary" OnClick="btnDescargarPDF_Click" />
             <asp:LinkButton ID="btnCita" runat="server" Text="<i class='fas fa-calendar-plus me-1'></i> Agendar Cita" CssClass="btn btn-info text-white" OnClick="btnCita_Click" />
             <asp:LinkButton ID="btnVolver" runat="server" Text="<i class='fas fa-arrow-left me-1'></i> Volver" CssClass="btn btn-secondary ms-auto" PostBackUrl="~/buscarPaciente.aspx" />
         </div>
@@ -190,8 +191,6 @@
        
         <div class="mt-5">
             <h4 class="mb-3"><i class="fas fa-calendar-alt me-2 text-primary"></i>Citas del Paciente</h4>
-
-            <asp:Label ID="lblMensaje" runat="server" EnableViewState="false" CssClass=""></asp:Label>
 
             <div class="row align-items-start mb-4">
                 <div class="col-auto">

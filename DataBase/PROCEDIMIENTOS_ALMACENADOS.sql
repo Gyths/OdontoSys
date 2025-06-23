@@ -713,6 +713,7 @@ CREATE PROCEDURE `ODONTOLOGOS_buscar_por_nombre_apellido`(
 BEGIN
     SELECT
         O.ODONTOLOGO_ID,
+        O.PUNTUACION_PROMEDIO,
         O.CONTRASENHA,
         O.NOMBRE_USUARIO,
         O.CORREO,
@@ -747,6 +748,7 @@ CREATE PROCEDURE `ODONTOLOGOS_buscar_por_nombre_apellido_telefono`(
 BEGIN
     SELECT
         O.ODONTOLOGO_ID,
+        O.PUNTUACION_PROMEDIO,
         O.CONTRASENHA,
         O.NOMBRE_USUARIO,
         O.CORREO,
@@ -782,6 +784,7 @@ CREATE PROCEDURE `ODONTOLOGOS_buscar_por_nombre_apellido_documento`(
 BEGIN
     SELECT
         O.ODONTOLOGO_ID,
+        O.PUNTUACION_PROMEDIO,
         O.CONTRASENHA,
         O.NOMBRE_USUARIO,
         O.CORREO,

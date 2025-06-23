@@ -12,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Globalization;
 using System.ComponentModel;
+using System.Text.RegularExpressions;
 
 namespace OdontoSysWebApplication
 {
@@ -19,7 +20,7 @@ namespace OdontoSysWebApplication
     {
         private PacienteWS.paciente pacienteActual;
         private BindingList<CitaWS.cita> citasActuales;
-
+        Label lblMensaje;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["idPacienteSeleccionado"] == null ||
@@ -93,7 +94,6 @@ namespace OdontoSysWebApplication
         {
             SetReadOnly(txtCorreo, false);
             SetReadOnly(txtTelefono, false);
-            SetReadOnly(txtUsuario, false);
             btnGuardar.Visible = true;
             btnEditar.Visible = false;
             btnCita.Visible = false;
@@ -113,15 +113,24 @@ namespace OdontoSysWebApplication
 
                     if (original != null)
                     {
-                        original.correo = txtCorreo.Text;
-                        original.telefono = txtTelefono.Text;
-                        original.nombreUsuario = txtUsuario.Text;
-                        pacienteBO.paciente_modificar(original);
+                        if (Regex.IsMatch(txtTelefono.Text, @"^(9\d{8}|\d{3}-\d{4})$") &&
+                            Regex.IsMatch(txtCorreo.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                        {
+                            original.correo = txtCorreo.Text;
+                            original.telefono = txtTelefono.Text;
+                            original.nombreUsuario = txtUsuario.Text;
+                            pacienteBO.paciente_modificar(original);
+                        }
+                        else
+                        {
+                            
+                            throw new Exception("El numero de telefono o correo son incorrectos");
+                        }
 
                         pacienteActual = original;
 
                         pnlAlerta.Visible = true;
-
+                        pnlError.Visible = false;
                         BloquearTodos();
                         btnGuardar.Visible = false;
                         btnEditar.Visible = true;
@@ -133,8 +142,11 @@ namespace OdontoSysWebApplication
                 catch (Exception ex)
                 {
                     System.Diagnostics.Debug.WriteLine("Error al guardar paciente: " + ex.Message);
-                    lblMensaje.Text = "Error al guardar los cambios.";
+                    Label lblMensaje = new Label();
+                    lblMensaje.Text = "Error al guardar los cambios. "+ ex.Message;
                     lblMensaje.CssClass = "text-danger";
+                    pnlError.Controls.Add(new LiteralControl(lblMensaje.Text));
+                    pnlError.Visible = true;
                 }
             }
         }
