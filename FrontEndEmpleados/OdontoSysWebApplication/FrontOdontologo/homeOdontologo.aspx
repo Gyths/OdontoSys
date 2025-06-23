@@ -1,15 +1,11 @@
-﻿<%@ Page Title="Inicio" Language="C#" MasterPageFile="Site.Master"
-    AutoEventWireup="true" CodeBehind="Home.aspx.cs"
+﻿<%@ Page Title="Inicio" Language="C#" MasterPageFile="Odontologo.Master"
+    AutoEventWireup="true" CodeBehind="homeOdontologo.aspx.cs"
     Inherits="OdontoSysWebApplication.Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    .navbar {
-      position: static;
-      background: #fff;
-      z-index: 1000;
-    }
+
 
     .hero {
       background: url('/Images/home/fondo.png') no-repeat center center;

@@ -59,5 +59,4 @@
       });
     });
   </script>
-  </script>
 </asp:Content>

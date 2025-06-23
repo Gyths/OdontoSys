@@ -1,4 +1,4 @@
-﻿<%@ Page Title= "Citas por atender" Language="C#"  MasterPageFile="Site.Master" AutoEventWireup="true" CodeBehind="CitasPorAtender.aspx.cs" Inherits="OdontoSysWebApplication.FrontOdontologo.CitasPorAtender" %>
+﻿<%@ Page Title= "Citas por atender" Language="C#"  MasterPageFile="Odontologo.Master" AutoEventWireup="true" CodeBehind="CitasPorAtender.aspx.cs" Inherits="OdontoSysWebApplication.FrontOdontologo.CitasPorAtender" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
@@ -39,6 +39,13 @@
         </Columns>
         <HeaderStyle CssClass="bg-primary text-white" />
     </asp:GridView>
+
+    <div class="mt-4">
+    <asp:Button ID="btnVolverInicio" runat="server"
+        Text="Volver a inicio"
+        CssClass="btn btn-secondary"
+        OnClick="btnVolverInicio_Click" />
+    </div>
 
 </asp:Content>
 

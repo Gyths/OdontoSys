@@ -89,5 +89,10 @@ namespace OdontoSysWebApplication.FrontOdontologo
         {
 
         }
+
+        protected void btnVolverAgenda_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/FrontOdontologo/CitasPorAtender.aspx");
+        }
     }
 }

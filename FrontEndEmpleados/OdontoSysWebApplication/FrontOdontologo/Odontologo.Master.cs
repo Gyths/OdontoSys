@@ -4,12 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using OdontoSysWebApplication.OdontoSysBusiness;
-
 
 namespace OdontoSysWebApplication
 {
-    public partial class Recepcionista : System.Web.UI.MasterPage
+    public partial class Site : System.Web.UI.MasterPage
     {
         protected string paginaActiva = "";
 
@@ -17,7 +15,7 @@ namespace OdontoSysWebApplication
         {
             get
             {
-                var recepcionista = Session["Usuario"] as RecepcionistaWS.recepcionista;
+                var recepcionista = Session["Usuario"] as OdontologoWS.odontologo;
                 return (!string.IsNullOrEmpty(recepcionista?.nombre)) ? recepcionista.nombre.Substring(0, 1).ToUpper() : "?";
             }
         }

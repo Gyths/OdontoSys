@@ -1,4 +1,4 @@
-﻿<%@ Title="AtenderCita" Language="C#" MasterPageFile="Site.Master" AutoEventWireup="true" CodeBehind="AtenderCita.aspx.cs" Inherits="OdontoSysWebApplication.FrontOdontologo.AtenderCita" %>
+﻿<%@ Title="AtenderCita" Language="C#" MasterPageFile="Odontologo.Master" AutoEventWireup="true" CodeBehind="AtenderCita.aspx.cs" Inherits="OdontoSysWebApplication.FrontOdontologo.AtenderCita" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -79,5 +79,12 @@
             CssClass="btn btn-outline-danger"
             OnClick="btnEliminarSeleccion_Click" />
     </asp:Panel>
+
+    <asp:Panel CssClass="mt-4" runat="server">
+    <asp:Button ID="btnVolverAgenda" runat="server"
+        Text="Volver a agenda"
+        CssClass="btn btn-secondary"
+        OnClick="btnVolverAgenda_Click" />
+</asp:Panel>
 
 </asp:Content>

@@ -61,5 +61,10 @@ namespace OdontoSysWebApplication.FrontOdontologo
                 Response.Redirect($"/FrontOdontologo/AtenderCita.aspx");
             }
         }
+
+        protected void btnVolverInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"~/FrontOdontologo/homeOdontologo.aspx");
+        }
     }
 }

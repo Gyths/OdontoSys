@@ -575,9 +575,10 @@
     <Content Include="FrontOdontologo\AtenderCita.aspx" />
     <Content Include="FrontOdontologo\CitasPorAtender.aspx" />
     <Content Include="FrontOdontologo\EditarTratamiento.aspx" />
+    <Content Include="FrontOdontologo\historialPacientes.aspx" />
     <Content Include="gestionOdontologo.aspx" />
     <Content Include="gestionPaciente.aspx" />
-    <Content Include="FrontOdontologo\home.aspx" />
+    <Content Include="FrontOdontologo\homeOdontologo.aspx" />
     <Content Include="homeRecepcionista.aspx" />
     <Content Include="Images\crearCuenta\fondo.png" />
     <Content Include="Images\home\fondo.png" />
@@ -762,6 +763,13 @@
     <Compile Include="FrontOdontologo\EditarTratamiento.aspx.designer.cs">
       <DependentUpon>EditarTratamiento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FrontOdontologo\historialPacientes.aspx.cs">
+      <DependentUpon>historialPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontOdontologo\historialPacientes.aspx.designer.cs">
+      <DependentUpon>historialPacientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="gestionOdontologo.aspx.cs">
       <DependentUpon>gestionOdontologo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -776,12 +784,12 @@
     <Compile Include="gestionPaciente.aspx.designer.cs">
       <DependentUpon>gestionPaciente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FrontOdontologo\home.aspx.cs">
-      <DependentUpon>home.aspx</DependentUpon>
+    <Compile Include="FrontOdontologo\homeOdontologo.aspx.cs">
+      <DependentUpon>homeOdontologo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FrontOdontologo\home.aspx.designer.cs">
-      <DependentUpon>home.aspx</DependentUpon>
+    <Compile Include="FrontOdontologo\homeOdontologo.aspx.designer.cs">
+      <DependentUpon>homeOdontologo.aspx</DependentUpon>
     </Compile>
     <Compile Include="homeRecepcionista.aspx.cs">
       <DependentUpon>homeRecepcionista.aspx</DependentUpon>
@@ -819,12 +827,12 @@
     <Compile Include="Public.Master.designer.cs">
       <DependentUpon>Public.Master</DependentUpon>
     </Compile>
-    <Compile Include="FrontOdontologo\Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="FrontOdontologo\Odontologo.Master.cs">
+      <DependentUpon>Odontologo.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FrontOdontologo\Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="FrontOdontologo\Odontologo.Master.designer.cs">
+      <DependentUpon>Odontologo.Master</DependentUpon>
     </Compile>
     <Compile Include="Recepcionista.Master.cs">
       <DependentUpon>Recepcionista.Master</DependentUpon>
@@ -854,7 +862,7 @@
     <None Include="Connected Services\EspecialidadWS\EspecialidadWA.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="FrontOdontologo\Site.Master" />
+    <Content Include="FrontOdontologo\Odontologo.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

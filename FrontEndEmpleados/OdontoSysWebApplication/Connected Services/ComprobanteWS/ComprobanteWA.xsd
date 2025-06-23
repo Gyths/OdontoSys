@@ -35,16 +35,6 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="comprobante_eliminar">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="comprobante" type="tns:comprobante" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="comprobante_eliminarResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="comprobante_actualizarTotal">
     <xs:sequence>
       <xs:element minOccurs="0" name="cita" type="tns:cita" />
@@ -163,6 +153,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="comprobante_actualizarTotalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comprobante_eliminar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="comprobante" type="tns:comprobante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comprobante_eliminarResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>

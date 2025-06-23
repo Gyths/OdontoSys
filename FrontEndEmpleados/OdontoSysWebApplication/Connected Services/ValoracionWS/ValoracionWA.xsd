@@ -14,22 +14,6 @@
   <xs:element name="valoracion_modificarResponse" type="tns:valoracion_modificarResponse" />
   <xs:element name="valoracion_obtenerPorId" type="tns:valoracion_obtenerPorId" />
   <xs:element name="valoracion_obtenerPorIdResponse" type="tns:valoracion_obtenerPorIdResponse" />
-  <xs:complexType name="valoracion_listarTodos">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="valoracion_listarTodosResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:valoracion" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="valoracion">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="calicicacion" type="xs:int" />
-      <xs:element minOccurs="0" name="comentario" type="xs:string" />
-      <xs:element minOccurs="0" name="fechaCalificacion" type="xs:string" />
-      <xs:element minOccurs="0" name="idValoracion" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="valoracion_listarPorOdontologo">
     <xs:sequence>
       <xs:element minOccurs="0" name="odontologo" type="tns:odontologo" />
@@ -139,6 +123,14 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="valoracion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="calicicacion" type="xs:int" />
+      <xs:element minOccurs="0" name="comentario" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCalificacion" type="xs:string" />
+      <xs:element minOccurs="0" name="idValoracion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="sala">
     <xs:sequence>
       <xs:element minOccurs="0" name="idSala" type="xs:int" />
@@ -155,6 +147,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="valoracion_listarPorOdontologoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:valoracion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="valoracion_listarTodos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="valoracion_listarTodosResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:valoracion" />
     </xs:sequence>

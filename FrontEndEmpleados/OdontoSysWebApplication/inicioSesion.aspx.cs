@@ -49,7 +49,7 @@ namespace OdontoSysWebApplication
                     if (odontologo != null && odontologo.idOdontologo > 0)
                     {
                         Session["Usuario"] = odontologo;
-                        Response.Redirect("/FrontOdontologo/home.aspx");
+                        Response.Redirect("/FrontOdontologo/homeOdontologo.aspx");
                         return;
                     }
                 }
