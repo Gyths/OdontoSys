@@ -6,6 +6,7 @@ using System.Text;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using OdontoSysBusiness;
+using OdontoSysBusiness.CitaWS;
 
 namespace OdontoSysWebApplication
 {
@@ -159,6 +160,7 @@ namespace OdontoSysWebApplication
             foreach (var cita in citas)
             {
                 if (cita == null) continue;
+                if (cita.estado.ToString() == "CANCELADA") continue;
                 if (!DateTime.TryParse(cita.fecha, out var fechaCita)) continue;
                 if (!TimeSpan.TryParse(cita.horaInicio, out var horaCita)) continue;
 
