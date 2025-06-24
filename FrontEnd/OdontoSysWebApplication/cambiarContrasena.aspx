@@ -40,6 +40,21 @@
             btnCancelar.disabled = !habilitar;
         }
 
+        function togglePassword(controlId, button) {
+            const textbox = document.getElementById(controlId);
+            const icon = button.querySelector('i');
+
+            if (textbox.type === "password") {
+                textbox.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                textbox.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+
         document.addEventListener("DOMContentLoaded", function () {
             const campos = [
                 document.getElementById('<%= txtContrasenaActual.ClientID %>'),
@@ -75,22 +90,37 @@
       </div>
 
       <!-- Formulario -->
-      <div class="col-md-9">
-        <div class="form-box">
-          <h3 class="text-center mb-4"><i class="fas fa-key me-2"></i>Cambiar Contraseña</h3>
+        <div class="col-md-9">
+            <div class="form-box">
+                <h3 class="text-center mb-4"><i class="fas fa-key me-2"></i>Cambiar Contraseña</h3>
 
-          <div class="mb-3">
-              <label class="form-label">Contraseña Actual</label>
-              <asp:TextBox ID="txtContrasenaActual" runat="server" CssClass="form-control" TextMode="Password" MaxLength="50" />
-          </div>
-          <div class="mb-3">
-              <label class="form-label">Nueva Contraseña</label>
-              <asp:TextBox ID="txtNuevaContrasena" runat="server" CssClass="form-control" TextMode="Password" MaxLength="50" />
-          </div>
-          <div class="mb-3">
-              <label class="form-label">Confirmar Nueva Contraseña</label>
-              <asp:TextBox ID="txtConfirmarContrasena" runat="server" CssClass="form-control" TextMode="Password" MaxLength="50" />
-          </div>
+                <div class="mb-3">
+                    <label class="form-label">Contraseña Actual</label>
+                    <div class="input-group">
+                        <asp:TextBox ID="txtContrasenaActual" runat="server" CssClass="form-control" TextMode="Password" MaxLength="50" />
+                        <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('<%= txtContrasenaActual.ClientID %>', this)">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Nueva Contraseña</label>
+                    <div class="input-group">
+                        <asp:TextBox ID="txtNuevaContrasena" runat="server" CssClass="form-control" TextMode="Password" MaxLength="50" />
+                        <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('<%= txtNuevaContrasena.ClientID %>', this)">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Confirmar Nueva Contraseña</label>
+                    <div class="input-group">
+                        <asp:TextBox ID="txtConfirmarContrasena" runat="server" CssClass="form-control" TextMode="Password" MaxLength="50" />
+                        <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('<%= txtConfirmarContrasena.ClientID %>', this)">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
 
           <div class="d-flex gap-2 justify-content-end">
               <asp:Button ID="btnCambiarContrasena" runat="server" Text="Cambiar Contraseña" CssClass="btn btn-warning" OnClick="btnCambiarContrasena_Click" />
@@ -103,4 +133,3 @@
     </div>
   </div>
 </asp:Content>
-

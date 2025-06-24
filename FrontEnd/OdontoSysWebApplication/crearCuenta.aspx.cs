@@ -39,9 +39,9 @@ namespace OdontoSysWebApplication
             // Validar existencia de usuario y documento
             var bo = new PacienteWAClient();
             if (this.PacienteBO.paciente_verificarExistenciaNombreUsuario(usuario))
-                errores.AppendLine("<li>Ese nombre de usuario ya está en uso. Por favor elige otro.</li>");
+                errores.AppendLine("<li>El nombre de usuario ingresado ya está en uso. Por favor elige otro.</li>");
             if (this.PacienteBO.paciente_verificarExistenciaNumeroDocumento(numeroDocumento))
-                errores.AppendLine("<li>Ese número de documento ya está registrado en otra cuenta.</li>");
+                errores.AppendLine("<li>El número de documento ingresado ya está registrado en otra cuenta.</li>");
 
             if (errores.Length > 0)
             {
@@ -71,7 +71,7 @@ namespace OdontoSysWebApplication
 
                 int letras = usuario.Count(char.IsLetter);
                 if (letras < 3)
-                    errores.AppendLine("<li>El nombre de usuario debe tener al menos 3 letras</li>");
+                    errores.AppendLine("<li>El nombre de usuario debe tener al menos 3 letras.</li>");
 
                 if (usuario.Length > 30)
                     errores.AppendLine("<li>El nombre de usuario no debe tener más de 30 caracteres.</li>");
