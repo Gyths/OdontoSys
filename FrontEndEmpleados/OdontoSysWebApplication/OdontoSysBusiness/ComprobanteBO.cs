@@ -40,7 +40,7 @@ namespace OdontoSysWebAppliation.OdontoSysBusiness
         public BindingList<comprobante> comprobante_listarTodos()
         {
             comprobante[] lista = this.comprobanteWAClient.comprobante_listarTodos();
-            return new BindingList<comprobante>(lista);
+            return new BindingList<comprobante>(lista ?? Array.Empty<comprobante>());
         }
 
         public int comprobante_actualizarTotal(cita cita)

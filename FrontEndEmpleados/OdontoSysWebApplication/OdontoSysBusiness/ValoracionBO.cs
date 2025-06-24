@@ -39,19 +39,19 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
         public BindingList<valoracion> valoracion_listarTodos()
         {
             valoracion[] lista = this.valoracionWAClient.valoracion_listarTodos();
-            return new BindingList<valoracion>(lista);
+            return new BindingList<valoracion>(lista ?? Array.Empty<valoracion>());
         }
 
         public BindingList<valoracion> valoracion_listarPorOdontologo(odontologo odontologo)
         {
             valoracion[] lista = this.valoracionWAClient.valoracion_listarPorOdontologo(odontologo);
-            return new BindingList<valoracion>(lista);
+            return new BindingList<valoracion>(lista ?? Array.Empty<valoracion>());
         }
 
         public BindingList<valoracion> valoracion_listarPorPaciente(paciente paciente)
         {
             valoracion[] lista = this.valoracionWAClient.valoracion_listarPorPaciente(paciente);
-            return new BindingList<valoracion>(lista);
+            return new BindingList<valoracion>(lista ?? Array.Empty<valoracion>());
         }
     }
 }

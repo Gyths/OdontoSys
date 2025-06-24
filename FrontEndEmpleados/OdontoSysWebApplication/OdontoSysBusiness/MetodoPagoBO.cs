@@ -40,7 +40,7 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
         public BindingList<metodoPago> metodoPago_listarTodos()
         {
             metodoPago[] lista = this.metodosPagoWAClient.metodoPago_listarTodos();
-            return new BindingList<metodoPago>(lista);
+            return new BindingList<metodoPago>(lista ?? Array.Empty<metodoPago>());
         }
     }
 }

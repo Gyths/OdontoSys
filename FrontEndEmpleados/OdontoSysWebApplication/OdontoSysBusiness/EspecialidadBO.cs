@@ -40,7 +40,7 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
         public BindingList<especialidad> especialidad_listarTodos()
         {
             especialidad[] lista = this.especialidadWAClient.especialidad_listarTodos();
-            return new BindingList<especialidad>(lista);
+            return new BindingList<especialidad>(lista ?? Array.Empty<especialidad>());
         }
     }
 }

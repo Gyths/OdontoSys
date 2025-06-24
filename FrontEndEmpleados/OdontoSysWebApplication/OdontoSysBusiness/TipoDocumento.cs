@@ -39,7 +39,7 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
         public BindingList<tipoDocumento> tipoDocumento_listarTodos()
         {
             tipoDocumento[] lista = this.tipoDocumentoWAClient.tipoDocumento_listarTodos();
-            return new BindingList<tipoDocumento>(lista);
+            return new BindingList<tipoDocumento>(lista ?? Array.Empty<tipoDocumento>());
         }
 
     }

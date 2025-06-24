@@ -40,13 +40,13 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
         public BindingList<detalleTratamiento> detalleTratamiento_listarTodos()
         {
             detalleTratamiento[] lista = this.detalleTratamientoWAClient.detalleTratamiento_listarTodos();
-            return new BindingList<detalleTratamiento>(lista);
+            return new BindingList<detalleTratamiento>(lista ?? Array.Empty<detalleTratamiento>());
         }
 
         public BindingList<detalleTratamiento> detalleTratamiento_listarPorCita(cita cita)
         {
             detalleTratamiento[] lista = this.detalleTratamientoWAClient.detalleTratamiento_listarPorCita(cita);
-            return new BindingList<detalleTratamiento>(lista);
+            return new BindingList<detalleTratamiento>(lista ?? Array.Empty<detalleTratamiento>());
         }
     }
 }

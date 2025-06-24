@@ -35,7 +35,7 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
         public BindingList<turnoXOdontologo> turnoXOdontologo_listarTodos()
         {
             turnoXOdontologo[] lista = this.turnoXOdontologoWAClient.turnoXOdontologo_listarTodos();
-            return new BindingList<turnoXOdontologo>(lista);
+            return new BindingList<turnoXOdontologo>(lista ?? Array.Empty<turnoXOdontologo>());
         }
 
     }
