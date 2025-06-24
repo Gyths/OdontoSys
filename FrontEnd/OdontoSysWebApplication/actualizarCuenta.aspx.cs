@@ -9,7 +9,9 @@ namespace OdontoSysWebApplication
 {
     public partial class actualizarCuenta : System.Web.UI.Page
     {
-        private PacienteWAClient bo = new PacienteWAClient();
+
+
+        private PacienteBO pacienteBO = new PacienteBO();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -102,7 +104,7 @@ namespace OdontoSysWebApplication
 
             if (usuario != paciente.nombreUsuario)
             {
-                bool existe = bo.paciente_verificarExistenciaNombreUsuario(usuario);
+                bool existe = pacienteBO.paciente_verificarExistenciaNombreUsuario(usuario);
                 if (existe)
                 {
                     ltMensajes.Text = "<div class='alert alert-danger'>El nombre de usuario ya está en uso.</div>";
@@ -117,7 +119,7 @@ namespace OdontoSysWebApplication
 
             try
             {
-                bo.paciente_modificar(paciente);
+                pacienteBO.paciente_modificar(paciente);
                 Session["Paciente"] = paciente;
                 ltMensajes.Text = "<div class='alert alert-success'>Datos actualizados correctamente.</div>";
             }

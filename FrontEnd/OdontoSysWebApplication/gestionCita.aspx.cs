@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using OdontoSysBusiness;
 using OdontoSysBusiness.CitaWS;
 using OdontoSysBusiness.EspecialidadWS;
 using OdontoSysBusiness.OdontologoWS;
@@ -14,14 +15,18 @@ namespace OdontoSysWebApplication
 {
     public partial class gestionCita : System.Web.UI.Page
     {
+        private OdontologoBO odontologoBO = new OdontologoBO();
+        private EspecialidadBO especialidadBO = new EspecialidadBO();
+        private CitaBO citaBO = new CitaBO();
+        private SalaBO salaBO = new SalaBO();
+        private ValoracionBO valoracionBO = new ValoracionBO(); 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 if (Request.QueryString["id"] != null && int.TryParse(Request.QueryString["id"], out int idCita))
                 {
-                    var clienteCita = new CitaWAClient();
-                    var cita = clienteCita.cita_obtenerPorId(idCita);
+                    var cita = citaBO.cita_obtenerPorId(idCita);
                     if (cita != null)
                     {
                         Session["CitaSeleccionada"] = cita;
@@ -37,11 +42,11 @@ namespace OdontoSysWebApplication
             lblFecha.Text = cita.fecha;
             lblHora.Text = cita.horaInicio;
 
-            var clienteOdontologo = new OdontologoWAClient();
-            var odontologo = clienteOdontologo.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
+
+            var odontologo = odontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
             lblOdontologo.Text = $"{odontologo.nombre} {odontologo.apellidos}";
-            var clienteEspecialidad = new EspecialidadWAClient();
-            var especialidad = clienteEspecialidad.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
+
+            var especialidad = especialidadBO.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
             lblEspecialidad.Text = especialidad.nombre;
 
             // Badge por estado
@@ -58,9 +63,8 @@ namespace OdontoSysWebApplication
             estadoCita.InnerText = textoEstado;
             estadoCita.Attributes["class"] = $"badge {claseEstado}";
 
-            // Obtener sala
-            var clienteSala = new SalaWAClient();
-            var sala = clienteSala.sala_obtenerPorId(odontologo.consultorio.idSala);
+
+            var sala = salaBO.sala_obtenerPorId(odontologo.consultorio.idSala);
             lblHabitacion.Text = sala.numero;
             lblPiso.Text = sala.piso.ToString();
 
@@ -72,8 +76,7 @@ namespace OdontoSysWebApplication
 
                 if (cita.valoracion.idValoracion > 0)
                 {
-                    var clienteValoracion = new ValoracionWAClient();
-                    var valoracion = clienteValoracion.valoracion_obtenerPorId(cita.valoracion.idValoracion);
+                    var valoracion = valoracionBO.valoracion_obtenerPorId(cita.valoracion.idValoracion);
                     panelResumenValoracion.Visible = true;
                     lblComentario.Text = valoracion.comentario;
                     lblCalificacion.Text = valoracion.calicicacion.ToString();
@@ -96,9 +99,7 @@ namespace OdontoSysWebApplication
             {
                 var cita = Session["CitaSeleccionada"] as OdontoSysBusiness.CitaWS.cita;
                 cita.estado = OdontoSysBusiness.CitaWS.estadoCita.CANCELADA;
-
-                var clienteCita = new CitaWAClient();
-                clienteCita.cita_modificar(cita);
+                citaBO.cita_actualizarEstado(cita);
 
                 // Actualizamos sesión y recargamos
                 Session["CitaSeleccionada"] = cita;
@@ -145,8 +146,8 @@ namespace OdontoSysWebApplication
                     fechaCalificacion = DateTime.Now.ToString("yyyy-MM-dd")
                 };
 
-                var clienteValoracion = new ValoracionWAClient();
-                int idGenerado = clienteValoracion.valoracion_insertar(nuevaValoracion);
+
+                int idGenerado = valoracionBO.valoracion_insertar(nuevaValoracion);
 
                 var valoracionInsertada = new OdontoSysBusiness.CitaWS.valoracion
                 {
@@ -154,8 +155,8 @@ namespace OdontoSysWebApplication
                     idValoracionSpecified = true
                 };
 
-                var clienteCita = new CitaWAClient();
-                clienteCita.cita_actualizarFkValoracion(cita, valoracionInsertada);
+
+                citaBO.cita_actualizarFkValoracion(cita, valoracionInsertada);
 
                 Session["CitaSeleccionada"] = cita;
                 Response.Redirect("gestionCita.aspx?id=" + cita.idCita);

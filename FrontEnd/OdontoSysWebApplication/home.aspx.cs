@@ -8,7 +8,7 @@ namespace OdontoSysWebApplication
         protected string NombrePaciente = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-            var paciente = Session["Paciente"] as OdontoSysBusiness.PacienteWS.paciente;
+            var paciente = Session["Paciente"] as paciente;
             if (paciente != null) 
             {
                 this.NombrePaciente = paciente.nombre;

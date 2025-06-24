@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Net.Mail;
 using System.Text;
 using System.Web.UI;
@@ -10,6 +11,11 @@ namespace OdontoSysWebApplication
 {
     public partial class reservaCita : System.Web.UI.Page
     {
+        private OdontologoBO odontologoBO = new OdontologoBO();
+        private EspecialidadBO especialidadBO = new EspecialidadBO();
+        private SalaBO salaBO = new SalaBO();   
+        private TurnoBO turnoBO = new TurnoBO();    
+        private CitaBO citaBO = new CitaBO();   
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -31,8 +37,7 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                var clienteEspecialidad = new OdontoSysBusiness.EspecialidadWS.EspecialidadWAClient();
-                var especialidades = clienteEspecialidad.especialidad_listarTodos();
+                var especialidades = especialidadBO.especialidad_listarTodos();
 
                 ddlEspecialidades.DataSource = especialidades;
                 ddlEspecialidades.DataValueField = "idEspecialidad";
@@ -65,8 +70,8 @@ namespace OdontoSysWebApplication
                 idEspecialidadSpecified = true
             };
 
-            var clienteOdontologo = new OdontoSysBusiness.OdontologoWS.OdontologoWAClient();
-            var odontologos = clienteOdontologo.odontologo_listarPorEspecialidad(especialidad);
+
+            var odontologos = odontologoBO.odontologo_listarPorEspecialidad(especialidad);
 
             ddlOdontologos.Items.Add(new ListItem("-- Seleccione un odontólogo --", ""));
             foreach (var o in odontologos)
@@ -107,8 +112,7 @@ namespace OdontoSysWebApplication
                 idOdontologoSpecified = true
             };
 
-            var clienteTurno = new OdontoSysBusiness.TurnoWS.TurnoWAClient();
-            var turnos = clienteTurno.turno_listarPorOdontologo(odontologoTurno);
+            var turnos = turnoBO.turno_listarPorOdontologo(odontologoTurno);
 
             var odontologoCita = new OdontoSysBusiness.CitaWS.odontologo
             {
@@ -116,8 +120,7 @@ namespace OdontoSysWebApplication
                 idOdontologoSpecified = true
             };
 
-            var clienteCita = new OdontoSysBusiness.CitaWS.CitaWAClient();
-            var citas = clienteCita.cita_listarPorOdontologoFechas(odontologoCita, fechaInicioStr, fechaFinStr);
+            var citas = citaBO.cita_listarPorOdontologoFechas(odontologoCita, fechaInicioStr, fechaFinStr);
 
             var disponibilidad = CalcularHorasDisponibles(turnos, citas, fechaInicio);
 
@@ -126,14 +129,11 @@ namespace OdontoSysWebApplication
         }
 
         private Dictionary<DateTime, List<TimeSpan>> CalcularHorasDisponibles(
-            OdontoSysBusiness.TurnoWS.turno[] turnos,
-            OdontoSysBusiness.CitaWS.cita[] citas,
+            BindingList<OdontoSysBusiness.TurnoWS.turno> turnos,
+            BindingList<OdontoSysBusiness.CitaWS.cita> citas,
             DateTime fechaInicio)
         {
-            if (turnos == null)
-                turnos = new OdontoSysBusiness.TurnoWS.turno[0];
-            if (citas == null)
-                citas = new OdontoSysBusiness.CitaWS.cita[0];
+
 
             bool[,] disponibilidad = new bool[7, 48];
 
@@ -216,7 +216,7 @@ namespace OdontoSysWebApplication
 
         protected void btnConfirmarCita_Click(object sender, EventArgs e)
         {
-            var paciente = (OdontoSysBusiness.PacienteWS.paciente)Session["Paciente"];
+            var paciente = Session["Paciente"] as OdontoSysBusiness.PacienteWS.paciente;
 
             if (string.IsNullOrEmpty(ddlOdontologos.SelectedValue) ||
                 string.IsNullOrEmpty(hfFechaSeleccionada.Value) ||
@@ -246,9 +246,7 @@ namespace OdontoSysWebApplication
 
             try
             {
-                var clienteCita = new OdontoSysBusiness.CitaWS.CitaWAClient();
-                clienteCita.cita_insertar(cita);
-                //EnviarCorreoConfirmacion(cita, paciente);
+                citaBO.cita_insertar(cita);
                 Response.AddHeader("Refresh", "1;URL=home.aspx");
                 ltDisponibilidad.Text = "<div class='alert alert-success'>¡Cita registrada correctamente!</div>";
 
@@ -261,47 +259,6 @@ namespace OdontoSysWebApplication
                 ltDisponibilidad.Text = "<div class='alert alert-danger'>Ocurrió un error al registrar la cita. Intenta nuevamente.</div>";
             }
         }
-
-        private void EnviarCorreoConfirmacion(OdontoSysBusiness.CitaWS.cita cita, OdontoSysBusiness.PacienteWS.paciente paciente)
-        {
-            // Obtener odontólogo y especialidad
-            var clienteOdontologo = new OdontoSysBusiness.OdontologoWS.OdontologoWAClient();
-            var odontologo = clienteOdontologo.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
-
-            var clienteEspecialidad = new OdontoSysBusiness.EspecialidadWS.EspecialidadWAClient();
-            var especialidad = clienteEspecialidad.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
-
-            // Obtener sala
-            var clienteSala = new OdontoSysBusiness.SalaWS.SalaWAClient();
-            var sala = clienteSala.sala_obtenerPorId(odontologo.consultorio.idSala);
-
-            // Composición del cuerpo del mensaje
-            var sb = new StringBuilder();
-            sb.AppendLine($"Estimado(a) {paciente.nombre},");
-            sb.AppendLine();
-            sb.AppendLine("Su cita ha sido registrada correctamente con los siguientes detalles:");
-            sb.AppendLine();
-            sb.AppendLine($"📅 Fecha: {cita.fecha}");
-            sb.AppendLine($"⏰ Hora: {cita.horaInicio}");
-            sb.AppendLine($"🦷 Odontólogo: {odontologo.nombre} {odontologo.apellidos}");
-            sb.AppendLine($"📚 Especialidad: {System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(especialidad.nombre.Replace('_', ' ').ToLower())}");
-            sb.AppendLine($"🏥 Sala: {sala.numero} - Piso {sala.piso}");
-            sb.AppendLine();
-            sb.AppendLine("Gracias por confiar en Sonrisa Vital.");
-
-            var mensaje = new MailMessage();
-            mensaje.From = new MailAddress("odontosys123@gmail.com", "OdontoSys");
-            mensaje.To.Add(paciente.correo);
-            mensaje.Subject = "Confirmación de Cita - Sonrisa Vital";
-            mensaje.Body = sb.ToString();
-
-            var smtp = new SmtpClient("smtp.gmail.com", 587); // Cambia host y puerto
-            smtp.Credentials = new System.Net.NetworkCredential("odontosys123@gmail.com", "mhgu bbyi inqf hzwl");
-            smtp.EnableSsl = true;
-            smtp.UseDefaultCredentials = false;
-            smtp.Send(mensaje);
-        }
-
 
         protected void lnkCerrarSesion_Click(object sender, EventArgs e)
         {
