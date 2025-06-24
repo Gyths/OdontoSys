@@ -35,6 +35,7 @@ namespace OdontoSysWebApplication
             }
             DateTime fechaBase = calFiltro.SelectedDate == DateTime.MinValue ? DateTime.Today : calFiltro.SelectedDate;
             CargarCitasOdontologo(idOdo, fechaBase);
+            CargarTurnos(idOdo);
         }
 
         private void CancelarCita(int idCita, int idOdo)
@@ -56,6 +57,7 @@ namespace OdontoSysWebApplication
             }
             DateTime fechaBase = calFiltro.SelectedDate == DateTime.MinValue ? DateTime.Today : calFiltro.SelectedDate;
             CargarCitasOdontologo(idOdo, fechaBase);
+            
         }
 
         private void CargarOdontologo(int id)
@@ -76,6 +78,10 @@ namespace OdontoSysWebApplication
             txtUsuario.Text = odontologo.nombreUsuario;
         }
 
+        protected void btnEliminarTurnoSelec_Click(object sender, EventArgs e) 
+        {
+        
+        }
         protected void btnEditar_Click(object sender, EventArgs e)
         {
             txtCorreo.ReadOnly = false;
@@ -135,38 +141,47 @@ namespace OdontoSysWebApplication
             };
 
             var boCitas = new CitaBO();
-            var listaCitas = boCitas.cita_listarPorOdontologoFechas(odontologo, desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"));
-            foreach (var cita in listaCitas)
-            {
-                var boPaciente = new PacienteBO();
-                var paciente = boPaciente.paciente_obtenerPorId(cita.paciente.idPaciente);
+            try { 
+                var listaCitas = boCitas.cita_listarPorOdontologoFechas(odontologo, desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"));
                 
-                var pac = new CitaWS.paciente
+                foreach (var cita in listaCitas)
                 {
-                    idPaciente = paciente.idPaciente,
-                    idPacienteSpecified = true,
-                    nombre = paciente.nombre,
-                    apellidos = paciente.apellidos,
-                };
-                cita.paciente = pac;
-                cita.paciente.nombre += (" " + cita.paciente.apellidos);
+                    var boPaciente = new PacienteBO();
+                    var paciente = boPaciente.paciente_obtenerPorId(cita.paciente.idPaciente);
+                    var pac = new CitaWS.paciente
+                    {
+                        idPaciente = paciente.idPaciente,
+                        idPacienteSpecified = true,
+                        nombre = paciente.nombre,
+                        apellidos = paciente.apellidos,
+                    };
+                    cita.paciente = pac;
+                    cita.paciente.nombre += (" " + cita.paciente.apellidos);
+                }
+                gvCitas.DataSource = listaCitas;
+                gvCitas.DataBind();
+            }catch (Exception e)
+            {
+                gvCitas.DataSource = null;
+                gvCitas.DataBind();
             }
-            gvCitas.DataSource = listaCitas;
-            gvCitas.DataBind();
 
         }
         private void CargarTurnos(int idOdo)
         {
-            var boTurnoOdontologo = new TurnoXOdontologoBO();
-            var listaTurnos = boTurnoOdontologo.turnoXOdontologo_listarTodos();
-            foreach (var turno in listaTurnos)
+            var boTurno = new TurnoBO();
+            var odontologo = new TurnoWS.odontologo
             {
-                if (turno.idOdontologo == idOdo) 
-                {
-                    var boTurno = new TurnoBO();
-                    var turnoActual = boTurno.turno_obtenerPorId(turno.idTurno);
-                    //Agregar el turno al grid 
-                }
+                idOdontologo = idOdo,
+                idOdontologoSpecified = true
+            };
+            try { 
+                var listaTurnos = boTurno.turno_listarPorOdontologo(odontologo);
+                gvTurnos.DataSource = listaTurnos;
+                gvTurnos.DataBind();
+            }catch (Exception e) {
+                gvTurnos.DataSource=null;
+                gvTurnos.DataBind();
             }
         }
         protected void btnVolver_Click(object sender, EventArgs e)
@@ -180,6 +195,11 @@ namespace OdontoSysWebApplication
         protected void gvCitas_RowCommand(object sender, GridViewCommandEventArgs e) 
         {
         
+        }
+
+        protected void gvTurnos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
         }
     }
 }

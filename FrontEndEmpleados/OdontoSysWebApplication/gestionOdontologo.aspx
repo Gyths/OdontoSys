@@ -243,6 +243,39 @@
                     CssClass="btn btn-outline-danger"
                     OnClick="btnEliminarSeleccion_Click" />
             </asp:Panel>
+
+            <div class="mt-5">
+                <h4 class="mb-3"><i class="fas fa-calendar-alt me-2 text-primary"></i>Turnos del Odontólogo</h4>
+            </div>
+
+            <asp:Panel CssClass="mt-3" runat="server">
+                <asp:GridView ID="gvTurnos" runat="server" AutoGenerateColumns="False"
+                    CssClass="table table-hover table-striped treatment-grid"
+                    DataKeyNames="idTurno"
+                    OnRowCommand="gvTurnos_RowCommand">
+                    <Columns>
+                        <asp:BoundField DataField="diaSemana" HeaderText="Dia" />
+                        <asp:BoundField DataField="horaInicio" HeaderText="Hora Inicio" />
+                        <asp:BoundField DataField="horaFin" HeaderText="Hora Fin" />
+
+                        <asp:TemplateField HeaderText="Cancelar Turnos">
+                            <ItemTemplate>
+                                <div class="text-center">
+                                    <asp:CheckBox ID="chkSeleccionar1" runat="server" />
+                                </div>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                    </Columns>
+                    <HeaderStyle CssClass="bg-primary text-white" />
+                </asp:GridView>
+            </asp:Panel>
+
+            <asp:Panel CssClass="mt-3 text-end" runat="server">
+                <asp:Button ID="Button1" runat="server" Text="Cancelar Turnos Seleccionados"
+                    CssClass="btn btn-outline-danger"
+                    OnClick="btnEliminarTurnoSelec_Click" />
+            </asp:Panel>
            
         </div>
     </div>
