@@ -1,0 +1,12 @@
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.dll.config
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.dll
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.pdb
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\BouncyCastle.Cryptography.dll
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\itextsharp.dll
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\BouncyCastle.Cryptography.xml
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\itextsharp.xml
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.AssemblyReference.cache
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.CoreCompileInputs.cache
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSy.7DA6DC66.Up2Date
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.dll
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.pdb

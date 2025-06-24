@@ -50,7 +50,7 @@
                 <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
                 <asp:BoundField DataField="tratamiento.costo" HeaderText="Costo Unitario" />
 
-                <%-- <asp:TemplateField HeaderText="Acciones">
+                <asp:TemplateField HeaderText="Acciones">
                     <ItemTemplate>
                         <asp:Panel CssClass="grid-buttons" runat="server">
                             <asp:Button ID="btnEditar" runat="server" Text="Editar"
@@ -59,7 +59,7 @@
                                 CssClass="btn btn-primary btn-sm" />
                         </asp:Panel>
                     </ItemTemplate>
-                </asp:TemplateField> --%>
+                </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="Seleccionar">
                     <ItemTemplate>
