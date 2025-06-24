@@ -11,7 +11,7 @@ namespace OdontoSysWebApplication
 
         public PacienteBO PacienteBO { get => pacienteBO; set => pacienteBO = value; }
 
-        public inicioSesion(PacienteBO pacienteBO)
+        public inicioSesion()
         {
             this.PacienteBO = new PacienteBO();
         }
