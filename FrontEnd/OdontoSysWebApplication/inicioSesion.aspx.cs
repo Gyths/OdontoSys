@@ -7,7 +7,15 @@ namespace OdontoSysWebApplication
 {
     public partial class inicioSesion : System.Web.UI.Page
     {
-        private PacienteBO pacienteBO = new PacienteBO();
+        private PacienteBO pacienteBO;
+
+        public PacienteBO PacienteBO { get => pacienteBO; set => pacienteBO = value; }
+
+        public inicioSesion(PacienteBO pacienteBO)
+        {
+            this.PacienteBO = new PacienteBO();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -47,7 +55,7 @@ namespace OdontoSysWebApplication
             try
             {
                 string contrasenaHasheada = PasswordHelper.HashPassword(contrasena);
-                var paciente = pacienteBO.paciente_obtenerPorUsuarioContrasenha(usuario, contrasenaHasheada);
+                var paciente = this.PacienteBO.paciente_obtenerPorUsuarioContrasenha(usuario, contrasenaHasheada);
 
                 if (paciente != null && paciente.idPaciente > 0)
                 {

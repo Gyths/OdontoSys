@@ -17,11 +17,26 @@ namespace OdontoSysWebApplication
     public partial class gestionCita : System.Web.UI.Page
     {
 
-        private OdontologoBO odontologoBO = new OdontologoBO();
-        private EspecialidadBO especialidadBO = new EspecialidadBO();
-        private CitaBO citaBO = new CitaBO();
-        private SalaBO salaBO = new SalaBO();
-        private ValoracionBO valoracionBO = new ValoracionBO();
+        private OdontologoBO odontologoBO;
+        private EspecialidadBO especialidadBO;
+        private CitaBO citaBO;
+        private SalaBO salaBO;
+        private ValoracionBO valoracionBO;
+
+        public OdontologoBO OdontologoBO { get => odontologoBO; set => odontologoBO = value; }
+        public EspecialidadBO EspecialidadBO { get => especialidadBO; set => especialidadBO = value; }
+        public CitaBO CitaBO { get => citaBO; set => citaBO = value; }
+        public SalaBO SalaBO { get => salaBO; set => salaBO = value; }
+        public ValoracionBO ValoracionBO { get => valoracionBO; set => valoracionBO = value; }
+
+        public gestionCita(OdontologoBO odontologoBO, EspecialidadBO especialidadBO, CitaBO citaBO, SalaBO salaBO, ValoracionBO valoracionBO)
+        {
+            this.OdontologoBO = new OdontologoBO();
+            this.EspecialidadBO = new EspecialidadBO();
+            this.CitaBO = new CitaBO();
+            this.SalaBO = new SalaBO();
+            this.ValoracionBO = new ValoracionBO();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,7 +45,7 @@ namespace OdontoSysWebApplication
                 if (Request.QueryString["id"] != null && int.TryParse(Request.QueryString["id"], out int idCita))
                 {
 
-                    OdontoSysBusiness.CitaWS.cita citaVariable = this.citaBO.cita_obtenerPorId(idCita);
+                    OdontoSysBusiness.CitaWS.cita citaVariable = this.CitaBO.cita_obtenerPorId(idCita);
                     if (citaVariable != null)
 
                     {
@@ -46,10 +61,10 @@ namespace OdontoSysWebApplication
             var cita = Session["CitaSeleccionada"] as OdontoSysBusiness.CitaWS.cita;
             lblFecha.Text = cita.fecha;
             lblHora.Text = cita.horaInicio;
-            var odontologo = odontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
+            var odontologo = this.OdontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
             lblOdontologo.Text = $"{odontologo.nombre} {odontologo.apellidos}";
 
-            var especialidad = especialidadBO.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
+            var especialidad = this.EspecialidadBO.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
             lblEspecialidad.Text = especialidad.nombre;
 
             // Badge por estado
@@ -67,7 +82,7 @@ namespace OdontoSysWebApplication
             estadoCita.Attributes["class"] = $"badge {claseEstado}";
 
 
-            var sala = salaBO.sala_obtenerPorId(odontologo.consultorio.idSala);
+            var sala = this.SalaBO.sala_obtenerPorId(odontologo.consultorio.idSala);
             lblHabitacion.Text = sala.numero;
             lblPiso.Text = sala.piso.ToString();
 
@@ -79,7 +94,7 @@ namespace OdontoSysWebApplication
 
                 if (cita.valoracion.idValoracion > 0)
                 {
-                    var valoracion = valoracionBO.valoracion_obtenerPorId(cita.valoracion.idValoracion);
+                    var valoracion = this.ValoracionBO.valoracion_obtenerPorId(cita.valoracion.idValoracion);
                     panelResumenValoracion.Visible = true;
                     lblComentario.Text = valoracion.comentario;
                     lblCalificacion.Text = valoracion.calicicacion.ToString();
@@ -102,7 +117,7 @@ namespace OdontoSysWebApplication
             {
                 var cita = Session["CitaSeleccionada"] as OdontoSysBusiness.CitaWS.cita;
                 cita.estado = OdontoSysBusiness.CitaWS.estadoCita.CANCELADA;
-                citaBO.cita_actualizarEstado(cita);
+                this.CitaBO.cita_actualizarEstado(cita);
 
                 // Actualizamos sesión y recargamos
                 Session["CitaSeleccionada"] = cita;
@@ -150,7 +165,7 @@ namespace OdontoSysWebApplication
                 };
 
 
-                int idGenerado = valoracionBO.valoracion_insertar(nuevaValoracion);
+                int idGenerado = this.ValoracionBO.valoracion_insertar(nuevaValoracion);
 
                 var valoracionInsertada = new OdontoSysBusiness.CitaWS.valoracion
                 {
@@ -159,7 +174,7 @@ namespace OdontoSysWebApplication
                 };
 
 
-                citaBO.cita_actualizarFkValoracion(cita, valoracionInsertada);
+                this.CitaBO.cita_actualizarFkValoracion(cita, valoracionInsertada);
 
                 Session["CitaSeleccionada"] = cita;
                 Response.Redirect("gestionCita.aspx?id=" + cita.idCita);

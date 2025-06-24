@@ -9,7 +9,13 @@ namespace OdontoSysWebApplication
 {
     public partial class crearCuenta : System.Web.UI.Page
     {
-        private PacienteBO pacienteBO = new PacienteBO();
+        private PacienteBO pacienteBO;
+        public PacienteBO PacienteBO { get => pacienteBO; set => pacienteBO = value; }
+
+        public crearCuenta()
+        {
+            this.PacienteBO = new PacienteBO();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -140,7 +146,7 @@ namespace OdontoSysWebApplication
             };
             try
             {
-                pacienteBO.paciente_insertar(nuevoPaciente);
+                this.PacienteBO.paciente_insertar(nuevoPaciente);
 
                 ltMensajes.Text = "<div class='alert alert-success'>Cuenta creada correctamente. " +
                                   "Puedes <a href='inicioSesion.aspx'>iniciar sesión</a> ahora.</div>";

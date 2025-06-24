@@ -13,9 +13,21 @@ namespace OdontoSysWebApplication
 {
     public partial class misCitas : System.Web.UI.Page
     {
-        private CitaBO citaBO = new CitaBO();
-        private OdontologoBO odontologoBO = new OdontologoBO();
-        private EspecialidadBO especialidadBO = new EspecialidadBO();
+        private CitaBO citaBO;
+        private OdontologoBO odontologoBO;
+        private EspecialidadBO especialidadBO;
+
+        public CitaBO CitaBO { get => citaBO; set => citaBO = value; }
+        public OdontologoBO OdontologoBO { get => odontologoBO; set => odontologoBO = value; }
+        public EspecialidadBO EspecialidadBO { get => especialidadBO; set => especialidadBO = value; }
+
+        public misCitas(CitaBO citaBO, OdontologoBO odontologoBO, EspecialidadBO especialidadBO)
+        {
+            this.CitaBO = new CitaBO();
+            this.OdontologoBO = new OdontologoBO();
+            this.EspecialidadBO = new EspecialidadBO();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -37,7 +49,7 @@ namespace OdontoSysWebApplication
                 idPacienteSpecified = true
             };
 
-            var citas = citaBO.cita_listarPorPaciente(pacienteCita);
+            var citas = this.CitaBO.cita_listarPorPaciente(pacienteCita);
 
             if (citas == null)
             {
@@ -51,8 +63,8 @@ namespace OdontoSysWebApplication
                 if (cita.estado.ToString() != estadoSeleccionado)
                     continue;
 
-                var odontologo = odontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
-                var especialidad = especialidadBO.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
+                var odontologo = this.OdontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
+                var especialidad = this.EspecialidadBO.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
 
                 string badgeColor = GetBadgeColor(cita.estado.ToString());
 
@@ -98,7 +110,7 @@ namespace OdontoSysWebApplication
         {
             if (int.TryParse(e.CommandArgument.ToString(), out int idCita))
             {
-                var cita = citaBO.cita_obtenerPorId(idCita);
+                var cita = this.CitaBO.cita_obtenerPorId(idCita);
 
                 if (cita != null)
                 {
