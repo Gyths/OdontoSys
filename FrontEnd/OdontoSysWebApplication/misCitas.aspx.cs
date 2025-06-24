@@ -21,7 +21,7 @@ namespace OdontoSysWebApplication
         public OdontologoBO OdontologoBO { get => odontologoBO; set => odontologoBO = value; }
         public EspecialidadBO EspecialidadBO { get => especialidadBO; set => especialidadBO = value; }
 
-        public misCitas(CitaBO citaBO, OdontologoBO odontologoBO, EspecialidadBO especialidadBO)
+        public misCitas()
         {
             this.CitaBO = new CitaBO();
             this.OdontologoBO = new OdontologoBO();

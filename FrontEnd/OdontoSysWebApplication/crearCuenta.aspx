@@ -70,8 +70,7 @@
                     AlternateText="Logo" CssClass="register-logo" />
 
                 <h3 class="text-center mb-4"><i class="fas fa-user-plus me-2"></i>Crear Cuenta</h3>
-                <asp:Literal ID="ltMensajes" runat="server" EnableViewState="false" />
-
+                
                 <div class="row g-3">
                     <!-- Usuario y Teléfono -->
                     <div class="col-md-6">
@@ -144,6 +143,7 @@
                                 OnClick="btnRegistrar_Click"
                                 Enabled="true" />
 
+                    <asp:Literal ID="ltMensajes" runat="server" EnableViewState="false" />
 		   <!-- Botón Volver -->
                    <div class="col-12 text-center mt-2">
                         <a href="inicioSesion.aspx" class="btn btn-outline-secondary">Volver</a>
