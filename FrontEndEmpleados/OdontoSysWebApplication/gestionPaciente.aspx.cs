@@ -13,6 +13,7 @@ using System.Linq;
 using System.Globalization;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace OdontoSysWebApplication
 {
@@ -23,7 +24,7 @@ namespace OdontoSysWebApplication
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["idPacienteSeleccionado"] == null ||
-                !int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPaciente))
+        !       int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPaciente))
             {
                 Response.Redirect("buscarPaciente.aspx");
                 return;
@@ -34,15 +35,6 @@ namespace OdontoSysWebApplication
                 CargarPaciente(idPaciente);
                 calFiltro.SelectedDate = DateTime.Today;
                 CargarCitas(idPaciente, DateTime.Today);
-            }
-            else if (Request.Form["__EVENTTARGET"] == "CancelCita" &&
-                     !string.IsNullOrEmpty(Request.Form["__EVENTARGUMENT"]))
-            {
-                // Handle cancellation postback
-                if (int.TryParse(Request.Form["__EVENTARGUMENT"], out int idCita))
-                {
-                    CancelarCita(idCita, idPaciente);
-                }
             }
         }
 
@@ -219,37 +211,50 @@ namespace OdontoSysWebApplication
 
         protected void btnEliminarSeleccion_Click(object sender, EventArgs e)
         {
-        
-        }
-        private void CancelarCita(int idCita, int idPaciente)
-        {
-            try
+            List<int> idsCitasCancelar = new List<int>();
+            foreach (GridViewRow fila in gvCitas.Rows)
             {
-                var clienteCita = new CitaBO();
-                var cita = clienteCita.cita_obtenerPorId(idCita);
-                if (cita != null && cita.estado == CitaWS.estadoCita.RESERVADA)
+                if (fila.RowType != DataControlRowType.DataRow) continue;
+                var chk = (CheckBox)fila.FindControl("chkSeleccionar");
+                if (chk != null && chk.Checked)
                 {
-                    cita.estado = CitaWS.estadoCita.CANCELADA;
-                    clienteCita.cita_actualizarEstado(cita);
-                    lblMensaje.Text = "La cita fue cancelada correctamente.";
-                    lblMensaje.CssClass = "text-success";
-                }
-                else
-                {
-                    lblMensaje.Text = "No se pudo cancelar la cita.";
-                    lblMensaje.CssClass = "text-danger";
+                    int idCita = (int)gvCitas.DataKeys[fila.RowIndex].Value;
+                    idsCitasCancelar.Add(idCita);
                 }
             }
-            catch (Exception ex)
+            if (idsCitasCancelar.Count == 0)
             {
-                System.Diagnostics.Debug.WriteLine("Error al cancelar cita: " + ex.Message);
-                lblMensaje.Text = "Error al cancelar la cita.";
-                lblMensaje.CssClass = "text-danger";
+                pnlError.Controls.Clear();
+                pnlError.Controls.Add(new Literal
+                {
+                    Text = "Seleccione al menos una cita en estado <strong>Reservada</strong>."
+                });
+                pnlError.Visible = true;
+                return;
             }
 
-            DateTime fechaBase = calFiltro.SelectedDate == DateTime.MinValue ? DateTime.Today : calFiltro.SelectedDate;
-            CargarCitas(idPaciente, fechaBase);
+            var clienteCita = new CitaBO();
+            foreach (int idCita in idsCitasCancelar)
+            {
+                var cita = new CitaWS.cita
+                {
+                    idCita = idCita,
+                    idCitaSpecified = true,
+                    estado = CitaWS.estadoCita.CANCELADA,
+                    estadoSpecified = true
+                };
+                clienteCita.cita_actualizarEstado(cita);
+            }
+            if (int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPa))
+            {
+                DateTime fechaBase = calFiltro.SelectedDate == DateTime.MinValue
+                                        ? DateTime.Today
+                                        : calFiltro.SelectedDate;
+
+                CargarCitas(idPa, fechaBase);
+            }
         }
+        
 
         protected void calFiltro_SelectionChanged(object sender, EventArgs e)
         {
