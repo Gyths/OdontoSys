@@ -1,35 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using OdontoSysBusiness;
+
+﻿using OdontoSysBusiness;
 using OdontoSysBusiness.CitaWS;
 using OdontoSysBusiness.EspecialidadWS;
 using OdontoSysBusiness.OdontologoWS;
 using OdontoSysBusiness.SalaWS;
 using OdontoSysBusiness.ValoracionWS;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace OdontoSysWebApplication
 {
     public partial class gestionCita : System.Web.UI.Page
     {
+
         private OdontologoBO odontologoBO = new OdontologoBO();
         private EspecialidadBO especialidadBO = new EspecialidadBO();
         private CitaBO citaBO = new CitaBO();
         private SalaBO salaBO = new SalaBO();
-        private ValoracionBO valoracionBO = new ValoracionBO(); 
+        private ValoracionBO valoracionBO = new ValoracionBO();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 if (Request.QueryString["id"] != null && int.TryParse(Request.QueryString["id"], out int idCita))
                 {
-                    var cita = citaBO.cita_obtenerPorId(idCita);
-                    if (cita != null)
+
+                    OdontoSysBusiness.CitaWS.cita citaVariable = this.citaBO.cita_obtenerPorId(idCita);
+                    if (citaVariable != null)
+
                     {
-                        Session["CitaSeleccionada"] = cita;
+                        Session["CitaSeleccionada"] = citaVariable;
                         cargarCita();
                     }
                 }
@@ -41,8 +46,6 @@ namespace OdontoSysWebApplication
             var cita = Session["CitaSeleccionada"] as OdontoSysBusiness.CitaWS.cita;
             lblFecha.Text = cita.fecha;
             lblHora.Text = cita.horaInicio;
-
-
             var odontologo = odontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
             lblOdontologo.Text = $"{odontologo.nombre} {odontologo.apellidos}";
 
