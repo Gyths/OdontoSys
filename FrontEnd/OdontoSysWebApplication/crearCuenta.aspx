@@ -41,6 +41,21 @@
             margin: 0 auto 1.5rem;
             max-width: 200px;
         }
+
+        .campo-invalido {
+            border: 1.8px solid red !important;
+            box-shadow: 0 0 4px rgba(255, 0, 0, 0.6);
+        }
+
+        .campo-valido {
+            border: 1.8px solid green !important;
+            box-shadow: 0 0 4px rgba(0, 128, 0, 0.6);
+        }
+
+        .mensaje-error {
+            color: red;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
     </style>
 </asp:Content>
 
