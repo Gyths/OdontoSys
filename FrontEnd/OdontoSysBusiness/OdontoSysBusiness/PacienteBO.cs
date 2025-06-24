@@ -40,12 +40,29 @@ namespace OdontoSysBusiness
         public BindingList<paciente> paciente_listarTodos()
         {
             paciente[] lista = this.pacienteWAClient.paciente_listarTodos();
-            return new BindingList<paciente>(lista);
+            return new BindingList<paciente>(lista ?? Array.Empty<paciente>());
         }
 
         public paciente paciente_obtenerPorUsuarioContrasenha(string nombreUsuario, string contrasenha)
         {
             return this.pacienteWAClient.paciente_obtenerPorUsuarioContrasenha(nombreUsuario, contrasenha);
+        }
+
+        public BindingList<paciente> paciente_buscarPorNombreApellido(string nombre, string apellido)
+        {
+            paciente[] lista = this.pacienteWAClient.paciente_buscarPorNombreApellido(nombre, apellido);
+            return new BindingList<paciente>(lista ?? Array.Empty<paciente>());
+        }
+
+        public BindingList<paciente> paciente_buscarPorNombreApellidoDocumento(string nombre, string apellido, string documento)
+        {
+            paciente[] lista = this.pacienteWAClient.paciente_buscarPorNombreApellidoDocumento(nombre, apellido, documento);
+            return new BindingList<paciente>(lista ?? Array.Empty<paciente>());
+        }
+        public BindingList<paciente> paciente_buscarPorNombreApellidoTelefono(string nombre, string apellido, string telefono)
+        {
+            paciente[] lista = this.pacienteWAClient.paciente_buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
+            return new BindingList<paciente>(lista ?? Array.Empty<paciente>());
         }
     }
 }

@@ -40,7 +40,7 @@ namespace OdontoSysBusiness
         public BindingList<recepcionista> recepcionista_listarTodos()
         {
             recepcionista[] lista = this.recepcionistaWAClient.recepcionista_listarTodos();
-            return new BindingList<recepcionista>(lista);
+            return new BindingList<recepcionista>(lista ?? Array.Empty<recepcionista>());
         }
 
         public recepcionista recepcionista_obtenerPorUsuarioContrasenha(string nombreUsuario, string contrasenha)

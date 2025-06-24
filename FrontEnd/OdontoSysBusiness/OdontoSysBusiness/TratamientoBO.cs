@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using OdontoSysBusiness.TratamientoWS;
 
 namespace OdontoSysBusiness
@@ -35,13 +36,13 @@ namespace OdontoSysBusiness
         public BindingList<tratamiento> tratamiento_listarTodos()
         {
             tratamiento[] lista = this.tratamientoWAClient.tratamiento_listarTodos();
-            return new BindingList<tratamiento>(lista);
+            return new BindingList<tratamiento>(lista ?? Array.Empty<tratamiento>());
         }
 
-         public BindingList<tratamiento> tratamiento_listarPorEspecilidad(especialidad especialidad)
+        public BindingList<tratamiento> tratamiento_listarPorEspecilidad(especialidad especialidad)
         {
             tratamiento[] lista = this.tratamientoWAClient.tratamiento_listarPorEspecilidad(especialidad);
-            return new BindingList<tratamiento>(lista);
+            return new BindingList<tratamiento>(lista ?? Array.Empty<tratamiento>());
         }
     }
 }

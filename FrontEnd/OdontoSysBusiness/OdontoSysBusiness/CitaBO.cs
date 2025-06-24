@@ -14,7 +14,7 @@ namespace OdontoSysBusiness
     {
         private CitaWAClient citaWAClient;
 
-        public CitaBO() 
+        public CitaBO()
         {
             this.citaWAClient = new CitaWAClient();
         }
@@ -42,25 +42,31 @@ namespace OdontoSysBusiness
         public BindingList<cita> cita_listarTodos()
         {
             cita[] lista = this.citaWAClient.cita_listarTodos();
-            return new BindingList<cita>(lista);
+            return new BindingList<cita>(lista ?? Array.Empty<cita>());
         }
 
-        public BindingList<cita>  cita_listarPorOdontologoFechas(odontologo odontologo, string fechaInicio, string fechaFin)
+        public BindingList<cita> cita_listarPorOdontologoFechas(odontologo odontologo, string fechaInicio, string fechaFin)
         {
             cita[] lista = this.citaWAClient.cita_listarPorOdontologoFechas(odontologo, fechaInicio, fechaFin);
-            return new BindingList<cita>(lista);
+            return new BindingList<cita>(lista ?? Array.Empty<cita>());
+        }
+
+        public BindingList<cita> cita_listarPorPacienteFechas(paciente paciente, string fechaInicio, string fechaFin)
+        {
+            cita[] lista = this.citaWAClient.cita_listarPorPacienteFechas(paciente, fechaInicio, fechaFin);
+            return new BindingList<cita>(lista ?? Array.Empty<cita>());
         }
 
         public BindingList<cita> cita_listarPorOdontologo(odontologo odontologo)
         {
             cita[] lista = this.citaWAClient.cita_listarPorOdontologo(odontologo);
-            return new BindingList<cita>(lista);
+            return new BindingList<cita>(lista ?? Array.Empty<cita>());
         }
 
         public BindingList<cita> cita_listarPorPaciente(paciente paciente)
         {
             cita[] lista = this.citaWAClient.cita_listarPorPaciente(paciente);
-            return new BindingList<cita>(lista);
+            return new BindingList<cita>(lista ?? Array.Empty<cita>());
         }
 
         public BindingList<cita> cita_listarPorRecepcionista(recepcionista recepcionista)
@@ -69,9 +75,20 @@ namespace OdontoSysBusiness
             return new BindingList<cita>(lista);
         }
 
-        public int cita_actualizarFkValoracion(valoracion valoracion)
+        public int cita_actualizarFkValoracion(cita cita, valoracion valoracion)
         {
-            return this.cita_actualizarFkValoracion(valoracion);
+            return this.citaWAClient.cita_actualizarFkValoracion(cita, valoracion);
         }
+
+        public int cita_actualizarFkComprobante(cita cita, comprobante comprobante)
+        {
+            return this.citaWAClient.cita_actualizarFkComprobante(cita, comprobante);
+        }
+
+        public int cita_actualizarEstado(cita cita)
+        {
+            return this.citaWAClient.cita_actualizarEstado(cita);
+        }
+
     }
 }

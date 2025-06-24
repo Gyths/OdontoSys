@@ -40,13 +40,13 @@ namespace OdontoSysBusiness
         public BindingList<odontologo> odontologo_listarTodos()
         {
             odontologo[] lista = this.odontologoWAClient.odontologo_listarTodos();
-            return new BindingList<odontologo>(lista);
+            return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
         }
 
         public BindingList<odontologo> odontologo_listarPorEspecialidad(especialidad especialidad)
         {
             odontologo[] lista = this.odontologoWAClient.odontologo_listarPorEspecialidad(especialidad);
-            return new BindingList<odontologo>(lista);
+            return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
         }
 
         public odontologo odontologo_obtenerPorUsuarioContrasenha(string nombreUsuario, string contrasenha)
@@ -58,5 +58,23 @@ namespace OdontoSysBusiness
         {
             return this.odontologoWAClient.odontologo_actualizarPuntuacion(odontologo);
         }
+
+        public BindingList<odontologo> odontologo_buscarPorNombreApellido(string nombre, string apellido)
+        {
+            odontologo[] lista = this.odontologoWAClient.odontologo_buscarPorNombreApellido(nombre, apellido);
+            return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
+        }
+
+        public BindingList<odontologo> odontologo_buscarPorNombreApellidoDocumento(string nombre, string apellido, string documento)
+        {
+            odontologo[] lista = this.odontologoWAClient.odontologo_buscarPorNombreApellidoDocumento(nombre, apellido, documento);
+            return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
+        }
+        public BindingList<odontologo> odontologo_buscarPorNombreApellidoTelefono(string nombre, string apellido, string telefono)
+        {
+            odontologo[] lista = this.odontologoWAClient.odontologo_buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
+            return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
+        }
+
     }
 }

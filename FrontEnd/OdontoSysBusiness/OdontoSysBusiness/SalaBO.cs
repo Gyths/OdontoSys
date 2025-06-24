@@ -40,7 +40,7 @@ namespace OdontoSysBusiness
         public BindingList<sala> sala_listarTodos()
         {
             sala[] lista = this.salaWAClient.sala_listarTodos();
-            return new BindingList<sala>(lista);
+            return new BindingList<sala>(lista ?? Array.Empty<sala>());
         }
     }
 }

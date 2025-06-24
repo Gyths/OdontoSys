@@ -19,7 +19,7 @@ namespace OdontoSysBusiness
 
         public int turnoXOdontologo_insertar(turnoXOdontologo turnoXOdontologo)
         {
-            return this.turnoXOdontologoWAClient.turnoXOdontologo_insertar(turnoXOdontologo);   
+            return this.turnoXOdontologoWAClient.turnoXOdontologo_insertar(turnoXOdontologo);
         }
 
         public int turnoXOdontologo_modificar(turnoXOdontologo turnoXOdontologo)
@@ -35,7 +35,7 @@ namespace OdontoSysBusiness
         public BindingList<turnoXOdontologo> turnoXOdontologo_listarTodos()
         {
             turnoXOdontologo[] lista = this.turnoXOdontologoWAClient.turnoXOdontologo_listarTodos();
-            return new BindingList<turnoXOdontologo>(lista);
+            return new BindingList<turnoXOdontologo>(lista ?? Array.Empty<turnoXOdontologo>());
         }
 
     }
