@@ -83,11 +83,55 @@ namespace OdontoSysWebApplication.FrontOdontologo
         }
         protected void btnQuitarTodos_Click(object sender, EventArgs e) 
         {
+            string idCitaActual = Session["Cita"].ToString();
+            foreach (GridViewRow row in gvTratamientos.Rows)
+            {
+                
+                HiddenField hdnIdTratamiento = (HiddenField)row.FindControl("idTratamiento");
+                boDetalleTratamiento = new DetalleTratamientoBO();
 
+                var tratamientoDet = new DetalleTratamientoWS.tratamiento
+                {
+                    idTratamiento = Int32.Parse(hdnIdTratamiento.Value),
+                    idTratamientoSpecified = true
+                };
+                var detalle = new DetalleTratamientoWS.detalleTratamiento
+                {
+                    idCita = Int32.Parse(idCitaActual),
+                    idCitaSpecified = true,
+                    tratamiento = tratamientoDet
+                };
+                boDetalleTratamiento.detalleTratamiento_eliminar(detalle);
+                
+            }
+            Response.Redirect($"/FrontOdontologo/AtenderCita.aspx");
         }
         protected void btnEliminarSeleccion_Click(object sender, EventArgs e)
         {
+            string idCitaActual = Session["Cita"].ToString();
+            foreach(GridViewRow row in gvTratamientos.Rows) 
+            {
+                CheckBox chkSeleccionar = (CheckBox)row.FindControl("chkSeleccionar");
+                HiddenField hdnIdTratamiento = (HiddenField)row.FindControl("idTratamiento");
 
+                if (chkSeleccionar != null && chkSeleccionar.Checked) 
+                {
+                    boDetalleTratamiento = new DetalleTratamientoBO();
+
+                    var tratamientoDet = new DetalleTratamientoWS.tratamiento {
+                        idTratamiento = Int32.Parse(hdnIdTratamiento.Value),
+                        idTratamientoSpecified = true
+                    };
+                    var detalle = new DetalleTratamientoWS.detalleTratamiento
+                    {
+                        idCita = Int32.Parse(idCitaActual),
+                        idCitaSpecified = true,
+                        tratamiento = tratamientoDet
+                    };
+                    boDetalleTratamiento.detalleTratamiento_eliminar(detalle);
+                }
+            }
+            Response.Redirect($"/FrontOdontologo/AtenderCita.aspx");
         }
 
         protected void btnVolverAgenda_Click(object sender, EventArgs e)

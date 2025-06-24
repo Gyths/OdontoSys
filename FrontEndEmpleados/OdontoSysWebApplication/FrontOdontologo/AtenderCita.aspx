@@ -41,9 +41,10 @@
     <asp:Panel CssClass="mt-3" runat="server">
         <asp:GridView ID="gvTratamientos" runat="server" AutoGenerateColumns="False"
             CssClass="table table-hover table-striped treatment-grid"
-            DataKeyNames="subtotal"
+            DataKeyNames="tratamiento"
             OnRowCommand="gvTratamientos_RowCommand">
             <Columns>
+
                 <asp:BoundField DataField="tratamiento.nombre" HeaderText="Nombre" />
                 <asp:BoundField DataField="tratamiento.descripcion" HeaderText="Descripción" />
                 <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
@@ -64,6 +65,7 @@
                     <ItemTemplate>
                         <div class="text-center">
                             <asp:CheckBox ID="chkSeleccionar" runat="server" />
+                            <asp:HiddenField ID="idTratamiento" runat="server" Value='<%# Eval("tratamiento.idTratamiento") %>' />
                         </div>
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center"/>
