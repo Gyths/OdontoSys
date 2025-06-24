@@ -1,4 +1,5 @@
 ﻿using OdontoSysBusiness;
+using OdontoSysBusiness.PacienteWS;
 using OdontoSysBusiness.Xtras;
 using System;
 using System.Linq;
@@ -35,13 +36,18 @@ namespace OdontoSysWebApplication
             string numeroDocumento = txtNumDoc.Text.Trim();
 
             var errores = ValidarFormulario(usuario, nombres, apellidos, telefono, correo, contrasena, contrasenaConfirmacion, tipoDocumento, numeroDocumento);
+            // Validar existencia de usuario y documento
+            var bo = new PacienteWAClient();
+            if (this.PacienteBO.paciente_verificarExistenciaNombreUsuario(usuario))
+                errores.AppendLine("<li>Ese nombre de usuario ya está en uso. Por favor elige otro.</li>");
+            //if (this.PacienteBO.paciente_verificarExistenciaNumeroDocumento(numeroDocumento))
+            //    errores.AppendLine("<li>Ese número de documento ya está registrado en otra cuenta.</li>");
 
             if (errores.Length > 0)
             {
                 MostrarErrores(errores);
                 return;
             }
-
             RegistrarPaciente(usuario, nombres, apellidos, telefono, correo, contrasena, tipoDocumento, numeroDocumento);
         }
 
