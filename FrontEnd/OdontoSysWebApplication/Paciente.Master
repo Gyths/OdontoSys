@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Paciente.Master.cs" Inherits="OdontoSysWebApplication.Paciente" OnPreRender="Page_PreRender"%>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Paciente.master.cs" Inherits="OdontoSysWebApplication.Paciente" %>
 
 <!DOCTYPE html>
 <html>
@@ -44,7 +44,8 @@
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager runat="server" ID="ScriptManager1" />
-        <!-- Navbar común -->
+        
+        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="Home.aspx">
@@ -59,21 +60,21 @@
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link <% if (paginaActiva == "Home.aspx") { %>active<% } %>" href="Home.aspx">Home</a>
+                            <a class="nav-link <%# PaginaActual == "Home.aspx" ? "active" : "" %>" href="Home.aspx">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <% if (paginaActiva == "MisCitas.aspx") { %>active<% } %>" href="MisCitas.aspx">Mis Citas</a>
+                            <a class="nav-link <%# PaginaActual == "MisCitas.aspx" ? "active" : "" %>" href="MisCitas.aspx">Mis Citas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <% if (paginaActiva == "ReservaCita.aspx") { %>active<% } %>" href="ReservaCita.aspx">Agendar Cita</a>
+                            <a class="nav-link <%# PaginaActual == "ReservaCita.aspx" ? "active" : "" %>" href="ReservaCita.aspx">Agendar Cita</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <% if (paginaActiva == "Contacto.aspx") { %>active<% } %>" href="Contacto.aspx">Contáctanos</a>
+                            <a class="nav-link <%# PaginaActual == "Contacto.aspx" ? "active" : "" %>" href="Contacto.aspx">Contáctanos</a>
                         </li>
                         <li class="nav-item dropdown ms-3">
                             <a class="nav-link dropdown-toggle avatar-circle"
                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <%: InicialPaciente %>
+                                <%# InicialPaciente %>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="miCuenta.aspx"><i class="fas fa-user me-2"></i>Mi Cuenta</a></li>

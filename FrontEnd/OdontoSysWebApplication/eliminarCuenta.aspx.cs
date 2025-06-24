@@ -79,7 +79,7 @@ namespace OdontoSysWebApplication
                 }
                 catch (Exception ex1)
                 {
-
+                    System.Diagnostics.Trace.WriteLine("Error al eliminar citas del paciente: " + ex1.Message);
                 }
                 this.PacienteBO.paciente_eliminar(paciente);
                 this.Session.Abandon();
@@ -100,6 +100,7 @@ namespace OdontoSysWebApplication
                   });
                 ";
                 ScriptManager.RegisterStartupScript(this, GetType(), "showDeleteModal", script, true);
+                System.Diagnostics.Trace.WriteLine("Error al eliminar cuenta del paciente: " + ex.Message);
             }
         }
 
