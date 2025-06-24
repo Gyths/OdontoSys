@@ -31,7 +31,8 @@
                         <asp:Button ID="btnAtender" runat="server" Text="Atender"
                             CommandName="Atender"
                             CommandArgument='<%# Eval("idCita") %>'
-                            CssClass="btn btn-primary btn-sm" />
+                            CssClass="btn btn-primary btn-sm" 
+                            Visible='<%# Eval("estado").ToString() == "RESERVADA" %>' />
                     </asp:Panel>
                 </ItemTemplate>
             </asp:TemplateField>

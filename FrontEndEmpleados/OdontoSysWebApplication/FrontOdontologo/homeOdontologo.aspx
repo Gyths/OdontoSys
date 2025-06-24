@@ -36,7 +36,7 @@
                       %>
                     </h1>
                     <a href="CitasPorAtender.aspx" class="btn btn-outline-success me-2 mt-3">Ver Agenda</a>
-                    <a href="historialPacientes.aspx" class="btn btn-outline-primary mt-3">Historial de Pacientes</a>
+                    <!-- <a href="historialPacientes.aspx" class="btn btn-outline-primary mt-3">Historial de Pacientes</a>-->
                    
                 </div>
             </div>

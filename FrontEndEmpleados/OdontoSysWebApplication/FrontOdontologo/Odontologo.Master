@@ -60,9 +60,9 @@
                         <li class="nav-item">
                             <a class="nav-link <% if (paginaActiva == "CitasPorAtender.aspx") { %>active<% } %>" href="CitasPorAtender.aspx">Citas</a>
                         </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link <% if (paginaActiva == "historialPacientes.aspx") { %>active<% } %>" href="historialPacientes.aspx">Pacientes</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item dropdown ms-3">
                             <a class="nav-link dropdown-toggle avatar-circle"
                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
