@@ -14,7 +14,7 @@ namespace OdontoSysWebApplication.FrontOdontologo
         private EspecialidadBO boEspecialidad;
         private TratamientoBO boTratamiento;
         private DetalleTratamientoBO boDetalle;
-        OdontologoWS.odontologo odontologoSes;
+        private OdontologoWS.odontologo odontologoSes;
         protected void Page_Load(object sender, EventArgs e)
         {
             odontologoSes = Session["Usuario"] as OdontologoWS.odontologo;
@@ -57,7 +57,6 @@ namespace OdontoSysWebApplication.FrontOdontologo
         }
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            //TO-DO agregar buscar por nombre en back o alguna manera de sacar el id del ddl
             string idCitaAct = Session["Cita"]?.ToString();
             boTratamiento = new TratamientoBO();
             var tratamientoSelec = boTratamiento.tratamiento_obtenerPorId(int.Parse(ddlTratamiento.SelectedValue));
