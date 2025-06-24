@@ -69,5 +69,10 @@ namespace OdontoSysBusiness
         {
             return this.pacienteWAClient.paciente_verificarExistenciaNombreUsuario(nombreUsuario);
         }
+
+        public Boolean paciente_verificarExistenciaNumeroDocumento(string numDoc)
+        {
+            return this.pacienteWAClient.paciente_verificarExistenciaNumeroDocumento(numDoc);
+        }
     }
 }

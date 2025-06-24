@@ -51,4 +51,7 @@ public class PacienteBO {
         return this.pacienteDAO.buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
     }
     
+    public Boolean verificarExistenciaNumeroDocumento(String numDoc){
+        return this.pacienteDAO.existeNumeroDocumento(numDoc);
+    }
 }

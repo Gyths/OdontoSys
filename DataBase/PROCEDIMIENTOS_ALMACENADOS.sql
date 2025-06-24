@@ -474,6 +474,34 @@ END $$
 DELIMITER ;
 
 -- ---------------------------------------------------------------------
+-- Procedure: PACIENTES_obtener_por_numero_documento
+-- Description: Obtiene el registro de un paciente según su número de documento.
+-- Parameters:
+--   IN in_numero_documento      VARCHAR(20)
+-- ---------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `PACIENTES_obtener_por_numero_documento`;
+DELIMITER $$
+
+CREATE PROCEDURE `PACIENTES_obtener_por_numero_documento`(
+    IN in_numero_documento  VARCHAR(20)
+)
+BEGIN
+    SELECT
+        P.PACIENTE_ID,
+        P.CONTRASENHA,
+        P.NOMBRE_USUARIO,
+        P.CORREO,
+        P.TELEFONO,
+        P.NOMBRES,
+        P.APELLIDOS,
+        P.TIPO_DOCUMENTO_ID,
+        P.NUMERO_DOCUMENTO_IDENTIDAD
+    FROM `OS_PACIENTES` AS P
+    WHERE P.NUMERO_DOCUMENTO_IDENTIDAD = in_numero_documento
+    LIMIT 1;
+END $$
+DELIMITER ;
+-- ---------------------------------------------------------------------
 -- Procedure: PACIENTES_buscar_por_nombre_apellido
 -- Description: Busca pacientes por nombre y apellido (uso de LIKE para búsqueda parcial)
 -- Parameters:

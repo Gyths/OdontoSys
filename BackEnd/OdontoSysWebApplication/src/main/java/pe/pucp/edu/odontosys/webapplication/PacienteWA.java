@@ -65,4 +65,9 @@ public class PacienteWA {
     public ArrayList<Paciente> paciente_buscarPorNombreApellidoTelefono(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido, @WebParam(name = "telefono") String telefono){
         return this.pacienteBO.buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
     }
+    
+    @WebMethod(operationName = "paciente_verificarExistenciaNumeroDocumento")
+    public Boolean paciente_verificarExistenciaNumeroDocumento(@WebParam(name = "numeroDoc") String numDoc){
+        return this.pacienteBO.verificarExistenciaNumeroDocumento(numDoc);
+    }
 }

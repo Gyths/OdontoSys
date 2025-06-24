@@ -155,4 +155,12 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         String sql = "CALL PACIENTES_buscar_por_nombre_apellido_telefono(?, ?, ?);";
         return (ArrayList<Paciente>) super.ejecutarStoredProcedureLista(sql, nombre, apellido, telefono);
     }
+    
+    @Override
+    public Boolean existeNumeroDocumento(String numDoc){
+        String sql= "CALL PACIENTES_obtener_por_numero_documento(?);";
+        super.ejecutarStoredProcedureObtener(sql, numDoc);
+        if(this.paciente==null)return false;
+        return true;
+    }
 }
