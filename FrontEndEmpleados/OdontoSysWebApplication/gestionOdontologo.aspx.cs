@@ -61,8 +61,24 @@ namespace OdontoSysWebApplication
 
         protected void btnEliminarTurnoSelec_Click(object sender, EventArgs e) 
         {
-            
-
+            string idOdontologoActual = Session["idOdontologoSeleccionado"].ToString();
+            foreach (GridViewRow row in gvTurnos.Rows) 
+            {
+                CheckBox chkSeleccionar1 = (CheckBox)row.FindControl("chkSeleccionar1");
+                TurnoXOdontologoBO boTurnoOdontologo = new TurnoXOdontologoBO();
+                if (chkSeleccionar1 != null && chkSeleccionar1.Checked)
+                {
+                    var turnoOdontologo = new TurnoXOdontologoWS.turnoXOdontologo
+                    {
+                        idOdontologo = Int32.Parse(idOdontologoActual),
+                        idOdontologoSpecified = true,
+                        idTurno = Int32.Parse(gvTurnos.DataKeys[row.RowIndex].Value.ToString()),
+                        idTurnoSpecified = true
+                    };
+                    boTurnoOdontologo.turnoXOdontologo_eliminar(turnoOdontologo);
+                }
+            }
+            CargarTurnos(Int32.Parse(idOdontologoActual));
         }
         protected void btnEditar_Click(object sender, EventArgs e)
         {

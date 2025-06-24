@@ -184,16 +184,21 @@
         <asp:Panel ID="pnlAlerta" runat="server" Visible="false" CssClass="alert alert-success mt-3" role="alert">
             Cambios guardados exitosamente.
         </asp:Panel>
-    <asp:Label ID="lblMensaje" runat="server"
-       CssClass="alert" Visible="false" />
+
+        <asp:Panel ID="pnlError" runat="server"
+            CssClass="alert alert-danger mt-3"
+            Visible="false">
+            <asp:Label ID="lblError" runat="server" />
+        </asp:Panel>
+
+        <asp:Label ID="lblMensaje" runat="server"
+           CssClass="alert" Visible="false" />
 
         <div class="mt-4 action-buttons">
             <asp:LinkButton ID="btnEditar" runat="server" Text="<i class='fas fa-pencil-alt me-1'></i> Editar" CssClass="btn btn-warning" OnClick="btnEditar_Click" />
             <asp:LinkButton ID="btnGuardar" runat="server" Text="<i class='fas fa-save me-1'></i> Guardar Cambios" CssClass="btn btn-success" Visible="false" OnClick="btnGuardar_Click" />
             <asp:LinkButton ID="btnVolver" runat="server" Text="<i class='fas fa-arrow-left me-1'></i> Volver" CssClass="btn btn-secondary ms-auto" OnClick="btnVolver_Click" />
         </div>
-
-        
 
         <%-- Sección de Citas --%>
         <div class="mt-5">
@@ -245,11 +250,7 @@
                 </asp:GridView>
             </asp:Panel>
 
-            <asp:Panel ID="pnlError" runat="server"
-                CssClass="alert alert-danger mt-3"
-                Visible="false">
-                <asp:Label ID="lblError" runat="server" />
-            </asp:Panel>
+            
 
             <asp:Panel CssClass="mt-3 text-end" runat="server">
                 <asp:Button ID="btnEliminarSeleccion" runat="server" Text="Cancelar citas seleccionadas"
@@ -271,24 +272,24 @@
                         <asp:BoundField DataField="horaInicio" HeaderText="Hora Inicio" />
                         <asp:BoundField DataField="horaFin" HeaderText="Hora Fin" />
 
-                        <%-- %><asp:TemplateField HeaderText="Cancelar Turnos">
+                        <asp:TemplateField HeaderText="Cancelar Turnos">
                             <ItemTemplate>
                                 <div class="text-center">
                                     <asp:CheckBox ID="chkSeleccionar1" runat="server" />
                                 </div>
                             </ItemTemplate>
-                        </asp:TemplateField> --%>
+                        </asp:TemplateField>
 
                     </Columns>
                     <HeaderStyle CssClass="bg-primary text-white" />
                 </asp:GridView>
             </asp:Panel>
 
-            <%-- <asp:Panel CssClass="mt-3 text-end" runat="server">
+            <asp:Panel CssClass="mt-3 text-end" runat="server">
                 <asp:Button ID="Button1" runat="server" Text="Cancelar Turnos Seleccionados"
                     CssClass="btn btn-outline-danger"
                     OnClick="btnEliminarTurnoSelec_Click" />
-            </asp:Panel> --%>
+            </asp:Panel>
 
         </div>
     </div>
