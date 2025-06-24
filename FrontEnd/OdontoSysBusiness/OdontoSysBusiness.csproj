@@ -354,6 +354,9 @@
     <None Include="Connected Services\PacienteWS\OdontoSysBusiness.PacienteWS.paciente_verificarExistenciaNombreUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\PacienteWS\OdontoSysBusiness.PacienteWS.paciente_verificarExistenciaNumeroDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\PacienteWS\PacienteWA.wsdl" />
     <None Include="Connected Services\PacienteWS\PacienteWA.xsd">
       <SubType>Designer</SubType>

@@ -12,3 +12,4 @@ C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSysBusiness\ob
 C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.csproj.CoreCompileInputs.cache
 C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.exe
 C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.pdb
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.exe.config

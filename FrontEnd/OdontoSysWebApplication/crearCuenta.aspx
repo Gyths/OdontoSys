@@ -5,21 +5,24 @@
 
     <style>
         html, body, form {
-            height: 100%;
+            height: auto;
+            min-height: 100%;
             margin: 0;
+            overflow-y: auto;
         }
+
 
         .register-container {
             display: flex;
-            height: 100vh;
+            min-height: 100vh; /* permite crecer si se necesita más espacio */
         }
 
+
         .register-form-side {
-            flex: 0 0 35%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow-y: auto;
+            max-height: 100vh;
         }
+
 
         .register-bg-side {
             flex: 0 0 65%;

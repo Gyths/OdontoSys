@@ -71,7 +71,7 @@ namespace OdontoSysWebApplication
 
                 int letras = usuario.Count(char.IsLetter);
                 if (letras < 3)
-                    errores.AppendLine("<li>El nombre de usuario debe contener al menos 3 letras.</li>");
+                    errores.AppendLine("<li>El nombre de usuario debe tener al menos 3 letras</li>");
 
                 if (usuario.Length > 30)
                     errores.AppendLine("<li>El nombre de usuario no debe tener más de 30 caracteres.</li>");
@@ -80,7 +80,7 @@ namespace OdontoSysWebApplication
             if (string.IsNullOrWhiteSpace(nombres))
                 errores.AppendLine("<li>Los nombres son obligatorios.</li>");
             else if (!regexNombre.IsMatch(nombres))
-                errores.AppendLine("<li>Nombre(s) inválido(s): mínimo 2 letras juntas, sin símbolos y entre 2 y 60 caracteres.</li>");
+                errores.AppendLine("<li>Escribe un nombre válido (mín. 2 letras, sin símbolos)</li>");
 
             if (string.IsNullOrWhiteSpace(apellidos))
                 errores.AppendLine("<li>Los apellidos son obligatorios.</li>");
@@ -89,7 +89,7 @@ namespace OdontoSysWebApplication
 
             // Teléfono: celular (9xx xxx xxx) o fijo (xxx-xxxx)
             if (!Regex.IsMatch(telefono, @"^(9\d{8}|\d{3}-\d{4})$"))
-                errores.AppendLine("<li>El teléfono debe ser un número celular (9xxxxxxxx) o un número fijo (xxx-xxxx).</li>");
+                errores.AppendLine("<li>Formato de teléfono inválido. Usa 9 dígitos (celular) o xxx-xxxx (fijo)</li>");
 
 
             if (!Regex.IsMatch(correo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
@@ -108,7 +108,7 @@ namespace OdontoSysWebApplication
 
             // Número de documento
             if (!Regex.IsMatch(numDoc, @"^\d+$"))
-                errores.AppendLine("<li>El número de documento solo puede contener dígitos.</li>");
+                errores.AppendLine("<li>El número de documento debe contener solo números.</li>");
             else if (tipoDoc == "DNI")
             {
                 if (numDoc.Length != 8)
