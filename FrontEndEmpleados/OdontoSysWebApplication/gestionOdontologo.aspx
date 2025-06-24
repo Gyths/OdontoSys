@@ -271,24 +271,24 @@
                         <asp:BoundField DataField="horaInicio" HeaderText="Hora Inicio" />
                         <asp:BoundField DataField="horaFin" HeaderText="Hora Fin" />
 
-                        <asp:TemplateField HeaderText="Cancelar Turnos">
+                        <%-- %><asp:TemplateField HeaderText="Cancelar Turnos">
                             <ItemTemplate>
                                 <div class="text-center">
                                     <asp:CheckBox ID="chkSeleccionar1" runat="server" />
                                 </div>
                             </ItemTemplate>
-                        </asp:TemplateField>
+                        </asp:TemplateField> --%>
 
                     </Columns>
                     <HeaderStyle CssClass="bg-primary text-white" />
                 </asp:GridView>
             </asp:Panel>
 
-            <asp:Panel CssClass="mt-3 text-end" runat="server">
+            <%-- <asp:Panel CssClass="mt-3 text-end" runat="server">
                 <asp:Button ID="Button1" runat="server" Text="Cancelar Turnos Seleccionados"
                     CssClass="btn btn-outline-danger"
                     OnClick="btnEliminarTurnoSelec_Click" />
-            </asp:Panel>
+            </asp:Panel> --%>
 
         </div>
     </div>

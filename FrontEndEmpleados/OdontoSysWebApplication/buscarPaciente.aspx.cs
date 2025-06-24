@@ -34,7 +34,7 @@ namespace OdontoSysWebApplication
                 BindingList<PacienteWS.paciente> resultado;
                 if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(apellido) && string.IsNullOrEmpty(telefono) && string.IsNullOrEmpty(documento))
                 {
-                    resultado = clientePaciente.paciente_listarTodos();
+                    resultado = pacienteBO.paciente_listarTodos();
                 }
                 else
                 {
