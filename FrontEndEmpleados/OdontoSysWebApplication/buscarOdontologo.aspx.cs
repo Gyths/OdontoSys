@@ -11,6 +11,8 @@ namespace OdontoSysWebApplication
 {
     public partial class buscarOdontologo : System.Web.UI.Page
     {
+        private OdontologoBO odonlogoBO = new OdontologoBO();
+        private EspecialidadBO especialidadBO = new EspecialidadBO();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -22,7 +24,6 @@ namespace OdontoSysWebApplication
         private void CargarEspecialidades()
         {
             // Llenar combo de Especialidad
-            var especialidadBO = new EspecialidadBO();
             ddlEspecialidad.DataSource = especialidadBO.especialidad_listarTodos();
             ddlEspecialidad.DataTextField = "nombre";
             ddlEspecialidad.DataValueField = "idEspecialidad";
@@ -32,7 +33,6 @@ namespace OdontoSysWebApplication
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            var oBO = new OdontologoBO();
             BindingList<OdontologoWS.odontologo> lista = null;
 
             bool hayEspecialidad = !string.IsNullOrEmpty(ddlEspecialidad.SelectedValue);
@@ -50,19 +50,19 @@ namespace OdontoSysWebApplication
                         idEspecialidad = idEsp,
                         idEspecialidadSpecified = true
                     };
-                    lista = oBO.odontologo_listarPorEspecialidad(especialidadOdontologo);
+                    lista = odonlogoBO.odontologo_listarPorEspecialidad(especialidadOdontologo);
                 }
                 else if (!hayNombre && !hayApellido && !hayDocumento)
                 {
-                    lista = oBO.odontologo_listarTodos();
+                    lista = odonlogoBO.odontologo_listarTodos();
                 }
                 else if (hayNombre && hayApellido && !hayDocumento)
                 {
-                    lista = oBO.odontologo_buscarPorNombreApellido(txtNombre.Text.Trim(), txtApellidos.Text.Trim());
+                    lista = odonlogoBO.odontologo_buscarPorNombreApellido(txtNombre.Text.Trim(), txtApellidos.Text.Trim());
                 }
                 else if (hayNombre && hayApellido && hayDocumento)
                 {
-                    lista = oBO.odontologo_buscarPorNombreApellidoDocumento(txtNombre.Text.Trim(), txtApellidos.Text.Trim(), txtDocumento.Text.Trim());
+                    lista = odonlogoBO.odontologo_buscarPorNombreApellidoDocumento(txtNombre.Text.Trim(), txtApellidos.Text.Trim(), txtDocumento.Text.Trim());
                 }
                 else
                 {

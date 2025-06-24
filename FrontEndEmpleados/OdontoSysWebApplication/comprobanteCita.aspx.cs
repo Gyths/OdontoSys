@@ -15,6 +15,9 @@ namespace OdontoSysWebApplication
     public partial class comprobanteCita : System.Web.UI.Page
     {
         private int idCita => int.Parse(Request.QueryString["idCita"]);
+        private CitaBO citaBO = new CitaBO();
+        private ComprobanteBO comprobanteBO = new ComprobanteBO();
+        private MetodoPagoBO metodoPagoBO = new MetodoPagoBO();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -25,8 +28,7 @@ namespace OdontoSysWebApplication
 
         protected void CargarComprobanteOCrearWizard()
         {
-            var clienteCita = new CitaBO();
-            var cita = clienteCita.cita_obtenerPorId(idCita);
+            var cita = citaBO.cita_obtenerPorId(idCita);
             if (cita == null)
             {
                 lblMensaje.Text = "No se encontró la cita.";
@@ -35,13 +37,11 @@ namespace OdontoSysWebApplication
             }
             if (cita.estado == CitaWS.estadoCita.ATENDIDA)
             {
-                var clienteComprobante = new ComprobanteBO();
-                var comp = clienteComprobante.comprobante_obtenerPorId(cita.comprobante.idComprobante);
+                var comp = comprobanteBO.comprobante_obtenerPorId(cita.comprobante.idComprobante);
                 lblFecha.Text = comp.fechaEmision.ToString();
                 lblHora.Text = comp.horaEmision.ToString();
                 lblTotal.Text = comp.total.ToString("C");
-                var clienteMetodoPago = new MetodoPagoBO();
-                var metodoPago = clienteMetodoPago.metodoPago_obtenerPorId(comp.metodoDePago.idMetodoPago);
+                var metodoPago = metodoPagoBO.metodoPago_obtenerPorId(comp.metodoDePago.idMetodoPago);
                 lblMetodoPago.Text = metodoPago.nombre.ToString();
                 pnlDetalle.Visible = true;
                 btnGenerar.Visible = false;
@@ -62,8 +62,7 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                var cliMP = new MetodoPagoBO();
-                var metodos = cliMP.metodoPago_listarTodos();
+                var metodos = metodoPagoBO.metodoPago_listarTodos();
 
                 ddlMetodoPago.DataSource = metodos;
                 ddlMetodoPago.DataTextField = "nombre";
@@ -99,25 +98,23 @@ namespace OdontoSysWebApplication
                     total = 0.0,
                 };
 
-                var clienteComprobante = new ComprobanteBO();
-                int idComprobante = clienteComprobante.comprobante_insertar(comprobante);   // devuelve PK
+                int idComprobante = comprobanteBO.comprobante_insertar(comprobante);   // devuelve PK
 
-                var clienteCita = new CitaBO();
-                var cita = clienteCita.cita_obtenerPorId(idCita);
+                var cita = citaBO.cita_obtenerPorId(idCita);
                 cita.comprobante = new CitaWS.comprobante
                 {
                     idComprobante = idComprobante,
                     idComprobanteSpecified = true
                 };
                 cita.estado = CitaWS.estadoCita.ATENDIDA;
-                clienteCita.cita_actualizarEstado(cita);
-                clienteCita.cita_actualizarFkComprobante(cita, cita.comprobante);
+                citaBO.cita_actualizarEstado(cita);
+                citaBO.cita_actualizarFkComprobante(cita, cita.comprobante);
                 var citaComprobante = new ComprobanteWS.cita
                 {
                     idCita = cita.idCita,
                     idCitaSpecified = true
                 };
-                clienteComprobante.comprobante_actualizarTotal(citaComprobante);
+                comprobanteBO.comprobante_actualizarTotal(citaComprobante);
                 lblMensaje.Text = "Comprobante generado correctamente.";
                 lblMensaje.CssClass = "text-success";
             }
@@ -136,14 +133,11 @@ namespace OdontoSysWebApplication
             try
             {
                 // Obtener datos del comprobante
-                var clienteCita = new CitaBO();
-                var cita = clienteCita.cita_obtenerPorId(idCita);
+                var cita = citaBO.cita_obtenerPorId(idCita);
 
-                var clienteComprobante = new ComprobanteBO();
-                var comp = clienteComprobante.comprobante_obtenerPorId(cita.comprobante.idComprobante);
+                var comp = comprobanteBO.comprobante_obtenerPorId(cita.comprobante.idComprobante);
 
-                var clienteMetodoPago = new MetodoPagoBO();
-                var metodoPago = clienteMetodoPago.metodoPago_obtenerPorId(comp.metodoDePago.idMetodoPago);
+                var metodoPago = metodoPagoBO.metodoPago_obtenerPorId(comp.metodoDePago.idMetodoPago);
 
                 // Crear el PDF
                 GenerarPDF(comp, metodoPago, cita);

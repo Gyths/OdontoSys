@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -12,6 +13,11 @@ namespace OdontoSysWebApplication
 {
     public partial class reservaCitaPorRecepcionista : System.Web.UI.Page
     {
+        private OdontologoBO odontologoBO = new OdontologoBO();
+        private EspecialidadBO especialidadBO = new EspecialidadBO();
+        private TurnoBO turnoBO = new TurnoBO();
+        private PacienteBO pacienteBO = new PacienteBO();
+        private CitaBO citaBO = new CitaBO();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -33,8 +39,7 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                var clienteEspecialidad = new EspecialidadBO();
-                var especialidades = clienteEspecialidad.especialidad_listarTodos();
+                var especialidades = especialidadBO.especialidad_listarTodos();
 
                 ddlEspecialidades.DataSource = especialidades;
                 ddlEspecialidades.DataValueField = "idEspecialidad";
@@ -67,8 +72,7 @@ namespace OdontoSysWebApplication
                 idEspecialidadSpecified = true
             };
 
-            var clienteOdontologo = new OdontologoBO();
-            var odontologos = clienteOdontologo.odontologo_listarPorEspecialidad(especialidad);
+            var odontologos = odontologoBO.odontologo_listarPorEspecialidad(especialidad);
 
             ddlOdontologos.Items.Add(new ListItem("-- Seleccione un odontólogo --", ""));
             foreach (var o in odontologos)
@@ -109,8 +113,7 @@ namespace OdontoSysWebApplication
                 idOdontologoSpecified = true
             };
 
-            var clienteTurno = new TurnoWS.TurnoWAClient();
-            var turnos = clienteTurno.turno_listarPorOdontologo(odontologoTurno);
+            var turnos = turnoBO.turno_listarPorOdontologo(odontologoTurno);
 
             var odontologoCita = new CitaWS.odontologo
             {
@@ -118,8 +121,7 @@ namespace OdontoSysWebApplication
                 idOdontologoSpecified = true
             };
 
-            var clienteCita = new CitaWS.CitaWAClient();
-            var citas = clienteCita.cita_listarPorOdontologoFechas(odontologoCita, fechaInicioStr, fechaFinStr);
+            var citas = citaBO.cita_listarPorOdontologoFechas(odontologoCita, fechaInicioStr, fechaFinStr);
 
             var disponibilidad = CalcularHorasDisponibles(turnos, citas, fechaInicio);
 
@@ -128,14 +130,10 @@ namespace OdontoSysWebApplication
         }
 
         private Dictionary<DateTime, List<TimeSpan>> CalcularHorasDisponibles(
-            TurnoWS.turno[] turnos,
-            CitaWS.cita[] citas,
+            BindingList<TurnoWS.turno> turnos,
+            BindingList<CitaWS.cita> citas,
             DateTime fechaInicio)
         {
-            if (turnos == null)
-                turnos = new TurnoWS.turno[0];
-            if (citas == null)
-                citas = new CitaWS.cita[0];
 
             bool[,] disponibilidad = new bool[7, 48];
 
@@ -161,6 +159,7 @@ namespace OdontoSysWebApplication
             foreach (var cita in citas)
             {
                 if (cita == null) continue;
+                if (cita.estado.ToString() == "CANCELADA") continue;
                 if (!DateTime.TryParse(cita.fecha, out var fechaCita)) continue;
                 if (!TimeSpan.TryParse(cita.horaInicio, out var horaCita)) continue;
 
@@ -219,8 +218,7 @@ namespace OdontoSysWebApplication
         protected void btnConfirmarCita_Click(object sender, EventArgs e)
         {
             var idPaciente = (int)Session["idPacienteSeleccionado"];
-            var clientePaciente = new PacienteBO();
-            var paciente = clientePaciente.paciente_obtenerPorId(idPaciente);
+            var paciente = pacienteBO.paciente_obtenerPorId(idPaciente);
             var recepcionista = (RecepcionistaWS.recepcionista)Session["Usuario"];
             if (string.IsNullOrEmpty(ddlOdontologos.SelectedValue) ||
                 string.IsNullOrEmpty(hfFechaSeleccionada.Value) ||
@@ -255,8 +253,7 @@ namespace OdontoSysWebApplication
 
             try
             {
-                var clienteCita = new CitaWS.CitaWAClient();
-                clienteCita.cita_insertar(cita);
+                citaBO.cita_insertar(cita);
                 //EnviarCorreoConfirmacion(cita, paciente);
                 Response.AddHeader("Refresh", "1;URL=gestionPaciente.aspx");
                 ltDisponibilidad.Text = "<div class='alert alert-success'>¡Cita registrada correctamente!</div>";
