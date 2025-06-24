@@ -1,30 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using OdontoSysBusiness;
 using OdontoSysBusiness.CitaWS;
 using OdontoSysBusiness.EspecialidadWS;
 using OdontoSysBusiness.OdontologoWS;
 using OdontoSysBusiness.SalaWS;
 using OdontoSysBusiness.ValoracionWS;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace OdontoSysWebApplication
 {
     public partial class gestionCita : System.Web.UI.Page
     {
+        private CitaBO citaBO;
+        private PacienteBO pacienteBO;
+        public CitaBO CitaBO { get => citaBO; set => citaBO = value; }
+        public PacienteBO PacienteBO { get => pacienteBO; set => pacienteBO = value; }
+        public gestionCita()
+        {
+            this.CitaBO = new CitaBO();
+            this.PacienteBO = new PacienteBO();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 if (Request.QueryString["id"] != null && int.TryParse(Request.QueryString["id"], out int idCita))
                 {
-                    var clienteCita = new CitaWAClient();
-                    var cita = clienteCita.cita_obtenerPorId(idCita);
-                    if (cita != null)
+                    OdontoSysBusiness.CitaWS.cita citaVariable = this.CitaBO.cita_obtenerPorId(idCita);
+                    if (citaVariable != null)
                     {
-                        Session["CitaSeleccionada"] = cita;
+                        Session["CitaSeleccionada"] = citaVariable;
                         cargarCita();
                     }
                 }
