@@ -64,5 +64,10 @@ namespace OdontoSysBusiness
             paciente[] lista = this.pacienteWAClient.paciente_buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
             return new BindingList<paciente>(lista ?? Array.Empty<paciente>());
         }
+
+        public Boolean paciente_verificarExistenciaNombreUsuario(string nombreUsuario)
+        {
+            return this.pacienteWAClient.paciente_verificarExistenciaNombreUsuario(nombreUsuario);
+        }
     }
 }

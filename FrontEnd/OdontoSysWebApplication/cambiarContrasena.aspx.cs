@@ -8,7 +8,7 @@ namespace OdontoSysWebApplication
 {
     public partial class cambiarContrasena : System.Web.UI.Page
     {
-        private PacienteWAClient bo = new PacienteWAClient();
+        private PacienteBO pacienteBO = new PacienteBO();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -61,7 +61,7 @@ namespace OdontoSysWebApplication
             try
             {
                 paciente.contrasenha = PasswordHelper.HashPassword(nueva);
-                bo.paciente_modificar(paciente);
+                pacienteBO.paciente_modificar(paciente);
                 Session["Paciente"] = paciente;
 
                 lblMensajeContrasena.CssClass = "d-block mt-2 text-success";

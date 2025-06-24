@@ -12,7 +12,8 @@ namespace OdontoSysWebApplication
 {
     public partial class eliminarCuenta : System.Web.UI.Page
     {
-        private PacienteWAClient bo = new PacienteWAClient();
+        private PacienteBO pacienteBO = new PacienteBO();
+        private CitaBO citaBO = new CitaBO();   
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +29,7 @@ namespace OdontoSysWebApplication
         protected void btnEliminarCuenta_Click(object sender, EventArgs e)
         {
             string contrasenhaSolicitada = txtPassword.Text.Trim();
-            var paciente = Session["Paciente"] as OdontoSysBusiness.PacienteWS.paciente;
+            paciente paciente = Session["Paciente"] as paciente;
             string contrasenhaAcual = paciente.contrasenha;
 
 
@@ -55,24 +56,23 @@ namespace OdontoSysWebApplication
 
                 try
                 {
-                    var clienteCita = new CitaBO();
+                    
                     var pacienteCita = new OdontoSysBusiness.CitaWS.paciente
                     {
                         idPaciente = paciente.idPaciente,
                         idPacienteSpecified = true
                     };
-                    var citas = clienteCita.cita_listarPorPaciente(pacienteCita);
+                    var citas = citaBO.cita_listarPorPaciente(pacienteCita);
                     foreach (var cita in citas)
                     {
-                        clienteCita.cita_eliminar(cita);
+                        citaBO.cita_eliminar(cita);
                     }
                 }
                 catch (Exception ex1)
                 {
 
                 }
-                var clientePaciente = new PacienteBO();
-                clientePaciente.paciente_eliminar(paciente);
+                pacienteBO.paciente_eliminar(paciente);
                 Session.Abandon();
                 Response.Redirect("cuentaEliminada.aspx");
                 //Response.AddHeader("Refresh", "1;URL=cuentaEliminada.aspx");

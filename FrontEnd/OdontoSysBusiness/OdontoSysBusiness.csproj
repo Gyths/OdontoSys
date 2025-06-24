@@ -163,6 +163,9 @@
     <None Include="Connected Services\CitaWS\OdontoSysBusiness.CitaWS.cita_listarPorOdontologoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\CitaWS\OdontoSysBusiness.CitaWS.cita_listarPorPacienteFechasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CitaWS\OdontoSysBusiness.CitaWS.cita_listarPorPacienteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -319,6 +322,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\PacienteWS\OdontoSysBusiness.PacienteWS.paciente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PacienteWS\OdontoSysBusiness.PacienteWS.paciente_buscarPorNombreApellidoDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PacienteWS\OdontoSysBusiness.PacienteWS.paciente_buscarPorNombreApellidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PacienteWS\OdontoSysBusiness.PacienteWS.paciente_buscarPorNombreApellidoTelefonoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\PacienteWS\OdontoSysBusiness.PacienteWS.paciente_eliminarResponse.datasource">
