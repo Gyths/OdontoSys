@@ -192,9 +192,14 @@ namespace OdontoSysWebApplication
         {
         
         }
-        protected void gvCitas_RowCommand(object sender, GridViewCommandEventArgs e) 
+
+        protected void gvCitas_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-        
+            if (e.Row.RowType != DataControlRowType.DataRow) return;
+            var estado = DataBinder.Eval(e.Row.DataItem, "estado")?.ToString();
+            bool mostrarChk = estado == "RESERVADA";
+            var chk = (CheckBox)e.Row.FindControl("chkSeleccionar");
+            if (chk != null) chk.Visible = mostrarChk;
         }
 
         protected void gvTurnos_RowCommand(object sender, GridViewCommandEventArgs e)
