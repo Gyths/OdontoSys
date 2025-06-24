@@ -218,7 +218,8 @@
                 <asp:GridView ID="gvCitas" runat="server" AutoGenerateColumns="False"
                     CssClass="table table-hover table-striped treatment-grid"
                     DataKeyNames="idCita"
-                    OnRowCommand="gvCitas_RowCommand">
+                    OnRowCommand="gvCitas_RowCommand"
+                    OnRowDataBound="gvCitas_RowDataBound">
                     <Columns>
                         <asp:BoundField DataField="fecha" HeaderText="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
                         <asp:BoundField DataField="horaInicio" HeaderText="Hora" />

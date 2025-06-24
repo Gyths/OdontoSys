@@ -80,6 +80,22 @@ namespace OdontoSysWebApplication
                 string idCita = e.CommandArgument.ToString();
                 Response.Redirect($"comprobanteCita.aspx?idCita={idCita}");
             }
+            
+        }
+
+        protected void gvCitas_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType != DataControlRowType.DataRow) return;
+
+            var estado = DataBinder.Eval(e.Row.DataItem, "estado")?.ToString();
+            bool mostrarBtn = estado == "ATENDIDA" || estado == "RESERVADA"; 
+            bool mostrarChk = estado == "RESERVADA";
+
+            var btn = (Button)e.Row.FindControl("btnGestionarComprobante");
+            var chk = (CheckBox)e.Row.FindControl("chkSeleccionar");
+
+            if (btn != null) btn.Visible = mostrarBtn;
+            if (chk != null) chk.Visible = mostrarChk;
         }
         private void SetReadOnly(TextBox txt, bool readOnly)
         {
@@ -271,16 +287,8 @@ namespace OdontoSysWebApplication
 
         protected void btnCita_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Response.Redirect("reservaCitaPorRecepcionista.aspx");
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine("Error al redirigir a reserva cita: " + ex.Message);
-                lblMensaje.Text = "Error al redirigir a la página de reserva.";
-                lblMensaje.CssClass = "text-danger";
-            }
+            Response.Redirect("reservaCitaPorRecepcionista.aspx", false);  // ← false evita ThreadAbortException
+            Context.ApplicationInstance.CompleteRequest();
         }
 
         private void CargarDatosParaPDF(int idPaciente)
