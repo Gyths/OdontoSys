@@ -184,7 +184,8 @@
         <asp:Panel ID="pnlAlerta" runat="server" Visible="false" CssClass="alert alert-success mt-3" role="alert">
             Cambios guardados exitosamente.
         </asp:Panel>
-
+    <asp:Label ID="lblMensaje" runat="server"
+       CssClass="alert" Visible="false" />
 
         <div class="mt-4 action-buttons">
             <asp:LinkButton ID="btnEditar" runat="server" Text="<i class='fas fa-pencil-alt me-1'></i> Editar" CssClass="btn btn-warning" OnClick="btnEditar_Click" />
@@ -192,11 +193,12 @@
             <asp:LinkButton ID="btnVolver" runat="server" Text="<i class='fas fa-arrow-left me-1'></i> Volver" CssClass="btn btn-secondary ms-auto" OnClick="btnVolver_Click" />
         </div>
 
+        
+
         <%-- Sección de Citas --%>
         <div class="mt-5">
             <h4 class="mb-3"><i class="fas fa-calendar-alt me-2 text-primary"></i>Citas del Odontólogo</h4>
 
-            <asp:Label ID="lblMensaje" runat="server" EnableViewState="false" CssClass=""></asp:Label>
 
             <div class="row align-items-start mb-4">
                 <div class="col-auto">

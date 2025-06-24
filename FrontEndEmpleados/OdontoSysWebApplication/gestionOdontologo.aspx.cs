@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -16,7 +17,8 @@ namespace OdontoSysWebApplication
 {
     public partial class gestionOdontologo : System.Web.UI.Page
     {
-        
+        private OdontologoWS.odontologo odontologoActual;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["idOdontologoSeleccionado"] == null || !int.TryParse(Session["idOdontologoSeleccionado"].ToString(), out int idOdo))
@@ -34,25 +36,26 @@ namespace OdontoSysWebApplication
             }
         }
 
-        
+
 
         private void CargarOdontologo(int id)
         {
-           
-            var odontologoBO = new OdontologoBO(); 
-            var boEspecialidad = new EspecialidadBO();
-            OdontologoWS.odontologo odontologo = odontologoBO.odontologo_obtenerPorId(id);
 
-           
-            txtNombre.Text = odontologo.nombre;
-            txtApellido.Text = odontologo.apellidos;
-            txtDocumento.Text = odontologo.numeroDocumento;
-            var especialidadOd = boEspecialidad.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
+            var odontologoBO = new OdontologoBO();
+            var boEspecialidad = new EspecialidadBO();
+            odontologoActual = odontologoBO.odontologo_obtenerPorId(id);
+
+
+            txtNombre.Text = odontologoActual.nombre;
+            txtApellido.Text = odontologoActual.apellidos;
+            txtDocumento.Text = odontologoActual.numeroDocumento;
+            var especialidadOd = boEspecialidad.especialidad_obtenerPorId(odontologoActual.especialidad.idEspecialidad);
             txtEspecialidad.Text = especialidadOd.nombre;
-            txtCorreo.Text = odontologo.correo;
-            txtTelefono.Text = odontologo.telefono;
-            txtUsuario.Text = odontologo.nombreUsuario;
+            txtCorreo.Text = odontologoActual.correo;
+            txtTelefono.Text = odontologoActual.telefono;
+            txtUsuario.Text = odontologoActual.nombreUsuario;
         }
+            
 
         protected void btnEliminarTurnoSelec_Click(object sender, EventArgs e) 
         {
@@ -77,22 +80,45 @@ namespace OdontoSysWebApplication
         {
             if (Session["idOdontologoSeleccionado"] != null && int.TryParse(Session["idOdontologoSeleccionado"].ToString(), out int id))
             {
-                var odontologoBO = new OdontologoBO();
+                try
+                {
+                    var odontologoBO = new OdontologoBO();
+                    var original = odontologoBO.odontologo_obtenerPorId(id);
+                    if (original != null)
+                    {
+                        if (Regex.IsMatch(txtTelefono.Text, @"^(9\d{8}|\d{3}-\d{4})$") &&
+                            Regex.IsMatch(txtCorreo.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                        {
+                            original.correo = txtCorreo.Text;
+                            original.telefono = txtTelefono.Text;
+                            odontologoBO.odontologo_modificar(original);
+                        }
+                        else
+                        {
 
-                var original = odontologoBO.odontologo_obtenerPorId(id); // obtener objeto completo
+                            throw new Exception("El numero de telefono o correo son incorrectos");
+                        }
 
-                original.correo = txtCorreo.Text;
-                original.telefono = txtTelefono.Text;
-                original.nombreUsuario = txtUsuario.Text;
+                        odontologoActual = original;
+                        pnlAlerta.Visible = true;
+                        pnlError.Visible = false;
+                        SetReadOnly(txtCorreo, true);
+                        SetReadOnly(txtTelefono, true);
 
-                odontologoBO.odontologo_modificar(original);
-
-                // Volver a modo solo lectura
-                SetReadOnly(txtCorreo, true);
-                SetReadOnly(txtTelefono, true);
-
-                btnGuardar.Visible = false;
-                btnEditar.Visible = true;
+                        btnGuardar.Visible = false;
+                        btnEditar.Visible = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Error al guardar odontologo: " + ex.Message);
+                    Label lblMensaje = new Label();
+                    lblMensaje.Text = "Error al guardar los cambios. " + ex.Message;
+                    lblMensaje.CssClass = "text-danger";
+                    pnlError.Controls.Add(new LiteralControl(lblMensaje.Text));
+                    pnlError.Visible = true;
+                }
+                
             }
         }
 
