@@ -7,11 +7,15 @@ using OdontoSysBusiness.EspecialidadWS;
 using OdontoSysBusiness.OdontologoWS;
 using OdontoSysBusiness.PacienteWS;
 using System.Web.UI.WebControls;
+using OdontoSysBusiness;
 
 namespace OdontoSysWebApplication
 {
     public partial class misCitas : System.Web.UI.Page
     {
+        private CitaBO citaBO = new CitaBO();
+        private OdontologoBO odontologoBO = new OdontologoBO();
+        private EspecialidadBO especialidadBO = new EspecialidadBO();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -20,14 +24,12 @@ namespace OdontoSysWebApplication
 
         private void CargarCitasPaciente()
         {
-            var paciente = (OdontoSysBusiness.PacienteWS.paciente)Session["Paciente"];
+            var paciente = Session["Paciente"] as OdontoSysBusiness.PacienteWS.paciente;
             if (paciente == null) return;
 
             string estadoSeleccionado = ddlEstado.SelectedValue;
 
-            var clienteCita = new CitaWAClient();
-            var clienteOdontologo = new OdontologoWAClient();
-            var clienteEspecialidad = new EspecialidadWAClient();
+            
 
             var pacienteCita = new OdontoSysBusiness.CitaWS.paciente
             {
@@ -35,9 +37,9 @@ namespace OdontoSysWebApplication
                 idPacienteSpecified = true
             };
 
-            var citas = clienteCita.cita_listarPorPaciente(pacienteCita);
+            var citas = citaBO.cita_listarPorPaciente(pacienteCita);
 
-            if (citas == null || citas.Length == 0)
+            if (citas == null)
             {
                 ltCitas.Text = "<div class='alert alert-warning'>No tienes citas registradas.</div>";
                 return;
@@ -49,8 +51,8 @@ namespace OdontoSysWebApplication
                 if (cita.estado.ToString() != estadoSeleccionado)
                     continue;
 
-                var odontologo = clienteOdontologo.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
-                var especialidad = clienteEspecialidad.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
+                var odontologo = odontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
+                var especialidad = especialidadBO.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
 
                 string badgeColor = GetBadgeColor(cita.estado.ToString());
 
@@ -96,8 +98,7 @@ namespace OdontoSysWebApplication
         {
             if (int.TryParse(e.CommandArgument.ToString(), out int idCita))
             {
-                var clienteCita = new CitaWAClient();
-                var cita = clienteCita.cita_obtenerPorId(idCita);
+                var cita = citaBO.cita_obtenerPorId(idCita);
 
                 if (cita != null)
                 {
