@@ -11,6 +11,7 @@ namespace OdontoSysWebApplication
 {
     public partial class buscarPaciente : System.Web.UI.Page
     {
+        private PacienteBO pacienteBO = new PacienteBO();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -23,7 +24,6 @@ namespace OdontoSysWebApplication
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            var pacienteBO = new PacienteBO();
             string nombre = txtNombre.Text.Trim();
             string apellido = txtApellido.Text.Trim();
             string telefono = txtTelefono.Text.Trim();
@@ -31,7 +31,6 @@ namespace OdontoSysWebApplication
 
             try
             {
-                var clientePaciente = new PacienteBO();
                 BindingList<PacienteWS.paciente> resultado;
                 if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(apellido) && string.IsNullOrEmpty(telefono) && string.IsNullOrEmpty(documento))
                 {

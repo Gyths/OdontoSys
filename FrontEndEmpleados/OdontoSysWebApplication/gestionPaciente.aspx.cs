@@ -21,6 +21,11 @@ namespace OdontoSysWebApplication
     {
         private PacienteWS.paciente pacienteActual;
         Label lblMensaje;
+        private PacienteBO pacienteBO = new PacienteBO();
+        private OdontologoBO odontologoBO = new OdontologoBO();
+        private CitaBO citaBO = new CitaBO();
+        private SalaBO salaBO = new SalaBO();
+        private EspecialidadBO especialidadBO = new EspecialidadBO();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["idPacienteSeleccionado"] == null ||
@@ -42,7 +47,6 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                var pacienteBO = new PacienteBO();
                 pacienteActual = pacienteBO.paciente_obtenerPorId(id);
 
                 if (pacienteActual != null)
@@ -123,7 +127,6 @@ namespace OdontoSysWebApplication
             {
                 try
                 {
-                    var pacienteBO = new PacienteBO();
                     var original = pacienteBO.paciente_obtenerPorId(idPaciente);
 
                     if (original != null)
@@ -171,7 +174,6 @@ namespace OdontoSysWebApplication
             DateTime desde = baseDate;
             DateTime hasta = baseDate;
 
-            var pacienteBO = new PacienteBO();
             pacienteActual = pacienteBO.paciente_obtenerPorId(id);
             var paciente = new CitaWS.paciente
             {
@@ -179,14 +181,13 @@ namespace OdontoSysWebApplication
                 idPacienteSpecified = true
             };
 
-            var boCitas = new CitaBO();
-            var listaCitas = boCitas.cita_listarPorPacienteFechas(paciente,desde.ToString("yyyy-MM-dd"),hasta.ToString("yyyy-MM-dd"));
+            var listaCitas = citaBO.cita_listarPorPacienteFechas(paciente,desde.ToString("yyyy-MM-dd"),hasta.ToString("yyyy-MM-dd"));
             foreach (var cita in listaCitas)
             {
-                var boOdontologo = new OdontologoBO();
-                var odontologo = boOdontologo.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
-                var boSala = new SalaBO();
-                var consultorioOd = boSala.sala_obtenerPorId(odontologo.consultorio.idSala);
+
+                var odontologo = odontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
+
+                var consultorioOd = salaBO.sala_obtenerPorId(odontologo.consultorio.idSala);
                 
                 var consultorio = new CitaWS.sala
                 {
@@ -233,7 +234,6 @@ namespace OdontoSysWebApplication
                 return;
             }
 
-            var clienteCita = new CitaBO();
             foreach (int idCita in idsCitasCancelar)
             {
                 var cita = new CitaWS.cita
@@ -243,7 +243,7 @@ namespace OdontoSysWebApplication
                     estado = CitaWS.estadoCita.CANCELADA,
                     estadoSpecified = true
                 };
-                clienteCita.cita_actualizarEstado(cita);
+                citaBO.cita_actualizarEstado(cita);
             }
             if (int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPa))
             {
@@ -300,7 +300,6 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                var pacienteBO = new PacienteBO();
                 pacienteActual = pacienteBO.paciente_obtenerPorId(idPaciente);
 
                 if (pacienteActual == null)
@@ -392,11 +391,8 @@ namespace OdontoSysWebApplication
                         {
                             try
                             {
-                                var clienteOdontologo = new OdontologoWAClient();
-                                var clienteEspecialidad = new EspecialidadWAClient();
-
-                                var odonto = clienteOdontologo.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
-                                var especialidad = clienteEspecialidad.especialidad_obtenerPorId(odonto.especialidad.idEspecialidad);
+                                var odonto = odontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
+                                var especialidad = especialidadBO.especialidad_obtenerPorId(odonto.especialidad.idEspecialidad);
 
                                 string fechaTexto = cita.fecha;
                                 string horaTexto = cita.horaInicio;
@@ -461,7 +457,6 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                var clienteCita = new CitaWAClient();
                 var pacienteCita = new CitaWS.paciente
                 {
                     idPaciente = idPaciente,
@@ -469,7 +464,7 @@ namespace OdontoSysWebApplication
                 };
 
                 
-                var todasLasCitas = clienteCita.cita_listarPorPaciente(pacienteCita);
+                var todasLasCitas = citaBO.cita_listarPorPaciente(pacienteCita);
 
                 if (todasLasCitas == null)
                 {

@@ -7,14 +7,13 @@ namespace OdontoSysWebApplication
 {
     public partial class inicioSesion : System.Web.UI.Page
     {
+        private OdontologoBO odontologoBO = new OdontologoBO();
+        private RecepcionistaBO recepcionistaBO = new RecepcionistaBO();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 ltMensaje.Text = "";
-                // Si quisieras validación instantánea:
-                // txtContrasenha.AutoPostBack = true;
-                // txtContrasenha.TextChanged += TxtContrasenha_TextChanged;
             }
         }
 
@@ -44,8 +43,7 @@ namespace OdontoSysWebApplication
                 
                 if(tipo == "odontologo")
                 {
-                    var clienteOdontologo = new OdontologoBO();
-                    var odontologo = clienteOdontologo.odontologo_obtenerPorUsuarioContrasenha(usuario, PasswordHelper.HashPassword(contrasena));
+                    var odontologo = odontologoBO.odontologo_obtenerPorUsuarioContrasenha(usuario, PasswordHelper.HashPassword(contrasena));
                     if (odontologo != null && odontologo.idOdontologo > 0)
                     {
                         Session["Usuario"] = odontologo;
@@ -55,8 +53,7 @@ namespace OdontoSysWebApplication
                 }
                 if(tipo == "recepcionista")
                 {
-                    var clienteRecepcionista = new RecepcionistaBO();
-                    var recepcionista = clienteRecepcionista.recepcionista_obtenerPorUsuarioContrasenha(usuario, PasswordHelper.HashPassword(contrasena));
+                    var recepcionista = recepcionistaBO.recepcionista_obtenerPorUsuarioContrasenha(usuario, PasswordHelper.HashPassword(contrasena));
                     if(recepcionista != null && recepcionista.idRecepcionista > 0)
                     {
                         Session["Usuario"] = recepcionista;
