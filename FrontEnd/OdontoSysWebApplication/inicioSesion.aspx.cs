@@ -7,6 +7,7 @@ namespace OdontoSysWebApplication
 {
     public partial class inicioSesion : System.Web.UI.Page
     {
+        private PacienteBO pacienteBO = new PacienteBO();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -45,9 +46,8 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                var logicaPaciente = new PacienteBO();
                 string contrasenaHasheada = PasswordHelper.HashPassword(contrasena);
-                var paciente = logicaPaciente.paciente_obtenerPorUsuarioContrasenha(usuario, contrasenaHasheada);
+                var paciente = pacienteBO.paciente_obtenerPorUsuarioContrasenha(usuario, contrasenaHasheada);
 
                 if (paciente != null && paciente.idPaciente > 0)
                 {
