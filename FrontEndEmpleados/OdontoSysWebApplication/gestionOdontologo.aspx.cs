@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -23,42 +24,17 @@ namespace OdontoSysWebApplication
                 Response.Redirect("buscarOdontologo.aspx");
                 return;
             }
-            if (IsPostBack && Request.Form["accion"] == "cancelar")
-            {
-                if (int.TryParse(Request.Form["idCita"], out int idCita))
-                    CancelarCita(idCita, idOdo);
-            }
+
             if (!IsPostBack)
             {
                 CargarOdontologo(idOdo);
                 calFiltro.SelectedDate = DateTime.Today;
+                CargarCitasOdontologo(idOdo, DateTime.Today);
+                CargarTurnos(idOdo);
             }
-            DateTime fechaBase = calFiltro.SelectedDate == DateTime.MinValue ? DateTime.Today : calFiltro.SelectedDate;
-            CargarCitasOdontologo(idOdo, fechaBase);
-            CargarTurnos(idOdo);
         }
 
-        private void CancelarCita(int idCita, int idOdo)
-        {
-            var cliCita = new CitaBO();
-            var cita = cliCita.cita_obtenerPorId(idCita);
-            if (cita != null && cita.estado == CitaWS.estadoCita.RESERVADA)
-            {
-                cita.estado = CitaWS.estadoCita.CANCELADA;
-                cliCita.cita_actualizarEstado(cita);
-
-                lblMensaje.Text = "La cita fue cancelada correctamente.";
-                lblMensaje.CssClass = "text-success";
-            }
-            else
-            {
-                lblMensaje.Text = "No se pudo cancelar la cita.";
-                lblMensaje.CssClass = "text-danger";
-            }
-            DateTime fechaBase = calFiltro.SelectedDate == DateTime.MinValue ? DateTime.Today : calFiltro.SelectedDate;
-            CargarCitasOdontologo(idOdo, fechaBase);
-            
-        }
+        
 
         private void CargarOdontologo(int id)
         {
@@ -80,16 +56,21 @@ namespace OdontoSysWebApplication
 
         protected void btnEliminarTurnoSelec_Click(object sender, EventArgs e) 
         {
-        
+            
+
         }
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            txtCorreo.ReadOnly = false;
-            txtTelefono.ReadOnly = false;
-            txtUsuario.ReadOnly = false;
-
+            SetReadOnly(txtCorreo, false);
+            SetReadOnly(txtTelefono, false);
             btnGuardar.Visible = true;
             btnEditar.Visible = false;
+        }
+
+        private void SetReadOnly(TextBox txt, bool readOnly)
+        {
+            txt.ReadOnly = readOnly;
+            txt.CssClass = readOnly ? "form-control locked" : "form-control";
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -107,9 +88,8 @@ namespace OdontoSysWebApplication
                 odontologoBO.odontologo_modificar(original);
 
                 // Volver a modo solo lectura
-                txtCorreo.ReadOnly = true;
-                txtTelefono.ReadOnly = true;
-                txtUsuario.ReadOnly = true;
+                SetReadOnly(txtCorreo, true);
+                SetReadOnly(txtTelefono, true);
 
                 btnGuardar.Visible = false;
                 btnEditar.Visible = true;
@@ -190,7 +170,48 @@ namespace OdontoSysWebApplication
         }
         protected void btnEliminarSeleccion_Click(object sender, EventArgs e)
         {
-        
+            List<int> idsCitasCancelar = new List<int>();
+            foreach (GridViewRow fila in gvCitas.Rows)
+            {
+                if (fila.RowType != DataControlRowType.DataRow) continue;
+                var chk = (CheckBox)fila.FindControl("chkSeleccionar");
+                if (chk != null && chk.Checked)
+                {
+                    int idCita = (int)gvCitas.DataKeys[fila.RowIndex].Value;
+                    idsCitasCancelar.Add(idCita);
+                }
+            }
+            if (idsCitasCancelar.Count == 0)
+            {
+                pnlError.Controls.Clear();
+                pnlError.Controls.Add(new Literal
+                {
+                    Text = "Seleccione al menos una cita en estado <strong>Reservada</strong>."
+                });
+                pnlError.Visible = true;
+                return;
+            }
+
+            var clienteCita = new CitaBO();
+            foreach (int idCita in idsCitasCancelar)
+            {
+                var cita = new CitaWS.cita
+                {
+                    idCita = idCita,
+                    idCitaSpecified = true,
+                    estado = CitaWS.estadoCita.CANCELADA,
+                    estadoSpecified = true
+                };
+                clienteCita.cita_actualizarEstado(cita);
+            }
+            if (int.TryParse(Session["idOdontologoSeleccionado"].ToString(), out int idOdo))
+            {
+                DateTime fechaBase = calFiltro.SelectedDate == DateTime.MinValue
+                                        ? DateTime.Today
+                                        : calFiltro.SelectedDate;
+
+                CargarCitasOdontologo(idOdo, fechaBase);
+            }
         }
 
         protected void gvCitas_RowDataBound(object sender, GridViewRowEventArgs e)

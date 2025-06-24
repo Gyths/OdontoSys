@@ -186,8 +186,11 @@
             <asp:LinkButton ID="btnDescargarPDF" runat="server" Text="<i class='fas fa-file-pdf me-1'></i> Historia Clínica" CssClass="btn btn-outline-primary" OnClick="btnDescargarPDF_Click" />
             <asp:LinkButton ID="btnCita" runat="server" Text="<i class='fas fa-calendar-plus me-1'></i> Agendar Cita" CssClass="btn btn-info text-white" OnClick="btnCita_Click" />
             <asp:LinkButton ID="btnVolver" runat="server" Text="<i class='fas fa-arrow-left me-1'></i> Volver" CssClass="btn btn-secondary ms-auto" PostBackUrl="~/buscarPaciente.aspx" />
+        
         </div>
 
+        <asp:Label ID="lblMensaje" runat="server"
+           CssClass="alert" Visible="false" />
        
         <div class="mt-5">
             <h4 class="mb-3"><i class="fas fa-calendar-alt me-2 text-primary"></i>Citas del Paciente</h4>

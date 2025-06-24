@@ -5,14 +5,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+    <script>
+        $(document).ready(function () {
+            window.history.replaceState('', '', window.location.href);
+        });
+    </script>
     <style>
         .locked {
             background-color: #f0f0f0 !important;
             cursor: not-allowed;
         }
 
-      
+
         .calendar-dropdown {
             position: relative;
             display: inline-block;
@@ -20,7 +24,7 @@
             max-width: 320px;
         }
 
-       
+
         .calendar-toggle {
             background-color: #0d6efd;
             border: none;
@@ -38,22 +42,22 @@
             transition: all 0.3s ease;
         }
 
-        .calendar-toggle:hover {
-            background-color: #0b5ed7;
-        }
-        
-        .calendar-toggle:focus {
-             outline: none;
-             box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.3);
-        }
+            .calendar-toggle:hover {
+                background-color: #0b5ed7;
+            }
 
-        .calendar-toggle .icon {
-            transition: transform 0.3s ease;
-        }
+            .calendar-toggle:focus {
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.3);
+            }
 
-        .calendar-toggle.active .icon {
-            transform: rotate(180deg);
-        }
+            .calendar-toggle .icon {
+                transition: transform 0.3s ease;
+            }
+
+            .calendar-toggle.active .icon {
+                transform: rotate(180deg);
+            }
 
         .calendar-container {
             position: absolute;
@@ -72,13 +76,13 @@
             border: 1px solid #e9ecef;
         }
 
-        .calendar-container.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        
+            .calendar-container.show {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+
         .bscalendar table {
             width: 100%;
             border-collapse: collapse;
@@ -113,7 +117,7 @@
             background-color: #e9ecef;
             transform: scale(1.05);
         }
-        
+
         .bscalendar .TodayDay {
             background-color: #ffc107;
             font-weight: 700;
@@ -134,7 +138,7 @@
             background-color: #f8f9fa;
         }
 
-       
+
         .action-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -165,15 +169,15 @@
             </div>
             <div class="col-md-4">
                 <label class="form-label">Nombre de Usuario</label>
-                <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" ReadOnly="true" />
+                <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control locked" ReadOnly="true" />
             </div>
-             <div class="col-md-4">
+            <div class="col-md-4">
                 <label class="form-label">Correo</label>
-                <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" ReadOnly="true" />
+                <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control locked" ReadOnly="true" />
             </div>
             <div class="col-md-4">
                 <label class="form-label">Teléfono</label>
-                <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" ReadOnly="true" />
+                <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control locked" ReadOnly="true" />
             </div>
         </asp:Panel>
 
@@ -181,7 +185,7 @@
             Cambios guardados exitosamente.
         </asp:Panel>
 
-        
+
         <div class="mt-4 action-buttons">
             <asp:LinkButton ID="btnEditar" runat="server" Text="<i class='fas fa-pencil-alt me-1'></i> Editar" CssClass="btn btn-warning" OnClick="btnEditar_Click" />
             <asp:LinkButton ID="btnGuardar" runat="server" Text="<i class='fas fa-save me-1'></i> Guardar Cambios" CssClass="btn btn-success" Visible="false" OnClick="btnGuardar_Click" />
@@ -191,7 +195,7 @@
         <%-- Sección de Citas --%>
         <div class="mt-5">
             <h4 class="mb-3"><i class="fas fa-calendar-alt me-2 text-primary"></i>Citas del Odontólogo</h4>
-            
+
             <asp:Label ID="lblMensaje" runat="server" EnableViewState="false" CssClass=""></asp:Label>
 
             <div class="row align-items-start mb-4">
@@ -201,7 +205,7 @@
                             <span class="selected-date">Filtrar por Fecha</span>
                             <i class="fas fa-chevron-down icon"></i>
                         </button>
-                        
+
                         <div class="calendar-container">
                             <asp:Calendar ID="calFiltro" runat="server" CssClass="bscalendar"
                                 TitleStyle-CssClass="MonthTitle"
@@ -221,7 +225,7 @@
                     OnRowDataBound="gvCitas_RowDataBound">
 
                     <Columns>
-                         <asp:BoundField DataField="paciente.nombre" HeaderText="Paciente" />
+                        <asp:BoundField DataField="paciente.nombre" HeaderText="Paciente" />
                         <asp:BoundField DataField="fecha" HeaderText="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
                         <asp:BoundField DataField="horaInicio" HeaderText="Hora" />
                         <asp:BoundField DataField="estado" HeaderText="Estado" />
@@ -237,6 +241,12 @@
                     </Columns>
                     <HeaderStyle CssClass="bg-primary text-white" />
                 </asp:GridView>
+            </asp:Panel>
+
+            <asp:Panel ID="pnlError" runat="server"
+                CssClass="alert alert-danger mt-3"
+                Visible="false">
+                <asp:Label ID="lblError" runat="server" />
             </asp:Panel>
 
             <asp:Panel CssClass="mt-3 text-end" runat="server">
@@ -277,37 +287,37 @@
                     CssClass="btn btn-outline-danger"
                     OnClick="btnEliminarTurnoSelec_Click" />
             </asp:Panel>
-           
+
         </div>
     </div>
 
     <script type="text/javascript">
         $(document).ready(function () {
-           
-            $('.calendar-toggle').click(function(e) {
+
+            $('.calendar-toggle').click(function (e) {
                 e.stopPropagation();
                 const container = $(this).siblings('.calendar-container');
                 container.toggleClass('show');
                 $(this).toggleClass('active');
             });
 
-            
-            $(document).click(function(e) {
+
+            $(document).click(function (e) {
                 if (!$(e.target).closest('.calendar-dropdown').length) {
                     $('.calendar-container').removeClass('show');
                     $('.calendar-toggle').removeClass('active');
                 }
             });
 
-            
-            $('.bscalendar td').click(function() {
-                setTimeout(function() {
+
+            $('.bscalendar td').click(function () {
+                setTimeout(function () {
                     $('.calendar-container').removeClass('show');
                     $('.calendar-toggle').removeClass('active');
                 }, 150);
             });
 
-     
+
             var alerta = $("#<%= pnlAlerta.ClientID %>");
             if (alerta.is(":visible")) {
                 setTimeout(function () {
