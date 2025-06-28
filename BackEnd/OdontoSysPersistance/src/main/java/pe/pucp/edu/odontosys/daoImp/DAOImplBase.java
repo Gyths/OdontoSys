@@ -351,6 +351,10 @@ public abstract class DAOImplBase {
         throw new UnsupportedOperationException("Método no sobreescrito.");
     }
 
+    protected void instanciarObjetoCompletoDelResultSet()throws SQLException {
+        throw new UnsupportedOperationException("Método no sobreescrito.");
+    }
+    
     protected void limpiarObjetoDelResultSet() {
         throw new UnsupportedOperationException("Método no sobreescrito.");
     }
