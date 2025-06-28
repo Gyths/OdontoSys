@@ -84,6 +84,13 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO{
     }
     
     @Override
+    protected void instanciarObjetoCompletoDelResultSet() throws SQLException {
+        instanciarObjetoCompletoDelResultSet();
+        this.cita.getOdontologo().setApellidos(this.resultSet.getString("ODONTOLOGO_APELLIDOS"));
+        //POR EJEMPLO
+    }
+    
+    @Override
     protected void limpiarObjetoDelResultSet() {
         this.cita = null;
     }
