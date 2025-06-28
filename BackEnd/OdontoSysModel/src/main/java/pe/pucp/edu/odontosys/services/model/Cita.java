@@ -14,7 +14,6 @@ public class Cita {
     private Valoracion valoracion;
     private EstadoCita estado;
     private Odontologo odontologo;
-    private Recepcionista recepcionista;
     private Paciente paciente;
     private Comprobante comprobante;
     private ArrayList<DetalleTratamiento> tratamientos;
@@ -23,7 +22,6 @@ public class Cita {
         this.valoracion = new Valoracion();
         this.odontologo = new Odontologo();
         this.paciente = new Paciente();
-        this.recepcionista = new Recepcionista();
         this.comprobante = new Comprobante();
         this.tratamientos = new ArrayList<DetalleTratamiento>();
     }
@@ -76,14 +74,6 @@ public class Cita {
         this.odontologo = odontologo;
     }
 
-    public Recepcionista getRecepcionista() {
-        return recepcionista;
-    }
-
-    public void setRecepcionista(Recepcionista recepcionista) {
-        this.recepcionista = recepcionista;
-    }
-
     public Paciente getPaciente() {
         return paciente;
     }
@@ -122,8 +112,6 @@ public class Cita {
         resultado += "estado: "         + estado         + "\n";
         resultado += "odontologo: "     + "\n";
         resultado += odontologo;
-        resultado += "recepcionista: "  + "\n";
-        resultado += recepcionista;
         resultado += "paciente: "       + "\n";
         resultado += paciente;
         resultado += "comprobante: "    + "\n";
