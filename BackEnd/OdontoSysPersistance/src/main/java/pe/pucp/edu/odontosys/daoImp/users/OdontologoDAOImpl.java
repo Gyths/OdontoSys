@@ -116,6 +116,12 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     }
     
     @Override
+    protected void agregarObjetoCompletoALaLista(List lista) throws SQLException {
+        this.instanciarObjetoCompletoDelResultSet();
+        lista.add(this.odontologo);
+    }
+    
+    @Override
     public Integer insertar(Odontologo odontologo) {
        this.odontologo=odontologo;
        return super.insertar();
@@ -148,24 +154,24 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     
     @Override
     public ArrayList<Odontologo> listarPorEspecialidad(Especialidad especialidad){
-        String sql = "CALL ODONTOLOGOS_listar_por_especialidad(?);";
-        return (ArrayList<Odontologo>) super.ejecutarStoredProcedureLista(sql, especialidad.getIdEspecialidad());
+        String sql = queries.getQuery("listarOdontologosPorEspecialidad");
+        return (ArrayList<Odontologo>) super.ejecutarQueryListar(sql, especialidad.getIdEspecialidad());
     }
     
     @Override
     public Odontologo obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha) {
         String sql = queries.getQuery("obtenerOdontologoPorUsuarioContrasenha");
-        super.ejecutarStoredProcedureObtener(sql, nombreUsuario, contrasenha);
+        super.ejecutarQueryObtener(sql, nombreUsuario, contrasenha);
         return this.odontologo;
     }
-    
-
-    
+   
     @Override
     public Boolean existeNombreUsuario(String nombreUsuario) {
-        String sql= "CALL ODONTOLOGOS_obtener_por_usuario(?);";
-        super.ejecutarStoredProcedureObtener(sql, nombreUsuario);
-        if(this.odontologo==null)return false;
+        this.odontologo = new Odontologo();
+        this.odontologo.setNombreUsuario(nombreUsuario);
+        super.obtenerPorUsuario();
+        if(this.odontologo.getIdOdontologo() == null)
+            return false;
         return true;
     }
     

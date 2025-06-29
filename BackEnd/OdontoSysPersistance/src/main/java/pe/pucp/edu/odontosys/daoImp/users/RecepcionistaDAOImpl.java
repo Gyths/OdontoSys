@@ -1,5 +1,6 @@
 package pe.pucp.edu.odontosys.daoImp.users;
 
+
 import pe.pucp.edu.odontosys.dao.users.RecepcionistaDAO;
 import pe.pucp.edu.odontosys.daoImp.DAOImplBase;
 import pe.pucp.edu.odontosys.daoImp.util.Columna;
@@ -9,10 +10,12 @@ import pe.pucp.edu.odontosys.users.model.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import pe.pucp.edu.odontosys.daoImp.QueryLoader;
 
 
 public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDAO {
     private Recepcionista recepcionista;
+    private static final QueryLoader queries = new QueryLoader("/recepcionistaQueries.json");
     
     public RecepcionistaDAOImpl(){
         super("OS_RECEPCIONISTAS");
@@ -126,16 +129,18 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
 
     @Override
     public Recepcionista obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha){
-        String sql = "CALL RECEPCIONISTAS_obtener_por_usuario_contrasenha(?, ?);";
-        super.ejecutarStoredProcedureObtener(sql, nombreUsuario, contrasenha);
+        String sql = queries.getQuery("obtenerRecepcionistaPorUsuarioContrasenha");
+        super.ejecutarQueryObtener(sql, nombreUsuario, contrasenha);
         return this.recepcionista;
     }
     
     @Override
     public Boolean existeNombreUsuario(String nombreUsuario) {
-        String sql= "CALL RECEPCIONISTAS_obtener_por_usuario(?);";
-        super.ejecutarStoredProcedureObtener(sql, nombreUsuario);
-        if(this.recepcionista==null)return false;
+        this.recepcionista = new Recepcionista();
+        this.recepcionista.setNombreUsuario(nombreUsuario);
+        super.obtenerPorUsuario();
+        if(this.recepcionista.getIdRecepcionista()== null)
+            return false;
         return true;
     }
 }
