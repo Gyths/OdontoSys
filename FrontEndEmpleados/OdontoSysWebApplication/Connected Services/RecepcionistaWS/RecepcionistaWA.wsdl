@@ -5,24 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/RecepcionistaWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
-  <message name="recepcionista_verificarExistenciaNombreUsuario">
-    <part name="parameters" element="tns:recepcionista_verificarExistenciaNombreUsuario" />
-  </message>
-  <message name="recepcionista_verificarExistenciaNombreUsuarioResponse">
-    <part name="parameters" element="tns:recepcionista_verificarExistenciaNombreUsuarioResponse" />
-  </message>
-  <message name="recepcionista_obtenerPorUsuarioContrasenha">
-    <part name="parameters" element="tns:recepcionista_obtenerPorUsuarioContrasenha" />
-  </message>
-  <message name="recepcionista_obtenerPorUsuarioContrasenhaResponse">
-    <part name="parameters" element="tns:recepcionista_obtenerPorUsuarioContrasenhaResponse" />
-  </message>
-  <message name="recepcionista_eliminar">
-    <part name="parameters" element="tns:recepcionista_eliminar" />
-  </message>
-  <message name="recepcionista_eliminarResponse">
-    <part name="parameters" element="tns:recepcionista_eliminarResponse" />
-  </message>
   <message name="recepcionista_insertar">
     <part name="parameters" element="tns:recepcionista_insertar" />
   </message>
@@ -35,31 +17,37 @@
   <message name="recepcionista_modificarResponse">
     <part name="parameters" element="tns:recepcionista_modificarResponse" />
   </message>
-  <message name="recepcionista_listarTodos">
-    <part name="parameters" element="tns:recepcionista_listarTodos" />
-  </message>
-  <message name="recepcionista_listarTodosResponse">
-    <part name="parameters" element="tns:recepcionista_listarTodosResponse" />
-  </message>
   <message name="recepcionista_obtenerPorId">
     <part name="parameters" element="tns:recepcionista_obtenerPorId" />
   </message>
   <message name="recepcionista_obtenerPorIdResponse">
     <part name="parameters" element="tns:recepcionista_obtenerPorIdResponse" />
   </message>
+  <message name="recepcionista_eliminar">
+    <part name="parameters" element="tns:recepcionista_eliminar" />
+  </message>
+  <message name="recepcionista_eliminarResponse">
+    <part name="parameters" element="tns:recepcionista_eliminarResponse" />
+  </message>
+  <message name="recepcionista_listarTodos">
+    <part name="parameters" element="tns:recepcionista_listarTodos" />
+  </message>
+  <message name="recepcionista_listarTodosResponse">
+    <part name="parameters" element="tns:recepcionista_listarTodosResponse" />
+  </message>
+  <message name="recepcionista_obtenerPorUsuarioContrasenha">
+    <part name="parameters" element="tns:recepcionista_obtenerPorUsuarioContrasenha" />
+  </message>
+  <message name="recepcionista_obtenerPorUsuarioContrasenhaResponse">
+    <part name="parameters" element="tns:recepcionista_obtenerPorUsuarioContrasenhaResponse" />
+  </message>
+  <message name="recepcionista_verificarExistenciaNombreUsuario">
+    <part name="parameters" element="tns:recepcionista_verificarExistenciaNombreUsuario" />
+  </message>
+  <message name="recepcionista_verificarExistenciaNombreUsuarioResponse">
+    <part name="parameters" element="tns:recepcionista_verificarExistenciaNombreUsuarioResponse" />
+  </message>
   <portType name="RecepcionistaWA">
-    <operation name="recepcionista_verificarExistenciaNombreUsuario">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_verificarExistenciaNombreUsuarioRequest" message="tns:recepcionista_verificarExistenciaNombreUsuario" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_verificarExistenciaNombreUsuarioResponse" message="tns:recepcionista_verificarExistenciaNombreUsuarioResponse" />
-    </operation>
-    <operation name="recepcionista_obtenerPorUsuarioContrasenha">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtenerPorUsuarioContrasenhaRequest" message="tns:recepcionista_obtenerPorUsuarioContrasenha" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtenerPorUsuarioContrasenhaResponse" message="tns:recepcionista_obtenerPorUsuarioContrasenhaResponse" />
-    </operation>
-    <operation name="recepcionista_eliminar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_eliminarRequest" message="tns:recepcionista_eliminar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_eliminarResponse" message="tns:recepcionista_eliminarResponse" />
-    </operation>
     <operation name="recepcionista_insertar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_insertarRequest" message="tns:recepcionista_insertar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_insertarResponse" message="tns:recepcionista_insertarResponse" />
@@ -68,44 +56,29 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_modificarRequest" message="tns:recepcionista_modificar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_modificarResponse" message="tns:recepcionista_modificarResponse" />
     </operation>
-    <operation name="recepcionista_listarTodos">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_listarTodosRequest" message="tns:recepcionista_listarTodos" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_listarTodosResponse" message="tns:recepcionista_listarTodosResponse" />
-    </operation>
     <operation name="recepcionista_obtenerPorId">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtenerPorIdRequest" message="tns:recepcionista_obtenerPorId" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtenerPorIdResponse" message="tns:recepcionista_obtenerPorIdResponse" />
     </operation>
+    <operation name="recepcionista_eliminar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_eliminarRequest" message="tns:recepcionista_eliminar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_eliminarResponse" message="tns:recepcionista_eliminarResponse" />
+    </operation>
+    <operation name="recepcionista_listarTodos">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_listarTodosRequest" message="tns:recepcionista_listarTodos" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_listarTodosResponse" message="tns:recepcionista_listarTodosResponse" />
+    </operation>
+    <operation name="recepcionista_obtenerPorUsuarioContrasenha">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtenerPorUsuarioContrasenhaRequest" message="tns:recepcionista_obtenerPorUsuarioContrasenha" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_obtenerPorUsuarioContrasenhaResponse" message="tns:recepcionista_obtenerPorUsuarioContrasenhaResponse" />
+    </operation>
+    <operation name="recepcionista_verificarExistenciaNombreUsuario">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_verificarExistenciaNombreUsuarioRequest" message="tns:recepcionista_verificarExistenciaNombreUsuario" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/RecepcionistaWA/recepcionista_verificarExistenciaNombreUsuarioResponse" message="tns:recepcionista_verificarExistenciaNombreUsuarioResponse" />
+    </operation>
   </portType>
   <binding name="RecepcionistaWAPortBinding" type="tns:RecepcionistaWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="recepcionista_verificarExistenciaNombreUsuario">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="recepcionista_obtenerPorUsuarioContrasenha">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="recepcionista_eliminar">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="recepcionista_insertar">
       <soap:operation soapAction="" />
       <input>
@@ -124,6 +97,24 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="recepcionista_obtenerPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="recepcionista_eliminar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="recepcionista_listarTodos">
       <soap:operation soapAction="" />
       <input>
@@ -133,7 +124,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="recepcionista_obtenerPorId">
+    <operation name="recepcionista_obtenerPorUsuarioContrasenha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="recepcionista_verificarExistenciaNombreUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

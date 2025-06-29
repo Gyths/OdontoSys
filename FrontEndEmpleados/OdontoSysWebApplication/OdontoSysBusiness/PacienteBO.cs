@@ -48,21 +48,9 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
             return this.pacienteWAClient.paciente_obtenerPorUsuarioContrasenha(nombreUsuario, contrasenha);
         }
 
-        public BindingList<paciente> paciente_buscarPorNombreApellido(string nombre, string apellido)
+        public bool paciente_verificarExistenciaNombreUsuario(string nombreUsuario)
         {
-            paciente[] lista = this.pacienteWAClient.paciente_buscarPorNombreApellido(nombre, apellido);
-            return new BindingList<paciente>(lista ?? Array.Empty<paciente>());
-        }
-
-        public BindingList<paciente> paciente_buscarPorNombreApellidoDocumento(string nombre, string apellido, string documento)
-        {
-            paciente[] lista = this.pacienteWAClient.paciente_buscarPorNombreApellidoDocumento(nombre, apellido, documento);
-            return new BindingList<paciente>(lista ?? Array.Empty<paciente>());
-        }
-        public BindingList<paciente> paciente_buscarPorNombreApellidoTelefono(string nombre, string apellido, string telefono)
-        {
-            paciente[] lista = this.pacienteWAClient.paciente_buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
-            return new BindingList<paciente>(lista ?? Array.Empty<paciente>());
+            return this.pacienteWAClient.paciente_verificarExistenciaNombreUsuario(nombreUsuario);
         }
     }
 }

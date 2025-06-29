@@ -41,13 +41,8 @@ namespace OdontoSysWebApplication.FrontOdontologo
         private void CargarTratamientosDisponibles()
         {
             var especialidad = ObtenerEspecialidad();
-            var esp = new TratamientoWS.especialidad
-            {
-                idEspecialidad = especialidad.idEspecialidad,
-                idEspecialidadSpecified = true
-            };
             boTratamiento = new TratamientoBO();
-            var tratEspececialidad = boTratamiento.tratamiento_listarPorEspecilidad(esp);
+            var tratEspececialidad = boTratamiento.tratamiento_listarPorEspecilidad(especialidad.idEspecialidad);
 
             ddlTratamiento.AppendDataBoundItems = true;
             ddlTratamiento.DataSource = tratEspececialidad;

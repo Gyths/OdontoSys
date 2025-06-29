@@ -43,9 +43,9 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
             return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
         }
 
-        public BindingList<odontologo> odontologo_listarPorEspecialidad(especialidad especialidad)
+        public BindingList<odontologo> odontologo_listarPorEspecialidad(int idEspecialidad)
         {
-            odontologo[] lista = this.odontologoWAClient.odontologo_listarPorEspecialidad(especialidad);
+            odontologo[] lista = this.odontologoWAClient.odontologo_listarPorEspecialidad(idEspecialidad);
             return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
         }
 
@@ -54,26 +54,9 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
             return this.odontologoWAClient.odontologo_obtenerPorUsuarioContrasenha(nombreUsuario, contrasenha);
         }
 
-        public int odontologo_actualizarPuntuacion(odontologo odontologo)
+        public bool odontologo_verificarExistenciaNombreUsuario(string nombreUsuario)
         {
-            return this.odontologoWAClient.odontologo_actualizarPuntuacion(odontologo);
-        }
-
-        public BindingList<odontologo> odontologo_buscarPorNombreApellido(string nombre, string apellido)
-        {
-            odontologo[] lista = this.odontologoWAClient.odontologo_buscarPorNombreApellido(nombre, apellido);
-            return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
-        }
-
-        public BindingList<odontologo> odontologo_buscarPorNombreApellidoDocumento(string nombre, string apellido, string documento)
-        {
-            odontologo[] lista = this.odontologoWAClient.odontologo_buscarPorNombreApellidoDocumento(nombre, apellido, documento);
-            return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
-        }
-        public BindingList<odontologo> odontologo_buscarPorNombreApellidoTelefono(string nombre, string apellido, string telefono)
-        {
-            odontologo[] lista = this.odontologoWAClient.odontologo_buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
-            return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
+            return this.odontologoWAClient.odontologo_verificarExistenciaNombreUsuario(nombreUsuario);
         }
     }
 }

@@ -79,9 +79,6 @@
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_actualizarFkValoracionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_eliminarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -97,9 +94,6 @@
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_listarPorRecepcionistaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_listarTodosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -107,12 +101,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_obtenerPorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_actualizarEstadoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_actualizarFkComprobanteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CitaWS\OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasResponse.datasource">
@@ -242,9 +230,6 @@
     <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_actualizarPuntuacionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_eliminarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -267,15 +252,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_verificarExistenciaNombreUsuarioResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_buscarPorNombreApellidoDocumentoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_buscarPorNombreApellidoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\OdontologoWS\OdontoSysWebApplication.OdontologoWS.odontologo_buscarPorNombreApellidoTelefonoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\PacienteWS\configuration91.svcinfo" />
@@ -308,15 +284,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_verificarExistenciaNombreUsuarioResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_buscarPorNombreApellidoDocumentoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_buscarPorNombreApellidoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_buscarPorNombreApellidoTelefonoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\PacienteWS\Reference.svcmap">
@@ -515,12 +482,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ValoracionWS\OdontoSysWebApplication.ValoracionWS.valoracion_insertarResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ValoracionWS\OdontoSysWebApplication.ValoracionWS.valoracion_listarPorOdontologoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ValoracionWS\OdontoSysWebApplication.ValoracionWS.valoracion_listarPorPacienteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ValoracionWS\OdontoSysWebApplication.ValoracionWS.valoracion_listarTodosResponse.datasource">

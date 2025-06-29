@@ -45,12 +45,7 @@ namespace OdontoSysWebApplication
                 if (hayEspecialidad)
                 {
                     int idEsp = int.Parse(ddlEspecialidad.SelectedValue);
-                    var especialidadOdontologo = new OdontologoWS.especialidad
-                    {
-                        idEspecialidad = idEsp,
-                        idEspecialidadSpecified = true
-                    };
-                    lista = odonlogoBO.odontologo_listarPorEspecialidad(especialidadOdontologo);
+                    lista = odonlogoBO.odontologo_listarPorEspecialidad(idEsp);
                 }
                 else if (!hayNombre && !hayApellido && !hayDocumento)
                 {
@@ -58,11 +53,11 @@ namespace OdontoSysWebApplication
                 }
                 else if (hayNombre && hayApellido && !hayDocumento)
                 {
-                    lista = odonlogoBO.odontologo_buscarPorNombreApellido(txtNombre.Text.Trim(), txtApellidos.Text.Trim());
+                    //lista = odonlogoBO.odontologo_buscarPorNombreApellido(txtNombre.Text.Trim(), txtApellidos.Text.Trim());
                 }
                 else if (hayNombre && hayApellido && hayDocumento)
                 {
-                    lista = odonlogoBO.odontologo_buscarPorNombreApellidoDocumento(txtNombre.Text.Trim(), txtApellidos.Text.Trim(), txtDocumento.Text.Trim());
+                    //lista = odonlogoBO.odontologo_buscarPorNombreApellidoDocumento(txtNombre.Text.Trim(), txtApellidos.Text.Trim(), txtDocumento.Text.Trim());
                 }
                 else
                 {

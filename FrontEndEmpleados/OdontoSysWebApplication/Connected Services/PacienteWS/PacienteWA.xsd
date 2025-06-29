@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://webapplication.odontosys.edu.pucp.pe/" targetNamespace="http://webapplication.odontosys.edu.pucp.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="paciente_buscarPorNombreApellido" type="tns:paciente_buscarPorNombreApellido" />
-  <xs:element name="paciente_buscarPorNombreApellidoDocumento" type="tns:paciente_buscarPorNombreApellidoDocumento" />
-  <xs:element name="paciente_buscarPorNombreApellidoDocumentoResponse" type="tns:paciente_buscarPorNombreApellidoDocumentoResponse" />
-  <xs:element name="paciente_buscarPorNombreApellidoResponse" type="tns:paciente_buscarPorNombreApellidoResponse" />
-  <xs:element name="paciente_buscarPorNombreApellidoTelefono" type="tns:paciente_buscarPorNombreApellidoTelefono" />
-  <xs:element name="paciente_buscarPorNombreApellidoTelefonoResponse" type="tns:paciente_buscarPorNombreApellidoTelefonoResponse" />
   <xs:element name="paciente_eliminar" type="tns:paciente_eliminar" />
   <xs:element name="paciente_eliminarResponse" type="tns:paciente_eliminarResponse" />
   <xs:element name="paciente_insertar" type="tns:paciente_insertar" />
@@ -61,7 +55,6 @@
       <xs:element minOccurs="0" name="idCita" type="xs:int" />
       <xs:element minOccurs="0" name="odontologo" type="tns:odontologo" />
       <xs:element minOccurs="0" name="paciente" type="tns:paciente" />
-      <xs:element minOccurs="0" name="recepcionista" type="tns:recepcionista" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="tratamientos" nillable="true" type="tns:detalleTratamiento" />
       <xs:element minOccurs="0" name="valoracion" type="tns:valoracion" />
     </xs:sequence>
@@ -122,16 +115,6 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="recepcionista">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:persona">
-        <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="citas" nillable="true" type="tns:cita" />
-          <xs:element minOccurs="0" name="idRecepcionista" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="detalleTratamiento">
     <xs:sequence>
       <xs:element minOccurs="0" name="cantidad" type="xs:int" />
@@ -155,29 +138,6 @@
       <xs:element minOccurs="0" name="comentario" type="xs:string" />
       <xs:element minOccurs="0" name="fechaCalificacion" type="xs:string" />
       <xs:element minOccurs="0" name="idValoracion" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="paciente_buscarPorNombreApellido">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
-      <xs:element minOccurs="0" name="apellido" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="paciente_buscarPorNombreApellidoResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:paciente" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="paciente_buscarPorNombreApellidoTelefono">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
-      <xs:element minOccurs="0" name="apellido" type="xs:string" />
-      <xs:element minOccurs="0" name="telefono" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="paciente_buscarPorNombreApellidoTelefonoResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:paciente" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="paciente_listarTodos">
@@ -206,18 +166,6 @@
   <xs:complexType name="paciente_verificarExistenciaNombreUsuarioResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="paciente_buscarPorNombreApellidoDocumento">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
-      <xs:element minOccurs="0" name="apellido" type="xs:string" />
-      <xs:element minOccurs="0" name="documento" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="paciente_buscarPorNombreApellidoDocumentoResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:paciente" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="paciente_insertar">

@@ -27,9 +27,9 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
             return this.turnoXOdontologoWAClient.turnoXOdontologo_modificar(turnoXOdontologo);
         }
 
-        public int turnoXOdontologo_eliminar(turnoXOdontologo turnoXOdontologo)
+        public int turnoXOdontologo_eliminar(int idOdontologo, int idTurno)
         {
-            return this.turnoXOdontologoWAClient.turnoXOdontologo_eliminar(turnoXOdontologo);
+            return this.turnoXOdontologoWAClient.turnoXOdontologo_eliminar(idOdontologo,idTurno);
         }
 
         public BindingList<turnoXOdontologo> turnoXOdontologo_listarTodos()

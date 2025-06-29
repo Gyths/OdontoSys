@@ -5,35 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/DetalleTratamientoWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
-  <message name="detalleTratamiento_modificar">
-    <part name="parameters" element="tns:detalleTratamiento_modificar" />
+  <message name="detalleTratamiento_actualizarSubtotal">
+    <part name="parameters" element="tns:detalleTratamiento_actualizarSubtotal" />
   </message>
-  <message name="detalleTratamiento_modificarResponse">
-    <part name="parameters" element="tns:detalleTratamiento_modificarResponse" />
-  </message>
-  <message name="detalleTratamiento_listarPorCita">
-    <part name="parameters" element="tns:detalleTratamiento_listarPorCita" />
-  </message>
-  <message name="detalleTratamiento_listarPorCitaResponse">
-    <part name="parameters" element="tns:detalleTratamiento_listarPorCitaResponse" />
-  </message>
-  <message name="detalleTratamiento_eliminar">
-    <part name="parameters" element="tns:detalleTratamiento_eliminar" />
-  </message>
-  <message name="detalleTratamiento_eliminarResponse">
-    <part name="parameters" element="tns:detalleTratamiento_eliminarResponse" />
-  </message>
-  <message name="detalleTratamiento_obtenerPorId">
-    <part name="parameters" element="tns:detalleTratamiento_obtenerPorId" />
-  </message>
-  <message name="detalleTratamiento_obtenerPorIdResponse">
-    <part name="parameters" element="tns:detalleTratamiento_obtenerPorIdResponse" />
-  </message>
-  <message name="detalleTratamiento_insertar">
-    <part name="parameters" element="tns:detalleTratamiento_insertar" />
-  </message>
-  <message name="detalleTratamiento_insertarResponse">
-    <part name="parameters" element="tns:detalleTratamiento_insertarResponse" />
+  <message name="detalleTratamiento_actualizarSubtotalResponse">
+    <part name="parameters" element="tns:detalleTratamiento_actualizarSubtotalResponse" />
   </message>
   <message name="detalleTratamiento_listarTodos">
     <part name="parameters" element="tns:detalleTratamiento_listarTodos" />
@@ -41,81 +17,69 @@
   <message name="detalleTratamiento_listarTodosResponse">
     <part name="parameters" element="tns:detalleTratamiento_listarTodosResponse" />
   </message>
-  <message name="detalleTratamiento_actualizarSubtotal">
-    <part name="parameters" element="tns:detalleTratamiento_actualizarSubtotal" />
+  <message name="detalleTratamiento_listarPorCita">
+    <part name="parameters" element="tns:detalleTratamiento_listarPorCita" />
   </message>
-  <message name="detalleTratamiento_actualizarSubtotalResponse">
-    <part name="parameters" element="tns:detalleTratamiento_actualizarSubtotalResponse" />
+  <message name="detalleTratamiento_listarPorCitaResponse">
+    <part name="parameters" element="tns:detalleTratamiento_listarPorCitaResponse" />
+  </message>
+  <message name="detalleTratamiento_insertar">
+    <part name="parameters" element="tns:detalleTratamiento_insertar" />
+  </message>
+  <message name="detalleTratamiento_insertarResponse">
+    <part name="parameters" element="tns:detalleTratamiento_insertarResponse" />
+  </message>
+  <message name="detalleTratamiento_obtenerPorId">
+    <part name="parameters" element="tns:detalleTratamiento_obtenerPorId" />
+  </message>
+  <message name="detalleTratamiento_obtenerPorIdResponse">
+    <part name="parameters" element="tns:detalleTratamiento_obtenerPorIdResponse" />
+  </message>
+  <message name="detalleTratamiento_eliminar">
+    <part name="parameters" element="tns:detalleTratamiento_eliminar" />
+  </message>
+  <message name="detalleTratamiento_eliminarResponse">
+    <part name="parameters" element="tns:detalleTratamiento_eliminarResponse" />
+  </message>
+  <message name="detalleTratamiento_modificar">
+    <part name="parameters" element="tns:detalleTratamiento_modificar" />
+  </message>
+  <message name="detalleTratamiento_modificarResponse">
+    <part name="parameters" element="tns:detalleTratamiento_modificarResponse" />
   </message>
   <portType name="DetalleTratamientoWA">
-    <operation name="detalleTratamiento_modificar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_modificarRequest" message="tns:detalleTratamiento_modificar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_modificarResponse" message="tns:detalleTratamiento_modificarResponse" />
-    </operation>
-    <operation name="detalleTratamiento_listarPorCita">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_listarPorCitaRequest" message="tns:detalleTratamiento_listarPorCita" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_listarPorCitaResponse" message="tns:detalleTratamiento_listarPorCitaResponse" />
-    </operation>
-    <operation name="detalleTratamiento_eliminar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_eliminarRequest" message="tns:detalleTratamiento_eliminar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_eliminarResponse" message="tns:detalleTratamiento_eliminarResponse" />
-    </operation>
-    <operation name="detalleTratamiento_obtenerPorId">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_obtenerPorIdRequest" message="tns:detalleTratamiento_obtenerPorId" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_obtenerPorIdResponse" message="tns:detalleTratamiento_obtenerPorIdResponse" />
-    </operation>
-    <operation name="detalleTratamiento_insertar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_insertarRequest" message="tns:detalleTratamiento_insertar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_insertarResponse" message="tns:detalleTratamiento_insertarResponse" />
+    <operation name="detalleTratamiento_actualizarSubtotal">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_actualizarSubtotalRequest" message="tns:detalleTratamiento_actualizarSubtotal" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_actualizarSubtotalResponse" message="tns:detalleTratamiento_actualizarSubtotalResponse" />
     </operation>
     <operation name="detalleTratamiento_listarTodos">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_listarTodosRequest" message="tns:detalleTratamiento_listarTodos" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_listarTodosResponse" message="tns:detalleTratamiento_listarTodosResponse" />
     </operation>
-    <operation name="detalleTratamiento_actualizarSubtotal">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_actualizarSubtotalRequest" message="tns:detalleTratamiento_actualizarSubtotal" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_actualizarSubtotalResponse" message="tns:detalleTratamiento_actualizarSubtotalResponse" />
+    <operation name="detalleTratamiento_listarPorCita">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_listarPorCitaRequest" message="tns:detalleTratamiento_listarPorCita" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_listarPorCitaResponse" message="tns:detalleTratamiento_listarPorCitaResponse" />
+    </operation>
+    <operation name="detalleTratamiento_insertar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_insertarRequest" message="tns:detalleTratamiento_insertar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_insertarResponse" message="tns:detalleTratamiento_insertarResponse" />
+    </operation>
+    <operation name="detalleTratamiento_obtenerPorId">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_obtenerPorIdRequest" message="tns:detalleTratamiento_obtenerPorId" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_obtenerPorIdResponse" message="tns:detalleTratamiento_obtenerPorIdResponse" />
+    </operation>
+    <operation name="detalleTratamiento_eliminar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_eliminarRequest" message="tns:detalleTratamiento_eliminar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_eliminarResponse" message="tns:detalleTratamiento_eliminarResponse" />
+    </operation>
+    <operation name="detalleTratamiento_modificar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_modificarRequest" message="tns:detalleTratamiento_modificar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/DetalleTratamientoWA/detalleTratamiento_modificarResponse" message="tns:detalleTratamiento_modificarResponse" />
     </operation>
   </portType>
   <binding name="DetalleTratamientoWAPortBinding" type="tns:DetalleTratamientoWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="detalleTratamiento_modificar">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="detalleTratamiento_listarPorCita">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="detalleTratamiento_eliminar">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="detalleTratamiento_obtenerPorId">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="detalleTratamiento_insertar">
+    <operation name="detalleTratamiento_actualizarSubtotal">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -133,7 +97,43 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="detalleTratamiento_actualizarSubtotal">
+    <operation name="detalleTratamiento_listarPorCita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="detalleTratamiento_insertar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="detalleTratamiento_obtenerPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="detalleTratamiento_eliminar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="detalleTratamiento_modificar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
