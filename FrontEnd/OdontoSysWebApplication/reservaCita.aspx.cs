@@ -88,7 +88,7 @@ namespace OdontoSysWebApplication
             };
 
 
-            var odontologos = this.OdontologoBO.odontologo_listarPorEspecialidad(especialidad);
+            var odontologos = this.OdontologoBO.odontologo_listarPorEspecialidad(especialidad.idEspecialidad);
 
             ddlOdontologos.Items.Add(new ListItem("-- Seleccione un odontólogo --", ""));
             foreach (var o in odontologos)
@@ -137,7 +137,7 @@ namespace OdontoSysWebApplication
                 idOdontologoSpecified = true
             };
 
-            var citas = this.CitaBO.cita_listarPorOdontologoFechas(odontologoCita, fechaInicioStr, fechaFinStr);
+            var citas = this.CitaBO.cita_listarPorOdontologoFechas(odontologoCita.idOdontologo, fechaInicioStr, fechaFinStr);
 
             var disponibilidad = CalcularHorasDisponibles(turnos, citas, fechaInicio);
 
