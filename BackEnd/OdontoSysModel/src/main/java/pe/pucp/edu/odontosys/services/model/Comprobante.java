@@ -7,7 +7,6 @@ public class Comprobante {
     private Integer idComprobante;
     private String fechaEmision;
     private String horaEmision;
-    private String numeroDocumento;
     private double total;
     private MetodoPago metodoDePago;
 
