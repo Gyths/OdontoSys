@@ -146,6 +146,14 @@
       <xs:element minOccurs="0" name="idValoracion" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="paciente_listarTodos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="paciente_listarTodosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:paciente" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="paciente_buscarPorNombreApellido">
     <xs:sequence>
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
@@ -165,14 +173,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="paciente_buscarPorNombreApellidoTelefonoResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:paciente" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="paciente_listarTodos">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="paciente_listarTodosResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:paciente" />
     </xs:sequence>

@@ -16,58 +16,6 @@ namespace OdontoSysBusiness.ComprobanteWS {
     public interface ComprobanteWA {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_actualizarT" +
-            "otalRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_actualizarT" +
-            "otalResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalResponse comprobante_actualizarTotal(OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_actualizarT" +
-            "otalRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_actualizarT" +
-            "otalResponse")]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalResponse> comprobante_actualizarTotalAsync(OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarReq" +
-            "uest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarRes" +
-            "ponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysBusiness.ComprobanteWS.comprobante_eliminarResponse comprobante_eliminar(OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarReq" +
-            "uest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarRes" +
-            "ponse")]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_eliminarResponse> comprobante_eliminarAsync(OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_modificaReq" +
-            "uest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_modificaRes" +
-            "ponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysBusiness.ComprobanteWS.comprobante_modificaResponse comprobante_modifica(OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_modificaReq" +
-            "uest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_modificaRes" +
-            "ponse")]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_modificaResponse> comprobante_modificaAsync(OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodos" +
-            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodos" +
-            "Response")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosResponse comprobante_listarTodos(OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodos" +
-            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodos" +
-            "Response")]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosResponse> comprobante_listarTodosAsync(OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_insertarReq" +
             "uest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_insertarRes" +
             "ponse")]
@@ -92,46 +40,62 @@ namespace OdontoSysBusiness.ComprobanteWS {
             "dRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_obtenerPorI" +
             "dResponse")]
         System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_obtenerPorIdResponse> comprobante_obtenerPorIdAsync(OdontoSysBusiness.ComprobanteWS.comprobante_obtenerPorIdRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_actualizarTotal", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class comprobante_actualizarTotalRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idCita;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_modificaReq" +
+            "uest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_modificaRes" +
+            "ponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysBusiness.ComprobanteWS.comprobante_modificaResponse comprobante_modifica(OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest request);
         
-        public comprobante_actualizarTotalRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_modificaReq" +
+            "uest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_modificaRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_modificaResponse> comprobante_modificaAsync(OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest request);
         
-        public comprobante_actualizarTotalRequest(int idCita) {
-            this.idCita = idCita;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_actualizarTotalResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class comprobante_actualizarTotalResponse {
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarReq" +
+            "uest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarRes" +
+            "ponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysBusiness.ComprobanteWS.comprobante_eliminarResponse comprobante_eliminar(OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarReq" +
+            "uest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_eliminarResponse> comprobante_eliminarAsync(OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest request);
         
-        public comprobante_actualizarTotalResponse() {
-        }
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodos" +
+            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodos" +
+            "Response")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosResponse comprobante_listarTodos(OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest request);
         
-        public comprobante_actualizarTotalResponse(int @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodos" +
+            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodos" +
+            "Response")]
+        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosResponse> comprobante_listarTodosAsync(OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_actualizarT" +
+            "otalRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_actualizarT" +
+            "otalResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalResponse comprobante_actualizarTotal(OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_actualizarT" +
+            "otalRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_actualizarT" +
+            "otalResponse")]
+        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalResponse> comprobante_actualizarTotalAsync(OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest request);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -233,7 +197,7 @@ namespace OdontoSysBusiness.ComprobanteWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -289,106 +253,6 @@ namespace OdontoSysBusiness.ComprobanteWS {
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class comprobante_eliminarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysBusiness.ComprobanteWS.comprobante comprobante;
-        
-        public comprobante_eliminarRequest() {
-        }
-        
-        public comprobante_eliminarRequest(OdontoSysBusiness.ComprobanteWS.comprobante comprobante) {
-            this.comprobante = comprobante;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class comprobante_eliminarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public comprobante_eliminarResponse() {
-        }
-        
-        public comprobante_eliminarResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_modifica", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class comprobante_modificaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysBusiness.ComprobanteWS.comprobante comprobante;
-        
-        public comprobante_modificaRequest() {
-        }
-        
-        public comprobante_modificaRequest(OdontoSysBusiness.ComprobanteWS.comprobante comprobante) {
-            this.comprobante = comprobante;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_modificaResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class comprobante_modificaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public comprobante_modificaResponse() {
-        }
-        
-        public comprobante_modificaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class comprobante_listarTodosRequest {
-        
-        public comprobante_listarTodosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class comprobante_listarTodosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysBusiness.ComprobanteWS.comprobante[] @return;
-        
-        public comprobante_listarTodosResponse() {
-        }
-        
-        public comprobante_listarTodosResponse(OdontoSysBusiness.ComprobanteWS.comprobante[] @return) {
-            this.@return = @return;
         }
     }
     
@@ -464,6 +328,142 @@ namespace OdontoSysBusiness.ComprobanteWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_modifica", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class comprobante_modificaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysBusiness.ComprobanteWS.comprobante comprobante;
+        
+        public comprobante_modificaRequest() {
+        }
+        
+        public comprobante_modificaRequest(OdontoSysBusiness.ComprobanteWS.comprobante comprobante) {
+            this.comprobante = comprobante;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_modificaResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class comprobante_modificaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public comprobante_modificaResponse() {
+        }
+        
+        public comprobante_modificaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class comprobante_eliminarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysBusiness.ComprobanteWS.comprobante comprobante;
+        
+        public comprobante_eliminarRequest() {
+        }
+        
+        public comprobante_eliminarRequest(OdontoSysBusiness.ComprobanteWS.comprobante comprobante) {
+            this.comprobante = comprobante;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class comprobante_eliminarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public comprobante_eliminarResponse() {
+        }
+        
+        public comprobante_eliminarResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class comprobante_listarTodosRequest {
+        
+        public comprobante_listarTodosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class comprobante_listarTodosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysBusiness.ComprobanteWS.comprobante[] @return;
+        
+        public comprobante_listarTodosResponse() {
+        }
+        
+        public comprobante_listarTodosResponse(OdontoSysBusiness.ComprobanteWS.comprobante[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_actualizarTotal", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class comprobante_actualizarTotalRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idCita;
+        
+        public comprobante_actualizarTotalRequest() {
+        }
+        
+        public comprobante_actualizarTotalRequest(int idCita) {
+            this.idCita = idCita;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="comprobante_actualizarTotalResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class comprobante_actualizarTotalResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public comprobante_actualizarTotalResponse() {
+        }
+        
+        public comprobante_actualizarTotalResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ComprobanteWAChannel : OdontoSysBusiness.ComprobanteWS.ComprobanteWA, System.ServiceModel.IClientChannel {
     }
@@ -489,96 +489,6 @@ namespace OdontoSysBusiness.ComprobanteWS {
         
         public ComprobanteWAClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalResponse OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_actualizarTotal(OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest request) {
-            return base.Channel.comprobante_actualizarTotal(request);
-        }
-        
-        public int comprobante_actualizarTotal(int idCita) {
-            OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest();
-            inValue.idCita = idCita;
-            OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalResponse retVal = ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_actualizarTotal(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalResponse> OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_actualizarTotalAsync(OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest request) {
-            return base.Channel.comprobante_actualizarTotalAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalResponse> comprobante_actualizarTotalAsync(int idCita) {
-            OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest();
-            inValue.idCita = idCita;
-            return ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_actualizarTotalAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysBusiness.ComprobanteWS.comprobante_eliminarResponse OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_eliminar(OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest request) {
-            return base.Channel.comprobante_eliminar(request);
-        }
-        
-        public int comprobante_eliminar(OdontoSysBusiness.ComprobanteWS.comprobante comprobante) {
-            OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest();
-            inValue.comprobante = comprobante;
-            OdontoSysBusiness.ComprobanteWS.comprobante_eliminarResponse retVal = ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_eliminar(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_eliminarResponse> OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_eliminarAsync(OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest request) {
-            return base.Channel.comprobante_eliminarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_eliminarResponse> comprobante_eliminarAsync(OdontoSysBusiness.ComprobanteWS.comprobante comprobante) {
-            OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest();
-            inValue.comprobante = comprobante;
-            return ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_eliminarAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysBusiness.ComprobanteWS.comprobante_modificaResponse OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_modifica(OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest request) {
-            return base.Channel.comprobante_modifica(request);
-        }
-        
-        public int comprobante_modifica(OdontoSysBusiness.ComprobanteWS.comprobante comprobante) {
-            OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest();
-            inValue.comprobante = comprobante;
-            OdontoSysBusiness.ComprobanteWS.comprobante_modificaResponse retVal = ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_modifica(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_modificaResponse> OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_modificaAsync(OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest request) {
-            return base.Channel.comprobante_modificaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_modificaResponse> comprobante_modificaAsync(OdontoSysBusiness.ComprobanteWS.comprobante comprobante) {
-            OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest();
-            inValue.comprobante = comprobante;
-            return ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_modificaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosResponse OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_listarTodos(OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest request) {
-            return base.Channel.comprobante_listarTodos(request);
-        }
-        
-        public OdontoSysBusiness.ComprobanteWS.comprobante[] comprobante_listarTodos() {
-            OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest();
-            OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosResponse retVal = ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_listarTodos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosResponse> OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_listarTodosAsync(OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest request) {
-            return base.Channel.comprobante_listarTodosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosResponse> comprobante_listarTodosAsync() {
-            OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest();
-            return ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_listarTodosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -625,6 +535,96 @@ namespace OdontoSysBusiness.ComprobanteWS {
             OdontoSysBusiness.ComprobanteWS.comprobante_obtenerPorIdRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_obtenerPorIdRequest();
             inValue.id = id;
             return ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_obtenerPorIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysBusiness.ComprobanteWS.comprobante_modificaResponse OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_modifica(OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest request) {
+            return base.Channel.comprobante_modifica(request);
+        }
+        
+        public int comprobante_modifica(OdontoSysBusiness.ComprobanteWS.comprobante comprobante) {
+            OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest();
+            inValue.comprobante = comprobante;
+            OdontoSysBusiness.ComprobanteWS.comprobante_modificaResponse retVal = ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_modifica(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_modificaResponse> OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_modificaAsync(OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest request) {
+            return base.Channel.comprobante_modificaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_modificaResponse> comprobante_modificaAsync(OdontoSysBusiness.ComprobanteWS.comprobante comprobante) {
+            OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_modificaRequest();
+            inValue.comprobante = comprobante;
+            return ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_modificaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysBusiness.ComprobanteWS.comprobante_eliminarResponse OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_eliminar(OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest request) {
+            return base.Channel.comprobante_eliminar(request);
+        }
+        
+        public int comprobante_eliminar(OdontoSysBusiness.ComprobanteWS.comprobante comprobante) {
+            OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest();
+            inValue.comprobante = comprobante;
+            OdontoSysBusiness.ComprobanteWS.comprobante_eliminarResponse retVal = ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_eliminar(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_eliminarResponse> OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_eliminarAsync(OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest request) {
+            return base.Channel.comprobante_eliminarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_eliminarResponse> comprobante_eliminarAsync(OdontoSysBusiness.ComprobanteWS.comprobante comprobante) {
+            OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_eliminarRequest();
+            inValue.comprobante = comprobante;
+            return ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_eliminarAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosResponse OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_listarTodos(OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest request) {
+            return base.Channel.comprobante_listarTodos(request);
+        }
+        
+        public OdontoSysBusiness.ComprobanteWS.comprobante[] comprobante_listarTodos() {
+            OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest();
+            OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosResponse retVal = ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_listarTodos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosResponse> OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_listarTodosAsync(OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest request) {
+            return base.Channel.comprobante_listarTodosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosResponse> comprobante_listarTodosAsync() {
+            OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_listarTodosRequest();
+            return ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_listarTodosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalResponse OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_actualizarTotal(OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest request) {
+            return base.Channel.comprobante_actualizarTotal(request);
+        }
+        
+        public int comprobante_actualizarTotal(int idCita) {
+            OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest();
+            inValue.idCita = idCita;
+            OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalResponse retVal = ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_actualizarTotal(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalResponse> OdontoSysBusiness.ComprobanteWS.ComprobanteWA.comprobante_actualizarTotalAsync(OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest request) {
+            return base.Channel.comprobante_actualizarTotalAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalResponse> comprobante_actualizarTotalAsync(int idCita) {
+            OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest inValue = new OdontoSysBusiness.ComprobanteWS.comprobante_actualizarTotalRequest();
+            inValue.idCita = idCita;
+            return ((OdontoSysBusiness.ComprobanteWS.ComprobanteWA)(this)).comprobante_actualizarTotalAsync(inValue);
         }
     }
 }

@@ -5,7 +5,6 @@
       SELECT
         C.CITA_ID,
         C.PACIENTE_ID,
-        C.RECEPCIONISTA_ID,
         C.ODONTOLOGO_ID,
         C.COMPROBANTE_ID,
         C.FECHA,
@@ -59,7 +58,6 @@
       SELECT
         C.CITA_ID,
         C.PACIENTE_ID,
-        C.RECEPCIONISTA_ID,
         C.ODONTOLOGO_ID,
         C.COMPROBANTE_ID,
         C.FECHA,
@@ -115,7 +113,6 @@
       SELECT
         C.CITA_ID,
         C.PACIENTE_ID,
-        C.RECEPCIONISTA_ID,
         C.ODONTOLOGO_ID,
         C.COMPROBANTE_ID,
         C.FECHA,
@@ -169,7 +166,6 @@
       SELECT
         C.CITA_ID,
         C.PACIENTE_ID,
-        C.RECEPCIONISTA_ID,
         C.ODONTOLOGO_ID,
         C.COMPROBANTE_ID,
         C.FECHA,

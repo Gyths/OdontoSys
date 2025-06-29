@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/TratamientoWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
-  <message name="tratamiento_listarPorEspecilidad">
-    <part name="parameters" element="tns:tratamiento_listarPorEspecilidad" />
-  </message>
-  <message name="tratamiento_listarPorEspecilidadResponse">
-    <part name="parameters" element="tns:tratamiento_listarPorEspecilidadResponse" />
-  </message>
   <message name="tratamiento_eliminar">
     <part name="parameters" element="tns:tratamiento_eliminar" />
   </message>
@@ -41,11 +35,13 @@
   <message name="tratamiento_listarTodosResponse">
     <part name="parameters" element="tns:tratamiento_listarTodosResponse" />
   </message>
+  <message name="tratamiento_listarPorEspecilidad">
+    <part name="parameters" element="tns:tratamiento_listarPorEspecilidad" />
+  </message>
+  <message name="tratamiento_listarPorEspecilidadResponse">
+    <part name="parameters" element="tns:tratamiento_listarPorEspecilidadResponse" />
+  </message>
   <portType name="TratamientoWA">
-    <operation name="tratamiento_listarPorEspecilidad">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_listarPorEspecilidadRequest" message="tns:tratamiento_listarPorEspecilidad" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_listarPorEspecilidadResponse" message="tns:tratamiento_listarPorEspecilidadResponse" />
-    </operation>
     <operation name="tratamiento_eliminar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_eliminarRequest" message="tns:tratamiento_eliminar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_eliminarResponse" message="tns:tratamiento_eliminarResponse" />
@@ -66,18 +62,13 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_listarTodosRequest" message="tns:tratamiento_listarTodos" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_listarTodosResponse" message="tns:tratamiento_listarTodosResponse" />
     </operation>
+    <operation name="tratamiento_listarPorEspecilidad">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_listarPorEspecilidadRequest" message="tns:tratamiento_listarPorEspecilidad" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_listarPorEspecilidadResponse" message="tns:tratamiento_listarPorEspecilidadResponse" />
+    </operation>
   </portType>
   <binding name="TratamientoWAPortBinding" type="tns:TratamientoWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="tratamiento_listarPorEspecilidad">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="tratamiento_eliminar">
       <soap:operation soapAction="" />
       <input>
@@ -115,6 +106,15 @@
       </output>
     </operation>
     <operation name="tratamiento_listarTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="tratamiento_listarPorEspecilidad">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -5,17 +5,35 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/OdontologoWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
-  <message name="odontologo_buscarPorNombreApellidoDocumento">
-    <part name="parameters" element="tns:odontologo_buscarPorNombreApellidoDocumento" />
+  <message name="odontologo_modificar">
+    <part name="parameters" element="tns:odontologo_modificar" />
   </message>
-  <message name="odontologo_buscarPorNombreApellidoDocumentoResponse">
-    <part name="parameters" element="tns:odontologo_buscarPorNombreApellidoDocumentoResponse" />
+  <message name="odontologo_modificarResponse">
+    <part name="parameters" element="tns:odontologo_modificarResponse" />
   </message>
-  <message name="odontologo_verificarExistenciaNombreUsuario">
-    <part name="parameters" element="tns:odontologo_verificarExistenciaNombreUsuario" />
+  <message name="odontologo_eliminar">
+    <part name="parameters" element="tns:odontologo_eliminar" />
   </message>
-  <message name="odontologo_verificarExistenciaNombreUsuarioResponse">
-    <part name="parameters" element="tns:odontologo_verificarExistenciaNombreUsuarioResponse" />
+  <message name="odontologo_eliminarResponse">
+    <part name="parameters" element="tns:odontologo_eliminarResponse" />
+  </message>
+  <message name="odontologo_insertar">
+    <part name="parameters" element="tns:odontologo_insertar" />
+  </message>
+  <message name="odontologo_insertarResponse">
+    <part name="parameters" element="tns:odontologo_insertarResponse" />
+  </message>
+  <message name="odontologo_obtenerPorId">
+    <part name="parameters" element="tns:odontologo_obtenerPorId" />
+  </message>
+  <message name="odontologo_obtenerPorIdResponse">
+    <part name="parameters" element="tns:odontologo_obtenerPorIdResponse" />
+  </message>
+  <message name="odontologo_listarTodos">
+    <part name="parameters" element="tns:odontologo_listarTodos" />
+  </message>
+  <message name="odontologo_listarTodosResponse">
+    <part name="parameters" element="tns:odontologo_listarTodosResponse" />
   </message>
   <message name="odontologo_listarPorEspecialidad">
     <part name="parameters" element="tns:odontologo_listarPorEspecialidad" />
@@ -35,44 +53,38 @@
   <message name="odontologo_obtenerPorUsuarioContrasenhaResponse">
     <part name="parameters" element="tns:odontologo_obtenerPorUsuarioContrasenhaResponse" />
   </message>
-  <message name="odontologo_listarTodos">
-    <part name="parameters" element="tns:odontologo_listarTodos" />
+  <message name="odontologo_buscarPorNombreApellidoDocumento">
+    <part name="parameters" element="tns:odontologo_buscarPorNombreApellidoDocumento" />
   </message>
-  <message name="odontologo_listarTodosResponse">
-    <part name="parameters" element="tns:odontologo_listarTodosResponse" />
+  <message name="odontologo_buscarPorNombreApellidoDocumentoResponse">
+    <part name="parameters" element="tns:odontologo_buscarPorNombreApellidoDocumentoResponse" />
   </message>
-  <message name="odontologo_obtenerPorId">
-    <part name="parameters" element="tns:odontologo_obtenerPorId" />
+  <message name="odontologo_verificarExistenciaNombreUsuario">
+    <part name="parameters" element="tns:odontologo_verificarExistenciaNombreUsuario" />
   </message>
-  <message name="odontologo_obtenerPorIdResponse">
-    <part name="parameters" element="tns:odontologo_obtenerPorIdResponse" />
-  </message>
-  <message name="odontologo_eliminar">
-    <part name="parameters" element="tns:odontologo_eliminar" />
-  </message>
-  <message name="odontologo_eliminarResponse">
-    <part name="parameters" element="tns:odontologo_eliminarResponse" />
-  </message>
-  <message name="odontologo_insertar">
-    <part name="parameters" element="tns:odontologo_insertar" />
-  </message>
-  <message name="odontologo_insertarResponse">
-    <part name="parameters" element="tns:odontologo_insertarResponse" />
-  </message>
-  <message name="odontologo_modificar">
-    <part name="parameters" element="tns:odontologo_modificar" />
-  </message>
-  <message name="odontologo_modificarResponse">
-    <part name="parameters" element="tns:odontologo_modificarResponse" />
+  <message name="odontologo_verificarExistenciaNombreUsuarioResponse">
+    <part name="parameters" element="tns:odontologo_verificarExistenciaNombreUsuarioResponse" />
   </message>
   <portType name="OdontologoWA">
-    <operation name="odontologo_buscarPorNombreApellidoDocumento">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_buscarPorNombreApellidoDocumentoRequest" message="tns:odontologo_buscarPorNombreApellidoDocumento" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_buscarPorNombreApellidoDocumentoResponse" message="tns:odontologo_buscarPorNombreApellidoDocumentoResponse" />
+    <operation name="odontologo_modificar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarRequest" message="tns:odontologo_modificar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarResponse" message="tns:odontologo_modificarResponse" />
     </operation>
-    <operation name="odontologo_verificarExistenciaNombreUsuario">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_verificarExistenciaNombreUsuarioRequest" message="tns:odontologo_verificarExistenciaNombreUsuario" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_verificarExistenciaNombreUsuarioResponse" message="tns:odontologo_verificarExistenciaNombreUsuarioResponse" />
+    <operation name="odontologo_eliminar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarRequest" message="tns:odontologo_eliminar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarResponse" message="tns:odontologo_eliminarResponse" />
+    </operation>
+    <operation name="odontologo_insertar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_insertarRequest" message="tns:odontologo_insertar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_insertarResponse" message="tns:odontologo_insertarResponse" />
+    </operation>
+    <operation name="odontologo_obtenerPorId">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorIdRequest" message="tns:odontologo_obtenerPorId" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorIdResponse" message="tns:odontologo_obtenerPorIdResponse" />
+    </operation>
+    <operation name="odontologo_listarTodos">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarTodosRequest" message="tns:odontologo_listarTodos" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarTodosResponse" message="tns:odontologo_listarTodosResponse" />
     </operation>
     <operation name="odontologo_listarPorEspecialidad">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarPorEspecialidadRequest" message="tns:odontologo_listarPorEspecialidad" />
@@ -86,30 +98,18 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorUsuarioContrasenhaRequest" message="tns:odontologo_obtenerPorUsuarioContrasenha" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorUsuarioContrasenhaResponse" message="tns:odontologo_obtenerPorUsuarioContrasenhaResponse" />
     </operation>
-    <operation name="odontologo_listarTodos">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarTodosRequest" message="tns:odontologo_listarTodos" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_listarTodosResponse" message="tns:odontologo_listarTodosResponse" />
+    <operation name="odontologo_buscarPorNombreApellidoDocumento">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_buscarPorNombreApellidoDocumentoRequest" message="tns:odontologo_buscarPorNombreApellidoDocumento" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_buscarPorNombreApellidoDocumentoResponse" message="tns:odontologo_buscarPorNombreApellidoDocumentoResponse" />
     </operation>
-    <operation name="odontologo_obtenerPorId">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorIdRequest" message="tns:odontologo_obtenerPorId" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerPorIdResponse" message="tns:odontologo_obtenerPorIdResponse" />
-    </operation>
-    <operation name="odontologo_eliminar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarRequest" message="tns:odontologo_eliminar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_eliminarResponse" message="tns:odontologo_eliminarResponse" />
-    </operation>
-    <operation name="odontologo_insertar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_insertarRequest" message="tns:odontologo_insertar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_insertarResponse" message="tns:odontologo_insertarResponse" />
-    </operation>
-    <operation name="odontologo_modificar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarRequest" message="tns:odontologo_modificar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarResponse" message="tns:odontologo_modificarResponse" />
+    <operation name="odontologo_verificarExistenciaNombreUsuario">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_verificarExistenciaNombreUsuarioRequest" message="tns:odontologo_verificarExistenciaNombreUsuario" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_verificarExistenciaNombreUsuarioResponse" message="tns:odontologo_verificarExistenciaNombreUsuarioResponse" />
     </operation>
   </portType>
   <binding name="OdontologoWAPortBinding" type="tns:OdontologoWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="odontologo_buscarPorNombreApellidoDocumento">
+    <operation name="odontologo_modificar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -118,7 +118,34 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="odontologo_verificarExistenciaNombreUsuario">
+    <operation name="odontologo_eliminar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="odontologo_insertar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="odontologo_obtenerPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="odontologo_listarTodos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -154,7 +181,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="odontologo_listarTodos">
+    <operation name="odontologo_buscarPorNombreApellidoDocumento">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -163,34 +190,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="odontologo_obtenerPorId">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="odontologo_eliminar">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="odontologo_insertar">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="odontologo_modificar">
+    <operation name="odontologo_verificarExistenciaNombreUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

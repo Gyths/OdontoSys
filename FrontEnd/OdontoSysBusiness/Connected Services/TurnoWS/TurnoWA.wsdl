@@ -17,11 +17,11 @@
   <message name="turno_insertarResponse">
     <part name="parameters" element="tns:turno_insertarResponse" />
   </message>
-  <message name="turno_modificar">
-    <part name="parameters" element="tns:turno_modificar" />
+  <message name="turno_listarTodos">
+    <part name="parameters" element="tns:turno_listarTodos" />
   </message>
-  <message name="turno_modificarResponse">
-    <part name="parameters" element="tns:turno_modificarResponse" />
+  <message name="turno_listarTodosResponse">
+    <part name="parameters" element="tns:turno_listarTodosResponse" />
   </message>
   <message name="turno_obtenerPorId">
     <part name="parameters" element="tns:turno_obtenerPorId" />
@@ -29,11 +29,11 @@
   <message name="turno_obtenerPorIdResponse">
     <part name="parameters" element="tns:turno_obtenerPorIdResponse" />
   </message>
-  <message name="turno_listarTodos">
-    <part name="parameters" element="tns:turno_listarTodos" />
+  <message name="turno_modificar">
+    <part name="parameters" element="tns:turno_modificar" />
   </message>
-  <message name="turno_listarTodosResponse">
-    <part name="parameters" element="tns:turno_listarTodosResponse" />
+  <message name="turno_modificarResponse">
+    <part name="parameters" element="tns:turno_modificarResponse" />
   </message>
   <message name="turno_listarPorOdontologo">
     <part name="parameters" element="tns:turno_listarPorOdontologo" />
@@ -50,17 +50,17 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_insertarRequest" message="tns:turno_insertar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_insertarResponse" message="tns:turno_insertarResponse" />
     </operation>
-    <operation name="turno_modificar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_modificarRequest" message="tns:turno_modificar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_modificarResponse" message="tns:turno_modificarResponse" />
+    <operation name="turno_listarTodos">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosRequest" message="tns:turno_listarTodos" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosResponse" message="tns:turno_listarTodosResponse" />
     </operation>
     <operation name="turno_obtenerPorId">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_obtenerPorIdRequest" message="tns:turno_obtenerPorId" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_obtenerPorIdResponse" message="tns:turno_obtenerPorIdResponse" />
     </operation>
-    <operation name="turno_listarTodos">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosRequest" message="tns:turno_listarTodos" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosResponse" message="tns:turno_listarTodosResponse" />
+    <operation name="turno_modificar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_modificarRequest" message="tns:turno_modificar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_modificarResponse" message="tns:turno_modificarResponse" />
     </operation>
     <operation name="turno_listarPorOdontologo">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarPorOdontologoRequest" message="tns:turno_listarPorOdontologo" />
@@ -87,7 +87,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="turno_modificar">
+    <operation name="turno_listarTodos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,7 +105,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="turno_listarTodos">
+    <operation name="turno_modificar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
