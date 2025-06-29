@@ -12,15 +12,15 @@ import pe.pucp.edu.odontosys.services.model.EstadoCita;
 import pe.pucp.edu.odontosys.users.model.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import pe.pucp.edu.odontosys.daoImp.QueryLoader;
+import pe.pucp.edu.odontosys.daoImp.QueryLoaderXML;
 import pe.pucp.edu.odontosys.services.model.Comprobante;
 import pe.pucp.edu.odontosys.services.model.Valoracion;
 
 public class CitaDAOImpl extends DAOImplBase implements CitaDAO {
 
     private Cita cita;
-    private static final QueryLoader queries = new QueryLoader("/citaQueries.json");
-    
+    //private static final QueryLoader queries = new QueryLoader("/citaQueries.json");
+    private static final QueryLoaderXML queries = new QueryLoaderXML("/citaQueries.xml");
     public CitaDAOImpl() {
         super("OS_CITAS");
         this.retornarLlavePrimaria = true;
@@ -109,20 +109,9 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO {
         this.cita.getOdontologo().setContrasenha(this.resultSet.getString("ODONTOLOGO_CONTRASENHA"));
         this.cita.getOdontologo().setNumeroDocumento(this.resultSet.getString("ODONTOLOGO_NUM_DOC"));
         this.cita.getOdontologo().setPuntuacionPromedio(this.resultSet.getDouble("ODONTOLOGO_PUNTUACION"));
-        
-        // -------- DATOS DE LA ESPECIALIDAD --------
-        if (this.resultSet.getObject("ESPECIALIDAD_ID") != null) {
-            this.cita.getOdontologo().getEspecialidad().setIdEspecialidad(this.resultSet.getInt("ESPECIALIDAD_ID"));
-            this.cita.getOdontologo().getEspecialidad().setNombre(this.resultSet.getString("ESPECIALIDAD_DESCRIPCIÓN"));
-        }
+        this.cita.getOdontologo().getEspecialidad().setIdEspecialidad(this.resultSet.getInt("ESPECIALIDAD_ID"));
+        this.cita.getOdontologo().getConsultorio().setIdSala(this.resultSet.getInt("SALA_ID"));
 
-        // -------- DATOS DE LA SALA (CONSULTORIO) --------
-        if (this.resultSet.getObject("SALA_ID") != null) {
-            this.cita.getOdontologo().getConsultorio().setIdSala(this.resultSet.getInt("SALA_ID"));
-            this.cita.getOdontologo().getConsultorio().setNumero(this.resultSet.getString("NUMERO_SALA"));
-            this.cita.getOdontologo().getConsultorio().setPiso(this.resultSet.getInt("SALA_PISO"));
-        }
-        
         // -------- DATOS DEL COMPROBANTE --------
         if (this.resultSet.getObject("COMPROBANTE_ID") != null) {
             this.cita.getComprobante().setFechaEmision(this.resultSet.getDate("COMPROBANTE_FECHA").toString());
