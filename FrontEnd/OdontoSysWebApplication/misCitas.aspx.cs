@@ -49,7 +49,7 @@ namespace OdontoSysWebApplication
                 idPacienteSpecified = true
             };
 
-            var citas = this.CitaBO.cita_listarPorPaciente(pacienteCita);
+            var citas = this.CitaBO.cita_listarPorPaciente(pacienteCita.idPaciente);
 
             if (citas == null)
             {

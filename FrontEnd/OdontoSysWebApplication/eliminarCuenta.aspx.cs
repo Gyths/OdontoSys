@@ -71,7 +71,7 @@ namespace OdontoSysWebApplication
                         idPaciente = paciente.idPaciente,
                         idPacienteSpecified = true
                     };
-                    var citas = this.CitaBO.cita_listarPorPaciente(pacienteCita);
+                    var citas = this.CitaBO.cita_listarPorPaciente(pacienteCita.idPaciente);
                     foreach (var cita in citas)
                     {
                         this.CitaBO.cita_eliminar(cita);
