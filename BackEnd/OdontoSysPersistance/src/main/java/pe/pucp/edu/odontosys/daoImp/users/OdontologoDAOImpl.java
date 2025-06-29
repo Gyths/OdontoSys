@@ -99,6 +99,7 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     
     protected void instanciarObjetoCompletoDelResultSet() throws SQLException {
         this.instanciarObjetoDelResultSet();
+        this.odontologo.getTipoDocumento().setNombre(this.resultSet.getString("TIPO_DOCUMENTO_DESCRIPCION"));
         this.odontologo.getConsultorio().setNumero(this.resultSet.getString("SALA_NUMERO"));
         this.odontologo.getConsultorio().setPiso(this.resultSet.getInt("SALA_PISO"));
         this.odontologo.getEspecialidad().setNombre(this.resultSet.getString("ESPECIALIDAD_DESCRIPCION"));

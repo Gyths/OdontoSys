@@ -85,6 +85,11 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.recepcionista.setNumeroDocumento(this.resultSet.getString("NUMERO_DOCUMENTO_IDENTIDAD"));
     }
     
+    protected void instanciarObjetoCompletoDelResultSet() throws SQLException {
+        this.instanciarObjetoDelResultSet();
+        this.recepcionista.getTipoDocumento().setNombre(this.resultSet.getString("TIPO_DOCUMENTO_DESCRIPCION"));
+    }
+    
     @Override
     protected void limpiarObjetoDelResultSet() {
         this.recepcionista = null;
@@ -93,6 +98,12 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
     @Override
     protected void agregarObjetoALaLista(List lista) throws SQLException {
         this.instanciarObjetoDelResultSet();
+        lista.add(this.recepcionista);
+    }
+    
+    @Override
+    protected void agregarObjetoCompletoALaLista(List lista) throws SQLException {
+        this.instanciarObjetoCompletoDelResultSet();
         lista.add(this.recepcionista);
     }
     

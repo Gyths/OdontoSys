@@ -227,8 +227,8 @@ public class Main {
         c.setOdontologo(listaOd.get(0));
         c.setPaciente(listaPac.get(0));
         c.setHoraInicio(hora1);
-//        c.setValoracion(listaV.get(0));
-//        c.setComprobante(listaCom.get(0));
+        c.getValoracion().setIdValoracion(0);
+        c.getComprobante().setIdComprobante(0);
         c.setEstado(EstadoCita.RESERVADA);
         c.setFecha(fecha1);
         c.setIdCita(1);
@@ -237,10 +237,10 @@ public class Main {
         
         Cita c1 = new Cita();
         c1.setOdontologo(listaOd.get(1));
-        c1.setPaciente(listaPac.get(1));
+        c1.setPaciente(listaPac.get(0));
         c1.setHoraInicio(hora2);
-//        c1.setValoracion(listaV.get(0));
-//        c1.setComprobante(listaCom.get(1));
+        c1.getValoracion().setIdValoracion(0);
+        c1.getComprobante().setIdComprobante(0);
         c1.setEstado(EstadoCita.ATENDIDA);
         c1.setFecha(fecha2);
         c1.setIdCita(2);
@@ -248,10 +248,10 @@ public class Main {
         
         Cita c2 = new Cita();
         c2.setOdontologo(listaOd.get(2));
-        c2.setPaciente(listaPac.get(2));
+        c2.setPaciente(listaPac.get(0));
         c2.setHoraInicio(hora3);
-//        c2.setValoracion(listaV.get(0));
-//        c2.setComprobante(listaCom.get(0));
+        c2.getValoracion().setIdValoracion(0);
+        c2.getComprobante().setIdComprobante(0);
         c2.setEstado(EstadoCita.CANCELADA);
         c2.setFecha(fecha3);
         c2.setIdCita(3);
