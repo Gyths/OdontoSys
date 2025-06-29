@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/TurnoWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
-  <message name="turno_eliminar">
-    <part name="parameters" element="tns:turno_eliminar" />
-  </message>
-  <message name="turno_eliminarResponse">
-    <part name="parameters" element="tns:turno_eliminarResponse" />
-  </message>
   <message name="turno_insertar">
     <part name="parameters" element="tns:turno_insertar" />
   </message>
@@ -22,6 +16,12 @@
   </message>
   <message name="turno_listarTodosResponse">
     <part name="parameters" element="tns:turno_listarTodosResponse" />
+  </message>
+  <message name="turno_eliminar">
+    <part name="parameters" element="tns:turno_eliminar" />
+  </message>
+  <message name="turno_eliminarResponse">
+    <part name="parameters" element="tns:turno_eliminarResponse" />
   </message>
   <message name="turno_obtenerPorId">
     <part name="parameters" element="tns:turno_obtenerPorId" />
@@ -42,10 +42,6 @@
     <part name="parameters" element="tns:turno_listarPorOdontologoResponse" />
   </message>
   <portType name="TurnoWA">
-    <operation name="turno_eliminar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_eliminarRequest" message="tns:turno_eliminar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_eliminarResponse" message="tns:turno_eliminarResponse" />
-    </operation>
     <operation name="turno_insertar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_insertarRequest" message="tns:turno_insertar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_insertarResponse" message="tns:turno_insertarResponse" />
@@ -53,6 +49,10 @@
     <operation name="turno_listarTodos">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosRequest" message="tns:turno_listarTodos" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosResponse" message="tns:turno_listarTodosResponse" />
+    </operation>
+    <operation name="turno_eliminar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_eliminarRequest" message="tns:turno_eliminar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_eliminarResponse" message="tns:turno_eliminarResponse" />
     </operation>
     <operation name="turno_obtenerPorId">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_obtenerPorIdRequest" message="tns:turno_obtenerPorId" />
@@ -69,15 +69,6 @@
   </portType>
   <binding name="TurnoWAPortBinding" type="tns:TurnoWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="turno_eliminar">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="turno_insertar">
       <soap:operation soapAction="" />
       <input>
@@ -88,6 +79,15 @@
       </output>
     </operation>
     <operation name="turno_listarTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="turno_eliminar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

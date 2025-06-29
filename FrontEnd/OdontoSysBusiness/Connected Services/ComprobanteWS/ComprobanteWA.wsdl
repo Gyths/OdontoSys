@@ -11,11 +11,23 @@
   <message name="comprobante_insertarResponse">
     <part name="parameters" element="tns:comprobante_insertarResponse" />
   </message>
-  <message name="comprobante_obtenerPorId">
-    <part name="parameters" element="tns:comprobante_obtenerPorId" />
+  <message name="comprobante_modifica">
+    <part name="parameters" element="tns:comprobante_modifica" />
   </message>
-  <message name="comprobante_obtenerPorIdResponse">
-    <part name="parameters" element="tns:comprobante_obtenerPorIdResponse" />
+  <message name="comprobante_modificaResponse">
+    <part name="parameters" element="tns:comprobante_modificaResponse" />
+  </message>
+  <message name="comprobante_eliminar">
+    <part name="parameters" element="tns:comprobante_eliminar" />
+  </message>
+  <message name="comprobante_eliminarResponse">
+    <part name="parameters" element="tns:comprobante_eliminarResponse" />
+  </message>
+  <message name="comprobante_listarTodos">
+    <part name="parameters" element="tns:comprobante_listarTodos" />
+  </message>
+  <message name="comprobante_listarTodosResponse">
+    <part name="parameters" element="tns:comprobante_listarTodosResponse" />
   </message>
   <message name="comprobante_modifica">
     <part name="parameters" element="tns:comprobante_modifica" />
@@ -46,9 +58,17 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_insertarRequest" message="tns:comprobante_insertar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_insertarResponse" message="tns:comprobante_insertarResponse" />
     </operation>
-    <operation name="comprobante_obtenerPorId">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_obtenerPorIdRequest" message="tns:comprobante_obtenerPorId" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_obtenerPorIdResponse" message="tns:comprobante_obtenerPorIdResponse" />
+    <operation name="comprobante_modifica">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_modificaRequest" message="tns:comprobante_modifica" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_modificaResponse" message="tns:comprobante_modificaResponse" />
+    </operation>
+    <operation name="comprobante_eliminar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarRequest" message="tns:comprobante_eliminar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarResponse" message="tns:comprobante_eliminarResponse" />
+    </operation>
+    <operation name="comprobante_listarTodos">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodosRequest" message="tns:comprobante_listarTodos" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodosResponse" message="tns:comprobante_listarTodosResponse" />
     </operation>
     <operation name="comprobante_modifica">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_modificaRequest" message="tns:comprobante_modifica" />
