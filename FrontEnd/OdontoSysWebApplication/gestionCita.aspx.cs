@@ -29,7 +29,7 @@ namespace OdontoSysWebApplication
         public SalaBO SalaBO { get => salaBO; set => salaBO = value; }
         public ValoracionBO ValoracionBO { get => valoracionBO; set => valoracionBO = value; }
 
-        public gestionCita(OdontologoBO odontologoBO, EspecialidadBO especialidadBO, CitaBO citaBO, SalaBO salaBO, ValoracionBO valoracionBO)
+        public gestionCita()
         {
             this.OdontologoBO = new OdontologoBO();
             this.EspecialidadBO = new EspecialidadBO();

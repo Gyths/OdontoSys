@@ -22,13 +22,7 @@ namespace OdontoSysWebApplication
             var paciente = Session["Paciente"] as paciente;
             if (paciente == null)
             {
-                // Redirigir si no hay sesión activa
                 Response.Redirect("~/inicioSesion.aspx");
-            }
-            else
-            {
-                // Aquí podrías mostrar información del paciente si lo deseas
-                // ej: lblNombrePaciente.Text = paciente.nombre + " " + paciente.apellidos;
             }
         }
 

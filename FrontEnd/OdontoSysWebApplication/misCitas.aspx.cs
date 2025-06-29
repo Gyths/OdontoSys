@@ -21,7 +21,7 @@ namespace OdontoSysWebApplication
         public OdontologoBO OdontologoBO { get => odontologoBO; set => odontologoBO = value; }
         public EspecialidadBO EspecialidadBO { get => especialidadBO; set => especialidadBO = value; }
 
-        public misCitas(CitaBO citaBO, OdontologoBO odontologoBO, EspecialidadBO especialidadBO)
+        public misCitas()
         {
             this.CitaBO = new CitaBO();
             this.OdontologoBO = new OdontologoBO();
@@ -41,15 +41,7 @@ namespace OdontoSysWebApplication
 
             string estadoSeleccionado = ddlEstado.SelectedValue;
 
-            
-
-            var pacienteCita = new OdontoSysBusiness.CitaWS.paciente
-            {
-                idPaciente = paciente.idPaciente,
-                idPacienteSpecified = true
-            };
-
-            var citas = this.CitaBO.cita_listarPorPaciente(pacienteCita.idPaciente);
+            var citas = this.CitaBO.cita_listarPorPaciente(paciente.idPaciente);
 
             if (citas == null)
             {
@@ -62,16 +54,14 @@ namespace OdontoSysWebApplication
             {
                 if (cita.estado.ToString() != estadoSeleccionado)
                     continue;
-
-                var odontologo = this.OdontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
-                var especialidad = this.EspecialidadBO.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
+                var especialidad = this.EspecialidadBO.especialidad_obtenerPorId(cita.odontologo.especialidad.idEspecialidad);
 
                 string badgeColor = GetBadgeColor(cita.estado.ToString());
 
                 sb.AppendLine("<div class='card mb-3 shadow-sm'>");
                 sb.AppendLine("<div class='card-body'>");
                 sb.AppendLine($"<h5 class='card-title'>Fecha: {cita.fecha} - Hora: {cita.horaInicio}</h5>");
-                sb.AppendLine($"<p class='card-text'><strong>Odontólogo:</strong> {odontologo.nombre} {odontologo.apellidos}</p>");
+                sb.AppendLine($"<p class='card-text'><strong>Odontólogo:</strong> {cita.odontologo.nombre} {cita.odontologo.apellidos}</p>");
                 sb.AppendLine($"<p class='card-text'><strong>Especialidad:</strong> {especialidad.nombre}</p>");
                 sb.AppendLine($"<p class='card-text'><strong>Estado:</strong> <span class='badge bg-{badgeColor}'>{ToTitleCase(cita.estado.ToString())}</span></p>");
 

@@ -24,7 +24,7 @@ namespace OdontoSysWebApplication
         public TurnoBO TurnoBO { get => turnoBO; set => turnoBO = value; }
         public CitaBO CitaBO { get => citaBO; set => citaBO = value; }
 
-        public reservaCita(OdontologoBO odontologoBO, EspecialidadBO especialidadBO, SalaBO salaBO, TurnoBO turnoBO, CitaBO citaBO)
+        public reservaCita()
         {
             this.OdontologoBO = new OdontologoBO();
             this.EspecialidadBO = new EspecialidadBO();
