@@ -37,7 +37,7 @@
   </xs:complexType>
   <xs:complexType name="tratamiento_listarPorEspecilidad">
     <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="tns:especialidad" />
+      <xs:element minOccurs="0" name="idEspecialidad" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="tratamiento_listarPorEspecilidadResponse">

@@ -42,16 +42,16 @@ namespace OdontoSysBusiness
             return new BindingList<valoracion>(lista ?? Array.Empty<valoracion>());
         }
 
-        public BindingList<valoracion> valoracion_listarPorOdontologo(odontologo odontologo)
-        {
-            valoracion[] lista = this.valoracionWAClient.valoracion_listarPorOdontologo(odontologo);
-            return new BindingList<valoracion>(lista ?? Array.Empty<valoracion>());
-        }
+        //public BindingList<valoracion> valoracion_listarPorOdontologo(int idOdontologo)
+        //{
+        //    valoracion[] lista = this.valoracionWAClient.valoracion_listarPorOdontologo(idOdontologo);
+        //    return new BindingList<valoracion>(lista ?? Array.Empty<valoracion>());
+        //}
 
-        public BindingList<valoracion> valoracion_listarPorPaciente(paciente paciente)
-        {
-            valoracion[] lista = this.valoracionWAClient.valoracion_listarPorPaciente(paciente);
-            return new BindingList<valoracion>(lista ?? Array.Empty<valoracion>());
-        }
+        //public BindingList<valoracion> valoracion_listarPorPaciente(int idPaciente)
+        //{
+        //    valoracion[] lista = this.valoracionWAClient.valoracion_listarPorPaciente(idPaciente);
+        //    return new BindingList<valoracion>(lista ?? Array.Empty<valoracion>());
+        //}
     }
 }

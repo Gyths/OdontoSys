@@ -43,9 +43,9 @@ namespace OdontoSysBusiness
             return new BindingList<comprobante>(lista ?? Array.Empty<comprobante>());
         }
 
-        public int comprobante_actualizarTotal(cita cita)
+        public int comprobante_actualizarTotal(int idCita)
         {
-            return this.comprobanteWAClient.comprobante_actualizarTotal(cita);
+            return this.comprobanteWAClient.comprobante_actualizarTotal(idCita);
         }
     }
 }

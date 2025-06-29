@@ -42,7 +42,7 @@ public class TurnoWA {
     }
     
     @WebMethod(operationName = "turno_listarPorOdontologo")
-    public ArrayList<Turno> turno_listarPorOdontologo(@WebParam(name = "odontologo") Integer idOdontologo){
+    public ArrayList<Turno> turno_listarPorOdontologo(@WebParam(name = "idOdontologo") Integer idOdontologo){
         return this.turnoBO.listarPorOdontologo(idOdontologo);
     }
     

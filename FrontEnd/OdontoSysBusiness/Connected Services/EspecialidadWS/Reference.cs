@@ -16,19 +16,6 @@ namespace OdontoSysBusiness.EspecialidadWS {
     public interface EspecialidadWA {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificar" +
-            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificar" +
-            "Response")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysBusiness.EspecialidadWS.especialidad_modificarResponse especialidad_modificar(OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificar" +
-            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificar" +
-            "Response")]
-        System.Threading.Tasks.Task<OdontoSysBusiness.EspecialidadWS.especialidad_modificarResponse> especialidad_modificarAsync(OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_insertarR" +
             "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_insertarR" +
             "esponse")]
@@ -53,6 +40,19 @@ namespace OdontoSysBusiness.EspecialidadWS {
             "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_eliminarR" +
             "esponse")]
         System.Threading.Tasks.Task<OdontoSysBusiness.EspecialidadWS.especialidad_eliminarResponse> especialidad_eliminarAsync(OdontoSysBusiness.EspecialidadWS.especialidad_eliminarRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificar" +
+            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificar" +
+            "Response")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysBusiness.EspecialidadWS.especialidad_modificarResponse especialidad_modificar(OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificar" +
+            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_modificar" +
+            "Response")]
+        System.Threading.Tasks.Task<OdontoSysBusiness.EspecialidadWS.especialidad_modificarResponse> especialidad_modificarAsync(OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/EspecialidadWA/especialidad_obtenerPo" +
@@ -82,7 +82,7 @@ namespace OdontoSysBusiness.EspecialidadWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -138,42 +138,6 @@ namespace OdontoSysBusiness.EspecialidadWS {
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="especialidad_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class especialidad_modificarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysBusiness.EspecialidadWS.especialidad especialidad;
-        
-        public especialidad_modificarRequest() {
-        }
-        
-        public especialidad_modificarRequest(OdontoSysBusiness.EspecialidadWS.especialidad especialidad) {
-            this.especialidad = especialidad;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="especialidad_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class especialidad_modificarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public especialidad_modificarResponse() {
-        }
-        
-        public especialidad_modificarResponse(int @return) {
-            this.@return = @return;
         }
     }
     
@@ -245,6 +209,42 @@ namespace OdontoSysBusiness.EspecialidadWS {
         }
         
         public especialidad_eliminarResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="especialidad_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class especialidad_modificarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysBusiness.EspecialidadWS.especialidad especialidad;
+        
+        public especialidad_modificarRequest() {
+        }
+        
+        public especialidad_modificarRequest(OdontoSysBusiness.EspecialidadWS.especialidad especialidad) {
+            this.especialidad = especialidad;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="especialidad_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class especialidad_modificarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public especialidad_modificarResponse() {
+        }
+        
+        public especialidad_modificarResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -341,29 +341,6 @@ namespace OdontoSysBusiness.EspecialidadWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysBusiness.EspecialidadWS.especialidad_modificarResponse OdontoSysBusiness.EspecialidadWS.EspecialidadWA.especialidad_modificar(OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest request) {
-            return base.Channel.especialidad_modificar(request);
-        }
-        
-        public int especialidad_modificar(OdontoSysBusiness.EspecialidadWS.especialidad especialidad) {
-            OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest inValue = new OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest();
-            inValue.especialidad = especialidad;
-            OdontoSysBusiness.EspecialidadWS.especialidad_modificarResponse retVal = ((OdontoSysBusiness.EspecialidadWS.EspecialidadWA)(this)).especialidad_modificar(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysBusiness.EspecialidadWS.especialidad_modificarResponse> OdontoSysBusiness.EspecialidadWS.EspecialidadWA.especialidad_modificarAsync(OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest request) {
-            return base.Channel.especialidad_modificarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysBusiness.EspecialidadWS.especialidad_modificarResponse> especialidad_modificarAsync(OdontoSysBusiness.EspecialidadWS.especialidad especialidad) {
-            OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest inValue = new OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest();
-            inValue.especialidad = especialidad;
-            return ((OdontoSysBusiness.EspecialidadWS.EspecialidadWA)(this)).especialidad_modificarAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         OdontoSysBusiness.EspecialidadWS.especialidad_insertarResponse OdontoSysBusiness.EspecialidadWS.EspecialidadWA.especialidad_insertar(OdontoSysBusiness.EspecialidadWS.especialidad_insertarRequest request) {
             return base.Channel.especialidad_insertar(request);
         }
@@ -407,6 +384,29 @@ namespace OdontoSysBusiness.EspecialidadWS {
             OdontoSysBusiness.EspecialidadWS.especialidad_eliminarRequest inValue = new OdontoSysBusiness.EspecialidadWS.especialidad_eliminarRequest();
             inValue.especialidad = especialidad;
             return ((OdontoSysBusiness.EspecialidadWS.EspecialidadWA)(this)).especialidad_eliminarAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysBusiness.EspecialidadWS.especialidad_modificarResponse OdontoSysBusiness.EspecialidadWS.EspecialidadWA.especialidad_modificar(OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest request) {
+            return base.Channel.especialidad_modificar(request);
+        }
+        
+        public int especialidad_modificar(OdontoSysBusiness.EspecialidadWS.especialidad especialidad) {
+            OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest inValue = new OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest();
+            inValue.especialidad = especialidad;
+            OdontoSysBusiness.EspecialidadWS.especialidad_modificarResponse retVal = ((OdontoSysBusiness.EspecialidadWS.EspecialidadWA)(this)).especialidad_modificar(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysBusiness.EspecialidadWS.especialidad_modificarResponse> OdontoSysBusiness.EspecialidadWS.EspecialidadWA.especialidad_modificarAsync(OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest request) {
+            return base.Channel.especialidad_modificarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysBusiness.EspecialidadWS.especialidad_modificarResponse> especialidad_modificarAsync(OdontoSysBusiness.EspecialidadWS.especialidad especialidad) {
+            OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest inValue = new OdontoSysBusiness.EspecialidadWS.especialidad_modificarRequest();
+            inValue.especialidad = especialidad;
+            return ((OdontoSysBusiness.EspecialidadWS.EspecialidadWA)(this)).especialidad_modificarAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

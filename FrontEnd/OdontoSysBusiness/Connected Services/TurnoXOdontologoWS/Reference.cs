@@ -69,7 +69,7 @@ namespace OdontoSysBusiness.TurnoXOdontologoWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -186,13 +186,18 @@ namespace OdontoSysBusiness.TurnoXOdontologoWS {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo turnoXOdontologo;
+        public int idOdontologo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idTurno;
         
         public turnoXOdontologo_eliminarRequest() {
         }
         
-        public turnoXOdontologo_eliminarRequest(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo turnoXOdontologo) {
-            this.turnoXOdontologo = turnoXOdontologo;
+        public turnoXOdontologo_eliminarRequest(int idOdontologo, int idTurno) {
+            this.idOdontologo = idOdontologo;
+            this.idTurno = idTurno;
         }
     }
     
@@ -333,9 +338,10 @@ namespace OdontoSysBusiness.TurnoXOdontologoWS {
             return base.Channel.turnoXOdontologo_eliminar(request);
         }
         
-        public int turnoXOdontologo_eliminar(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo turnoXOdontologo) {
+        public int turnoXOdontologo_eliminar(int idOdontologo, int idTurno) {
             OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_eliminarRequest inValue = new OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_eliminarRequest();
-            inValue.turnoXOdontologo = turnoXOdontologo;
+            inValue.idOdontologo = idOdontologo;
+            inValue.idTurno = idTurno;
             OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_eliminarResponse retVal = ((OdontoSysBusiness.TurnoXOdontologoWS.TurnoXOdontologoWA)(this)).turnoXOdontologo_eliminar(inValue);
             return retVal.@return;
         }
@@ -345,9 +351,10 @@ namespace OdontoSysBusiness.TurnoXOdontologoWS {
             return base.Channel.turnoXOdontologo_eliminarAsync(request);
         }
         
-        public System.Threading.Tasks.Task<OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_eliminarResponse> turnoXOdontologo_eliminarAsync(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo turnoXOdontologo) {
+        public System.Threading.Tasks.Task<OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_eliminarResponse> turnoXOdontologo_eliminarAsync(int idOdontologo, int idTurno) {
             OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_eliminarRequest inValue = new OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_eliminarRequest();
-            inValue.turnoXOdontologo = turnoXOdontologo;
+            inValue.idOdontologo = idOdontologo;
+            inValue.idTurno = idTurno;
             return ((OdontoSysBusiness.TurnoXOdontologoWS.TurnoXOdontologoWA)(this)).turnoXOdontologo_eliminarAsync(inValue);
         }
         

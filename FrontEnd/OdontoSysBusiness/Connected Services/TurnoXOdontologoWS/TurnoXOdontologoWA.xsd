@@ -10,11 +10,6 @@
   <xs:element name="turnoXOdontologo_modificarResponse" type="tns:turnoXOdontologo_modificarResponse" />
   <xs:complexType name="turnoXOdontologo_eliminar">
     <xs:sequence>
-      <xs:element minOccurs="0" name="turnoXOdontologo" type="tns:turnoXOdontologo" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="turnoXOdontologo">
-    <xs:sequence>
       <xs:element minOccurs="0" name="idOdontologo" type="xs:int" />
       <xs:element minOccurs="0" name="idTurno" type="xs:int" />
     </xs:sequence>
@@ -27,6 +22,12 @@
   <xs:complexType name="turnoXOdontologo_modificar">
     <xs:sequence>
       <xs:element minOccurs="0" name="turnoXOdontologo" type="tns:turnoXOdontologo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="turnoXOdontologo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idOdontologo" type="xs:int" />
+      <xs:element minOccurs="0" name="idTurno" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="turnoXOdontologo_modificarResponse">
