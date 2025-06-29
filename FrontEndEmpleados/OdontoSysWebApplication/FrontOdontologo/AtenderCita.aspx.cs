@@ -1,11 +1,5 @@
-﻿using OdontoSysWebAppliation.OdontoSysBusiness;
-using OdontoSysWebApplication.OdontoSysBusiness;
-using OdontoSysWebApplication.ValoracionWS;
+﻿using OdontoSysWebApplication.OdontoSysBusiness;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace OdontoSysWebApplication.FrontOdontologo
@@ -29,8 +23,10 @@ namespace OdontoSysWebApplication.FrontOdontologo
         {
             boCita = new CitaBO();
             boPaciente = new PacienteBO();
+
             var cita = boCita.cita_obtenerPorId(Int32.Parse(idCita));
             var paciente = boPaciente.paciente_obtenerPorId(cita.paciente.idPaciente);
+
             txtPaciente.Text = paciente.nombre + " " +paciente.apellidos;
             txtPaciente.Enabled = false;
             txtCorreo.Text = paciente.correo;
@@ -46,13 +42,13 @@ namespace OdontoSysWebApplication.FrontOdontologo
             try
             {
                 var listaDetalle = boDetalleTratamiento.detalleTratamiento_listarPorCita(Int32.Parse(idCita));
-                foreach (var detalle in listaDetalle)
+                /*foreach (var detalle in listaDetalle)
                 {
                     var tratamiento = boTratamiento.tratamiento_obtenerPorId(detalle.tratamiento.idTratamiento);
                     detalle.tratamiento.nombre = tratamiento.nombre;
                     detalle.tratamiento.descripcion = tratamiento.descripcion;
                     detalle.tratamiento.costo = tratamiento.costo;
-                }
+                }*/
                 gvTratamientos.DataSource = listaDetalle;
                 gvTratamientos.DataBind();
             }
