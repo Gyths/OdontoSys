@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import pe.pucp.edu.odontosys.users.model.Odontologo;
 import pe.pucp.edu.odontosys.users.model.Paciente;
-import pe.pucp.edu.odontosys.users.model.Recepcionista;
 
 public class Cita {
     
