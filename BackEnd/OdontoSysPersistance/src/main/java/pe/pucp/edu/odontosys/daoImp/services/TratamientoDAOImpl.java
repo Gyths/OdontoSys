@@ -73,7 +73,7 @@ public class TratamientoDAOImpl extends DAOImplBase implements TratamientoDAO{
         this.instanciarObjetoDelResultSet();
         this.tratamiento.getEspecialidad().setNombre(this.resultSet.getString("ESPECIALIDAD_DESCRIPCION"));
     }
-    
+
     @Override
     protected void limpiarObjetoDelResultSet() {
         this.tratamiento = null;
@@ -82,6 +82,12 @@ public class TratamientoDAOImpl extends DAOImplBase implements TratamientoDAO{
     @Override
     protected void agregarObjetoALaLista(List lista) throws SQLException {
         this.instanciarObjetoDelResultSet();
+        lista.add(this.tratamiento);
+    }
+    
+    @Override
+    protected void agregarObjetoCompletoALaLista(List lista) throws SQLException {
+        this.instanciarObjetoCompletoDelResultSet();
         lista.add(this.tratamiento);
     }
     
