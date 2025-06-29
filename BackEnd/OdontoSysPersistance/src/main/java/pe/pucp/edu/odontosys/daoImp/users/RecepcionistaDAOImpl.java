@@ -159,7 +159,7 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.recepcionista = new Recepcionista();
         this.recepcionista.setNombreUsuario(nombreUsuario);
         super.obtenerPorUsuario();
-        if(this.recepcionista.getIdRecepcionista()== null)
+        if(this.recepcionista == null)
             return false;
         return true;
     }

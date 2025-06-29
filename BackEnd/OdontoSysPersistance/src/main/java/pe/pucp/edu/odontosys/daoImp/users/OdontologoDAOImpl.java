@@ -184,7 +184,7 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         this.odontologo = new Odontologo();
         this.odontologo.setNombreUsuario(nombreUsuario);
         super.obtenerPorUsuario();
-        if(this.odontologo.getIdOdontologo() == null)
+        if(this.odontologo == null)
             return false;
         return true;
     }

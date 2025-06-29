@@ -151,7 +151,7 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.paciente = new Paciente();
         this.paciente.setNombreUsuario(nombreUsuario);
         super.obtenerPorUsuario();
-        if(this.paciente.getIdPaciente() == null)
+        if(this.paciente == null)
             return false;
         return true;
     }
