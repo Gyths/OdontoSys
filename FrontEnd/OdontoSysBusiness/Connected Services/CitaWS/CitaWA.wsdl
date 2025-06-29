@@ -5,18 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/CitaWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
-  <message name="cita_listarPorPacienteFechas">
-    <part name="parameters" element="tns:cita_listarPorPacienteFechas" />
-  </message>
-  <message name="cita_listarPorPacienteFechasResponse">
-    <part name="parameters" element="tns:cita_listarPorPacienteFechasResponse" />
-  </message>
-  <message name="cita_listarPorOdontologoFechas">
-    <part name="parameters" element="tns:cita_listarPorOdontologoFechas" />
-  </message>
-  <message name="cita_listarPorOdontologoFechasResponse">
-    <part name="parameters" element="tns:cita_listarPorOdontologoFechasResponse" />
-  </message>
   <message name="cita_modificar">
     <part name="parameters" element="tns:cita_modificar" />
   </message>
@@ -59,15 +47,19 @@
   <message name="cita_listarPorPacienteResponse">
     <part name="parameters" element="tns:cita_listarPorPacienteResponse" />
   </message>
+  <message name="cita_listarPorPacienteFechas">
+    <part name="parameters" element="tns:cita_listarPorPacienteFechas" />
+  </message>
+  <message name="cita_listarPorPacienteFechasResponse">
+    <part name="parameters" element="tns:cita_listarPorPacienteFechasResponse" />
+  </message>
+  <message name="cita_listarPorOdontologoFechas">
+    <part name="parameters" element="tns:cita_listarPorOdontologoFechas" />
+  </message>
+  <message name="cita_listarPorOdontologoFechasResponse">
+    <part name="parameters" element="tns:cita_listarPorOdontologoFechasResponse" />
+  </message>
   <portType name="CitaWA">
-    <operation name="cita_listarPorPacienteFechas">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteFechasRequest" message="tns:cita_listarPorPacienteFechas" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteFechasResponse" message="tns:cita_listarPorPacienteFechasResponse" />
-    </operation>
-    <operation name="cita_listarPorOdontologoFechas">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechasRequest" message="tns:cita_listarPorOdontologoFechas" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechasResponse" message="tns:cita_listarPorOdontologoFechasResponse" />
-    </operation>
     <operation name="cita_modificar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarRequest" message="tns:cita_modificar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarResponse" message="tns:cita_modificarResponse" />
@@ -96,27 +88,17 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteRequest" message="tns:cita_listarPorPaciente" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteResponse" message="tns:cita_listarPorPacienteResponse" />
     </operation>
+    <operation name="cita_listarPorPacienteFechas">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteFechasRequest" message="tns:cita_listarPorPacienteFechas" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteFechasResponse" message="tns:cita_listarPorPacienteFechasResponse" />
+    </operation>
+    <operation name="cita_listarPorOdontologoFechas">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechasRequest" message="tns:cita_listarPorOdontologoFechas" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechasResponse" message="tns:cita_listarPorOdontologoFechasResponse" />
+    </operation>
   </portType>
   <binding name="CitaWAPortBinding" type="tns:CitaWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="cita_listarPorPacienteFechas">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="cita_listarPorOdontologoFechas">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="cita_modificar">
       <soap:operation soapAction="" />
       <input>
@@ -172,6 +154,24 @@
       </output>
     </operation>
     <operation name="cita_listarPorPaciente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cita_listarPorPacienteFechas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cita_listarPorOdontologoFechas">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
