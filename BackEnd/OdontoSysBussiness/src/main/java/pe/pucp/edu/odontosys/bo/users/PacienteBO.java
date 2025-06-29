@@ -41,5 +41,28 @@ public class PacienteBO {
     public Boolean verificarExistenciaNombreUsuario(String nombreUsuario){
         return this.pacienteDAO.existeNombreUsuario(nombreUsuario);
     }
-      
+    
+    public ArrayList<Paciente> buscarPorNombreApellido(String nombre, String apellido){
+        Paciente paciente = new Paciente();
+        paciente.setNombre(nombre);
+        paciente.setApellidos(apellido);
+        return this.pacienteDAO.buscarPorNombreApellido(paciente);
+    }
+    
+    public ArrayList<Paciente> buscarPorNombreApellidoDocumento(String nombre, String apellido, String documento){
+        Paciente paciente = new Paciente();
+        paciente.setNombre(nombre);
+        paciente.setApellidos(apellido);
+        paciente.setNumeroDocumento(documento);
+        return this.pacienteDAO.buscarPorNombreApellidoDocumento(paciente);
+    }
+    
+    public ArrayList<Paciente> buscarPorNombreApellidoTelefono(String nombre, String apellido, String telefono){
+        Paciente paciente = new Paciente();
+        paciente.setNombre(nombre);
+        paciente.setApellidos(apellido);
+        paciente.setTelefono(telefono);
+        return this.pacienteDAO.buscarPorNombreApellidoTelefono(paciente);
+    }
+
 }

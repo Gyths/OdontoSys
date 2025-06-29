@@ -152,4 +152,22 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
             return false;
         return true;
     }
+
+    @Override
+    public ArrayList<Paciente> buscarPorNombreApellido(Paciente paciente){
+        String sql = queries.getQuery("buscarPacientesPorNombreApellido");
+        return (ArrayList<Paciente>) super.ejecutarQueryListar(sql, paciente.getNombre() , paciente.getApellidos());
+    }
+    
+    @Override
+    public ArrayList<Paciente> buscarPorNombreApellidoDocumento(Paciente paciente){
+        String sql = queries.getQuery("buscarPacientesPorNombreApellidoDocumento");
+        return (ArrayList<Paciente>) super.ejecutarQueryListar(sql, paciente.getNombre() , paciente.getApellidos(), paciente.getNumeroDocumento());
+    }
+    
+    @Override
+    public ArrayList<Paciente> buscarPorNombreApellidoTelefono(Paciente paciente){
+        String sql = queries.getQuery("buscarPacientesPorNombreApellidoTelefono");
+        return (ArrayList<Paciente>) super.ejecutarQueryListar(sql, paciente.getNombre() , paciente.getApellidos(), paciente.getTelefono());
+    }
 }
