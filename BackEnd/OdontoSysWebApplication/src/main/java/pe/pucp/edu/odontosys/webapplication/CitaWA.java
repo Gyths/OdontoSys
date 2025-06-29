@@ -6,13 +6,7 @@ import jakarta.jws.WebParam;
 import java.util.ArrayList;
 
 import pe.pucp.edu.odontosys.bo.services.CitaBO;
-import pe.pucp.edu.odontosys.infrastructure.model.Turno;
 import pe.pucp.edu.odontosys.services.model.Cita;
-import pe.pucp.edu.odontosys.services.model.Comprobante;
-import pe.pucp.edu.odontosys.users.model.Odontologo;
-import pe.pucp.edu.odontosys.services.model.Valoracion;
-import pe.pucp.edu.odontosys.users.model.Paciente;
-import pe.pucp.edu.odontosys.users.model.Recepcionista;
 
 @WebService(serviceName = "CitaWA")
 public class CitaWA {
@@ -49,43 +43,23 @@ public class CitaWA {
     }
     
     @WebMethod(operationName = "cita_listarPorOdontologoFechas")
-    public ArrayList<Cita> cita_listarPorOdontologoFechas(@WebParam(name = "odontologo") Odontologo odontologo, @WebParam(name = "fechaInicio") String fechaInicio, @WebParam(name = "fechaFin") String fechaFin){
-        return this.citaBO.listarPorOdontologoFechas(odontologo, fechaInicio, fechaFin);
+    public ArrayList<Cita> cita_listarPorOdontologoFechas(@WebParam(name = "idOdontologo") Integer idOdontologo, @WebParam(name = "fechaInicio") String fechaInicio, @WebParam(name = "fechaFin") String fechaFin){
+        return this.citaBO.listarPorOdontologoFechas(idOdontologo, fechaInicio, fechaFin);
     }
     
     @WebMethod(operationName = "cita_listarPorOdontologo")
-    public ArrayList<Cita> cita_listarPorOdontologo(@WebParam(name = "odontologo") Odontologo odontologo){
-        return this.citaBO.listarPorOdontologo(odontologo);
+    public ArrayList<Cita> cita_listarPorOdontologo(@WebParam(name = "idOdontologo") Integer idOdontologo){
+        return this.citaBO.listarPorOdontologo(idOdontologo);
     }
     
     @WebMethod(operationName = "cita_listarPorPaciente")
-    public ArrayList<Cita> cita_listarPorPaciente(@WebParam(name = "paciente") Paciente paciente){
-        return this.citaBO.listarPorPaciente(paciente);
-    }
-    
-    @WebMethod(operationName = "cita_listarPorRecepcionista")
-    public ArrayList<Cita> cita_listarPorRecepcionista(@WebParam(name = "recepcionista") Recepcionista recepcionista){
-        return this.citaBO.listarPorRecepcionista(recepcionista);
-    }
-    
-    @WebMethod(operationName = "cita_actualizarFkValoracion")
-    public Integer cita_actualizarFkValoracion(@WebParam(name = "cita")Cita cita, @WebParam(name = "valoracion") Valoracion valoracion){
-        return this.citaBO.actualizarFkValoracion(cita, valoracion);
-    }
-    
-    @WebMethod(operationName = "cita_actualizarFkComprobante")
-    public Integer cita_actualizarFkComprobante(@WebParam(name = "cita")Cita cita, @WebParam(name = "comprobante") Comprobante comprobante){
-        return this.citaBO.actualizarFkComprobante(cita, comprobante);
-    }
-    
-    @WebMethod(operationName = "cita_actualizarEstado")
-    public Integer cita_actualizarEstado(@WebParam(name = "cita")Cita cita){
-        return this.citaBO.actualizarEstado(cita);
+    public ArrayList<Cita> cita_listarPorPaciente(@WebParam(name = "idPaciente") Integer idPaciente){
+        return this.citaBO.listarPorPaciente(idPaciente);
     }
     
     @WebMethod(operationName = "cita_listarPorPacienteFechas")
-    public ArrayList<Cita> cita_listarPorPacienteFechas(@WebParam(name = "paciente") Paciente paciente, @WebParam(name = "fechaInicio") String fechaInicio, @WebParam(name = "fechaFin") String fechaFin){
-        return this.citaBO.listarPorPacienteFechas(paciente, fechaInicio, fechaFin);
+    public ArrayList<Cita> cita_listarPorPacienteFechas(@WebParam(name = "idPaciente") Integer idPaciente, @WebParam(name = "fechaInicio") String fechaInicio, @WebParam(name = "fechaFin") String fechaFin){
+        return this.citaBO.listarPorPacienteFechas(idPaciente, fechaInicio, fechaFin);
     }
     
 }

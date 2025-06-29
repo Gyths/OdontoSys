@@ -44,14 +44,4 @@ public class ValoracionWA {
         return this.valoracionBO.listarTodos();
     }
     
-    @WebMethod(operationName = "valoracion_listarPorOdontologo")
-    public ArrayList<Valoracion> valoracion_listarPorOdontologo(@WebParam(name = "odontologo") Odontologo odontologo){
-        return this.valoracionBO.listarPorOdontologo(odontologo);
-    }
-    
-    @WebMethod(operationName = "valoracion_listarPorPaciente")
-    public ArrayList<Valoracion> valoracion_listarPorPaciente(@WebParam(name = "paciente") Paciente paciente){
-        return this.valoracionBO.listarPorPaciente(paciente);
-    }
-    
 }

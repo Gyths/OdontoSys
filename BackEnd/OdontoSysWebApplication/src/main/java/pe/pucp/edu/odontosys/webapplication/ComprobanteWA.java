@@ -43,8 +43,8 @@ public class ComprobanteWA {
     }
     
     @WebMethod(operationName = "comprobante_actualizarTotal")
-    public Integer comprobante_actualizarTotal(@WebParam(name = "cita") Cita cita){
-        return this.comprobanteBO.actualizarTotal(cita);
+    public Integer comprobante_actualizarTotal(@WebParam(name = "idCita") Integer idCita){
+        return this.comprobanteBO.actualizarTotal(idCita);
     }
             
 }
