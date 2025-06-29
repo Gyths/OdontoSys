@@ -48,21 +48,7 @@ public class CitaBO {
     public ArrayList<Cita> listarPorPaciente(Paciente paciente){
         return this.citaDAO.listarPorPaciente(paciente);
     }
-    public ArrayList<Cita> listarPorRecepcionista(Recepcionista recepcionista){
-        return this.citaDAO.listarPorRecepcionista(recepcionista);
-    }
-    
-    public Integer actualizarFkValoracion(Cita cita, Valoracion valoracion){
-        return this.citaDAO.actualizarFkValoracion(cita, valoracion);
-    }
-    
-    public Integer actualizarFkComprobante(Cita cita, Comprobante comprobante){
-        return this.citaDAO.actualizarFkComprobante(cita, comprobante);
-    }
-            
-    public Integer actualizarEstado(Cita cita){
-        return this.citaDAO.actualizarEstado(cita);
-    }
+
     
     public ArrayList<Cita> listarPorPacienteFechas(Paciente paciente, String fechaInicio, String fechaFin){
         return this.citaDAO.listarPorPacienteFechas(paciente, fechaInicio, fechaFin);

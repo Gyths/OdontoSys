@@ -1,5 +1,6 @@
 package pe.pucp.edu.odontosys.daoImp.users;
 
+
 import pe.pucp.edu.odontosys.dao.users.PacienteDAO;
 import pe.pucp.edu.odontosys.daoImp.DAOImplBase;
 import pe.pucp.edu.odontosys.daoImp.util.Columna;
@@ -9,10 +10,11 @@ import pe.pucp.edu.odontosys.users.model.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import pe.pucp.edu.odontosys.daoImp.QueryLoader;
 
 public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
     private Paciente paciente;
-    
+    private static final QueryLoader queries = new QueryLoader("/pacienteQueries.json");
     public PacienteDAOImpl(){
         super("OS_PACIENTES");
         this.retornarLlavePrimaria=true;
@@ -81,6 +83,12 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.paciente.setNumeroDocumento(this.resultSet.getString("NUMERO_DOCUMENTO_IDENTIDAD"));
     }
     
+    @Override 
+    protected void instanciarObjetoCompletoDelResultSet() throws SQLException{
+        this.instanciarObjetoDelResultSet();
+        this.paciente.getTipoDocumento().setNombre(this.resultSet.getString("TIPO_DOCUMENTO_DESCRIPCION"));
+    }
+    
     @Override
     protected void limpiarObjetoDelResultSet() {
         this.paciente = null;
@@ -125,11 +133,12 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
     
     @Override
     public Paciente obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha) {
-        String sql= "CALL PACIENTES_obtener_por_usuario_contrasenha(?, ?);";
+        String sql = queries.getQuery("obtenerPacientePorUsuarioContrasenha") ;
         super.ejecutarStoredProcedureObtener(sql, nombreUsuario, contrasenha);
-        return this.paciente;
+        return this.paciente;    
     }
     
+
     @Override
     public Boolean existeNombreUsuario(String nombreUsuario) {
         String sql= "CALL PACIENTES_obtener_por_usuario(?);";

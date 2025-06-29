@@ -429,7 +429,7 @@ public abstract class DAOImplBase {
             }
             this.ejecutarConsultaEnBD();
             if (this.resultSet.next()) {
-                instanciarObjetoDelResultSet();
+                instanciarObjetoCompletoDelResultSet();
             } else {
                 limpiarObjetoDelResultSet();
             }
