@@ -11,7 +11,4 @@ public interface PacienteDAO{
     ArrayList<Paciente> listarTodos();
     Paciente obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha);
     Boolean existeNombreUsuario(String nombreUsuario);
-    ArrayList<Paciente> buscarPorNombreApellido(String nombre, String apellido);
-    ArrayList<Paciente> buscarPorNombreApellidoDocumento(String nombre, String apellido, String documento);
-    ArrayList<Paciente> buscarPorNombreApellidoTelefono(String nombre, String apellido, String telefono);
 }

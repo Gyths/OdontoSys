@@ -69,6 +69,10 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.statement.setInt(1,this.paciente.getIdPaciente());
     }
 
+    protected void incluirValorDeParametrosParaObtenerPorUsuario() throws SQLException {
+        this.statement.setString(1,this.paciente.getNombreUsuario());
+    }
+    
     @Override
     protected void instanciarObjetoDelResultSet() throws SQLException { 
         this.paciente = new Paciente();
@@ -141,27 +145,11 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
 
     @Override
     public Boolean existeNombreUsuario(String nombreUsuario) {
-        String sql= "CALL PACIENTES_obtener_por_usuario(?);";
-        super.ejecutarStoredProcedureObtener(sql, nombreUsuario);
-        if(this.paciente==null)return false;
+        this.paciente = new Paciente();
+        this.paciente.setNombreUsuario(nombreUsuario);
+        super.obtenerPorUsuario();
+        if(this.paciente.getIdPaciente() == null)
+            return false;
         return true;
-    }
-    
-    @Override
-    public ArrayList<Paciente> buscarPorNombreApellido(String nombre, String apellido){
-        String sql = "CALL PACIENTES_buscar_por_nombre_apellido(?, ?);";
-        return (ArrayList<Paciente>) super.ejecutarStoredProcedureLista(sql, nombre, apellido);
-    }
-    
-    @Override
-    public ArrayList<Paciente> buscarPorNombreApellidoDocumento(String nombre, String apellido, String documento){
-        String sql = "CALL PACIENTES_buscar_por_nombre_apellido_documento(?, ?, ?);";
-        return (ArrayList<Paciente>) super.ejecutarStoredProcedureLista(sql, nombre, apellido, documento);
-    }
-    
-    @Override
-    public ArrayList<Paciente> buscarPorNombreApellidoTelefono(String nombre, String apellido, String telefono){
-        String sql = "CALL PACIENTES_buscar_por_nombre_apellido_telefono(?, ?, ?);";
-        return (ArrayList<Paciente>) super.ejecutarStoredProcedureLista(sql, nombre, apellido, telefono);
     }
 }

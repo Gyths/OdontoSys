@@ -227,6 +227,33 @@ public abstract class DAOImplBase {
         return sql;
     }
     
+    protected String generarSQLParaObtenerPorUsuario() {
+        //sentencia SQL a generar es similar a 
+        //SELECT COL1, COL2, COL3 FROM NOMBRE_TABLA WHERE COL_ID = ?
+        String sql = "SELECT ";
+        String sql_columnas = "";
+        String sql_predicado = "";
+        for (Columna columna : this.listaColumnas) {
+            if (columna.getNombre() == "NOMBRE_USUARIO") {
+                if (!sql_predicado.isBlank()) {
+                    sql_predicado = sql_predicado.concat(", ");
+                }
+                sql_predicado = sql_predicado.concat(columna.getNombre());
+                sql_predicado = sql_predicado.concat("=?");
+            }
+            if(!sql_columnas.isBlank()) {
+                sql_columnas = sql_columnas.concat(", ");
+            }
+            sql_columnas = sql_columnas.concat(columna.getNombre());
+        }
+        sql = sql.concat(sql_columnas);
+        sql = sql.concat(" FROM ");
+        sql = sql.concat(this.nombre_tabla);
+        sql = sql.concat(" WHERE ");
+        sql = sql.concat(sql_predicado);
+        return sql;
+    }
+    
     protected String generarSQLParaListarTodos() {
         //sentencia SQL a generar es similar a 
         //SELECT COL1, COL2, COL3 FROM NOMBRE_TABLA
@@ -260,6 +287,9 @@ public abstract class DAOImplBase {
         throw new UnsupportedOperationException("Método no sobreescrito.");
     }
     
+    protected void incluirValorDeParametrosParaObtenerPorUsuario() throws SQLException {
+        throw new UnsupportedOperationException("Método no sobreescrito.");
+    }
     
     protected Integer insertar() {
         return this.ejecuta_DML(Tipo_Operacion.INSERTAR);
@@ -296,6 +326,29 @@ public abstract class DAOImplBase {
             String sql = this.generarSQLParaObtenerPorId();
             this.colocarSQLenStatement(sql);
             this.incluirValorDeParametrosParaObtenerPorId();
+            this.ejecutarConsultaEnBD();
+            if (this.resultSet.next()) {
+                instanciarObjetoDelResultSet();
+            } else {
+                limpiarObjetoDelResultSet();
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al intentar obtenerPorId - " + ex);
+        } finally {
+            try {
+                this.cerrarConexion();
+            } catch (SQLException ex) {
+                System.err.println("Error al cerrar la conexión - " + ex);
+            }
+        }
+    }
+    
+    public void obtenerPorUsuario() {
+        try {
+            this.abrirConexion();
+            String sql = this.generarSQLParaObtenerPorUsuario();
+            this.colocarSQLenStatement(sql);
+            this.incluirValorDeParametrosParaObtenerPorUsuario();
             this.ejecutarConsultaEnBD();
             if (this.resultSet.next()) {
                 instanciarObjetoDelResultSet();
