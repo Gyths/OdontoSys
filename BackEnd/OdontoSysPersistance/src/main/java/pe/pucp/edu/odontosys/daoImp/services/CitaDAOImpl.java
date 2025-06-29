@@ -19,7 +19,7 @@ import pe.pucp.edu.odontosys.services.model.Valoracion;
 public class CitaDAOImpl extends DAOImplBase implements CitaDAO {
 
     private Cita cita;
-    private static final QueryLoader queries = new QueryLoader("/citaQueries");
+    private static final QueryLoader queries = new QueryLoader("/citaQueries.json");
     
     public CitaDAOImpl() {
         super("OS_CITAS");

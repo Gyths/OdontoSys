@@ -140,7 +140,7 @@ public class Main {
         
         Paciente p2 = new Paciente();
         p2.setApellidos("Milla");
-        p2.setTipoDocumento(listaTd.get(2));
+        p2.setTipoDocumento(listaTd.get(0));
         p2.setNumeroDocumento("52132654");
         p2.setContrasenha("vmilla785");
         p2.setCorreo("ElMetroEsSuperior@gmail.com");
@@ -208,7 +208,7 @@ public class Main {
         
         Odontologo o2 = new Odontologo();
         o2.setApellidos("Suarez");
-        o2.setTipoDocumento(listaTd.get(2));
+        o2.setTipoDocumento(listaTd.get(0));
         o2.setNumeroDocumento("45862135");
         o2.setContrasenha("ss_ss-0012");
         o2.setCorreo("docSuarez@gmail.com");
@@ -227,19 +227,20 @@ public class Main {
         c.setOdontologo(listaOd.get(0));
         c.setPaciente(listaPac.get(0));
         c.setHoraInicio(hora1);
-        c.setValoracion(listaV.get(0));
-        c.setComprobante(listaCom.get(0));
+//        c.setValoracion(listaV.get(0));
+//        c.setComprobante(listaCom.get(0));
         c.setEstado(EstadoCita.RESERVADA);
         c.setFecha(fecha1);
         c.setIdCita(1);
         listaCita.add(c);
         
+        
         Cita c1 = new Cita();
         c1.setOdontologo(listaOd.get(1));
         c1.setPaciente(listaPac.get(1));
         c1.setHoraInicio(hora2);
-        c1.setValoracion(listaV.get(0));
-        c1.setComprobante(listaCom.get(1));
+//        c1.setValoracion(listaV.get(0));
+//        c1.setComprobante(listaCom.get(1));
         c1.setEstado(EstadoCita.ATENDIDA);
         c1.setFecha(fecha2);
         c1.setIdCita(2);
@@ -249,8 +250,8 @@ public class Main {
         c2.setOdontologo(listaOd.get(2));
         c2.setPaciente(listaPac.get(2));
         c2.setHoraInicio(hora3);
-        c2.setValoracion(listaV.get(0));
-        c2.setComprobante(listaCom.get(0));
+//        c2.setValoracion(listaV.get(0));
+//        c2.setComprobante(listaCom.get(0));
         c2.setEstado(EstadoCita.CANCELADA);
         c2.setFecha(fecha3);
         c2.setIdCita(3);
@@ -258,6 +259,9 @@ public class Main {
         
         CitaDAO citaDAO= new CitaDAOImpl();
         ArrayList<Cita> citasPrueba = citaDAO.listarPorPaciente(p);
+        for(Cita cita: listaCita){
+            citaDAO.insertar(cita);
+        }
         for(Cita cit : citasPrueba){
             System.out.println(cit);
         }
