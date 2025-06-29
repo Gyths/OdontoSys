@@ -416,7 +416,11 @@ public abstract class DAOImplBase {
         throw new UnsupportedOperationException("Método no sobreescrito.");
     }
     
-    protected List ejecutarStoredProcedureLista(String sql, Object... parametros){
+    protected void agregarObjetoCompletoALaLista(List lista) throws SQLException{
+        throw new UnsupportedOperationException("Método no sobreescrito.");
+    }
+    
+    protected List ejecutarQueryListar(String sql, Object... parametros){
         List resultado = new ArrayList<>();
         try {
             this.abrirConexion();
@@ -428,10 +432,10 @@ public abstract class DAOImplBase {
             }
             this.ejecutarConsultaEnBD();
             while (this.resultSet.next()) {
-                agregarObjetoALaLista(resultado);
+                agregarObjetoCompletoALaLista(resultado);
             }
         } catch (SQLException ex) {
-            System.err.println("Error al intentar ejecutar Stored Procedure de Listar - " + ex);
+            System.err.println("Error al intentar ejecutar query de Listar - " + ex);
         } finally {
             try {
                 this.cerrarConexion();
@@ -442,7 +446,7 @@ public abstract class DAOImplBase {
         return resultado;
     }
     
-    protected Integer ejecutarStoredProcedureModificar(String sql, Object... parametros) {
+    protected Integer ejecutarQueryModificar(String sql, Object... parametros) {
         int resultado = 0;
         try {
             this.iniciarTransaccion();
@@ -455,7 +459,7 @@ public abstract class DAOImplBase {
             resultado = this.ejecutarModificacionEnBD();
             this.comitarTransaccion();
         } catch (SQLException ex) {
-            System.err.println("Error al intentar ejecutar Stored Procedure de Modificacion - : " + ex);
+            System.err.println("Error al intentar ejecutar query de Modificacion - : " + ex);
             try {
                 this.rollbackTransaccion();
             } catch (SQLException ex1) {
@@ -471,7 +475,7 @@ public abstract class DAOImplBase {
         return resultado;
     }
     
-    protected void ejecutarStoredProcedureObtener(String sql, Object... parametros){
+    protected void ejecutarQueryObtener(String sql, Object... parametros){
         try {
             this.abrirConexion();
             this.colocarSQLenStatement(sql);
@@ -487,7 +491,7 @@ public abstract class DAOImplBase {
                 limpiarObjetoDelResultSet();
             }
         } catch (SQLException ex) {
-            System.err.println("Error al intentar ejecutar Stored Procedure de obtener - " + ex);
+            System.err.println("Error al intentar ejecutar query de obtener - " + ex);
         } finally {
             try {
                 this.cerrarConexion();

@@ -12,10 +12,11 @@ import pe.pucp.edu.odontosys.users.model.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import pe.pucp.edu.odontosys.daoImp.QueryLoader;
 
 public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     private Odontologo odontologo;
-    
+    private static final QueryLoader queries = new QueryLoader("/odontologoQueries.json");
     public OdontologoDAOImpl(){
         super("OS_ODONTOLOGOS");
         this.retornarLlavePrimaria=true;
@@ -96,6 +97,13 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         this.odontologo.getConsultorio().setIdSala(this.resultSet.getInt("SALA_ID"));
     }
     
+    protected void instanciarObjetoCompletoDelResultSet() throws SQLException {
+        this.instanciarObjetoDelResultSet();
+        this.odontologo.getConsultorio().setNumero(this.resultSet.getString("SALA_NUMERO"));
+        this.odontologo.getConsultorio().setPiso(this.resultSet.getInt("SALA_PISO"));
+        this.odontologo.getEspecialidad().setNombre(this.resultSet.getString("ESPECIALIDAD_DESCRIPCION"));
+    }
+    
     @Override
     protected void limpiarObjetoDelResultSet() {
         this.odontologo = null;
@@ -146,16 +154,12 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     
     @Override
     public Odontologo obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha) {
-        String sql= "CALL ODONTOLOGOS_obtener_por_usuario_contrasenha(?, ?);";
+        String sql = queries.getQuery("obtenerOdontologoPorUsuarioContrasenha");
         super.ejecutarStoredProcedureObtener(sql, nombreUsuario, contrasenha);
         return this.odontologo;
     }
     
-    @Override
-    public Integer actualizarPuntuacion(Odontologo odontologo) {
-        String sql= "CALL ODONTOLOGOS_actualizar_subtotal(?);";
-        return super.ejecutarStoredProcedureModificar(sql, odontologo.getIdOdontologo());
-    }
+
     
     @Override
     public Boolean existeNombreUsuario(String nombreUsuario) {
@@ -165,21 +169,4 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         return true;
     }
     
-    @Override
-    public ArrayList<Odontologo> buscarPorNombreApellido(String nombre, String apellido){
-        String sql = "CALL ODONTOLOGOS_buscar_por_nombre_apellido(?, ?);";
-        return (ArrayList<Odontologo>) super.ejecutarStoredProcedureLista(sql, nombre, apellido);
-    }
-    
-    @Override
-    public ArrayList<Odontologo> buscarPorNombreApellidoDocumento(String nombre, String apellido, String documento){
-        String sql = "CALL ODONTOLOGOS_buscar_por_nombre_apellido_documento(?, ?, ?);";
-        return (ArrayList<Odontologo>) super.ejecutarStoredProcedureLista(sql, nombre, apellido, documento);
-    }
-    
-    @Override
-    public ArrayList<Odontologo> buscarPorNombreApellidoTelefono(String nombre, String apellido, String telefono){
-        String sql = "CALL ODONTOLOGOS_buscar_por_nombre_apellido_telefono(?, ?, ?);";
-        return (ArrayList<Odontologo>) super.ejecutarStoredProcedureLista(sql, nombre, apellido, telefono);
-    }
 }
