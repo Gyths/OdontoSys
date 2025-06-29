@@ -63,7 +63,6 @@ public class Comprobante {
         resultado += "idComprobante: " + idComprobante  + "\n";
         resultado += "fechaEmision: "  + fechaEmision   + "\n";
         resultado += "horaEmision: "   + horaEmision    + "\n";
-        resultado += "numeroDocumento: "+ numeroDocumento+ "\n";
         resultado += "total: "          + total           + "\n";
         resultado += "metodoDePago: "   + "\n"; 
         resultado += metodoDePago;    
