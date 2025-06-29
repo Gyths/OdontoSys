@@ -109,7 +109,20 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO {
         this.cita.getOdontologo().setContrasenha(this.resultSet.getString("ODONTOLOGO_CONTRASENHA"));
         this.cita.getOdontologo().setNumeroDocumento(this.resultSet.getString("ODONTOLOGO_NUM_DOC"));
         this.cita.getOdontologo().setPuntuacionPromedio(this.resultSet.getDouble("ODONTOLOGO_PUNTUACION"));
+        
+        // -------- DATOS DE LA ESPECIALIDAD --------
+        if (this.resultSet.getObject("ESPECIALIDAD_ID") != null) {
+            this.cita.getOdontologo().getEspecialidad().setIdEspecialidad(this.resultSet.getInt("ESPECIALIDAD_ID"));
+            this.cita.getOdontologo().getEspecialidad().setNombre(this.resultSet.getString("ESPECIALIDAD_DESCRIPCIÓN"));
+        }
 
+        // -------- DATOS DE LA SALA (CONSULTORIO) --------
+        if (this.resultSet.getObject("SALA_ID") != null) {
+            this.cita.getOdontologo().getConsultorio().setIdSala(this.resultSet.getInt("SALA_ID"));
+            this.cita.getOdontologo().getConsultorio().setNumero(this.resultSet.getString("NUMERO_SALA"));
+            this.cita.getOdontologo().getConsultorio().setPiso(this.resultSet.getInt("SALA_PISO"));
+        }
+        
         // -------- DATOS DEL COMPROBANTE --------
         if (this.resultSet.getObject("COMPROBANTE_ID") != null) {
             this.cita.getComprobante().setFechaEmision(this.resultSet.getDate("COMPROBANTE_FECHA").toString());

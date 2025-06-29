@@ -17,11 +17,11 @@
   <message name="tratamiento_eliminarResponse">
     <part name="parameters" element="tns:tratamiento_eliminarResponse" />
   </message>
-  <message name="tratamiento_modificar">
-    <part name="parameters" element="tns:tratamiento_modificar" />
+  <message name="tratamiento_insertar">
+    <part name="parameters" element="tns:tratamiento_insertar" />
   </message>
-  <message name="tratamiento_modificarResponse">
-    <part name="parameters" element="tns:tratamiento_modificarResponse" />
+  <message name="tratamiento_insertarResponse">
+    <part name="parameters" element="tns:tratamiento_insertarResponse" />
   </message>
   <message name="tratamiento_obtenerPorId">
     <part name="parameters" element="tns:tratamiento_obtenerPorId" />
@@ -29,11 +29,11 @@
   <message name="tratamiento_obtenerPorIdResponse">
     <part name="parameters" element="tns:tratamiento_obtenerPorIdResponse" />
   </message>
-  <message name="tratamiento_insertar">
-    <part name="parameters" element="tns:tratamiento_insertar" />
+  <message name="tratamiento_modificar">
+    <part name="parameters" element="tns:tratamiento_modificar" />
   </message>
-  <message name="tratamiento_insertarResponse">
-    <part name="parameters" element="tns:tratamiento_insertarResponse" />
+  <message name="tratamiento_modificarResponse">
+    <part name="parameters" element="tns:tratamiento_modificarResponse" />
   </message>
   <message name="tratamiento_listarTodos">
     <part name="parameters" element="tns:tratamiento_listarTodos" />
@@ -50,17 +50,17 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_eliminarRequest" message="tns:tratamiento_eliminar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_eliminarResponse" message="tns:tratamiento_eliminarResponse" />
     </operation>
-    <operation name="tratamiento_modificar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_modificarRequest" message="tns:tratamiento_modificar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_modificarResponse" message="tns:tratamiento_modificarResponse" />
+    <operation name="tratamiento_insertar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_insertarRequest" message="tns:tratamiento_insertar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_insertarResponse" message="tns:tratamiento_insertarResponse" />
     </operation>
     <operation name="tratamiento_obtenerPorId">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_obtenerPorIdRequest" message="tns:tratamiento_obtenerPorId" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_obtenerPorIdResponse" message="tns:tratamiento_obtenerPorIdResponse" />
     </operation>
-    <operation name="tratamiento_insertar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_insertarRequest" message="tns:tratamiento_insertar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_insertarResponse" message="tns:tratamiento_insertarResponse" />
+    <operation name="tratamiento_modificar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_modificarRequest" message="tns:tratamiento_modificar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_modificarResponse" message="tns:tratamiento_modificarResponse" />
     </operation>
     <operation name="tratamiento_listarTodos">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TratamientoWA/tratamiento_listarTodosRequest" message="tns:tratamiento_listarTodos" />
@@ -87,7 +87,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="tratamiento_modificar">
+    <operation name="tratamiento_insertar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,7 +105,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="tratamiento_insertar">
+    <operation name="tratamiento_modificar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

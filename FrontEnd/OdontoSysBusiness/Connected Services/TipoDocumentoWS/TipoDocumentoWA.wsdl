@@ -5,29 +5,29 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/TipoDocumentoWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
-  <message name="tipoDocumento_eliminar">
-    <part name="parameters" element="tns:tipoDocumento_eliminar" />
-  </message>
-  <message name="tipoDocumento_eliminarResponse">
-    <part name="parameters" element="tns:tipoDocumento_eliminarResponse" />
-  </message>
-  <message name="tipoDocumento_obtenerPorId">
-    <part name="parameters" element="tns:tipoDocumento_obtenerPorId" />
-  </message>
-  <message name="tipoDocumento_obtenerPorIdResponse">
-    <part name="parameters" element="tns:tipoDocumento_obtenerPorIdResponse" />
-  </message>
   <message name="tipoDocumento_listarTodos">
     <part name="parameters" element="tns:tipoDocumento_listarTodos" />
   </message>
   <message name="tipoDocumento_listarTodosResponse">
     <part name="parameters" element="tns:tipoDocumento_listarTodosResponse" />
   </message>
+  <message name="tipoDocumento_eliminar">
+    <part name="parameters" element="tns:tipoDocumento_eliminar" />
+  </message>
+  <message name="tipoDocumento_eliminarResponse">
+    <part name="parameters" element="tns:tipoDocumento_eliminarResponse" />
+  </message>
   <message name="tipoDocumento_modificar">
     <part name="parameters" element="tns:tipoDocumento_modificar" />
   </message>
   <message name="tipoDocumento_modificarResponse">
     <part name="parameters" element="tns:tipoDocumento_modificarResponse" />
+  </message>
+  <message name="tipoDocumento_obtenerPorId">
+    <part name="parameters" element="tns:tipoDocumento_obtenerPorId" />
+  </message>
+  <message name="tipoDocumento_obtenerPorIdResponse">
+    <part name="parameters" element="tns:tipoDocumento_obtenerPorIdResponse" />
   </message>
   <message name="tipoDocumento_insertar">
     <part name="parameters" element="tns:tipoDocumento_insertar" />
@@ -36,21 +36,21 @@
     <part name="parameters" element="tns:tipoDocumento_insertarResponse" />
   </message>
   <portType name="TipoDocumentoWA">
-    <operation name="tipoDocumento_eliminar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_eliminarRequest" message="tns:tipoDocumento_eliminar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_eliminarResponse" message="tns:tipoDocumento_eliminarResponse" />
-    </operation>
-    <operation name="tipoDocumento_obtenerPorId">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_obtenerPorIdRequest" message="tns:tipoDocumento_obtenerPorId" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_obtenerPorIdResponse" message="tns:tipoDocumento_obtenerPorIdResponse" />
-    </operation>
     <operation name="tipoDocumento_listarTodos">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_listarTodosRequest" message="tns:tipoDocumento_listarTodos" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_listarTodosResponse" message="tns:tipoDocumento_listarTodosResponse" />
     </operation>
+    <operation name="tipoDocumento_eliminar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_eliminarRequest" message="tns:tipoDocumento_eliminar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_eliminarResponse" message="tns:tipoDocumento_eliminarResponse" />
+    </operation>
     <operation name="tipoDocumento_modificar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_modificarRequest" message="tns:tipoDocumento_modificar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_modificarResponse" message="tns:tipoDocumento_modificarResponse" />
+    </operation>
+    <operation name="tipoDocumento_obtenerPorId">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_obtenerPorIdRequest" message="tns:tipoDocumento_obtenerPorId" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_obtenerPorIdResponse" message="tns:tipoDocumento_obtenerPorIdResponse" />
     </operation>
     <operation name="tipoDocumento_insertar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_insertarRequest" message="tns:tipoDocumento_insertar" />
@@ -59,24 +59,6 @@
   </portType>
   <binding name="TipoDocumentoWAPortBinding" type="tns:TipoDocumentoWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="tipoDocumento_eliminar">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="tipoDocumento_obtenerPorId">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="tipoDocumento_listarTodos">
       <soap:operation soapAction="" />
       <input>
@@ -86,7 +68,25 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="tipoDocumento_eliminar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="tipoDocumento_modificar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="tipoDocumento_obtenerPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

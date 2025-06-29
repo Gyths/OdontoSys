@@ -18,9 +18,16 @@
   <xs:element name="cita_modificarResponse" type="tns:cita_modificarResponse" />
   <xs:element name="cita_obtenerPorId" type="tns:cita_obtenerPorId" />
   <xs:element name="cita_obtenerPorIdResponse" type="tns:cita_obtenerPorIdResponse" />
-  <xs:complexType name="cita_eliminar">
+  <xs:complexType name="cita_listarPorOdontologoFechas">
     <xs:sequence>
-      <xs:element minOccurs="0" name="cita" type="tns:cita" />
+      <xs:element minOccurs="0" name="idOdontologo" type="xs:int" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_listarPorOdontologoFechasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="cita">
@@ -139,21 +146,14 @@
       <xs:element minOccurs="0" name="idValoracion" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="cita_eliminar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cita" type="tns:cita" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="cita_eliminarResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="cita_listarPorOdontologoFechas">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="idOdontologo" type="xs:int" />
-      <xs:element minOccurs="0" name="fechaInicio" type="xs:string" />
-      <xs:element minOccurs="0" name="fechaFin" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="cita_listarPorOdontologoFechasResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="cita_listarTodos">

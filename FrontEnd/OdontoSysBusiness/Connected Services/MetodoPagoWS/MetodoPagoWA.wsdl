@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/MetodoPagoWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
-  <message name="metodoPago_listarTodos">
-    <part name="parameters" element="tns:metodoPago_listarTodos" />
+  <message name="metodoPago_modificar">
+    <part name="parameters" element="tns:metodoPago_modificar" />
   </message>
-  <message name="metodoPago_listarTodosResponse">
-    <part name="parameters" element="tns:metodoPago_listarTodosResponse" />
+  <message name="metodoPago_modificarResponse">
+    <part name="parameters" element="tns:metodoPago_modificarResponse" />
   </message>
   <message name="metodoPago_insertar">
     <part name="parameters" element="tns:metodoPago_insertar" />
@@ -23,11 +23,11 @@
   <message name="metodoPago_obtenerPorIdResponse">
     <part name="parameters" element="tns:metodoPago_obtenerPorIdResponse" />
   </message>
-  <message name="metodoPago_modificar">
-    <part name="parameters" element="tns:metodoPago_modificar" />
+  <message name="metodoPago_listarTodos">
+    <part name="parameters" element="tns:metodoPago_listarTodos" />
   </message>
-  <message name="metodoPago_modificarResponse">
-    <part name="parameters" element="tns:metodoPago_modificarResponse" />
+  <message name="metodoPago_listarTodosResponse">
+    <part name="parameters" element="tns:metodoPago_listarTodosResponse" />
   </message>
   <message name="metodoPago_eliminar">
     <part name="parameters" element="tns:metodoPago_eliminar" />
@@ -36,9 +36,9 @@
     <part name="parameters" element="tns:metodoPago_eliminarResponse" />
   </message>
   <portType name="MetodoPagoWA">
-    <operation name="metodoPago_listarTodos">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_listarTodosRequest" message="tns:metodoPago_listarTodos" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_listarTodosResponse" message="tns:metodoPago_listarTodosResponse" />
+    <operation name="metodoPago_modificar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_modificarRequest" message="tns:metodoPago_modificar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_modificarResponse" message="tns:metodoPago_modificarResponse" />
     </operation>
     <operation name="metodoPago_insertar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_insertarRequest" message="tns:metodoPago_insertar" />
@@ -48,9 +48,9 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_obtenerPorIdRequest" message="tns:metodoPago_obtenerPorId" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_obtenerPorIdResponse" message="tns:metodoPago_obtenerPorIdResponse" />
     </operation>
-    <operation name="metodoPago_modificar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_modificarRequest" message="tns:metodoPago_modificar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_modificarResponse" message="tns:metodoPago_modificarResponse" />
+    <operation name="metodoPago_listarTodos">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_listarTodosRequest" message="tns:metodoPago_listarTodos" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_listarTodosResponse" message="tns:metodoPago_listarTodosResponse" />
     </operation>
     <operation name="metodoPago_eliminar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/MetodoPagoWA/metodoPago_eliminarRequest" message="tns:metodoPago_eliminar" />
@@ -59,7 +59,7 @@
   </portType>
   <binding name="MetodoPagoWAPortBinding" type="tns:MetodoPagoWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="metodoPago_listarTodos">
+    <operation name="metodoPago_modificar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="metodoPago_modificar">
+    <operation name="metodoPago_listarTodos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
