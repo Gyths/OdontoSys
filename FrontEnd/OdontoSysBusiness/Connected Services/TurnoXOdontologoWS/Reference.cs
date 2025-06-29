@@ -16,19 +16,6 @@ namespace OdontoSysBusiness.TurnoXOdontologoWS {
     public interface TurnoXOdontologoWA {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_m" +
-            "odificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_m" +
-            "odificarResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse turnoXOdontologo_modificar(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_m" +
-            "odificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_m" +
-            "odificarResponse")]
-        System.Threading.Tasks.Task<OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse> turnoXOdontologo_modificarAsync(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_e" +
             "liminarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_e" +
             "liminarResponse")]
@@ -55,6 +42,19 @@ namespace OdontoSysBusiness.TurnoXOdontologoWS {
         System.Threading.Tasks.Task<OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_insertarResponse> turnoXOdontologo_insertarAsync(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_insertarRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_m" +
+            "odificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_m" +
+            "odificarResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse turnoXOdontologo_modificar(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_m" +
+            "odificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_m" +
+            "odificarResponse")]
+        System.Threading.Tasks.Task<OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse> turnoXOdontologo_modificarAsync(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_l" +
             "istarTodosRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoXOdontologoWA/turnoXOdontologo_l" +
             "istarTodosResponse")]
@@ -68,8 +68,49 @@ namespace OdontoSysBusiness.TurnoXOdontologoWS {
         System.Threading.Tasks.Task<OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_listarTodosResponse> turnoXOdontologo_listarTodosAsync(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_listarTodosRequest request);
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="turnoXOdontologo_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class turnoXOdontologo_eliminarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idOdontologo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idTurno;
+        
+        public turnoXOdontologo_eliminarRequest() {
+        }
+        
+        public turnoXOdontologo_eliminarRequest(int idOdontologo, int idTurno) {
+            this.idOdontologo = idOdontologo;
+            this.idTurno = idTurno;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="turnoXOdontologo_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class turnoXOdontologo_eliminarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public turnoXOdontologo_eliminarResponse() {
+        }
+        
+        public turnoXOdontologo_eliminarResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -145,83 +186,6 @@ namespace OdontoSysBusiness.TurnoXOdontologoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="turnoXOdontologo_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class turnoXOdontologo_modificarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo turnoXOdontologo;
-        
-        public turnoXOdontologo_modificarRequest() {
-        }
-        
-        public turnoXOdontologo_modificarRequest(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo turnoXOdontologo) {
-            this.turnoXOdontologo = turnoXOdontologo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="turnoXOdontologo_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class turnoXOdontologo_modificarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public turnoXOdontologo_modificarResponse() {
-        }
-        
-        public turnoXOdontologo_modificarResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="turnoXOdontologo_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class turnoXOdontologo_eliminarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idOdontologo;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idTurno;
-        
-        public turnoXOdontologo_eliminarRequest() {
-        }
-        
-        public turnoXOdontologo_eliminarRequest(int idOdontologo, int idTurno) {
-            this.idOdontologo = idOdontologo;
-            this.idTurno = idTurno;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="turnoXOdontologo_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class turnoXOdontologo_eliminarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public turnoXOdontologo_eliminarResponse() {
-        }
-        
-        public turnoXOdontologo_eliminarResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="turnoXOdontologo_insertar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class turnoXOdontologo_insertarRequest {
         
@@ -251,6 +215,42 @@ namespace OdontoSysBusiness.TurnoXOdontologoWS {
         }
         
         public turnoXOdontologo_insertarResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="turnoXOdontologo_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class turnoXOdontologo_modificarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo turnoXOdontologo;
+        
+        public turnoXOdontologo_modificarRequest() {
+        }
+        
+        public turnoXOdontologo_modificarRequest(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo turnoXOdontologo) {
+            this.turnoXOdontologo = turnoXOdontologo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="turnoXOdontologo_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class turnoXOdontologo_modificarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public turnoXOdontologo_modificarResponse() {
+        }
+        
+        public turnoXOdontologo_modificarResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -311,29 +311,6 @@ namespace OdontoSysBusiness.TurnoXOdontologoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse OdontoSysBusiness.TurnoXOdontologoWS.TurnoXOdontologoWA.turnoXOdontologo_modificar(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest request) {
-            return base.Channel.turnoXOdontologo_modificar(request);
-        }
-        
-        public int turnoXOdontologo_modificar(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo turnoXOdontologo) {
-            OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest inValue = new OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest();
-            inValue.turnoXOdontologo = turnoXOdontologo;
-            OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse retVal = ((OdontoSysBusiness.TurnoXOdontologoWS.TurnoXOdontologoWA)(this)).turnoXOdontologo_modificar(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse> OdontoSysBusiness.TurnoXOdontologoWS.TurnoXOdontologoWA.turnoXOdontologo_modificarAsync(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest request) {
-            return base.Channel.turnoXOdontologo_modificarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse> turnoXOdontologo_modificarAsync(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo turnoXOdontologo) {
-            OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest inValue = new OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest();
-            inValue.turnoXOdontologo = turnoXOdontologo;
-            return ((OdontoSysBusiness.TurnoXOdontologoWS.TurnoXOdontologoWA)(this)).turnoXOdontologo_modificarAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_eliminarResponse OdontoSysBusiness.TurnoXOdontologoWS.TurnoXOdontologoWA.turnoXOdontologo_eliminar(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_eliminarRequest request) {
             return base.Channel.turnoXOdontologo_eliminar(request);
         }
@@ -379,6 +356,29 @@ namespace OdontoSysBusiness.TurnoXOdontologoWS {
             OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_insertarRequest inValue = new OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_insertarRequest();
             inValue.turnoXOdontologo = turnoXOdontologo;
             return ((OdontoSysBusiness.TurnoXOdontologoWS.TurnoXOdontologoWA)(this)).turnoXOdontologo_insertarAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse OdontoSysBusiness.TurnoXOdontologoWS.TurnoXOdontologoWA.turnoXOdontologo_modificar(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest request) {
+            return base.Channel.turnoXOdontologo_modificar(request);
+        }
+        
+        public int turnoXOdontologo_modificar(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo turnoXOdontologo) {
+            OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest inValue = new OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest();
+            inValue.turnoXOdontologo = turnoXOdontologo;
+            OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse retVal = ((OdontoSysBusiness.TurnoXOdontologoWS.TurnoXOdontologoWA)(this)).turnoXOdontologo_modificar(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse> OdontoSysBusiness.TurnoXOdontologoWS.TurnoXOdontologoWA.turnoXOdontologo_modificarAsync(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest request) {
+            return base.Channel.turnoXOdontologo_modificarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarResponse> turnoXOdontologo_modificarAsync(OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo turnoXOdontologo) {
+            OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest inValue = new OdontoSysBusiness.TurnoXOdontologoWS.turnoXOdontologo_modificarRequest();
+            inValue.turnoXOdontologo = turnoXOdontologo;
+            return ((OdontoSysBusiness.TurnoXOdontologoWS.TurnoXOdontologoWA)(this)).turnoXOdontologo_modificarAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

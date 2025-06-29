@@ -16,30 +16,17 @@ namespace OdontoSysBusiness.ValoracionWS {
     public interface ValoracionWA {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_modificarRequ" +
-            "est", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_modificarResp" +
-            "onse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdR" +
+            "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdR" +
+            "esponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysBusiness.ValoracionWS.valoracion_modificarResponse valoracion_modificar(OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest request);
+        OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdResponse valoracion_obtenerPorId(OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_modificarRequ" +
-            "est", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_modificarResp" +
-            "onse")]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_modificarResponse> valoracion_modificarAsync(OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarReque" +
-            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarRespo" +
-            "nse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysBusiness.ValoracionWS.valoracion_eliminarResponse valoracion_eliminar(OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarReque" +
-            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_eliminarResponse> valoracion_eliminarAsync(OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdR" +
+            "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdR" +
+            "esponse")]
+        System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdResponse> valoracion_obtenerPorIdAsync(OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_listarTodosRe" +
@@ -55,6 +42,19 @@ namespace OdontoSysBusiness.ValoracionWS {
         System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_listarTodosResponse> valoracion_listarTodosAsync(OdontoSysBusiness.ValoracionWS.valoracion_listarTodosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_modificarRequ" +
+            "est", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_modificarResp" +
+            "onse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysBusiness.ValoracionWS.valoracion_modificarResponse valoracion_modificar(OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_modificarRequ" +
+            "est", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_modificarResp" +
+            "onse")]
+        System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_modificarResponse> valoracion_modificarAsync(OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_insertarReque" +
             "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_insertarRespo" +
             "nse")]
@@ -68,21 +68,21 @@ namespace OdontoSysBusiness.ValoracionWS {
         System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_insertarResponse> valoracion_insertarAsync(OdontoSysBusiness.ValoracionWS.valoracion_insertarRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdR" +
-            "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdR" +
-            "esponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarReque" +
+            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarRespo" +
+            "nse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdResponse valoracion_obtenerPorId(OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest request);
+        OdontoSysBusiness.ValoracionWS.valoracion_eliminarResponse valoracion_eliminar(OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdR" +
-            "equest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_obtenerPorIdR" +
-            "esponse")]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdResponse> valoracion_obtenerPorIdAsync(OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarReque" +
+            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/ValoracionWA/valoracion_eliminarRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_eliminarResponse> valoracion_eliminarAsync(OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest request);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -186,6 +186,70 @@ namespace OdontoSysBusiness.ValoracionWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="valoracion_obtenerPorId", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class valoracion_obtenerPorIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public valoracion_obtenerPorIdRequest() {
+        }
+        
+        public valoracion_obtenerPorIdRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="valoracion_obtenerPorIdResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class valoracion_obtenerPorIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysBusiness.ValoracionWS.valoracion @return;
+        
+        public valoracion_obtenerPorIdResponse() {
+        }
+        
+        public valoracion_obtenerPorIdResponse(OdontoSysBusiness.ValoracionWS.valoracion @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="valoracion_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class valoracion_listarTodosRequest {
+        
+        public valoracion_listarTodosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="valoracion_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class valoracion_listarTodosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysBusiness.ValoracionWS.valoracion[] @return;
+        
+        public valoracion_listarTodosResponse() {
+        }
+        
+        public valoracion_listarTodosResponse(OdontoSysBusiness.ValoracionWS.valoracion[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="valoracion_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class valoracion_modificarRequest {
         
@@ -215,70 +279,6 @@ namespace OdontoSysBusiness.ValoracionWS {
         }
         
         public valoracion_modificarResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="valoracion_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class valoracion_eliminarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysBusiness.ValoracionWS.valoracion valoracion;
-        
-        public valoracion_eliminarRequest() {
-        }
-        
-        public valoracion_eliminarRequest(OdontoSysBusiness.ValoracionWS.valoracion valoracion) {
-            this.valoracion = valoracion;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="valoracion_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class valoracion_eliminarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public valoracion_eliminarResponse() {
-        }
-        
-        public valoracion_eliminarResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="valoracion_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class valoracion_listarTodosRequest {
-        
-        public valoracion_listarTodosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="valoracion_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class valoracion_listarTodosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysBusiness.ValoracionWS.valoracion[] @return;
-        
-        public valoracion_listarTodosResponse() {
-        }
-        
-        public valoracion_listarTodosResponse(OdontoSysBusiness.ValoracionWS.valoracion[] @return) {
             this.@return = @return;
         }
     }
@@ -322,35 +322,35 @@ namespace OdontoSysBusiness.ValoracionWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="valoracion_obtenerPorId", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class valoracion_obtenerPorIdRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="valoracion_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class valoracion_eliminarRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
+        public OdontoSysBusiness.ValoracionWS.valoracion valoracion;
         
-        public valoracion_obtenerPorIdRequest() {
+        public valoracion_eliminarRequest() {
         }
         
-        public valoracion_obtenerPorIdRequest(int id) {
-            this.id = id;
+        public valoracion_eliminarRequest(OdontoSysBusiness.ValoracionWS.valoracion valoracion) {
+            this.valoracion = valoracion;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="valoracion_obtenerPorIdResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class valoracion_obtenerPorIdResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="valoracion_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class valoracion_eliminarResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysBusiness.ValoracionWS.valoracion @return;
+        public int @return;
         
-        public valoracion_obtenerPorIdResponse() {
+        public valoracion_eliminarResponse() {
         }
         
-        public valoracion_obtenerPorIdResponse(OdontoSysBusiness.ValoracionWS.valoracion @return) {
+        public valoracion_eliminarResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -383,49 +383,26 @@ namespace OdontoSysBusiness.ValoracionWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysBusiness.ValoracionWS.valoracion_modificarResponse OdontoSysBusiness.ValoracionWS.ValoracionWA.valoracion_modificar(OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest request) {
-            return base.Channel.valoracion_modificar(request);
+        OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdResponse OdontoSysBusiness.ValoracionWS.ValoracionWA.valoracion_obtenerPorId(OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest request) {
+            return base.Channel.valoracion_obtenerPorId(request);
         }
         
-        public int valoracion_modificar(OdontoSysBusiness.ValoracionWS.valoracion valoracion) {
-            OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest inValue = new OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest();
-            inValue.valoracion = valoracion;
-            OdontoSysBusiness.ValoracionWS.valoracion_modificarResponse retVal = ((OdontoSysBusiness.ValoracionWS.ValoracionWA)(this)).valoracion_modificar(inValue);
+        public OdontoSysBusiness.ValoracionWS.valoracion valoracion_obtenerPorId(int id) {
+            OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest inValue = new OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest();
+            inValue.id = id;
+            OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdResponse retVal = ((OdontoSysBusiness.ValoracionWS.ValoracionWA)(this)).valoracion_obtenerPorId(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_modificarResponse> OdontoSysBusiness.ValoracionWS.ValoracionWA.valoracion_modificarAsync(OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest request) {
-            return base.Channel.valoracion_modificarAsync(request);
+        System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdResponse> OdontoSysBusiness.ValoracionWS.ValoracionWA.valoracion_obtenerPorIdAsync(OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest request) {
+            return base.Channel.valoracion_obtenerPorIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_modificarResponse> valoracion_modificarAsync(OdontoSysBusiness.ValoracionWS.valoracion valoracion) {
-            OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest inValue = new OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest();
-            inValue.valoracion = valoracion;
-            return ((OdontoSysBusiness.ValoracionWS.ValoracionWA)(this)).valoracion_modificarAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysBusiness.ValoracionWS.valoracion_eliminarResponse OdontoSysBusiness.ValoracionWS.ValoracionWA.valoracion_eliminar(OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest request) {
-            return base.Channel.valoracion_eliminar(request);
-        }
-        
-        public int valoracion_eliminar(OdontoSysBusiness.ValoracionWS.valoracion valoracion) {
-            OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest inValue = new OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest();
-            inValue.valoracion = valoracion;
-            OdontoSysBusiness.ValoracionWS.valoracion_eliminarResponse retVal = ((OdontoSysBusiness.ValoracionWS.ValoracionWA)(this)).valoracion_eliminar(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_eliminarResponse> OdontoSysBusiness.ValoracionWS.ValoracionWA.valoracion_eliminarAsync(OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest request) {
-            return base.Channel.valoracion_eliminarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_eliminarResponse> valoracion_eliminarAsync(OdontoSysBusiness.ValoracionWS.valoracion valoracion) {
-            OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest inValue = new OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest();
-            inValue.valoracion = valoracion;
-            return ((OdontoSysBusiness.ValoracionWS.ValoracionWA)(this)).valoracion_eliminarAsync(inValue);
+        public System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdResponse> valoracion_obtenerPorIdAsync(int id) {
+            OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest inValue = new OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest();
+            inValue.id = id;
+            return ((OdontoSysBusiness.ValoracionWS.ValoracionWA)(this)).valoracion_obtenerPorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -447,6 +424,29 @@ namespace OdontoSysBusiness.ValoracionWS {
         public System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_listarTodosResponse> valoracion_listarTodosAsync() {
             OdontoSysBusiness.ValoracionWS.valoracion_listarTodosRequest inValue = new OdontoSysBusiness.ValoracionWS.valoracion_listarTodosRequest();
             return ((OdontoSysBusiness.ValoracionWS.ValoracionWA)(this)).valoracion_listarTodosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysBusiness.ValoracionWS.valoracion_modificarResponse OdontoSysBusiness.ValoracionWS.ValoracionWA.valoracion_modificar(OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest request) {
+            return base.Channel.valoracion_modificar(request);
+        }
+        
+        public int valoracion_modificar(OdontoSysBusiness.ValoracionWS.valoracion valoracion) {
+            OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest inValue = new OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest();
+            inValue.valoracion = valoracion;
+            OdontoSysBusiness.ValoracionWS.valoracion_modificarResponse retVal = ((OdontoSysBusiness.ValoracionWS.ValoracionWA)(this)).valoracion_modificar(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_modificarResponse> OdontoSysBusiness.ValoracionWS.ValoracionWA.valoracion_modificarAsync(OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest request) {
+            return base.Channel.valoracion_modificarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_modificarResponse> valoracion_modificarAsync(OdontoSysBusiness.ValoracionWS.valoracion valoracion) {
+            OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest inValue = new OdontoSysBusiness.ValoracionWS.valoracion_modificarRequest();
+            inValue.valoracion = valoracion;
+            return ((OdontoSysBusiness.ValoracionWS.ValoracionWA)(this)).valoracion_modificarAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -473,26 +473,26 @@ namespace OdontoSysBusiness.ValoracionWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdResponse OdontoSysBusiness.ValoracionWS.ValoracionWA.valoracion_obtenerPorId(OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest request) {
-            return base.Channel.valoracion_obtenerPorId(request);
+        OdontoSysBusiness.ValoracionWS.valoracion_eliminarResponse OdontoSysBusiness.ValoracionWS.ValoracionWA.valoracion_eliminar(OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest request) {
+            return base.Channel.valoracion_eliminar(request);
         }
         
-        public OdontoSysBusiness.ValoracionWS.valoracion valoracion_obtenerPorId(int id) {
-            OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest inValue = new OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest();
-            inValue.id = id;
-            OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdResponse retVal = ((OdontoSysBusiness.ValoracionWS.ValoracionWA)(this)).valoracion_obtenerPorId(inValue);
+        public int valoracion_eliminar(OdontoSysBusiness.ValoracionWS.valoracion valoracion) {
+            OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest inValue = new OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest();
+            inValue.valoracion = valoracion;
+            OdontoSysBusiness.ValoracionWS.valoracion_eliminarResponse retVal = ((OdontoSysBusiness.ValoracionWS.ValoracionWA)(this)).valoracion_eliminar(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdResponse> OdontoSysBusiness.ValoracionWS.ValoracionWA.valoracion_obtenerPorIdAsync(OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest request) {
-            return base.Channel.valoracion_obtenerPorIdAsync(request);
+        System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_eliminarResponse> OdontoSysBusiness.ValoracionWS.ValoracionWA.valoracion_eliminarAsync(OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest request) {
+            return base.Channel.valoracion_eliminarAsync(request);
         }
         
-        public System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdResponse> valoracion_obtenerPorIdAsync(int id) {
-            OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest inValue = new OdontoSysBusiness.ValoracionWS.valoracion_obtenerPorIdRequest();
-            inValue.id = id;
-            return ((OdontoSysBusiness.ValoracionWS.ValoracionWA)(this)).valoracion_obtenerPorIdAsync(inValue);
+        public System.Threading.Tasks.Task<OdontoSysBusiness.ValoracionWS.valoracion_eliminarResponse> valoracion_eliminarAsync(OdontoSysBusiness.ValoracionWS.valoracion valoracion) {
+            OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest inValue = new OdontoSysBusiness.ValoracionWS.valoracion_eliminarRequest();
+            inValue.valoracion = valoracion;
+            return ((OdontoSysBusiness.ValoracionWS.ValoracionWA)(this)).valoracion_eliminarAsync(inValue);
         }
     }
 }

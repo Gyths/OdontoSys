@@ -16,6 +16,19 @@ namespace OdontoSysBusiness.TipoDocumentoWS {
     public interface TipoDocumentoWA {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_elimina" +
+            "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_elimina" +
+            "rResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarResponse tipoDocumento_eliminar(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_elimina" +
+            "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_elimina" +
+            "rResponse")]
+        System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarResponse> tipoDocumento_eliminarAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_obtener" +
             "PorIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_obtener" +
             "PorIdResponse")]
@@ -29,30 +42,17 @@ namespace OdontoSysBusiness.TipoDocumentoWS {
         System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_obtenerPorIdResponse> tipoDocumento_obtenerPorIdAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_obtenerPorIdRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_inserta" +
-            "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_inserta" +
-            "rResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_listarT" +
+            "odosRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_listarT" +
+            "odosResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarResponse tipoDocumento_insertar(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest request);
+        OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosResponse tipoDocumento_listarTodos(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_inserta" +
-            "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_inserta" +
-            "rResponse")]
-        System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarResponse> tipoDocumento_insertarAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_elimina" +
-            "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_elimina" +
-            "rResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarResponse tipoDocumento_eliminar(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_elimina" +
-            "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_elimina" +
-            "rResponse")]
-        System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarResponse> tipoDocumento_eliminarAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_listarT" +
+            "odosRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_listarT" +
+            "odosResponse")]
+        System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosResponse> tipoDocumento_listarTodosAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_modific" +
@@ -68,21 +68,21 @@ namespace OdontoSysBusiness.TipoDocumentoWS {
         System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_modificarResponse> tipoDocumento_modificarAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_modificarRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_listarT" +
-            "odosRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_listarT" +
-            "odosResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_inserta" +
+            "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_inserta" +
+            "rResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosResponse tipoDocumento_listarTodos(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest request);
+        OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarResponse tipoDocumento_insertar(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_listarT" +
-            "odosRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_listarT" +
-            "odosResponse")]
-        System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosResponse> tipoDocumento_listarTodosAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_inserta" +
+            "rRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TipoDocumentoWA/tipoDocumento_inserta" +
+            "rResponse")]
+        System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarResponse> tipoDocumento_insertarAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest request);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -144,6 +144,42 @@ namespace OdontoSysBusiness.TipoDocumentoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class tipoDocumento_eliminarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento;
+        
+        public tipoDocumento_eliminarRequest() {
+        }
+        
+        public tipoDocumento_eliminarRequest(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento) {
+            this.tipoDocumento = tipoDocumento;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class tipoDocumento_eliminarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public tipoDocumento_eliminarResponse() {
+        }
+        
+        public tipoDocumento_eliminarResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_obtenerPorId", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class tipoDocumento_obtenerPorIdRequest {
         
@@ -180,71 +216,27 @@ namespace OdontoSysBusiness.TipoDocumentoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_insertar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tipoDocumento_insertarRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class tipoDocumento_listarTodosRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento;
-        
-        public tipoDocumento_insertarRequest() {
-        }
-        
-        public tipoDocumento_insertarRequest(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento) {
-            this.tipoDocumento = tipoDocumento;
+        public tipoDocumento_listarTodosRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_insertarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tipoDocumento_insertarResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class tipoDocumento_listarTodosResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysBusiness.TipoDocumentoWS.tipoDocumento[] @return;
         
-        public tipoDocumento_insertarResponse() {
+        public tipoDocumento_listarTodosResponse() {
         }
         
-        public tipoDocumento_insertarResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tipoDocumento_eliminarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento;
-        
-        public tipoDocumento_eliminarRequest() {
-        }
-        
-        public tipoDocumento_eliminarRequest(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento) {
-            this.tipoDocumento = tipoDocumento;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tipoDocumento_eliminarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public tipoDocumento_eliminarResponse() {
-        }
-        
-        public tipoDocumento_eliminarResponse(int @return) {
+        public tipoDocumento_listarTodosResponse(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento[] @return) {
             this.@return = @return;
         }
     }
@@ -288,27 +280,35 @@ namespace OdontoSysBusiness.TipoDocumentoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tipoDocumento_listarTodosRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_insertar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class tipoDocumento_insertarRequest {
         
-        public tipoDocumento_listarTodosRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento;
+        
+        public tipoDocumento_insertarRequest() {
+        }
+        
+        public tipoDocumento_insertarRequest(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento) {
+            this.tipoDocumento = tipoDocumento;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class tipoDocumento_listarTodosResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="tipoDocumento_insertarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class tipoDocumento_insertarResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysBusiness.TipoDocumentoWS.tipoDocumento[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
         
-        public tipoDocumento_listarTodosResponse() {
+        public tipoDocumento_insertarResponse() {
         }
         
-        public tipoDocumento_listarTodosResponse(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento[] @return) {
+        public tipoDocumento_insertarResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -341,6 +341,29 @@ namespace OdontoSysBusiness.TipoDocumentoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarResponse OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_eliminar(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest request) {
+            return base.Channel.tipoDocumento_eliminar(request);
+        }
+        
+        public int tipoDocumento_eliminar(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento) {
+            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest inValue = new OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest();
+            inValue.tipoDocumento = tipoDocumento;
+            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarResponse retVal = ((OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_eliminar(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarResponse> OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_eliminarAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest request) {
+            return base.Channel.tipoDocumento_eliminarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarResponse> tipoDocumento_eliminarAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento) {
+            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest inValue = new OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest();
+            inValue.tipoDocumento = tipoDocumento;
+            return ((OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_eliminarAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_obtenerPorIdResponse OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_obtenerPorId(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_obtenerPorIdRequest request) {
             return base.Channel.tipoDocumento_obtenerPorId(request);
         }
@@ -364,49 +387,24 @@ namespace OdontoSysBusiness.TipoDocumentoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarResponse OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_insertar(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest request) {
-            return base.Channel.tipoDocumento_insertar(request);
+        OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosResponse OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_listarTodos(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest request) {
+            return base.Channel.tipoDocumento_listarTodos(request);
         }
         
-        public int tipoDocumento_insertar(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento) {
-            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest inValue = new OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest();
-            inValue.tipoDocumento = tipoDocumento;
-            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarResponse retVal = ((OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_insertar(inValue);
+        public OdontoSysBusiness.TipoDocumentoWS.tipoDocumento[] tipoDocumento_listarTodos() {
+            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest inValue = new OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest();
+            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosResponse retVal = ((OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_listarTodos(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarResponse> OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_insertarAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest request) {
-            return base.Channel.tipoDocumento_insertarAsync(request);
+        System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosResponse> OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_listarTodosAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest request) {
+            return base.Channel.tipoDocumento_listarTodosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarResponse> tipoDocumento_insertarAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento) {
-            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest inValue = new OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest();
-            inValue.tipoDocumento = tipoDocumento;
-            return ((OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_insertarAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarResponse OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_eliminar(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest request) {
-            return base.Channel.tipoDocumento_eliminar(request);
-        }
-        
-        public int tipoDocumento_eliminar(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento) {
-            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest inValue = new OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest();
-            inValue.tipoDocumento = tipoDocumento;
-            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarResponse retVal = ((OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_eliminar(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarResponse> OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_eliminarAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest request) {
-            return base.Channel.tipoDocumento_eliminarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarResponse> tipoDocumento_eliminarAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento) {
-            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest inValue = new OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_eliminarRequest();
-            inValue.tipoDocumento = tipoDocumento;
-            return ((OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_eliminarAsync(inValue);
+        public System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosResponse> tipoDocumento_listarTodosAsync() {
+            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest inValue = new OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest();
+            return ((OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_listarTodosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -433,24 +431,26 @@ namespace OdontoSysBusiness.TipoDocumentoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosResponse OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_listarTodos(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest request) {
-            return base.Channel.tipoDocumento_listarTodos(request);
+        OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarResponse OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_insertar(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest request) {
+            return base.Channel.tipoDocumento_insertar(request);
         }
         
-        public OdontoSysBusiness.TipoDocumentoWS.tipoDocumento[] tipoDocumento_listarTodos() {
-            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest inValue = new OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest();
-            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosResponse retVal = ((OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_listarTodos(inValue);
+        public int tipoDocumento_insertar(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento) {
+            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest inValue = new OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest();
+            inValue.tipoDocumento = tipoDocumento;
+            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarResponse retVal = ((OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_insertar(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosResponse> OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_listarTodosAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest request) {
-            return base.Channel.tipoDocumento_listarTodosAsync(request);
+        System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarResponse> OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA.tipoDocumento_insertarAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest request) {
+            return base.Channel.tipoDocumento_insertarAsync(request);
         }
         
-        public System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosResponse> tipoDocumento_listarTodosAsync() {
-            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest inValue = new OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_listarTodosRequest();
-            return ((OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_listarTodosAsync(inValue);
+        public System.Threading.Tasks.Task<OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarResponse> tipoDocumento_insertarAsync(OdontoSysBusiness.TipoDocumentoWS.tipoDocumento tipoDocumento) {
+            OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest inValue = new OdontoSysBusiness.TipoDocumentoWS.tipoDocumento_insertarRequest();
+            inValue.tipoDocumento = tipoDocumento;
+            return ((OdontoSysBusiness.TipoDocumentoWS.TipoDocumentoWA)(this)).tipoDocumento_insertarAsync(inValue);
         }
     }
 }

@@ -81,14 +81,7 @@ namespace OdontoSysWebApplication
                 return;
 
             int idEspecialidad = int.Parse(ddlEspecialidades.SelectedValue);
-            var especialidad = new OdontoSysBusiness.OdontologoWS.especialidad
-            {
-                idEspecialidad = idEspecialidad,
-                idEspecialidadSpecified = true
-            };
-
-
-            var odontologos = this.OdontologoBO.odontologo_listarPorEspecialidad(especialidad.idEspecialidad);
+            var odontologos = this.OdontologoBO.odontologo_listarPorEspecialidad(idEspecialidad);
 
             ddlOdontologos.Items.Add(new ListItem("-- Seleccione un odontólogo --", ""));
             foreach (var o in odontologos)
@@ -122,22 +115,8 @@ namespace OdontoSysWebApplication
             string fechaFinStr = fechaFin.ToString("yyyy-MM-dd");
 
             int idOdontologo = int.Parse(ddlOdontologos.SelectedValue);
-
-            var odontologoTurno = new OdontoSysBusiness.TurnoWS.odontologo
-            {
-                idOdontologo = idOdontologo,
-                idOdontologoSpecified = true
-            };
-
-            var turnos = this.TurnoBO.turno_listarPorOdontologo(odontologoTurno);
-
-            var odontologoCita = new OdontoSysBusiness.CitaWS.odontologo
-            {
-                idOdontologo = idOdontologo,
-                idOdontologoSpecified = true
-            };
-
-            var citas = this.CitaBO.cita_listarPorOdontologoFechas(odontologoCita.idOdontologo, fechaInicioStr, fechaFinStr);
+            var turnos = this.TurnoBO.turno_listarPorOdontologo(idOdontologo);
+            var citas = this.CitaBO.cita_listarPorOdontologoFechas(idOdontologo, fechaInicioStr, fechaFinStr);
 
             var disponibilidad = CalcularHorasDisponibles(turnos, citas, fechaInicio);
 
