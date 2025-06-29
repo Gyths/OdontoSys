@@ -61,11 +61,17 @@ public class DetalleTratamientoDAOImpl extends DAOImplBase implements DetalleTra
     protected void instanciarObjetoDelResultSet() throws SQLException {
         this.detalleTratamiento = new DetalleTratamiento();
         this.detalleTratamiento.setIdCita(this.resultSet.getInt("CITA_ID"));
-        Tratamiento t = new Tratamiento();
-        t.setIdTratamiento(this.resultSet.getInt("TRATAMIENTO_ID"));
-        this.detalleTratamiento.setTratamiento(t);
+        this.detalleTratamiento.getTratamiento().setIdTratamiento(this.resultSet.getInt("TRATAMIENTO_ID"));
         this.detalleTratamiento.setCantidad(this.resultSet.getInt("CANTIDAD"));
         this.detalleTratamiento.setSubtotal(this.resultSet.getDouble("SUBTOTAL"));
+    }
+    
+    @Override
+    protected void instanciarObjetoCompletoDelResultSet() throws SQLException {
+        this.instanciarObjetoDelResultSet();
+        this.detalleTratamiento.getTratamiento().setNombre(this.resultSet.getString("TRATAMIENTO_NOMBRE"));
+        this.detalleTratamiento.getTratamiento().setDescripcion(this.resultSet.getString("TRATAMIENTO_DESCRIPCION"));
+        this.detalleTratamiento.getTratamiento().setCosto(this.resultSet.getDouble("TRATAMIENTO_COSTO"));
     }
     
     @Override
@@ -76,6 +82,12 @@ public class DetalleTratamientoDAOImpl extends DAOImplBase implements DetalleTra
     @Override
     protected void agregarObjetoALaLista(List lista) throws SQLException {
         this.instanciarObjetoDelResultSet();
+        lista.add(this.detalleTratamiento);
+    }
+    
+    @Override
+    protected void agregarObjetoCompletoALaLista(List lista) throws SQLException {
+        this.instanciarObjetoCompletoDelResultSet();
         lista.add(this.detalleTratamiento);
     }
     
@@ -113,13 +125,12 @@ public class DetalleTratamientoDAOImpl extends DAOImplBase implements DetalleTra
     @Override
     public ArrayList<DetalleTratamiento> listarPorCita(Cita cita) {
         String sql= "CALL DETALLES_TRATAMIENTOS_listar_por_cita(?);";
-        return (ArrayList<DetalleTratamiento>) super.ejecutarStoredProcedureLista(sql, cita.getIdCita());
+        return (ArrayList<DetalleTratamiento>) super.ejecutarQueryListar(sql, cita.getIdCita());
     }
     
     @Override
     public Integer actualizarSubtotal(Cita cita) {
         String sql= "CALL DETALLES_TRATAMIENTOS_actualizar_subtotal(?);";
-        return super.ejecutarStoredProcedureModificar(sql, cita.getIdCita());
+        return super.ejecutarQueryModificar(sql, cita.getIdCita());
     }
-    
 }

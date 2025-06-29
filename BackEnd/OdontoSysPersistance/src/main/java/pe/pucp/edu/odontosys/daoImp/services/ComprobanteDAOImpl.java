@@ -116,7 +116,7 @@ public class ComprobanteDAOImpl extends DAOImplBase implements ComprobanteDAO{
     @Override
     public Integer actualizarTotal(Cita cita){
         String sql = "CALL COMPROBANTES_actualizar_total(?);";
-        return super.ejecutarStoredProcedureModificar(sql, cita.getIdCita()); 
+        return super.ejecutarQueryModificar(sql, cita.getIdCita()); 
     }
     
 }

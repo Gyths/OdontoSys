@@ -79,7 +79,7 @@ public class TurnoXOdontologoDAOImpl extends DAOImplBase implements TurnoXOdonto
     
     public Integer eliminar(TurnoXOdontologo turnoXOdontologo) {
         String sql = "CALL ODONTOLOGOS_POR_TURNOS_eliminar(?, ?);";
-        return super.ejecutarStoredProcedureModificar(sql, turnoXOdontologo.getIdOdontologo(), turnoXOdontologo.getIdTurno());
+        return super.ejecutarQueryModificar(sql, turnoXOdontologo.getIdOdontologo(), turnoXOdontologo.getIdTurno());
     }
     
     @Override

@@ -12,13 +12,15 @@ import pe.pucp.edu.odontosys.services.model.EstadoCita;
 import pe.pucp.edu.odontosys.users.model.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import pe.pucp.edu.odontosys.daoImp.QueryLoader;
 import pe.pucp.edu.odontosys.services.model.Comprobante;
 import pe.pucp.edu.odontosys.services.model.Valoracion;
 
 public class CitaDAOImpl extends DAOImplBase implements CitaDAO {
 
     private Cita cita;
-
+    private static final QueryLoader queries = new QueryLoader("/citaQueries");
+    
     public CitaDAOImpl() {
         super("OS_CITAS");
         this.retornarLlavePrimaria = true;
@@ -173,25 +175,25 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO {
     @Override
     public ArrayList<Cita> listarPorOdontologoFechas(Odontologo odontologo, String fechaInicio, String fechaFin) {
         String sql = "CALL CITAS_listar_por_odontologo_fechas(?, ?, ?);";
-        return (ArrayList<Cita>) ejecutarStoredProcedureLista(sql, odontologo.getIdOdontologo(), LocalDate.parse(fechaInicio), LocalDate.parse(fechaFin));
+        return (ArrayList<Cita>) ejecutarQueryListar(sql, odontologo.getIdOdontologo(), LocalDate.parse(fechaInicio), LocalDate.parse(fechaFin));
     }
 
     @Override
     public ArrayList<Cita> listarPorOdontologo(Odontologo odontologo) {
         String sql = "CALL CITAS_listar_por_odontologo(?);";
-        return (ArrayList<Cita>) super.ejecutarStoredProcedureLista(sql, odontologo.getIdOdontologo());
+        return (ArrayList<Cita>) super.ejecutarQueryListar(sql, odontologo.getIdOdontologo());
     }
 
     @Override
     public ArrayList<Cita> listarPorPaciente(Paciente paciente) {
         String sql = "CALL CITAS_listar_por_paciente(?);";
-        return (ArrayList<Cita>) super.ejecutarStoredProcedureLista(sql, paciente.getIdPaciente());
+        return (ArrayList<Cita>) super.ejecutarQueryListar(sql, paciente.getIdPaciente());
     }
 
     @Override
     public ArrayList<Cita> listarPorPacienteFechas(Paciente paciente, String fechaInicio, String fechaFin) {
         String sql = "CALL CITAS_listar_por_paciente_fechas(?, ?, ?);";
-        return (ArrayList<Cita>) ejecutarStoredProcedureLista(sql, paciente.getIdPaciente(), LocalDate.parse(fechaInicio), LocalDate.parse(fechaFin));
+        return (ArrayList<Cita>) ejecutarQueryListar(sql, paciente.getIdPaciente(), LocalDate.parse(fechaInicio), LocalDate.parse(fechaFin));
     }
 
 }

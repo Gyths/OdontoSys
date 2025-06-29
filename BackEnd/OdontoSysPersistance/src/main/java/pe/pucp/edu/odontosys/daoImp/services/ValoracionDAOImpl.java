@@ -108,16 +108,4 @@ public class ValoracionDAOImpl extends DAOImplBase implements ValoracionDAO{
         return (ArrayList<Valoracion>) super.listarTodos();
     }
     
-    @Override
-    public ArrayList<Valoracion> listarPorOdontologo(Odontologo odontologo) {
-        String sql= "CALL VALORACIONES_listar_por_odontologo(?);";
-        return (ArrayList<Valoracion>)ejecutarStoredProcedureLista(sql, odontologo.getIdOdontologo());
-    }
-    
-    @Override
-    public ArrayList<Valoracion> listarPorPaciente(Paciente paciente) {
-        String sql= "CALL VALORACIONES_listar_por_paciente(?);";
-        return (ArrayList<Valoracion>)ejecutarStoredProcedureLista(sql, paciente.getIdPaciente());
-    }
-    
 }

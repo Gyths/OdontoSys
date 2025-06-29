@@ -6,6 +6,7 @@ import java.util.List;
 
 import pe.pucp.edu.odontosys.dao.services.TratamientoDAO;
 import pe.pucp.edu.odontosys.daoImp.DAOImplBase;
+import pe.pucp.edu.odontosys.daoImp.QueryLoader;
 import pe.pucp.edu.odontosys.daoImp.util.Columna;
 import pe.pucp.edu.odontosys.services.model.Tratamiento;
 import pe.pucp.edu.odontosys.services.model.Especialidad;
@@ -13,6 +14,7 @@ import pe.pucp.edu.odontosys.services.model.Especialidad;
 public class TratamientoDAOImpl extends DAOImplBase implements TratamientoDAO{
     
     private Tratamiento tratamiento;
+    private static final QueryLoader queries = new QueryLoader("/tratamientoQueries.json");
     
     public TratamientoDAOImpl(){
         super("OS_TRATAMIENTOS");
@@ -67,6 +69,12 @@ public class TratamientoDAOImpl extends DAOImplBase implements TratamientoDAO{
     }
     
     @Override
+    protected void instanciarObjetoCompletoDelResultSet() throws SQLException {
+        this.instanciarObjetoDelResultSet();
+        this.tratamiento.getEspecialidad().setNombre(this.resultSet.getString("ESPECIALIDAD_DESCRIPCION"));
+    }
+    
+    @Override
     protected void limpiarObjetoDelResultSet() {
         this.tratamiento = null;
     }
@@ -110,8 +118,8 @@ public class TratamientoDAOImpl extends DAOImplBase implements TratamientoDAO{
     
     @Override
     public ArrayList<Tratamiento> listarPorEspecialidad(Especialidad especialidad){
-        String sql = "CALL TRATAMIENTOS_listar_por_especialidad(?);";
-        return (ArrayList<Tratamiento>) super.ejecutarStoredProcedureLista(sql, especialidad.getIdEspecialidad());
+        String sql = queries.getQuery("listarTratamientosPorEspecialidad");
+        return (ArrayList<Tratamiento>) super.ejecutarQueryListar(sql, especialidad.getIdEspecialidad());
     }
     
 }
