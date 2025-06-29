@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queries>
+  <query id="obtenerOdontologoPorUsuarioContrasenha">
+    <![CDATA[
+      SELECT
+        O.ODONTOLOGO_ID,
+        O.PUNTUACION_PROMEDIO,
+        O.SALA_ID,
+        S.NUMERO_SALA   AS SALA_NUMERO,
+        S.PISO          AS SALA_PISO,
+        O.CONTRASENHA,
+        O.NOMBRE_USUARIO,
+        O.CORREO,
+        O.TELEFONO,
+        O.NOMBRES,
+        O.APELLIDOS,
+        O.TIPO_DOCUMENTO_ID,
+        TD.DESCRIPCION  AS TIPO_DOCUMENTO_DESCRIPCION,
+        O.NUMERO_DOCUMENTO_IDENTIDAD,
+        O.ESPECIALIDAD_ID,
+        E.DESCRIPCION   AS ESPECIALIDAD_DESCRIPCION
+      FROM OS_ODONTOLOGOS O
+      JOIN OS_SALAS S
+        ON O.SALA_ID = S.SALA_ID
+      JOIN OS_ESPECIALIDADES E
+        ON O.ESPECIALIDAD_ID = E.ESPECIALIDAD_ID
+      JOIN OS_TIPOS_DOCUMENTOS TD
+        ON O.TIPO_DOCUMENTO_ID = TD.TIPO_DOCUMENTO_ID
+      WHERE
+        O.NOMBRE_USUARIO = ?
+        AND O.CONTRASENHA    = ?
+    ]]>
+  </query>
+
+  <query id="listarOdontologosPorEspecialidad">
+    <![CDATA[
+      SELECT
+        O.ODONTOLOGO_ID,
+        O.PUNTUACION_PROMEDIO,
+        O.SALA_ID,
+        S.NUMERO_SALA   AS SALA_NUMERO,
+        S.PISO          AS SALA_PISO,
+        O.CONTRASENHA,
+        O.NOMBRE_USUARIO,
+        O.CORREO,
+        O.TELEFONO,
+        O.NOMBRES,
+        O.APELLIDOS,
+        O.TIPO_DOCUMENTO_ID,
+        TD.DESCRIPCION  AS TIPO_DOCUMENTO_DESCRIPCION,
+        O.NUMERO_DOCUMENTO_IDENTIDAD,
+        O.ESPECIALIDAD_ID,
+        E.DESCRIPCION   AS ESPECIALIDAD_DESCRIPCION
+      FROM OS_ODONTOLOGOS O
+      JOIN OS_SALAS S
+        ON O.SALA_ID = S.SALA_ID
+      JOIN OS_ESPECIALIDADES E
+        ON O.ESPECIALIDAD_ID = E.ESPECIALIDAD_ID
+      JOIN OS_TIPOS_DOCUMENTOS TD
+        ON O.TIPO_DOCUMENTO_ID = TD.TIPO_DOCUMENTO_ID
+      WHERE
+        O.ESPECIALIDAD_ID = ?
+    ]]>
+  </query>
+
+  <query id="listarOdontologosPorNombreApellido">
+    <![CDATA[
+      SELECT
+        O.ODONTOLOGO_ID,
+        O.PUNTUACION_PROMEDIO,
+        O.SALA_ID,
+        S.NUMERO_SALA   AS SALA_NUMERO,
+        S.PISO          AS SALA_PISO,
+        O.CONTRASENHA,
+        O.NOMBRE_USUARIO,
+        O.CORREO,
+        O.TELEFONO,
+        O.NOMBRES,
+        O.APELLIDOS,
+        O.TIPO_DOCUMENTO_ID,
+        TD.DESCRIPCION  AS TIPO_DOCUMENTO_DESCRIPCION,
+        O.NUMERO_DOCUMENTO_IDENTIDAD,
+        O.ESPECIALIDAD_ID,
+        E.DESCRIPCION   AS ESPECIALIDAD_DESCRIPCION
+      FROM OS_ODONTOLOGOS O
+      JOIN OS_SALAS S
+        ON O.SALA_ID = S.SALA_ID
+      JOIN OS_ESPECIALIDADES E
+        ON O.ESPECIALIDAD_ID = E.ESPECIALIDAD_ID
+      JOIN OS_TIPOS_DOCUMENTOS TD
+        ON O.TIPO_DOCUMENTO_ID = TD.TIPO_DOCUMENTO_ID
+      WHERE
+        O.NOMBRES   LIKE CONCAT('%', ?, '%')
+        AND O.APELLIDOS LIKE CONCAT('%', ?, '%')
+    ]]>
+  </query>
+
+  <query id="listarOdontologosPorNombreApellidoDocumento">
+    <![CDATA[
+      SELECT
+        O.ODONTOLOGO_ID,
+        O.PUNTUACION_PROMEDIO,
+        O.SALA_ID,
+        S.NUMERO_SALA   AS SALA_NUMERO,
+        S.PISO          AS SALA_PISO,
+        O.CONTRASENHA,
+        O.NOMBRE_USUARIO,
+        O.CORREO,
+        O.TELEFONO,
+        O.NOMBRES,
+        O.APELLIDOS,
+        O.TIPO_DOCUMENTO_ID,
+        TD.DESCRIPCION  AS TIPO_DOCUMENTO_DESCRIPCION,
+        O.NUMERO_DOCUMENTO_IDENTIDAD,
+        O.ESPECIALIDAD_ID,
+        E.DESCRIPCION   AS ESPECIALIDAD_DESCRIPCION
+      FROM OS_ODONTOLOGOS O
+      JOIN OS_SALAS S
+        ON O.SALA_ID = S.SALA_ID
+      JOIN OS_ESPECIALIDADES E
+        ON O.ESPECIALIDAD_ID = E.ESPECIALIDAD_ID
+      JOIN OS_TIPOS_DOCUMENTOS TD
+        ON O.TIPO_DOCUMENTO_ID = TD.TIPO_DOCUMENTO_ID
+      WHERE
+        O.NOMBRES   LIKE CONCAT('%', ?, '%')
+        AND O.APELLIDOS LIKE CONCAT('%', ?, '%')
+        AND O.NUMERO_DOCUMENTO_IDENTIDAD = ?
+    ]]>
+  </query>
+</queries>
+
+

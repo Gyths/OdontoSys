@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queries>
+  <query id="listarDetallesTratamientosPorCita">
+    <![CDATA[
+      SELECT
+        DT.CITA_ID,
+        DT.TRATAMIENTO_ID,
+        DT.CANTIDAD,
+        DT.SUBTOTAL,
+        T.NOMBRE      AS TRATAMIENTO_NOMBRE,
+        T.DESCRIPCION AS TRATAMIENTO_DESCRIPCION,
+        T.COSTO       AS TRATAMIENTO_COSTO
+      FROM OS_DETALLES_TRATAMIENTOS DT
+      JOIN OS_TRATAMIENTOS T
+        ON DT.TRATAMIENTO_ID = T.TRATAMIENTO_ID
+      WHERE DT.CITA_ID = ?
+    ]]>
+  </query>
+</queries>
+

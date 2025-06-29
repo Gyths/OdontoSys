@@ -12,11 +12,12 @@ import pe.pucp.edu.odontosys.users.model.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import pe.pucp.edu.odontosys.daoImp.QueryLoader;
+import pe.pucp.edu.odontosys.daoImp.QueryLoaderXML;
 
 public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     private Odontologo odontologo;
-    private static final QueryLoader queries = new QueryLoader("/odontologoQueries.json");
+    //private static final QueryLoader queries = new QueryLoader("/odontologoQueries.json");
+    private static final QueryLoaderXML queries = new QueryLoaderXML("/odontologoQueries.xml");
     public OdontologoDAOImpl(){
         super("OS_ODONTOLOGOS");
         this.retornarLlavePrimaria=true;

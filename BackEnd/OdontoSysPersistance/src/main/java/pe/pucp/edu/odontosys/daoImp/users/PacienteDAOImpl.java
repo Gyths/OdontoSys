@@ -10,11 +10,13 @@ import pe.pucp.edu.odontosys.users.model.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import pe.pucp.edu.odontosys.daoImp.QueryLoader;
+import pe.pucp.edu.odontosys.daoImp.QueryLoaderXML;
 
 public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
     private Paciente paciente;
-    private static final QueryLoader queries = new QueryLoader("/pacienteQueries.json");
+    //private static final QueryLoader queries = new QueryLoader("/pacienteQueries.json");
+    private static final QueryLoaderXML queries = new QueryLoaderXML("/pacienteQueries.xml");
+    
     public PacienteDAOImpl(){
         super("OS_PACIENTES");
         this.retornarLlavePrimaria=true;

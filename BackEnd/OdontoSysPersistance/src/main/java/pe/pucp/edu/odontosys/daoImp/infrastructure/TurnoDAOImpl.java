@@ -9,6 +9,7 @@ import java.util.List;
 import pe.pucp.edu.odontosys.dao.infrastructure.TurnoDAO;
 import pe.pucp.edu.odontosys.daoImp.DAOImplBase;
 import pe.pucp.edu.odontosys.daoImp.QueryLoader;
+import pe.pucp.edu.odontosys.daoImp.QueryLoaderXML;
 import pe.pucp.edu.odontosys.daoImp.util.Columna;
 import pe.pucp.edu.odontosys.infrastructure.model.DiaSemana;
 import pe.pucp.edu.odontosys.infrastructure.model.Turno;
@@ -17,8 +18,8 @@ import pe.pucp.edu.odontosys.users.model.Odontologo;
 public class TurnoDAOImpl extends DAOImplBase implements TurnoDAO{
     
     private Turno turno;
-    private static final QueryLoader queries = new QueryLoader("/turnoQueries.json");
-    
+    //private static final QueryLoader queries = new QueryLoader("/turnoQueries.json");
+    private static final QueryLoaderXML queries = new QueryLoaderXML("/turnoQueries.xml");
     public TurnoDAOImpl(){
         super("OS_TURNOS");
         this.retornarLlavePrimaria = true;

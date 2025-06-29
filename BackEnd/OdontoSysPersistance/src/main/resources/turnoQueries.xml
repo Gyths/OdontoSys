@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queries>
+  <query id="listarTurnosPorOdontologo"><![CDATA[
+    SELECT T.TURNO_ID,
+           T.HORA_INICIO,
+           T.HORA_FIN,
+           T.DIA_SEMANA
+      FROM OS_TURNOS T
+      JOIN OS_TURNOS_POR_ODONTOLOGOS PTO
+        ON T.TURNO_ID = PTO.TURNO_ID
+     WHERE PTO.ODONTOLOGO_ID = ?
+  ]]></query>
+</queries>

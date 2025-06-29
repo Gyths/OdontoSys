@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queries>
+  <query id="listarTratamientosPorEspecialidad">
+    <![CDATA[
+      SELECT
+        T.TRATAMIENTO_ID,
+        T.NOMBRE,
+        T.DESCRIPCION,
+        T.COSTO,
+        T.ESPECIALIDAD_ID,
+        E.DESCRIPCION AS ESPECIALIDAD_DESCRIPCION
+      FROM OS_TRATAMIENTOS T
+      JOIN OS_ESPECIALIDADES E
+        ON T.ESPECIALIDAD_ID = E.ESPECIALIDAD_ID
+      WHERE T.ESPECIALIDAD_ID = ?
+    ]]>
+  </query>
+</queries>
+

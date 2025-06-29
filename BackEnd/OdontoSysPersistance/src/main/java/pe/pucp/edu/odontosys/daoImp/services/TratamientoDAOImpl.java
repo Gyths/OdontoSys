@@ -7,6 +7,7 @@ import java.util.List;
 import pe.pucp.edu.odontosys.dao.services.TratamientoDAO;
 import pe.pucp.edu.odontosys.daoImp.DAOImplBase;
 import pe.pucp.edu.odontosys.daoImp.QueryLoader;
+import pe.pucp.edu.odontosys.daoImp.QueryLoaderXML;
 import pe.pucp.edu.odontosys.daoImp.util.Columna;
 import pe.pucp.edu.odontosys.services.model.Tratamiento;
 import pe.pucp.edu.odontosys.services.model.Especialidad;
@@ -14,8 +15,8 @@ import pe.pucp.edu.odontosys.services.model.Especialidad;
 public class TratamientoDAOImpl extends DAOImplBase implements TratamientoDAO{
     
     private Tratamiento tratamiento;
-    private static final QueryLoader queries = new QueryLoader("/tratamientoQueries.json");
-    
+    //private static final QueryLoader queries = new QueryLoader("/tratamientoQueries.json");
+    private static final QueryLoaderXML queries = new QueryLoaderXML("/tratamientoQueries.xml");
     public TratamientoDAOImpl(){
         super("OS_TRATAMIENTOS");
         this.retornarLlavePrimaria = true;

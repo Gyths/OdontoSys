@@ -6,7 +6,7 @@ import java.util.List;
 
 import pe.pucp.edu.odontosys.dao.services.DetalleTratamientoDAO;
 import pe.pucp.edu.odontosys.daoImp.DAOImplBase;
-import pe.pucp.edu.odontosys.daoImp.QueryLoader;
+import pe.pucp.edu.odontosys.daoImp.QueryLoaderXML;
 import pe.pucp.edu.odontosys.daoImp.util.Columna;
 import pe.pucp.edu.odontosys.services.model.Cita;
 import pe.pucp.edu.odontosys.services.model.DetalleTratamiento;
@@ -15,7 +15,8 @@ import pe.pucp.edu.odontosys.services.model.Tratamiento;
 public class DetalleTratamientoDAOImpl extends DAOImplBase implements DetalleTratamientoDAO{
     
     private DetalleTratamiento detalleTratamiento;
-    private static final QueryLoader queries = new QueryLoader("/detalleTratamientoQueries.json");
+    //private static final QueryLoader queries = new QueryLoader("/detalleTratamientoQueries.json");
+    private static final QueryLoaderXML queries = new QueryLoaderXML("/detalleTratamientoQueries.xml");
     
     public DetalleTratamientoDAOImpl(){
         super("OS_DETALLES_TRATAMIENTOS");

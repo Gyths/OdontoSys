@@ -11,11 +11,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import pe.pucp.edu.odontosys.daoImp.QueryLoader;
+import pe.pucp.edu.odontosys.daoImp.QueryLoaderXML;
 
 
 public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDAO {
     private Recepcionista recepcionista;
-    private static final QueryLoader queries = new QueryLoader("/recepcionistaQueries.json");
+    //private static final QueryLoader queries = new QueryLoader("/recepcionistaQueries.json");
+    private static final QueryLoaderXML queries = new QueryLoaderXML("/recepcionistaQueries.xml");
     
     public RecepcionistaDAOImpl(){
         super("OS_RECEPCIONISTAS");
