@@ -174,25 +174,25 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO {
 
     @Override
     public ArrayList<Cita> listarPorOdontologoFechas(Odontologo odontologo, String fechaInicio, String fechaFin) {
-        String sql = "CALL CITAS_listar_por_odontologo_fechas(?, ?, ?);";
+        String sql = queries.getQuery("listarCitasPorOdontologoFechas");
         return (ArrayList<Cita>) ejecutarQueryListar(sql, odontologo.getIdOdontologo(), LocalDate.parse(fechaInicio), LocalDate.parse(fechaFin));
     }
 
     @Override
     public ArrayList<Cita> listarPorOdontologo(Odontologo odontologo) {
-        String sql = "CALL CITAS_listar_por_odontologo(?);";
+        String sql = queries.getQuery("listarCitasPorOdontologo");
         return (ArrayList<Cita>) super.ejecutarQueryListar(sql, odontologo.getIdOdontologo());
     }
 
     @Override
     public ArrayList<Cita> listarPorPaciente(Paciente paciente) {
-        String sql = "CALL CITAS_listar_por_paciente(?);";
+        String sql = queries.getQuery("listarCitasPorPaciente");
         return (ArrayList<Cita>) super.ejecutarQueryListar(sql, paciente.getIdPaciente());
     }
 
     @Override
     public ArrayList<Cita> listarPorPacienteFechas(Paciente paciente, String fechaInicio, String fechaFin) {
-        String sql = "CALL CITAS_listar_por_paciente_fechas(?, ?, ?);";
+        String sql = queries.getQuery("listarCitasPorPacienteFechas");
         return (ArrayList<Cita>) ejecutarQueryListar(sql, paciente.getIdPaciente(), LocalDate.parse(fechaInicio), LocalDate.parse(fechaFin));
     }
 

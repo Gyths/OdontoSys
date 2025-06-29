@@ -8,6 +8,7 @@ import java.util.List;
 
 import pe.pucp.edu.odontosys.dao.infrastructure.TurnoDAO;
 import pe.pucp.edu.odontosys.daoImp.DAOImplBase;
+import pe.pucp.edu.odontosys.daoImp.QueryLoader;
 import pe.pucp.edu.odontosys.daoImp.util.Columna;
 import pe.pucp.edu.odontosys.infrastructure.model.DiaSemana;
 import pe.pucp.edu.odontosys.infrastructure.model.Turno;
@@ -16,6 +17,7 @@ import pe.pucp.edu.odontosys.users.model.Odontologo;
 public class TurnoDAOImpl extends DAOImplBase implements TurnoDAO{
     
     private Turno turno;
+    private static final QueryLoader queries = new QueryLoader("/turnoQueries.json");
     
     public TurnoDAOImpl(){
         super("OS_TURNOS");
@@ -66,6 +68,11 @@ public class TurnoDAOImpl extends DAOImplBase implements TurnoDAO{
     }
     
     @Override
+    protected void instanciarObjetoCompletoDelResultSet() throws SQLException {
+        this.instanciarObjetoDelResultSet();
+    }
+    
+    @Override
     protected void limpiarObjetoDelResultSet() {
         this.turno = null;
     }
@@ -73,6 +80,12 @@ public class TurnoDAOImpl extends DAOImplBase implements TurnoDAO{
     @Override
     protected void agregarObjetoALaLista(List lista) throws SQLException {
         this.instanciarObjetoDelResultSet();
+        lista.add(this.turno);
+    }
+    
+    @Override
+    protected void agregarObjetoCompletoALaLista(List lista) throws SQLException {
+        this.instanciarObjetoCompletoDelResultSet();
         lista.add(this.turno);
     }
     
@@ -109,8 +122,8 @@ public class TurnoDAOImpl extends DAOImplBase implements TurnoDAO{
     
     @Override
     public ArrayList<Turno> listarPorOdontologo(Odontologo odontologo) {
-        String sql= "CALL TURNOS_listar_por_odontologo(?);";
-        return (ArrayList<Turno>)ejecutarStoredProcedureLista(sql, odontologo.getIdOdontologo());
+        String sql = queries.getQuery("listarTurnosPorOdontologo");
+        return (ArrayList<Turno>)ejecutarQueryListar(sql, odontologo.getIdOdontologo());
     }
     
 }
