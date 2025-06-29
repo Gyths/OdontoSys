@@ -62,4 +62,9 @@ public class CitaWA {
         return this.citaBO.listarPorPacienteFechas(idPaciente, fechaInicio, fechaFin);
     }
     
+    @WebMethod(operationName = "cita_obtenerCompletoPorId")
+    public Cita cita_obtenerCompletoPorId(@WebParam(name = "id") Integer id){
+        return this.citaBO.obtenerCompletoPorId(id);
+    }
+    
 }

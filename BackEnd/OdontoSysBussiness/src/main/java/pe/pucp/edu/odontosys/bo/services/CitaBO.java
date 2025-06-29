@@ -61,4 +61,10 @@ public class CitaBO {
         paciente.setIdPaciente(idPaciente);
         return this.citaDAO.listarPorPacienteFechas(paciente, fechaInicio, fechaFin);
     }
+    
+    public Cita obtenerCompletoPorId(Integer id){
+        Cita cita = new Cita();
+        cita.setIdCita(id);
+        return this.citaDAO.obtenerCompletoPorId(cita);
+    }
 }

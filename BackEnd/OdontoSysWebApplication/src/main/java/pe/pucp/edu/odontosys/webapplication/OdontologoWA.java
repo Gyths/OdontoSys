@@ -66,4 +66,9 @@ public class OdontologoWA {
         return this.odontologoBO.buscarPorNombreApellidoDocumento(nombre, apellido, documento);
     }
 
+    @WebMethod(operationName = "odontologo_obtenerCompletoPorId")
+    public Odontologo odontologo_obtenerCompletoPorId(@WebParam(name = "id") Integer id) {
+        return this.odontologoBO.obtenerCompletoPorId(id);
+    }
+    
 }

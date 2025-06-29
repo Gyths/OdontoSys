@@ -15,4 +15,5 @@ public interface OdontologoDAO{
     ArrayList<Odontologo> buscarPorNombreApellido(Odontologo odontologo);
     ArrayList<Odontologo> buscarPorNombreApellidoDocumento(Odontologo odontologo);
     Boolean existeNombreUsuario(String nombreUsuario);
+    Odontologo obtenerCompletoPorId(Odontologo odontologo);
 }

@@ -65,4 +65,10 @@ public class OdontologoBO {
         return this.odontologoDAO.existeNombreUsuario(nombreUsuario);
     }
     
+    public Odontologo obtenerCompletoPorId(Integer id){
+        Odontologo odontologo = new Odontologo();
+        odontologo.setIdOdontologo(id);
+        return this.odontologoDAO.obtenerCompletoPorId(odontologo);
+    }
+    
 }

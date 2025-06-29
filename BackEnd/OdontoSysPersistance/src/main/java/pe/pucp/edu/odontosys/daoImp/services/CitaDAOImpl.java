@@ -204,4 +204,11 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO {
         return (ArrayList<Cita>) ejecutarQueryListar(sql, paciente.getIdPaciente(), LocalDate.parse(fechaInicio), LocalDate.parse(fechaFin));
     }
 
+    @Override 
+    public Cita obtenerCompletoPorId(Cita cita){
+        String sql = queries.getQuery("obtenerCompletoPorId");
+        ejecutarQueryObtener(sql, cita.getIdCita());
+        return this.cita;
+    }
+    
 }
