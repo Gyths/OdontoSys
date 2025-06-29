@@ -46,6 +46,21 @@ public class OdontologoBO {
         return this.odontologoDAO.obtenerPorUsuarioContrasenha(odontologo);
     }
 
+    public ArrayList<Odontologo> buscarPorNombreApellido(String nombre, String apellido){
+        Odontologo odontologo = new Odontologo();
+        odontologo.setNombre(nombre);
+        odontologo.setApellidos(apellido);
+        return this.odontologoDAO.buscarPorNombreApellido(odontologo);
+    }
+    
+    public ArrayList<Odontologo> buscarPorNombreApellidoDocumento(String nombre, String apellido, String documento){
+        Odontologo odontologo = new Odontologo();
+        odontologo.setNombre(nombre);
+        odontologo.setApellidos(apellido);
+        odontologo.setNumeroDocumento(documento);
+        return this.odontologoDAO.buscarPorNombreApellidoDocumento(odontologo);
+    }
+
     public Boolean verificarExistenciaNombreUsuario(String nombreUsuario){
         return this.odontologoDAO.existeNombreUsuario(nombreUsuario);
     }

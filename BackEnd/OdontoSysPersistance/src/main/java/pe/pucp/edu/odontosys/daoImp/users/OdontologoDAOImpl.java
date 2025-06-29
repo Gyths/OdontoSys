@@ -167,6 +167,18 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     }
    
     @Override
+    public ArrayList<Odontologo> buscarPorNombreApellido(Odontologo odontologo){
+        String sql = queries.getQuery("listarOdontologosPorNombreApellido");
+        return (ArrayList<Odontologo>) super.ejecutarQueryListar(sql, odontologo.getNombre(), odontologo.getApellidos());
+    }
+    
+    @Override
+    public ArrayList<Odontologo> buscarPorNombreApellidoDocumento(Odontologo odontologo){
+        String sql = queries.getQuery("listarOdontologosPorNombreApellidoDocumento");
+        return (ArrayList<Odontologo>) super.ejecutarQueryListar(sql, odontologo.getNombre(), odontologo.getApellidos(), odontologo.getNumeroDocumento());
+    }
+
+    @Override
     public Boolean existeNombreUsuario(String nombreUsuario) {
         this.odontologo = new Odontologo();
         this.odontologo.setNombreUsuario(nombreUsuario);
