@@ -72,6 +72,12 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
     }
 
     @Override
+    protected void incluirValorDeParametrosParaObtenerPorUsuario() throws SQLException {
+        this.statement.setString(1,this.recepcionista.getNombreUsuario());
+    }
+
+    
+    @Override
     protected void instanciarObjetoDelResultSet() throws SQLException { 
         this.recepcionista = new Recepcionista();
         this.recepcionista.setIdRecepcionista(this.resultSet.getInt("RECEPCIONISTA_ID"));
@@ -85,6 +91,7 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
         this.recepcionista.setNumeroDocumento(this.resultSet.getString("NUMERO_DOCUMENTO_IDENTIDAD"));
     }
     
+    @Override
     protected void instanciarObjetoCompletoDelResultSet() throws SQLException {
         this.instanciarObjetoDelResultSet();
         this.recepcionista.getTipoDocumento().setNombre(this.resultSet.getString("TIPO_DOCUMENTO_DESCRIPCION"));

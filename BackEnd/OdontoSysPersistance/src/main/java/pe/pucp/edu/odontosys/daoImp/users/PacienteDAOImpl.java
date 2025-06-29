@@ -69,6 +69,7 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.statement.setInt(1,this.paciente.getIdPaciente());
     }
 
+    @Override
     protected void incluirValorDeParametrosParaObtenerPorUsuario() throws SQLException {
         this.statement.setString(1,this.paciente.getNombreUsuario());
     }
