@@ -12,6 +12,4 @@ public interface ValoracionDAO{
     Integer eliminar(Valoracion valoracion);
     Valoracion obtenerPorId(Integer id);
     ArrayList<Valoracion> listarTodos();
-    ArrayList<Valoracion> listarPorOdontologo(Odontologo odontologo);
-    ArrayList<Valoracion> listarPorPaciente(Paciente paciente);
 }

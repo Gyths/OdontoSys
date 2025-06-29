@@ -9,6 +9,6 @@ public interface PacienteDAO{
     Integer eliminar(Paciente paciente);
     Paciente obtenerPorId(Integer id);
     ArrayList<Paciente> listarTodos();
-    Paciente obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha);
+    Paciente obtenerPorUsuarioContrasenha(Paciente paciente);
     Boolean existeNombreUsuario(String nombreUsuario);
 }

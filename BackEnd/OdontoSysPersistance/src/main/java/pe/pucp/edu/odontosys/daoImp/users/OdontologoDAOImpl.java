@@ -159,9 +159,9 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     }
     
     @Override
-    public Odontologo obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha) {
+    public Odontologo obtenerPorUsuarioContrasenha(Odontologo odontologo) {
         String sql = queries.getQuery("obtenerOdontologoPorUsuarioContrasenha");
-        super.ejecutarQueryObtener(sql, nombreUsuario, contrasenha);
+        super.ejecutarQueryObtener(sql, odontologo.getNombreUsuario(), odontologo.getContrasenha());
         return this.odontologo;
     }
    

@@ -34,7 +34,9 @@ public class TratamientoBO {
         return this.tratamientoDAO.obtenerPorId(id);
     }
     
-    public ArrayList<Tratamiento> listarPorEspecialidad(Especialidad especialidad){
+    public ArrayList<Tratamiento> listarPorEspecialidad(Integer idEspecialidad){
+        Especialidad especialidad = new Especialidad();
+        especialidad.setIdEspecialidad(idEspecialidad);
         return this.tratamientoDAO.listarPorEspecialidad(especialidad);
     }
 }

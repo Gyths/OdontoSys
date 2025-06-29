@@ -1,7 +1,6 @@
 package pe.pucp.edu.odontosys.webapplication;
 
 import pe.pucp.edu.odontosys.bo.users.OdontologoBO;
-import pe.pucp.edu.odontosys.services.model.Especialidad;
 import pe.pucp.edu.odontosys.users.model.Odontologo;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
@@ -43,8 +42,8 @@ public class OdontologoWA {
     }
     
     @WebMethod(operationName = "odontologo_listarPorEspecialidad")
-    public ArrayList<Odontologo> odontologo_listarPorEspecialidad(@WebParam(name = "especialidad") Especialidad especialidad){
-        return this.odontologoBO.listarPorEspecialidad(especialidad);
+    public ArrayList<Odontologo> odontologo_listarPorEspecialidad(@WebParam(name = "idEspecialidad") Integer idEspecialidad){
+        return this.odontologoBO.listarPorEspecialidad(idEspecialidad);
     }
     
     @WebMethod(operationName = "odontologo_obtenerPorUsuarioContrasenha")
@@ -52,28 +51,9 @@ public class OdontologoWA {
         return this.odontologoBO.obtenerPorUsuarioContrasenha(nombreUsuario, contrasenha);
     }
     
-    @WebMethod(operationName = "odontologo_actualizarPuntuacion")
-    public Integer odontologo_actualizarPuntuacion(@WebParam(name = "odontologo") Odontologo odontologo){
-        return this.odontologoBO.actualizarPuntuacion(odontologo);
-    }
-    
     @WebMethod(operationName = "odontologo_verificarExistenciaNombreUsuario")
     public Boolean odontologo_verificarExistenciaNombreUsuario(@WebParam(name = "nombreUsuario") String nombreUsuario){
         return this.odontologoBO.verificarExistenciaNombreUsuario(nombreUsuario);
     }
     
-    @WebMethod(operationName = "odontologo_buscarPorNombreApellido")
-    public ArrayList<Odontologo> odontologo_buscarPorNombreApellido(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido){
-        return this.odontologoBO.buscarPorNombreApellido(nombre, apellido);
-    }
-    
-    @WebMethod(operationName = "odontologo_buscarPorNombreApellidoDocumento")
-    public ArrayList<Odontologo> odontologo_buscarPorNombreApellidoDocumento(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido, @WebParam(name = "documento") String documento){
-        return this.odontologoBO.buscarPorNombreApellidoDocumento(nombre, apellido, documento);
-    }
-    
-    @WebMethod(operationName = "odontologo_buscarPorNombreApellidoTelefono")
-    public ArrayList<Odontologo> odontologo_buscarPorNombreApellidoTelefono(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido, @WebParam(name = "telefono") String telefono){
-        return this.odontologoBO.buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
-    }
 }

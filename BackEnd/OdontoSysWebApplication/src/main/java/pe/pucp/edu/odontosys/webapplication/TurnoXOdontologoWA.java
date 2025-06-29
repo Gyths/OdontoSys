@@ -27,8 +27,8 @@ public class TurnoXOdontologoWA {
     }
     
     @WebMethod(operationName = "turnoXOdontologo_eliminar")
-    public Integer turnoXOdontologo_eliminar(@WebParam(name = "turnoXOdontologo") TurnoXOdontologo turnoXOdontologo) {
-        return this.turnoXOdontologoBO.eliminar(turnoXOdontologo);
+    public Integer turnoXOdontologo_eliminar(@WebParam(name = "idOdontologo") Integer idOdontologo, @WebParam(name = "idTurno") Integer idTurno) {
+        return this.turnoXOdontologoBO.eliminar(idOdontologo, idTurno);
     }
     
     @WebMethod(operationName = "turnoXOdontologo_listarTodos")

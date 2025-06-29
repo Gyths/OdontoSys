@@ -11,10 +11,6 @@ public interface OdontologoDAO{
     Odontologo obtenerPorId(Integer id);
     ArrayList<Odontologo> listarTodos();
     ArrayList<Odontologo> listarPorEspecialidad(Especialidad especialidad);
-    Odontologo obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha);
-    Integer actualizarPuntuacion(Odontologo odontologo);
+    Odontologo obtenerPorUsuarioContrasenha(Odontologo odontologo);
     Boolean existeNombreUsuario(String nombreUsuario);
-    ArrayList<Odontologo> buscarPorNombreApellido(String nombre, String apellido);
-    ArrayList<Odontologo> buscarPorNombreApellidoDocumento(String nombre, String apellido, String documento);
-    ArrayList<Odontologo> buscarPorNombreApellidoTelefono(String nombre, String apellido, String telefono);
 }

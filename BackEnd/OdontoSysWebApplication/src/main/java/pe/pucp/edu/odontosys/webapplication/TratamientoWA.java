@@ -6,8 +6,6 @@ import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import java.util.ArrayList;
-import pe.pucp.edu.odontosys.services.model.Especialidad;
-
 
 @WebService(serviceName = "TratamientoWA")
 public class TratamientoWA {
@@ -44,8 +42,8 @@ public class TratamientoWA {
     }
     
     @WebMethod(operationName = "tratamiento_listarPorEspecilidad")
-    public ArrayList<Tratamiento> tratamiento_listarPorEspecilidad(Especialidad especialidad) {
-        return this.tratamientoBO.listarPorEspecialidad(especialidad);
+    public ArrayList<Tratamiento> tratamiento_listarPorEspecilidad(@WebParam(name = "idEspecialidad") Integer idEspecialidad) {
+        return this.tratamientoBO.listarPorEspecialidad(idEspecialidad);
     }
     
 }

@@ -20,8 +20,11 @@ public class TurnoXOdontologoBO {
          return this.turnoXOdontologoDAO.modificar(turnoXOdontologo);
     }
    
-    public Integer eliminar(TurnoXOdontologo turnoOd){
-        return this.turnoXOdontologoDAO.eliminar(turnoOd);
+    public Integer eliminar(Integer idOdontologo, Integer idTurno){
+        TurnoXOdontologo turnoXOdontologo = new TurnoXOdontologo();
+        turnoXOdontologo.setIdOdontologo(idOdontologo);
+        turnoXOdontologo.setIdTurno(idTurno);
+        return this.turnoXOdontologoDAO.eliminar(turnoXOdontologo);
     }
    
     public TurnoXOdontologo obtenerPorId(Integer id){

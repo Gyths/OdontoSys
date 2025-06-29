@@ -37,20 +37,28 @@ public class CitaBO {
         return this.citaDAO.listarTodos();
     }
    
-    public ArrayList<Cita> listarPorOdontologoFechas(Odontologo odontologo, String fechaInicio, String fechaFin){
+    public ArrayList<Cita> listarPorOdontologoFechas(Integer idOdontologo, String fechaInicio, String fechaFin){
+        Odontologo odontologo = new Odontologo();
+        odontologo.setIdOdontologo(idOdontologo);
         return this.citaDAO.listarPorOdontologoFechas(odontologo, fechaInicio, fechaFin);
     }
     
-    public ArrayList<Cita> listarPorOdontologo(Odontologo odontologo){
+    public ArrayList<Cita> listarPorOdontologo(Integer idOdontologo){
+        Odontologo odontologo = new Odontologo();
+        odontologo.setIdOdontologo(idOdontologo);
         return this.citaDAO.listarPorOdontologo(odontologo);
     }
     
-    public ArrayList<Cita> listarPorPaciente(Paciente paciente){
+    public ArrayList<Cita> listarPorPaciente(Integer idPaciente){
+        Paciente paciente = new Paciente();
+        paciente.setIdPaciente(idPaciente);
         return this.citaDAO.listarPorPaciente(paciente);
     }
 
     
-    public ArrayList<Cita> listarPorPacienteFechas(Paciente paciente, String fechaInicio, String fechaFin){
+    public ArrayList<Cita> listarPorPacienteFechas(Integer idPaciente, String fechaInicio, String fechaFin){
+        Paciente paciente = new Paciente();
+        paciente.setIdPaciente(idPaciente);
         return this.citaDAO.listarPorPacienteFechas(paciente, fechaInicio, fechaFin);
     }
 }

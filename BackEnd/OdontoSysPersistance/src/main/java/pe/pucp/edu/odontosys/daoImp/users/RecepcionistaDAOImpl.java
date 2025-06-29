@@ -128,9 +128,9 @@ public class RecepcionistaDAOImpl extends DAOImplBase implements RecepcionistaDA
     }
 
     @Override
-    public Recepcionista obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha){
+    public Recepcionista obtenerPorUsuarioContrasenha(Recepcionista recepcionista){
         String sql = queries.getQuery("obtenerRecepcionistaPorUsuarioContrasenha");
-        super.ejecutarQueryObtener(sql, nombreUsuario, contrasenha);
+        super.ejecutarQueryObtener(sql, recepcionista.getNombreUsuario(), recepcionista.getContrasenha());
         return this.recepcionista;
     }
     

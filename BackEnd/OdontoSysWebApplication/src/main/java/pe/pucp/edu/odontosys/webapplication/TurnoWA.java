@@ -6,8 +6,6 @@ import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import java.util.ArrayList;
-import pe.pucp.edu.odontosys.users.model.Odontologo;
-
 
 @WebService(serviceName = "TurnoWA")
 public class TurnoWA {
@@ -44,8 +42,8 @@ public class TurnoWA {
     }
     
     @WebMethod(operationName = "turno_listarPorOdontologo")
-    public ArrayList<Turno> turno_listarPorOdontologo(@WebParam(name = "odontologo") Odontologo odontologo){
-        return this.turnoBO.listarPorOdontologo(odontologo);
+    public ArrayList<Turno> turno_listarPorOdontologo(@WebParam(name = "odontologo") Integer idOdontologo){
+        return this.turnoBO.listarPorOdontologo(idOdontologo);
     }
     
 }

@@ -32,23 +32,14 @@ public class PacienteBO {
     }
 
     public Paciente obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha){
-        return this.pacienteDAO.obtenerPorUsuarioContrasenha(nombreUsuario, contrasenha);
+        Paciente paciente = new Paciente();
+        paciente.setNombreUsuario(nombreUsuario);
+        paciente.setContrasenha(contrasenha);
+        return this.pacienteDAO.obtenerPorUsuarioContrasenha(paciente);
     }
     
     public Boolean verificarExistenciaNombreUsuario(String nombreUsuario){
         return this.pacienteDAO.existeNombreUsuario(nombreUsuario);
     }
-    
-    public ArrayList<Paciente> buscarPorNombreApellido(String nombre, String apellido){
-        return this.pacienteDAO.buscarPorNombreApellido(nombre, apellido);
-    }
-    
-    public ArrayList<Paciente> buscarPorNombreApellidoDocumento(String nombre, String apellido, String documento){
-        return this.pacienteDAO.buscarPorNombreApellidoDocumento(nombre, apellido, documento);
-    }
-    
-    public ArrayList<Paciente> buscarPorNombreApellidoTelefono(String nombre, String apellido, String telefono){
-        return this.pacienteDAO.buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
-    }
-    
+      
 }
