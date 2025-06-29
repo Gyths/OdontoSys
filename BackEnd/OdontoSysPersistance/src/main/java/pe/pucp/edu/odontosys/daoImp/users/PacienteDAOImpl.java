@@ -136,9 +136,9 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
     }   
     
     @Override
-    public Paciente obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha) {
+    public Paciente obtenerPorUsuarioContrasenha(Paciente paciente) {
         String sql = queries.getQuery("obtenerPacientePorUsuarioContrasenha") ;
-        super.ejecutarQueryObtener(sql, nombreUsuario, contrasenha);
+        super.ejecutarQueryObtener(sql, paciente.getNombreUsuario(), paciente.getContrasenha());
         return this.paciente;    
     }
     

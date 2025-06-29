@@ -33,11 +33,15 @@ public class DetalleTratamientoBO {
         return this.detalleTratamientoDAO.listarTodos();
     }
     
-    public ArrayList<DetalleTratamiento> listarPorCita(Cita cita){
+    public ArrayList<DetalleTratamiento> listarPorCita(Integer idCita){
+        Cita cita = new Cita();
+        cita.setIdCita(idCita);
         return this.detalleTratamientoDAO.listarPorCita(cita);
     }
     
-    public Integer actualizarSubtotal(Cita cita){
+    public Integer actualizarSubtotal(Integer idCita){
+        Cita cita = new Cita();
+        cita.setIdCita(idCita);    
         return this.detalleTratamientoDAO.actualizarSubtotal(cita);
     }
 }

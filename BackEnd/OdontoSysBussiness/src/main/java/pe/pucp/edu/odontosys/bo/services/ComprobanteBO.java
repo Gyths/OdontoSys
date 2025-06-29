@@ -33,7 +33,9 @@ public class ComprobanteBO {
         return this.comprobanteDAO.listarTodos();
     }
     
-    public Integer actualizarTotal(Cita cita){
+    public Integer actualizarTotal(Integer idCita){
+        Cita cita = new Cita();
+        cita.setIdCita(idCita);
         return this.comprobanteDAO.actualizarTotal(cita);
     }
 }

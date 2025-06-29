@@ -38,27 +38,14 @@ public class OdontologoBO {
     }
     
     public Odontologo obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha){
-        return this.odontologoDAO.obtenerPorUsuarioContrasenha(nombreUsuario, contrasenha);
+        Odontologo odontologo = new Odontologo();
+        odontologo.setNombreUsuario(nombreUsuario);
+        odontologo.setContrasenha(contrasenha);
+        return this.odontologoDAO.obtenerPorUsuarioContrasenha(odontologo);
     }
-    
-    public Integer actualizarPuntuacion(Odontologo odontologo){
-        return this.odontologoDAO.actualizarPuntuacion(odontologo);
-    }
-    
+
     public Boolean verificarExistenciaNombreUsuario(String nombreUsuario){
         return this.odontologoDAO.existeNombreUsuario(nombreUsuario);
-    }
-    
-    public ArrayList<Odontologo> buscarPorNombreApellido(String nombre, String apellido){
-        return this.odontologoDAO.buscarPorNombreApellido(nombre, apellido);
-    }
-    
-    public ArrayList<Odontologo> buscarPorNombreApellidoDocumento(String nombre, String apellido, String documento){
-        return this.odontologoDAO.buscarPorNombreApellidoDocumento(nombre, apellido, documento);
-    }
-    
-    public ArrayList<Odontologo> buscarPorNombreApellidoTelefono(String nombre, String apellido, String telefono){
-        return this.odontologoDAO.buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
     }
     
 }

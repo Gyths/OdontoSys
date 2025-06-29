@@ -35,7 +35,9 @@ public class TurnoBO {
         return this.turnoDAO.listarTodos();
     }
     
-    public ArrayList<Turno> listarPorOdontologo(Odontologo odontologo){
+    public ArrayList<Turno> listarPorOdontologo(Integer idOdontologo){
+        Odontologo odontologo = new Odontologo();
+        odontologo.setIdOdontologo(idOdontologo);
         return this.turnoDAO.listarPorOdontologo(odontologo);
     }
     

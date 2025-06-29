@@ -32,7 +32,10 @@ public class RecepcionistaBO {
     }
 
     public Recepcionista obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha){
-        return this.recepcionistaDAO.obtenerPorUsuarioContrasenha(nombreUsuario, contrasenha);
+        Recepcionista recepcionista = new Recepcionista();
+        recepcionista.setNombreUsuario(nombreUsuario);
+        recepcionista.setContrasenha(contrasenha);
+        return this.recepcionistaDAO.obtenerPorUsuarioContrasenha(recepcionista);
     }
     
     public Boolean verificarExistenciaNombreUsuario(String nombreUsuario){

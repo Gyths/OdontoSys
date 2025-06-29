@@ -492,16 +492,16 @@ public class Main {
             System.out.println(t);
         }
         */
-        Paciente paciente = new Paciente();
-        paciente.setIdPaciente(1);
-        
-        CitaBO citaBO = new CitaBO();
-        
-        ArrayList<Cita> citas = citaBO.listarPorPaciente(paciente);
-        
-        for(Cita c : citas){
-            System.out.println(c);
-        }
+//        Paciente paciente = new Paciente();
+//        paciente.setIdPaciente(1);
+//        
+//        CitaBO citaBO = new CitaBO();
+//        
+//        ArrayList<Cita> citas = citaBO.listarPorPaciente(paciente);
+//        
+//        for(Cita c : citas){
+//            System.out.println(c);
+//        }
         /*
         RecepcionistaBO recepcionistaBO= new RecepcionistaBO();
         
