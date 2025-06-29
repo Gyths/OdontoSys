@@ -6,6 +6,7 @@ import java.util.List;
 
 import pe.pucp.edu.odontosys.dao.services.DetalleTratamientoDAO;
 import pe.pucp.edu.odontosys.daoImp.DAOImplBase;
+import pe.pucp.edu.odontosys.daoImp.QueryLoader;
 import pe.pucp.edu.odontosys.daoImp.util.Columna;
 import pe.pucp.edu.odontosys.services.model.Cita;
 import pe.pucp.edu.odontosys.services.model.DetalleTratamiento;
@@ -14,6 +15,7 @@ import pe.pucp.edu.odontosys.services.model.Tratamiento;
 public class DetalleTratamientoDAOImpl extends DAOImplBase implements DetalleTratamientoDAO{
     
     private DetalleTratamiento detalleTratamiento;
+    private static final QueryLoader queries = new QueryLoader("/detalleTratamientoQueries.json");
     
     public DetalleTratamientoDAOImpl(){
         super("OS_DETALLES_TRATAMIENTOS");
@@ -124,7 +126,7 @@ public class DetalleTratamientoDAOImpl extends DAOImplBase implements DetalleTra
     
     @Override
     public ArrayList<DetalleTratamiento> listarPorCita(Cita cita) {
-        String sql= "CALL DETALLES_TRATAMIENTOS_listar_por_cita(?);";
+        String sql = queries.getQuery("listarDetallesTratamientosPorCita");
         return (ArrayList<DetalleTratamiento>) super.ejecutarQueryListar(sql, cita.getIdCita());
     }
     
