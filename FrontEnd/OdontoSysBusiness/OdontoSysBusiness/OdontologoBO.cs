@@ -66,5 +66,10 @@ namespace OdontoSysBusiness
             return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
         }
 
+        public odontologo odontologo_obtenerCompletoPorId(int id)
+        {
+            return this.odontologoWAClient.odontologo_obtenerCompletoPorId(id);
+        }
+
     }
 }

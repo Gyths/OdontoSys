@@ -69,5 +69,9 @@ namespace OdontoSysBusiness
             return new BindingList<cita>(lista ?? Array.Empty<cita>());
         }
 
+        public cita cita_obtenerCompletoPorId(int id)
+        {
+            return this.citaWAClient.cita_obtenerCompletoPorId(id);
+        }
     }
 }
