@@ -1,6 +1,7 @@
 ﻿using OdontoSysWebApplication.OdontoSysBusiness;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -52,29 +53,41 @@ namespace OdontoSysWebApplication.FrontOdontologo
         {
             string idCitaAct = Session["Cita"]?.ToString();
             boTratamiento = new TratamientoBO();
-            var tratamientoSelec = boTratamiento.tratamiento_obtenerPorId(int.Parse(ddlTratamiento.SelectedValue));
+            try { 
+                var tratamientoSelec = boTratamiento.tratamiento_obtenerPorId(int.Parse(ddlTratamiento.SelectedValue));
 
-            var tratamientoAux = new DetalleTratamientoWS.tratamiento
-            {
-                idTratamiento = tratamientoSelec.idTratamiento,
-                idTratamientoSpecified = true,
-                costo = tratamientoSelec.costo
-            };
+                var tratamientoAux = new DetalleTratamientoWS.tratamiento
+                {
+                    idTratamiento = tratamientoSelec.idTratamiento,
+                    idTratamientoSpecified = true,
+                    costo = tratamientoSelec.costo
+                };
 
-            boDetalle = new DetalleTratamientoBO();
-            int cant = Int32.Parse(txtCantidad.Text);
-            var detalle = new DetalleTratamientoWS.detalleTratamiento
-            {
-                idCita = Int32.Parse(idCitaAct),
-                idCitaSpecified = true,
-                tratamiento = tratamientoAux,
-                cantidad = cant,
-                cantidadSpecified = true,
-                subtotal = (cant * tratamientoAux.costo)
-            };
-            boDetalle.detalleTratamiento_modificar(detalle);
-            Response.Redirect($"/FrontOdontologo/AtenderCita.aspx");
+                boDetalle = new DetalleTratamientoBO();
+                int cant = Int32.Parse(txtCantidad.Text);
+                var detalle = new DetalleTratamientoWS.detalleTratamiento
+                {
+                    idCita = Int32.Parse(idCitaAct),
+                    idCitaSpecified = true,
+                    tratamiento = tratamientoAux,
+                    cantidad = cant,
+                    cantidadSpecified = true,
+                    subtotal = (cant * tratamientoAux.costo)
+                };
 
+                if (cant > 5) throw new Exception("La cantidad no puede ser mayor a 5");
+
+                boDetalle.detalleTratamiento_modificar(detalle);
+                Response.Redirect($"/FrontOdontologo/AtenderCita.aspx");
+
+            } catch(Exception ex){
+                System.Diagnostics.Debug.WriteLine("Error al agregar tratamiento: " + ex.Message);
+                Label lblMensaje = new Label();
+                lblMensaje.Text = "Error al agregar el tratamiento. " + ex.Message;
+                lblMensaje.CssClass = "text-danger";
+                pnlError.Controls.Add(new LiteralControl(lblMensaje.Text));
+                pnlError.Visible = true;
+            }
         }
     }
 }

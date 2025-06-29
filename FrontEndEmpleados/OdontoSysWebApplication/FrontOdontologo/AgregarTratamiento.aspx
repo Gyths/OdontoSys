@@ -35,4 +35,9 @@
         <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn btn-primary" OnClick="btnAgregar_Click" />
     </asp:Panel>
 
+    <asp:Panel ID="pnlError" runat="server"
+        CssClass="alert alert-danger mt-3"
+        Visible="false">
+    </asp:Panel>
+
 </asp:Content>

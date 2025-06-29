@@ -117,7 +117,10 @@ namespace OdontoSysWebApplication
 
             CargarComprobanteOCrearWizard();
         }
-
+        protected void btnVolver_Click(object sender, EventArgs e) 
+        {
+            Response.Redirect("~/gestionPaciente.aspx");
+        }
         protected void btnDescargarPDF_Click(object sender, EventArgs e)
         {
             try

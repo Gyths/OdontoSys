@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using OdontoSysWebApplication.OdontoSysBusiness;
@@ -9,8 +8,6 @@ using OdontoSysWebApplication.OdontologoWS;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
-using System.Linq;
-using System.Globalization;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
@@ -164,6 +161,7 @@ namespace OdontoSysWebApplication
                     lblMensaje.Text = "Error al guardar los cambios. "+ ex.Message;
                     lblMensaje.CssClass = "text-danger";
                     pnlError.Controls.Add(new LiteralControl(lblMensaje.Text));
+                    pnlAlerta.Visible = false;
                     pnlError.Visible = true;
                 }
             }
@@ -179,11 +177,8 @@ namespace OdontoSysWebApplication
             var listaCitas = citaBO.cita_listarPorPacienteFechas(pacienteActual.idPaciente,desde.ToString("yyyy-MM-dd"),hasta.ToString("yyyy-MM-dd"));
             foreach (var cita in listaCitas)
             {
-
                 var odontologo = odontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
-
                 var consultorioOd = salaBO.sala_obtenerPorId(odontologo.consultorio.idSala);
-                
                 var consultorio = new CitaWS.sala
                 {
                     idSala = odontologo.consultorio.idSala,
@@ -448,7 +443,6 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                
                 var todasLasCitas = citaBO.cita_listarPorPaciente(idPaciente);
 
                 if (todasLasCitas == null)

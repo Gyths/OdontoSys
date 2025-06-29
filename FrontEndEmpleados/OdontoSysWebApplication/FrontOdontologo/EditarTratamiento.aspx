@@ -35,4 +35,9 @@
         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnGuardar_Click" />
     </asp:Panel>
 
+    <asp:Panel ID="pnlError" runat="server"
+        CssClass="alert alert-danger mt-3"
+        Visible="false">
+    </asp:Panel>
+
 </asp:Content>

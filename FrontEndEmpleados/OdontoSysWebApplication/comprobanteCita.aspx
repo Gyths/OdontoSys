@@ -59,8 +59,8 @@
                     <p><span class="label">Método de pago:</span>
                        <asp:Label ID="lblMetodoPago" runat="server" /></p>
                 </div>
-            </div>
-            
+            </div>  
+
             <!-- Botón para descargar PDF -->
             <div class="mt-4 text-center">
                 <asp:Button ID="btnDescargarPDF" runat="server" 
@@ -70,5 +70,12 @@
                     Visible="false" />
             </div>
         </div>
+    </asp:Panel>
+
+    <asp:Panel CssClass="mt-4" runat="server">
+    <asp:Button ID="btnVolver" runat="server"
+        Text="Volver"
+        CssClass="btn btn-secondary"
+        OnClick="btnVolver_Click" />
     </asp:Panel>
 </asp:Content>

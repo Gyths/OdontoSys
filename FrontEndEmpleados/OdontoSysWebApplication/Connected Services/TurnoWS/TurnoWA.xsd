@@ -14,7 +14,7 @@
   <xs:element name="turno_obtenerPorIdResponse" type="tns:turno_obtenerPorIdResponse" />
   <xs:complexType name="turno_listarPorOdontologo">
     <xs:sequence>
-      <xs:element minOccurs="0" name="odontologo" type="xs:int" />
+      <xs:element minOccurs="0" name="idOdontologo" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="turno_listarPorOdontologoResponse">

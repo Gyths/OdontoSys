@@ -16,37 +16,6 @@ namespace OdontoSysWebApplication.TurnoWS {
     public interface TurnoWA {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarPorOdontologoRequ" +
-            "est", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarPorOdontologoResp" +
-            "onse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoResponse turno_listarPorOdontologo(OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarPorOdontologoRequ" +
-            "est", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarPorOdontologoResp" +
-            "onse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoResponse> turno_listarPorOdontologoAsync(OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.TurnoWS.turno_listarTodosResponse turno_listarTodos(OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosResponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_listarTodosResponse> turno_listarTodosAsync(OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_obtenerPorIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_obtenerPorIdResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdResponse turno_obtenerPorId(OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_obtenerPorIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_obtenerPorIdResponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdResponse> turno_obtenerPorIdAsync(OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_modificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_modificarResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -72,6 +41,37 @@ namespace OdontoSysWebApplication.TurnoWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_insertarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_insertarResponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_insertarResponse> turno_insertarAsync(OdontoSysWebApplication.TurnoWS.turno_insertarRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.TurnoWS.turno_listarTodosResponse turno_listarTodos(OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarTodosResponse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_listarTodosResponse> turno_listarTodosAsync(OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_obtenerPorIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_obtenerPorIdResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdResponse turno_obtenerPorId(OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_obtenerPorIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_obtenerPorIdResponse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdResponse> turno_obtenerPorIdAsync(OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarPorOdontologoRequ" +
+            "est", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarPorOdontologoResp" +
+            "onse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoResponse turno_listarPorOdontologo(OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarPorOdontologoRequ" +
+            "est", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/TurnoWA/turno_listarPorOdontologoResp" +
+            "onse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoResponse> turno_listarPorOdontologoAsync(OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest request);
     }
     
     /// <remarks/>
@@ -207,106 +207,6 @@ namespace OdontoSysWebApplication.TurnoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="turno_listarPorOdontologo", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class turno_listarPorOdontologoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int odontologo;
-        
-        public turno_listarPorOdontologoRequest() {
-        }
-        
-        public turno_listarPorOdontologoRequest(int odontologo) {
-            this.odontologo = odontologo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="turno_listarPorOdontologoResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class turno_listarPorOdontologoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.TurnoWS.turno[] @return;
-        
-        public turno_listarPorOdontologoResponse() {
-        }
-        
-        public turno_listarPorOdontologoResponse(OdontoSysWebApplication.TurnoWS.turno[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="turno_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class turno_listarTodosRequest {
-        
-        public turno_listarTodosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="turno_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class turno_listarTodosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.TurnoWS.turno[] @return;
-        
-        public turno_listarTodosResponse() {
-        }
-        
-        public turno_listarTodosResponse(OdontoSysWebApplication.TurnoWS.turno[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="turno_obtenerPorId", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class turno_obtenerPorIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public turno_obtenerPorIdRequest() {
-        }
-        
-        public turno_obtenerPorIdRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="turno_obtenerPorIdResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class turno_obtenerPorIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.TurnoWS.turno @return;
-        
-        public turno_obtenerPorIdResponse() {
-        }
-        
-        public turno_obtenerPorIdResponse(OdontoSysWebApplication.TurnoWS.turno @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="turno_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
     public partial class turno_modificarRequest {
         
@@ -412,6 +312,106 @@ namespace OdontoSysWebApplication.TurnoWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="turno_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class turno_listarTodosRequest {
+        
+        public turno_listarTodosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="turno_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class turno_listarTodosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.TurnoWS.turno[] @return;
+        
+        public turno_listarTodosResponse() {
+        }
+        
+        public turno_listarTodosResponse(OdontoSysWebApplication.TurnoWS.turno[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="turno_obtenerPorId", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class turno_obtenerPorIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public turno_obtenerPorIdRequest() {
+        }
+        
+        public turno_obtenerPorIdRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="turno_obtenerPorIdResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class turno_obtenerPorIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.TurnoWS.turno @return;
+        
+        public turno_obtenerPorIdResponse() {
+        }
+        
+        public turno_obtenerPorIdResponse(OdontoSysWebApplication.TurnoWS.turno @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="turno_listarPorOdontologo", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class turno_listarPorOdontologoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idOdontologo;
+        
+        public turno_listarPorOdontologoRequest() {
+        }
+        
+        public turno_listarPorOdontologoRequest(int idOdontologo) {
+            this.idOdontologo = idOdontologo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="turno_listarPorOdontologoResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class turno_listarPorOdontologoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.TurnoWS.turno[] @return;
+        
+        public turno_listarPorOdontologoResponse() {
+        }
+        
+        public turno_listarPorOdontologoResponse(OdontoSysWebApplication.TurnoWS.turno[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface TurnoWAChannel : OdontoSysWebApplication.TurnoWS.TurnoWA, System.ServiceModel.IClientChannel {
     }
@@ -437,73 +437,6 @@ namespace OdontoSysWebApplication.TurnoWS {
         
         public TurnoWAClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoResponse OdontoSysWebApplication.TurnoWS.TurnoWA.turno_listarPorOdontologo(OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest request) {
-            return base.Channel.turno_listarPorOdontologo(request);
-        }
-        
-        public OdontoSysWebApplication.TurnoWS.turno[] turno_listarPorOdontologo(int odontologo) {
-            OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest inValue = new OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest();
-            inValue.odontologo = odontologo;
-            OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoResponse retVal = ((OdontoSysWebApplication.TurnoWS.TurnoWA)(this)).turno_listarPorOdontologo(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoResponse> OdontoSysWebApplication.TurnoWS.TurnoWA.turno_listarPorOdontologoAsync(OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest request) {
-            return base.Channel.turno_listarPorOdontologoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoResponse> turno_listarPorOdontologoAsync(int odontologo) {
-            OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest inValue = new OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest();
-            inValue.odontologo = odontologo;
-            return ((OdontoSysWebApplication.TurnoWS.TurnoWA)(this)).turno_listarPorOdontologoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.TurnoWS.turno_listarTodosResponse OdontoSysWebApplication.TurnoWS.TurnoWA.turno_listarTodos(OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest request) {
-            return base.Channel.turno_listarTodos(request);
-        }
-        
-        public OdontoSysWebApplication.TurnoWS.turno[] turno_listarTodos() {
-            OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest inValue = new OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest();
-            OdontoSysWebApplication.TurnoWS.turno_listarTodosResponse retVal = ((OdontoSysWebApplication.TurnoWS.TurnoWA)(this)).turno_listarTodos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_listarTodosResponse> OdontoSysWebApplication.TurnoWS.TurnoWA.turno_listarTodosAsync(OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest request) {
-            return base.Channel.turno_listarTodosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_listarTodosResponse> turno_listarTodosAsync() {
-            OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest inValue = new OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest();
-            return ((OdontoSysWebApplication.TurnoWS.TurnoWA)(this)).turno_listarTodosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdResponse OdontoSysWebApplication.TurnoWS.TurnoWA.turno_obtenerPorId(OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest request) {
-            return base.Channel.turno_obtenerPorId(request);
-        }
-        
-        public OdontoSysWebApplication.TurnoWS.turno turno_obtenerPorId(int id) {
-            OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest inValue = new OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest();
-            inValue.id = id;
-            OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdResponse retVal = ((OdontoSysWebApplication.TurnoWS.TurnoWA)(this)).turno_obtenerPorId(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdResponse> OdontoSysWebApplication.TurnoWS.TurnoWA.turno_obtenerPorIdAsync(OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest request) {
-            return base.Channel.turno_obtenerPorIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdResponse> turno_obtenerPorIdAsync(int id) {
-            OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest inValue = new OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest();
-            inValue.id = id;
-            return ((OdontoSysWebApplication.TurnoWS.TurnoWA)(this)).turno_obtenerPorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -573,6 +506,73 @@ namespace OdontoSysWebApplication.TurnoWS {
             OdontoSysWebApplication.TurnoWS.turno_insertarRequest inValue = new OdontoSysWebApplication.TurnoWS.turno_insertarRequest();
             inValue.turno = turno;
             return ((OdontoSysWebApplication.TurnoWS.TurnoWA)(this)).turno_insertarAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysWebApplication.TurnoWS.turno_listarTodosResponse OdontoSysWebApplication.TurnoWS.TurnoWA.turno_listarTodos(OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest request) {
+            return base.Channel.turno_listarTodos(request);
+        }
+        
+        public OdontoSysWebApplication.TurnoWS.turno[] turno_listarTodos() {
+            OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest inValue = new OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest();
+            OdontoSysWebApplication.TurnoWS.turno_listarTodosResponse retVal = ((OdontoSysWebApplication.TurnoWS.TurnoWA)(this)).turno_listarTodos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_listarTodosResponse> OdontoSysWebApplication.TurnoWS.TurnoWA.turno_listarTodosAsync(OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest request) {
+            return base.Channel.turno_listarTodosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_listarTodosResponse> turno_listarTodosAsync() {
+            OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest inValue = new OdontoSysWebApplication.TurnoWS.turno_listarTodosRequest();
+            return ((OdontoSysWebApplication.TurnoWS.TurnoWA)(this)).turno_listarTodosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdResponse OdontoSysWebApplication.TurnoWS.TurnoWA.turno_obtenerPorId(OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest request) {
+            return base.Channel.turno_obtenerPorId(request);
+        }
+        
+        public OdontoSysWebApplication.TurnoWS.turno turno_obtenerPorId(int id) {
+            OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest inValue = new OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest();
+            inValue.id = id;
+            OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdResponse retVal = ((OdontoSysWebApplication.TurnoWS.TurnoWA)(this)).turno_obtenerPorId(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdResponse> OdontoSysWebApplication.TurnoWS.TurnoWA.turno_obtenerPorIdAsync(OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest request) {
+            return base.Channel.turno_obtenerPorIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdResponse> turno_obtenerPorIdAsync(int id) {
+            OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest inValue = new OdontoSysWebApplication.TurnoWS.turno_obtenerPorIdRequest();
+            inValue.id = id;
+            return ((OdontoSysWebApplication.TurnoWS.TurnoWA)(this)).turno_obtenerPorIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoResponse OdontoSysWebApplication.TurnoWS.TurnoWA.turno_listarPorOdontologo(OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest request) {
+            return base.Channel.turno_listarPorOdontologo(request);
+        }
+        
+        public OdontoSysWebApplication.TurnoWS.turno[] turno_listarPorOdontologo(int idOdontologo) {
+            OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest inValue = new OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest();
+            inValue.idOdontologo = idOdontologo;
+            OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoResponse retVal = ((OdontoSysWebApplication.TurnoWS.TurnoWA)(this)).turno_listarPorOdontologo(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoResponse> OdontoSysWebApplication.TurnoWS.TurnoWA.turno_listarPorOdontologoAsync(OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest request) {
+            return base.Channel.turno_listarPorOdontologoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoResponse> turno_listarPorOdontologoAsync(int idOdontologo) {
+            OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest inValue = new OdontoSysWebApplication.TurnoWS.turno_listarPorOdontologoRequest();
+            inValue.idOdontologo = idOdontologo;
+            return ((OdontoSysWebApplication.TurnoWS.TurnoWA)(this)).turno_listarPorOdontologoAsync(inValue);
         }
     }
 }

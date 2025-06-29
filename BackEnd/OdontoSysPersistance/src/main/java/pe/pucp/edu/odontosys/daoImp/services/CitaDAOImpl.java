@@ -43,10 +43,10 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO {
     protected void incluirValorDeParametrosParaInsercion() throws SQLException {
         this.statement.setInt(1, this.cita.getPaciente().getIdPaciente());
         this.statement.setInt(2, this.cita.getOdontologo().getIdOdontologo());
-        this.statement.setObject(3, this.cita.getComprobante().getIdComprobante() != 0 ? this.cita.getComprobante().getIdComprobante() : null);
+        this.statement.setObject(3, this.cita.getComprobante().getIdComprobante());
         this.statement.setObject(4, LocalDate.parse(this.cita.getFecha()));
         this.statement.setObject(5, LocalTime.parse(this.cita.getHoraInicio()));
-        this.statement.setObject(6, this.cita.getValoracion().getIdValoracion() != 0 ? this.cita.getValoracion().getIdValoracion() : null);
+        this.statement.setObject(6, this.cita.getValoracion().getIdValoracion());
         this.statement.setString(7, this.cita.getEstado().name());
     }
 
