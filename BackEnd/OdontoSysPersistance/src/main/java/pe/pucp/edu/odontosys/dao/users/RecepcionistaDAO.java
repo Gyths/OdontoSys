@@ -9,6 +9,6 @@ public interface RecepcionistaDAO{
     Integer eliminar(Recepcionista recepcionista);
     Recepcionista obtenerPorId(Integer id);
     ArrayList<Recepcionista> listarTodos();
-    Recepcionista obtenerPorUsuarioContrasenha(String nombreUsuario, String contrasenha);
+    Recepcionista obtenerPorUsuarioContrasenha(Recepcionista recepcionista);
     Boolean existeNombreUsuario(String nombreUsuario);
 }

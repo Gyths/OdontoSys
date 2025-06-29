@@ -6,7 +6,6 @@ import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import java.util.ArrayList;
-import pe.pucp.edu.odontosys.services.model.Cita;
 
 @WebService(serviceName = "ComprobanteWA")
 public class ComprobanteWA {

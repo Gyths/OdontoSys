@@ -33,7 +33,9 @@ public class OdontologoBO {
         return this.odontologoDAO.listarTodos();
     }
 
-    public ArrayList<Odontologo> listarPorEspecialidad(Especialidad especialidad){
+    public ArrayList<Odontologo> listarPorEspecialidad(Integer idEspecialidad){
+        Especialidad especialidad = new Especialidad();
+        especialidad.setIdEspecialidad(idEspecialidad);
         return this.odontologoDAO.listarPorEspecialidad(especialidad);
     }
     

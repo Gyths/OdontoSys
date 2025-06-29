@@ -6,9 +6,6 @@ import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import java.util.ArrayList;
-import pe.pucp.edu.odontosys.users.model.Odontologo;
-import pe.pucp.edu.odontosys.users.model.Paciente;
-
 
 @WebService(serviceName = "ValoracionWA")
 public class ValoracionWA {
@@ -43,5 +40,4 @@ public class ValoracionWA {
     public ArrayList<Valoracion> valoracion_listarTodos() {
         return this.valoracionBO.listarTodos();
     }
-    
 }

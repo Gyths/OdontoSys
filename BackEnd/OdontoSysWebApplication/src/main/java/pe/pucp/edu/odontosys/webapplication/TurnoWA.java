@@ -6,8 +6,6 @@ import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import java.util.ArrayList;
-import pe.pucp.edu.odontosys.users.model.Odontologo;
-
 
 @WebService(serviceName = "TurnoWA")
 public class TurnoWA {

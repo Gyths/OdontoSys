@@ -1,7 +1,6 @@
 package pe.pucp.edu.odontosys.webapplication;
 
 import pe.pucp.edu.odontosys.bo.users.OdontologoBO;
-import pe.pucp.edu.odontosys.services.model.Especialidad;
 import pe.pucp.edu.odontosys.users.model.Odontologo;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
