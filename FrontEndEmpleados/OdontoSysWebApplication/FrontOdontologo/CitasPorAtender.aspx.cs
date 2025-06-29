@@ -23,23 +23,7 @@ namespace OdontoSysWebApplication.FrontOdontologo
             {
                 boCita = new CitaBO();
                 var odontologoSes = Session["Usuario"] as OdontologoWS.odontologo;
-                var odontologo = new CitaWS.odontologo
-                {
-                    idOdontologo = odontologoSes.idOdontologo,
-                    idOdontologoSpecified = true
-                };
-                var listaCitas = boCita.cita_listarPorOdontologo(odontologo);
-                foreach ( var cita in listaCitas )
-                {
-                    boPaciente = new PacienteBO();
-                    var paciente = new PacienteWS.paciente();
-                    paciente = boPaciente.paciente_obtenerPorId(cita.paciente.idPaciente);
-                    var pacienteCita = new CitaWS.paciente
-                    {
-                        nombre = paciente.nombre
-                    };
-                    cita.paciente.nombre = pacienteCita.nombre;
-                }
+                var listaCitas = boCita.cita_listarPorOdontologo(odontologoSes.idOdontologo);
                 gvCitas.DataSource = listaCitas;
                 gvCitas.DataBind();
             }

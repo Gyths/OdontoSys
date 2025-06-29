@@ -43,9 +43,9 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
             return new BindingList<turno>(lista ?? Array.Empty<turno>());
         }
 
-         public BindingList<turno> turno_listarPorOdontologo(odontologo odontologo)
+         public BindingList<turno> turno_listarPorOdontologo(int idOdontologo)
         {
-            turno[] lista = this.turnoWAClient.turno_listarPorOdontologo(odontologo);
+            turno[] lista = this.turnoWAClient.turno_listarPorOdontologo(idOdontologo);
             return new BindingList<turno>(lista ?? Array.Empty<turno>());
         }
     }

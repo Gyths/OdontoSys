@@ -175,13 +175,8 @@ namespace OdontoSysWebApplication
             DateTime hasta = baseDate;
 
             pacienteActual = pacienteBO.paciente_obtenerPorId(id);
-            var paciente = new CitaWS.paciente
-            {
-                idPaciente = pacienteActual.idPaciente,
-                idPacienteSpecified = true
-            };
 
-            var listaCitas = citaBO.cita_listarPorPacienteFechas(paciente,desde.ToString("yyyy-MM-dd"),hasta.ToString("yyyy-MM-dd"));
+            var listaCitas = citaBO.cita_listarPorPacienteFechas(pacienteActual.idPaciente,desde.ToString("yyyy-MM-dd"),hasta.ToString("yyyy-MM-dd"));
             foreach (var cita in listaCitas)
             {
 
@@ -236,14 +231,10 @@ namespace OdontoSysWebApplication
 
             foreach (int idCita in idsCitasCancelar)
             {
-                var cita = new CitaWS.cita
-                {
-                    idCita = idCita,
-                    idCitaSpecified = true,
-                    estado = CitaWS.estadoCita.CANCELADA,
-                    estadoSpecified = true
-                };
-                citaBO.cita_actualizarEstado(cita);
+
+                var cita = citaBO.cita_obtenerPorId(idCita);
+                cita.estado = CitaWS.estadoCita.CANCELADA;
+                citaBO.cita_modificar(cita);
             }
             if (int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPa))
             {
@@ -457,14 +448,8 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                var pacienteCita = new CitaWS.paciente
-                {
-                    idPaciente = idPaciente,
-                    idPacienteSpecified = true
-                };
-
                 
-                var todasLasCitas = citaBO.cita_listarPorPaciente(pacienteCita);
+                var todasLasCitas = citaBO.cita_listarPorPaciente(idPaciente);
 
                 if (todasLasCitas == null)
                 {

@@ -35,134 +35,22 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="comprobante_actualizarTotal">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="cita" type="tns:cita" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="cita">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="comprobante" type="tns:comprobante" />
-      <xs:element minOccurs="0" name="estado" type="tns:estadoCita" />
-      <xs:element minOccurs="0" name="fecha" type="xs:string" />
-      <xs:element minOccurs="0" name="horaInicio" type="xs:string" />
-      <xs:element minOccurs="0" name="idCita" type="xs:int" />
-      <xs:element minOccurs="0" name="odontologo" type="tns:odontologo" />
-      <xs:element minOccurs="0" name="paciente" type="tns:paciente" />
-      <xs:element minOccurs="0" name="recepcionista" type="tns:recepcionista" />
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="tratamientos" nillable="true" type="tns:detalleTratamiento" />
-      <xs:element minOccurs="0" name="valoracion" type="tns:valoracion" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="odontologo">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:persona">
-        <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="citas" nillable="true" type="tns:cita" />
-          <xs:element minOccurs="0" name="consultorio" type="tns:sala" />
-          <xs:element minOccurs="0" name="especialidad" type="tns:especialidad" />
-          <xs:element minOccurs="0" name="idOdontologo" type="xs:int" />
-          <xs:element name="puntuacionPromedio" type="xs:double" />
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="turnos" nillable="true" type="tns:turno" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="persona" abstract="true">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="apellidos" type="xs:string" />
-      <xs:element minOccurs="0" name="contrasenha" type="xs:string" />
-      <xs:element minOccurs="0" name="correo" type="xs:string" />
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
-      <xs:element minOccurs="0" name="nombreUsuario" type="xs:string" />
-      <xs:element minOccurs="0" name="numeroDocumento" type="xs:string" />
-      <xs:element minOccurs="0" name="telefono" type="xs:string" />
-      <xs:element minOccurs="0" name="tipoDocumento" type="tns:tipoDocumento" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="sala">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="idSala" type="xs:int" />
-      <xs:element minOccurs="0" name="numero" type="xs:string" />
-      <xs:element minOccurs="0" name="piso" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="especialidad">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="idEspecialidad" type="xs:int" />
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="turno">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="diaSemana" type="tns:diaSemana" />
-      <xs:element minOccurs="0" name="horaFin" type="xs:string" />
-      <xs:element minOccurs="0" name="horaInicio" type="xs:string" />
-      <xs:element minOccurs="0" name="idTurno" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="tipoDocumento">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="idTipoDocumento" type="xs:int" />
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="paciente">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:persona">
-        <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="citas" nillable="true" type="tns:cita" />
-          <xs:element minOccurs="0" name="idPaciente" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="recepcionista">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:persona">
-        <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="citas" nillable="true" type="tns:cita" />
-          <xs:element minOccurs="0" name="idRecepcionista" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="detalleTratamiento">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="cantidad" type="xs:int" />
-      <xs:element minOccurs="0" name="idCita" type="xs:int" />
-      <xs:element name="subtotal" type="xs:double" />
-      <xs:element minOccurs="0" name="tratamiento" type="tns:tratamiento" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="tratamiento">
-    <xs:sequence>
-      <xs:element name="costo" type="xs:double" />
-      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
-      <xs:element minOccurs="0" name="especialidad" type="tns:especialidad" />
-      <xs:element minOccurs="0" name="idTratamiento" type="xs:int" />
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="valoracion">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="calicicacion" type="xs:int" />
-      <xs:element minOccurs="0" name="comentario" type="xs:string" />
-      <xs:element minOccurs="0" name="fechaCalificacion" type="xs:string" />
-      <xs:element minOccurs="0" name="idValoracion" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="comprobante_actualizarTotalResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="comprobante_eliminar">
     <xs:sequence>
       <xs:element minOccurs="0" name="comprobante" type="tns:comprobante" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="comprobante_eliminarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comprobante_actualizarTotal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idCita" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comprobante_actualizarTotalResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
@@ -197,22 +85,4 @@
       <xs:element minOccurs="0" name="return" type="tns:comprobante" />
     </xs:sequence>
   </xs:complexType>
-  <xs:simpleType name="estadoCita">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="RESERVADA" />
-      <xs:enumeration value="ATENDIDA" />
-      <xs:enumeration value="CANCELADA" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="diaSemana">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="MONDAY" />
-      <xs:enumeration value="TUESDAY" />
-      <xs:enumeration value="WEDNESDAY" />
-      <xs:enumeration value="THURSDAY" />
-      <xs:enumeration value="FRIDAY" />
-      <xs:enumeration value="SATURDAY" />
-      <xs:enumeration value="SUNDAY" />
-    </xs:restriction>
-  </xs:simpleType>
 </xs:schema>

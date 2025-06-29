@@ -66,13 +66,8 @@ namespace OdontoSysWebApplication
                 return;
 
             int idEspecialidad = int.Parse(ddlEspecialidades.SelectedValue);
-            var especialidad = new OdontologoWS.especialidad
-            {
-                idEspecialidad = idEspecialidad,
-                idEspecialidadSpecified = true
-            };
 
-            var odontologos = odontologoBO.odontologo_listarPorEspecialidad(especialidad);
+            var odontologos = odontologoBO.odontologo_listarPorEspecialidad(idEspecialidad);
 
             ddlOdontologos.Items.Add(new ListItem("-- Seleccione un odontólogo --", ""));
             foreach (var o in odontologos)
@@ -107,21 +102,9 @@ namespace OdontoSysWebApplication
 
             int idOdontologo = int.Parse(ddlOdontologos.SelectedValue);
 
-            var odontologoTurno = new TurnoWS.odontologo
-            {
-                idOdontologo = idOdontologo,
-                idOdontologoSpecified = true
-            };
+            var turnos = turnoBO.turno_listarPorOdontologo(idOdontologo);
 
-            var turnos = turnoBO.turno_listarPorOdontologo(odontologoTurno);
-
-            var odontologoCita = new CitaWS.odontologo
-            {
-                idOdontologo = idOdontologo,
-                idOdontologoSpecified = true
-            };
-
-            var citas = citaBO.cita_listarPorOdontologoFechas(odontologoCita, fechaInicioStr, fechaFinStr);
+            var citas = citaBO.cita_listarPorOdontologoFechas(idOdontologo, fechaInicioStr, fechaFinStr);
 
             var disponibilidad = CalcularHorasDisponibles(turnos, citas, fechaInicio);
 
@@ -243,11 +226,6 @@ namespace OdontoSysWebApplication
                 {
                     idPaciente = paciente.idPaciente,
                     idPacienteSpecified = true
-                },
-                recepcionista = new CitaWS.recepcionista
-                {
-                    idRecepcionista = recepcionista.idRecepcionista,
-                    idRecepcionistaSpecified = true
                 }
             };
 

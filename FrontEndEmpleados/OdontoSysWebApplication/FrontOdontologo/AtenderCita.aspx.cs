@@ -28,14 +28,12 @@ namespace OdontoSysWebApplication.FrontOdontologo
         private void CargarDatosCita(string idCita)
         {
             boCita = new CitaBO();
-            boPaciente = new PacienteBO();
             var cita = boCita.cita_obtenerPorId(Int32.Parse(idCita));
-            var paciente = boPaciente.paciente_obtenerPorId(cita.paciente.idPaciente);
-            txtPaciente.Text = paciente.nombre + " " +paciente.apellidos;
+            txtPaciente.Text = cita.paciente.nombre + " " +cita.paciente.apellidos;
             txtPaciente.Enabled = false;
-            txtCorreo.Text = paciente.correo;
+            txtCorreo.Text = cita.paciente.correo;
             txtCorreo.Enabled = false;
-            txtTelefono.Text = paciente.telefono;
+            txtTelefono.Text = cita.paciente.telefono;
             txtTelefono.Enabled = false;
         }
 
@@ -43,14 +41,9 @@ namespace OdontoSysWebApplication.FrontOdontologo
         {
             boDetalleTratamiento = new DetalleTratamientoBO();
             boTratamiento = new TratamientoBO();
-            DetalleTratamientoWS.cita cita = new DetalleTratamientoWS.cita
-            {
-                idCita = Int32.Parse(idCita),
-                idCitaSpecified = true
-            };
             try
             {
-                var listaDetalle = boDetalleTratamiento.detalleTratamiento_listarPorCita(cita);
+                var listaDetalle = boDetalleTratamiento.detalleTratamiento_listarPorCita(Int32.Parse(idCita));
                 foreach (var detalle in listaDetalle)
                 {
                     var tratamiento = boTratamiento.tratamiento_obtenerPorId(detalle.tratamiento.idTratamiento);

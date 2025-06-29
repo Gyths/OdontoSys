@@ -101,20 +101,10 @@ namespace OdontoSysWebApplication
                 int idComprobante = comprobanteBO.comprobante_insertar(comprobante);   // devuelve PK
 
                 var cita = citaBO.cita_obtenerPorId(idCita);
-                cita.comprobante = new CitaWS.comprobante
-                {
-                    idComprobante = idComprobante,
-                    idComprobanteSpecified = true
-                };
                 cita.estado = CitaWS.estadoCita.ATENDIDA;
-                citaBO.cita_actualizarEstado(cita);
-                citaBO.cita_actualizarFkComprobante(cita, cita.comprobante);
-                var citaComprobante = new ComprobanteWS.cita
-                {
-                    idCita = cita.idCita,
-                    idCitaSpecified = true
-                };
-                comprobanteBO.comprobante_actualizarTotal(citaComprobante);
+                citaBO.cita_modificar(cita);
+           
+                comprobanteBO.comprobante_actualizarTotal(cita.idCita);
                 lblMensaje.Text = "Comprobante generado correctamente.";
                 lblMensaje.CssClass = "text-success";
             }

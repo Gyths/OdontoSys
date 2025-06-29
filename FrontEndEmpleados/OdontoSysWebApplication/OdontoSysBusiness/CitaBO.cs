@@ -45,50 +45,31 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
             return new BindingList<cita>(lista ?? Array.Empty<cita>());
         }
 
-        public BindingList<cita>  cita_listarPorOdontologoFechas(odontologo odontologo, string fechaInicio, string fechaFin)
+        public BindingList<cita>  cita_listarPorOdontologoFechas(int idOdontologo, string fechaInicio, string fechaFin)
         {
-            cita[] lista = this.citaWAClient.cita_listarPorOdontologoFechas(odontologo, fechaInicio, fechaFin);
+            cita[] lista = this.citaWAClient.cita_listarPorOdontologoFechas(idOdontologo, fechaInicio, fechaFin);
             return new BindingList<cita>(lista ?? Array.Empty<cita>());
         }
 
-        public BindingList<cita> cita_listarPorPacienteFechas(paciente paciente, string fechaInicio, string fechaFin)
+        public BindingList<cita> cita_listarPorPacienteFechas(int  idPaciente, string fechaInicio, string fechaFin)
         {
-            cita[] lista = this.citaWAClient.cita_listarPorPacienteFechas(paciente, fechaInicio, fechaFin);
+            cita[] lista = this.citaWAClient.cita_listarPorPacienteFechas(idPaciente, fechaInicio, fechaFin);
             return new BindingList<cita>(lista ?? Array.Empty<cita>());
         }
 
-        public BindingList<cita> cita_listarPorOdontologo(odontologo odontologo)
+        public BindingList<cita> cita_listarPorOdontologo(int idOdontologo)
         {
-            cita[] lista = this.citaWAClient.cita_listarPorOdontologo(odontologo);
+            cita[] lista = this.citaWAClient.cita_listarPorOdontologo(idOdontologo);
             return new BindingList<cita>(lista ?? Array.Empty<cita>());
         }
 
-        public BindingList<cita> cita_listarPorPaciente(paciente paciente)
+        public BindingList<cita> cita_listarPorPaciente(int idPaciente)
         {
-            cita[] lista = this.citaWAClient.cita_listarPorPaciente(paciente);
+            cita[] lista = this.citaWAClient.cita_listarPorPaciente(idPaciente);
             return new BindingList<cita>(lista ?? Array.Empty<cita>());
         }
 
-        public BindingList<cita> cita_listarPorRecepcionista(recepcionista recepcionista)
-        {
-            cita[] lista = this.citaWAClient.cita_listarPorRecepcionista(recepcionista);
-            return new BindingList<cita>(lista);
-        }
-
-        public int cita_actualizarFkValoracion(cita cita, valoracion valoracion)
-        {
-            return this.citaWAClient.cita_actualizarFkValoracion(cita, valoracion);
-        }
-
-        public int cita_actualizarFkComprobante(cita cita, comprobante comprobante)
-        {
-            return this.citaWAClient.cita_actualizarFkComprobante(cita, comprobante);
-        }
-
-        public int cita_actualizarEstado(cita cita)
-        {
-            return this.citaWAClient.cita_actualizarEstado(cita);
-        }
+        
             
     }
 }

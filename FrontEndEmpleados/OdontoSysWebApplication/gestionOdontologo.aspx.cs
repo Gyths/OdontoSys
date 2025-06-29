@@ -68,14 +68,7 @@ namespace OdontoSysWebApplication
                 TurnoXOdontologoBO boTurnoOdontologo = new TurnoXOdontologoBO();
                 if (chkSeleccionar1 != null && chkSeleccionar1.Checked)
                 {
-                    var turnoOdontologo = new TurnoXOdontologoWS.turnoXOdontologo
-                    {
-                        idOdontologo = Int32.Parse(idOdontologoActual),
-                        idOdontologoSpecified = true,
-                        idTurno = Int32.Parse(gvTurnos.DataKeys[row.RowIndex].Value.ToString()),
-                        idTurnoSpecified = true
-                    };
-                    boTurnoOdontologo.turnoXOdontologo_eliminar(turnoOdontologo);
+                    boTurnoOdontologo.turnoXOdontologo_eliminar(Int32.Parse(idOdontologoActual), Int32.Parse(gvTurnos.DataKeys[row.RowIndex].Value.ToString()));
                 }
             }
             CargarTurnos(Int32.Parse(idOdontologoActual));
@@ -156,26 +149,12 @@ namespace OdontoSysWebApplication
             DateTime hasta = baseDate;
 
             var odontologoActual = odontologoBO.odontologo_obtenerPorId(idOdo);
-            var odontologo = new CitaWS.odontologo
-            {
-                idOdontologo = odontologoActual.idOdontologo,
-                idOdontologoSpecified = true
-            };
 
             try { 
-                var listaCitas = citaBO.cita_listarPorOdontologoFechas(odontologo, desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"));
+                var listaCitas = citaBO.cita_listarPorOdontologoFechas(odontologoActual.idOdontologo, desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"));
                 
                 foreach (var cita in listaCitas)
                 {
-                    var paciente = pacienteBO.paciente_obtenerPorId(cita.paciente.idPaciente);
-                    var pac = new CitaWS.paciente
-                    {
-                        idPaciente = paciente.idPaciente,
-                        idPacienteSpecified = true,
-                        nombre = paciente.nombre,
-                        apellidos = paciente.apellidos,
-                    };
-                    cita.paciente = pac;
                     cita.paciente.nombre += (" " + cita.paciente.apellidos);
                 }
                 gvCitas.DataSource = listaCitas;
@@ -189,13 +168,8 @@ namespace OdontoSysWebApplication
         }
         private void CargarTurnos(int idOdo)
         {
-            var odontologo = new TurnoWS.odontologo
-            {
-                idOdontologo = idOdo,
-                idOdontologoSpecified = true
-            };
             try { 
-                var listaTurnos = turnoBO.turno_listarPorOdontologo(odontologo);
+                var listaTurnos = turnoBO.turno_listarPorOdontologo(idOdo);
                 gvTurnos.DataSource = listaTurnos;
                 gvTurnos.DataBind();
             }catch (Exception e) {
@@ -233,14 +207,9 @@ namespace OdontoSysWebApplication
 
             foreach (int idCita in idsCitasCancelar)
             {
-                var cita = new CitaWS.cita
-                {
-                    idCita = idCita,
-                    idCitaSpecified = true,
-                    estado = CitaWS.estadoCita.CANCELADA,
-                    estadoSpecified = true
-                };
-                citaBO.cita_actualizarEstado(cita);
+                var cita = citaBO.cita_obtenerPorId(idCita);
+                cita.estado = CitaWS.estadoCita.CANCELADA;
+                citaBO.cita_modificar(cita);
             }
             if (int.TryParse(Session["idOdontologoSeleccionado"].ToString(), out int idOdo))
             {
