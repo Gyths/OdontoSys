@@ -117,7 +117,7 @@ namespace OdontoSysWebApplication
             {
                 var cita = Session["CitaSeleccionada"] as OdontoSysBusiness.CitaWS.cita;
                 cita.estado = OdontoSysBusiness.CitaWS.estadoCita.CANCELADA;
-                this.CitaBO.cita_actualizarEstado(cita);
+                this.CitaBO.cita_modificar(cita);
 
                 // Actualizamos sesión y recargamos
                 Session["CitaSeleccionada"] = cita;
@@ -164,17 +164,9 @@ namespace OdontoSysWebApplication
                     fechaCalificacion = DateTime.Now.ToString("yyyy-MM-dd")
                 };
 
+                cita.valoracion.idValoracion = this.ValoracionBO.valoracion_insertar(nuevaValoracion);
 
-                int idGenerado = this.ValoracionBO.valoracion_insertar(nuevaValoracion);
-
-                var valoracionInsertada = new OdontoSysBusiness.CitaWS.valoracion
-                {
-                    idValoracion = idGenerado,
-                    idValoracionSpecified = true
-                };
-
-
-                this.CitaBO.cita_actualizarFkValoracion(cita, valoracionInsertada);
+                this.CitaBO.cita_modificar(cita);
 
                 Session["CitaSeleccionada"] = cita;
                 Response.Redirect("gestionCita.aspx?id=" + cita.idCita);

@@ -39,9 +39,9 @@ namespace OdontoSysBusiness
             return new BindingList<tratamiento>(lista ?? Array.Empty<tratamiento>());
         }
 
-        public BindingList<tratamiento> tratamiento_listarPorEspecilidad(especialidad especialidad)
+        public BindingList<tratamiento> tratamiento_listarPorEspecilidad(int idEspecialidad)
         {
-            tratamiento[] lista = this.tratamientoWAClient.tratamiento_listarPorEspecilidad(especialidad);
+            tratamiento[] lista = this.tratamientoWAClient.tratamiento_listarPorEspecilidad(idEspecialidad);
             return new BindingList<tratamiento>(lista ?? Array.Empty<tratamiento>());
         }
     }

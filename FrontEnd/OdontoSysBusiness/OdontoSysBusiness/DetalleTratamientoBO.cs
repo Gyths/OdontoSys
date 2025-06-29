@@ -43,9 +43,9 @@ namespace OdontoSysBusiness
             return new BindingList<detalleTratamiento>(lista ?? Array.Empty<detalleTratamiento>());
         }
 
-        public BindingList<detalleTratamiento> detalleTratamiento_listarPorCita(cita cita)
+        public BindingList<detalleTratamiento> detalleTratamiento_listarPorCita(int idCita)
         {
-            detalleTratamiento[] lista = this.detalleTratamientoWAClient.detalleTratamiento_listarPorCita(cita);
+            detalleTratamiento[] lista = this.detalleTratamientoWAClient.detalleTratamiento_listarPorCita(idCita);
             return new BindingList<detalleTratamiento>(lista ?? Array.Empty<detalleTratamiento>());
         }
     }
