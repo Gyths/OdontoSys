@@ -36,12 +36,4 @@ public class ValoracionBO {
         return this.valoracionDAO.listarTodos();
     }
     
-    public ArrayList<Valoracion> listarPorOdontologo(Odontologo odontologo){
-        return this.valoracionDAO.listarPorOdontologo(odontologo);
-    }
-    
-    public ArrayList<Valoracion> listarPorPaciente(Paciente paciente){
-        return this.valoracionDAO.listarPorPaciente(paciente);
-    }
-    
 }

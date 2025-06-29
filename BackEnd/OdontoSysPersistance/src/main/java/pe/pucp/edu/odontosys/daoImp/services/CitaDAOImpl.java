@@ -140,6 +140,12 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO {
         this.instanciarObjetoDelResultSet();
         lista.add(this.cita);
     }
+    
+    @Override
+    protected void agregarObjetoCompletoALaLista(List lista) throws SQLException {
+        this.instanciarObjetoCompletoDelResultSet();
+        lista.add(this.cita);
+    }
 
     @Override
     public Integer insertar(Cita cita) {
