@@ -118,6 +118,20 @@ namespace OdontoSysBusiness.CitaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarResponse")]
         System.Threading.Tasks.Task<OdontoSysBusiness.CitaWS.cita_modificarResponse> cita_modificarAsync(OdontoSysBusiness.CitaWS.cita_modificarRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerCompletoPorIdReque" +
+            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerCompletoPorIdRespo" +
+            "nse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdResponse cita_obtenerCompletoPorId(OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerCompletoPorIdReque" +
+            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerCompletoPorIdRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdResponse> cita_obtenerCompletoPorIdAsync(OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdRequest request);
     }
     
     /// <remarks/>
@@ -1740,6 +1754,42 @@ namespace OdontoSysBusiness.CitaWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_obtenerCompletoPorId", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_obtenerCompletoPorIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public cita_obtenerCompletoPorIdRequest() {
+        }
+        
+        public cita_obtenerCompletoPorIdRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_obtenerCompletoPorIdResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_obtenerCompletoPorIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysBusiness.CitaWS.cita @return;
+        
+        public cita_obtenerCompletoPorIdResponse() {
+        }
+        
+        public cita_obtenerCompletoPorIdResponse(OdontoSysBusiness.CitaWS.cita @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface CitaWAChannel : OdontoSysBusiness.CitaWS.CitaWA, System.ServiceModel.IClientChannel {
     }
@@ -1978,6 +2028,29 @@ namespace OdontoSysBusiness.CitaWS {
             OdontoSysBusiness.CitaWS.cita_modificarRequest inValue = new OdontoSysBusiness.CitaWS.cita_modificarRequest();
             inValue.cita = cita;
             return ((OdontoSysBusiness.CitaWS.CitaWA)(this)).cita_modificarAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdResponse OdontoSysBusiness.CitaWS.CitaWA.cita_obtenerCompletoPorId(OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdRequest request) {
+            return base.Channel.cita_obtenerCompletoPorId(request);
+        }
+        
+        public OdontoSysBusiness.CitaWS.cita cita_obtenerCompletoPorId(int id) {
+            OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdRequest inValue = new OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdRequest();
+            inValue.id = id;
+            OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdResponse retVal = ((OdontoSysBusiness.CitaWS.CitaWA)(this)).cita_obtenerCompletoPorId(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdResponse> OdontoSysBusiness.CitaWS.CitaWA.cita_obtenerCompletoPorIdAsync(OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdRequest request) {
+            return base.Channel.cita_obtenerCompletoPorIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdResponse> cita_obtenerCompletoPorIdAsync(int id) {
+            OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdRequest inValue = new OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdRequest();
+            inValue.id = id;
+            return ((OdontoSysBusiness.CitaWS.CitaWA)(this)).cita_obtenerCompletoPorIdAsync(inValue);
         }
     }
 }

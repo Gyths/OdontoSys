@@ -106,6 +106,7 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
         this.instanciarObjetoDelResultSet();
         lista.add(this.paciente);
     }
+
     
     @Override
     public Integer insertar(Paciente paciente) {

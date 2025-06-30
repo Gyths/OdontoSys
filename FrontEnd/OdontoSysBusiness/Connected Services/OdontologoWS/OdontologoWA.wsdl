@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/OdontologoWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
+  <message name="odontologo_obtenerCompletoPorId">
+    <part name="parameters" element="tns:odontologo_obtenerCompletoPorId" />
+  </message>
+  <message name="odontologo_obtenerCompletoPorIdResponse">
+    <part name="parameters" element="tns:odontologo_obtenerCompletoPorIdResponse" />
+  </message>
   <message name="odontologo_modificar">
     <part name="parameters" element="tns:odontologo_modificar" />
   </message>
@@ -66,6 +72,10 @@
     <part name="parameters" element="tns:odontologo_verificarExistenciaNombreUsuarioResponse" />
   </message>
   <portType name="OdontologoWA">
+    <operation name="odontologo_obtenerCompletoPorId">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerCompletoPorIdRequest" message="tns:odontologo_obtenerCompletoPorId" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_obtenerCompletoPorIdResponse" message="tns:odontologo_obtenerCompletoPorIdResponse" />
+    </operation>
     <operation name="odontologo_modificar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarRequest" message="tns:odontologo_modificar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/OdontologoWA/odontologo_modificarResponse" message="tns:odontologo_modificarResponse" />
@@ -109,6 +119,15 @@
   </portType>
   <binding name="OdontologoWAPortBinding" type="tns:OdontologoWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="odontologo_obtenerCompletoPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="odontologo_modificar">
       <soap:operation soapAction="" />
       <input>

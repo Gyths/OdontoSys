@@ -222,6 +222,7 @@
         AND C.FECHA BETWEEN ? AND ?
     ]]>
   </query>
+  
   <query id="obtenerCompletoPorId">
     <![CDATA[
       SELECT

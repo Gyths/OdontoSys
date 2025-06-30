@@ -59,6 +59,12 @@
   <message name="cita_modificarResponse">
     <part name="parameters" element="tns:cita_modificarResponse" />
   </message>
+  <message name="cita_obtenerCompletoPorId">
+    <part name="parameters" element="tns:cita_obtenerCompletoPorId" />
+  </message>
+  <message name="cita_obtenerCompletoPorIdResponse">
+    <part name="parameters" element="tns:cita_obtenerCompletoPorIdResponse" />
+  </message>
   <portType name="CitaWA">
     <operation name="cita_eliminar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_eliminarRequest" message="tns:cita_eliminar" />
@@ -95,6 +101,10 @@
     <operation name="cita_modificar">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarRequest" message="tns:cita_modificar" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarResponse" message="tns:cita_modificarResponse" />
+    </operation>
+    <operation name="cita_obtenerCompletoPorId">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerCompletoPorIdRequest" message="tns:cita_obtenerCompletoPorId" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerCompletoPorIdResponse" message="tns:cita_obtenerCompletoPorIdResponse" />
     </operation>
   </portType>
   <binding name="CitaWAPortBinding" type="tns:CitaWA">
@@ -172,6 +182,15 @@
       </output>
     </operation>
     <operation name="cita_modificar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cita_obtenerCompletoPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

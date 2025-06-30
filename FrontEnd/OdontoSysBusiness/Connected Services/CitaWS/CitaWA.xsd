@@ -16,6 +16,8 @@
   <xs:element name="cita_listarTodosResponse" type="tns:cita_listarTodosResponse" />
   <xs:element name="cita_modificar" type="tns:cita_modificar" />
   <xs:element name="cita_modificarResponse" type="tns:cita_modificarResponse" />
+  <xs:element name="cita_obtenerCompletoPorId" type="tns:cita_obtenerCompletoPorId" />
+  <xs:element name="cita_obtenerCompletoPorIdResponse" type="tns:cita_obtenerCompletoPorIdResponse" />
   <xs:element name="cita_obtenerPorId" type="tns:cita_obtenerPorId" />
   <xs:element name="cita_obtenerPorIdResponse" type="tns:cita_obtenerPorIdResponse" />
   <xs:complexType name="cita_eliminar">
@@ -162,6 +164,16 @@
   <xs:complexType name="cita_listarTodosResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_obtenerCompletoPorId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_obtenerCompletoPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:cita" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="cita_obtenerPorId">

@@ -45,7 +45,7 @@ namespace OdontoSysWebApplication
                 if (Request.QueryString["id"] != null && int.TryParse(Request.QueryString["id"], out int idCita))
                 {
 
-                    OdontoSysBusiness.CitaWS.cita citaVariable = this.CitaBO.cita_obtenerPorId(idCita);
+                    OdontoSysBusiness.CitaWS.cita citaVariable = this.CitaBO.cita_obtenerCompletoPorId(idCita);
                     if (citaVariable != null)
 
                     {
@@ -61,10 +61,8 @@ namespace OdontoSysWebApplication
             var cita = Session["CitaSeleccionada"] as OdontoSysBusiness.CitaWS.cita;
             lblFecha.Text = cita.fecha;
             lblHora.Text = cita.horaInicio;
-            var odontologo = this.OdontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
-            lblOdontologo.Text = $"{odontologo.nombre} {odontologo.apellidos}";
-
-            var especialidad = this.EspecialidadBO.especialidad_obtenerPorId(odontologo.especialidad.idEspecialidad);
+            lblOdontologo.Text = $"{cita.odontologo.nombre} {cita.odontologo.apellidos}";
+            var especialidad = this.EspecialidadBO.especialidad_obtenerPorId(cita.odontologo.especialidad.idEspecialidad);
             lblEspecialidad.Text = especialidad.nombre;
 
             // Badge por estado
@@ -82,7 +80,7 @@ namespace OdontoSysWebApplication
             estadoCita.Attributes["class"] = $"badge {claseEstado}";
 
 
-            var sala = this.SalaBO.sala_obtenerPorId(odontologo.consultorio.idSala);
+            var sala = this.SalaBO.sala_obtenerPorId(cita.odontologo.consultorio.idSala);
             lblHabitacion.Text = sala.numero;
             lblPiso.Text = sala.piso.ToString();
 

@@ -166,6 +166,9 @@
     <None Include="Connected Services\CitaWS\OdontoSysBusiness.CitaWS.cita_modificarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\CitaWS\OdontoSysBusiness.CitaWS.cita_obtenerCompletoPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CitaWS\OdontoSysBusiness.CitaWS.cita_obtenerPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -292,6 +295,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\OdontologoWS\OdontoSysBusiness.OdontologoWS.odontologo_modificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\OdontologoWS\OdontoSysBusiness.OdontologoWS.odontologo_obtenerCompletoPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\OdontologoWS\OdontoSysBusiness.OdontologoWS.odontologo_obtenerPorIdResponse.datasource">
