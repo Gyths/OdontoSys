@@ -69,5 +69,9 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
             paciente[] lista = this.pacienteWAClient.paciente_buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
             return new BindingList<paciente>(lista ?? Array.Empty<paciente>());
         }
+        public byte[] reporteHistoriaClinica(int pacienteId)
+        {
+            return this.pacienteWAClient.reporteHistoriaClinica(pacienteId);
+        }
 }
 }

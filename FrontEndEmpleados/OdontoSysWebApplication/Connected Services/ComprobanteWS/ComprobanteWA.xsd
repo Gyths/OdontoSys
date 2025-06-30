@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://webapplication.odontosys.edu.pucp.pe/" targetNamespace="http://webapplication.odontosys.edu.pucp.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="JRException" type="tns:JRException" />
   <xs:element name="comprobante_actualizarTotal" type="tns:comprobante_actualizarTotal" />
   <xs:element name="comprobante_actualizarTotalResponse" type="tns:comprobante_actualizarTotalResponse" />
   <xs:element name="comprobante_eliminar" type="tns:comprobante_eliminar" />
@@ -12,6 +13,8 @@
   <xs:element name="comprobante_modificaResponse" type="tns:comprobante_modificaResponse" />
   <xs:element name="comprobante_obtenerPorId" type="tns:comprobante_obtenerPorId" />
   <xs:element name="comprobante_obtenerPorIdResponse" type="tns:comprobante_obtenerPorIdResponse" />
+  <xs:element name="reporteComprobante" type="tns:reporteComprobante" />
+  <xs:element name="reporteComprobanteResponse" type="tns:reporteComprobanteResponse" />
   <xs:complexType name="comprobante_listarTodos">
     <xs:sequence />
   </xs:complexType>
@@ -33,6 +36,23 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="idMetodoPago" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reporteComprobante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComprobanteID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reporteComprobanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="JRException">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="args" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+      <xs:element minOccurs="0" name="messageKey" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="comprobante_eliminar">

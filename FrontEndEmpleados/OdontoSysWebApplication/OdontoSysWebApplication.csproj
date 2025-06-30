@@ -122,22 +122,25 @@
     <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_actualizarTotalResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_eliminarResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_insertarResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_listarTodosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_modificaResponse.datasource">
+    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_actualizarTotalResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_obtenerPorIdResponse.datasource">
+    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_eliminarResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_insertarResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_modificaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.comprobante_obtenerPorIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ComprobanteWS\OdontoSysWebApplication.ComprobanteWS.reporteComprobanteResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\DetalleTratamientoWS\DetalleTratamientoWA.wsdl" />
@@ -280,25 +283,7 @@
     <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_eliminarResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_insertarResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_listarTodosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_modificarResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_obtenerPorIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_obtenerPorUsuarioContrasenhaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_verificarExistenciaNombreUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_buscarPorNombreApellidoDocumentoResponse.datasource">
@@ -308,6 +293,27 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_buscarPorNombreApellidoTelefonoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_eliminarResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_insertarResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_modificarResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_obtenerPorIdResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_obtenerPorUsuarioContrasenhaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.paciente_verificarExistenciaNombreUsuarioResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\PacienteWS\OdontoSysWebApplication.PacienteWS.reporteHistoriaClinicaResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\PacienteWS\Reference.svcmap">

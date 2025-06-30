@@ -47,5 +47,9 @@ namespace OdontoSysWebAppliation.OdontoSysBusiness
         {
             return this.comprobanteWAClient.comprobante_actualizarTotal(idCita);
         }
+        public byte[]reporteComprobante(int comprobanteId)
+        {
+            return this.comprobanteWAClient.reporteComprobante(comprobanteId);
+        }
     }
 }

@@ -6,6 +6,8 @@ import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import java.util.ArrayList;
+import net.sf.jasperreports.engine.JRException;
+import pe.pucp.edu.odontosys.webapplication.reports.ReporteUtil;
 
 @WebService(serviceName = "ComprobanteWA")
 public class ComprobanteWA {
@@ -45,5 +47,9 @@ public class ComprobanteWA {
     public Integer comprobante_actualizarTotal(@WebParam(name = "idCita") Integer idCita){
         return this.comprobanteBO.actualizarTotal(idCita);
     }
-            
+    @WebMethod(operationName = "reporteComprobante")
+    public byte[]reporteComprobante(@WebParam(name = "ComprobanteID") Integer comprobanteId) throws JRException{
+        return ReporteUtil.reporteHistoriaClinica(comprobanteId);
+    }	
+	       
 }

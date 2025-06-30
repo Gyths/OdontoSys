@@ -6,6 +6,8 @@ import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import java.util.ArrayList;
+import net.sf.jasperreports.engine.JRException;
+import pe.pucp.edu.odontosys.webapplication.reports.ReporteUtil;
 
 @WebService(serviceName = "PacienteWA")
 public class PacienteWA {
@@ -65,5 +67,8 @@ public class PacienteWA {
     public ArrayList<Paciente> paciente_buscarPorNombreApellidoTelefono(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido, @WebParam(name = "telefono") String telefono){
         return this.pacienteBO.buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
     }
-
+    @WebMethod(operationName = "reporteHistoriaClinica")
+    public byte[]reporteHistoriaClinica(@WebParam(name = "pacienteId") Integer pacienteId) throws JRException{
+        return ReporteUtil.reporteHistoriaClinica(pacienteId);
+    }
 }
