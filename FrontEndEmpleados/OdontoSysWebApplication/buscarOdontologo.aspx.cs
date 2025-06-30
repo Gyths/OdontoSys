@@ -49,15 +49,15 @@ namespace OdontoSysWebApplication
                 }
                 else if (!hayNombre && !hayApellido && !hayDocumento)
                 {
-                    lista = odonlogoBO.odontologo_listarTodos();
+                    lista = odonlogoBO.odontologo_listarTodoCompleto();
                 }
                 else if (hayNombre && hayApellido && !hayDocumento)
                 {
-                    //lista = odonlogoBO.odontologo_buscarPorNombreApellido(txtNombre.Text.Trim(), txtApellidos.Text.Trim());
+                    lista = odonlogoBO.odontologo_buscarPorNombreApellido(txtNombre.Text.Trim(), txtApellidos.Text.Trim());
                 }
                 else if (hayNombre && hayApellido && hayDocumento)
                 {
-                    //lista = odonlogoBO.odontologo_buscarPorNombreApellidoDocumento(txtNombre.Text.Trim(), txtApellidos.Text.Trim(), txtDocumento.Text.Trim());
+                    lista = odonlogoBO.odontologo_buscarPorNombreApellidoDocumento(txtNombre.Text.Trim(), txtApellidos.Text.Trim(), txtDocumento.Text.Trim());
                 }
                 else
                 {
@@ -75,37 +75,6 @@ namespace OdontoSysWebApplication
             gvOdontologos.DataSource = lista?.ToList();
             gvOdontologos.DataBind();
             lblMensaje.Text = "";
-        }
-
-        protected void gvOdontologos_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                var doctor = (OdontologoWS.odontologo)e.Row.DataItem;
-
-                int columnaTipoEsp = 3; // cambia este número si tu columna está en otra posición
-
-                if (doctor.especialidad.idEspecialidad == 1)
-                {
-                    e.Row.Cells[columnaTipoEsp].Text = "Odontología General";
-                }
-                else if (doctor.especialidad.idEspecialidad == 2)
-                {
-                    e.Row.Cells[columnaTipoEsp].Text = "Ortodoncia";
-                }
-                else if (doctor.especialidad.idEspecialidad == 3)
-                {
-                    e.Row.Cells[columnaTipoEsp].Text = "Endodoncia";
-                }
-                else if (doctor.especialidad.idEspecialidad == 4)
-                {
-                    e.Row.Cells[columnaTipoEsp].Text = "Cirugia";
-                }
-                else if (doctor.especialidad.idEspecialidad == 5)
-                {
-                    e.Row.Cells[columnaTipoEsp].Text = "Pediatra";
-                }
-            }
         }
 
         protected void gvOdontologo_RowCommand(object sender, GridViewCommandEventArgs e)

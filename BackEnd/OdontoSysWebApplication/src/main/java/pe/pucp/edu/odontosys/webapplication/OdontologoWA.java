@@ -71,4 +71,9 @@ public class OdontologoWA {
         return this.odontologoBO.obtenerCompletoPorId(id);
     }
     
+    @WebMethod(operationName = "odontologo_listarTodoCompleto")
+    public ArrayList<Odontologo> odontologo_listarTodoCompleto() {
+        return this.odontologoBO.listarTodoCompleto();
+    }
+    
 }

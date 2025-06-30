@@ -39,6 +39,11 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
             return this.citaWAClient.cita_obtenerPorId(id);
         }
 
+        public cita cita_obtenerCompletoPorID(int id)
+        {
+            return this.citaWAClient.cita_obtenerCompletoPorId(id);
+        }
+
         public BindingList<cita> cita_listarTodos()
         {
             cita[] lista = this.citaWAClient.cita_listarTodos();

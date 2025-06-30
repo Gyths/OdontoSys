@@ -49,15 +49,15 @@ namespace OdontoSysWebApplication
 
                     if (!string.IsNullOrEmpty(telefono))
                     {
-                        //resultado = pacienteBO.paciente_buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
+                        resultado = pacienteBO.paciente_buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
                     }
                     else if (!string.IsNullOrEmpty(documento))
                     {
-                        //resultado = pacienteBO.paciente_buscarPorNombreApellido(nombre, apellido);
+                        resultado = pacienteBO.paciente_buscarPorNombreApellido(nombre, apellido);
                     }
                     else
                     {
-                        //resultado = pacienteBO.paciente_buscarPorNombreApellido(nombre, apellido);
+                        resultado = pacienteBO.paciente_buscarPorNombreApellido(nombre, apellido);
                     }
                 }
                 gvPacientes.DataSource = resultado;

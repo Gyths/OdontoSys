@@ -37,7 +37,7 @@
            CssClass=""
            Text=""></asp:Label>
         <asp:GridView ID="gvOdontologos" runat="server" CssClass="table table-striped mt-3" AutoGenerateColumns="false"
-            DataKeyNames="idOdontologo" EmptyDataText="No hay doctores registrados." Width="100%" OnRowDataBound="gvOdontologos_RowDataBound" OnRowCommand="gvOdontologo_RowCommand">
+            DataKeyNames="idOdontologo" EmptyDataText="No hay doctores registrados." Width="100%" OnRowCommand="gvOdontologo_RowCommand">
             <Columns>
                 <asp:BoundField DataField="nombre" HeaderText="Nombres" />
                 <asp:BoundField DataField="apellidos" HeaderText="Apellidos" />

@@ -71,4 +71,8 @@ public class OdontologoBO {
         return this.odontologoDAO.obtenerCompletoPorId(odontologo);
     }
     
+    public ArrayList<Odontologo> listarTodoCompleto(){
+        return this.odontologoDAO.listarTodoCompleto();
+    }
+    
 }
