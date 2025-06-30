@@ -18,12 +18,30 @@ namespace OdontoSysWebApplication
     public partial class gestionOdontologo : System.Web.UI.Page
     {
         private OdontologoWS.odontologo odontologoActual;
-        private OdontologoBO odontologoBO = new OdontologoBO();
-        private EspecialidadBO especialidadBO = new EspecialidadBO();  
-        private CitaBO citaBO = new CitaBO();
-        private PacienteBO pacienteBO = new PacienteBO();
-        private SalaBO salaBO = new SalaBO(); 
-        private TurnoBO turnoBO = new TurnoBO();
+        private OdontologoBO odontologoBO;
+        private EspecialidadBO especialidadBO ;  
+        private CitaBO citaBO ;
+        private PacienteBO pacienteBO;
+        private SalaBO salaBO ; 
+        private TurnoBO turnoBO ;
+
+        public OdontologoBO OdontologoBO { get => odontologoBO; set => odontologoBO = value; }
+        public EspecialidadBO EspecialidadBO { get => especialidadBO; set => especialidadBO = value; }
+        public CitaBO CitaBO { get => citaBO; set => citaBO = value; }
+        public PacienteBO PacienteBO { get => pacienteBO; set => pacienteBO = value; }
+        public SalaBO SalaBO { get => salaBO; set => salaBO = value; }
+        public TurnoBO TurnoBO { get => turnoBO; set => turnoBO = value; }
+
+        public gestionOdontologo()
+        {
+            this.OdontologoBO = new OdontologoBO();
+            this.EspecialidadBO = new EspecialidadBO();
+            this.CitaBO = new CitaBO();
+            this.PacienteBO = new PacienteBO();
+            this.SalaBO = new SalaBO();
+            this.TurnoBO = new TurnoBO();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["idOdontologoSeleccionado"] == null || !int.TryParse(Session["idOdontologoSeleccionado"].ToString(), out int idOdo))
@@ -43,7 +61,7 @@ namespace OdontoSysWebApplication
 
         private void CargarOdontologo(int id)
         {
-            odontologoActual = odontologoBO.odontologo_obtenerCompletoPorId(id);
+            odontologoActual = OdontologoBO.odontologo_obtenerCompletoPorId(id);
 
             txtNombre.Text = odontologoActual.nombre;
             txtApellido.Text = odontologoActual.apellidos;
@@ -89,7 +107,7 @@ namespace OdontoSysWebApplication
             {
                 try
                 {
-                    var original = odontologoBO.odontologo_obtenerPorId(id);
+                    var original = OdontologoBO.odontologo_obtenerPorId(id);
                     if (original != null)
                     {
                         if (Regex.IsMatch(txtTelefono.Text, @"^(9\d{8}|\d{3}-\d{4})$") &&
@@ -97,7 +115,7 @@ namespace OdontoSysWebApplication
                         {
                             original.correo = txtCorreo.Text;
                             original.telefono = txtTelefono.Text;
-                            odontologoBO.odontologo_modificar(original);
+                            OdontologoBO.odontologo_modificar(original);
                         }
                         else
                         {
@@ -143,10 +161,10 @@ namespace OdontoSysWebApplication
             DateTime desde = baseDate;
             DateTime hasta = baseDate;
 
-            var odontologoActual = odontologoBO.odontologo_obtenerPorId(idOdo);
+            var odontologoActual = OdontologoBO.odontologo_obtenerPorId(idOdo);
 
             try { 
-                var listaCitas = citaBO.cita_listarPorOdontologoFechas(odontologoActual.idOdontologo, desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"));
+                var listaCitas = CitaBO.cita_listarPorOdontologoFechas(odontologoActual.idOdontologo, desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"));
                 
                 foreach (var cita in listaCitas)
                 {
@@ -158,18 +176,24 @@ namespace OdontoSysWebApplication
             {
                 gvCitas.DataSource = null;
                 gvCitas.DataBind();
+
+                // Log en consola del servidor
+                System.Diagnostics.Debug.WriteLine("Error en CargarCitasOdontologo: " + e.ToString());
             }
 
         }
         private void CargarTurnos(int idOdo)
         {
             try { 
-                var listaTurnos = turnoBO.turno_listarPorOdontologo(idOdo);
+                var listaTurnos = TurnoBO.turno_listarPorOdontologo(idOdo);
                 gvTurnos.DataSource = listaTurnos;
                 gvTurnos.DataBind();
             }catch (Exception e) {
+                lblError.Text = "Ocurrió un error al cargar los turnos: " + e.Message;
+                lblError.Visible = true;
                 gvTurnos.DataSource=null;
                 gvTurnos.DataBind();
+                throw;
             }
         }
         protected void btnVolver_Click(object sender, EventArgs e)
@@ -202,9 +226,9 @@ namespace OdontoSysWebApplication
 
             foreach (int idCita in idsCitasCancelar)
             {
-                var cita = citaBO.cita_obtenerPorId(idCita);
+                var cita = CitaBO.cita_obtenerPorId(idCita);
                 cita.estado = CitaWS.estadoCita.CANCELADA;
-                citaBO.cita_modificar(cita);
+                CitaBO.cita_modificar(cita);
             }
             if (int.TryParse(Session["idOdontologoSeleccionado"].ToString(), out int idOdo))
             {

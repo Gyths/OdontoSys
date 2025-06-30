@@ -15,9 +15,20 @@ namespace OdontoSysWebApplication
     public partial class comprobanteCita : System.Web.UI.Page
     {
         private int idCita => int.Parse(Request.QueryString["idCita"]);
-        private CitaBO citaBO = new CitaBO();
-        private ComprobanteBO comprobanteBO = new ComprobanteBO();
-        private MetodoPagoBO metodoPagoBO = new MetodoPagoBO();
+        private CitaBO citaBO;
+        private ComprobanteBO comprobanteBO;
+        private MetodoPagoBO metodoPagoBO;
+        public CitaBO CitaBO { get => citaBO; set => citaBO = value; }
+        public ComprobanteBO ComprobanteBO { get => comprobanteBO; set => comprobanteBO = value; }
+        public MetodoPagoBO MetodoPagoBO { get => metodoPagoBO; set => metodoPagoBO = value; }
+
+        public comprobanteCita()
+        {
+            this.CitaBO = new CitaBO();
+            this.ComprobanteBO = new ComprobanteBO();
+            this.MetodoPagoBO = new MetodoPagoBO();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -28,7 +39,7 @@ namespace OdontoSysWebApplication
 
         protected void CargarComprobanteOCrearWizard()
         {
-            var cita = citaBO.cita_obtenerPorId(idCita);
+            var cita = CitaBO.cita_obtenerPorId(idCita);
             if (cita == null)
             {
                 lblMensaje.Text = "No se encontró la cita.";
@@ -37,11 +48,11 @@ namespace OdontoSysWebApplication
             }
             if (cita.estado == CitaWS.estadoCita.ATENDIDA)
             {
-                var comp = comprobanteBO.comprobante_obtenerPorId(cita.comprobante.idComprobante);
+                var comp = ComprobanteBO.comprobante_obtenerPorId(cita.comprobante.idComprobante);
                 lblFecha.Text = comp.fechaEmision.ToString();
                 lblHora.Text = comp.horaEmision.ToString();
                 lblTotal.Text = comp.total.ToString("C");
-                var metodoPago = metodoPagoBO.metodoPago_obtenerPorId(comp.metodoDePago.idMetodoPago);
+                var metodoPago = MetodoPagoBO.metodoPago_obtenerPorId(comp.metodoDePago.idMetodoPago);
                 lblMetodoPago.Text = metodoPago.nombre.ToString();
                 pnlDetalle.Visible = true;
                 btnGenerar.Visible = false;
@@ -62,7 +73,7 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                var metodos = metodoPagoBO.metodoPago_listarTodos();
+                var metodos = MetodoPagoBO.metodoPago_listarTodos();
 
                 ddlMetodoPago.DataSource = metodos;
                 ddlMetodoPago.DataTextField = "nombre";
@@ -71,6 +82,10 @@ namespace OdontoSysWebApplication
             }
             catch (Exception ex)
             {
+                ddlMetodoPago.DataSource = null;
+                ddlMetodoPago.DataBind();
+
+                System.Diagnostics.Debug.WriteLine("Error en CargarMetodosPago: " + ex.ToString());
                 throw;
             }
         }
@@ -98,21 +113,22 @@ namespace OdontoSysWebApplication
                     total = 0.0,
                 };
 
-                int idComprobante = comprobanteBO.comprobante_insertar(comprobante);   // devuelve PK
+                int idComprobante = ComprobanteBO.comprobante_insertar(comprobante);   // devuelve PK
 
-                var cita = citaBO.cita_obtenerPorId(idCita);
+                var cita = CitaBO.cita_obtenerPorId(idCita);
                 cita.estado = CitaWS.estadoCita.ATENDIDA;
-                citaBO.cita_modificar(cita);
+                CitaBO.cita_modificar(cita);
            
-                comprobanteBO.comprobante_actualizarTotal(cita.idCita);
+                ComprobanteBO.comprobante_actualizarTotal(cita.idCita);
                 lblMensaje.Text = "Comprobante generado correctamente.";
                 lblMensaje.CssClass = "text-success";
             }
             catch (Exception ex)
             {
-                lblMensaje.Text = "No se pudo generar el comprobante.";
+                lblMensaje.Text = "No se pudo generar el comprobante. Intenta nuevamente.";
                 lblMensaje.CssClass = "text-danger";
-                // log(ex);
+
+                System.Diagnostics.Debug.WriteLine("Error al generar comprobante: " + ex.ToString());
             }
 
             CargarComprobanteOCrearWizard();
@@ -126,11 +142,11 @@ namespace OdontoSysWebApplication
             try
             {
                 // Obtener datos del comprobante
-                var cita = citaBO.cita_obtenerPorId(idCita);
+                var cita = CitaBO.cita_obtenerPorId(idCita);
 
-                var comp = comprobanteBO.comprobante_obtenerPorId(cita.comprobante.idComprobante);
+                var comp = ComprobanteBO.comprobante_obtenerPorId(cita.comprobante.idComprobante);
 
-                var metodoPago = metodoPagoBO.metodoPago_obtenerPorId(comp.metodoDePago.idMetodoPago);
+                var metodoPago = MetodoPagoBO.metodoPago_obtenerPorId(comp.metodoDePago.idMetodoPago);
 
                 // Crear el PDF
                 GenerarPDF(comp, metodoPago, cita);

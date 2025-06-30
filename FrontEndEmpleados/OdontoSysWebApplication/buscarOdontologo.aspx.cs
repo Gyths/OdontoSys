@@ -11,8 +11,18 @@ namespace OdontoSysWebApplication
 {
     public partial class buscarOdontologo : System.Web.UI.Page
     {
-        private OdontologoBO odonlogoBO = new OdontologoBO();
-        private EspecialidadBO especialidadBO = new EspecialidadBO();
+        private OdontologoBO odonlogoBO;
+        private EspecialidadBO especialidadBO;
+
+        public OdontologoBO OdonlogoBO { get => odonlogoBO; set => odonlogoBO = value; }
+        public EspecialidadBO EspecialidadBO { get => especialidadBO; set => especialidadBO = value; }
+
+        public buscarOdontologo()
+        {
+            this.OdonlogoBO = new OdontologoBO();
+            this.EspecialidadBO = new EspecialidadBO();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -24,7 +34,7 @@ namespace OdontoSysWebApplication
         private void CargarEspecialidades()
         {
             // Llenar combo de Especialidad
-            ddlEspecialidad.DataSource = especialidadBO.especialidad_listarTodos();
+            ddlEspecialidad.DataSource = EspecialidadBO.especialidad_listarTodos();
             ddlEspecialidad.DataTextField = "nombre";
             ddlEspecialidad.DataValueField = "idEspecialidad";
             ddlEspecialidad.DataBind();
@@ -45,19 +55,19 @@ namespace OdontoSysWebApplication
                 if (hayEspecialidad)
                 {
                     int idEsp = int.Parse(ddlEspecialidad.SelectedValue);
-                    lista = odonlogoBO.odontologo_listarPorEspecialidad(idEsp);
+                    lista = OdonlogoBO.odontologo_listarPorEspecialidad(idEsp);
                 }
                 else if (!hayNombre && !hayApellido && !hayDocumento)
                 {
-                    lista = odonlogoBO.odontologo_listarTodoCompleto();
+                    lista = OdonlogoBO.odontologo_listarTodoCompleto();
                 }
                 else if (hayNombre && hayApellido && !hayDocumento)
                 {
-                    lista = odonlogoBO.odontologo_buscarPorNombreApellido(txtNombre.Text.Trim(), txtApellidos.Text.Trim());
+                    lista = OdonlogoBO.odontologo_buscarPorNombreApellido(txtNombre.Text.Trim(), txtApellidos.Text.Trim());
                 }
                 else if (hayNombre && hayApellido && hayDocumento)
                 {
-                    lista = odonlogoBO.odontologo_buscarPorNombreApellidoDocumento(txtNombre.Text.Trim(), txtApellidos.Text.Trim(), txtDocumento.Text.Trim());
+                    lista = OdonlogoBO.odontologo_buscarPorNombreApellidoDocumento(txtNombre.Text.Trim(), txtApellidos.Text.Trim(), txtDocumento.Text.Trim());
                 }
                 else
                 {
@@ -70,6 +80,14 @@ namespace OdontoSysWebApplication
             }
             catch (Exception ex)
             {
+                lblMensaje.Text = "Error: " + ex.Message;
+                lblMensaje.CssClass = "text-danger";
+
+                gvOdontologos.DataSource = null;
+                gvOdontologos.DataBind();
+
+                System.Diagnostics.Debug.WriteLine("Excepción capturada en btnBuscar_Click: " + ex.ToString());
+
                 throw;
             }
             gvOdontologos.DataSource = lista?.ToList();

@@ -11,7 +11,15 @@ namespace OdontoSysWebApplication
 {
     public partial class buscarPaciente : System.Web.UI.Page
     {
-        private PacienteBO pacienteBO = new PacienteBO();
+        private PacienteBO pacienteBO ;
+
+        public PacienteBO PacienteBO { get => pacienteBO; set => pacienteBO = value; }
+
+        public buscarPaciente()
+        {
+            this.PacienteBO = new PacienteBO();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -32,10 +40,10 @@ namespace OdontoSysWebApplication
             try
             {
                 BindingList<PacienteWS.paciente> resultado;
-                 resultado = pacienteBO.paciente_listarTodos();
+                 resultado = PacienteBO.paciente_listarTodos();
                 if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(apellido) && string.IsNullOrEmpty(telefono) && string.IsNullOrEmpty(documento))
                 {
-                    resultado = pacienteBO.paciente_listarTodos();
+                    resultado = PacienteBO.paciente_listarTodos();
                 }
                 else
                 {
@@ -49,15 +57,15 @@ namespace OdontoSysWebApplication
 
                     if (!string.IsNullOrEmpty(telefono))
                     {
-                        resultado = pacienteBO.paciente_buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
+                        resultado = PacienteBO.paciente_buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
                     }
                     else if (!string.IsNullOrEmpty(documento))
                     {
-                        resultado = pacienteBO.paciente_buscarPorNombreApellido(nombre, apellido);
+                        resultado = PacienteBO.paciente_buscarPorNombreApellido(nombre, apellido);
                     }
                     else
                     {
-                        resultado = pacienteBO.paciente_buscarPorNombreApellido(nombre, apellido);
+                        resultado = PacienteBO.paciente_buscarPorNombreApellido(nombre, apellido);
                     }
                 }
                 gvPacientes.DataSource = resultado;
