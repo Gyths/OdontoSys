@@ -41,18 +41,14 @@ namespace OdontoSysWebApplication
             }
         }
 
-
-
         private void CargarOdontologo(int id)
         {
-            odontologoActual = odontologoBO.odontologo_obtenerPorId(id);
-
+            odontologoActual = odontologoBO.odontologo_obtenerCompletoPorId(id);
 
             txtNombre.Text = odontologoActual.nombre;
             txtApellido.Text = odontologoActual.apellidos;
             txtDocumento.Text = odontologoActual.numeroDocumento;
-            var especialidadOd = especialidadBO.especialidad_obtenerPorId(odontologoActual.especialidad.idEspecialidad);
-            txtEspecialidad.Text = especialidadOd.nombre;
+            txtEspecialidad.Text = odontologoActual.especialidad.nombre;
             txtCorreo.Text = odontologoActual.correo;
             txtTelefono.Text = odontologoActual.telefono;
             txtUsuario.Text = odontologoActual.nombreUsuario;
@@ -105,7 +101,6 @@ namespace OdontoSysWebApplication
                         }
                         else
                         {
-
                             throw new Exception("El numero de telefono o correo son incorrectos");
                         }
 

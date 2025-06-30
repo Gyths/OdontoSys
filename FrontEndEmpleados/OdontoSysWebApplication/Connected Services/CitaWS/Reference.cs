@@ -16,60 +16,18 @@ namespace OdontoSysWebApplication.CitaWS {
     public interface CitaWA {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoReques" +
-            "t", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoRespon" +
-            "se")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerCompletoPorIdReque" +
+            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerCompletoPorIdRespo" +
+            "nse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoResponse cita_listarPorOdontologo(OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest request);
+        OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdResponse cita_obtenerCompletoPorId(OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoReques" +
-            "t", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoRespon" +
-            "se")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoResponse> cita_listarPorOdontologoAsync(OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteResponse" +
-            "")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse cita_listarPorPaciente(OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteResponse" +
-            "")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse> cita_listarPorPacienteAsync(OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.CitaWS.cita_modificarResponse cita_modificar(OdontoSysWebApplication.CitaWS.cita_modificarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarResponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_modificarResponse> cita_modificarAsync(OdontoSysWebApplication.CitaWS.cita_modificarRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.CitaWS.cita_obtenerPorIdResponse cita_obtenerPorId(OdontoSysWebApplication.CitaWS.cita_obtenerPorIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdResponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_obtenerPorIdResponse> cita_obtenerPorIdAsync(OdontoSysWebApplication.CitaWS.cita_obtenerPorIdRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_insertarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_insertarResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.CitaWS.cita_insertarResponse cita_insertar(OdontoSysWebApplication.CitaWS.cita_insertarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_insertarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_insertarResponse")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_insertarResponse> cita_insertarAsync(OdontoSysWebApplication.CitaWS.cita_insertarRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerCompletoPorIdReque" +
+            "st", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerCompletoPorIdRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdResponse> cita_obtenerCompletoPorIdAsync(OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_eliminarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_eliminarResponse")]
@@ -92,18 +50,50 @@ namespace OdontoSysWebApplication.CitaWS {
         System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarTodosResponse> cita_listarTodosAsync(OdontoSysWebApplication.CitaWS.cita_listarTodosRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechas" +
-            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechas" +
-            "Response")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoFechasResponse cita_listarPorOdontologoFechas(OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoFechasRequest request);
+        OdontoSysWebApplication.CitaWS.cita_obtenerPorIdResponse cita_obtenerPorId(OdontoSysWebApplication.CitaWS.cita_obtenerPorIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechas" +
-            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechas" +
-            "Response")]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoFechasResponse> cita_listarPorOdontologoFechasAsync(OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoFechasRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_obtenerPorIdResponse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_obtenerPorIdResponse> cita_obtenerPorIdAsync(OdontoSysWebApplication.CitaWS.cita_obtenerPorIdRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_insertarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_insertarResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.CitaWS.cita_insertarResponse cita_insertar(OdontoSysWebApplication.CitaWS.cita_insertarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_insertarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_insertarResponse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_insertarResponse> cita_insertarAsync(OdontoSysWebApplication.CitaWS.cita_insertarRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteResponse" +
+            "")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse cita_listarPorPaciente(OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteResponse" +
+            "")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse> cita_listarPorPacienteAsync(OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoReques" +
+            "t", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoRespon" +
+            "se")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoResponse cita_listarPorOdontologo(OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoReques" +
+            "t", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoRespon" +
+            "se")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoResponse> cita_listarPorOdontologoAsync(OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteFechasRe" +
@@ -118,6 +108,30 @@ namespace OdontoSysWebApplication.CitaWS {
             "quest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorPacienteFechasRe" +
             "sponse")]
         System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasResponse> cita_listarPorPacienteFechasAsync(OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechas" +
+            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechas" +
+            "Response")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoFechasResponse cita_listarPorOdontologoFechas(OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoFechasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechas" +
+            "Request", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_listarPorOdontologoFechas" +
+            "Response")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoFechasResponse> cita_listarPorOdontologoFechasAsync(OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoFechasRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        OdontoSysWebApplication.CitaWS.cita_modificarResponse cita_modificar(OdontoSysWebApplication.CitaWS.cita_modificarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarRequest", ReplyAction="http://webapplication.odontosys.edu.pucp.pe/CitaWA/cita_modificarResponse")]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_modificarResponse> cita_modificarAsync(OdontoSysWebApplication.CitaWS.cita_modificarRequest request);
     }
     
     /// <remarks/>
@@ -1407,35 +1421,35 @@ namespace OdontoSysWebApplication.CitaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarPorOdontologo", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class cita_listarPorOdontologoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_obtenerCompletoPorId", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_obtenerCompletoPorIdRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idOdontologo;
+        public int id;
         
-        public cita_listarPorOdontologoRequest() {
+        public cita_obtenerCompletoPorIdRequest() {
         }
         
-        public cita_listarPorOdontologoRequest(int idOdontologo) {
-            this.idOdontologo = idOdontologo;
+        public cita_obtenerCompletoPorIdRequest(int id) {
+            this.id = id;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarPorOdontologoResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class cita_listarPorOdontologoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_obtenerCompletoPorIdResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_obtenerCompletoPorIdResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.CitaWS.cita[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.CitaWS.cita @return;
         
-        public cita_listarPorOdontologoResponse() {
+        public cita_obtenerCompletoPorIdResponse() {
         }
         
-        public cita_listarPorOdontologoResponse(OdontoSysWebApplication.CitaWS.cita[] @return) {
+        public cita_obtenerCompletoPorIdResponse(OdontoSysWebApplication.CitaWS.cita @return) {
             this.@return = @return;
         }
     }
@@ -1443,53 +1457,17 @@ namespace OdontoSysWebApplication.CitaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarPorPaciente", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class cita_listarPorPacienteRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPaciente;
-        
-        public cita_listarPorPacienteRequest() {
-        }
-        
-        public cita_listarPorPacienteRequest(int idPaciente) {
-            this.idPaciente = idPaciente;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarPorPacienteResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class cita_listarPorPacienteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.CitaWS.cita[] @return;
-        
-        public cita_listarPorPacienteResponse() {
-        }
-        
-        public cita_listarPorPacienteResponse(OdontoSysWebApplication.CitaWS.cita[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class cita_modificarRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_eliminarRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public OdontoSysWebApplication.CitaWS.cita cita;
         
-        public cita_modificarRequest() {
+        public cita_eliminarRequest() {
         }
         
-        public cita_modificarRequest(OdontoSysWebApplication.CitaWS.cita cita) {
+        public cita_eliminarRequest(OdontoSysWebApplication.CitaWS.cita cita) {
             this.cita = cita;
         }
     }
@@ -1497,17 +1475,45 @@ namespace OdontoSysWebApplication.CitaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class cita_modificarResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_eliminarResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public cita_modificarResponse() {
+        public cita_eliminarResponse() {
         }
         
-        public cita_modificarResponse(int @return) {
+        public cita_eliminarResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_listarTodosRequest {
+        
+        public cita_listarTodosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_listarTodosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.CitaWS.cita[] @return;
+        
+        public cita_listarTodosResponse() {
+        }
+        
+        public cita_listarTodosResponse(OdontoSysWebApplication.CitaWS.cita[] @return) {
             this.@return = @return;
         }
     }
@@ -1587,35 +1593,35 @@ namespace OdontoSysWebApplication.CitaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_eliminar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class cita_eliminarRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarPorPaciente", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_listarPorPacienteRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.CitaWS.cita cita;
+        public int idPaciente;
         
-        public cita_eliminarRequest() {
+        public cita_listarPorPacienteRequest() {
         }
         
-        public cita_eliminarRequest(OdontoSysWebApplication.CitaWS.cita cita) {
-            this.cita = cita;
+        public cita_listarPorPacienteRequest(int idPaciente) {
+            this.idPaciente = idPaciente;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_eliminarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class cita_eliminarResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarPorPacienteResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_listarPorPacienteResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.CitaWS.cita[] @return;
         
-        public cita_eliminarResponse() {
+        public cita_listarPorPacienteResponse() {
         }
         
-        public cita_eliminarResponse(int @return) {
+        public cita_listarPorPacienteResponse(OdontoSysWebApplication.CitaWS.cita[] @return) {
             this.@return = @return;
         }
     }
@@ -1623,27 +1629,81 @@ namespace OdontoSysWebApplication.CitaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarTodos", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class cita_listarTodosRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarPorOdontologo", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_listarPorOdontologoRequest {
         
-        public cita_listarTodosRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idOdontologo;
+        
+        public cita_listarPorOdontologoRequest() {
+        }
+        
+        public cita_listarPorOdontologoRequest(int idOdontologo) {
+            this.idOdontologo = idOdontologo;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarTodosResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class cita_listarTodosResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarPorOdontologoResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_listarPorOdontologoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public OdontoSysWebApplication.CitaWS.cita[] @return;
         
-        public cita_listarTodosResponse() {
+        public cita_listarPorOdontologoResponse() {
         }
         
-        public cita_listarTodosResponse(OdontoSysWebApplication.CitaWS.cita[] @return) {
+        public cita_listarPorOdontologoResponse(OdontoSysWebApplication.CitaWS.cita[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarPorPacienteFechas", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_listarPorPacienteFechasRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idPaciente;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string fechaInicio;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string fechaFin;
+        
+        public cita_listarPorPacienteFechasRequest() {
+        }
+        
+        public cita_listarPorPacienteFechasRequest(int idPaciente, string fechaInicio, string fechaFin) {
+            this.idPaciente = idPaciente;
+            this.fechaInicio = fechaInicio;
+            this.fechaFin = fechaFin;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarPorPacienteFechasResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_listarPorPacienteFechasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public OdontoSysWebApplication.CitaWS.cita[] @return;
+        
+        public cita_listarPorPacienteFechasResponse() {
+        }
+        
+        public cita_listarPorPacienteFechasResponse(OdontoSysWebApplication.CitaWS.cita[] @return) {
             this.@return = @return;
         }
     }
@@ -1697,45 +1757,35 @@ namespace OdontoSysWebApplication.CitaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarPorPacienteFechas", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class cita_listarPorPacienteFechasRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_modificar", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_modificarRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPaciente;
+        public OdontoSysWebApplication.CitaWS.cita cita;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string fechaInicio;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string fechaFin;
-        
-        public cita_listarPorPacienteFechasRequest() {
+        public cita_modificarRequest() {
         }
         
-        public cita_listarPorPacienteFechasRequest(int idPaciente, string fechaInicio, string fechaFin) {
-            this.idPaciente = idPaciente;
-            this.fechaInicio = fechaInicio;
-            this.fechaFin = fechaFin;
+        public cita_modificarRequest(OdontoSysWebApplication.CitaWS.cita cita) {
+            this.cita = cita;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_listarPorPacienteFechasResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
-    public partial class cita_listarPorPacienteFechasResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="cita_modificarResponse", WrapperNamespace="http://webapplication.odontosys.edu.pucp.pe/", IsWrapped=true)]
+    public partial class cita_modificarResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webapplication.odontosys.edu.pucp.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public OdontoSysWebApplication.CitaWS.cita[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
         
-        public cita_listarPorPacienteFechasResponse() {
+        public cita_modificarResponse() {
         }
         
-        public cita_listarPorPacienteFechasResponse(OdontoSysWebApplication.CitaWS.cita[] @return) {
+        public cita_modificarResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -1768,72 +1818,70 @@ namespace OdontoSysWebApplication.CitaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoResponse OdontoSysWebApplication.CitaWS.CitaWA.cita_listarPorOdontologo(OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest request) {
-            return base.Channel.cita_listarPorOdontologo(request);
+        OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdResponse OdontoSysWebApplication.CitaWS.CitaWA.cita_obtenerCompletoPorId(OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdRequest request) {
+            return base.Channel.cita_obtenerCompletoPorId(request);
         }
         
-        public OdontoSysWebApplication.CitaWS.cita[] cita_listarPorOdontologo(int idOdontologo) {
-            OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest();
-            inValue.idOdontologo = idOdontologo;
-            OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoResponse retVal = ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarPorOdontologo(inValue);
+        public OdontoSysWebApplication.CitaWS.cita cita_obtenerCompletoPorId(int id) {
+            OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdRequest inValue = new OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdRequest();
+            inValue.id = id;
+            OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdResponse retVal = ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_obtenerCompletoPorId(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoResponse> OdontoSysWebApplication.CitaWS.CitaWA.cita_listarPorOdontologoAsync(OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest request) {
-            return base.Channel.cita_listarPorOdontologoAsync(request);
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdResponse> OdontoSysWebApplication.CitaWS.CitaWA.cita_obtenerCompletoPorIdAsync(OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdRequest request) {
+            return base.Channel.cita_obtenerCompletoPorIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoResponse> cita_listarPorOdontologoAsync(int idOdontologo) {
-            OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest();
-            inValue.idOdontologo = idOdontologo;
-            return ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarPorOdontologoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse OdontoSysWebApplication.CitaWS.CitaWA.cita_listarPorPaciente(OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest request) {
-            return base.Channel.cita_listarPorPaciente(request);
-        }
-        
-        public OdontoSysWebApplication.CitaWS.cita[] cita_listarPorPaciente(int idPaciente) {
-            OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest();
-            inValue.idPaciente = idPaciente;
-            OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse retVal = ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarPorPaciente(inValue);
-            return retVal.@return;
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdResponse> cita_obtenerCompletoPorIdAsync(int id) {
+            OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdRequest inValue = new OdontoSysWebApplication.CitaWS.cita_obtenerCompletoPorIdRequest();
+            inValue.id = id;
+            return ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_obtenerCompletoPorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse> OdontoSysWebApplication.CitaWS.CitaWA.cita_listarPorPacienteAsync(OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest request) {
-            return base.Channel.cita_listarPorPacienteAsync(request);
+        OdontoSysWebApplication.CitaWS.cita_eliminarResponse OdontoSysWebApplication.CitaWS.CitaWA.cita_eliminar(OdontoSysWebApplication.CitaWS.cita_eliminarRequest request) {
+            return base.Channel.cita_eliminar(request);
         }
         
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse> cita_listarPorPacienteAsync(int idPaciente) {
-            OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest();
-            inValue.idPaciente = idPaciente;
-            return ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarPorPacienteAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.CitaWS.cita_modificarResponse OdontoSysWebApplication.CitaWS.CitaWA.cita_modificar(OdontoSysWebApplication.CitaWS.cita_modificarRequest request) {
-            return base.Channel.cita_modificar(request);
-        }
-        
-        public int cita_modificar(OdontoSysWebApplication.CitaWS.cita cita) {
-            OdontoSysWebApplication.CitaWS.cita_modificarRequest inValue = new OdontoSysWebApplication.CitaWS.cita_modificarRequest();
+        public int cita_eliminar(OdontoSysWebApplication.CitaWS.cita cita) {
+            OdontoSysWebApplication.CitaWS.cita_eliminarRequest inValue = new OdontoSysWebApplication.CitaWS.cita_eliminarRequest();
             inValue.cita = cita;
-            OdontoSysWebApplication.CitaWS.cita_modificarResponse retVal = ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_modificar(inValue);
+            OdontoSysWebApplication.CitaWS.cita_eliminarResponse retVal = ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_eliminar(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_modificarResponse> OdontoSysWebApplication.CitaWS.CitaWA.cita_modificarAsync(OdontoSysWebApplication.CitaWS.cita_modificarRequest request) {
-            return base.Channel.cita_modificarAsync(request);
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_eliminarResponse> OdontoSysWebApplication.CitaWS.CitaWA.cita_eliminarAsync(OdontoSysWebApplication.CitaWS.cita_eliminarRequest request) {
+            return base.Channel.cita_eliminarAsync(request);
         }
         
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_modificarResponse> cita_modificarAsync(OdontoSysWebApplication.CitaWS.cita cita) {
-            OdontoSysWebApplication.CitaWS.cita_modificarRequest inValue = new OdontoSysWebApplication.CitaWS.cita_modificarRequest();
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_eliminarResponse> cita_eliminarAsync(OdontoSysWebApplication.CitaWS.cita cita) {
+            OdontoSysWebApplication.CitaWS.cita_eliminarRequest inValue = new OdontoSysWebApplication.CitaWS.cita_eliminarRequest();
             inValue.cita = cita;
-            return ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_modificarAsync(inValue);
+            return ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_eliminarAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysWebApplication.CitaWS.cita_listarTodosResponse OdontoSysWebApplication.CitaWS.CitaWA.cita_listarTodos(OdontoSysWebApplication.CitaWS.cita_listarTodosRequest request) {
+            return base.Channel.cita_listarTodos(request);
+        }
+        
+        public OdontoSysWebApplication.CitaWS.cita[] cita_listarTodos() {
+            OdontoSysWebApplication.CitaWS.cita_listarTodosRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarTodosRequest();
+            OdontoSysWebApplication.CitaWS.cita_listarTodosResponse retVal = ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarTodos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarTodosResponse> OdontoSysWebApplication.CitaWS.CitaWA.cita_listarTodosAsync(OdontoSysWebApplication.CitaWS.cita_listarTodosRequest request) {
+            return base.Channel.cita_listarTodosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarTodosResponse> cita_listarTodosAsync() {
+            OdontoSysWebApplication.CitaWS.cita_listarTodosRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarTodosRequest();
+            return ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarTodosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1883,47 +1931,76 @@ namespace OdontoSysWebApplication.CitaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.CitaWS.cita_eliminarResponse OdontoSysWebApplication.CitaWS.CitaWA.cita_eliminar(OdontoSysWebApplication.CitaWS.cita_eliminarRequest request) {
-            return base.Channel.cita_eliminar(request);
+        OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse OdontoSysWebApplication.CitaWS.CitaWA.cita_listarPorPaciente(OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest request) {
+            return base.Channel.cita_listarPorPaciente(request);
         }
         
-        public int cita_eliminar(OdontoSysWebApplication.CitaWS.cita cita) {
-            OdontoSysWebApplication.CitaWS.cita_eliminarRequest inValue = new OdontoSysWebApplication.CitaWS.cita_eliminarRequest();
-            inValue.cita = cita;
-            OdontoSysWebApplication.CitaWS.cita_eliminarResponse retVal = ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_eliminar(inValue);
+        public OdontoSysWebApplication.CitaWS.cita[] cita_listarPorPaciente(int idPaciente) {
+            OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest();
+            inValue.idPaciente = idPaciente;
+            OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse retVal = ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarPorPaciente(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_eliminarResponse> OdontoSysWebApplication.CitaWS.CitaWA.cita_eliminarAsync(OdontoSysWebApplication.CitaWS.cita_eliminarRequest request) {
-            return base.Channel.cita_eliminarAsync(request);
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse> OdontoSysWebApplication.CitaWS.CitaWA.cita_listarPorPacienteAsync(OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest request) {
+            return base.Channel.cita_listarPorPacienteAsync(request);
         }
         
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_eliminarResponse> cita_eliminarAsync(OdontoSysWebApplication.CitaWS.cita cita) {
-            OdontoSysWebApplication.CitaWS.cita_eliminarRequest inValue = new OdontoSysWebApplication.CitaWS.cita_eliminarRequest();
-            inValue.cita = cita;
-            return ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_eliminarAsync(inValue);
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorPacienteResponse> cita_listarPorPacienteAsync(int idPaciente) {
+            OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarPorPacienteRequest();
+            inValue.idPaciente = idPaciente;
+            return ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarPorPacienteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.CitaWS.cita_listarTodosResponse OdontoSysWebApplication.CitaWS.CitaWA.cita_listarTodos(OdontoSysWebApplication.CitaWS.cita_listarTodosRequest request) {
-            return base.Channel.cita_listarTodos(request);
+        OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoResponse OdontoSysWebApplication.CitaWS.CitaWA.cita_listarPorOdontologo(OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest request) {
+            return base.Channel.cita_listarPorOdontologo(request);
         }
         
-        public OdontoSysWebApplication.CitaWS.cita[] cita_listarTodos() {
-            OdontoSysWebApplication.CitaWS.cita_listarTodosRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarTodosRequest();
-            OdontoSysWebApplication.CitaWS.cita_listarTodosResponse retVal = ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarTodos(inValue);
+        public OdontoSysWebApplication.CitaWS.cita[] cita_listarPorOdontologo(int idOdontologo) {
+            OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest();
+            inValue.idOdontologo = idOdontologo;
+            OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoResponse retVal = ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarPorOdontologo(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarTodosResponse> OdontoSysWebApplication.CitaWS.CitaWA.cita_listarTodosAsync(OdontoSysWebApplication.CitaWS.cita_listarTodosRequest request) {
-            return base.Channel.cita_listarTodosAsync(request);
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoResponse> OdontoSysWebApplication.CitaWS.CitaWA.cita_listarPorOdontologoAsync(OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest request) {
+            return base.Channel.cita_listarPorOdontologoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarTodosResponse> cita_listarTodosAsync() {
-            OdontoSysWebApplication.CitaWS.cita_listarTodosRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarTodosRequest();
-            return ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarTodosAsync(inValue);
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoResponse> cita_listarPorOdontologoAsync(int idOdontologo) {
+            OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarPorOdontologoRequest();
+            inValue.idOdontologo = idOdontologo;
+            return ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarPorOdontologoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasResponse OdontoSysWebApplication.CitaWS.CitaWA.cita_listarPorPacienteFechas(OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasRequest request) {
+            return base.Channel.cita_listarPorPacienteFechas(request);
+        }
+        
+        public OdontoSysWebApplication.CitaWS.cita[] cita_listarPorPacienteFechas(int idPaciente, string fechaInicio, string fechaFin) {
+            OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasRequest();
+            inValue.idPaciente = idPaciente;
+            inValue.fechaInicio = fechaInicio;
+            inValue.fechaFin = fechaFin;
+            OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasResponse retVal = ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarPorPacienteFechas(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasResponse> OdontoSysWebApplication.CitaWS.CitaWA.cita_listarPorPacienteFechasAsync(OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasRequest request) {
+            return base.Channel.cita_listarPorPacienteFechasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasResponse> cita_listarPorPacienteFechasAsync(int idPaciente, string fechaInicio, string fechaFin) {
+            OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasRequest();
+            inValue.idPaciente = idPaciente;
+            inValue.fechaInicio = fechaInicio;
+            inValue.fechaFin = fechaFin;
+            return ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarPorPacienteFechasAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1954,30 +2031,26 @@ namespace OdontoSysWebApplication.CitaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasResponse OdontoSysWebApplication.CitaWS.CitaWA.cita_listarPorPacienteFechas(OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasRequest request) {
-            return base.Channel.cita_listarPorPacienteFechas(request);
+        OdontoSysWebApplication.CitaWS.cita_modificarResponse OdontoSysWebApplication.CitaWS.CitaWA.cita_modificar(OdontoSysWebApplication.CitaWS.cita_modificarRequest request) {
+            return base.Channel.cita_modificar(request);
         }
         
-        public OdontoSysWebApplication.CitaWS.cita[] cita_listarPorPacienteFechas(int idPaciente, string fechaInicio, string fechaFin) {
-            OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasRequest();
-            inValue.idPaciente = idPaciente;
-            inValue.fechaInicio = fechaInicio;
-            inValue.fechaFin = fechaFin;
-            OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasResponse retVal = ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarPorPacienteFechas(inValue);
+        public int cita_modificar(OdontoSysWebApplication.CitaWS.cita cita) {
+            OdontoSysWebApplication.CitaWS.cita_modificarRequest inValue = new OdontoSysWebApplication.CitaWS.cita_modificarRequest();
+            inValue.cita = cita;
+            OdontoSysWebApplication.CitaWS.cita_modificarResponse retVal = ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_modificar(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasResponse> OdontoSysWebApplication.CitaWS.CitaWA.cita_listarPorPacienteFechasAsync(OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasRequest request) {
-            return base.Channel.cita_listarPorPacienteFechasAsync(request);
+        System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_modificarResponse> OdontoSysWebApplication.CitaWS.CitaWA.cita_modificarAsync(OdontoSysWebApplication.CitaWS.cita_modificarRequest request) {
+            return base.Channel.cita_modificarAsync(request);
         }
         
-        public System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasResponse> cita_listarPorPacienteFechasAsync(int idPaciente, string fechaInicio, string fechaFin) {
-            OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasRequest inValue = new OdontoSysWebApplication.CitaWS.cita_listarPorPacienteFechasRequest();
-            inValue.idPaciente = idPaciente;
-            inValue.fechaInicio = fechaInicio;
-            inValue.fechaFin = fechaFin;
-            return ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_listarPorPacienteFechasAsync(inValue);
+        public System.Threading.Tasks.Task<OdontoSysWebApplication.CitaWS.cita_modificarResponse> cita_modificarAsync(OdontoSysWebApplication.CitaWS.cita cita) {
+            OdontoSysWebApplication.CitaWS.cita_modificarRequest inValue = new OdontoSysWebApplication.CitaWS.cita_modificarRequest();
+            inValue.cita = cita;
+            return ((OdontoSysWebApplication.CitaWS.CitaWA)(this)).cita_modificarAsync(inValue);
         }
     }
 }

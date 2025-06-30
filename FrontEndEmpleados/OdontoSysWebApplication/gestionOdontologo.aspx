@@ -195,7 +195,7 @@
            CssClass="alert" Visible="false" />
 
         <div class="mt-4 action-buttons">
-            <asp:LinkButton ID="btnEditar" runat="server" Text="<i class='fas fa-pencil-alt me-1'></i> Editar" CssClass="btn btn-warning" OnClick="btnEditar_Click" />
+            <asp:LinkButton ID="btnEditar" runat="server" Text="<i class='fas fa-pencil-alt me-1'></i> Editar" CssClass="btn btn-outline-primary" OnClick="btnEditar_Click" />
             <asp:LinkButton ID="btnGuardar" runat="server" Text="<i class='fas fa-save me-1'></i> Guardar Cambios" CssClass="btn btn-success" Visible="false" OnClick="btnGuardar_Click" />
             <asp:LinkButton ID="btnVolver" runat="server" Text="<i class='fas fa-arrow-left me-1'></i> Volver" CssClass="btn btn-secondary ms-auto" OnClick="btnVolver_Click" />
         </div>

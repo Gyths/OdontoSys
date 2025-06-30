@@ -109,6 +109,12 @@ public class PacienteDAOImpl extends DAOImplBase implements PacienteDAO {
 
     
     @Override
+    protected void agregarObjetoCompletoALaLista(List lista) throws SQLException {
+        this.instanciarObjetoCompletoDelResultSet();
+        lista.add(this.paciente);
+    }
+    
+    @Override
     public Integer insertar(Paciente paciente) {
        this.paciente=paciente;
        return super.insertar();

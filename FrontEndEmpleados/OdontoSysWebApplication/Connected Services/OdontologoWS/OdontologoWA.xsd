@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://webapplication.odontosys.edu.pucp.pe/" targetNamespace="http://webapplication.odontosys.edu.pucp.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="odontologo_buscarPorNombreApellido" type="tns:odontologo_buscarPorNombreApellido" />
+  <xs:element name="odontologo_buscarPorNombreApellidoDocumento" type="tns:odontologo_buscarPorNombreApellidoDocumento" />
+  <xs:element name="odontologo_buscarPorNombreApellidoDocumentoResponse" type="tns:odontologo_buscarPorNombreApellidoDocumentoResponse" />
+  <xs:element name="odontologo_buscarPorNombreApellidoResponse" type="tns:odontologo_buscarPorNombreApellidoResponse" />
   <xs:element name="odontologo_eliminar" type="tns:odontologo_eliminar" />
   <xs:element name="odontologo_eliminarResponse" type="tns:odontologo_eliminarResponse" />
   <xs:element name="odontologo_insertar" type="tns:odontologo_insertar" />
   <xs:element name="odontologo_insertarResponse" type="tns:odontologo_insertarResponse" />
   <xs:element name="odontologo_listarPorEspecialidad" type="tns:odontologo_listarPorEspecialidad" />
   <xs:element name="odontologo_listarPorEspecialidadResponse" type="tns:odontologo_listarPorEspecialidadResponse" />
+  <xs:element name="odontologo_listarTodoCompleto" type="tns:odontologo_listarTodoCompleto" />
+  <xs:element name="odontologo_listarTodoCompletoResponse" type="tns:odontologo_listarTodoCompletoResponse" />
   <xs:element name="odontologo_listarTodos" type="tns:odontologo_listarTodos" />
   <xs:element name="odontologo_listarTodosResponse" type="tns:odontologo_listarTodosResponse" />
   <xs:element name="odontologo_modificar" type="tns:odontologo_modificar" />
   <xs:element name="odontologo_modificarResponse" type="tns:odontologo_modificarResponse" />
+  <xs:element name="odontologo_obtenerCompletoPorId" type="tns:odontologo_obtenerCompletoPorId" />
+  <xs:element name="odontologo_obtenerCompletoPorIdResponse" type="tns:odontologo_obtenerCompletoPorIdResponse" />
   <xs:element name="odontologo_obtenerPorId" type="tns:odontologo_obtenerPorId" />
   <xs:element name="odontologo_obtenerPorIdResponse" type="tns:odontologo_obtenerPorIdResponse" />
   <xs:element name="odontologo_obtenerPorUsuarioContrasenha" type="tns:odontologo_obtenerPorUsuarioContrasenha" />
@@ -142,6 +150,17 @@
       <xs:element minOccurs="0" name="idTurno" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="odontologo_obtenerPorUsuarioContrasenha">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombreUsuario" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasenha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="odontologo_obtenerPorUsuarioContrasenhaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:odontologo" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="odontologo_verificarExistenciaNombreUsuario">
     <xs:sequence>
       <xs:element minOccurs="0" name="nombreUsuario" type="xs:string" />
@@ -152,15 +171,24 @@
       <xs:element minOccurs="0" name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="odontologo_obtenerPorUsuarioContrasenha">
+  <xs:complexType name="odontologo_buscarPorNombreApellidoDocumento">
     <xs:sequence>
-      <xs:element minOccurs="0" name="nombreUsuario" type="xs:string" />
-      <xs:element minOccurs="0" name="contrasenha" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="apellido" type="xs:string" />
+      <xs:element minOccurs="0" name="documento" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="odontologo_obtenerPorUsuarioContrasenhaResponse">
+  <xs:complexType name="odontologo_buscarPorNombreApellidoDocumentoResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:odontologo" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:odontologo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="odontologo_listarTodoCompleto">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="odontologo_listarTodoCompletoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:odontologo" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="odontologo_listarTodos">
@@ -201,6 +229,17 @@
       <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="odontologo_buscarPorNombreApellido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="apellido" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="odontologo_buscarPorNombreApellidoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:odontologo" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="odontologo_insertar">
     <xs:sequence>
       <xs:element minOccurs="0" name="odontologo" type="tns:odontologo" />
@@ -209,6 +248,16 @@
   <xs:complexType name="odontologo_insertarResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="odontologo_obtenerCompletoPorId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="odontologo_obtenerCompletoPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:odontologo" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="estadoCita">

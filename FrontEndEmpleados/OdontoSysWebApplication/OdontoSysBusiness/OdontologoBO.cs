@@ -37,6 +37,11 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
             return this.odontologoWAClient.odontologo_obtenerPorId(id);
         }
 
+        public odontologo odontologo_obtenerCompletoPorId(int id)
+        {
+            return this.odontologoWAClient.odontologo_obtenerCompletoPorId(id);
+        }
+
         public BindingList<odontologo> odontologo_listarTodos()
         {
             odontologo[] lista = this.odontologoWAClient.odontologo_listarTodos();
@@ -58,5 +63,23 @@ namespace OdontoSysWebApplication.OdontoSysBusiness
         {
             return this.odontologoWAClient.odontologo_verificarExistenciaNombreUsuario(nombreUsuario);
         }
+
+        public BindingList<odontologo> odontologo_buscarPorNombreApellido(string nombre, string apellido)
+        {
+            odontologo[] lista = this.odontologoWAClient.odontologo_buscarPorNombreApellido(nombre, apellido);
+            return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
+        }
+
+        public BindingList<odontologo> odontologo_buscarPorNombreApellidoDocumento(string nombre, string apellido, string documento)
+        {
+            odontologo[] lista = this.odontologoWAClient.odontologo_buscarPorNombreApellidoDocumento(nombre, apellido, documento);
+            return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
+        }
+        public BindingList<odontologo> odontologo_listarTodoCompleto()
+        {
+            odontologo[] lista = this.odontologoWAClient.odontologo_listarTodoCompleto();
+            return new BindingList<odontologo>(lista ?? Array.Empty<odontologo>());
+        }
+
     }
 }

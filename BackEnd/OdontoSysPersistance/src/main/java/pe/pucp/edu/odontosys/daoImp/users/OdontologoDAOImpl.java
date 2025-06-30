@@ -196,4 +196,9 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
         return this.odontologo;
     }
     
+    @Override 
+    public ArrayList<Odontologo> listarTodoCompleto(){
+        String sql = queries.getQuery("listarTodoCompleto");
+        return (ArrayList<Odontologo>)super.ejecutarQueryListar(sql);
+    }
 }
