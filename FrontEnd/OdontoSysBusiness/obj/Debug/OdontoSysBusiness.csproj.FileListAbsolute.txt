@@ -13,3 +13,10 @@ C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSy
 C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.exe
 C:\Users\jared\Documents\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.pdb
 C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.exe.config
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.csproj.AssemblyReference.cache
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.csproj.CoreCompileInputs.cache
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.exe
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSysBusiness\obj\Debug\OdontoSysBusiness.pdb
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSysBusiness\bin\Debug\OdontoSysBusiness.exe.config
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSysBusiness\bin\Debug\OdontoSysBusiness.exe
+C:\Users\Gyts\Documents\NetBeansProjects\OdontoSys\FrontEnd\OdontoSysBusiness\bin\Debug\OdontoSysBusiness.pdb

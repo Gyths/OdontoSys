@@ -48,16 +48,16 @@
             </div>
         </div>
     </asp:Panel>
+    
 
+    <asp:HiddenField ID="hfFechaSeleccionada" runat="server" />
+    <asp:HiddenField ID="hfHoraSeleccionada" runat="server" />
+    <asp:Literal ID="ltDisponibilidad" runat="server" />
     <asp:Button ID="btnConfirmarCita" runat="server"
         CssClass="btn btn-primary mb-3"
         Text="Registrar Cita"
         OnClick="btnConfirmarCita_Click"
         Visible="false" />
-
-    <asp:HiddenField ID="hfFechaSeleccionada" runat="server" />
-    <asp:HiddenField ID="hfHoraSeleccionada" runat="server" />
-    <asp:Literal ID="ltDisponibilidad" runat="server" />
 
     <asp:Panel ID="pnlSemana" runat="server" Visible="false" CssClass="mb-3">
         <label class="form-label d-block">Selecciona el rango</label>

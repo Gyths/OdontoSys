@@ -291,6 +291,9 @@
     <None Include="Connected Services\OdontologoWS\OdontoSysBusiness.OdontologoWS.odontologo_listarPorEspecialidadResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\OdontologoWS\OdontoSysBusiness.OdontologoWS.odontologo_listarTodoCompletoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\OdontologoWS\OdontoSysBusiness.OdontologoWS.odontologo_listarTodosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

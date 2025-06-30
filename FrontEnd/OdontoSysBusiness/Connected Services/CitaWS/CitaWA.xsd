@@ -158,14 +158,6 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="cita_listarTodos">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="cita_listarTodosResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="cita_obtenerCompletoPorId">
     <xs:sequence>
       <xs:element minOccurs="0" name="id" type="xs:int" />
@@ -174,6 +166,14 @@
   <xs:complexType name="cita_obtenerCompletoPorIdResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:cita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cita_listarTodos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="cita_listarTodosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cita" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="cita_obtenerPorId">

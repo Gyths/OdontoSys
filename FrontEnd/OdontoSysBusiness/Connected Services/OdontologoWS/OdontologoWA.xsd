@@ -10,6 +10,8 @@
   <xs:element name="odontologo_insertarResponse" type="tns:odontologo_insertarResponse" />
   <xs:element name="odontologo_listarPorEspecialidad" type="tns:odontologo_listarPorEspecialidad" />
   <xs:element name="odontologo_listarPorEspecialidadResponse" type="tns:odontologo_listarPorEspecialidadResponse" />
+  <xs:element name="odontologo_listarTodoCompleto" type="tns:odontologo_listarTodoCompleto" />
+  <xs:element name="odontologo_listarTodoCompletoResponse" type="tns:odontologo_listarTodoCompletoResponse" />
   <xs:element name="odontologo_listarTodos" type="tns:odontologo_listarTodos" />
   <xs:element name="odontologo_listarTodosResponse" type="tns:odontologo_listarTodosResponse" />
   <xs:element name="odontologo_modificar" type="tns:odontologo_modificar" />
@@ -177,6 +179,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="odontologo_buscarPorNombreApellidoDocumentoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:odontologo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="odontologo_listarTodoCompleto">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="odontologo_listarTodoCompletoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:odontologo" />
     </xs:sequence>

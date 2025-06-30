@@ -42,15 +42,6 @@ namespace OdontoSysWebApplication
         protected global::System.Web.UI.WebControls.DropDownList ddlOdontologos;
 
         /// <summary>
-        /// btnConfirmarCita control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirmarCita;
-
-        /// <summary>
         /// hfFechaSeleccionada control.
         /// </summary>
         /// <remarks>
@@ -76,6 +67,15 @@ namespace OdontoSysWebApplication
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltDisponibilidad;
+
+        /// <summary>
+        /// btnConfirmarCita control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnConfirmarCita;
 
         /// <summary>
         /// pnlSemana control.
