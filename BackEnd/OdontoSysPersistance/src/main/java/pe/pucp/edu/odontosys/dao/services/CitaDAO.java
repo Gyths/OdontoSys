@@ -15,4 +15,5 @@ public interface CitaDAO{
     ArrayList<Cita> listarPorOdontologo(Odontologo odontologo);
     ArrayList<Cita> listarPorPaciente(Paciente paciente);
     ArrayList<Cita> listarPorPacienteFechas(Paciente paciente, String fechaInicio, String fechaFin);
+    Cita obtenerCompletoPorId(Cita cita);
 }

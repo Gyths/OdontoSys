@@ -207,7 +207,7 @@ public class CitaDAOImpl extends DAOImplBase implements CitaDAO {
     @Override 
     public Cita obtenerCompletoPorId(Cita cita){
         String sql = queries.getQuery("obtenerCompletoPorId");
-        ejecutarQueryObtener(sql, cita.getIdCita());
+        super.ejecutarQueryObtener(sql, cita.getIdCita());
         return this.cita;
     }
     

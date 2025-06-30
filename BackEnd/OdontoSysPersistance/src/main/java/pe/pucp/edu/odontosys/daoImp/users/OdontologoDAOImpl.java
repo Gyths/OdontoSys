@@ -192,7 +192,7 @@ public class OdontologoDAOImpl extends DAOImplBase implements OdontologoDAO {
     @Override
     public Odontologo obtenerCompletoPorId(Odontologo odontologo){
         String sql = queries.getQuery("obtenerCompletoPorId");
-        ejecutarQueryObtener(sql, odontologo.getIdOdontologo());
+        super.ejecutarQueryObtener(sql, odontologo.getIdOdontologo());
         return this.odontologo;
     }
     
