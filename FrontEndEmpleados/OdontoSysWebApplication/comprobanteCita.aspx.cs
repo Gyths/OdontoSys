@@ -23,7 +23,7 @@ namespace OdontoSysWebApplication
         {
             if (!IsPostBack)
             {
-                // Validar que el parámetro idCita esté presente y sea válido
+                
                 if (Request.QueryString["idCita"] == null || !int.TryParse(Request.QueryString["idCita"], out int idValidCita))
                 {
                     MostrarMensaje("ID de cita inválido o no proporcionado.", "text-danger");
@@ -92,14 +92,12 @@ namespace OdontoSysWebApplication
                 var metodoPago = metodoPagoBO.metodoPago_obtenerPorId(comp.metodoDePago.idMetodoPago);
                 lblMetodoPago.Text = metodoPago?.nombre ?? "Método no encontrado";
 
-                // Configurar visibilidad de controles
+                // Configurar visibilidad de controles - SIN mensaje de éxito
                 pnlDetalle.Visible = true;
-                btnGenerar.Visible = false;
-                btnDescargarPDF.Visible = true;
-                ddlMetodoPago.Visible = false;
-                lblhead.Visible = false;
+                pnlGeneracion.Visible = false;
 
-                MostrarMensaje("Comprobante cargado correctamente.", "text-success");
+                // Limpiar cualquier mensaje previo al mostrar comprobante existente
+                lblMensaje.Visible = false;
             }
             catch (Exception ex)
             {
@@ -112,11 +110,9 @@ namespace OdontoSysWebApplication
         private void CargarFormularioGeneracion()
         {
             CargarMetodosPago();
-            btnGenerar.Visible = false;
+            pnlGeneracion.Visible = true;
             pnlDetalle.Visible = false;
-            btnDescargarPDF.Visible = false;
-            ddlMetodoPago.Visible = true;
-            lblhead.Visible = true;
+            btnGenerar.Visible = false;
         }
 
         private void CargarMetodosPago()
@@ -231,149 +227,27 @@ namespace OdontoSysWebApplication
                     return;
                 }
 
-                var comp = comprobanteBO.comprobante_obtenerPorId(cita.comprobante.idComprobante);
-                if (comp == null)
+                // Usar el método del ComprobanteBO para generar el PDF
+                byte[] pdfBytes = comprobanteBO.reporteComprobante(cita.comprobante.idComprobante);
+
+                if (pdfBytes == null || pdfBytes.Length == 0)
                 {
-                    MostrarMensaje("Error al obtener los datos del comprobante.", "text-danger");
+                    MostrarMensaje("Error al generar el reporte PDF.", "text-danger");
                     return;
                 }
 
-                var metodoPago = metodoPagoBO.metodoPago_obtenerPorId(comp.metodoDePago.idMetodoPago);
-                if (metodoPago == null)
-                {
-                    MostrarMensaje("Error al obtener el método de pago.", "text-danger");
-                    return;
-                }
-
-                GenerarPDF(comp, metodoPago, cita);
+                // Enviar el PDF al cliente
+                Response.Clear();
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("Content-Disposition", $"attachment; filename=Comprobante_{cita.comprobante.idComprobante.ToString().PadLeft(8, '0')}.pdf");
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.BinaryWrite(pdfBytes);
+                Response.End();
             }
             catch (Exception ex)
             {
                 MostrarMensaje("Error al generar el PDF: " + ex.Message, "text-danger");
                 // LogError(ex);
-            }
-        }
-
-        private void GenerarPDF(ComprobanteWS.comprobante comprobante, MetodoPagoWS.metodoPago metodoPago, CitaWS.cita cita)
-        {
-            Document document = null;
-            MemoryStream ms = null;
-
-            try
-            {
-                document = new Document(PageSize.A4, 50, 50, 50, 50);
-                ms = new MemoryStream();
-                PdfWriter writer = PdfWriter.GetInstance(document, ms);
-
-                document.Open();
-
-                // Fuentes
-                Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
-                Font headerFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
-                Font normalFont = FontFactory.GetFont(FontFactory.HELVETICA, 10);
-                Font boldFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10);
-
-                // Encabezado de la empresa
-                Paragraph title = new Paragraph("SONRISA VITAL S.A.C.", titleFont);
-                title.Alignment = Element.ALIGN_CENTER;
-                document.Add(title);
-
-                Paragraph ruc = new Paragraph("RUC: 12345678910", normalFont);
-                ruc.Alignment = Element.ALIGN_CENTER;
-                document.Add(ruc);
-
-                Paragraph direccion = new Paragraph("Av. Endodoncia 123, Lima - Perú", normalFont);
-                direccion.Alignment = Element.ALIGN_CENTER;
-                document.Add(direccion);
-
-                Paragraph telefono = new Paragraph("Teléfono: (01) 123-4567", normalFont);
-                telefono.Alignment = Element.ALIGN_CENTER;
-                document.Add(telefono);
-
-                // Espacio
-                document.Add(new Paragraph(" "));
-                document.Add(new Paragraph(" "));
-
-                // Título del comprobante
-                Paragraph comprobanteTitle = new Paragraph("COMPROBANTE DE PAGO", headerFont);
-                comprobanteTitle.Alignment = Element.ALIGN_CENTER;
-                document.Add(comprobanteTitle);
-
-                document.Add(new Paragraph(" "));
-
-                // Tabla de información
-                PdfPTable table = new PdfPTable(2);
-                table.WidthPercentage = 100;
-                table.SetWidths(new float[] { 1f, 2f });
-
-                table.AddCell(new PdfPCell(new Phrase("Comprobante N°:", boldFont)) { Border = Rectangle.NO_BORDER });
-                table.AddCell(new PdfPCell(new Phrase(comprobante.idComprobante.ToString().PadLeft(8, '0'), normalFont)) { Border = Rectangle.NO_BORDER });
-
-                table.AddCell(new PdfPCell(new Phrase("Fecha de Emisión:", boldFont)) { Border = Rectangle.NO_BORDER });
-                table.AddCell(new PdfPCell(new Phrase(DateTime.Parse(comprobante.fechaEmision).ToString("dd/MM/yyyy"), normalFont)) { Border = Rectangle.NO_BORDER });
-
-                table.AddCell(new PdfPCell(new Phrase("Hora de Emisión:", boldFont)) { Border = Rectangle.NO_BORDER });
-                table.AddCell(new PdfPCell(new Phrase(comprobante.horaEmision, normalFont)) { Border = Rectangle.NO_BORDER });
-
-                table.AddCell(new PdfPCell(new Phrase("Cita N°:", boldFont)) { Border = Rectangle.NO_BORDER });
-                table.AddCell(new PdfPCell(new Phrase(cita.idCita.ToString(), normalFont)) { Border = Rectangle.NO_BORDER });
-
-                table.AddCell(new PdfPCell(new Phrase("Método de Pago:", boldFont)) { Border = Rectangle.NO_BORDER });
-                table.AddCell(new PdfPCell(new Phrase(metodoPago.nombre, normalFont)) { Border = Rectangle.NO_BORDER });
-
-                document.Add(table);
-
-                // Espacio
-                document.Add(new Paragraph(" "));
-                document.Add(new Paragraph(" "));
-
-                // Tabla del total
-                PdfPTable totalTable = new PdfPTable(2);
-                totalTable.WidthPercentage = 100;
-                totalTable.SetWidths(new float[] { 3f, 1f });
-
-                PdfPCell totalLabelCell = new PdfPCell(new Phrase("TOTAL A PAGAR:", titleFont));
-                totalLabelCell.HorizontalAlignment = Element.ALIGN_RIGHT;
-                totalLabelCell.Border = Rectangle.TOP_BORDER;
-                totalTable.AddCell(totalLabelCell);
-
-                PdfPCell totalValueCell = new PdfPCell(new Phrase(comprobante.total.ToString("C"), titleFont));
-                totalValueCell.HorizontalAlignment = Element.ALIGN_RIGHT;
-                totalValueCell.Border = Rectangle.TOP_BORDER;
-                totalTable.AddCell(totalValueCell);
-
-                document.Add(totalTable);
-
-                // Espacio
-                document.Add(new Paragraph(" "));
-                document.Add(new Paragraph(" "));
-
-                // Pie de página
-                Paragraph footer = new Paragraph("Gracias por confiar en Sonrisa Vital S.A.C.", normalFont);
-                footer.Alignment = Element.ALIGN_CENTER;
-                document.Add(footer);
-
-                Paragraph fechaImpresion = new Paragraph("Fecha de impresión: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), normalFont);
-                fechaImpresion.Alignment = Element.ALIGN_CENTER;
-                document.Add(fechaImpresion);
-
-                document.Close();
-
-                // Enviar el PDF
-                Response.ContentType = "application/pdf";
-                Response.AddHeader("Content-Disposition", $"attachment; filename=Comprobante_{comprobante.idComprobante.ToString().PadLeft(8, '0')}.pdf");
-                Response.Cache.SetCacheability(HttpCacheability.NoCache);
-                Response.BinaryWrite(ms.ToArray());
-                Response.End();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al generar el archivo PDF: " + ex.Message, ex);
-            }
-            finally
-            {
-                document?.Close();
-                ms?.Dispose();
             }
         }
 
@@ -390,8 +264,7 @@ namespace OdontoSysWebApplication
             btnGenerar.Visible = false;
             btnDescargarPDF.Visible = false;
             pnlDetalle.Visible = false;
+            pnlGeneracion.Visible = false;
         }
-
-        
     }
 }

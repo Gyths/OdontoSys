@@ -5,14 +5,23 @@
       <xsd:import schemaLocation="http://localhost:8080/OdontoSysWebApplication/ComprobanteWA?xsd=1" namespace="http://webapplication.odontosys.edu.pucp.pe/" />
     </xsd:schema>
   </types>
-  <message name="reporteComprobante">
-    <part name="parameters" element="tns:reporteComprobante" />
+  <message name="comprobante_listarTodos">
+    <part name="parameters" element="tns:comprobante_listarTodos" />
   </message>
-  <message name="reporteComprobanteResponse">
-    <part name="parameters" element="tns:reporteComprobanteResponse" />
+  <message name="comprobante_listarTodosResponse">
+    <part name="parameters" element="tns:comprobante_listarTodosResponse" />
   </message>
-  <message name="JRException">
-    <part name="fault" element="tns:JRException" />
+  <message name="comprobante_insertar">
+    <part name="parameters" element="tns:comprobante_insertar" />
+  </message>
+  <message name="comprobante_insertarResponse">
+    <part name="parameters" element="tns:comprobante_insertarResponse" />
+  </message>
+  <message name="comprobante_eliminar">
+    <part name="parameters" element="tns:comprobante_eliminar" />
+  </message>
+  <message name="comprobante_eliminarResponse">
+    <part name="parameters" element="tns:comprobante_eliminarResponse" />
   </message>
   <message name="comprobante_obtenerPorId">
     <part name="parameters" element="tns:comprobante_obtenerPorId" />
@@ -26,23 +35,14 @@
   <message name="comprobante_modificaResponse">
     <part name="parameters" element="tns:comprobante_modificaResponse" />
   </message>
-  <message name="comprobante_eliminar">
-    <part name="parameters" element="tns:comprobante_eliminar" />
+  <message name="reporteComprobante">
+    <part name="parameters" element="tns:reporteComprobante" />
   </message>
-  <message name="comprobante_eliminarResponse">
-    <part name="parameters" element="tns:comprobante_eliminarResponse" />
+  <message name="reporteComprobanteResponse">
+    <part name="parameters" element="tns:reporteComprobanteResponse" />
   </message>
-  <message name="comprobante_insertar">
-    <part name="parameters" element="tns:comprobante_insertar" />
-  </message>
-  <message name="comprobante_insertarResponse">
-    <part name="parameters" element="tns:comprobante_insertarResponse" />
-  </message>
-  <message name="comprobante_listarTodos">
-    <part name="parameters" element="tns:comprobante_listarTodos" />
-  </message>
-  <message name="comprobante_listarTodosResponse">
-    <part name="parameters" element="tns:comprobante_listarTodosResponse" />
+  <message name="JRException">
+    <part name="fault" element="tns:JRException" />
   </message>
   <message name="comprobante_actualizarTotal">
     <part name="parameters" element="tns:comprobante_actualizarTotal" />
@@ -51,10 +51,17 @@
     <part name="parameters" element="tns:comprobante_actualizarTotalResponse" />
   </message>
   <portType name="ComprobanteWA">
-    <operation name="reporteComprobante">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/reporteComprobanteRequest" message="tns:reporteComprobante" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/reporteComprobanteResponse" message="tns:reporteComprobanteResponse" />
-      <fault wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/reporteComprobante/Fault/JRException" name="JRException" message="tns:JRException" />
+    <operation name="comprobante_listarTodos">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodosRequest" message="tns:comprobante_listarTodos" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodosResponse" message="tns:comprobante_listarTodosResponse" />
+    </operation>
+    <operation name="comprobante_insertar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_insertarRequest" message="tns:comprobante_insertar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_insertarResponse" message="tns:comprobante_insertarResponse" />
+    </operation>
+    <operation name="comprobante_eliminar">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarRequest" message="tns:comprobante_eliminar" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarResponse" message="tns:comprobante_eliminarResponse" />
     </operation>
     <operation name="comprobante_obtenerPorId">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_obtenerPorIdRequest" message="tns:comprobante_obtenerPorId" />
@@ -64,17 +71,10 @@
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_modificaRequest" message="tns:comprobante_modifica" />
       <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_modificaResponse" message="tns:comprobante_modificaResponse" />
     </operation>
-    <operation name="comprobante_eliminar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarRequest" message="tns:comprobante_eliminar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_eliminarResponse" message="tns:comprobante_eliminarResponse" />
-    </operation>
-    <operation name="comprobante_insertar">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_insertarRequest" message="tns:comprobante_insertar" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_insertarResponse" message="tns:comprobante_insertarResponse" />
-    </operation>
-    <operation name="comprobante_listarTodos">
-      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodosRequest" message="tns:comprobante_listarTodos" />
-      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_listarTodosResponse" message="tns:comprobante_listarTodosResponse" />
+    <operation name="reporteComprobante">
+      <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/reporteComprobanteRequest" message="tns:reporteComprobante" />
+      <output wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/reporteComprobanteResponse" message="tns:reporteComprobanteResponse" />
+      <fault wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/reporteComprobante/Fault/JRException" name="JRException" message="tns:JRException" />
     </operation>
     <operation name="comprobante_actualizarTotal">
       <input wsam:Action="http://webapplication.odontosys.edu.pucp.pe/ComprobanteWA/comprobante_actualizarTotalRequest" message="tns:comprobante_actualizarTotal" />
@@ -83,6 +83,51 @@
   </portType>
   <binding name="ComprobanteWAPortBinding" type="tns:ComprobanteWA">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="comprobante_listarTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="comprobante_insertar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="comprobante_eliminar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="comprobante_obtenerPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="comprobante_modifica">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="reporteComprobante">
       <soap:operation soapAction="" />
       <input>
@@ -94,51 +139,6 @@
       <fault name="JRException">
         <soap:fault use="literal" name="JRException" namespace="" />
       </fault>
-    </operation>
-    <operation name="comprobante_obtenerPorId">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="comprobante_modifica">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="comprobante_eliminar">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="comprobante_insertar">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="comprobante_listarTodos">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
     </operation>
     <operation name="comprobante_actualizarTotal">
       <soap:operation soapAction="" />

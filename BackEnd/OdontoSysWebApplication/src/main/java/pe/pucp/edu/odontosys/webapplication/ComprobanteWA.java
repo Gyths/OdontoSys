@@ -49,7 +49,7 @@ public class ComprobanteWA {
     }
     @WebMethod(operationName = "reporteComprobante")
     public byte[]reporteComprobante(@WebParam(name = "ComprobanteID") Integer comprobanteId) throws JRException{
-        return ReporteUtil.reporteHistoriaClinica(comprobanteId);
+        return ReporteUtil.reporteComprobante(comprobanteId);
     }	
 	       
 }

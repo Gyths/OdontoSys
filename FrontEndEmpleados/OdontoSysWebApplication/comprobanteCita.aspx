@@ -73,36 +73,39 @@
     </div>
     
     <!-- Panel para generar comprobante -->
-    <div class="form-section">
-        <h5 class="section-title">Generar Comprobante de Pago</h5>
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <asp:Label ID="lblhead" runat="server" EnableViewState="false" CssClass="form-label">
-                    Método de Pago <span class="text-danger">*</span>
-                </asp:Label>
-                <asp:DropDownList ID="ddlMetodoPago" runat="server"
-                    CssClass="form-select"
-                    AutoPostBack="true"
-                    OnSelectedIndexChanged="ddlMetodoPago_SelectedIndexChanged"
-                    AppendDataBoundItems="true">
-                    <asp:ListItem Text="-- Seleccione un Método de Pago --" Value="" />
-                </asp:DropDownList>
+    <asp:Panel ID="pnlGeneracion" runat="server">
+        <div class="form-section">
+            <h5 class="section-title">Generar Comprobante de Pago</h5>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <asp:Label ID="lblhead" runat="server" EnableViewState="false" CssClass="form-label">
+                        Método de Pago <span class="text-danger">*</span>
+                    </asp:Label>
+                    <asp:DropDownList ID="ddlMetodoPago" runat="server"
+                        CssClass="form-select"
+                        AutoPostBack="true"
+                        OnSelectedIndexChanged="ddlMetodoPago_SelectedIndexChanged"
+                        AppendDataBoundItems="true">
+                        <asp:ListItem Text="-- Seleccione un Método de Pago --" Value="" />
+                    </asp:DropDownList>
+                </div>
+            </div>
+            
+            <div class="btn-container">
+                <asp:Button ID="btnGenerar" runat="server" 
+                    Text="Generar Comprobante" 
+                    CssClass="btn btn-primary" 
+                    OnClick="btnGenerar_Click"
+                    Visible="false" />
             </div>
         </div>
-        
-        <div class="btn-container">
-            <asp:Button ID="btnGenerar" runat="server" 
-                Text="Generar Comprobante" 
-                CssClass="btn btn-primary" 
-                OnClick="btnGenerar_Click" />
-        </div>
-    </div>
+    </asp:Panel>
     
-    <!-- Panel para mostrar detalle -->
+    <!-- Panel para mostrar detalle del comprobante existente -->
     <asp:Panel ID="pnlDetalle" runat="server" Visible="false">
         <div class="comprobante-container">
             <h4 class="mb-3 text-primary">
-                <i class="fas fa-file-invoice"></i> Datos del Comprobante
+                <i class="fas fa-file-invoice"></i> Comprobante de Pago
             </h4>
             <div class="row">
                 <div class="col-md-6">
@@ -122,10 +125,9 @@
             <!-- Botón para descargar PDF -->
             <div class="btn-container">
                 <asp:Button ID="btnDescargarPDF" runat="server" 
-                    Text="📄 Ver PDF" 
+                    Text="📄 Descargar PDF" 
                     CssClass="btn btn-pdf" 
-                    OnClick="btnDescargarPDF_Click" 
-                    Visible="false" />
+                    OnClick="btnDescargarPDF_Click" />
             </div>
         </div>
     </asp:Panel>
