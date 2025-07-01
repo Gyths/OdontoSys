@@ -125,7 +125,7 @@
             <!-- Botón para descargar PDF -->
             <div class="btn-container">
                 <asp:Button ID="btnDescargarPDF" runat="server" 
-                    Text="📄 Descargar PDF" 
+                    Text="Descargar PDF" 
                     CssClass="btn btn-pdf" 
                     OnClick="btnDescargarPDF_Click" />
             </div>
