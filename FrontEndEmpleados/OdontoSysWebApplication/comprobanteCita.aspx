@@ -101,8 +101,8 @@
     <!-- Panel para mostrar detalle -->
     <asp:Panel ID="pnlDetalle" runat="server" Visible="false">
         <div class="comprobante-container">
-            <h4 class="mb-3 text-success">
-                <i class="fas fa-check-circle"></i> Comprobante Generado
+            <h4 class="mb-3 text-primary">
+                <i class="fas fa-file-invoice"></i> Datos del Comprobante
             </h4>
             <div class="row">
                 <div class="col-md-6">
@@ -122,7 +122,7 @@
             <!-- Botón para descargar PDF -->
             <div class="btn-container">
                 <asp:Button ID="btnDescargarPDF" runat="server" 
-                    Text="📄 Descargar PDF" 
+                    Text="📄 Ver PDF" 
                     CssClass="btn btn-pdf" 
                     OnClick="btnDescargarPDF_Click" 
                     Visible="false" />

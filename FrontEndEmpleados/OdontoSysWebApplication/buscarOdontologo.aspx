@@ -1,10 +1,8 @@
 ﻿<%@ Page Title="Buscador de Doctores" Language="C#" MasterPageFile="~/Recepcionista.master" AutoEventWireup="true" CodeBehind="buscarOdontologo.aspx.cs" Inherits="OdontoSysWebApplication.buscarOdontologo" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mt-4">
         <h2>Buscar Odontólogos</h2>
@@ -20,22 +18,19 @@
             </div>
         </div>
         <div class="row mb-3">
-
             <div class="col-md-3">
                 <asp:DropDownList ID="ddlEspecialidad" runat="server" CssClass="form-select">
                     <asp:ListItem Text="-- Especialidad --" Value="" />
                 </asp:DropDownList>
             </div>
         </div>
-
-        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-primary" OnClick="btnBuscar_Click" />
-
+        <div class="row mb-3">
+            <asp:Label ID="lblMensaje" runat="server" Visible="false" />
+        </div>
+        <div class="row mb-3">
+            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-primary" OnClick="btnBuscar_Click" />
+        </div>
         <hr />
-        <asp:Label ID="lblMensaje"
-           runat="server"
-           EnableViewState="false"
-           CssClass=""
-           Text=""></asp:Label>
         <asp:GridView ID="gvOdontologos" runat="server" CssClass="table table-striped mt-3" AutoGenerateColumns="false"
             DataKeyNames="idOdontologo" EmptyDataText="No hay doctores registrados." Width="100%" OnRowCommand="gvOdontologo_RowCommand">
             <Columns>
@@ -62,3 +57,5 @@
         </asp:GridView>
     </div>
 </asp:Content>
+
+

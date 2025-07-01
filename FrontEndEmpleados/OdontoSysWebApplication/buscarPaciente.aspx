@@ -1,15 +1,13 @@
 ﻿<%@ Page Title="Buscador de Pacientes" Language="C#" MasterPageFile="~/Recepcionista.master" AutoEventWireup="true" CodeBehind="buscarPaciente.aspx.cs" Inherits="OdontoSysWebApplication.buscarPaciente" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             window.history.replaceState('', '', window.location.href);
         });
     </script>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mt-4">
         <h2>Buscar Pacientes</h2>
@@ -31,10 +29,11 @@
             <asp:Label ID="lblMensaje" runat="server" Visible="false" />
         </div>
         <div class="row mb-3">
-            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-primary" OnClick="btnBuscar_Click" />
+            <div class="col-12 text-center">
+                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-primary w-100" OnClick="btnBuscar_Click" />
+            </div>
         </div>
         <hr />
-
         <asp:GridView ID="gvPacientes"
                   runat="server"
                   CssClass="table table-striped mt-3"
