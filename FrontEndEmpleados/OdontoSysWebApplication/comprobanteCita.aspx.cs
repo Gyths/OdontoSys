@@ -176,7 +176,7 @@ namespace OdontoSysWebApplication
                         idMetodoPago = idMetodo,
                         idMetodoPagoSpecified = true
                     },
-                    total = 0.0,
+                    total = 0.0
                 };
 
                 int idComprobante = comprobanteBO.comprobante_insertar(comprobante);
@@ -194,7 +194,8 @@ namespace OdontoSysWebApplication
                     MostrarMensaje("Error: no se encontró la cita para actualizar.", "text-danger");
                     return;
                 }
-
+                cita.comprobante.idComprobante = idComprobante;
+                cita.comprobante.idComprobanteSpecified = true;
                 cita.estado = CitaWS.estadoCita.ATENDIDA;
                 citaBO.cita_modificar(cita);
 
