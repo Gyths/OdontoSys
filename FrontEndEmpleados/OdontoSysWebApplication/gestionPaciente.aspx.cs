@@ -18,11 +18,27 @@ namespace OdontoSysWebApplication
     {
         private PacienteWS.paciente pacienteActual;
         Label lblMensaje;
-        private PacienteBO pacienteBO = new PacienteBO();
-        private OdontologoBO odontologoBO = new OdontologoBO();
-        private CitaBO citaBO = new CitaBO();
-        private SalaBO salaBO = new SalaBO();
-        private EspecialidadBO especialidadBO = new EspecialidadBO();
+        private PacienteBO pacienteBO;
+        private OdontologoBO odontologoBO ;
+        private CitaBO citaBO ;
+        private SalaBO salaBO ;
+        private EspecialidadBO especialidadBO ;
+
+        public PacienteBO PacienteBO { get => pacienteBO; set => pacienteBO = value; }
+        public OdontologoBO OdontologoBO { get => odontologoBO; set => odontologoBO = value; }
+        public CitaBO CitaBO { get => citaBO; set => citaBO = value; }
+        public SalaBO SalaBO { get => salaBO; set => salaBO = value; }
+        public EspecialidadBO EspecialidadBO { get => especialidadBO; set => especialidadBO = value; }
+
+        public gestionPaciente()
+        {
+            this.PacienteBO = new PacienteBO();
+            this.OdontologoBO = new OdontologoBO();
+            this.CitaBO = new CitaBO();
+            this.SalaBO = new SalaBO();
+            this.EspecialidadBO = new EspecialidadBO();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["idPacienteSeleccionado"] == null ||
@@ -44,7 +60,7 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                pacienteActual = pacienteBO.paciente_obtenerPorId(id);
+                pacienteActual = PacienteBO.paciente_obtenerPorId(id);
 
                 if (pacienteActual != null)
                 {
@@ -124,7 +140,7 @@ namespace OdontoSysWebApplication
             {
                 try
                 {
-                    var original = pacienteBO.paciente_obtenerPorId(idPaciente);
+                    var original = PacienteBO.paciente_obtenerPorId(idPaciente);
 
                     if (original != null)
                     {
@@ -134,7 +150,7 @@ namespace OdontoSysWebApplication
                             original.correo = txtCorreo.Text;
                             original.telefono = txtTelefono.Text;
                             original.nombreUsuario = txtUsuario.Text;
-                            pacienteBO.paciente_modificar(original);
+                            PacienteBO.paciente_modificar(original);
                         }
                         else
                         {
@@ -172,13 +188,13 @@ namespace OdontoSysWebApplication
             DateTime desde = baseDate;
             DateTime hasta = baseDate;
 
-            pacienteActual = pacienteBO.paciente_obtenerPorId(id);
+            pacienteActual = PacienteBO.paciente_obtenerPorId(id);
 
-            var listaCitas = citaBO.cita_listarPorPacienteFechas(pacienteActual.idPaciente,desde.ToString("yyyy-MM-dd"),hasta.ToString("yyyy-MM-dd"));
+            var listaCitas = CitaBO.cita_listarPorPacienteFechas(pacienteActual.idPaciente,desde.ToString("yyyy-MM-dd"),hasta.ToString("yyyy-MM-dd"));
             foreach (var cita in listaCitas)
             {
-                var odontologo = odontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
-                var consultorioOd = salaBO.sala_obtenerPorId(odontologo.consultorio.idSala);
+                var odontologo = OdontologoBO.odontologo_obtenerPorId(cita.odontologo.idOdontologo);
+                var consultorioOd = SalaBO.sala_obtenerPorId(odontologo.consultorio.idSala);
                 var consultorio = new CitaWS.sala
                 {
                     idSala = odontologo.consultorio.idSala,
@@ -227,9 +243,9 @@ namespace OdontoSysWebApplication
             foreach (int idCita in idsCitasCancelar)
             {
 
-                var cita = citaBO.cita_obtenerPorId(idCita);
+                var cita = CitaBO.cita_obtenerPorId(idCita);
                 cita.estado = CitaWS.estadoCita.CANCELADA;
-                citaBO.cita_modificar(cita);
+                CitaBO.cita_modificar(cita);
             }
             if (int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPa))
             {
@@ -260,7 +276,7 @@ namespace OdontoSysWebApplication
                     int.TryParse(Session["idPacienteSeleccionado"].ToString(), out int idPaciente))
                 {
 
-                    byte[] pdfBytes = pacienteBO.reporteHistoriaClinica(idPaciente);
+                    byte[] pdfBytes = PacienteBO.reporteHistoriaClinica(idPaciente);
 
                     if (pdfBytes != null && pdfBytes.Length > 0)
                     {

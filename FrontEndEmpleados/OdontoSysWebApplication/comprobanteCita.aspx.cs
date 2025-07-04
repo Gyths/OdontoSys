@@ -15,9 +15,19 @@ namespace OdontoSysWebApplication
     public partial class comprobanteCita : System.Web.UI.Page
     {
         private int idCita => int.Parse(Request.QueryString["idCita"]);
-        private CitaBO citaBO = new CitaBO();
-        private ComprobanteBO comprobanteBO = new ComprobanteBO();
-        private MetodoPagoBO metodoPagoBO = new MetodoPagoBO();
+        private CitaBO citaBO;
+        private ComprobanteBO comprobanteBO;
+        private MetodoPagoBO metodoPagoBO;
+        public CitaBO CitaBO { get => citaBO; set => citaBO = value; }
+        public ComprobanteBO ComprobanteBO { get => comprobanteBO; set => comprobanteBO = value; }
+        public MetodoPagoBO MetodoPagoBO { get => metodoPagoBO; set => metodoPagoBO = value; }
+
+        public comprobanteCita()
+        {
+            this.CitaBO = new CitaBO();
+            this.ComprobanteBO = new ComprobanteBO();
+            this.MetodoPagoBO = new MetodoPagoBO();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -39,7 +49,7 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                var cita = citaBO.cita_obtenerPorId(idCita);
+                var cita = CitaBO.cita_obtenerPorId(idCita);
                 if (cita == null)
                 {
                     MostrarMensaje("No se encontró la cita especificada.", "text-danger");
@@ -76,7 +86,7 @@ namespace OdontoSysWebApplication
                     return;
                 }
 
-                var comp = comprobanteBO.comprobante_obtenerPorId(cita.comprobante.idComprobante);
+                var comp = ComprobanteBO.comprobante_obtenerPorId(cita.comprobante.idComprobante);
                 if (comp == null)
                 {
                     MostrarMensaje("No se pudo cargar el comprobante asociado.", "text-danger");
@@ -89,7 +99,7 @@ namespace OdontoSysWebApplication
                 lblHora.Text = comp.horaEmision;
                 lblTotal.Text = comp.total.ToString("C");
 
-                var metodoPago = metodoPagoBO.metodoPago_obtenerPorId(comp.metodoDePago.idMetodoPago);
+                var metodoPago = MetodoPagoBO.metodoPago_obtenerPorId(comp.metodoDePago.idMetodoPago);
                 lblMetodoPago.Text = metodoPago?.nombre ?? "Método no encontrado";
 
                 // Configurar visibilidad de controles - SIN mensaje de éxito
@@ -119,7 +129,7 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                var metodos = metodoPagoBO.metodoPago_listarTodos();
+                var metodos = MetodoPagoBO.metodoPago_listarTodos();
                 if (metodos == null || metodos.Count == 0)
                 {
                     MostrarMensaje("No hay métodos de pago disponibles.", "text-danger");
@@ -179,7 +189,7 @@ namespace OdontoSysWebApplication
                     total = 0.0
                 };
 
-                int idComprobante = comprobanteBO.comprobante_insertar(comprobante);
+                int idComprobante = ComprobanteBO.comprobante_insertar(comprobante);
 
                 if (idComprobante <= 0)
                 {
@@ -188,7 +198,7 @@ namespace OdontoSysWebApplication
                 }
 
                 // Actualizar la cita
-                var cita = citaBO.cita_obtenerPorId(idCita);
+                var cita = CitaBO.cita_obtenerPorId(idCita);
                 if (cita == null)
                 {
                     MostrarMensaje("Error: no se encontró la cita para actualizar.", "text-danger");
@@ -197,10 +207,10 @@ namespace OdontoSysWebApplication
                 cita.comprobante.idComprobante = idComprobante;
                 cita.comprobante.idComprobanteSpecified = true;
                 cita.estado = CitaWS.estadoCita.ATENDIDA;
-                citaBO.cita_modificar(cita);
+                CitaBO.cita_modificar(cita);
 
                 // Actualizar el total del comprobante
-                comprobanteBO.comprobante_actualizarTotal(cita.idCita);
+                ComprobanteBO.comprobante_actualizarTotal(cita.idCita);
 
                 MostrarMensaje("Comprobante generado correctamente.", "text-success");
                 CargarComprobanteOCrearWizard();
@@ -221,7 +231,7 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                var cita = citaBO.cita_obtenerPorId(idCita);
+                var cita = CitaBO.cita_obtenerPorId(idCita);
                 if (cita?.comprobante == null)
                 {
                     MostrarMensaje("No se encontró el comprobante para descargar.", "text-danger");
@@ -229,7 +239,7 @@ namespace OdontoSysWebApplication
                 }
 
                 // Usar el método del ComprobanteBO para generar el PDF
-                byte[] pdfBytes = comprobanteBO.reporteComprobante(cita.comprobante.idComprobante);
+                byte[] pdfBytes = ComprobanteBO.reporteComprobante(cita.comprobante.idComprobante);
 
                 if (pdfBytes == null || pdfBytes.Length == 0)
                 {

@@ -11,8 +11,17 @@ namespace OdontoSysWebApplication
 {
     public partial class buscarOdontologo : System.Web.UI.Page
     {
-        private OdontologoBO odonlogoBO = new OdontologoBO();
-        private EspecialidadBO especialidadBO = new EspecialidadBO();
+        private OdontologoBO odonlogoBO ;
+        private EspecialidadBO especialidadBO ;
+
+        public OdontologoBO OdonlogoBO { get => odonlogoBO; set => odonlogoBO = value; }
+        public EspecialidadBO EspecialidadBO { get => especialidadBO; set => especialidadBO = value; }
+
+        public buscarOdontologo()
+        {
+            this.OdonlogoBO = new OdontologoBO();
+            this.EspecialidadBO = new EspecialidadBO();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +40,7 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                ddlEspecialidad.DataSource = especialidadBO.especialidad_listarTodos();
+                ddlEspecialidad.DataSource = EspecialidadBO.especialidad_listarTodos();
                 ddlEspecialidad.DataTextField = "nombre";
                 ddlEspecialidad.DataValueField = "idEspecialidad";
                 ddlEspecialidad.DataBind();
@@ -52,7 +61,7 @@ namespace OdontoSysWebApplication
             try
             {
                 lblMensaje.Visible = false;
-                BindingList<OdontologoWS.odontologo> lista = odonlogoBO.odontologo_listarTodoCompleto();
+                BindingList<OdontologoWS.odontologo> lista = OdonlogoBO.odontologo_listarTodoCompleto();
 
                 gvOdontologos.DataSource = lista;
                 gvOdontologos.DataBind();
@@ -99,7 +108,7 @@ namespace OdontoSysWebApplication
                 if (!string.IsNullOrEmpty(idEspecialidad))
                 {
                     int idEsp = int.Parse(idEspecialidad);
-                    lista = odonlogoBO.odontologo_listarPorEspecialidad(idEsp);
+                    lista = OdonlogoBO.odontologo_listarPorEspecialidad(idEsp);
                 }
                 else 
                 {
@@ -117,11 +126,11 @@ namespace OdontoSysWebApplication
 
                     if (!string.IsNullOrEmpty(documento))
                     {
-                        lista = odonlogoBO.odontologo_buscarPorNombreApellidoDocumento(nombre, apellidos, documento);
+                        lista = OdonlogoBO.odontologo_buscarPorNombreApellidoDocumento(nombre, apellidos, documento);
                     }
                     else
                     {
-                        lista = odonlogoBO.odontologo_buscarPorNombreApellido(nombre, apellidos);
+                        lista = OdonlogoBO.odontologo_buscarPorNombreApellido(nombre, apellidos);
                     }
                 }
 

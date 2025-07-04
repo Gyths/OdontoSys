@@ -18,12 +18,23 @@ namespace OdontoSysWebApplication
     public partial class gestionOdontologo : System.Web.UI.Page
     {
         private OdontologoWS.odontologo odontologoActual;
-        private OdontologoBO odontologoBO = new OdontologoBO();
-        private EspecialidadBO especialidadBO = new EspecialidadBO();  
-        private CitaBO citaBO = new CitaBO();
-        private PacienteBO pacienteBO = new PacienteBO();
-        private SalaBO salaBO = new SalaBO(); 
-        private TurnoBO turnoBO = new TurnoBO();
+        private OdontologoBO odontologoBO ;
+        private EspecialidadBO especialidadBO ;  
+        private CitaBO citaBO;
+        private PacienteBO pacienteBO;
+        private SalaBO salaBO ; 
+        private TurnoBO turnoBO;
+
+        public gestionOdontologo()
+        {
+            this.odontologoBO = new OdontologoBO();
+            this.especialidadBO = new EspecialidadBO();
+            this.citaBO = new CitaBO();
+            this.pacienteBO = new PacienteBO();
+            this.salaBO = new SalaBO();
+            this.turnoBO = new TurnoBO();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["idOdontologoSeleccionado"] == null || !int.TryParse(Session["idOdontologoSeleccionado"].ToString(), out int idOdo))
@@ -55,20 +66,7 @@ namespace OdontoSysWebApplication
         }
             
 
-        protected void btnEliminarTurnoSelec_Click(object sender, EventArgs e) 
-        {
-            string idOdontologoActual = Session["idOdontologoSeleccionado"].ToString();
-            foreach (GridViewRow row in gvTurnos.Rows) 
-            {
-                CheckBox chkSeleccionar1 = (CheckBox)row.FindControl("chkSeleccionar1");
-                TurnoXOdontologoBO boTurnoOdontologo = new TurnoXOdontologoBO();
-                if (chkSeleccionar1 != null && chkSeleccionar1.Checked)
-                {
-                    boTurnoOdontologo.turnoXOdontologo_eliminar(Int32.Parse(idOdontologoActual), Int32.Parse(gvTurnos.DataKeys[row.RowIndex].Value.ToString()));
-                }
-            }
-            CargarTurnos(Int32.Parse(idOdontologoActual));
-        }
+        
         protected void btnEditar_Click(object sender, EventArgs e)
         {
             SetReadOnly(txtCorreo, false);

@@ -22,3 +22,15 @@ C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplicati
 C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSy.7DA6DC66.Up2Date
 C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.dll
 C:\Users\USER\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.pdb
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.dll.config
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.dll
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\OdontoSysWebApplication.pdb
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\BouncyCastle.Cryptography.dll
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\itextsharp.dll
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\BouncyCastle.Cryptography.xml
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\bin\itextsharp.xml
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.AssemblyReference.cache
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.csproj.CoreCompileInputs.cache
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSy.7DA6DC66.Up2Date
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.dll
+C:\Users\RUBI\Documents\GitHub\OdontoSys\FrontEndEmpleados\OdontoSysWebApplication\obj\Debug\OdontoSysWebApplication.pdb

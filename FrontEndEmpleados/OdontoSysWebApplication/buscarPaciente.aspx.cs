@@ -11,7 +11,14 @@ namespace OdontoSysWebApplication
 {
     public partial class buscarPaciente : System.Web.UI.Page
     {
-        private PacienteBO pacienteBO = new PacienteBO();
+        private PacienteBO pacienteBO ;
+
+        public PacienteBO PacienteBO { get => pacienteBO; set => pacienteBO = value; }
+
+        public buscarPaciente()
+        {
+            this.PacienteBO = new PacienteBO();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +34,7 @@ namespace OdontoSysWebApplication
             try
             {
                 lblMensaje.Visible = false;
-                BindingList<PacienteWS.paciente> resultado = pacienteBO.paciente_listarTodos();
+                BindingList<PacienteWS.paciente> resultado = PacienteBO.paciente_listarTodos();
 
                 gvPacientes.DataSource = resultado;
                 gvPacientes.DataBind();
@@ -83,12 +90,12 @@ namespace OdontoSysWebApplication
 
                 if (!string.IsNullOrEmpty(telefono))
                 {
-                    resultado = pacienteBO.paciente_buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
+                    resultado = PacienteBO.paciente_buscarPorNombreApellidoTelefono(nombre, apellido, telefono);
                 }
                 else
                 {
 
-                    resultado = pacienteBO.paciente_buscarPorNombreApellido(nombre, apellido);
+                    resultado = PacienteBO.paciente_buscarPorNombreApellido(nombre, apellido);
                 }
 
                 gvPacientes.DataSource = resultado;

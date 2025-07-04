@@ -13,11 +13,27 @@ namespace OdontoSysWebApplication
 {
     public partial class reservaCitaPorRecepcionista : System.Web.UI.Page
     {
-        private OdontologoBO odontologoBO = new OdontologoBO();
-        private EspecialidadBO especialidadBO = new EspecialidadBO();
-        private TurnoBO turnoBO = new TurnoBO();
-        private PacienteBO pacienteBO = new PacienteBO();
-        private CitaBO citaBO = new CitaBO();
+        private OdontologoBO odontologoBO ;
+        private EspecialidadBO especialidadBO ;
+        private TurnoBO turnoBO ;
+        private PacienteBO pacienteBO ;
+        private CitaBO citaBO ;
+
+        public OdontologoBO OdontologoBO { get => odontologoBO; set => odontologoBO = value; }
+        public EspecialidadBO EspecialidadBO { get => especialidadBO; set => especialidadBO = value; }
+        public TurnoBO TurnoBO { get => turnoBO; set => turnoBO = value; }
+        public PacienteBO PacienteBO { get => pacienteBO; set => pacienteBO = value; }
+        public CitaBO CitaBO { get => citaBO; set => citaBO = value; }
+
+        public reservaCitaPorRecepcionista()
+        {
+            this.OdontologoBO = new OdontologoBO();
+            this.EspecialidadBO = new EspecialidadBO();
+            this.TurnoBO = new TurnoBO();
+            this.PacienteBO = new PacienteBO();
+            this.CitaBO = new CitaBO();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -39,7 +55,7 @@ namespace OdontoSysWebApplication
         {
             try
             {
-                var especialidades = especialidadBO.especialidad_listarTodos();
+                var especialidades = EspecialidadBO.especialidad_listarTodos();
 
                 ddlEspecialidades.DataSource = especialidades;
                 ddlEspecialidades.DataValueField = "idEspecialidad";
@@ -67,7 +83,7 @@ namespace OdontoSysWebApplication
 
             int idEspecialidad = int.Parse(ddlEspecialidades.SelectedValue);
 
-            var odontologos = odontologoBO.odontologo_listarPorEspecialidad(idEspecialidad);
+            var odontologos = OdontologoBO.odontologo_listarPorEspecialidad(idEspecialidad);
 
             ddlOdontologos.Items.Add(new ListItem("-- Seleccione un odontólogo --", ""));
             foreach (var o in odontologos)
@@ -102,9 +118,9 @@ namespace OdontoSysWebApplication
 
             int idOdontologo = int.Parse(ddlOdontologos.SelectedValue);
 
-            var turnos = turnoBO.turno_listarPorOdontologo(idOdontologo);
+            var turnos = TurnoBO.turno_listarPorOdontologo(idOdontologo);
 
-            var citas = citaBO.cita_listarPorOdontologoFechas(idOdontologo, fechaInicioStr, fechaFinStr);
+            var citas = CitaBO.cita_listarPorOdontologoFechas(idOdontologo, fechaInicioStr, fechaFinStr);
 
             var disponibilidad = CalcularHorasDisponibles(turnos, citas, fechaInicio);
 
@@ -201,7 +217,7 @@ namespace OdontoSysWebApplication
         protected void btnConfirmarCita_Click(object sender, EventArgs e)
         {
             var idPaciente = (int)Session["idPacienteSeleccionado"];
-            var paciente = pacienteBO.paciente_obtenerPorId(idPaciente);
+            var paciente = PacienteBO.paciente_obtenerPorId(idPaciente);
             var recepcionista = (RecepcionistaWS.recepcionista)Session["Usuario"];
             if (string.IsNullOrEmpty(ddlOdontologos.SelectedValue) ||
                 string.IsNullOrEmpty(hfFechaSeleccionada.Value) ||
@@ -231,7 +247,7 @@ namespace OdontoSysWebApplication
 
             try
             {
-                citaBO.cita_insertar(cita);
+                CitaBO.cita_insertar(cita);
                 //EnviarCorreoConfirmacion(cita, paciente);
                 Response.AddHeader("Refresh", "1;URL=gestionPaciente.aspx");
                 ltDisponibilidad.Text = "<div class='alert alert-success'>¡Cita registrada correctamente!</div>";
